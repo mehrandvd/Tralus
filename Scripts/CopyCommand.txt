@@ -1,0 +1,3 @@
+powershell -noprofile -command "& {(Get-ChildItem $(TargetDir) -Recurse -File | Resolve-Path).ProviderPath | Copy-Item -Destination (Join-Path $HOME 'TralusLocal\win') -Force -Recurse -verbos}"
+powershell -noprofile -command "& {(Get-ChildItem $(TargetDir) -Recurse -File | Resolve-Path).ProviderPath | Copy-Item -Destination (Join-Path $HOME 'TralusLocal\web\bin') -Force -Recurse -verbos}"
+
