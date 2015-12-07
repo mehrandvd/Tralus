@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="Mahan" Logo="MahanLogo-WithoutName">
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="15.1.4.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <DetailView Id="Role_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="5.0666666666666664">
+            <LayoutGroup Id="Role" RelativeSize="100" Caption="Role">
+              <LayoutItem Id="Name" SizeConstraintsType="Default" RelativeSize="100" />
+              <LayoutItem Id="CanEditModel" SizeConstraintsType="Default" Index="1" RelativeSize="48.387096774193552" Removed="True" />
+              <LayoutItem Id="IsAdministrative" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="94.933333333333337">
+            <LayoutGroup Id="Users" RelativeSize="100">
+              <LayoutItem Id="Users" SizeConstraintsType="Default" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="TypePermissions" RelativeSize="100">
+              <LayoutItem Id="TypePermissions" SizeConstraintsType="Default" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="ChildRoles" RelativeSize="100">
+              <LayoutItem Id="ChildRoles" SizeConstraintsType="Default" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="ParentRoles" RelativeSize="100">
+              <LayoutItem Id="ParentRoles" SizeConstraintsType="Default" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

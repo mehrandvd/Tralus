@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="Tralus.Framework" Logo="ExpressAppLogo">
+  <ActionDesign>
+    <Actions>
+      <Action Id="Tralus.Framework.Module.Controllers.RunSystemEnvironmentTestViewController" Caption="Run Test" ImageName="Action_Debug_Step" />
+    </Actions>
+  </ActionDesign>
+  <NavigationItems>
+    <Items>
+      <Item Id="Admin Panel" Caption="Administration" ChildItemsDisplayStyle="List" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="@0576a976-b382-4d11-b7ef-d95b4ad5e009" Caption="Process Customization" ChildItemsDisplayStyle="List" IsNewNode="True">
+            <Items IsNewNode="True">
+              <Item Id="State Machine" ViewId="StateMachine_ListView" ChildItemsDisplayStyle="List" IsNewNode="True" />
+            </Items>
+          </Item>
+          <Item Id="Security" ChildItemsDisplayStyle="List" IsNewNode="True">
+            <Items IsNewNode="True">
+              <Item Id="Role" ViewId="Role_ListView" ImageName="BO_Role" ChildItemsDisplayStyle="List" IsNewNode="True" />
+              <Item Id="User" ViewId="User_ListView" ImageName="BO_User" ChildItemsDisplayStyle="List" IsNewNode="True" />
+            </Items>
+          </Item>
+        </Items>
+      </Item>
+      <Item Id="Diagnostics" ChildItemsDisplayStyle="List" Caption="System Diagnostics" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="Environemtn Test" ChildItemsDisplayStyle="List" ViewId="SystemEnvironmentTest_ListView" Caption="Environment Test" IsNewNode="True" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="15.1.4.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <ListView Id="Role_TypePermissions_ListView">
+      <Columns>
+        <ColumnInfo Id="Object" Index="-1" />
+        <ColumnInfo Id="Role" Index="-1" />
+        <ColumnInfo Id="TargetType" Index="0" Width="183" />
+        <ColumnInfo Id="AllowRead" Index="1" />
+        <ColumnInfo Id="AllowWrite" Index="2" />
+        <ColumnInfo Id="AllowCreate" Index="3" />
+        <ColumnInfo Id="AllowDelete" Index="4" />
+        <ColumnInfo Id="AllowNavigate" Index="5" />
+        <ColumnInfo Id="Permissions" Index="6" Width="215" />
+      </Columns>
+    </ListView>
+    <DetailView Id="SecuritySystemObjectPermissionsObject_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" ShowCaption="False" Index="0" RelativeSize="100" IsNewNode="True" Removed="True">
+          <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" Caption="Security Permission" IsNewNode="True">
+            <LayoutItem Id="Permissions" ViewItem="Permissions" SizeConstraintsType="Default" Index="0" RelativeSize="4.03530895334174" IsNewNode="True" />
+            <LayoutItem Id="Criteria" ViewItem="Criteria" SizeConstraintsType="Default" Index="1" RelativeSize="3.0264817150063053" IsNewNode="True" />
+            <LayoutItem Id="EffectiveDelete" ViewItem="EffectiveDelete" SizeConstraintsType="Default" Index="2" RelativeSize="3.0264817150063053" IsNewNode="True" />
+            <LayoutItem Id="EffectiveNavigate" ViewItem="EffectiveNavigate" SizeConstraintsType="Default" Index="3" RelativeSize="3.0264817150063053" IsNewNode="True" />
+            <LayoutItem Id="EffectiveRead" ViewItem="EffectiveRead" SizeConstraintsType="Default" Index="4" RelativeSize="3.0264817150063053" IsNewNode="True" />
+            <LayoutItem Id="EffectiveWrite" ViewItem="EffectiveWrite" SizeConstraintsType="Default" Index="5" RelativeSize="3.0264817150063053" IsNewNode="True" />
+            <LayoutItem Id="InheritedFrom" ViewItem="InheritedFrom" SizeConstraintsType="Default" Index="6" RelativeSize="80.832282471626741" IsNewNode="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="SystemEnvironmentTest_DetailView">
+      <Items>
+        <PropertyEditor Id="TestLog" RowCount="20" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="SystemEnvironmentTest" RelativeSize="100">
+              <LayoutGroup Id="SystemEnvironmentTest_col1" RelativeSize="50">
+                <LayoutGroup Id="Item5" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="21.185372005044137" Caption="Test Information" IsNewNode="True">
+                  <LayoutItem Id="TestTime" ViewItem="TestTime" SizeConstraintsType="Default" Index="0" RelativeSize="23.529411764705884" IsNewNode="True" />
+                  <LayoutItem Id="Name" ViewItem="Name" SizeConstraintsType="Default" Index="1" RelativeSize="17.647058823529413" IsNewNode="True" />
+                  <LayoutItem Id="MachineName" ViewItem="MachineName" SizeConstraintsType="Default" Index="2" RelativeSize="17.647058823529413" IsNewNode="True" />
+                  <LayoutItem Id="Database" ViewItem="Database" SizeConstraintsType="Default" Index="3" RelativeSize="17.647058823529413" IsNewNode="True" />
+                  <LayoutItem Id="PackSize" ViewItem="PackSize" SizeConstraintsType="Default" Index="4" RelativeSize="23.529411764705884" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Item4" ShowCaption="True" CaptionLocation="Top" Index="1" RelativeSize="78.81462799495587" Caption="Test Log" IsNewNode="True">
+                  <LayoutItem Id="TestLog" ViewItem="TestLog" SizeConstraintsType="Default" Index="0" RelativeSize="100" ShowCaption="False" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutItem Id="AverageTime1B" SizeConstraintsType="Default" RelativeSize="83.858764186633039" Removed="True" />
+                <LayoutItem Id="AverageTime1K" Removed="True" />
+                <LayoutItem Id="Database" SizeConstraintsType="Default" RelativeSize="3.0264817150063053" Removed="True" />
+                <LayoutItem Id="MachineName" SizeConstraintsType="Default" RelativeSize="3.0264817150063053" Removed="True" />
+                <LayoutItem Id="Name" SizeConstraintsType="Default" RelativeSize="3.0264817150063053" Removed="True" />
+                <LayoutItem Id="TestLog" SizeConstraintsType="Default" RelativeSize="86.885245901639351" Removed="True" />
+                <LayoutItem Id="TestTime" SizeConstraintsType="Default" RelativeSize="4.03530895334174" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="SystemEnvironmentTest_col2" RelativeSize="50">
+                <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="21.185372005044137" Caption="Round Trip" IsNewNode="True">
+                  <LayoutItem Id="AverageTime1B" ViewItem="AverageTime1B" SizeConstraintsType="Default" Index="0" RelativeSize="23.529411764705884" IsNewNode="True" />
+                  <LayoutItem Id="AverageTime1K" ViewItem="AverageTime1K" SizeConstraintsType="Default" Index="1" RelativeSize="17.647058823529413" IsNewNode="True" />
+                  <LayoutItem Id="AverageTime10K" ViewItem="AverageTime10K" SizeConstraintsType="Default" Index="2" RelativeSize="17.647058823529413" IsNewNode="True" />
+                  <LayoutItem Id="AverageTime100K" ViewItem="AverageTime100K" SizeConstraintsType="Default" Index="3" RelativeSize="17.647058823529413" IsNewNode="True" />
+                  <LayoutItem Id="AverageTime1000K" ViewItem="AverageTime1000K" SizeConstraintsType="Default" Index="4" RelativeSize="23.529411764705884" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutItem Id="PackSize" SizeConstraintsType="Default" Index="0" RelativeSize="4.03530895334174" Removed="True" />
+                <LayoutGroup Id="Item2" ShowCaption="True" CaptionLocation="Top" Index="1" RelativeSize="11.097099621689786" Caption="Data Retrieval" IsNewNode="True">
+                  <LayoutItem Id="LoadAllTime" ViewItem="LoadAllTime" SizeConstraintsType="Default" Index="0" RelativeSize="50" IsNewNode="True" />
+                  <LayoutItem Id="LoadAllCount" ViewItem="LoadAllCount" SizeConstraintsType="Default" Index="1" RelativeSize="50" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutItem Id="Item3" ShowCaption="False" ViewItem="" SizeConstraintsType="Default" Index="2" RelativeSize="67.717528373266077" IsNewNode="True" />
+                <LayoutItem Id="LoadAllTime" SizeConstraintsType="Default" Index="2" RelativeSize="3.0264817150063053" Removed="True" />
+                <LayoutItem Id="AverageTime10K" SizeConstraintsType="Default" Index="3" RelativeSize="3.0264817150063053" Removed="True" />
+                <LayoutItem Id="LoadAllCount" SizeConstraintsType="Default" Index="3" RelativeSize="72.76166456494326" Removed="True" />
+                <LayoutItem Id="AverageTime100K" SizeConstraintsType="Default" Index="4" RelativeSize="3.0264817150063053" Removed="True" />
+                <LayoutItem Id="AverageTime1000K" SizeConstraintsType="Default" Index="5" RelativeSize="3.0264817150063053" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="SystemEnvironmentTest_ListView" IsFooterVisible="True" IsGroupPanelVisible="True" MasterDetailMode="ListViewOnly" ShowAutoFilterRow="True" AutoExpandAllGroups="True" ImageName="Action_Debug_Step">
+      <Columns>
+        <ColumnInfo Id="Database" Index="-1" />
+        <ColumnInfo Id="TestLog" Index="-1" />
+        <ColumnInfo Id="Name" Width="247" SortIndex="-1" SortOrder="None" />
+        <ColumnInfo Id="TestTime" Width="77" />
+        <ColumnInfo Id="MachineName" SortIndex="0" SortOrder="Ascending" Width="100" />
+        <ColumnInfo Id="PackSize" Index="3" />
+        <ColumnInfo Id="AverageTime1B" Index="4" Width="80" Caption="1B (Avg)" />
+        <ColumnInfo Id="AverageTime1K" Index="5" Caption="1K (avg)" />
+        <ColumnInfo Id="AverageTime10K" Index="6" Caption="10K (Avg)" />
+        <ColumnInfo Id="AverageTime100K" Index="7" Caption="100K (Avg)" />
+        <ColumnInfo Id="AverageTime1000K" Index="8" Caption="1000K (Avg)" />
+        <ColumnInfo Id="LoadAllTime" Index="9" />
+        <ColumnInfo Id="LoadAllCount" Index="10" />
+      </Columns>
+    </ListView>
+  </Views>
+</Application>

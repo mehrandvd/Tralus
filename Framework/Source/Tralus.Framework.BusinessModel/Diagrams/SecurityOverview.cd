@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Tralus.Framework.BusinessModel.Entities.TypePermissionObject">
+    <Position X="7.25" Y="1.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AICAAAAAAIAAkAAgEAIAIAAIAAAAAAAAADABoCAAAAA=</HashCode>
+      <FileName>Entities\TypePermissionObject.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="ObjectPermissions" />
+      <Property Name="MemberPermissions" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Tralus.Framework.BusinessModel.Entities.SecuritySystemObjectPermissionsObject">
+    <Position X="12" Y="1.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AICAAECQAAIAgAARAAAAAAAIIAAAAAAAACABAAAAAAA=</HashCode>
+      <FileName>Entities\SecuritySystemObjectPermissionsObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Tralus.Framework.BusinessModel.Entities.SecuritySystemMemberPermissionsObject">
+    <Position X="1.25" Y="1.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AICAAECQAAIAkAAQAAAAAAAAIAAAAAAAABABIAAAAIA=</HashCode>
+      <FileName>Entities\SecuritySystemMemberPermissionsObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,154 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tralus.Framework.Module", "Tralus.Framework.Module\Tralus.Framework.Module.csproj", "{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tralus.Framework.Module.Web", "Tralus.Framework.Module.Web\Tralus.Framework.Module.Web.csproj", "{0C729AAD-7626-4668-A7F1-35F7D240489D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tralus.Framework.Module.Win", "Tralus.Framework.Module.Win\Tralus.Framework.Module.Win.csproj", "{7964F87D-BC5D-4C4E-8B2F-71E89739AA97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tralus.Framework.BusinessModel", "Tralus.Framework.BusinessModel\Tralus.Framework.BusinessModel.csproj", "{195C7C0A-1491-43DA-BD99-74E800344CEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tralus.Framework.Data", "Tralus.Framework.Data\Tralus.Framework.Data.csproj", "{3519BE62-F236-4004-90F9-27A4287236A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tralus.Framework.Utility", "Tralus.Framework.Utility\Tralus.Framework.Utility.csproj", "{A4D64BAD-1EB2-4437-B464-FEA9130FAEFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Runner.Win", "Runner.Win\Runner.Win.csproj", "{879A80C4-E55A-4729-8F36-D09148559CDC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{195C7C0A-1491-43DA-BD99-74E800344CEF} = {195C7C0A-1491-43DA-BD99-74E800344CEF}
+		{3519BE62-F236-4004-90F9-27A4287236A1} = {3519BE62-F236-4004-90F9-27A4287236A1}
+		{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D} = {5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}
+		{7964F87D-BC5D-4C4E-8B2F-71E89739AA97} = {7964F87D-BC5D-4C4E-8B2F-71E89739AA97}
+		{A4D64BAD-1EB2-4437-B464-FEA9130FAEFF} = {A4D64BAD-1EB2-4437-B464-FEA9130FAEFF}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Runner.Web", "Runner.Web\Runner.Web.csproj", "{CB91F15E-18CD-42E8-A96F-9A2DEB8D4750}"
+	ProjectSection(ProjectDependencies) = postProject
+		{195C7C0A-1491-43DA-BD99-74E800344CEF} = {195C7C0A-1491-43DA-BD99-74E800344CEF}
+		{3519BE62-F236-4004-90F9-27A4287236A1} = {3519BE62-F236-4004-90F9-27A4287236A1}
+		{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D} = {5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}
+		{A4D64BAD-1EB2-4437-B464-FEA9130FAEFF} = {A4D64BAD-1EB2-4437-B464-FEA9130FAEFF}
+		{0C729AAD-7626-4668-A7F1-35F7D240489D} = {0C729AAD-7626-4668-A7F1-35F7D240489D}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tralus.Framework.Migration", "Tralus.Framework.Migration\Tralus.Framework.Migration.csproj", "{931426AB-71D2-495B-B6CC-1E9E4ECC5C06}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tralus.Framework.UnitTest", "Tralus.Framework.UnitTest\Tralus.Framework.UnitTest.csproj", "{03B0DD17-DE77-4290-BA26-B6BF0E1A7F53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tralus.Framework.PowerShell", "Tralus.Framework.PowerShell\Tralus.Framework.PowerShell.csproj", "{9DF05147-A628-4568-A92C-72BA3BB2F2E8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		EasyTest|Any CPU = EasyTest|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}.EasyTest|Any CPU.ActiveCfg = EasyTest|Any CPU
+		{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
+		{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C729AAD-7626-4668-A7F1-35F7D240489D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C729AAD-7626-4668-A7F1-35F7D240489D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C729AAD-7626-4668-A7F1-35F7D240489D}.EasyTest|Any CPU.ActiveCfg = EasyTest|Any CPU
+		{0C729AAD-7626-4668-A7F1-35F7D240489D}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
+		{0C729AAD-7626-4668-A7F1-35F7D240489D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C729AAD-7626-4668-A7F1-35F7D240489D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7964F87D-BC5D-4C4E-8B2F-71E89739AA97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7964F87D-BC5D-4C4E-8B2F-71E89739AA97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7964F87D-BC5D-4C4E-8B2F-71E89739AA97}.EasyTest|Any CPU.ActiveCfg = EasyTest|Any CPU
+		{7964F87D-BC5D-4C4E-8B2F-71E89739AA97}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
+		{7964F87D-BC5D-4C4E-8B2F-71E89739AA97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7964F87D-BC5D-4C4E-8B2F-71E89739AA97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{195C7C0A-1491-43DA-BD99-74E800344CEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{195C7C0A-1491-43DA-BD99-74E800344CEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{195C7C0A-1491-43DA-BD99-74E800344CEF}.EasyTest|Any CPU.ActiveCfg = Release|Any CPU
+		{195C7C0A-1491-43DA-BD99-74E800344CEF}.EasyTest|Any CPU.Build.0 = Release|Any CPU
+		{195C7C0A-1491-43DA-BD99-74E800344CEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{195C7C0A-1491-43DA-BD99-74E800344CEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3519BE62-F236-4004-90F9-27A4287236A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3519BE62-F236-4004-90F9-27A4287236A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3519BE62-F236-4004-90F9-27A4287236A1}.EasyTest|Any CPU.ActiveCfg = Release|Any CPU
+		{3519BE62-F236-4004-90F9-27A4287236A1}.EasyTest|Any CPU.Build.0 = Release|Any CPU
+		{3519BE62-F236-4004-90F9-27A4287236A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3519BE62-F236-4004-90F9-27A4287236A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4D64BAD-1EB2-4437-B464-FEA9130FAEFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4D64BAD-1EB2-4437-B464-FEA9130FAEFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4D64BAD-1EB2-4437-B464-FEA9130FAEFF}.EasyTest|Any CPU.ActiveCfg = Release|Any CPU
+		{A4D64BAD-1EB2-4437-B464-FEA9130FAEFF}.EasyTest|Any CPU.Build.0 = Release|Any CPU
+		{A4D64BAD-1EB2-4437-B464-FEA9130FAEFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4D64BAD-1EB2-4437-B464-FEA9130FAEFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{879A80C4-E55A-4729-8F36-D09148559CDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{879A80C4-E55A-4729-8F36-D09148559CDC}.EasyTest|Any CPU.ActiveCfg = Release|Any CPU
+		{879A80C4-E55A-4729-8F36-D09148559CDC}.EasyTest|Any CPU.Build.0 = Release|Any CPU
+		{879A80C4-E55A-4729-8F36-D09148559CDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB91F15E-18CD-42E8-A96F-9A2DEB8D4750}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB91F15E-18CD-42E8-A96F-9A2DEB8D4750}.EasyTest|Any CPU.ActiveCfg = Release|Any CPU
+		{CB91F15E-18CD-42E8-A96F-9A2DEB8D4750}.EasyTest|Any CPU.Build.0 = Release|Any CPU
+		{CB91F15E-18CD-42E8-A96F-9A2DEB8D4750}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{931426AB-71D2-495B-B6CC-1E9E4ECC5C06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{931426AB-71D2-495B-B6CC-1E9E4ECC5C06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{931426AB-71D2-495B-B6CC-1E9E4ECC5C06}.EasyTest|Any CPU.ActiveCfg = Release|Any CPU
+		{931426AB-71D2-495B-B6CC-1E9E4ECC5C06}.EasyTest|Any CPU.Build.0 = Release|Any CPU
+		{931426AB-71D2-495B-B6CC-1E9E4ECC5C06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{931426AB-71D2-495B-B6CC-1E9E4ECC5C06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03B0DD17-DE77-4290-BA26-B6BF0E1A7F53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03B0DD17-DE77-4290-BA26-B6BF0E1A7F53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03B0DD17-DE77-4290-BA26-B6BF0E1A7F53}.EasyTest|Any CPU.ActiveCfg = Release|Any CPU
+		{03B0DD17-DE77-4290-BA26-B6BF0E1A7F53}.EasyTest|Any CPU.Build.0 = Release|Any CPU
+		{03B0DD17-DE77-4290-BA26-B6BF0E1A7F53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03B0DD17-DE77-4290-BA26-B6BF0E1A7F53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DF05147-A628-4568-A92C-72BA3BB2F2E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DF05147-A628-4568-A92C-72BA3BB2F2E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DF05147-A628-4568-A92C-72BA3BB2F2E8}.EasyTest|Any CPU.ActiveCfg = Release|Any CPU
+		{9DF05147-A628-4568-A92C-72BA3BB2F2E8}.EasyTest|Any CPU.Build.0 = Release|Any CPU
+		{9DF05147-A628-4568-A92C-72BA3BB2F2E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DF05147-A628-4568-A92C-72BA3BB2F2E8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 12
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfs.mahanair.aero:8080/tfs/mahan
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Runner.Win\\Runner.Win.csproj
+		SccProjectName1 = Runner.Win
+		SccLocalPath1 = Runner.Win
+		SccProjectUniqueName2 = Runner.Web\\Runner.Web.csproj
+		SccProjectName2 = Runner.Web
+		SccLocalPath2 = Runner.Web
+		SccProjectUniqueName3 = Tralus.Framework.Data\\Tralus.Framework.Data.csproj
+		SccProjectName3 = Tralus.Framework.Data
+		SccLocalPath3 = Tralus.Framework.Data
+		SccProjectUniqueName4 = Tralus.Framework.Utility\\Tralus.Framework.Utility.csproj
+		SccProjectName4 = Tralus.Framework.Utility
+		SccLocalPath4 = Tralus.Framework.Utility
+		SccProjectUniqueName5 = Tralus.Framework.BusinessModel\\Tralus.Framework.BusinessModel.csproj
+		SccProjectName5 = Tralus.Framework.BusinessModel
+		SccLocalPath5 = Tralus.Framework.BusinessModel
+		SccProjectUniqueName6 = Tralus.Framework.Migration\\Tralus.Framework.Migration.csproj
+		SccProjectName6 = Tralus.Framework.Migration
+		SccLocalPath6 = Tralus.Framework.Migration
+		SccProjectUniqueName7 = Tralus.Framework.Module\\Tralus.Framework.Module.csproj
+		SccProjectName7 = Tralus.Framework.Module
+		SccLocalPath7 = Tralus.Framework.Module
+		SccProjectUniqueName8 = Tralus.Framework.Module.Web\\Tralus.Framework.Module.Web.csproj
+		SccProjectName8 = Tralus.Framework.Module.Web
+		SccLocalPath8 = Tralus.Framework.Module.Web
+		SccProjectUniqueName9 = Tralus.Framework.Module.Win\\Tralus.Framework.Module.Win.csproj
+		SccProjectName9 = Tralus.Framework.Module.Win
+		SccLocalPath9 = Tralus.Framework.Module.Win
+		SccProjectUniqueName10 = Tralus.Framework.PowerShell\\Tralus.Framework.PowerShell.csproj
+		SccProjectName10 = Tralus.Framework.PowerShell
+		SccLocalPath10 = Tralus.Framework.PowerShell
+		SccProjectUniqueName11 = Tralus.Framework.UnitTest\\Tralus.Framework.UnitTest.csproj
+		SccProjectName11 = Tralus.Framework.UnitTest
+		SccLocalPath11 = Tralus.Framework.UnitTest
+	EndGlobalSection
+EndGlobal
