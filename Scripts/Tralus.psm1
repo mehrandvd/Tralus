@@ -20,7 +20,7 @@
         Enable-IIS
         $port = getAvailablePort
         Add-Website -Name $appName -Path $websitePath -Port $port -Username $Credential.username -Password $Credential.GetNetworkCredential().Password
-        New-Database -Name $databaseName -Instance "$($appName)Instance" -DatabaseDirectory $databasePath
+        # New-Database -Name $databaseName -Instance "$($appName)Instance" -DatabaseDirectory $databasePath
     }
 }
 
