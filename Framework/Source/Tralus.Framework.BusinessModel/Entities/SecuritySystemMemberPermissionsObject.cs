@@ -28,7 +28,7 @@ namespace Tralus.Framework.BusinessModel.Entities
         [CriteriaOptions("Owner.TargetType")]
         [EditorAlias(EditorAliases.PopupCriteriaPropertyEditor)]
         [FieldSize(FieldSizeAttribute.Unlimited)]
-        [ObjectValidatorIgnoreIssue(typeof(ObjectValidatorLargeNonDelayedMember))]
+        //[ObjectValidatorIgnoreIssue(typeof(ObjectValidatorLargeNonDelayedMember))]
         [DevExpress.ExpressApp.Model.ModelDefault("RowCount", "0")]
         [VisibleInListView(true), VisibleInDetailView(true)]
         public string Criteria { get; set; }
