@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Selonia.Accounting.BusinessModel.Entities.VoucherItemSegment">
+    <Position X="4.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Entities\VoucherItemSegment.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Segment" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Selonia.Accounting.BusinessModel.Entities.AccGeneral">
+    <Position X="1" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAgAAAAAABgAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\AccGeneral.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Group" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Selonia.Accounting.BusinessModel.Entities.AccGroup">
+    <Position X="1" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAgAAAAAAAgAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\AccGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Selonia.Accounting.BusinessModel.Entities.AccLedger">
+    <Position X="1" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAgACQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\AccLedger.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="General" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Selonia.Accounting.BusinessModel.Entities.Segment">
+    <Position X="4.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAgAAAAAAAgAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Segment.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SegmentGroup" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Selonia.Accounting.BusinessModel.Entities.SegmentGroup">
+    <Position X="8" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAgAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\SegmentGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Selonia.Accounting.BusinessModel.Entities.Voucher">
+    <Position X="8.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Entities\Voucher.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="VoucherItems" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Selonia.Accounting.BusinessModel.Entities.VoucherItem">
+    <Position X="4.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAiAAABAAAAAIBAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\VoucherItem.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Ledger" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="VoucherItemSegments" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
