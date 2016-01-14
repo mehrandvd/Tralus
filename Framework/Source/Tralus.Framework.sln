@@ -115,7 +115,6 @@ Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
 		SccNumberOfProjects = 12
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://tfs.mahanair.aero:8080/tfs/mahan
 		SccLocalPath0 = .
 		SccProjectUniqueName1 = Runner.Win\\Runner.Win.csproj
 		SccProjectName1 = Runner.Win
