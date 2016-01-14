@@ -17,22 +17,29 @@ namespace Tralus.Framework.Utility.ReflectionHelpers
         public static Assembly ResolveBusinessModelAssembly(Type sourceType)
         {
             var assemblyQualifiedName = Path.GetFileNameWithoutExtension(sourceType.Assembly.Location);
-            var match = Regex.Match(assemblyQualifiedName, @"(?<FirstPart>Tralus.\w*).*");
-            
-            if (match.Success)
-            {
-                var assemblyName = match.Groups["FirstPart"].Value + ".BusinessModel";
-                try
-                {
-                    var assembly = Assembly.Load(assemblyName);
-                    return assembly;
-                }
-                catch (Exception)
-                {
-                    return null;
-                }
-            }
-            return null;
+            //var match = Regex.Match(assemblyQualifiedName, @"(?<FirstPart>.\w*).*");
+
+            var splited = assemblyQualifiedName.Split('.');
+            splited = splited.TakeWhile(s => s != "Win" && s != "Web").ToArray();
+            var assemblyName = splited.Take(splited.Length - 1).Aggregate((s1, s2) => $"{s1}.{s2}");
+
+            var assembly = Assembly.Load($"{assemblyName}.BusinessModel");
+            return assembly;
+
+            //if (match.Success)
+            //{
+            //    var assemblyName = match.Groups["FirstPart"].Value + ".BusinessModel";
+            //    try
+            //    {
+            //        var assembly = Assembly.Load(assemblyName);
+            //        return assembly;
+            //    }
+            //    catch (Exception)
+            //    {
+            //        return null;
+            //    }
+            //}
+            //return null;
         }
 
         /// <summary>
