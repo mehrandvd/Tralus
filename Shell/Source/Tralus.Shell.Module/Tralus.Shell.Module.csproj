@@ -188,6 +188,10 @@
   <ItemGroup>
     <None Include="FunctionalTests\sample.ets" />
     <None Include="Images\ReadMe.txt" />
+    <EmbeddedResource Include="Model.DesignedDiffs.Localization.fa.xafml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="ReadMe.txt" />
   </ItemGroup>

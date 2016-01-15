@@ -25,7 +25,6 @@ namespace Tralus.Shell.Win
             InitializeComponent();
 
             stateMachineModule1.StateMachineStorageType = typeof (StateMachine);
-
             try
             {
 
@@ -89,6 +88,26 @@ namespace Tralus.Shell.Win
                     "for more detailed information. If this doesn't help, please contact our Support Team at http://www.devexpress.com/Support/Center/");
             }
 #endif
+        }
+
+        public void ApplyRightToLeft(System.Windows.Forms.Form form)
+        {
+            if (form != null)
+            {
+                form.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+                form.RightToLeftLayout = true;
+            }
+        }
+        protected override void OnCustomizeTemplate(DevExpress.ExpressApp.Templates.IFrameTemplate frameTemplate, string templateContextName)
+        {
+            base.OnCustomizeTemplate(frameTemplate, templateContextName);
+            ApplyRightToLeft(frameTemplate as System.Windows.Forms.Form);
+        }
+        protected override System.Windows.Forms.Form CreateModelEditorForm()
+        {
+            System.Windows.Forms.Form form = base.CreateModelEditorForm();
+            ApplyRightToLeft(form);
+            return form;
         }
     }
 }
