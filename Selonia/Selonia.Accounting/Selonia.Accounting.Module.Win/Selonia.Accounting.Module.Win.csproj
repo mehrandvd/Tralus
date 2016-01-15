@@ -142,6 +142,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\TralusLocal\win\Tralus.Framework.Module.dll</HintPath>
     </Reference>
+    <Reference Include="Tralus.Framework.Module.Win, Version=1.0.0.126, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\TralusLocal\win\Tralus.Framework.Module.Win.dll</HintPath>
+    </Reference>
     <Reference Include="Tralus.Framework.Utility, Version=1.0.0.126, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\TralusLocal\win\Tralus.Framework.Utility.dll</HintPath>
@@ -158,6 +162,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="WinModule.resx">
       <DependentUpon>WinModule.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -206,8 +211,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>powershell -noprofile -command "&amp; {Copy-Item '$(TargetPath)' (Join-Path $HOME 'TralusLocal\win') -Force -Recurse}"
-powershell -noprofile -command "&amp; {Copy-Item '$(TargetPath)' (Join-Path $HOME 'TralusLocal\web\bin') -Force -Recurse}"</PostBuildEvent>
+    <PostBuildEvent>powershell -noprofile -command "&amp; {Copy-Item '$(TargetPath)' (Join-Path $HOME 'TralusLocal\win') -Force -Recurse}"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
