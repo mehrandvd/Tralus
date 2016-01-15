@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Application Title="Selonia.Accounting" Logo="ExpressAppLogo" PreferredLanguage="(Default language)">
+<Application Title="Selonia.Accounting" Logo="ExpressAppLogo" PreferredLanguage="fa-IR">
   <NavigationItems>
     <Items>
       <Item Id="@7423e3b9-dc05-4606-b948-6fe66bc44285" Caption="Accounting" ChildItemsDisplayStyle="List" IsNewNode="True">

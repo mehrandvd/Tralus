@@ -199,9 +199,13 @@
       <Project>{195c7c0a-1491-43da-bd99-74e800344cef}</Project>
       <Name>Tralus.Framework.BusinessModel</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Shell\Source\Tralus.Shell.Module\Tralus.Shell.Module.csproj">
-      <Project>{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}</Project>
-      <Name>Tralus.Shell.Module</Name>
+    <ProjectReference Include="..\Tralus.Framework.Data\Tralus.Framework.Data.csproj">
+      <Project>{3519be62-f236-4004-90f9-27a4287236a1}</Project>
+      <Name>Tralus.Framework.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tralus.Framework.Module\Tralus.Framework.Module.csproj">
+      <Project>{5f15837d-d1e5-44dc-92f0-4f2ebe9c3f8d}</Project>
+      <Name>Tralus.Framework.Module</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
