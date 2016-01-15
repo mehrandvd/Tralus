@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Application Title="Mahan" Logo="MahanLogo-WithoutName">
+<Application Title="Mahan" Logo="MahanLogo-WithoutName" PreferredLanguage="(Default language)">
   <SchemaModules>
-    <SchemaModule Name="SystemModule" Version="15.1.4.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="15.2.3.0" IsNewNode="True" />
   </SchemaModules>
   <Views>
     <DetailView Id="Role_DetailView">

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application ProtectedContentText="اطلاعات حفاظت شده">
+  <BOModel>
+    <Class Name="Selonia.Accounting.BusinessModel.Entities.AccGeneral" Caption="حساب کل" />
+    <Class Name="Selonia.Accounting.BusinessModel.Entities.AccGroup" Caption="گروه" />
+    <Class Name="Selonia.Accounting.BusinessModel.Entities.AccLedger" Caption="معین" />
+    <Class Name="Selonia.Accounting.BusinessModel.Entities.Segment" Caption="تفصیلی" />
+    <Class Name="Selonia.Accounting.BusinessModel.Entities.SegmentGroup" Caption="گروه تفصیلی" />
+    <Class Name="Selonia.Accounting.BusinessModel.Entities.Voucher" Caption="سند حسابداری" />
+    <Class Name="Selonia.Accounting.BusinessModel.Entities.VoucherItem" Caption="آرتیکل" />
+    <Class Name="Selonia.Accounting.BusinessModel.Entities.VoucherItemSegment" Caption="تفصیلی آرتیکل" />
+  </BOModel>
+  <NavigationItems>
+    <Items>
+      <Item Id="@7423e3b9-dc05-4606-b948-6fe66bc44285" Caption="حسابداری">
+        <Items>
+          <Item Id="@1740d4c5-f746-4281-a637-4e7324c1a21f" Caption="اطلاعات پایه">
+            <Items>
+              <Item Id="@84d4ec1c-0588-4d42-81b9-1c76c0584a0c" Caption="گروه" />
+              <Item Id="@2b030d94-e3ae-41fc-b9ae-50eef5afad0d" Caption="کل" />
+              <Item Id="@0b35b4f9-0c71-4dd5-b092-9371f6b31173" Caption="معین" />
+              <Item Id="@7acad235-aab8-4d3d-9a99-3963114e3dab" Caption="گروه تفصیلی" />
+              <Item Id="@d9cb1ada-a747-4a0a-870a-b5eec8082071" Caption="تفصیلی" />
+            </Items>
+          </Item>
+          <Item Id="@2bf46917-56c1-495f-8553-a6fb1e4e7533" Caption="عملیات">
+            <Items>
+              <Item Id="@e4cca92a-fe03-4991-a019-967ec89e2108" Caption="لیست اسناد" />
+            </Items>
+          </Item>
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+</Application>

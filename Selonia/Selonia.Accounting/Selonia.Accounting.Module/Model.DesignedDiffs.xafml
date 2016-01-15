@@ -1,5 +1,28 @@
-﻿<?xml version="1.0" ?>
-<Application Title="Selonia.Accounting" Logo="ExpressAppLogo">
-  <Views>
-  </Views>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="Selonia.Accounting" Logo="ExpressAppLogo" PreferredLanguage="(Default language)">
+  <NavigationItems>
+    <Items>
+      <Item Id="@7423e3b9-dc05-4606-b948-6fe66bc44285" Caption="Accounting" ChildItemsDisplayStyle="List" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="@1740d4c5-f746-4281-a637-4e7324c1a21f" Caption="Basic Info" ChildItemsDisplayStyle="List" IsNewNode="True">
+            <Items IsNewNode="True">
+              <Item Id="@84d4ec1c-0588-4d42-81b9-1c76c0584a0c" Index="0" ViewId="AccGroup_Generals_ListView" ChildItemsDisplayStyle="List" IsNewNode="True" />
+              <Item Id="@2b030d94-e3ae-41fc-b9ae-50eef5afad0d" Index="1" ViewId="AccGeneral_ListView" ChildItemsDisplayStyle="List" IsNewNode="True" />
+              <Item Id="@0b35b4f9-0c71-4dd5-b092-9371f6b31173" Index="2" ViewId="AccLedger_ListView" ChildItemsDisplayStyle="List" IsNewNode="True" />
+              <Item Id="@7acad235-aab8-4d3d-9a99-3963114e3dab" ViewId="SegmentGroup_ListView" ChildItemsDisplayStyle="List" IsNewNode="True" />
+              <Item Id="@d9cb1ada-a747-4a0a-870a-b5eec8082071" ViewId="Segment_ListView" ChildItemsDisplayStyle="List" IsNewNode="True" />
+            </Items>
+          </Item>
+          <Item Id="@2bf46917-56c1-495f-8553-a6fb1e4e7533" Caption="Operations" ChildItemsDisplayStyle="List" IsNewNode="True">
+            <Items IsNewNode="True">
+              <Item Id="@e4cca92a-fe03-4991-a019-967ec89e2108" ViewId="Voucher_ListView" ChildItemsDisplayStyle="List" IsNewNode="True" />
+            </Items>
+          </Item>
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="15.2.3.0" IsNewNode="True" />
+  </SchemaModules>
 </Application>
