@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using Tralus.Framework.BusinessModel.Entities;
 
 namespace Selonia.Accounting.BusinessModel.Entities
@@ -14,6 +15,15 @@ namespace Selonia.Accounting.BusinessModel.Entities
         public virtual long Credit { get; set; }
         public virtual AccLedger Ledger { get; set; }
         public virtual string Description { get; set; }
+
+        [NotMapped]
+        public Segment Segment1 { get; set; }
+        [NotMapped]
+        public Segment Segment2 { get; set; }
+        [NotMapped]
+        public Segment Segment3 { get; set; }
+        [NotMapped]
+        public Segment Segment4 { get; set; }
 
         public virtual ICollection<VoucherItemSegment> VoucherItemSegments { get; set; }
     }
