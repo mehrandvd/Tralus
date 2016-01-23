@@ -6,7 +6,7 @@
         <Items IsNewNode="True">
           <Item Id="@1740d4c5-f746-4281-a637-4e7324c1a21f" Caption="Basic Info" ChildItemsDisplayStyle="List" IsNewNode="True">
             <Items IsNewNode="True">
-              <Item Id="@84d4ec1c-0588-4d42-81b9-1c76c0584a0c" Index="0" ViewId="AccGroup_Generals_ListView" ChildItemsDisplayStyle="List" IsNewNode="True" />
+              <Item Id="@84d4ec1c-0588-4d42-81b9-1c76c0584a0c" Index="0" ChildItemsDisplayStyle="List" Caption="Acc Group" ViewId="AccGroup_ListView" IsNewNode="True" />
               <Item Id="@2b030d94-e3ae-41fc-b9ae-50eef5afad0d" Index="1" ViewId="AccGeneral_ListView" ChildItemsDisplayStyle="List" IsNewNode="True" />
               <Item Id="@0b35b4f9-0c71-4dd5-b092-9371f6b31173" Index="2" ViewId="AccLedger_ListView" ChildItemsDisplayStyle="List" IsNewNode="True" />
               <Item Id="@7acad235-aab8-4d3d-9a99-3963114e3dab" ViewId="SegmentGroup_ListView" ChildItemsDisplayStyle="List" IsNewNode="True" />
@@ -15,6 +15,7 @@
           </Item>
           <Item Id="@2bf46917-56c1-495f-8553-a6fb1e4e7533" Caption="Operations" ChildItemsDisplayStyle="List" IsNewNode="True">
             <Items IsNewNode="True">
+              <Item Id="@b8374842-9b89-4d8c-9ad3-668af4f3ff0e" Caption="Voucher Items" ViewId="Voucher_ListView" ImageName="" IsNewNode="True" />
               <Item Id="@e4cca92a-fe03-4991-a019-967ec89e2108" ViewId="Voucher_ListView" ChildItemsDisplayStyle="List" IsNewNode="True" />
             </Items>
           </Item>
@@ -25,4 +26,202 @@
   <SchemaModules>
     <SchemaModule Name="SystemModule" Version="15.2.3.0" IsNewNode="True" />
   </SchemaModules>
+  <Views>
+    <DetailView Id="AccGeneral_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="10.27479091995221">
+            <LayoutGroup Id="AccGeneral" RelativeSize="100">
+              <LayoutItem Id="Group" Index="0" RelativeSize="37.2093023255814" />
+              <LayoutGroup Id="Autob6812054-546d-4975-be8a-a2e5b44d7b89" ShowCaption="False" Caption="" Direction="Horizontal" Index="1" RelativeSize="27.906976744186046" IsNewNode="True">
+                <LayoutItem Id="Code" ViewItem="Code" Index="0" RelativeSize="50" IsNewNode="True" />
+                <LayoutItem Id="Name" ViewItem="Name" Index="1" RelativeSize="50" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutItem Id="Code" Index="1" RelativeSize="21.818181818181817" Removed="True" />
+              <LayoutItem Id="Description" Index="2" RelativeSize="34.883720930232556" />
+              <LayoutItem Id="Name" Index="2" RelativeSize="21.818181818181817" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="Ledgers_Group" Direction="Vertical" RelativeSize="89.72520908004779">
+            <LayoutItem Id="Ledgers" RelativeSize="100" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="AccGeneral_Ledgers_ListView" IsGroupPanelVisible="False">
+      <Columns>
+        <ColumnInfo Id="General" Width="91" SortOrder="None" GroupIndex="-1" Index="-1" />
+        <ColumnInfo Id="Code" Index="0" Width="86" />
+        <ColumnInfo Id="Name" Index="1" Width="121" />
+        <ColumnInfo Id="Description" Width="339" />
+      </Columns>
+    </ListView>
+    <ListView Id="AccGeneral_ListView">
+      <Columns>
+        <ColumnInfo Id="Code" Index="0" />
+        <ColumnInfo Id="Name" Index="1" Width="200" />
+        <ColumnInfo Id="Description" Width="366" />
+        <ColumnInfo Id="Group" SortOrder="Ascending" GroupIndex="0" />
+      </Columns>
+    </ListView>
+    <ListView Id="AccGeneral_LookupListView">
+      <Columns>
+        <ColumnInfo Id="Code" PropertyName="Code" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="Name" Index="1" />
+        <ColumnInfo Id="Group" PropertyName="Group" SortOrder="Ascending" GroupIndex="0" IsNewNode="True" />
+      </Columns>
+    </ListView>
+    <DetailView Id="AccGroup_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="7.4074074074074074">
+            <LayoutGroup Id="AccGroup" Caption="AccGroup" RelativeSize="100">
+              <LayoutGroup Id="Autodd004ecb-acb4-4b3a-bc73-f268754391c8" ShowCaption="False" Caption="" Direction="Horizontal" Index="0" RelativeSize="51.612903225806448" IsNewNode="True">
+                <LayoutItem Id="Code" ViewItem="Code" Index="0" RelativeSize="50" IsNewNode="True" />
+                <LayoutItem Id="Name" ViewItem="Name" Index="1" RelativeSize="50" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutItem Id="Description" Index="1" RelativeSize="48.387096774193552" />
+              <LayoutItem Id="Code" Removed="True" />
+              <LayoutItem Id="Name" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="Generals_Group" Direction="Vertical" RelativeSize="92.5925925925926">
+            <LayoutItem Id="Generals" RelativeSize="100" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="AccGroup_Generals_ListView">
+      <Columns>
+        <ColumnInfo Id="Group" Index="-1" />
+        <ColumnInfo Id="Code" Index="0" Width="89" />
+        <ColumnInfo Id="Name" Index="1" Width="239" />
+        <ColumnInfo Id="Description" Width="311" />
+      </Columns>
+    </ListView>
+    <ListView Id="AccGroup_ListView">
+      <Columns>
+        <ColumnInfo Id="Code" Index="0" />
+        <ColumnInfo Id="Name" Index="1" Width="286" />
+        <ColumnInfo Id="Description" Width="314" />
+      </Columns>
+    </ListView>
+    <DetailView Id="AccLedger_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="AccLedger" RelativeSize="100">
+              <LayoutItem Id="General" Index="0" RelativeSize="3.8231780167264038" />
+              <LayoutGroup Id="Auto399e02ca-da05-4f05-956b-9a353aad51b6" ShowCaption="False" Caption="" Direction="Horizontal" Index="1" RelativeSize="2.8673835125448028" IsNewNode="True">
+                <LayoutItem Id="Code" ViewItem="Code" Index="0" RelativeSize="50" IsNewNode="True" />
+                <LayoutItem Id="Name" ViewItem="Name" Index="1" RelativeSize="50" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutItem Id="Code" Index="1" RelativeSize="2.8673835125448028" Removed="True" />
+              <LayoutItem Id="Description" Index="2" RelativeSize="93.3094384707288" />
+              <LayoutItem Id="Name" Index="2" RelativeSize="2.8673835125448028" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="AccLedger_ListView">
+      <Columns>
+        <ColumnInfo Id="Code" Index="0" Width="88" />
+        <ColumnInfo Id="Name" Index="1" Width="232" />
+        <ColumnInfo Id="Description" Width="338" />
+        <ColumnInfo Id="General" SortOrder="Ascending" GroupIndex="0" />
+      </Columns>
+    </ListView>
+    <ListView Id="AccLedger_LookupListView" AutoExpandAllGroups="True" ShowAutoFilterRow="True">
+      <Columns>
+        <ColumnInfo Id="Code" PropertyName="Code" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="Name" Index="1" />
+        <ColumnInfo Id="General" PropertyName="General" SortOrder="Ascending" GroupIndex="0" IsNewNode="True" />
+      </Columns>
+    </ListView>
+    <DetailView Id="Segment_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Segment" RelativeSize="100">
+              <LayoutGroup Id="Autoeca4f8e7-856f-4050-aeb1-fdc473ea3619" ShowCaption="False" Caption="" Direction="Horizontal" Index="0" RelativeSize="3.8231780167264038" IsNewNode="True">
+                <LayoutItem Id="SegmentGroup" ViewItem="SegmentGroup" Index="0" RelativeSize="50" IsNewNode="True" />
+                <LayoutItem Id="Code" ViewItem="Code" Index="1" RelativeSize="50" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutItem Id="SegmentGroup" Index="0" RelativeSize="3.8231780167264038" Removed="True" />
+              <LayoutItem Id="Code" Index="1" RelativeSize="2.8673835125448028" Removed="True" />
+              <LayoutItem Id="Name" Index="1" RelativeSize="2.8673835125448028" />
+              <LayoutItem Id="Description" Index="2" RelativeSize="93.3094384707288" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Segment_ListView">
+      <Columns>
+        <ColumnInfo Id="Code" Index="0" />
+        <ColumnInfo Id="SegmentGroup" Index="1" SortOrder="Ascending" GroupIndex="0" />
+        <ColumnInfo Id="Name" Index="2" Width="292" />
+        <ColumnInfo Id="Description" Index="3" Width="277" />
+      </Columns>
+    </ListView>
+    <ListView Id="Segment_LookupListView">
+      <Columns>
+        <ColumnInfo Id="Code" PropertyName="Code" IsNewNode="True" />
+      </Columns>
+    </ListView>
+    <DetailView Id="SegmentGroup_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="SegmentGroup" Caption="SegmentGroup" RelativeSize="100">
+              <LayoutGroup Id="Auto5090166a-4837-4e26-87a5-bb65b48ef407" ShowCaption="False" Caption="" Direction="Horizontal" Index="0" RelativeSize="3.8231780167264038" IsNewNode="True">
+                <LayoutItem Id="Code" ViewItem="Code" Index="0" RelativeSize="50" IsNewNode="True" />
+                <LayoutItem Id="Name" ViewItem="Name" Index="1" RelativeSize="50" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutItem Id="Description" Index="1" RelativeSize="96.1768219832736" />
+              <LayoutItem Id="Code" Removed="True" />
+              <LayoutItem Id="Name" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="SegmentGroup_ListView">
+      <Columns>
+        <ColumnInfo Id="Code" Index="0" />
+        <ColumnInfo Id="Name" Index="1" Width="205" />
+        <ColumnInfo Id="Description" Width="356" />
+      </Columns>
+    </ListView>
+    <DetailView Id="Voucher_DetailView">
+      <Items>
+        <PropertyEditor Id="VoucherItems" LinkView="Voucher_VoucherItems_ListView" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="4.5400238948626042">
+            <LayoutGroup Id="Voucher" Direction="Horizontal" RelativeSize="100" Caption="Voucher">
+              <LayoutItem Id="VoucherNo" ViewItem="VoucherNo" Index="0" RelativeSize="50" IsNewNode="True" Removed="True" />
+              <LayoutItem Id="VoucherDate" Index="1" RelativeSize="50" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="VoucherItems_Group" Direction="Vertical" RelativeSize="95.4599761051374" Index="1">
+            <LayoutItem Id="VoucherItems" RelativeSize="100" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Voucher_ListView">
+      <Columns>
+        <ColumnInfo Id="VoucherNo" Index="0" Width="109" />
+        <ColumnInfo Id="VoucherDate" Width="154" Index="1" />
+      </Columns>
+    </ListView>
+    <ListView Id="Voucher_VoucherItems_ListView" AllowEdit="True">
+      <Columns>
+        <ColumnInfo Id="Ledger" LookupEditorMode="AllItemsWithSearch" />
+      </Columns>
+    </ListView>
+  </Views>
 </Application>
