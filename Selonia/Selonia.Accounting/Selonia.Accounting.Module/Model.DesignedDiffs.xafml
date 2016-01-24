@@ -218,10 +218,26 @@
         <ColumnInfo Id="VoucherDate" Width="154" Index="1" />
       </Columns>
     </ListView>
-    <ListView Id="Voucher_VoucherItems_ListView" AllowEdit="True">
+    <ListView Id="Voucher_VoucherItems_ListView" AllowEdit="True" IsFooterVisible="True" GroupSummary="Sum">
       <Columns>
-        <ColumnInfo Id="Ledger" LookupEditorMode="AllItemsWithSearch" />
+        <ColumnInfo Id="RowNo">
+          <Summary>
+            <ColumnSummaryItem Id="RowCount" SummaryType="Count" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
+        <ColumnInfo Id="Ledger" LookupEditorMode="AllItemsWithSearch" Index="1" Width="176" />
+        <ColumnInfo Id="Debit" Index="2">
+          <Summary>
+            <ColumnSummaryItem Id="DebitSum" SummaryType="Sum" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
+        <ColumnInfo Id="Credit" Index="3">
+          <Summary>
+            <ColumnSummaryItem Id="CreditSum" SummaryType="Sum" IsNewNode="True" />
+          </Summary>
+        </ColumnInfo>
       </Columns>
+      <BandsLayout Enable="False" />
     </ListView>
   </Views>
 </Application>

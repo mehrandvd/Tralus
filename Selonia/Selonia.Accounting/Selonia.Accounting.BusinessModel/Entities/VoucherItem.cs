@@ -17,13 +17,13 @@ namespace Selonia.Accounting.BusinessModel.Entities
         public virtual string Description { get; set; }
 
         [NotMapped]
-        public Segment Segment1 { get; set; }
+        public virtual Segment Segment1 { get; set; }
         [NotMapped]
-        public Segment Segment2 { get; set; }
+        public virtual Segment Segment2 { get; set; }
         [NotMapped]
-        public Segment Segment3 { get; set; }
+        public virtual Segment Segment3 { get; set; }
         [NotMapped]
-        public Segment Segment4 { get; set; }
+        public virtual Segment Segment4 { get; set; }
 
         public virtual ICollection<VoucherItemSegment> VoucherItemSegments { get; set; }
     }
