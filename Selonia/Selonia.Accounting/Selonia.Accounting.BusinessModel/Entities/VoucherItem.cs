@@ -25,6 +25,8 @@ namespace Selonia.Accounting.BusinessModel.Entities
         [NotMapped]
         public virtual Segment Segment4 { get; set; }
 
+        public virtual Voucher Voucher { get; set; }
+
         public virtual ICollection<VoucherItemSegment> VoucherItemSegments { get; set; }
     }
 }
