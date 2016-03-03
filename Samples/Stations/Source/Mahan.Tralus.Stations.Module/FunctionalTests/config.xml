@@ -1,33 +1,33 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <Options xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" TestRunTimeLimit="3" >
 	<Applications>
 		<!-- Win -->
 		<Application
-			Name="Mahan.Tralus.Stations.Win"
-			FileName="[WinAppBin]\Mahan.Tralus.Stations.Win.exe"
+			Name="Mahan.Stations.Win"
+			FileName="[WinAppBin]\Mahan.Stations.Win.exe"
 			AdapterAssemblyName="[WinAdapterAssemblyName]"
 			CommunicationPort="4100"/>
 		<!-- Web -->
 		<Application
-			Name="Mahan.Tralus.Stations.Web"
+			Name="Mahan.Stations.Web"
 			Url="http://localhost:4030"
 			PhysicalPath="[WebAppBin]"
 			AdapterAssemblyName="[WebAdapterAssemblyName]"/>
 		<!-- For IIS -->
 		<!--Application
-			Name="Mahan.Tralus.Stations.Web"
-			Url="http://localhost/Mahan.Tralus.Stations.Web/Default.aspx"
+			Name="Mahan.Stations.Web"
+			Url="http://localhost/Mahan.Stations.Web/Default.aspx"
 			AdapterAssemblyName="[WebAdapterAssemblyName]"/-->
 	</Applications>
 	<TestDatabases>
-		<Database xsi:type="TestMSSQLDatabase" Server="(localdb)\mssqllocaldb" DBName="Mahan.Tralus.StationsEasyTest"/>
+		<Database xsi:type="TestMSSQLDatabase" Server="(localdb)\mssqllocaldb" DBName="Mahan.StationsEasyTest"/>
 	</TestDatabases>
 
 	<Aliases>
 		<Alias Name="DomainUserName" Value="%USERDOMAIN%\%USERNAME%" />
-		<Alias Name="WinAdapterAssemblyName" Value="DevExpress.ExpressApp.EasyTest.WinAdapter.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-		<Alias Name="WebAdapterAssemblyName" Value="DevExpress.ExpressApp.EasyTest.WebAdapter.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-		<Alias Name="WinAppBin" Value="[ConfigPath]\..\..\Mahan.Tralus.Stations.Win\Bin\EasyTest" />
-		<Alias Name="WebAppBin" Value="[ConfigPath]\..\..\Mahan.Tralus.Stations.Web" />
+		<Alias Name="WinAdapterAssemblyName" Value="DevExpress.ExpressApp.EasyTest.WinAdapter.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+		<Alias Name="WebAdapterAssemblyName" Value="DevExpress.ExpressApp.EasyTest.WebAdapter.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+		<Alias Name="WinAppBin" Value="[ConfigPath]\..\..\Mahan.Stations.Win\Bin\EasyTest" />
+		<Alias Name="WebAppBin" Value="[ConfigPath]\..\..\Mahan.Stations.Web" />
 	</Aliases>
 </Options>
