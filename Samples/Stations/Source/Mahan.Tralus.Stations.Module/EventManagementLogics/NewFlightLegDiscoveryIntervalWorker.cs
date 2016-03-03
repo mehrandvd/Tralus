@@ -5,12 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.EF;
-using Mahan.Tralus.Framework.BusinessModel.Utility;
-using Mahan.Tralus.Infrastructure.BusinessModel;
-using Mahan.Tralus.Stations.BusinessModel;
-using Mahan.Tralus.Stations.Data;
+using Tralus.Framework.BusinessModel.Utility;
+using Mahan.Infrastructure.BusinessModel;
+using Mahan.Stations.BusinessModel;
+using Mahan.Stations.Data;
 
-namespace Mahan.Tralus.Stations.Module.EventManagementLogics
+namespace Mahan.Stations.Module.EventManagementLogics
 {
     public class NewFlightLegDiscoveryIntervalWorker : IntervalWorker<StationsDbContext>
     {

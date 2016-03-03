@@ -4,10 +4,10 @@ using System.Data.Entity.SqlServer;
 using DevExpress.Data.Linq;
 using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.Updating;
-using Mahan.Tralus.Framework.Module;
-//using Updater = Mahan.Tralus.Stations.Module.DatabaseUpdate.Updater;
+using Tralus.Framework.Module;
+//using Updater = Mahan.Stations.Module.DatabaseUpdate.Updater;
 
-namespace Mahan.Tralus.Stations.Module {
+namespace Mahan.Stations.Module {
     // For more typical usage scenarios, be sure to check out http://documentation.devexpress.com/#Xaf/clsDevExpressExpressAppModuleBasetopic.
     public sealed partial class StationsModule : TralusModule {
         static StationsModule() {

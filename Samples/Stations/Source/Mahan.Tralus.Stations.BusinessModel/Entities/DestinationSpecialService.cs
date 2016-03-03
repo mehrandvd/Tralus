@@ -2,9 +2,9 @@ using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Mahan.Tralus.Framework.BusinessModel.Entities;
+using Tralus.Framework.BusinessModel.Entities;
 
-namespace Mahan.Tralus.Stations.BusinessModel
+namespace Mahan.Stations.BusinessModel
 {
     [Table("DestinationSpecialService", Schema = "Stations")]
     [DefaultProperty("SpecialServiceCount")]

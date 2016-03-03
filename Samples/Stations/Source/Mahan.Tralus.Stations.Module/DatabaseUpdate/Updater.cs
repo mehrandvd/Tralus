@@ -7,7 +7,7 @@ using DevExpress.ExpressApp.Updating;
 using DevExpress.ExpressApp.EF;
 using DevExpress.Persistent.BaseImpl.EF;
 
-namespace Mahan.Tralus.Stations.Module.DatabaseUpdate {
+namespace Mahan.Stations.Module.DatabaseUpdate {
     // For more typical usage scenarios, be sure to check out http://documentation.devexpress.com/#Xaf/clsDevExpressExpressAppUpdatingModuleUpdatertopic
     public class Updater : ModuleUpdater {
         public Updater(IObjectSpace objectSpace, Version currentDBVersion) :

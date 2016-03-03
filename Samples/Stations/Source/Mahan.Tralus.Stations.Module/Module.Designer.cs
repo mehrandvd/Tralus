@@ -1,4 +1,4 @@
-namespace Mahan.Tralus.Stations.Module {
+namespace Mahan.Stations.Module {
 	partial class StationsModule {
 		/// <summary> 
 		/// Required designer variable.

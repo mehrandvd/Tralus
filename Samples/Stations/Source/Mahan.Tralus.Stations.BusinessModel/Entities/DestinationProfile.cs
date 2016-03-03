@@ -6,10 +6,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.Model;
-using Mahan.Tralus.Framework.BusinessModel.Entities;
-using Mahan.Tralus.Infrastructure.BusinessModel;
+using Tralus.Framework.BusinessModel.Entities;
+using Mahan.Infrastructure.BusinessModel;
 
-namespace Mahan.Tralus.Stations.BusinessModel
+namespace Mahan.Stations.BusinessModel
 {
     [Table("DestinationProfile", Schema = "Stations")]
     [DefaultProperty("Airport")]

@@ -5,10 +5,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Mahan.Tralus.Framework.BusinessModel.Entities;
-using Mahan.Tralus.Framework.BusinessModel.Utility;
+using Tralus.Framework.BusinessModel.Entities;
+using Tralus.Framework.BusinessModel.Utility;
 
-namespace Mahan.Tralus.Stations.BusinessModel
+namespace Mahan.Stations.BusinessModel
 {
     [Table("FlightReportFileAttachment", Schema = "Stations")]
     [DefaultProperty("Description")]

@@ -1,6 +1,6 @@
-using Mahan.Tralus.Framework.Migration;
+using Tralus.Framework.Migration;
 
-namespace Mahan.Tralus.Stations.Migration.Migrations
+namespace Mahan.Stations.Migration.Migrations
 {
     using System;
     using System.Data.Entity;
@@ -14,7 +14,7 @@ namespace Mahan.Tralus.Stations.Migration.Migrations
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(Mahan.Tralus.Stations.Data.StationsDbContext context)
+        protected override void Seed(Mahan.Stations.Data.StationsDbContext context)
         {
             base.Seed(context);
 

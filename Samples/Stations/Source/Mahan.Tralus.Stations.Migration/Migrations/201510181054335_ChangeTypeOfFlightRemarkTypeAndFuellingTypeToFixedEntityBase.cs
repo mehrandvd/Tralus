@@ -1,4 +1,4 @@
-namespace Mahan.Tralus.Stations.Migration.Migrations
+namespace Mahan.Stations.Migration.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;

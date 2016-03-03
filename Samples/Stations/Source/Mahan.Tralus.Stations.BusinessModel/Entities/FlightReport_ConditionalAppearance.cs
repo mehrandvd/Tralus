@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mahan.Tralus.Stations.BusinessModel
+namespace Mahan.Stations.BusinessModel
 {
     public partial class FlightReport
     {

@@ -1,11 +1,11 @@
 using System;
 using System.Data.Common;
 using System.Data.Entity;
-using Mahan.Tralus.Framework.BusinessModel.Entities;
-using Mahan.Tralus.Framework.Data;
-using Mahan.Tralus.Stations.BusinessModel;
+using Tralus.Framework.BusinessModel.Entities;
+using Tralus.Framework.Data;
+using Mahan.Stations.BusinessModel;
 
-namespace Mahan.Tralus.Stations.Data
+namespace Mahan.Stations.Data
 {
     public class StationsDbContext : DbContextBase<StationsDbContext>
     {
