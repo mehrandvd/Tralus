@@ -1,0 +1,1465 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="Mahan.Tralus.Stations" Logo="ExpressAppLogo">
+  <BOModel>
+    <Class Name="Mahan.Tralus.Stations.BusinessModel.DestinationProfile">
+      <AppearanceRules>
+        <AppearanceRule Id="PaxP" Criteria="[FlightLeg.AircraftRegister.HasFirstClassSeat] = False" Context="DetailView" Priority="0" Enabled="False" TargetItems="P_ADL_PGS;P_ADL_ETKT;P_ADL_FOC;P_CHD_ETKT;P_CHD_FOC;P_CHD_PGS;P_INF_ETKT;P_INF_FOC;P_INF_PGS" AppearanceItemType="ViewItem" IsNewNode="True" />
+      </AppearanceRules>
+      <OwnMembers>
+        <Member Name="P_ADL_ETKT" ImmediatePostData="True" />
+        <Member Name="P_ADL_FOC" ImmediatePostData="True" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Mahan.Tralus.Stations.BusinessModel.DestinationSpecialService">
+      <OwnMembers>
+        <Member Name="SpecialServiceType" ImmediatePostData="True" />
+        <Member Name="SpecialServiceType.Description" IsCustom="True" IsCalculated="False" IsNewNode="True" />
+        <Member Name="SpecialServiceType.DescriptionEn" IsCustom="True" IsCalculated="False" IsNewNode="True" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Mahan.Tralus.Stations.BusinessModel.FlightDelay">
+      <OwnMembers>
+        <Member Name="DelayCode" ImmediatePostData="True" />
+        <Member Name="DelayCode.Description" IsCustom="True" IsCalculated="False" ImmediatePostData="False" IsNewNode="True" />
+        <Member Name="DelayCode.DescriptionEn" IsCustom="True" IsCalculated="False" ImmediatePostData="False" IsNewNode="True" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Mahan.Tralus.Stations.BusinessModel.FlightReport" DefaultDetailView="FlightReport_DetailView">
+      <AppearanceRules>
+        <AppearanceRule Id="IsCanceled" Context="ListView" Criteria="[ConditionalAppearance_Cancelled_RedCrossOut] = True" TargetItems="*" FontColor="255, 128, 128" FontStyle="Strikeout" BackColor="White" IsNewNode="True" />
+        <AppearanceRule Id="IsDepartured" Criteria="[ConditionalAppearance_Departed_LightGreen] = True" Context="ListView" BackColor="LightGreen" TargetItems="*" IsNewNode="True" />
+        <AppearanceRule Id="IsLand" Criteria="[ConditionalAppearance_Landed_LightBlue] = True" TargetItems="*" BackColor="LightBlue" Context="ListView" IsNewNode="True" />
+        <AppearanceRule Id="IsLate" Criteria="[ConditionalAppearance_Late_LightRed] = True" TargetItems="*" BackColor="255, 192, 192" Context="ListView" IsNewNode="True" />
+        <AppearanceRule Id="IsNotTime" Criteria="[ConditionalAppearance_NotNear_White] = True" TargetItems="*" Context="ListView" BackColor="White" IsNewNode="True" />
+        <AppearanceRule Id="IsSoon" Criteria="[ConditionalAppearance_Near_LightYellow] = True" TargetItems="*" Context="ListView" BackColor="255, 255, 128" IsNewNode="True" />
+      </AppearanceRules>
+      <OwnMembers>
+        <Member Name="FlightLeg.FlightType" IsCustom="True" IsCalculated="False" Caption="Flight Type" IsNewNode="True" />
+        <Member Name="FlightLeg.FlightTypeId" IsCustom="True" IsCalculated="False" Caption="Flight Type Id" IsNewNode="True" />
+        <Member Name="FlightReportView.ActualArrivalDateTime.TimeUtc" IsCustom="True" IsCalculated="True" Caption="Arrival Time Utc" Expression="FlightReportView.ActualArrivalDateTime.TimeUtc" IsNewNode="True" />
+        <Member Name="FlightReportView.ActualDepartureDateTime.TimeUtc" IsCustom="True" IsCalculated="True" Caption="Departure Time Utc" Expression="FlightReportView.ActualDepartureDateTime.TimeUtc" IsNewNode="True" />
+        <Member Name="FlightReportView.AircraftRegister" IsCustom="True" IsCalculated="False" Caption="Register" IsNewNode="True" />
+        <Member Name="FlightReportView.AircraftRegisterId" IsCustom="True" IsCalculated="False" Caption="Aircraft Register Id" IsNewNode="True" />
+        <Member Name="FlightReportView.ArrivalAirport" IsCustom="True" IsCalculated="False" Caption="Arrival Airport" IsNewNode="True" />
+        <Member Name="FlightReportView.ArrivalAirportId" IsCustom="True" IsCalculated="False" Caption="Arrival Airport Id" IsNewNode="True" />
+        <Member Name="FlightReportView.CargoPiecesCount" IsCustom="True" IsCalculated="False" Caption="Pcs" IsNewNode="True" />
+        <Member Name="FlightReportView.CargoWeightSum" IsCustom="True" IsCalculated="False" Caption="Kgs" IsNewNode="True" />
+        <Member Name="FlightReportView.CctEventDateTime" IsCustom="True" IsCalculated="False" Caption="CCT_DateTime_Local" Expression="FlightReportView.CctEventDateTime.DateTimeLocal" IsNewNode="True" />
+        <Member Name="FlightReportView.CctEventDateTime.TimeUtc" IsCustom="True" IsCalculated="True" Caption="CCT_Time_UTC" Expression="FlightReportView.CctEventDateTime.TimeUtc" IsNewNode="True" />
+        <Member Name="FlightReportView.DctEventDateTime" IsCustom="True" IsCalculated="False" Caption="DCT_DateTime_Local" Expression="FlightReportView.DctEventDateTime.DateTimeLocal" IsNewNode="True" />
+        <Member Name="FlightReportView.DctEventDateTime.TimeUtc" IsCustom="True" IsCalculated="True" Caption="DCT_Time_UTC" Expression="FlightReportView.DctEventDateTime.TimeUtc" IsNewNode="True" />
+        <Member Name="FlightReportView.DelaySum" IsCustom="True" IsCalculated="False" Caption="Delay" IsNewNode="True" />
+        <Member Name="FlightReportView.DepartureAirport" IsCustom="True" IsCalculated="False" ImmediatePostData="True" Caption="Departure Airport" AllowEdit="True" IsNewNode="True" />
+        <Member Name="FlightReportView.DepartureAirportId" IsCustom="True" IsCalculated="False" ImmediatePostData="True" Caption="Departure Airport Id" AllowEdit="True" IsNewNode="True" />
+        <Member Name="FlightReportView.FlightNumber" IsCustom="True" IsCalculated="False" Caption="Flight Number" IsNewNode="True" />
+        <Member Name="FlightReportView.FlightNumberId" IsCustom="True" IsCalculated="False" Caption="Flight Number Id" IsNewNode="True" />
+        <Member Name="FlightReportView.HasSpecialService" IsCustom="True" IsCalculated="False" Caption="SSR" IsNewNode="True" />
+        <Member Name="FlightReportView.InEventDateTime.DateTimeLocal" IsCustom="True" IsCalculated="True" Caption="IN_DateTime_Local" Expression="FlightReportView.InEventDateTime.DateTimeLocal" IsNewNode="True" />
+        <Member Name="FlightReportView.InEventDateTime.TimeUtc" IsCustom="True" IsCalculated="True" Caption="IN_Time_UTC" Expression="FlightReportView.InEventDateTime.TimeUtc" IsNewNode="True" />
+        <Member Name="FlightReportView.IsCanceled" IsCustom="True" IsCalculated="False" IsNewNode="True" />
+        <Member Name="FlightReportView.IsNotTime" IsCustom="True" IsCalculated="False" IsNewNode="True" />
+        <Member Name="FlightReportView.IsSoon" IsCustom="True" IsCalculated="False" IsNewNode="True" />
+        <Member Name="FlightReportView.MinutesTillDeparture" IsCustom="True" IsCalculated="False" IsNewNode="True" />
+        <Member Name="FlightReportView.OffEventDateTime" IsCustom="True" IsCalculated="False" Caption="OFF_DateTime_Local" Expression="FlightReportView.OffEventDateTime.DateTimeLocal" IsNewNode="True" />
+        <Member Name="FlightReportView.OffEventDateTime.TimeUtc" IsCustom="True" IsCalculated="True" Caption="OFF_Time_UTC" Expression="FlightReportView.OffEventDateTime.TimeUtc" IsNewNode="True" />
+        <Member Name="FlightReportView.OutEventDateTime" IsCustom="True" IsCalculated="False" Caption="OUT_DateTime_Local" Expression="FlightReportView.OutEventDateTime.DateTimeLocal" IsNewNode="True" />
+        <Member Name="FlightReportView.OutEventDateTime.TimeUtc" IsCustom="True" IsCalculated="True" Caption="OUT_Time_UTC" Expression="FlightReportView.OutEventDateTime.TimeUtc" IsNewNode="True" />
+        <Member Name="FlightReportView.PassengersCount" IsCustom="True" IsCalculated="False" Caption="PAX" IsNewNode="True" />
+        <Member Name="FlightReportView.RetractionStatus" IsCustom="True" IsCalculated="False" Caption="R" IsNewNode="True" />
+        <Member Name="FlightReportView.ScheduledAircraftType" IsCustom="True" IsCalculated="False" Caption="Type" IsNewNode="True" />
+        <Member Name="FlightReportView.ScheduledDepartureDateTime.DateTimeLocal" IsCustom="True" IsCalculated="True" Caption="STD DateTime Local" Expression="FlightReportView.ScheduledDepartureDateTime.DateTimeLocal" DisplayFormat="{0:yyyy/MM/dd HH:mm}" EditMask="yyyy/MM/dd HH:mm" IsNewNode="True" />
+        <Member Name="FlightReportView.ScheduledDepartureDateTime.DateTimeUtc" IsCustom="True" IsCalculated="True" Caption="STD DateTime Utc" Expression="FlightReportView.ScheduledDepartureDateTime.DateTimeUtc" IsNewNode="True" />
+        <Member Name="FlightReportView.ScheduledDepartureDateTime.DateUtc" IsCustom="True" IsCalculated="True" Caption="STD Date UTC" Expression="FlightReportView.ScheduledDepartureDateTime.DateUtc" DisplayFormat="{0:yyyy/MM/dd}" EditMask="yyyy/MM/dd" IsNewNode="True" />
+        <Member Name="FlightReportView.ScheduledDepartureDateTime.TimeUtc" IsCustom="True" IsCalculated="True" Caption="STD Time Utc" Expression="FlightReportView.ScheduledDepartureDateTime.TimeUtc" EditMask="HH:mm" DisplayFormat="{0:HH:mm}" IsNewNode="True" />
+        <Member Name="FlightReportView.Status" IsCustom="True" IsCalculated="False" Caption="Status" IsNewNode="True" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Mahan.Tralus.Stations.BusinessModel.FlightReportView">
+      <AppearanceRules>
+        <AppearanceRule Id="IsCancelled" Criteria="[IsCanceled] = True" Context="ListView" FontStyle="Strikeout" FontColor="Red" TargetItems="*" IsNewNode="True" />
+        <AppearanceRule Id="IsDepartured" Criteria="[IsDepartured] = True" Context="ListView" BackColor="LightGreen" TargetItems="*" IsNewNode="True" />
+        <AppearanceRule Id="IsLand" Criteria="[IsLanded] = True" TargetItems="*" BackColor="LightBlue" Context="ListView" IsNewNode="True" />
+        <AppearanceRule Id="IsLate" Criteria="[IsLate] = True" TargetItems="*" BackColor="255, 192, 192" Context="ListView" IsNewNode="True" />
+        <AppearanceRule Id="IsNotTime" Criteria="[IsNotTime] = True" TargetItems="*" Context="ListView" IsNewNode="True" />
+        <AppearanceRule Id="IsSoon" Criteria="[IsSoon] = True" TargetItems="*" Context="ListView" BackColor="Yellow" IsNewNode="True" />
+      </AppearanceRules>
+      <OwnMembers>
+        <Member Name="FlightLeg.AircraftRegister" IsCustom="True" IsCalculated="False" IsNewNode="True" />
+        <Member Name="FlightReport.FlightReportState" IsCustom="True" IsCalculated="False" Caption="FlightReport_FlightReportState" IsNewNode="True" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Mahan.Tralus.Stations.BusinessModel.FuellingType">
+      <OwnMembers>
+        <Member Name="Code" LookupEditorMode="AllItems" />
+        <Member Name="Name" IsCustom="True" IsCalculated="False" IsNewNode="True" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <NavigationItems DefaultChildItemsDisplayStyle="List">
+    <Items>
+      <Item Id="@8a384c58-8446-4446-8d48-7f69dc150ba8" Caption="FR" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="@25df1e46-53ac-4679-aaad-3b25d542abfa" Caption="Flight Report Dashboards" IsNewNode="True">
+            <Items IsNewNode="True">
+              <Item Id="@41cf0249-6b29-4018-bbe4-485be01ccdf7" Caption="FR Current - UTC" ViewId="FR_Current_UTC_ListView" IsNewNode="True" />
+              <Item Id="@619a7a18-fef3-4967-8cc2-92e6abbd440c" Caption="FR All - UTC" ImageName="" ViewId="FR_All_UTC_ListView" IsNewNode="True" />
+              <Item Id="@ce313657-659e-40a1-b5cc-0845e1e0dd22" Caption="FR Current - Local" ViewId="FR_Current_Local_ListView" IsNewNode="True" />
+              <Item Id="@f40884c5-0559-4f14-894a-7dac649fd65b" Caption="FR All - Local" ViewId="FR_All_Local_ListView" IsNewNode="True" />
+            </Items>
+          </Item>
+          <Item Id="@44f73ae0-f8ed-43df-b105-59c7ead70972" Caption="FR by UTC Date" IsNewNode="True">
+            <Items IsNewNode="True">
+              <Item Id="@1ddce699-bf62-4581-a8e0-985281ac7bbd" Caption="FR UTC Departures" ViewId="FR_UTC_Departures_ListView" IsNewNode="True" />
+              <Item Id="@e1efd509-6584-4bfd-86b0-f153653ef2a5" Caption="FR UTC Arrivals" ViewId="FR_UTC_Arrivals_ListView" IsNewNode="True" />
+            </Items>
+          </Item>
+          <Item Id="@5c3699d4-54b5-4ae5-86a8-3dc68a27d181" Caption="FR by Airport" IsNewNode="True">
+            <Items IsNewNode="True">
+              <Item Id="@0bcb9595-6436-4819-9db9-de8773242996" Caption="FR Airport Departures" ViewId="FR_Airport_Departures_ListView" IsNewNode="True" />
+              <Item Id="@b9b6f889-b7b5-4b31-a1d8-b869902ddcca" ViewId="FR_Airport_Arrivals_ListView" IsNewNode="True" />
+            </Items>
+          </Item>
+          <Item Id="@feb740c3-4867-4228-9b4a-4d8d0d95d74c" Caption="FR by Local Date" IsNewNode="True">
+            <Items IsNewNode="True">
+              <Item Id="@35ebe81f-ffe4-480e-a490-fb0e2c47457b" Caption="FR Local Departures" ViewId="FR_Local_Departures_ListView" IsNewNode="True" />
+              <Item Id="@4c955e63-f895-4ea9-bad3-8885c098fcbb" Caption="FR Local Arrivals" ViewId="FR_Local_Arrivals_ListView" IsNewNode="True" />
+            </Items>
+          </Item>
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="15.1.5.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <DetailView Id="DestinationCargo_DetailView">
+      <Items>
+        <PropertyEditor Id="CargoPieces" Caption="Pieces" />
+        <PropertyEditor Id="CargoType" AllowEdit="False" />
+        <PropertyEditor Id="CargoWeight" Caption="Weight" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="DestinationCargo" RelativeSize="100" Caption="Luggage, Cargo, Mail" Direction="Vertical">
+              <LayoutGroup Id="DestinationCargo_col1" RelativeSize="100" Caption="DestinationCargo_col1">
+                <LayoutItem Id="CargoType" SizeConstraintsType="Default" RelativeSize="4.166666666666667" Index="0" />
+                <LayoutItem Id="CargoPieces" ViewItem="CargoPieces" SizeConstraintsType="Default" Index="1" RelativeSize="3.125" IsNewNode="True" />
+                <LayoutItem Id="CargoWeight" ViewItem="CargoWeight" SizeConstraintsType="Default" Index="2" RelativeSize="92.708333333333329" IsNewNode="True" />
+                <LayoutItem Id="DestinationProfile" SizeConstraintsType="Default" RelativeSize="4.507042253521127" Removed="True" />
+                <LayoutItem Id="DestinationProfileId" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="DestinationCargo_col2" RelativeSize="50.0441306266549" Caption="DestinationCargo_col2" Direction="Horizontal" Removed="True">
+                <LayoutItem Id="CargoPieces" Removed="True" />
+                <LayoutItem Id="CargoTypeId" Removed="True" />
+                <LayoutItem Id="CargoWeight" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="DestinationCargo_ListView">
+      <Columns>
+        <ColumnInfo Id="CargoTypeId" Index="-1" Width="155" />
+        <ColumnInfo Id="DestinationProfile" Width="147" Index="-1" />
+        <ColumnInfo Id="DestinationProfileId" Width="171" Index="-1" />
+        <ColumnInfo Id="CargoType" Width="83" AllowEdit="False" />
+        <ColumnInfo Id="CargoPieces" Index="1" Width="105" SortIndex="0" SortOrder="Ascending" Caption="Pieces" />
+        <ColumnInfo Id="CargoWeight" Index="2" Width="104" SortIndex="-1" SortOrder="None" Caption="Weight" />
+      </Columns>
+    </ListView>
+    <DetailView Id="DestinationPassenger_DetailView">
+      <Items>
+        <PropertyEditor Id="PassengerCount" Caption="Count" />
+        <PropertyEditor Id="PassengerType" Caption="Pax Type" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="DestinationPassenger" Caption="Pax" RelativeSize="100" Direction="Vertical">
+              <LayoutGroup Id="DestinationPassenger_col1" RelativeSize="100">
+                <LayoutItem Id="SeatClass" SizeConstraintsType="Default" RelativeSize="4.166666666666667" Index="0" />
+                <LayoutItem Id="PassengerType" SizeConstraintsType="Default" RelativeSize="3.125" Index="1" />
+                <LayoutItem Id="SeatClassId" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Index="1" Removed="True" />
+                <LayoutItem Id="TicketType" ViewItem="TicketType" SizeConstraintsType="Default" Index="2" RelativeSize="3.125" IsNewNode="True" />
+                <LayoutItem Id="PassengerCount" ViewItem="PassengerCount" SizeConstraintsType="Default" Index="3" RelativeSize="89.583333333333329" IsNewNode="True" />
+                <LayoutItem Id="DestinationProfile" SizeConstraintsType="Default" RelativeSize="4.507042253521127" Removed="True" />
+                <LayoutItem Id="DestinationProfileId" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="DestinationPassenger_col2" RelativeSize="50.0441306266549" Caption="DestinationPassenger_col2" Direction="Horizontal" Removed="True">
+                <LayoutItem Id="PassengerCount" Removed="True" />
+                <LayoutItem Id="PassengerTypeId" Removed="True" />
+                <LayoutItem Id="TicketType" Removed="True" />
+                <LayoutItem Id="TicketTypeId" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="DestinationPassenger_ListView">
+      <Columns>
+        <ColumnInfo Id="DestinationProfile" Width="182" Index="-1" />
+        <ColumnInfo Id="DestinationProfileId" Index="-1" />
+        <ColumnInfo Id="PassengerTypeId" Index="-1" Width="142" />
+        <ColumnInfo Id="SeatClassId" Index="-1" Width="164" />
+        <ColumnInfo Id="TicketTypeId" Index="-1" />
+        <ColumnInfo Id="PassengerType" Index="0" Width="68" Caption="Pax Type" SortOrder="Ascending" GroupIndex="1" />
+        <ColumnInfo Id="SeatClass" Index="1" Width="61" SortIndex="-1" SortOrder="Ascending" GroupIndex="0" />
+        <ColumnInfo Id="TicketType" Index="2" Width="76" SortOrder="Ascending" GroupIndex="2" />
+        <ColumnInfo Id="PassengerCount" Width="52" Index="3" Caption="Count" />
+      </Columns>
+    </ListView>
+    <ListView Id="DestinationProfile_DestinationCargos_ListView">
+      <Columns>
+        <ColumnInfo Id="CargoTypeId" Index="-1" />
+        <ColumnInfo Id="DestinationProfile" Index="-1" />
+        <ColumnInfo Id="DestinationProfileId" Index="-1" />
+        <ColumnInfo Id="CargoType" Index="0" Width="78" AllowEdit="False" />
+        <ColumnInfo Id="CargoPieces" Index="1" Width="67" Caption="Pieces" />
+        <ColumnInfo Id="CargoWeight" Index="2" Width="80" Caption="Weight" />
+      </Columns>
+    </ListView>
+    <ListView Id="DestinationProfile_DestinationPassengers_ListView">
+      <Columns>
+        <ColumnInfo Id="DestinationProfile" Index="-1" />
+        <ColumnInfo Id="DestinationProfileId" Index="-1" />
+        <ColumnInfo Id="PassengerTypeId" Index="-1" />
+        <ColumnInfo Id="SeatClassId" Index="-1" />
+        <ColumnInfo Id="TicketTypeId" Index="-1" />
+        <ColumnInfo Id="SeatClass" Index="0" />
+        <ColumnInfo Id="PassengerType" Index="1" Width="66" Caption="Pax Type" />
+        <ColumnInfo Id="TicketType" Index="2" />
+        <ColumnInfo Id="PassengerCount" Index="3" Width="65" Caption="Count" />
+      </Columns>
+    </ListView>
+    <ListView Id="DestinationProfile_DestinationSpecialServices_ListView">
+      <Columns>
+        <ColumnInfo Id="DestinationProfile" Index="-1" />
+        <ColumnInfo Id="DestinationProfileId" Index="-1" />
+        <ColumnInfo Id="SpecialServiceTypeId" Index="-1" />
+        <ColumnInfo Id="SpecialServiceType" Index="0" Width="100" Caption="Special Service" />
+        <ColumnInfo Id="SpecialServiceCount" Index="1" Width="135" Caption="Num Requests" />
+      </Columns>
+    </ListView>
+    <DetailView Id="DestinationProfile_DetailView" ClassName="Mahan.Tralus.Stations.BusinessModel.DestinationProfile" IsNewNode="True" Removed="True">
+      <Items IsNewNode="True">
+        <PropertyEditor Id="Airport" PropertyName="Airport" IsNewNode="True" />
+        <PropertyEditor Id="AirportId" PropertyName="AirportId" IsNewNode="True" />
+        <PropertyEditor Id="AVI" PropertyName="AVI" IsNewNode="True" />
+        <PropertyEditor Id="C_ADL_ETKT" PropertyName="C_ADL_ETKT" Caption="C_ADL_ETKT" IsNewNode="True" />
+        <PropertyEditor Id="C_ADL_FOC" PropertyName="C_ADL_FOC" IsNewNode="True" />
+        <PropertyEditor Id="C_ADL_PGS" PropertyName="C_ADL_PGS" Caption="C_ADL_PGS" IsNewNode="True" />
+        <PropertyEditor Id="C_CHD_ETKT" PropertyName="C_CHD_ETKT" IsNewNode="True" />
+        <PropertyEditor Id="C_CHD_FOC" PropertyName="C_CHD_FOC" IsNewNode="True" />
+        <PropertyEditor Id="C_CHD_PGS" Caption="C_CHD_PGS" PropertyName="C_CHD_PGS" IsNewNode="True" />
+        <PropertyEditor Id="C_INF_ETKT" PropertyName="C_INF_ETKT" IsNewNode="True" />
+        <PropertyEditor Id="C_INF_FOC" DisplayFormat="" PropertyName="C_INF_FOC" IsNewNode="True" />
+        <PropertyEditor Id="C_INF_PGS" PropertyName="C_INF_PGS" IsNewNode="True" />
+        <PropertyEditor Id="CARGO_Pieces" PropertyName="CARGO_Pieces" IsNewNode="True" />
+        <PropertyEditor Id="CARGO_Weight" PropertyName="CARGO_Weight" IsNewNode="True" />
+        <PropertyEditor Id="CIP" PropertyName="CIP" IsNewNode="True" />
+        <PropertyEditor Id="DestinationCargos" PropertyName="DestinationCargos" View="DestinationProfile_DestinationCargos_ListView" IsNewNode="True" />
+        <PropertyEditor Id="DestinationPassengers" PropertyName="DestinationPassengers" View="DestinationProfile_DestinationPassengers_ListView" IsNewNode="True" />
+        <PropertyEditor Id="DestinationSpecialServices" PropertyName="DestinationSpecialServices" View="DestinationProfile_DestinationSpecialServices_ListView" IsNewNode="True" />
+        <PropertyEditor Id="ExtraBaggageAmount" PropertyName="ExtraBaggageAmount" Caption="Amount" IsNewNode="True" />
+        <PropertyEditor Id="ExtraBaggageWeight" PropertyName="ExtraBaggageWeight" Caption="Weight" IsNewNode="True" />
+        <PropertyEditor Id="FlightLeg" PropertyName="FlightLeg" IsNewNode="True" />
+        <PropertyEditor Id="FlightLegId" PropertyName="FlightLegId" IsNewNode="True" />
+        <PropertyEditor Id="HUM" PropertyName="HUM" IsNewNode="True" />
+        <PropertyEditor Id="IsMainRoute" PropertyName="IsMainRoute" IsNewNode="True" />
+        <StaticText Id="Lbl_ADL_C" Text="ADL" Caption="Lbl_ADL_C" VerticalAlign="Middle" HorizontalAlign="Center" IsNewNode="True" />
+        <StaticText Id="Lbl_ADL_P" Text="ADL" Caption="Lbl_ADL_P" VerticalAlign="Middle" HorizontalAlign="Center" IsNewNode="True" />
+        <StaticText Id="Lbl_ADL_Y" Text="ADL" Caption="Lbl_ADL_Y" VerticalAlign="Middle" HorizontalAlign="Center" IsNewNode="True" />
+        <StaticText Id="Lbl_Bags" Text="Bags" Caption="Lbl_Bags" VerticalAlign="Middle" HorizontalAlign="Right" IsNewNode="True" />
+        <StaticText Id="Lbl_Cargos" Text="Cargos" Caption="Lbl_Cargos" VerticalAlign="Middle" HorizontalAlign="Right" IsNewNode="True" />
+        <StaticText Id="Lbl_CHD_C" Caption="Lbl_CHD_C" Text="CHD" VerticalAlign="Middle" HorizontalAlign="Center" IsNewNode="True" />
+        <StaticText Id="Lbl_CHD_P" Caption="Lbl_CHD_P" Text="CHD" VerticalAlign="Middle" HorizontalAlign="Center" IsNewNode="True" />
+        <StaticText Id="Lbl_CHD_Y" Caption="Lbl_CHD_Y" Text="CHD" VerticalAlign="Middle" HorizontalAlign="Center" IsNewNode="True" />
+        <StaticText Id="Lbl_eTicket_C" Caption="Lbl_eTicket_C" Text="eTicket" VerticalAlign="Top" HorizontalAlign="Right" IsNewNode="True" />
+        <StaticText Id="Lbl_eTicket_P" Caption="Lbl_eTicket_P" Text="eTicket" VerticalAlign="Top" HorizontalAlign="Right" IsNewNode="True" />
+        <StaticText Id="Lbl_eTicket_Y" Caption="Lbl_eTicket_Y" Text="eTicket" VerticalAlign="Top" HorizontalAlign="Right" IsNewNode="True" />
+        <StaticText Id="Lbl_FOC_C" Caption="Lbl_FOC_C" Text="FOC" HorizontalAlign="Right" VerticalAlign="Top" IsNewNode="True" />
+        <StaticText Id="Lbl_FOC_P" Caption="Lbl_FOC_P" Text="FOC" HorizontalAlign="Right" VerticalAlign="Top" IsNewNode="True" />
+        <StaticText Id="Lbl_FOC_Y" Caption="Lbl_FOC_Y" Text="FOC" HorizontalAlign="Right" VerticalAlign="Top" IsNewNode="True" />
+        <StaticText Id="Lbl_INF_C" Caption="Lbl_INF_C" Text="INF" VerticalAlign="Middle" HorizontalAlign="Center" IsNewNode="True" />
+        <StaticText Id="Lbl_INF_P" Caption="Lbl_INF_P" Text="INF" VerticalAlign="Middle" HorizontalAlign="Center" IsNewNode="True" />
+        <StaticText Id="Lbl_INF_Y" Caption="Lbl_INF_Y" Text="INF" VerticalAlign="Middle" HorizontalAlign="Center" IsNewNode="True" />
+        <StaticText Id="Lbl_Mail" Text="Mail" Caption="Lbl_Mail" VerticalAlign="Middle" HorizontalAlign="Right" IsNewNode="True" />
+        <StaticText Id="Lbl_PGS_C" Caption="Lbl_PGS_C" Text="P/GS" VerticalAlign="Top" HorizontalAlign="Right" IsNewNode="True" />
+        <StaticText Id="Lbl_PGS_P" Caption="Lbl_PGS_P" Text="P/GS" VerticalAlign="Top" HorizontalAlign="Right" IsNewNode="True" />
+        <StaticText Id="Lbl_PGS_Y" Caption="Lbl_PGS_Y" Text="P/GS" VerticalAlign="Top" HorizontalAlign="Right" IsNewNode="True" />
+        <StaticText Id="Lbl_Pieces" Text="Pieces" Caption="Lbl_Pieces" VerticalAlign="Middle" HorizontalAlign="Center" IsNewNode="True" />
+        <StaticText Id="Lbl_Weight" Text="Weight" Caption="Lbl_Weight" VerticalAlign="Middle" HorizontalAlign="Center" IsNewNode="True" />
+        <PropertyEditor Id="MAIL_Piece" PropertyName="MAIL_Piece" IsNewNode="True" />
+        <PropertyEditor Id="MAIL_Weight" PropertyName="MAIL_Weight" IsNewNode="True" />
+        <PropertyEditor Id="MEDA" PropertyName="MEDA" IsNewNode="True" />
+        <PropertyEditor Id="P_ADL_ETKT" PropertyName="P_ADL_ETKT" IsNewNode="True" />
+        <PropertyEditor Id="P_ADL_FOC" PropertyName="P_ADL_FOC" IsNewNode="True" />
+        <PropertyEditor Id="P_ADL_PGS" PropertyName="P_ADL_PGS" ImmediatePostData="True" IsNewNode="True" />
+        <PropertyEditor Id="P_CHD_ETKT" PropertyName="P_CHD_ETKT" IsNewNode="True" />
+        <PropertyEditor Id="P_CHD_FOC" PropertyName="P_CHD_FOC" IsNewNode="True" />
+        <PropertyEditor Id="P_CHD_PGS" PropertyName="P_CHD_PGS" IsNewNode="True" />
+        <PropertyEditor Id="P_INF_ETKT" PropertyName="P_INF_ETKT" IsNewNode="True" />
+        <PropertyEditor Id="P_INF_FOC" PropertyName="P_INF_FOC" IsNewNode="True" />
+        <PropertyEditor Id="P_INF_PGS" PropertyName="P_INF_PGS" IsNewNode="True" />
+        <PropertyEditor Id="PAXBAGS_Piece" PropertyName="PAXBAGS_Piece" IsNewNode="True" />
+        <PropertyEditor Id="PAXBAGS_Weight" PropertyName="PAXBAGS_Weight" IsNewNode="True" />
+        <PropertyEditor Id="STCR" PropertyName="STCR" IsNewNode="True" />
+        <PropertyEditor Id="TotalLoadPieces" PropertyName="TotalLoadPieces" Caption="Total Pieces" IsNewNode="True" />
+        <PropertyEditor Id="TotalLoadWeight" PropertyName="TotalLoadWeight" Caption="Total Weight" IsNewNode="True" />
+        <PropertyEditor Id="TotalPassengers" PropertyName="TotalPassengers" Caption="Total PAX" IsNewNode="True" />
+        <PropertyEditor Id="UM" PropertyName="UM" IsNewNode="True" />
+        <PropertyEditor Id="VIP" PropertyName="VIP" IsNewNode="True" />
+        <PropertyEditor Id="WCHC" PropertyName="WCHC" IsNewNode="True" />
+        <PropertyEditor Id="WCHR" PropertyName="WCHR" IsNewNode="True" />
+        <PropertyEditor Id="Y_ADL_ETKT" PropertyName="Y_ADL_ETKT" IsNewNode="True" />
+        <PropertyEditor Id="Y_ADL_FOC" PropertyName="Y_ADL_FOC" IsNewNode="True" />
+        <PropertyEditor Id="Y_ADL_PGS" PropertyName="Y_ADL_PGS" IsNewNode="True" />
+        <PropertyEditor Id="Y_CHD_ETKT" PropertyName="Y_CHD_ETKT" IsNewNode="True" />
+        <PropertyEditor Id="Y_CHD_FOC" PropertyName="Y_CHD_FOC" IsNewNode="True" />
+        <PropertyEditor Id="Y_CHD_PGS" PropertyName="Y_CHD_PGS" IsNewNode="True" />
+        <PropertyEditor Id="Y_INF_ETKT" PropertyName="Y_INF_ETKT" IsNewNode="True" />
+        <PropertyEditor Id="Y_INF_FOC" PropertyName="Y_INF_FOC" IsNewNode="True" />
+        <PropertyEditor Id="Y_INF_PGS" PropertyName="Y_INF_PGS" IsNewNode="True" />
+      </Items>
+      <Layout IsNewNode="True">
+        <LayoutGroup Id="Main" Index="0" ShowCaption="False" RelativeSize="100" IsNewNode="True">
+          <LayoutGroup Id="SimpleEditors" Index="0" ShowCaption="False" RelativeSize="100" IsNewNode="True">
+            <LayoutGroup Id="Main Body" ShowCaption="False" CaptionLocation="Top" Index="0" RelativeSize="100" Direction="Vertical" Caption="Main Body" IsNewNode="True">
+              <LayoutGroup Id="Item3" ShowCaption="True" Caption="This Destination" CaptionLocation="Top" Index="0" RelativeSize="100" IsNewNode="True">
+                <LayoutGroup Id="Auto3bc565f7-6265-46d1-b867-c0195f8569d4" ShowCaption="False" Caption="Auto3bc565f7-6265-46d1-b867-c0195f8569d4(5)" Direction="Horizontal" Index="0" RelativeSize="4.557291666666667" IsNewNode="True">
+                  <LayoutItem Id="Airport" ViewItem="Airport" SizeConstraintsType="Custom" Index="0" RelativeSize="24.951076320939336" MinSize="134, 35" MaxSize="0, 0" IsNewNode="True" />
+                  <LayoutItem Id="TotalPassengers" ViewItem="TotalPassengers" SizeConstraintsType="Custom" Index="1" RelativeSize="24.951076320939336" MinSize="129, 35" MaxSize="0, 0" IsNewNode="True" />
+                  <LayoutItem Id="TotalLoadPieces" ViewItem="TotalLoadPieces" SizeConstraintsType="Custom" Index="2" RelativeSize="24.951076320939336" MinSize="129, 35" MaxSize="0, 0" IsNewNode="True" />
+                  <LayoutItem Id="TotalLoadWeight" ViewItem="TotalLoadWeight" SizeConstraintsType="Custom" Index="3" RelativeSize="25.146771037181995" MinSize="134, 35" MaxSize="0, 0" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Auto38fc5c9f-5982-483d-9e26-85f3a71f8b8b" ShowCaption="False" Caption="Auto38fc5c9f-5982-483d-9e26-85f3a71f8b8b(10)" Index="1" RelativeSize="95.442708333333329" IsNewNode="True">
+                  <LayoutGroup Id="Autob9f2ed90-b3cd-4ec0-b8fd-3f2500641cb1" ShowCaption="False" Caption="Autob9f2ed90-b3cd-4ec0-b8fd-3f2500641cb1(18)" Direction="Vertical" Index="0" RelativeSize="100" IsNewNode="True">
+                    <LayoutGroup Id="Auto371b795a-e8be-4efe-a81c-c4b366cbd42a" ShowCaption="False" Caption="Auto371b795a-e8be-4efe-a81c-c4b366cbd42a(12)" Direction="Horizontal" Index="0" RelativeSize="23.465211459754435" IsNewNode="True">
+                      <LayoutGroup Id="Pax_C" ShowCaption="True" Caption="PAX C" CaptionLocation="Top" Index="0" RelativeSize="33.365949119373774" IsNewNode="True">
+                        <LayoutGroup Id="Auto2a7d9577-eb39-4ddc-8633-43cd2b8a1241" ShowCaption="False" Caption="Auto2a7d9577-eb39-4ddc-8633-43cd2b8a1241(14)" Index="0" RelativeSize="100" IsNewNode="True">
+                          <LayoutGroup Id="Autodbef5d6b-352a-40f2-9882-944d0cafbca2" ShowCaption="False" Caption="Autodbef5d6b-352a-40f2-9882-944d0cafbca2(16)" Index="0" RelativeSize="100" IsNewNode="True">
+                            <LayoutGroup Id="Autod635763b-8211-4f16-9968-16cc23bcd18d" ShowCaption="False" Caption="Autod635763b-8211-4f16-9968-16cc23bcd18d(17)" Index="0" RelativeSize="100" IsNewNode="True">
+                              <LayoutGroup Id="Auto870a7bcd-9ec0-4c5d-8d95-10321fe8d6cc" ShowCaption="False" Caption="Auto870a7bcd-9ec0-4c5d-8d95-10321fe8d6cc(18)" Index="0" RelativeSize="100" IsNewNode="True">
+                                <LayoutGroup Id="Autoc295c63b-7712-4b66-9a85-f17d44c56966" ShowCaption="False" Caption="Autoc295c63b-7712-4b66-9a85-f17d44c56966(21)" Direction="Horizontal" Index="0" RelativeSize="100" IsNewNode="True">
+                                  <LayoutGroup Id="Autod75e0904-1472-4c77-9a08-5f2ddf0af186" ShowCaption="False" Caption="Autod75e0904-1472-4c77-9a08-5f2ddf0af186(19)" Index="0" RelativeSize="94.753086419753089" IsNewNode="True">
+                                    <LayoutGroup Id="Auto282c43e6-59e6-40eb-8a3c-aedc0b0ae547" ShowCaption="False" Caption="Auto282c43e6-59e6-40eb-8a3c-aedc0b0ae547(18)" Index="0" RelativeSize="91.366906474820141" IsNewNode="True">
+                                      <LayoutItem Id="Item2" ShowCaption="False" SizeConstraintsType="Default" Index="0" RelativeSize="7.8740157480314963" ViewItem="" IsNewNode="True" />
+                                      <LayoutGroup Id="Auto758f94a4-cc00-48af-9370-6821903684a0" ShowCaption="False" Caption="Auto758f94a4-cc00-48af-9370-6821903684a0(19)" Index="1" RelativeSize="92.1259842519685" IsNewNode="True">
+                                        <LayoutGroup Id="Auto97ac5628-8b98-44ad-8a3f-d1ebf6fce3ce" ShowCaption="False" Caption="Auto97ac5628-8b98-44ad-8a3f-d1ebf6fce3ce(21)" Direction="Horizontal" Index="0" RelativeSize="100" IsNewNode="True">
+                                          <LayoutGroup Id="Autod6095965-263b-40fb-a83b-9d7ee404e9c3" ShowCaption="False" Caption="Autod6095965-263b-40fb-a83b-9d7ee404e9c3(22)" Index="0" RelativeSize="25.407166123778502" IsNewNode="True">
+                                            <LayoutItem Id="Item7" ShowCaption="False" SizeConstraintsType="Default" Index="0" RelativeSize="24.786324786324787" ViewItem="" IsNewNode="True" />
+                                            <LayoutItem Id="Lbl_PGS_C" ViewItem="Lbl_PGS_C" SizeConstraintsType="Custom" Index="1" RelativeSize="21.367521367521366" MinSize="65, 24" MaxSize="0, 0" IsNewNode="True" />
+                                            <LayoutItem Id="Lbl_FOC_C" ViewItem="Lbl_FOC_C" SizeConstraintsType="Custom" Index="2" RelativeSize="24.786324786324787" MinSize="65, 24" MaxSize="0, 0" IsNewNode="True" />
+                                            <LayoutItem Id="Lbl_eTicket_C" ViewItem="Lbl_eTicket_C" SizeConstraintsType="Custom" Index="3" RelativeSize="29.05982905982906" MinSize="65, 30" MaxSize="0, 0" IsNewNode="True" />
+                                          </LayoutGroup>
+                                          <LayoutGroup Id="Auto1d3d2012-dc04-4b11-a67d-f2f90438c308" ShowCaption="False" Caption="Auto1d3d2012-dc04-4b11-a67d-f2f90438c308(27)" Direction="Horizontal" Index="1" RelativeSize="74.5928338762215" IsNewNode="True">
+                                            <LayoutGroup Id="Autoda6575c0-8199-48f4-90c0-47f5549e864b" ShowCaption="False" Caption="Autoda6575c0-8199-48f4-90c0-47f5549e864b(28)" Index="0" RelativeSize="32.751091703056765" IsNewNode="True">
+                                              <LayoutItem Id="Lbl_ADL_C" ViewItem="Lbl_ADL_C" CaptionLocation="Left" SizeConstraintsType="Custom" MinSize="60, 30" MaxSize="0, 0" Index="0" RelativeSize="25.641025641025642" IsNewNode="True" />
+                                              <LayoutItem Id="C_ADL_PGS" ShowCaption="False" ViewItem="C_ADL_PGS" SizeConstraintsType="Custom" Index="1" RelativeSize="21.367521367521366" MinSize="60, 24" MaxSize="0, 0" IsNewNode="True" />
+                                              <LayoutItem Id="C_ADL_FOC" ShowCaption="False" ViewItem="C_ADL_FOC" SizeConstraintsType="Custom" Index="2" RelativeSize="23.076923076923077" MinSize="60, 24" MaxSize="0, 0" IsNewNode="True" />
+                                              <LayoutItem Id="C_ADL_ETKT" ShowCaption="False" ViewItem="C_ADL_ETKT" SizeConstraintsType="Custom" Index="3" RelativeSize="29.914529914529915" MinSize="60, 30" MaxSize="0, 0" IsNewNode="True" />
+                                            </LayoutGroup>
+                                            <LayoutGroup Id="Autoe8b0fc43-aaa9-463b-81d5-322f03166219" ShowCaption="False" Caption="Autoe8b0fc43-aaa9-463b-81d5-322f03166219(33)" Direction="Horizontal" Index="1" RelativeSize="67.248908296943227" IsNewNode="True">
+                                              <LayoutGroup Id="Auto584ecb43-29b1-48f8-90c8-d8d484cf7e72" ShowCaption="False" Caption="Auto584ecb43-29b1-48f8-90c8-d8d484cf7e72(34)" Index="0" RelativeSize="48.051948051948052" IsNewNode="True">
+                                                <LayoutItem Id="Lbl_CHD_C" ViewItem="Lbl_CHD_C" SizeConstraintsType="Custom" Index="0" RelativeSize="25.641025641025642" MinSize="60, 30" MaxSize="0, 0" IsNewNode="True" />
+                                                <LayoutItem Id="C_CHD_PGS" ShowCaption="False" ViewItem="C_CHD_PGS" SizeConstraintsType="Custom" Index="1" RelativeSize="21.367521367521366" MinSize="60, 24" MaxSize="0, 0" IsNewNode="True" />
+                                                <LayoutItem Id="C_CHD_FOC" ShowCaption="False" ViewItem="C_CHD_FOC" SizeConstraintsType="Custom" Index="2" RelativeSize="23.076923076923077" MinSize="60, 24" MaxSize="0, 0" IsNewNode="True" />
+                                                <LayoutItem Id="C_CHD_ETKT" ShowCaption="False" ViewItem="C_CHD_ETKT" SizeConstraintsType="Custom" Index="3" RelativeSize="29.914529914529915" MinSize="60, 30" MaxSize="0, 0" IsNewNode="True" />
+                                              </LayoutGroup>
+                                              <LayoutGroup Id="Auto4879895c-f2f9-4c9c-b571-623cf9da83a0" ShowCaption="False" Caption="Auto4879895c-f2f9-4c9c-b571-623cf9da83a0(39)" Index="1" RelativeSize="51.948051948051948" IsNewNode="True">
+                                                <LayoutItem Id="Lbl_INF_C" ViewItem="Lbl_INF_C" SizeConstraintsType="Custom" Index="0" RelativeSize="25.641025641025642" MinSize="60, 30" MaxSize="0, 0" IsNewNode="True" />
+                                                <LayoutItem Id="C_INF_PGS" ShowCaption="False" ViewItem="C_INF_PGS" SizeConstraintsType="Custom" Index="1" RelativeSize="21.367521367521366" MinSize="60, 24" MaxSize="0, 0" IsNewNode="True" />
+                                                <LayoutItem Id="C_INF_FOC" ShowCaption="False" ViewItem="C_INF_FOC" SizeConstraintsType="Custom" Index="2" RelativeSize="23.076923076923077" MinSize="60, 24" MaxSize="0, 0" IsNewNode="True" />
+                                                <LayoutItem Id="C_INF_ETKT" ShowCaption="False" ViewItem="C_INF_ETKT" SizeConstraintsType="Custom" Index="3" RelativeSize="29.914529914529915" MinSize="60, 30" MaxSize="0, 0" IsNewNode="True" />
+                                              </LayoutGroup>
+                                            </LayoutGroup>
+                                          </LayoutGroup>
+                                        </LayoutGroup>
+                                      </LayoutGroup>
+                                    </LayoutGroup>
+                                    <LayoutItem Id="Item12" ShowCaption="False" SizeConstraintsType="Default" Index="1" RelativeSize="8.6330935251798557" ViewItem="" IsNewNode="True" />
+                                  </LayoutGroup>
+                                  <LayoutItem Id="Item8" ShowCaption="False" SizeConstraintsType="Default" Index="1" RelativeSize="5.2469135802469138" ViewItem="" IsNewNode="True" />
+                                </LayoutGroup>
+                              </LayoutGroup>
+                            </LayoutGroup>
+                          </LayoutGroup>
+                        </LayoutGroup>
+                      </LayoutGroup>
+                      <LayoutGroup Id="Pax_Y" ShowCaption="True" Caption="PAX Y" CaptionLocation="Top" Index="1" RelativeSize="32.681017612524464" IsNewNode="True">
+                        <LayoutGroup Id="Auto8dfcaa45-2c3e-48b1-bed5-61f4940fc528" ShowCaption="False" Caption="Auto8dfcaa45-2c3e-48b1-bed5-61f4940fc528(53)" Index="0" RelativeSize="100" IsNewNode="True">
+                          <LayoutGroup Id="Auto4182dbea-0b80-47e1-9d3e-4ae1ea616a1c" ShowCaption="False" Caption="Auto4182dbea-0b80-47e1-9d3e-4ae1ea616a1c(59)" Index="0" RelativeSize="100" Direction="Horizontal" IsNewNode="True">
+                            <LayoutGroup Id="Auto2b77977a-1198-4dd0-bdff-84fe615047c7" ShowCaption="False" Caption="Auto2b77977a-1198-4dd0-bdff-84fe615047c7(51)" Index="0" RelativeSize="95.031055900621112" IsNewNode="True">
+                              <LayoutItem Id="Item9" ShowCaption="False" SizeConstraintsType="Default" Index="0" RelativeSize="7.1942446043165464" ViewItem="" IsNewNode="True" />
+                              <LayoutGroup Id="Auto7a624dab-12fa-4e53-88e6-daecb39e388d" ShowCaption="False" Caption="Auto7a624dab-12fa-4e53-88e6-daecb39e388d(50)" Index="1" RelativeSize="82.733812949640281" IsNewNode="True">
+                                <LayoutGroup Id="Auto0b0d57ee-9c9f-4f31-9494-9bd92e18c5f6" ShowCaption="False" Caption="Auto0b0d57ee-9c9f-4f31-9494-9bd92e18c5f6(52)" Direction="Horizontal" Index="0" RelativeSize="100" IsNewNode="True">
+                                  <LayoutGroup Id="Auto2ef63a16-f9c5-4578-bb9c-348cceaf6891" ShowCaption="False" Caption="Auto2ef63a16-f9c5-4578-bb9c-348cceaf6891(53)" Index="0" RelativeSize="25.163398692810457" IsNewNode="True">
+                                    <LayoutItem Id="Item10" ShowCaption="False" SizeConstraintsType="Default" Index="0" RelativeSize="26.956521739130434" ViewItem="" IsNewNode="True" />
+                                    <LayoutItem Id="Lbl_PGS_Y" ShowCaption="False" ViewItem="Lbl_PGS_Y" SizeConstraintsType="Custom" Index="1" RelativeSize="20.869565217391305" MinSize="65, 24" MaxSize="0, 0" IsNewNode="True" />
+                                    <LayoutItem Id="Lbl_FOC_Y" ShowCaption="False" ViewItem="Lbl_FOC_Y" SizeConstraintsType="Custom" Index="2" RelativeSize="20.869565217391305" MinSize="65, 24" MaxSize="0, 0" IsNewNode="True" />
+                                    <LayoutItem Id="Lbl_eTicket_Y" ShowCaption="False" ViewItem="Lbl_eTicket_Y" SizeConstraintsType="Custom" Index="3" RelativeSize="31.304347826086957" MinSize="65, 30" MaxSize="0, 0" IsNewNode="True" />
+                                  </LayoutGroup>
+                                  <LayoutGroup Id="Auto61bfd23d-aaf3-4cc7-8906-0be4abe816ea" ShowCaption="False" Caption="Auto61bfd23d-aaf3-4cc7-8906-0be4abe816ea(58)" Direction="Horizontal" Index="1" RelativeSize="74.83660130718954" IsNewNode="True">
+                                    <LayoutGroup Id="Auto7fa35043-2f5b-4adb-be8c-da0ae9435cc8" ShowCaption="False" Caption="Auto7fa35043-2f5b-4adb-be8c-da0ae9435cc8(59)" Index="0" RelativeSize="32.751091703056765" IsNewNode="True">
+                                      <LayoutItem Id="Lbl_ADL_Y" ShowCaption="False" ViewItem="Lbl_ADL_Y" SizeConstraintsType="Custom" Index="0" RelativeSize="26.086956521739129" MinSize="60, 30" MaxSize="0, 0" IsNewNode="True" />
+                                      <LayoutItem Id="Y_ADL_PGS" ShowCaption="False" ViewItem="Y_ADL_PGS" SizeConstraintsType="Custom" Index="1" RelativeSize="20.869565217391305" MinSize="60, 24" MaxSize="0, 0" IsNewNode="True" />
+                                      <LayoutItem Id="Y_ADL_FOC" ShowCaption="False" ViewItem="Y_ADL_FOC" SizeConstraintsType="Custom" Index="2" RelativeSize="22.608695652173914" MinSize="60, 24" MaxSize="0, 0" IsNewNode="True" />
+                                      <LayoutItem Id="Y_ADL_ETKT" ShowCaption="False" ViewItem="Y_ADL_ETKT" SizeConstraintsType="Custom" Index="3" RelativeSize="30.434782608695652" MinSize="60, 30" MaxSize="0, 0" IsNewNode="True" />
+                                    </LayoutGroup>
+                                    <LayoutGroup Id="Autoe8bb258a-f444-4b23-ade5-c47c99ae4b52" ShowCaption="False" Caption="Autoe8bb258a-f444-4b23-ade5-c47c99ae4b52(64)" Direction="Horizontal" Index="1" RelativeSize="67.248908296943227" IsNewNode="True">
+                                      <LayoutGroup Id="Auto7518de75-33c6-4ee5-977e-fbeca625bdb4" ShowCaption="False" Caption="Auto7518de75-33c6-4ee5-977e-fbeca625bdb4(65)" Index="0" RelativeSize="48.701298701298704" IsNewNode="True">
+                                        <LayoutItem Id="Lbl_CHD_Y" ViewItem="Lbl_CHD_Y" SizeConstraintsType="Custom" Index="0" RelativeSize="26.086956521739129" MinSize="60, 30" MaxSize="0, 0" IsNewNode="True" />
+                                        <LayoutItem Id="Y_CHD_PGS" ShowCaption="False" ViewItem="Y_CHD_PGS" SizeConstraintsType="Custom" Index="1" RelativeSize="20.869565217391305" MinSize="60, 24" MaxSize="0, 0" IsNewNode="True" />
+                                        <LayoutItem Id="Y_CHD_FOC" ShowCaption="False" ViewItem="Y_CHD_FOC" SizeConstraintsType="Custom" Index="2" RelativeSize="22.608695652173914" MinSize="60, 24" MaxSize="0, 0" IsNewNode="True" />
+                                        <LayoutItem Id="Y_CHD_ETKT" ShowCaption="False" ViewItem="Y_CHD_ETKT" SizeConstraintsType="Custom" Index="3" RelativeSize="30.434782608695652" MinSize="60, 30" MaxSize="0, 0" IsNewNode="True" />
+                                      </LayoutGroup>
+                                      <LayoutGroup Id="Auto36a5613a-387b-4686-b1d7-a70b9609b6a5" ShowCaption="False" Caption="Auto36a5613a-387b-4686-b1d7-a70b9609b6a5(70)" Index="1" RelativeSize="51.298701298701296" IsNewNode="True">
+                                        <LayoutItem Id="Lbl_INF_Y" ViewItem="Lbl_INF_Y" SizeConstraintsType="Custom" Index="0" RelativeSize="26.086956521739129" MinSize="60, 30" MaxSize="0, 0" IsNewNode="True" />
+                                        <LayoutItem Id="Y_INF_PGS" ShowCaption="False" ViewItem="Y_INF_PGS" SizeConstraintsType="Custom" Index="1" RelativeSize="20.869565217391305" MinSize="60, 24" MaxSize="0, 0" IsNewNode="True" />
+                                        <LayoutItem Id="Y_INF_FOC" ShowCaption="False" ViewItem="Y_INF_FOC" SizeConstraintsType="Custom" Index="2" RelativeSize="22.608695652173914" MinSize="60, 24" MaxSize="0, 0" IsNewNode="True" />
+                                        <LayoutItem Id="Y_INF_ETKT" ShowCaption="False" ViewItem="Y_INF_ETKT" SizeConstraintsType="Custom" Index="3" RelativeSize="30.434782608695652" MinSize="60, 30" MaxSize="0, 0" IsNewNode="True" />
+                                      </LayoutGroup>
+                                    </LayoutGroup>
+                                  </LayoutGroup>
+                                </LayoutGroup>
+                              </LayoutGroup>
+                              <LayoutItem Id="Item13" ShowCaption="False" SizeConstraintsType="Default" Index="2" RelativeSize="10.071942446043165" ViewItem="" IsNewNode="True" />
+                            </LayoutGroup>
+                            <LayoutItem Id="Item11" ShowCaption="False" SizeConstraintsType="Default" Index="1" RelativeSize="4.9689440993788816" MinSize="40, 154" MaxSize="40, 154" ViewItem="" IsNewNode="True" />
+                          </LayoutGroup>
+                        </LayoutGroup>
+                      </LayoutGroup>
+                      <LayoutGroup Id="Pax_P" ShowCaption="True" Caption="PAX P" CaptionLocation="Top" Index="2" RelativeSize="33.953033268101763" Direction="Vertical" IsNewNode="True">
+                        <LayoutGroup Id="Autoa6fa9ea5-ea16-48d6-965e-e5eac0610103" ShowCaption="False" Caption="Autoa6fa9ea5-ea16-48d6-965e-e5eac0610103(76)" Index="0" RelativeSize="100" Direction="Horizontal" IsNewNode="True">
+                          <LayoutGroup Id="Auto470a1d6d-6d71-4a3f-b7c8-d08b166abc4a" ShowCaption="False" Caption="Auto470a1d6d-6d71-4a3f-b7c8-d08b166abc4a(81)" Index="0" RelativeSize="94.848484848484844" IsNewNode="True">
+                            <LayoutItem Id="Item16" ShowCaption="False" SizeConstraintsType="Default" Index="0" RelativeSize="7.1942446043165464" ViewItem="" IsNewNode="True" />
+                            <LayoutGroup Id="Auto5d4cf30f-7db2-4dde-94fb-b086a8570b17" ShowCaption="False" Caption="Auto5d4cf30f-7db2-4dde-94fb-b086a8570b17(83)" Direction="Horizontal" Index="1" RelativeSize="82.733812949640281" IsNewNode="True">
+                              <LayoutGroup Id="Auto12a43e66-2cd8-4dae-a55c-f77443bd14c8" ShowCaption="False" Caption="Auto12a43e66-2cd8-4dae-a55c-f77443bd14c8(84)" Index="0" RelativeSize="25.559105431309906" IsNewNode="True">
+                                <LayoutItem Id="Item14" ShowCaption="False" SizeConstraintsType="Default" Index="0" RelativeSize="27.826086956521738" ViewItem="" IsNewNode="True" />
+                                <LayoutItem Id="Lbl_PGS_P" ViewItem="Lbl_PGS_P" SizeConstraintsType="Custom" Index="1" RelativeSize="20.869565217391305" MinSize="65, 24" MaxSize="0, 0" IsNewNode="True" />
+                                <LayoutItem Id="Lbl_FOC_P" ViewItem="Lbl_FOC_P" SizeConstraintsType="Custom" Index="2" RelativeSize="20.869565217391305" MinSize="65, 24" MaxSize="0, 0" IsNewNode="True" />
+                                <LayoutItem Id="Lbl_eTicket_P" ViewItem="Lbl_eTicket_P" SizeConstraintsType="Custom" Index="3" RelativeSize="30.434782608695652" MinSize="65, 30" MaxSize="0, 0" IsNewNode="True" />
+                              </LayoutGroup>
+                              <LayoutGroup Id="Autoab8bb598-95e0-4672-af68-292585f6bb26" ShowCaption="False" Caption="Autoab8bb598-95e0-4672-af68-292585f6bb26(89)" Direction="Horizontal" Index="1" RelativeSize="74.4408945686901" IsNewNode="True">
+                                <LayoutGroup Id="Auto09e74fc9-dd22-450c-b61e-8555b372e161" ShowCaption="False" Caption="Auto09e74fc9-dd22-450c-b61e-8555b372e161(90)" Index="0" RelativeSize="32.188841201716741" IsNewNode="True">
+                                  <LayoutItem Id="Lbl_ADL_P" ViewItem="Lbl_ADL_P" SizeConstraintsType="Custom" Index="0" RelativeSize="26.086956521739129" MinSize="60, 30" MaxSize="0, 0" IsNewNode="True" />
+                                  <LayoutItem Id="P_ADL_PGS" ShowCaption="False" ViewItem="P_ADL_PGS" SizeConstraintsType="Custom" Index="1" RelativeSize="20.869565217391305" MinSize="60, 24" MaxSize="0, 0" IsNewNode="True" />
+                                  <LayoutItem Id="P_ADL_FOC" ShowCaption="False" ViewItem="P_ADL_FOC" SizeConstraintsType="Custom" Index="2" RelativeSize="22.608695652173914" MinSize="60, 24" MaxSize="0, 0" IsNewNode="True" />
+                                  <LayoutItem Id="P_ADL_ETKT" ShowCaption="False" ViewItem="P_ADL_ETKT" SizeConstraintsType="Custom" Index="3" RelativeSize="30.434782608695652" MinSize="60, 30" MaxSize="0, 0" IsNewNode="True" />
+                                </LayoutGroup>
+                                <LayoutGroup Id="Auto625f920d-d686-464a-aaa5-38a914eae1fd" ShowCaption="False" Caption="Auto625f920d-d686-464a-aaa5-38a914eae1fd(95)" Direction="Horizontal" Index="1" RelativeSize="67.811158798283259" IsNewNode="True">
+                                  <LayoutGroup Id="Auto8bd7920b-9e80-48d1-a368-e25f12ed69cf" ShowCaption="False" Caption="Auto8bd7920b-9e80-48d1-a368-e25f12ed69cf(96)" Index="0" RelativeSize="49.367088607594937" IsNewNode="True">
+                                    <LayoutItem Id="Lbl_CHD_P" ViewItem="Lbl_CHD_P" SizeConstraintsType="Custom" Index="0" RelativeSize="26.086956521739129" MinSize="60, 30" MaxSize="0, 0" IsNewNode="True" />
+                                    <LayoutItem Id="P_CHD_PGS" ShowCaption="False" ViewItem="P_CHD_PGS" SizeConstraintsType="Custom" Index="1" RelativeSize="20.869565217391305" MinSize="60, 24" MaxSize="0, 0" IsNewNode="True" />
+                                    <LayoutItem Id="P_CHD_FOC" ShowCaption="False" ViewItem="P_CHD_FOC" SizeConstraintsType="Custom" Index="2" RelativeSize="22.608695652173914" MinSize="60, 24" MaxSize="0, 0" IsNewNode="True" />
+                                    <LayoutItem Id="P_CHD_ETKT" ShowCaption="False" ViewItem="P_CHD_ETKT" SizeConstraintsType="Custom" Index="3" RelativeSize="30.434782608695652" MinSize="60, 30" MaxSize="0, 0" IsNewNode="True" />
+                                  </LayoutGroup>
+                                  <LayoutGroup Id="Autob6e88bdd-4db3-4113-8c85-c152b6dd1f2c" ShowCaption="False" Caption="Autob6e88bdd-4db3-4113-8c85-c152b6dd1f2c(101)" Index="1" RelativeSize="50.632911392405063" IsNewNode="True">
+                                    <LayoutItem Id="Lbl_INF_P" ViewItem="Lbl_INF_P" SizeConstraintsType="Custom" Index="0" RelativeSize="26.086956521739129" MinSize="60, 30" MaxSize="0, 0" IsNewNode="True" />
+                                    <LayoutItem Id="P_INF_PGS" ShowCaption="False" ViewItem="P_INF_PGS" SizeConstraintsType="Custom" Index="1" RelativeSize="20.869565217391305" MinSize="60, 24" MaxSize="0, 0" IsNewNode="True" />
+                                    <LayoutItem Id="P_INF_FOC" ShowCaption="False" ViewItem="P_INF_FOC" SizeConstraintsType="Custom" Index="2" RelativeSize="22.608695652173914" MinSize="60, 24" MaxSize="0, 0" IsNewNode="True" />
+                                    <LayoutItem Id="P_INF_ETKT" ShowCaption="False" ViewItem="P_INF_ETKT" SizeConstraintsType="Custom" Index="3" RelativeSize="30.434782608695652" MinSize="60, 30" MaxSize="0, 0" IsNewNode="True" />
+                                  </LayoutGroup>
+                                </LayoutGroup>
+                              </LayoutGroup>
+                            </LayoutGroup>
+                            <LayoutItem Id="Item6" ShowCaption="False" SizeConstraintsType="Default" Index="2" RelativeSize="10.071942446043165" ViewItem="" IsNewNode="True" />
+                          </LayoutGroup>
+                          <LayoutItem Id="Item15" ShowCaption="False" SizeConstraintsType="Default" Index="1" RelativeSize="5.1515151515151514" ViewItem="" IsNewNode="True" />
+                        </LayoutGroup>
+                      </LayoutGroup>
+                    </LayoutGroup>
+                    <LayoutGroup Id="Auto4c63b684-d5d7-4576-a2a0-d0fbbe2577ac" ShowCaption="False" Caption="Auto4c63b684-d5d7-4576-a2a0-d0fbbe2577ac(108)" Direction="Vertical" Index="1" RelativeSize="76.534788540245572" IsNewNode="True">
+                      <LayoutGroup Id="Auto11fb7a49-8117-42f4-9416-9610cfdc8cdf" ShowCaption="False" Caption="Auto11fb7a49-8117-42f4-9416-9610cfdc8cdf(109)" Direction="Horizontal" Index="0" RelativeSize="69.875222816399287" IsNewNode="True">
+                        <LayoutGroup Id="Auto671ad58b-3148-46ab-bdf6-8ea1aed8f26d" ShowCaption="False" Caption="Auto671ad58b-3148-46ab-bdf6-8ea1aed8f26d(109)" Index="0" RelativeSize="32.974559686888455" IsNewNode="True">
+                          <LayoutGroup Id="Item19" ShowCaption="True" Caption="Baggage, Cargo, Mail" CaptionLocation="Top" Direction="Vertical" Index="0" RelativeSize="49.744897959183675" IsNewNode="True">
+                            <LayoutItem Id="Item23" ShowCaption="False" SizeConstraintsType="Default" Index="0" RelativeSize="18.181818181818183" ViewItem="" IsNewNode="True" />
+                            <LayoutGroup Id="Auto36bd6e1a-249b-450b-a925-936111421772" ShowCaption="False" Caption="Auto36bd6e1a-249b-450b-a925-936111421772(113)" Direction="Horizontal" Index="1" RelativeSize="81.818181818181813" IsNewNode="True">
+                              <LayoutGroup Id="Auto6f1e9fdd-c33c-47d3-9384-edfc28b4b275" ShowCaption="False" Caption="Auto6f1e9fdd-c33c-47d3-9384-edfc28b4b275(114)" Index="0" RelativeSize="72.5" IsNewNode="True">
+                                <LayoutGroup Id="Auto0e8bcfbe-c320-42f7-ad2c-45521e56660d" ShowCaption="False" Caption="Auto0e8bcfbe-c320-42f7-ad2c-45521e56660d(115)" Direction="Horizontal" Index="0" RelativeSize="74.81481481481481" IsNewNode="True">
+                                  <LayoutGroup Id="Auto8524a0c5-c94e-4ae5-845b-9b4e6ab48aaf" ShowCaption="False" Caption="Auto8524a0c5-c94e-4ae5-845b-9b4e6ab48aaf(116)" Index="0" RelativeSize="34.051724137931032" IsNewNode="True">
+                                    <LayoutItem Id="Item21" ShowCaption="False" SizeConstraintsType="Default" Index="0" RelativeSize="26.732673267326732" ViewItem="" IsNewNode="True" />
+                                    <LayoutItem Id="Lbl_Bags" ViewItem="Lbl_Bags" SizeConstraintsType="Custom" MinSize="65, 24" MaxSize="0, 0" Index="1" RelativeSize="23.762376237623762" IsNewNode="True" />
+                                    <LayoutItem Id="Lbl_Cargos" ViewItem="Lbl_Cargos" SizeConstraintsType="Custom" MinSize="65, 24" MaxSize="0, 0" Index="2" RelativeSize="23.762376237623762" IsNewNode="True" />
+                                    <LayoutItem Id="Lbl_Mail" ViewItem="Lbl_Mail" SizeConstraintsType="Custom" MinSize="65, 24" MaxSize="0, 0" Index="3" RelativeSize="25.742574257425744" IsNewNode="True" />
+                                  </LayoutGroup>
+                                  <LayoutGroup Id="Autoe06cf985-5dea-4b77-a8ee-cabc4b80d52a" ShowCaption="False" Caption="Autoe06cf985-5dea-4b77-a8ee-cabc4b80d52a(121)" Direction="Horizontal" Index="1" RelativeSize="65.948275862068968" IsNewNode="True">
+                                    <LayoutGroup Id="Auto053f8f5e-b340-4a3d-9be9-11bc0eb05d5e" ShowCaption="False" Caption="Auto053f8f5e-b340-4a3d-9be9-11bc0eb05d5e(122)" Index="0" RelativeSize="50.980392156862742" IsNewNode="True">
+                                      <LayoutItem Id="Lbl_Pieces" ViewItem="Lbl_Pieces" SizeConstraintsType="Custom" MinSize="65, 24" MaxSize="0, 0" Index="0" RelativeSize="26.732673267326732" IsNewNode="True" />
+                                      <LayoutItem Id="PAXBAGS_Piece" ShowCaption="False" ViewItem="PAXBAGS_Piece" SizeConstraintsType="Custom" MinSize="65, 24" MaxSize="0, 0" Index="1" RelativeSize="23.762376237623762" IsNewNode="True" />
+                                      <LayoutItem Id="CARGO_Pieces" ShowCaption="False" ViewItem="CARGO_Pieces" SizeConstraintsType="Custom" MinSize="65, 24" MaxSize="0, 0" Index="2" RelativeSize="23.762376237623762" IsNewNode="True" />
+                                      <LayoutItem Id="MAIL_Piece" ShowCaption="False" ViewItem="MAIL_Piece" SizeConstraintsType="Custom" MinSize="65, 24" MaxSize="0, 0" Index="3" RelativeSize="25.742574257425744" IsNewNode="True" />
+                                    </LayoutGroup>
+                                    <LayoutGroup Id="Auto73b1874e-a0ab-46e1-87a9-785b7fc93252" ShowCaption="False" Caption="Auto73b1874e-a0ab-46e1-87a9-785b7fc93252(127)" Index="1" RelativeSize="49.019607843137258" IsNewNode="True">
+                                      <LayoutItem Id="Lbl_Weight" ViewItem="Lbl_Weight" SizeConstraintsType="Custom" MinSize="65, 24" MaxSize="0, 0" Index="0" RelativeSize="26.732673267326732" IsNewNode="True" />
+                                      <LayoutItem Id="PAXBAGS_Weight" ShowCaption="False" ViewItem="PAXBAGS_Weight" SizeConstraintsType="Custom" MinSize="65, 24" MaxSize="0, 0" Index="1" RelativeSize="23.762376237623762" IsNewNode="True" />
+                                      <LayoutItem Id="CARGO_Weight" ShowCaption="False" ViewItem="CARGO_Weight" SizeConstraintsType="Custom" MinSize="65, 24" MaxSize="0, 0" Index="2" RelativeSize="23.762376237623762" IsNewNode="True" />
+                                      <LayoutItem Id="MAIL_Weight" ShowCaption="False" ViewItem="MAIL_Weight" SizeConstraintsType="Custom" MinSize="65, 24" MaxSize="0, 0" Index="3" RelativeSize="25.742574257425744" IsNewNode="True" />
+                                    </LayoutGroup>
+                                  </LayoutGroup>
+                                </LayoutGroup>
+                                <LayoutItem Id="Item17" ShowCaption="False" SizeConstraintsType="Default" Index="1" RelativeSize="25.185185185185187" ViewItem="" IsNewNode="True" />
+                              </LayoutGroup>
+                              <LayoutItem Id="Item22" ShowCaption="False" SizeConstraintsType="Default" Index="1" RelativeSize="27.5" ViewItem="" IsNewNode="True" />
+                            </LayoutGroup>
+                          </LayoutGroup>
+                          <LayoutGroup Id="Item20" ShowCaption="True" Caption="Extra Baggage" CaptionLocation="Top" Direction="Horizontal" Index="1" RelativeSize="50.255102040816325" IsNewNode="True">
+                            <LayoutGroup Id="Auto643e3b87-f07d-4ab8-a2e0-51fcd152ab1a" ShowCaption="False" Caption="Auto643e3b87-f07d-4ab8-a2e0-51fcd152ab1a(113)" Index="0" RelativeSize="72.5" Direction="Horizontal" IsNewNode="True">
+                              <LayoutItem Id="Item27" ShowCaption="False" SizeConstraintsType="Default" Index="0" RelativeSize="9.4827586206896548" ViewItem="" IsNewNode="True" />
+                              <LayoutGroup Id="Autof6d78647-2c79-4bb3-bde3-864c10984cb8" ShowCaption="False" Caption="Autof6d78647-2c79-4bb3-bde3-864c10984cb8(137)" Index="1" RelativeSize="90.517241379310349" IsNewNode="True">
+                                <LayoutItem Id="Item24" ShowCaption="False" SizeConstraintsType="Default" Index="0" RelativeSize="22.155688622754489" ViewItem="" IsNewNode="True" />
+                                <LayoutItem Id="ExtraBaggageWeight" ViewItem="ExtraBaggageWeight" SizeConstraintsType="Custom" MinSize="109, 24" MaxSize="0, 0" Index="1" RelativeSize="15.568862275449101" IsNewNode="True" />
+                                <LayoutItem Id="ExtraBaggageAmount" ViewItem="ExtraBaggageAmount" SizeConstraintsType="Custom" MinSize="109, 24" MaxSize="0, 0" Index="2" RelativeSize="15.568862275449101" IsNewNode="True" />
+                                <LayoutItem Id="Item18" ShowCaption="False" SizeConstraintsType="Default" Index="3" RelativeSize="46.706586826347305" ViewItem="" IsNewNode="True" />
+                              </LayoutGroup>
+                            </LayoutGroup>
+                            <LayoutItem Id="Item25" ShowCaption="False" SizeConstraintsType="Default" Index="1" RelativeSize="27.5" ViewItem="" IsNewNode="True" />
+                          </LayoutGroup>
+                        </LayoutGroup>
+                        <LayoutGroup Id="Item26" ShowCaption="True" Caption="Special Services" CaptionLocation="Top" Direction="Horizontal" Index="1" RelativeSize="67.025440313111545" IsNewNode="True">
+                          <LayoutGroup Id="Autoa45d8529-e792-46e4-9dc2-5d540fa6c3f3" ShowCaption="False" Caption="Autoa45d8529-e792-46e4-9dc2-5d540fa6c3f3(148)" Index="0" RelativeSize="23.353293413173652" IsNewNode="True">
+                            <LayoutItem Id="Item28" ShowCaption="False" SizeConstraintsType="Custom" MinSize="115, 32" MaxSize="0, 0" Index="0" RelativeSize="9.2696629213483153" ViewItem="" IsNewNode="True" />
+                            <LayoutItem Id="WCHC" ViewItem="WCHC" SizeConstraintsType="Default" Index="1" RelativeSize="6.7415730337078648" IsNewNode="True" />
+                            <LayoutItem Id="WCHR" ViewItem="WCHR" SizeConstraintsType="Default" Index="2" RelativeSize="6.7415730337078648" IsNewNode="True" />
+                            <LayoutItem Id="MEDA" ViewItem="MEDA" SizeConstraintsType="Default" Index="3" RelativeSize="6.7415730337078648" IsNewNode="True" />
+                            <LayoutItem Id="VIP" ViewItem="VIP" SizeConstraintsType="Default" Index="4" RelativeSize="6.7415730337078648" IsNewNode="True" />
+                            <LayoutItem Id="CIP" ViewItem="CIP" SizeConstraintsType="Default" Index="5" RelativeSize="6.7415730337078648" IsNewNode="True" />
+                            <LayoutItem Id="STCR" ViewItem="STCR" SizeConstraintsType="Default" Index="6" RelativeSize="6.7415730337078648" IsNewNode="True" />
+                            <LayoutItem Id="AVI" ViewItem="AVI" SizeConstraintsType="Default" Index="7" RelativeSize="6.7415730337078648" IsNewNode="True" />
+                            <LayoutItem Id="HUM" ViewItem="HUM" SizeConstraintsType="Default" Index="8" RelativeSize="6.7415730337078648" IsNewNode="True" />
+                            <LayoutItem Id="UM" ViewItem="UM" SizeConstraintsType="Default" Index="9" RelativeSize="6.7415730337078648" IsNewNode="True" />
+                            <LayoutItem Id="Item33" ShowCaption="False" SizeConstraintsType="Custom" MinSize="115, 32" MaxSize="0, 0" Index="10" RelativeSize="30.0561797752809" ViewItem="" IsNewNode="True" />
+                          </LayoutGroup>
+                          <LayoutItem Id="DestinationSpecialServices" ShowCaption="False" ViewItem="DestinationSpecialServices" SizeConstraintsType="Default" Index="1" RelativeSize="76.64670658682634" IsNewNode="True" />
+                        </LayoutGroup>
+                      </LayoutGroup>
+                      <LayoutItem Id="Item32" ShowCaption="False" SizeConstraintsType="Default" Index="1" RelativeSize="30.124777183600713" ViewItem="" IsNewNode="True" />
+                    </LayoutGroup>
+                  </LayoutGroup>
+                </LayoutGroup>
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="DestinationProfile_ListView">
+      <Columns>
+        <ColumnInfo Id="AirportId" Index="-1" />
+        <ColumnInfo Id="C_ADL_ETKT" Index="-1" />
+        <ColumnInfo Id="C_ADL_FOC" Index="-1" />
+        <ColumnInfo Id="C_ADL_PGS" Index="-1" />
+        <ColumnInfo Id="C_CHD_ETKT" Index="-1" />
+        <ColumnInfo Id="C_CHD_FOC" Index="-1" />
+        <ColumnInfo Id="C_CHD_PGS" Index="-1" />
+        <ColumnInfo Id="C_INF_ETKT" Index="-1" />
+        <ColumnInfo Id="C_INF_FOC" Index="-1" />
+        <ColumnInfo Id="C_INF_PGS" Index="-1" />
+        <ColumnInfo Id="ExtraBaggageAmount" Width="113" Index="-1" />
+        <ColumnInfo Id="ExtraBaggageWeight" Index="-1" />
+        <ColumnInfo Id="FlightLeg" Index="-1" />
+        <ColumnInfo Id="FlightLegId" Index="-1" />
+        <ColumnInfo Id="P_ADL_ETKT" Index="-1" />
+        <ColumnInfo Id="P_ADL_FOC" Index="-1" />
+        <ColumnInfo Id="P_ADL_PGS" Index="-1" />
+        <ColumnInfo Id="P_CHD_ETKT" Index="-1" />
+        <ColumnInfo Id="P_CHD_FOC" Index="-1" />
+        <ColumnInfo Id="P_CHD_PGS" Index="-1" />
+        <ColumnInfo Id="P_INF_ETKT" Index="-1" />
+        <ColumnInfo Id="P_INF_FOC" Index="-1" />
+        <ColumnInfo Id="P_INF_PGS" Index="-1" />
+        <ColumnInfo Id="Y_ADL_ETKT" Index="-1" />
+        <ColumnInfo Id="Y_ADL_FOC" Index="-1" />
+        <ColumnInfo Id="Y_ADL_PGS" Index="-1" />
+        <ColumnInfo Id="Y_CHD_ETKT" Index="-1" />
+        <ColumnInfo Id="Y_CHD_FOC" Index="-1" />
+        <ColumnInfo Id="Y_CHD_PGS" Index="-1" />
+        <ColumnInfo Id="Y_INF_ETKT" Index="-1" />
+        <ColumnInfo Id="Y_INF_FOC" Index="-1" />
+        <ColumnInfo Id="Y_INF_PGS" Index="-1" />
+        <ColumnInfo Id="IsMainRoute" Width="83" Caption="" />
+        <ColumnInfo Id="Airport" Width="53" Index="1" />
+      </Columns>
+    </ListView>
+    <DetailView Id="DestinationSpecialService_DetailView" AllowDelete="False" AllowEdit="True" AllowNew="False">
+      <Items>
+        <PropertyEditor Id="Description" PropertyName="SpecialServiceType.Description" Caption="Persian Name" AllowEdit="False" IsNewNode="True" />
+        <PropertyEditor Id="DescriptionEn" PropertyName="SpecialServiceType.DescriptionEn" Caption="English Name" AllowEdit="False" IsNewNode="True" />
+        <PropertyEditor Id="DestinationProfile" Caption="Flight Coupon" />
+        <PropertyEditor Id="SpecialServiceCount" Caption="Num Requests" />
+        <PropertyEditor Id="SpecialServiceType" Caption="Special Service" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="DestinationSpecialService" RelativeSize="100" Direction="Vertical" ShowCaption="False">
+              <LayoutGroup Id="DestinationSpecialService_col1" RelativeSize="100">
+                <LayoutItem Id="DestinationProfile" SizeConstraintsType="Default" RelativeSize="3.8415366146458583" />
+                <LayoutItem Id="SpecialServiceType" SizeConstraintsType="Default" Index="1" RelativeSize="2.8811524609843939" />
+                <LayoutItem Id="DescriptionEn" ViewItem="DescriptionEn" SizeConstraintsType="Default" Index="2" RelativeSize="2.8811524609843939" IsNewNode="True" />
+                <LayoutItem Id="Description" ViewItem="Description" SizeConstraintsType="Default" Index="3" RelativeSize="2.8811524609843939" IsNewNode="True" />
+                <LayoutItem Id="SpecialServiceCount" ViewItem="SpecialServiceCount" SizeConstraintsType="Default" Index="4" RelativeSize="87.515006002400966" IsNewNode="True" />
+                <LayoutItem Id="DestinationProfileId" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="DestinationSpecialService_col2" RelativeSize="50.0441306266549" Caption="DestinationSpecialService_col2" Direction="Horizontal" Removed="True">
+                <LayoutItem Id="SpecialServiceCount" Removed="True" />
+                <LayoutItem Id="SpecialServiceTypeId" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="FlightDelay_DetailView">
+      <Items>
+        <PropertyEditor Id="DescriptionEN" PropertyName="DelayCode.DescriptionEn" Caption="DescriptionEN" AllowEdit="False" IsNewNode="True" />
+        <PropertyEditor Id="DescriptionFA" PropertyName="DelayCode.Description" Caption="DescriptionFA" AllowEdit="False" IsNewNode="True" />
+        <PropertyEditor Id="Duration" Caption="Delay Duration" />
+        <PropertyEditor Id="RemarkDelay" Caption="Remarks" RowCount="20" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" Direction="Vertical" RelativeSize="100">
+            <LayoutGroup Id="FlightDelay_col1" ShowCaption="False" Index="0" RelativeSize="100" Caption="FlightDelay_col1" IsNewNode="True">
+              <LayoutItem Id="DelayCode" ViewItem="DelayCode" SizeConstraintsType="Default" Index="0" RelativeSize="3.9603960396039604" IsNewNode="True" />
+              <LayoutItem Id="DescriptionEN" ViewItem="DescriptionEN" SizeConstraintsType="Default" Index="1" RelativeSize="2.9702970297029703" IsNewNode="True" />
+              <LayoutItem Id="DescriptionFA" ViewItem="DescriptionFA" SizeConstraintsType="Default" Index="2" RelativeSize="2.9702970297029703" IsNewNode="True" />
+              <LayoutItem Id="Duration" ViewItem="Duration" SizeConstraintsType="Default" Index="3" RelativeSize="2.9702970297029703" IsNewNode="True" />
+              <LayoutItem Id="RemarkDelay" ViewItem="RemarkDelay" SizeConstraintsType="Default" Index="4" RelativeSize="87.128712871287135" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="FlightDelay" Removed="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="FlightFuelling_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100" Direction="Vertical">
+            <LayoutGroup Id="FlightFuelling_col1" ShowCaption="False" Index="0" RelativeSize="100" Caption="FlightFuelling_col1" IsNewNode="True">
+              <LayoutItem Id="FuellingType" ViewItem="FuellingType" SizeConstraintsType="Default" Index="0" RelativeSize="3.9603960396039604" IsNewNode="True" />
+              <LayoutItem Id="Amount" ViewItem="Amount" SizeConstraintsType="Default" Index="1" RelativeSize="96.039603960396036" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="FlightFuelling" RelativeSize="100" Removed="True">
+              <LayoutGroup Id="FlightFuelling_col1" RelativeSize="50">
+                <LayoutItem Id="Amount" SizeConstraintsType="Default" RelativeSize="92.112676056338032" />
+                <LayoutItem Id="FuellingType" SizeConstraintsType="Default" RelativeSize="4.507042253521127" />
+                <LayoutItem Id="FuellingTypeId" SizeConstraintsType="Default" RelativeSize="3.380281690140845" />
+              </LayoutGroup>
+              <LayoutGroup Id="FlightFuelling_col2" RelativeSize="50" Caption="FlightFuelling_col2" Direction="Horizontal">
+                <LayoutItem Id="FlightLeg" Removed="True" />
+                <LayoutItem Id="FlightLegId" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="FlightFuelling_ListView">
+      <Columns>
+        <ColumnInfo Id="Amount" Width="199" AllowEdit="False" />
+      </Columns>
+    </ListView>
+    <ListView Id="FlightFuelling_LookupListView" AllowNew="False" AllowDelete="False">
+      <Columns>
+        <ColumnInfo Id="Amount" Index="-1" />
+      </Columns>
+    </ListView>
+    <DetailView Id="FlightRemark_DetailView">
+      <Items>
+        <PropertyEditor Id="CreationDate" AllowEdit="False" />
+        <PropertyEditor Id="Remark" RowCount="30" />
+        <PropertyEditor Id="User" AllowEdit="False" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" Direction="Vertical" RelativeSize="100">
+            <LayoutGroup Id="FlightRemark_col1" ShowCaption="False" Index="0" RelativeSize="100" Caption="FlightRemark_col1" IsNewNode="True">
+              <LayoutItem Id="Title" ViewItem="Title" SizeConstraintsType="Default" Index="0" RelativeSize="3.9603960396039604" IsNewNode="True" />
+              <LayoutItem Id="Remark" ViewItem="Remark" SizeConstraintsType="Default" Index="1" RelativeSize="96.039603960396036" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="FlightRemark" Removed="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="FlightReport_DetailView" ClassName="Mahan.Tralus.Stations.BusinessModel.FlightReport" AllowDelete="True" AllowEdit="True" AllowNew="True" IsNewNode="True" Removed="True">
+      <Items IsNewNode="True">
+        <PropertyEditor Id="ActualDepartureTimeUtc" PropertyName="FlightReportView.ActualDepartureDateTime.TimeUtc" Caption="ATD" IsNewNode="True" />
+        <PropertyEditor Id="AircraftRegister" PropertyName="FlightReportView.AircraftRegister" View="" Caption="Register" AllowEdit="False" IsNewNode="True" />
+        <PropertyEditor Id="AircraftRegisterId" PropertyName="FlightReportView.AircraftRegisterId" IsNewNode="True" />
+        <PropertyEditor Id="ArrivalAirport" PropertyName="FlightReportView.ArrivalAirport" View="" Caption="Destination" AllowEdit="False" IsNewNode="True" />
+        <PropertyEditor Id="ArrivalAirportId" PropertyName="FlightReportView.ArrivalAirportId" IsNewNode="True" />
+        <PropertyEditor Id="CargoPiecesCount" PropertyName="FlightReportView.CargoPiecesCount" View="" Caption="Load Pieces" AllowEdit="False" IsNewNode="True" />
+        <PropertyEditor Id="CargoWeightSum" PropertyName="FlightReportView.CargoWeightSum" View="" Caption="Load Weight" AllowEdit="False" IsNewNode="True" />
+        <PropertyEditor Id="CctEventDateTimeLocal" PropertyName="FlightReportView.CctEventDateTime" View="" Caption="CCT" DisplayFormat="{0:yyyy/MM/dd HH:mm}" EditMask="yyyy/MM/dd HH:mm" IsNewNode="True" />
+        <PropertyEditor Id="DctEventDateTimeLocal" PropertyName="FlightReportView.DctEventDateTime" View="" Caption="DCT" IsNewNode="True" />
+        <PropertyEditor Id="DelaySum" PropertyName="FlightReportView.DelaySum" View="" Caption="Total Delay" AllowEdit="False" IsNewNode="True" />
+        <PropertyEditor Id="DepartureAirport" PropertyName="FlightReportView.DepartureAirport" View="" Caption="Origin" AllowEdit="False" IsNewNode="True" />
+        <PropertyEditor Id="DepartureAirportId" PropertyName="FlightReportView.DepartureAirportId" IsNewNode="True" />
+        <PropertyEditor Id="DestinationProfiles" PropertyName="FlightReportView.DestinationProfiles" View="FlightReportView_DestinationProfiles_ListView" IsNewNode="True" />
+        <PropertyEditor Id="Flight Date" PropertyName="FlightReportView.ScheduledDepartureDateTime.DateUtc" Caption="Flight Date" IsNewNode="True" />
+        <PropertyEditor Id="FlightDelays" PropertyName="FlightReportView.FlightDelays" View="FlightReportView_FlightDelays_ListView" IsNewNode="True" />
+        <PropertyEditor Id="FlightEvents" PropertyName="FlightReportView.FlightEvents" View="FlightReportView_FlightEvents_ListView" IsNewNode="True" />
+        <PropertyEditor Id="FlightFuellings" PropertyName="FlightReportView.FlightFuellings" View="FlightReportView_FlightFuellings_ListView" IsNewNode="True" />
+        <PropertyEditor Id="FlightLeg" PropertyName="FlightLeg" IsNewNode="True" />
+        <PropertyEditor Id="FlightLegId" PropertyName="FlightLegId" IsNewNode="True" />
+        <PropertyEditor Id="FlightNumber" PropertyName="FlightReportView.FlightNumber" View="" AllowEdit="False" IsNewNode="True" />
+        <PropertyEditor Id="FlightNumberId" PropertyName="FlightReportView.FlightNumberId" IsNewNode="True" />
+        <PropertyEditor Id="FlightRemarks" PropertyName="FlightReportView.FlightRemarks" View="FlightReportView_FlightRemarks_ListView" IsNewNode="True" />
+        <PropertyEditor Id="FlightReportState" PropertyName="FlightReportState" IsNewNode="True" />
+        <PropertyEditor Id="FlightReportStateId" PropertyName="FlightReportStateId" IsNewNode="True" />
+        <PropertyEditor Id="FlightType" PropertyName="FlightLeg.FlightType" View="" AllowEdit="False" IsNewNode="True" />
+        <PropertyEditor Id="FlightTypeId" PropertyName="FlightReportView.FlightTypeId" IsNewNode="True" />
+        <PropertyEditor Id="HasSpecialService" PropertyName="FlightReportView.HasSpecialService" IsNewNode="True" />
+        <PropertyEditor Id="InEventDateTimeLocal" PropertyName="FlightReportView.InEventDateTime.DateTimeLocal" View="" Caption="IN" AllowEdit="False" IsNewNode="True" />
+        <PropertyEditor Id="IsCanceled" PropertyName="FlightReportView.IsCanceled" IsNewNode="True" />
+        <PropertyEditor Id="IsLanded" PropertyName="FlightReportView.IsLanded" IsNewNode="True" />
+        <PropertyEditor Id="IsLate" PropertyName="FlightReportView.IsLate" IsNewNode="True" />
+        <PropertyEditor Id="IsNotTime" PropertyName="FlightReportView.IsNotTime" IsNewNode="True" />
+        <PropertyEditor Id="IsSoon" PropertyName="FlightReportView.IsSoon" IsNewNode="True" />
+        <PropertyEditor Id="MinutesTillDeparture" PropertyName="FlightReportView.MinutesTillDeparture" IsNewNode="True" />
+        <PropertyEditor Id="OffEventDateTimeLocal" PropertyName="FlightReportView.OffEventDateTime" View="" Caption="OFF" IsNewNode="True" />
+        <PropertyEditor Id="OutEventDateTimeLocal" PropertyName="FlightReportView.OutEventDateTime" View="" Caption="OUT" IsNewNode="True" />
+        <PropertyEditor Id="PassengersCount" PropertyName="FlightReportView.PassengersCount" View="" Caption="Total Pax" AllowEdit="False" IsNewNode="True" />
+        <PropertyEditor Id="RetractionStatus" PropertyName="FlightReportView.RetractionStatus" IsNewNode="True" />
+        <PropertyEditor Id="ScheduledAircraftType" PropertyName="FlightReportView.ScheduledAircraftType" View="" Caption="Aircraft Type" AllowEdit="False" IsNewNode="True" />
+        <PropertyEditor Id="ScheduledAircraftTypeId" PropertyName="FlightReportView.ScheduledAircraftTypeId" IsNewNode="True" />
+        <PropertyEditor Id="ScheduledDepartureDateTime" PropertyName="FlightReportView.ScheduledDepartureDateTime.TimeUtc" View="" Caption="STD" AllowEdit="False" IsNewNode="True" />
+        <PropertyEditor Id="Status" PropertyName="FlightReportView.Status" View="" Caption="FW Status" AllowEdit="False" IsNewNode="True" />
+        <PropertyEditor Id="STDDateTimeLocal" PropertyName="FlightReportView.ScheduledDepartureDateTime.DateTimeLocal" Caption="STD" AllowEdit="False" EditMaskType="DateTime" EditMask="yyyy/MM/dd HH:mm" DisplayFormat="{0:yyyy/MM/dd HH:mm}" IsNewNode="True" />
+        <StaticText Id="Time tab" Caption="text in time tab" Text="All Times are in the Time Zone of the Departure Station" IsNewNode="True" />
+      </Items>
+      <Layout IsNewNode="True">
+        <LayoutGroup Id="Main" Index="0" ShowCaption="False" RelativeSize="100" IsNewNode="True">
+          <LayoutGroup Id="SimpleEditors" Index="0" ShowCaption="False" RelativeSize="100" IsNewNode="True">
+            <LayoutGroup Id="FlightReportView_col1" ShowCaption="False" Index="0" RelativeSize="100" IsNewNode="True">
+              <LayoutGroup Id="Item2" ShowCaption="True" Caption="Flight Leg Info" CaptionLocation="Top" Index="0" RelativeSize="12.13653603034134" IsNewNode="True">
+                <LayoutGroup Id="Auto9e989eba-c63d-4983-a6c3-0a167161d70e" ShowCaption="False" Caption="Auto9e989eba-c63d-4983-a6c3-0a167161d70e(8)" Index="0" RelativeSize="100" IsNewNode="True">
+                  <LayoutGroup Id="Auto8b9fe9ad-e5ca-4a6d-a9d6-0a758909cda7" ShowCaption="False" Caption="Auto8b9fe9ad-e5ca-4a6d-a9d6-0a758909cda7(12)" Direction="Horizontal" Index="0" RelativeSize="100" IsNewNode="True">
+                    <LayoutGroup Id="Auto587e43f1-5c4d-4707-848b-66a4c19d775e" ShowCaption="False" Caption="Auto587e43f1-5c4d-4707-848b-66a4c19d775e(7)" Index="0" RelativeSize="19.099491648511258" IsNewNode="True">
+                      <LayoutItem Id="FlightNumber" ViewItem="FlightNumber" SizeConstraintsType="Default" Index="0" RelativeSize="50" IsNewNode="True" />
+                      <LayoutItem Id="DepartureAirport" ViewItem="DepartureAirport" SizeConstraintsType="Default" Index="1" RelativeSize="50" IsNewNode="True" />
+                    </LayoutGroup>
+                    <LayoutGroup Id="Auto55a5ba73-63e3-43d5-884c-6f4824c7cd16" ShowCaption="False" Caption="Auto55a5ba73-63e3-43d5-884c-6f4824c7cd16(10)" Direction="Horizontal" Index="1" RelativeSize="80.900508351488739" IsNewNode="True">
+                      <LayoutGroup Id="Auto25541121-6feb-4138-83ba-70f3d19fefb3" ShowCaption="False" Caption="Auto25541121-6feb-4138-83ba-70f3d19fefb3(11)" Index="0" RelativeSize="24.416517055655298" IsNewNode="True">
+                        <LayoutItem Id="Flight Date" ViewItem="Flight Date" SizeConstraintsType="Custom" Index="0" RelativeSize="50" MinSize="134, 32" MaxSize="0, 0" IsNewNode="True" />
+                        <LayoutItem Id="ArrivalAirport" ViewItem="ArrivalAirport" SizeConstraintsType="Default" Index="1" RelativeSize="50" IsNewNode="True" />
+                      </LayoutGroup>
+                      <LayoutGroup Id="Auto61795cef-c381-40fa-abd4-dcc67ece1d75" ShowCaption="False" Caption="Auto61795cef-c381-40fa-abd4-dcc67ece1d75(14)" Direction="Vertical" Index="1" RelativeSize="75.583482944344709" IsNewNode="True">
+                        <LayoutGroup Id="Auto69172c42-247a-4b5c-b0b8-ef09e957e2af" ShowCaption="False" Caption="Auto69172c42-247a-4b5c-b0b8-ef09e957e2af(18)" Direction="Horizontal" Index="0" RelativeSize="100" IsNewNode="True">
+                          <LayoutGroup Id="Auto0168859b-6e88-4b48-a178-c80e0161e69b" ShowCaption="False" Caption="Auto0168859b-6e88-4b48-a178-c80e0161e69b(19)" Index="0" RelativeSize="66.0332541567696" Direction="Horizontal" IsNewNode="True">
+                            <LayoutGroup Id="Auto4998d6cd-7f9b-473b-88d1-e66e2b0e881b" ShowCaption="False" Caption="Auto4998d6cd-7f9b-473b-88d1-e66e2b0e881b(17)" Index="0" RelativeSize="48.561151079136692" IsNewNode="True">
+                              <LayoutItem Id="ScheduledDepartureDateTime" ViewItem="ScheduledDepartureDateTime" SizeConstraintsType="Default" Index="0" RelativeSize="50" IsNewNode="True" />
+                              <LayoutItem Id="AircraftRegister" ViewItem="AircraftRegister" SizeConstraintsType="Default" Index="1" RelativeSize="50" IsNewNode="True" />
+                            </LayoutGroup>
+                            <LayoutGroup Id="Autobb71daac-68fd-473a-a43a-a009cfd3be1a" ShowCaption="False" Caption="Autobb71daac-68fd-473a-a43a-a009cfd3be1a(20)" Index="1" RelativeSize="51.438848920863308" IsNewNode="True">
+                              <LayoutItem Id="FlightType" ViewItem="FlightType" SizeConstraintsType="Default" Index="0" RelativeSize="50" IsNewNode="True" />
+                              <LayoutItem Id="ScheduledAircraftType" ViewItem="ScheduledAircraftType" SizeConstraintsType="Default" Index="1" RelativeSize="50" IsNewNode="True" />
+                            </LayoutGroup>
+                          </LayoutGroup>
+                          <LayoutGroup Id="Autobb84deff-3166-416e-8880-1f56eb7e2f18" ShowCaption="False" Caption="Autobb84deff-3166-416e-8880-1f56eb7e2f18(22)" Index="1" RelativeSize="33.966745843230406" IsNewNode="True">
+                            <LayoutItem Id="ActualDepartureTimeUtc" ViewItem="ActualDepartureTimeUtc" SizeConstraintsType="Custom" Index="0" RelativeSize="50" MinSize="163, 32" MaxSize="0, 0" IsNewNode="True" />
+                            <LayoutItem Id="Status" ViewItem="Status" SizeConstraintsType="Custom" Index="1" RelativeSize="50" MinSize="163, 32" MaxSize="0, 0" IsNewNode="True" />
+                          </LayoutGroup>
+                        </LayoutGroup>
+                      </LayoutGroup>
+                    </LayoutGroup>
+                  </LayoutGroup>
+                </LayoutGroup>
+              </LayoutGroup>
+              <TabbedGroup Id="Item4" CaptionLocation="Top" Index="1" RelativeSize="87.863463969658653" IsNewNode="True">
+                <LayoutGroup Id="Item3" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" Caption="Summary" IsNewNode="True">
+                  <LayoutGroup Id="Item14" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="10.83969465648855" Caption="Status" IsNewNode="True">
+                    <LayoutItem Id="Item1" ShowCaption="False" SizeConstraintsType="Default" Index="0" RelativeSize="100" ViewItem="" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Item16" ShowCaption="True" CaptionLocation="Top" Index="1" RelativeSize="9.770992366412214" Caption="Totals" Direction="Horizontal" IsNewNode="True">
+                    <LayoutItem Id="PassengersCount" ViewItem="PassengersCount" SizeConstraintsType="Default" Index="0" RelativeSize="24.796447076239822" IsNewNode="True" />
+                    <LayoutItem Id="CargoWeightSum" ViewItem="CargoWeightSum" SizeConstraintsType="Default" Index="1" RelativeSize="24.944485566247224" IsNewNode="True" />
+                    <LayoutItem Id="CargoPiecesCount" ViewItem="CargoPiecesCount" SizeConstraintsType="Default" Index="2" RelativeSize="24.796447076239822" IsNewNode="True" />
+                    <LayoutItem Id="DelaySum" ViewItem="DelaySum" SizeConstraintsType="Default" Index="3" RelativeSize="25.462620281273132" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutItem Id="Item13" ShowCaption="False" SizeConstraintsType="Custom" MinSize="1373, 520" MaxSize="1373, 520" Index="2" RelativeSize="79.389312977099237" ViewItem="" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Item5" ShowCaption="True" CaptionLocation="Top" Index="1" RelativeSize="100" Caption="User Comments" IsNewNode="True">
+                  <LayoutItem Id="FlightRemarks" ShowCaption="False" ViewItem="FlightRemarks" SizeConstraintsType="Default" Index="0" RelativeSize="100" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Item6" ShowCaption="True" CaptionLocation="Top" Index="2" RelativeSize="100" Caption="Flight Coupons" IsNewNode="True">
+                  <LayoutItem Id="DestinationProfiles" ViewItem="DestinationProfiles" SizeConstraintsType="Default" Index="0" RelativeSize="100" ShowCaption="False" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Item7" ShowCaption="True" CaptionLocation="Top" Direction="Horizontal" Index="3" RelativeSize="100" Caption="Times" IsNewNode="True">
+                  <LayoutGroup Id="Auto710bce33-2b69-4166-bc3c-b11a0ac2cebf" ShowCaption="False" Caption="Auto710bce33-2b69-4166-bc3c-b11a0ac2cebf(41)" Index="0" RelativeSize="27.749453750910416" IsNewNode="True">
+                    <LayoutItem Id="Time tab" ViewItem="Time tab" SizeConstraintsType="Custom" MinSize="139, 32" MaxSize="0, 0" Index="0" RelativeSize="5.9541984732824424" IsNewNode="True" />
+                    <LayoutGroup Id="Autoca579c27-c321-4110-91ac-432fa81947ed" ShowCaption="False" Caption="" Direction="Horizontal" Index="1" RelativeSize="3.8167938931297711" IsNewNode="True">
+                      <LayoutItem Id="STDDateTimeLocal" ShowCaption="True" ViewItem="STDDateTimeLocal" SizeConstraintsType="Custom" MinSize="139, 24" MaxSize="0, 0" Index="0" RelativeSize="88.976377952755911" IsNewNode="True" />
+                      <LayoutItem Id="Item18" ShowCaption="False" ViewItem="" SizeConstraintsType="Default" Index="1" RelativeSize="11.023622047244094" IsNewNode="True" />
+                    </LayoutGroup>
+                    <LayoutGroup Id="Auto17234731-801a-40ab-bda4-57fec1f45537" ShowCaption="False" Caption="" Direction="Horizontal" Index="2" RelativeSize="3.8167938931297711" IsNewNode="True">
+                      <LayoutItem Id="InEventDateTimeLocal" ViewItem="InEventDateTimeLocal" SizeConstraintsType="Custom" MinSize="139, 24" MaxSize="0, 0" Index="0" RelativeSize="88.976377952755911" IsNewNode="True" />
+                      <LayoutItem Id="Item19" ShowCaption="False" ViewItem="" SizeConstraintsType="Default" Index="1" RelativeSize="11.023622047244094" IsNewNode="True" />
+                    </LayoutGroup>
+                    <LayoutItem Id="CctEventDateTimeLocal" ViewItem="CctEventDateTimeLocal" SizeConstraintsType="Custom" Index="3" RelativeSize="3.8167938931297711" MinSize="139, 24" MaxSize="0, 0" IsNewNode="True" />
+                    <LayoutItem Id="DctEventDateTimeLocal" ViewItem="DctEventDateTimeLocal" SizeConstraintsType="Custom" Index="4" RelativeSize="3.8167938931297711" MinSize="139, 24" MaxSize="0, 0" IsNewNode="True" />
+                    <LayoutItem Id="OffEventDateTimeLocal" ViewItem="OffEventDateTimeLocal" SizeConstraintsType="Custom" Index="5" RelativeSize="3.8167938931297711" MinSize="139, 24" MaxSize="0, 0" IsNewNode="True" />
+                    <LayoutItem Id="OutEventDateTimeLocal" ViewItem="OutEventDateTimeLocal" SizeConstraintsType="Custom" Index="6" RelativeSize="3.8167938931297711" MinSize="139, 24" MaxSize="0, 0" IsNewNode="True" />
+                    <LayoutItem Id="Item17" ShowCaption="False" SizeConstraintsType="Default" Index="7" RelativeSize="71.145038167938935" ViewItem="" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutItem Id="Item15" ShowCaption="False" SizeConstraintsType="Default" Index="1" RelativeSize="72.250546249089581" ViewItem="" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Item8" ShowCaption="True" CaptionLocation="Top" Index="4" RelativeSize="100" Caption="Fuel" IsNewNode="True">
+                  <LayoutItem Id="FlightFuellings" ShowCaption="False" ViewItem="FlightFuellings" SizeConstraintsType="Default" Index="0" RelativeSize="100" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Item9" ShowCaption="True" CaptionLocation="Top" Index="5" RelativeSize="100" Caption="Delays" IsNewNode="True">
+                  <LayoutItem Id="FlightDelays" ShowCaption="False" ViewItem="FlightDelays" SizeConstraintsType="Default" Index="0" RelativeSize="100" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Item10" ShowCaption="True" CaptionLocation="Top" Direction="Horizontal" Index="6" RelativeSize="0" Caption="FleetWatch" IsNewNode="True" />
+                <LayoutGroup Id="Item11" ShowCaption="True" CaptionLocation="Top" Direction="Horizontal" Index="7" RelativeSize="0" Caption="Attachments" IsNewNode="True" />
+                <LayoutGroup Id="Item12" ShowCaption="True" CaptionLocation="Top" Direction="Horizontal" Index="8" RelativeSize="0" Caption="DCS Messages" IsNewNode="True" />
+              </TabbedGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="FlightReport_ListView_Base" ClassName="Mahan.Tralus.Stations.BusinessModel.FlightReport" IsNewNode="True" Removed="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="CctEventDateTime" PropertyName="FlightReportView.CctEventDateTime" Width="44" Index="-1" View="" Caption="CCT" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="DctEventDateTime" PropertyName="FlightReportView.DctEventDateTime" Width="44" Index="-1" View="" Caption="DCT" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="FlightLeg" PropertyName="FlightLeg" Width="400" Index="-1" View="" IsNewNode="True" />
+        <ColumnInfo Id="FlightLegId" PropertyName="FlightLegId" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="FlightReportStateId" PropertyName="FlightReportStateId" Width="70" Index="-1" View="" IsNewNode="True" />
+        <ColumnInfo Id="FlightType" PropertyName="FlightReportView.FlightType" Width="33" Index="-1" View="" Caption="FR" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="OffEventDateTime" PropertyName="FlightReportView.OffEventDateTime" Width="40" Index="-1" View="" Caption="OFF" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="OutEventDateTime" PropertyName="FlightReportView.OutEventDateTime" Width="41" Index="-1" View="" Caption="OUT" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="Retraction" PropertyName="FlightReportView.RetractionStatus" Index="0" Width="31" SortIndex="-1" SortOrder="None" IsNewNode="True" />
+        <ColumnInfo Id="FlightNumber" PropertyName="FlightReportView.FlightNumber" Index="1" Caption="Flight" Width="59" SortIndex="-1" SortOrder="None" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="DepartureAirport" PropertyName="FlightReportView.DepartureAirport" Width="39" Index="2" View="" Caption="DEP" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="ArrivalAirport" PropertyName="FlightReportView.ArrivalAirport" Width="41" Index="3" View="" Caption="ARR" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="STD_UTC" PropertyName="FlightReportView.ScheduledDepartureDateTime.DateTimeUtc" EditMaskType="DateTime" EditMask="g" Index="4" Width="113" Caption="STD" DisplayFormat="{0:g}" SortIndex="0" SortOrder="Ascending" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="MinutesTillDeparture" PropertyName="FlightReportView.MinutesTillDeparture" Width="46" Index="5" View="" Caption="Mins" IsNewNode="True" />
+        <ColumnInfo Id="InEventDateTime" PropertyName="FlightReportView.InEventDateTime" Width="43" Index="6" View="" Caption="IN" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="DelaySum" PropertyName="FlightReportView.DelaySum" Width="47" Index="7" View="" Caption="Delay" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="PassengersCount" PropertyName="FlightReportView.PassengersCount" Width="39" Index="8" View="" Caption="PAX" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="CargoPiecesCount" PropertyName="FlightReportView.CargoPiecesCount" Width="36" Index="9" View="" Caption="Pcs" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="CargoWeightSum" PropertyName="FlightReportView.CargoWeightSum" Width="37" Index="10" View="" Caption="Kgs" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="HasSpecialService" PropertyName="FlightReportView.HasSpecialService" Width="39" Index="11" View="" Caption="SSR" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="ArrivalDateTime" PropertyName="FlightReportView.ActualArrivalDateTime.TimeUtc" Width="51" Index="12" View="" Caption="Arrival" EditMaskType="DateTime" EditMask="t" IsNewNode="True" />
+        <ColumnInfo Id="Aircraft Register" PropertyName="FlightReportView.AircraftRegister" Caption="Register" Index="13" Width="60" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="ScheduledAircraftType" PropertyName="FlightReportView.ScheduledAircraftType" Width="53" Index="14" View="" Caption="Type" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="Status" PropertyName="FlightReportView.Status" Width="34" Index="15" View="" Caption="FW" SortIndex="-1" SortOrder="None" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="FlightReportState" PropertyName="FlightReportState" Width="206" Index="16" View="" Caption="FR State" AllowEdit="False" SortIndex="-1" SortOrder="None" IsNewNode="True" />
+      </Columns>
+      <BandsLayout Enable="False" IsNewNode="True" />
+    </ListView>
+    <ListView Id="FlightReport_LookupListView" Removed="True" />
+    <DetailView Id="FlightReportFileAttachment_DetailView">
+      <Items>
+        <PropertyEditor Id="FlightReportFileAttachmentType" Caption="Attachment Type" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" Direction="Vertical" RelativeSize="100">
+            <LayoutGroup Id="FlightReportFileAttachment_col1" ShowCaption="False" Index="0" RelativeSize="100" Caption="FlightReportFileAttachment_col1" IsNewNode="True">
+              <LayoutItem Id="FlightReportFileAttachmentType" ViewItem="FlightReportFileAttachmentType" SizeConstraintsType="Default" Index="0" RelativeSize="3.9603960396039604" IsNewNode="True" />
+              <LayoutItem Id="Description" ViewItem="Description" SizeConstraintsType="Default" Index="1" RelativeSize="96.039603960396036" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="FlightReportFileAttachment" Removed="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="FlightReportFileAttachment_ListView">
+      <Columns>
+        <ColumnInfo Id="AttachmentFile" Width="181" Index="-1" />
+        <ColumnInfo Id="FlightReport" Width="205" Index="-1" />
+        <ColumnInfo Id="FlightReportFileAttachmentTypeId" Width="243" Index="-1" />
+        <ColumnInfo Id="FlightReportId" Width="201" Index="-1" />
+        <ColumnInfo Id="FlightReportFileAttachmentType" Width="199" Index="0" Caption="Attachment Type" AllowEdit="False" />
+        <ColumnInfo Id="Description" Width="181" Index="1" AllowEdit="False" />
+        <ColumnInfo Id="AttachedDate" Width="129" Index="2" AllowEdit="False" />
+        <ColumnInfo Id="AttachedBy" Width="140" Index="3" AllowEdit="False" />
+      </Columns>
+    </ListView>
+    <ListView Id="FlightReportView_DestinationProfiles_ListView" MasterDetailMode="ListViewAndDetailView" AllowDelete="True" AllowNew="True" AllowEdit="True">
+      <Columns>
+        <ColumnInfo Id="AirportId" Index="-1" />
+        <ColumnInfo Id="AVI" Index="-1" />
+        <ColumnInfo Id="C_ADL_ETKT" Index="-1" />
+        <ColumnInfo Id="C_ADL_FOC" Index="-1" />
+        <ColumnInfo Id="C_ADL_PGS" Index="-1" />
+        <ColumnInfo Id="C_CHD_ETKT" Index="-1" />
+        <ColumnInfo Id="C_CHD_FOC" Index="-1" />
+        <ColumnInfo Id="C_CHD_PGS" Index="-1" />
+        <ColumnInfo Id="C_INF_ETKT" Index="-1" />
+        <ColumnInfo Id="C_INF_FOC" Index="-1" />
+        <ColumnInfo Id="C_INF_PGS" Index="-1" />
+        <ColumnInfo Id="CARGO_Pieces" Index="-1" />
+        <ColumnInfo Id="CARGO_Weight" Index="-1" />
+        <ColumnInfo Id="CIP" Index="-1" />
+        <ColumnInfo Id="ExtraBaggageAmount" Index="-1" Width="175" />
+        <ColumnInfo Id="ExtraBaggageWeight" Index="-1" />
+        <ColumnInfo Id="FlightLeg" Index="-1" />
+        <ColumnInfo Id="FlightLegId" Index="-1" />
+        <ColumnInfo Id="HUM" Index="-1" />
+        <ColumnInfo Id="MAIL_Piece" Index="-1" />
+        <ColumnInfo Id="MAIL_Weight" Index="-1" />
+        <ColumnInfo Id="MEDA" Index="-1" />
+        <ColumnInfo Id="P_ADL_ETKT" Index="-1" />
+        <ColumnInfo Id="P_ADL_FOC" Index="-1" />
+        <ColumnInfo Id="P_ADL_PGS" Index="-1" />
+        <ColumnInfo Id="P_CHD_ETKT" Index="-1" />
+        <ColumnInfo Id="P_CHD_FOC" Index="-1" />
+        <ColumnInfo Id="P_CHD_PGS" Index="-1" />
+        <ColumnInfo Id="P_INF_ETKT" Index="-1" />
+        <ColumnInfo Id="P_INF_FOC" Index="-1" />
+        <ColumnInfo Id="P_INF_PGS" Index="-1" />
+        <ColumnInfo Id="PAXBAGS_Piece" Index="-1" />
+        <ColumnInfo Id="PAXBAGS_Weight" Index="-1" />
+        <ColumnInfo Id="STCR" Index="-1" />
+        <ColumnInfo Id="TotalLoadPieces" Index="-1" />
+        <ColumnInfo Id="TotalLoadWeight" Index="-1" />
+        <ColumnInfo Id="TotalPassengers" Index="-1" />
+        <ColumnInfo Id="UM" Index="-1" />
+        <ColumnInfo Id="VIP" Index="-1" />
+        <ColumnInfo Id="WCHC" Index="-1" />
+        <ColumnInfo Id="WCHR" Index="-1" />
+        <ColumnInfo Id="Y_ADL_ETKT" Index="-1" />
+        <ColumnInfo Id="Y_ADL_FOC" Index="-1" />
+        <ColumnInfo Id="Y_ADL_PGS" Index="-1" />
+        <ColumnInfo Id="Y_CHD_ETKT" Index="-1" />
+        <ColumnInfo Id="Y_CHD_FOC" Index="-1" />
+        <ColumnInfo Id="Y_CHD_PGS" Index="-1" />
+        <ColumnInfo Id="Y_INF_ETKT" Index="-1" />
+        <ColumnInfo Id="Y_INF_FOC" Index="-1" />
+        <ColumnInfo Id="Y_INF_PGS" Index="-1" />
+        <ColumnInfo Id="IsMainRoute" Index="0" Width="92" SortIndex="0" SortOrder="Ascending" Caption="Route" AllowEdit="False" />
+        <ColumnInfo Id="Airport" Width="53" Index="1" AllowEdit="False" />
+      </Columns>
+      <SplitLayout SplitterPosition="386" />
+    </ListView>
+    <DetailView Id="FlightReportView_DetailView">
+      <Items>
+        <PropertyEditor Id="AircraftRegister" Caption="Register" AllowEdit="False" />
+        <PropertyEditor Id="ArrivalAirport" Caption="Destination" AllowEdit="False" />
+        <PropertyEditor Id="ArrivalDateTime" Caption="ATD" AllowEdit="True" />
+        <PropertyEditor Id="CargoPiecesCount" Caption="Load Pieces" AllowEdit="False" />
+        <PropertyEditor Id="CargoWeightSum" Caption="Load Weight" AllowEdit="False" />
+        <PropertyEditor Id="CctEventDateTime" Caption="CCT" />
+        <PropertyEditor Id="DctEventDateTime" Caption="DCT" />
+        <PropertyEditor Id="DelaySum" Caption="Total Delay" AllowEdit="False" />
+        <PropertyEditor Id="DepartureAirport" Caption="Origin" AllowEdit="False" />
+        <PropertyEditor Id="FlightNumber" AllowEdit="False" />
+        <PropertyEditor Id="FlightType" AllowEdit="False" />
+        <PropertyEditor Id="InEventDateTime" Caption="IN" AllowEdit="False" />
+        <PropertyEditor Id="OffEventDateTime" Caption="OFF" />
+        <PropertyEditor Id="OutEventDateTime" Caption="OUT" />
+        <PropertyEditor Id="PassengersCount" Caption="Total Pax" AllowEdit="False" />
+        <PropertyEditor Id="ScheduledAircraftType" Caption="Aircraft Type" AllowEdit="False" />
+        <PropertyEditor Id="ScheduledDepartureDateTime" Caption="STD" AllowEdit="False" />
+        <PropertyEditor Id="Status" Caption="FW Status" AllowEdit="False" />
+        <StaticText Id="Time tab" Caption="text in time tab" Text="All Times are in the Time Zone of the Departure Station" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" Direction="Vertical" RelativeSize="100">
+            <LayoutGroup Id="FlightReportView_col1" ShowCaption="False" Index="0" RelativeSize="100" IsNewNode="True">
+              <LayoutGroup Id="Item2" ShowCaption="True" Caption="Flight Leg Info" CaptionLocation="Top" Index="0" RelativeSize="12.598425196850394" IsNewNode="True">
+                <LayoutGroup Id="Auto9e989eba-c63d-4983-a6c3-0a167161d70e" ShowCaption="False" Caption="Auto9e989eba-c63d-4983-a6c3-0a167161d70e(8)" Index="0" RelativeSize="100" IsNewNode="True">
+                  <LayoutGroup Id="Auto8b9fe9ad-e5ca-4a6d-a9d6-0a758909cda7" ShowCaption="False" Caption="Auto8b9fe9ad-e5ca-4a6d-a9d6-0a758909cda7(12)" Direction="Horizontal" Index="0" RelativeSize="100" IsNewNode="True">
+                    <LayoutGroup Id="Auto587e43f1-5c4d-4707-848b-66a4c19d775e" ShowCaption="False" Caption="Auto587e43f1-5c4d-4707-848b-66a4c19d775e(7)" Index="0" RelativeSize="19.099491648511258" IsNewNode="True">
+                      <LayoutItem Id="FlightNumber" ViewItem="FlightNumber" SizeConstraintsType="Default" Index="0" RelativeSize="50" IsNewNode="True" />
+                      <LayoutItem Id="DepartureAirport" ViewItem="DepartureAirport" SizeConstraintsType="Default" Index="1" RelativeSize="50" IsNewNode="True" />
+                    </LayoutGroup>
+                    <LayoutGroup Id="Auto55a5ba73-63e3-43d5-884c-6f4824c7cd16" ShowCaption="False" Caption="Auto55a5ba73-63e3-43d5-884c-6f4824c7cd16(10)" Direction="Horizontal" Index="1" RelativeSize="80.900508351488739" IsNewNode="True">
+                      <LayoutGroup Id="Auto25541121-6feb-4138-83ba-70f3d19fefb3" ShowCaption="False" Caption="Auto25541121-6feb-4138-83ba-70f3d19fefb3(11)" Index="0" RelativeSize="24.416517055655298" IsNewNode="True">
+                        <LayoutItem Id="Flight Date Utc" ViewItem="Flight Date Utc" SizeConstraintsType="Default" Index="0" RelativeSize="50" IsNewNode="True" />
+                        <LayoutItem Id="ArrivalAirport" ViewItem="ArrivalAirport" SizeConstraintsType="Default" Index="1" RelativeSize="50" IsNewNode="True" />
+                      </LayoutGroup>
+                      <LayoutGroup Id="Auto61795cef-c381-40fa-abd4-dcc67ece1d75" ShowCaption="False" Caption="Auto61795cef-c381-40fa-abd4-dcc67ece1d75(14)" Direction="Horizontal" Index="1" RelativeSize="75.583482944344709" IsNewNode="True">
+                        <LayoutGroup Id="Auto326b96e3-16ad-4bc5-9ba8-316f95aca94b" ShowCaption="False" Caption="Auto326b96e3-16ad-4bc5-9ba8-316f95aca94b(15)" Index="0" RelativeSize="32.8978622327791" IsNewNode="True">
+                          <LayoutItem Id="Flight Time Utc" ViewItem="Flight Time Utc" SizeConstraintsType="Default" Index="0" RelativeSize="50" IsNewNode="True" />
+                          <LayoutItem Id="AircraftRegister" ViewItem="AircraftRegister" SizeConstraintsType="Default" Index="1" RelativeSize="50" IsNewNode="True" />
+                        </LayoutGroup>
+                        <LayoutGroup Id="Auto69172c42-247a-4b5c-b0b8-ef09e957e2af" ShowCaption="False" Caption="Auto69172c42-247a-4b5c-b0b8-ef09e957e2af(18)" Direction="Horizontal" Index="1" RelativeSize="67.1021377672209" IsNewNode="True">
+                          <LayoutGroup Id="Auto0168859b-6e88-4b48-a178-c80e0161e69b" ShowCaption="False" Caption="Auto0168859b-6e88-4b48-a178-c80e0161e69b(19)" Index="0" RelativeSize="49.73451327433628" IsNewNode="True">
+                            <LayoutItem Id="FlightType" ViewItem="FlightType" SizeConstraintsType="Default" Index="0" RelativeSize="50" IsNewNode="True" />
+                            <LayoutItem Id="ScheduledAircraftType" ViewItem="ScheduledAircraftType" SizeConstraintsType="Default" Index="1" RelativeSize="50" IsNewNode="True" />
+                          </LayoutGroup>
+                          <LayoutGroup Id="Autobb84deff-3166-416e-8880-1f56eb7e2f18" ShowCaption="False" Caption="Autobb84deff-3166-416e-8880-1f56eb7e2f18(22)" Index="1" RelativeSize="50.26548672566372" IsNewNode="True">
+                            <LayoutItem Id="ADT_Time_Utc" ViewItem="ADT_Time_Utc" SizeConstraintsType="Default" Index="0" RelativeSize="50" IsNewNode="True" />
+                            <LayoutItem Id="Status" ViewItem="Status" SizeConstraintsType="Default" Index="1" RelativeSize="50" IsNewNode="True" />
+                          </LayoutGroup>
+                        </LayoutGroup>
+                      </LayoutGroup>
+                    </LayoutGroup>
+                  </LayoutGroup>
+                </LayoutGroup>
+              </LayoutGroup>
+              <TabbedGroup Id="Item4" CaptionLocation="Top" Index="1" RelativeSize="87.4015748031496" IsNewNode="True">
+                <LayoutGroup Id="Item3" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" Caption="Summary" IsNewNode="True">
+                  <LayoutGroup Id="Item14" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="6.7092651757188495" Caption="Status" IsNewNode="True">
+                    <LayoutItem Id="Item1" ShowCaption="False" SizeConstraintsType="Default" Index="0" RelativeSize="100" ViewItem="" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Item16" ShowCaption="True" CaptionLocation="Top" Index="1" RelativeSize="10.223642172523961" Caption="Totals" Direction="Horizontal" IsNewNode="True">
+                    <LayoutItem Id="PassengersCount" ViewItem="PassengersCount" SizeConstraintsType="Default" Index="0" RelativeSize="24.944485566247224" IsNewNode="True" />
+                    <LayoutItem Id="CargoWeightSum" ViewItem="CargoWeightSum" SizeConstraintsType="Default" Index="1" RelativeSize="24.944485566247224" IsNewNode="True" />
+                    <LayoutItem Id="CargoPiecesCount" ViewItem="CargoPiecesCount" SizeConstraintsType="Default" Index="2" RelativeSize="24.944485566247224" IsNewNode="True" />
+                    <LayoutItem Id="DelaySum" ViewItem="DelaySum" SizeConstraintsType="Default" Index="3" RelativeSize="25.166543301258326" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutItem Id="Item13" ShowCaption="False" SizeConstraintsType="Custom" MinSize="1373, 520" MaxSize="1373, 520" Index="2" RelativeSize="83.067092651757193" ViewItem="" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Item5" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="1" RelativeSize="100" Caption="User Comments" IsNewNode="True">
+                  <LayoutItem Id="FlightRemarks" ShowCaption="False" ViewItem="FlightRemarks" SizeConstraintsType="Default" Index="0" RelativeSize="100" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Item6" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="2" RelativeSize="100" Caption="Flight Coupons" IsNewNode="True">
+                  <LayoutItem Id="DestinationProfiles" ViewItem="DestinationProfiles" SizeConstraintsType="Default" Index="0" RelativeSize="100" ShowCaption="False" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Item7" ShowCaption="True" CaptionLocation="Top" Direction="Horizontal" Index="3" RelativeSize="100" Caption="Times" IsNewNode="True">
+                  <LayoutGroup Id="Autob6e4b612-73ea-4afe-bab1-e985b524b038" ShowCaption="False" Caption="Autob6e4b612-73ea-4afe-bab1-e985b524b038(36)" Index="0" RelativeSize="32.119446467589221" IsNewNode="True">
+                    <LayoutItem Id="Time tab" ViewItem="Time tab" SizeConstraintsType="Default" Index="0" RelativeSize="5.1118210862619806" ShowCaption="False" IsNewNode="True" />
+                    <LayoutItem Id="ScheduledDepartureDateTime" ViewItem="ScheduledDepartureDateTime" SizeConstraintsType="Default" Index="1" RelativeSize="3.8338658146964857" IsNewNode="True" />
+                    <LayoutItem Id="InEventDateTime" ViewItem="InEventDateTime" SizeConstraintsType="Default" Index="2" RelativeSize="3.8338658146964857" IsNewNode="True" />
+                    <LayoutItem Id="CctEventDateTime" ViewItem="CctEventDateTime" SizeConstraintsType="Default" Index="3" RelativeSize="3.8338658146964857" IsNewNode="True" />
+                    <LayoutItem Id="DctEventDateTime" ViewItem="DctEventDateTime" SizeConstraintsType="Default" Index="4" RelativeSize="3.8338658146964857" IsNewNode="True" />
+                    <LayoutItem Id="OffEventDateTime" ViewItem="OffEventDateTime" SizeConstraintsType="Default" Index="5" RelativeSize="3.8338658146964857" IsNewNode="True" />
+                    <LayoutItem Id="OutEventDateTime" ViewItem="OutEventDateTime" SizeConstraintsType="Default" Index="6" RelativeSize="3.8338658146964857" IsNewNode="True" />
+                    <LayoutItem Id="Item15" ShowCaption="False" SizeConstraintsType="Default" Index="7" RelativeSize="71.8849840255591" ViewItem="" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutItem Id="Item17" ShowCaption="False" SizeConstraintsType="Default" Index="1" RelativeSize="67.880553532410772" ViewItem="" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Item8" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="4" RelativeSize="100" Caption="Fuel" IsNewNode="True">
+                  <LayoutItem Id="FlightFuellings" ShowCaption="False" ViewItem="FlightFuellings" SizeConstraintsType="Default" Index="0" RelativeSize="100" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Item9" ShowCaption="True" CaptionLocation="Top" Direction="Vertical" Index="5" RelativeSize="100" Caption="Delays" IsNewNode="True">
+                  <LayoutItem Id="FlightDelays" ShowCaption="False" ViewItem="FlightDelays" SizeConstraintsType="Default" Index="0" RelativeSize="100" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Item10" ShowCaption="True" CaptionLocation="Top" Direction="Horizontal" Index="6" RelativeSize="0" Caption="FleetWatch" IsNewNode="True" />
+                <LayoutGroup Id="Item11" ShowCaption="True" CaptionLocation="Top" Direction="Horizontal" Index="7" RelativeSize="0" Caption="Attachments" IsNewNode="True" />
+                <LayoutGroup Id="Item12" ShowCaption="True" CaptionLocation="Top" Direction="Horizontal" Index="8" RelativeSize="0" Caption="DCS Messages" IsNewNode="True" />
+              </TabbedGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="FlightReportView" Removed="True" />
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="55.816831683168317" Removed="True">
+            <LayoutGroup Id="FlightDelays" RelativeSize="0" Index="1" Direction="Horizontal" Caption="Flight Delays" Removed="True">
+              <LayoutItem Id="FlightDelays" Removed="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="FlightEvents" RelativeSize="100" Index="1">
+              <LayoutItem Id="FlightEvents" SizeConstraintsType="Default" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="FlightRemarks" RelativeSize="0" Index="1" Direction="Horizontal" Caption="Flight Remarks" Removed="True">
+              <LayoutItem Id="FlightRemarks" Removed="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="DestinationProfiles" RelativeSize="100">
+              <LayoutItem Id="DestinationProfiles" SizeConstraintsType="Default" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="FlightFuellings" RelativeSize="0" Direction="Horizontal" Caption="Flight Fuellings" ShowCaption="False" Removed="True">
+              <LayoutItem Id="FlightFuellings" Removed="True" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="FlightReportView_FlightDelays_ListView">
+      <Columns>
+        <ColumnInfo Id="DelayCodeId" Width="172" Index="-1" />
+        <ColumnInfo Id="FlightLeg" Index="-1" />
+        <ColumnInfo Id="FlightLegId" Index="-1" />
+        <ColumnInfo Id="FlightReportView" Width="129" Index="-1" />
+        <ColumnInfo Id="OverllDelayRemarks" Index="-1" />
+        <ColumnInfo Id="DelayCode" Width="78" Index="0" SortIndex="0" SortOrder="Ascending" />
+        <ColumnInfo Id="Duration" Width="54" Index="1" />
+        <ColumnInfo Id="DescriptionEN" PropertyName="DelayCode.DescriptionEn" Caption="Delay Type - EN" AllowEdit="False" Index="2" Width="237" IsNewNode="True" />
+        <ColumnInfo Id="DescriptionFA" PropertyName="DelayCode.Description" Caption="Delay Type - FA" Index="3" Width="233" IsNewNode="True" />
+        <ColumnInfo Id="RemarkDelay" Index="4" Width="241" Caption="Remarks" />
+      </Columns>
+    </ListView>
+    <ListView Id="FlightReportView_FlightFuellings_ListView">
+      <Columns>
+        <ColumnInfo Id="FlightLeg" Index="-1" />
+        <ColumnInfo Id="FlightLegId" Index="-1" />
+        <ColumnInfo Id="FuellingTypeId" Width="159" Index="-1" />
+        <ColumnInfo Id="FuellingType" Width="84" Index="0" />
+        <ColumnInfo Id="Amount" Width="138" Index="1" />
+      </Columns>
+    </ListView>
+    <ListView Id="FlightReportView_FlightRemarks_ListView" AllowEdit="True">
+      <Columns>
+        <ColumnInfo Id="FlightLeg" Index="-1" />
+        <ColumnInfo Id="FlightLegId" Index="-1" />
+        <ColumnInfo Id="FlightRemarkType" Index="-1" Width="177" />
+        <ColumnInfo Id="FlightRemarkTypeId" Index="-1" Width="194" />
+        <ColumnInfo Id="Remark" SortIndex="-1" SortOrder="None" Index="-1" Width="488" />
+        <ColumnInfo Id="UserId" Index="-1" />
+        <ColumnInfo Id="User" Index="0" Width="142" />
+        <ColumnInfo Id="CreationDate" Index="2" Width="128" />
+      </Columns>
+    </ListView>
+    <ListView Id="FlightReportView_ListView" MasterDetailMode="ListViewOnly">
+      <Columns>
+        <ColumnInfo Id="ActualDepartureDateTime" Index="-1" />
+        <ColumnInfo Id="FlightReportStateId" Index="-1" />
+        <ColumnInfo Id="IsCanceled" Index="-1" />
+        <ColumnInfo Id="IsLanded" Index="-1" />
+        <ColumnInfo Id="IsLate" Index="-1" />
+        <ColumnInfo Id="IsNotTime" Index="-1" />
+        <ColumnInfo Id="IsSoon" Index="-1" />
+        <ColumnInfo Id="ScheduledDepartureDateTime" Index="-1" Caption="STD" SortIndex="-1" SortOrder="None" />
+        <ColumnInfo Id="RetractionStatus" Index="0" Caption="R" Width="24" />
+        <ColumnInfo Id="FlightNumber" Index="1" Caption="Flight" Width="64" SortIndex="-1" SortOrder="None" />
+        <ColumnInfo Id="DepartureAirport" Index="2" Width="41" Caption="DEP" PropertyName="DepartureAirport" />
+        <ColumnInfo Id="ArrivalAirport" Index="3" SortIndex="-1" SortOrder="None" Caption="ARR" Width="46" />
+        <ColumnInfo Id="FlightReport" Index="5" Width="107" />
+        <ColumnInfo Id="FlightLeg" Index="8" />
+        <ColumnInfo Id="MinutesTillDeparture" Index="9" Caption="Mins" Width="47" />
+        <ColumnInfo Id="InEventDateTime" Index="10" Caption="IN" Width="47" />
+        <ColumnInfo Id="CctEventDateTime" Index="11" Caption="CCT" Width="52" />
+        <ColumnInfo Id="DctEventDateTime" Index="12" Caption="DCT" Width="53" />
+        <ColumnInfo Id="OffEventDateTime" Index="13" Caption="OFF" Width="52" />
+        <ColumnInfo Id="OutEventDateTime" Index="14" Caption="OUT" Width="50" />
+        <ColumnInfo Id="DelaySum" Index="15" Caption="Delay" />
+        <ColumnInfo Id="PassengersCount" Index="16" Caption="PAX" Width="42" />
+        <ColumnInfo Id="CargoPiecesCount" Index="17" Caption="Pcs" Width="42" />
+        <ColumnInfo Id="CargoWeightSum" Index="18" Caption="Kgs" Width="37" />
+        <ColumnInfo Id="HasSpecialService" Caption="SSR" Index="19" />
+        <ColumnInfo Id="ArrivalDateTime" Index="20" Caption="Arrival" EditMaskType="DateTime" EditMask="t" />
+        <ColumnInfo Id="AircraftRegister" Index="21" SortIndex="-1" SortOrder="None" Caption="Register" />
+        <ColumnInfo Id="ScheduledAircraftType" Index="22" SortIndex="-1" SortOrder="None" Caption="Type" />
+        <ColumnInfo Id="Status" Index="23" SortIndex="-1" SortOrder="None" Caption="FW" Width="49" />
+        <ColumnInfo Id="FlightType" Index="24" Caption="FR" Width="29" />
+        <ColumnInfo Id="FlightReportState" Index="25" Caption="FR State" Width="168" />
+        <ColumnInfo Id="FlightReport_FlightReportState" PropertyName="FlightReport.FlightReportState" Index="27" IsNewNode="True" />
+      </Columns>
+      <BandsLayout Enable="False" />
+    </ListView>
+    <ListView Id="FR_Airport_Arrivals_ListView" ClassName="Mahan.Tralus.Stations.BusinessModel.FlightReport" Caption="FR Airport Arrivals" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="FlightLeg" PropertyName="FlightLeg" Width="400" Index="-1" View="" IsNewNode="True" />
+        <ColumnInfo Id="FlightLegId" PropertyName="FlightLegId" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="FlightReportStateId" PropertyName="FlightReportStateId" Width="70" Index="-1" View="" IsNewNode="True" />
+        <ColumnInfo Id="Retraction" PropertyName="FlightReportView.RetractionStatus" Index="0" Width="31" SortIndex="0" SortOrder="Ascending" IsNewNode="True" />
+        <ColumnInfo Id="FlightNumber" PropertyName="FlightReportView.FlightNumber" Index="1" Caption="Flight" Width="59" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="DepartureAirport" PropertyName="FlightReportView.DepartureAirport" Width="39" Index="2" View="" Caption="DEP" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="ArrivalAirport" PropertyName="FlightReportView.ArrivalAirport" Width="41" Index="3" View="" Caption="ARR" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="STD_UTC" PropertyName="FlightReportView.ScheduledDepartureDateTime.DateTimeUtc" EditMaskType="DateTime" EditMask="g" Index="4" Width="113" Caption="STD" DisplayFormat="{0:g}" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="MinutesTillDeparture" PropertyName="FlightReportView.MinutesTillDeparture" Width="46" Index="5" View="" Caption="Mins" IsNewNode="True" />
+        <ColumnInfo Id="InEventTimeUtc" PropertyName="FlightReportView.InEventDateTime.TimeUtc" Width="43" Index="6" View="" Caption="IN" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="CctEventTimeUtc" PropertyName="FlightReportView.CctEventDateTime.TimeUtc" Width="44" Index="7" View="" Caption="CCT" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="DctEventTimeUtc" PropertyName="FlightReportView.DctEventDateTime.TimeUtc" Width="44" Index="8" View="" Caption="DCT" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="OffEventTimeUtc" PropertyName="FlightReportView.OffEventDateTime.TimeUtc" Width="40" Index="9" View="" Caption="OFF" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="OutEventTimeUtc" PropertyName="FlightReportView.OutEventDateTime.TimeUtc" Width="41" Index="10" View="" Caption="OUT" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="DelaySum" PropertyName="FlightReportView.DelaySum" Width="47" Index="11" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="PassengersCount" PropertyName="FlightReportView.PassengersCount" Width="39" Index="12" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="CargoPiecesCount" PropertyName="FlightReportView.CargoPiecesCount" Width="36" Index="13" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="CargoWeightSum" PropertyName="FlightReportView.CargoWeightSum" Width="37" Index="14" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="HasSpecialService" PropertyName="FlightReportView.HasSpecialService" Width="39" Index="15" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="ArrivalDateTime" PropertyName="FlightReportView.ActualArrivalDateTime.TimeUtc" Width="51" Index="16" View="" EditMaskType="DateTime" EditMask="t" IsNewNode="True" />
+        <ColumnInfo Id="Aircraft Register" PropertyName="FlightReportView.AircraftRegister" Index="17" Width="60" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="ScheduledAircraftType" PropertyName="FlightReportView.ScheduledAircraftType" Width="53" Index="18" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="Status" PropertyName="FlightReportView.Status" Width="34" Index="19" View="" Caption="FW" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="FlightType" PropertyName="FlightReportView.FlightType" Width="33" Index="20" View="" Caption="FR" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="FlightReportState" PropertyName="FlightReportState" Width="206" Index="21" View="" Caption="FR State" AllowEdit="False" IsNewNode="True" />
+      </Columns>
+      <BandsLayout Enable="False" IsNewNode="True" />
+    </ListView>
+    <ListView Id="FR_Airport_Departures_ListView" ClassName="Mahan.Tralus.Stations.BusinessModel.FlightReport" Caption="FR Airport Departures" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="FlightLeg" PropertyName="FlightLeg" Width="400" Index="-1" View="" IsNewNode="True" />
+        <ColumnInfo Id="FlightLegId" PropertyName="FlightLegId" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="FlightReportStateId" PropertyName="FlightReportStateId" Width="70" Index="-1" View="" IsNewNode="True" />
+        <ColumnInfo Id="Retraction" PropertyName="FlightReportView.RetractionStatus" Index="0" Width="31" SortIndex="0" SortOrder="Ascending" IsNewNode="True" />
+        <ColumnInfo Id="FlightNumber" PropertyName="FlightReportView.FlightNumber" Index="1" Caption="Flight" Width="59" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="DepartureAirport" PropertyName="FlightReportView.DepartureAirport" Width="39" Index="2" View="" Caption="DEP" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="ArrivalAirport" PropertyName="FlightReportView.ArrivalAirport" Width="41" Index="3" View="" Caption="ARR" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="STD_UTC" PropertyName="FlightReportView.ScheduledDepartureDateTime.DateTimeUtc" EditMaskType="DateTime" EditMask="g" Index="4" Width="113" Caption="STD" DisplayFormat="{0:g}" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="MinutesTillDeparture" PropertyName="FlightReportView.MinutesTillDeparture" Width="46" Index="5" View="" Caption="Mins" IsNewNode="True" />
+        <ColumnInfo Id="InEventTimeUtc" PropertyName="FlightReportView.InEventDateTime.TimeUtc" Width="43" Index="6" View="" Caption="IN" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="CctEventTimeUtc" PropertyName="FlightReportView.CctEventDateTime.TimeUtc" Width="44" Index="7" View="" Caption="CCT" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="DctEventTimeUtc" PropertyName="FlightReportView.DctEventDateTime.TimeUtc" Width="44" Index="8" View="" Caption="DCT" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="OffEventTimeUtc" PropertyName="FlightReportView.OffEventDateTime.TimeUtc" Width="40" Index="9" View="" Caption="OFF" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="OutEventTimeUtc" PropertyName="FlightReportView.OutEventDateTime.TimeUtc" Width="41" Index="10" View="" Caption="OUT" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="DelaySum" PropertyName="FlightReportView.DelaySum" Width="47" Index="11" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="PassengersCount" PropertyName="FlightReportView.PassengersCount" Width="39" Index="12" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="CargoPiecesCount" PropertyName="FlightReportView.CargoPiecesCount" Width="36" Index="13" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="CargoWeightSum" PropertyName="FlightReportView.CargoWeightSum" Width="37" Index="14" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="HasSpecialService" PropertyName="FlightReportView.HasSpecialService" Width="39" Index="15" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="ArrivalDateTime" PropertyName="FlightReportView.ActualArrivalDateTime.TimeUtc" Width="51" Index="16" View="" EditMaskType="DateTime" EditMask="t" IsNewNode="True" />
+        <ColumnInfo Id="Aircraft Register" PropertyName="FlightReportView.AircraftRegister" Index="17" Width="60" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="ScheduledAircraftType" PropertyName="FlightReportView.ScheduledAircraftType" Width="53" Index="18" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="Status" PropertyName="FlightReportView.Status" Width="34" Index="19" View="" Caption="FW" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="FlightType" PropertyName="FlightReportView.FlightType" Width="33" Index="20" View="" Caption="FR" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="FlightReportState" PropertyName="FlightReportState" Width="206" Index="21" View="" Caption="FR State" AllowEdit="False" IsNewNode="True" />
+      </Columns>
+      <BandsLayout Enable="False" IsNewNode="True" />
+    </ListView>
+    <ListView Id="FR_All_Local_ListView" ClassName="Mahan.Tralus.Stations.BusinessModel.FlightReport" Caption="FR All Local" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="FlightLeg" PropertyName="FlightLeg" Width="400" Index="-1" View="" IsNewNode="True" />
+        <ColumnInfo Id="FlightLegId" PropertyName="FlightLegId" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="FlightReportStateId" PropertyName="FlightReportStateId" Width="70" Index="-1" View="" IsNewNode="True" />
+        <ColumnInfo Id="FlightType" PropertyName="FlightReportView.FlightType" Width="33" Index="-1" View="" Caption="FR" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="Retraction" PropertyName="FlightReportView.RetractionStatus" Index="0" Width="31" SortIndex="0" SortOrder="Ascending" IsNewNode="True" />
+        <ColumnInfo Id="FlightNumber" PropertyName="FlightReportView.FlightNumber" Index="1" Caption="Flight" Width="59" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="DepartureAirport" PropertyName="FlightReportView.DepartureAirport" Width="39" Index="2" View="" Caption="DEP" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="ArrivalAirport" PropertyName="FlightReportView.ArrivalAirport" Width="41" Index="3" View="" Caption="ARR" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="STD_UTC" PropertyName="FlightReportView.ScheduledDepartureDateTime.DateTimeUtc" EditMaskType="DateTime" EditMask="g" Index="4" Width="113" Caption="STD" DisplayFormat="{0:g}" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="MinutesTillDeparture" PropertyName="FlightReportView.MinutesTillDeparture" Width="46" Index="5" View="" Caption="Mins" IsNewNode="True" />
+        <ColumnInfo Id="InEventTimeUtc" PropertyName="FlightReportView.InEventDateTime.TimeUtc" Width="43" Index="6" View="" Caption="IN" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="CctEventTimeUtc" PropertyName="FlightReportView.CctEventDateTime.TimeUtc" Width="44" Index="7" View="" Caption="CCT" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="DctEventTimeUtc" PropertyName="FlightReportView.DctEventDateTime.TimeUtc" Width="44" Index="8" View="" Caption="DCT" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="OffEventTimeUtc" PropertyName="FlightReportView.OffEventDateTime.TimeUtc" Width="40" Index="9" View="" Caption="OFF" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="OutEventTimeUtc" PropertyName="FlightReportView.OutEventDateTime.TimeUtc" Width="41" Index="10" View="" Caption="OUT" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="DelaySum" PropertyName="FlightReportView.DelaySum" Width="47" Index="11" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="PassengersCount" PropertyName="FlightReportView.PassengersCount" Width="39" Index="12" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="CargoPiecesCount" PropertyName="FlightReportView.CargoPiecesCount" Width="36" Index="13" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="CargoWeightSum" PropertyName="FlightReportView.CargoWeightSum" Width="37" Index="14" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="HasSpecialService" PropertyName="FlightReportView.HasSpecialService" Width="39" Index="15" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="ArrivalDateTime" PropertyName="FlightReportView.ActualArrivalDateTime.TimeUtc" Width="51" Index="16" View="" EditMaskType="DateTime" EditMask="t" IsNewNode="True" />
+        <ColumnInfo Id="Aircraft Register" PropertyName="FlightReportView.AircraftRegister" Index="17" Width="60" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="ScheduledAircraftType" PropertyName="FlightReportView.ScheduledAircraftType" Width="53" Index="18" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="Status" PropertyName="FlightReportView.Status" Width="34" Index="19" View="" Caption="FW" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="FRIcon" PropertyName="Icon" Caption="FR" Index="20" Width="21" IsNewNode="True" />
+        <ColumnInfo Id="FlightReportState" PropertyName="FlightReportState" Width="206" Index="21" View="" Caption="FR State" AllowEdit="False" IsNewNode="True" />
+      </Columns>
+      <BandsLayout Enable="False" IsNewNode="True" />
+    </ListView>
+    <ListView Id="FR_All_UTC_ListView" ClassName="Mahan.Tralus.Stations.BusinessModel.FlightReport" Caption="FR All UTC" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="FlightLeg" PropertyName="FlightLeg" Width="400" Index="-1" View="" IsNewNode="True" />
+        <ColumnInfo Id="FlightLegId" PropertyName="FlightLegId" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="FlightReportStateId" PropertyName="FlightReportStateId" Width="70" Index="-1" View="" IsNewNode="True" />
+        <ColumnInfo Id="Retraction" PropertyName="FlightReportView.RetractionStatus" Index="0" Width="31" SortIndex="0" SortOrder="Ascending" IsNewNode="True" />
+        <ColumnInfo Id="FlightNumber" PropertyName="FlightReportView.FlightNumber" Index="1" Caption="Flight" Width="59" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="DepartureAirport" PropertyName="FlightReportView.DepartureAirport" Width="39" Index="2" View="" Caption="DEP" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="ArrivalAirport" PropertyName="FlightReportView.ArrivalAirport" Width="41" Index="3" View="" Caption="ARR" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="STDUtc" PropertyName="FlightReportView.ScheduledDepartureDateTime.DateTimeUtc" EditMaskType="DateTime" EditMask="g" Index="4" Width="113" Caption="STD" DisplayFormat="{0:g}" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="MinutesTillDeparture" PropertyName="FlightReportView.MinutesTillDeparture" Width="46" Index="5" View="" Caption="Mins" IsNewNode="True" />
+        <ColumnInfo Id="InEventTimeUtc" PropertyName="FlightReportView.InEventDateTime.TimeUtc" Width="43" Index="6" View="" Caption="IN" IsNewNode="True" />
+        <ColumnInfo Id="CctEventTimeUtc" PropertyName="FlightReportView.CctEventDateTime.TimeUtc" Width="44" Index="7" View="" Caption="CCT" IsNewNode="True" />
+        <ColumnInfo Id="DctEventTimeUtc" PropertyName="FlightReportView.DctEventDateTime.TimeUtc" Width="44" Index="8" View="" Caption="DCT" IsNewNode="True" />
+        <ColumnInfo Id="OffEventTimeUtc" PropertyName="FlightReportView.OffEventDateTime.TimeUtc" Width="40" Index="9" View="" Caption="OFF" IsNewNode="True" />
+        <ColumnInfo Id="OutEventTimeUtc" PropertyName="FlightReportView.OutEventDateTime.TimeUtc" Width="50" Index="10" View="" AllowEdit="False" Caption="OUT" IsNewNode="True" />
+        <ColumnInfo Id="DelaySum" PropertyName="FlightReportView.DelaySum" Width="47" Index="11" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="PassengersCount" PropertyName="FlightReportView.PassengersCount" Width="39" Index="12" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="CargoPiecesCount" PropertyName="FlightReportView.CargoPiecesCount" Width="36" Index="13" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="CargoWeightSum" PropertyName="FlightReportView.CargoWeightSum" Width="37" Index="14" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="HasSpecialService" PropertyName="FlightReportView.HasSpecialService" Width="39" Index="15" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="ArrivalTimeUtc" PropertyName="FlightReportView.ActualArrivalDateTime.TimeUtc" Width="51" Index="16" View="" EditMaskType="DateTime" EditMask="t" Caption="Arrival" IsNewNode="True" />
+        <ColumnInfo Id="Aircraft Register" PropertyName="FlightReportView.AircraftRegister" Index="17" Width="60" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="AircraftType" PropertyName="FlightReportView.ScheduledAircraftType" Width="53" Index="18" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="FWStatus" PropertyName="FlightReportView.Status" Width="38" Index="19" View="" Caption="FW" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="FRIcon" PropertyName="Icon" Caption="FR" Index="20" Width="26" IsNewNode="True" />
+        <ColumnInfo Id="FlightReportState" PropertyName="FlightReportState" Width="206" Index="21" View="" Caption="FR State" AllowEdit="False" IsNewNode="True" />
+      </Columns>
+      <BandsLayout Enable="False" IsNewNode="True" />
+    </ListView>
+    <ListView Id="FR_Current_Local_ListView" ClassName="Mahan.Tralus.Stations.BusinessModel.FlightReport" Caption="FR Current Local" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="FlightLeg" PropertyName="FlightLeg" Width="400" Index="-1" View="" IsNewNode="True" />
+        <ColumnInfo Id="FlightLegId" PropertyName="FlightLegId" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="FlightReportStateId" PropertyName="FlightReportStateId" Width="70" Index="-1" View="" IsNewNode="True" />
+        <ColumnInfo Id="Retraction" PropertyName="FlightReportView.RetractionStatus" Index="0" Width="31" SortIndex="-1" SortOrder="None" IsNewNode="True" />
+        <ColumnInfo Id="FlightNumber" PropertyName="FlightReportView.FlightNumber" Index="1" Caption="Flight" Width="59" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="DepartureAirport" PropertyName="FlightReportView.DepartureAirport" Width="39" Index="2" View="" Caption="DEP" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="ArrivalAirport" PropertyName="FlightReportView.ArrivalAirport" Width="41" Index="3" View="" Caption="ARR" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="STDUtc" PropertyName="FlightReportView.ScheduledDepartureDateTime.DateTimeLocal" EditMaskType="DateTime" EditMask="g" Index="4" Width="113" Caption="STD" DisplayFormat="{0:g}" AllowEdit="False" SortIndex="0" SortOrder="Ascending" IsNewNode="True" />
+        <ColumnInfo Id="MinutesTillDeparture" PropertyName="FlightReportView.MinutesTillDeparture" Width="46" Index="5" View="" Caption="Mins" IsNewNode="True" />
+        <ColumnInfo Id="InEventTimeUtc" PropertyName="FlightReportView.InEventDateTime.TimeUtc" Width="43" Index="6" View="" Caption="IN" IsNewNode="True" />
+        <ColumnInfo Id="CctEventTimeUtc" PropertyName="FlightReportView.CctEventDateTime.TimeUtc" Width="44" Index="7" View="" Caption="CCT" IsNewNode="True" />
+        <ColumnInfo Id="DctEventTimeUtc" PropertyName="FlightReportView.DctEventDateTime.TimeUtc" Width="44" Index="8" View="" Caption="DCT" IsNewNode="True" />
+        <ColumnInfo Id="OffEventTimeUtc" PropertyName="FlightReportView.OffEventDateTime.TimeUtc" Width="40" Index="9" View="" Caption="OFF" IsNewNode="True" />
+        <ColumnInfo Id="OutEventTimeUtc" PropertyName="FlightReportView.OutEventDateTime.TimeUtc" Width="50" Index="10" View="" AllowEdit="False" Caption="OUT" IsNewNode="True" />
+        <ColumnInfo Id="DelaySum" PropertyName="FlightReportView.DelaySum" Width="47" Index="11" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="PassengersCount" PropertyName="FlightReportView.PassengersCount" Width="39" Index="12" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="CargoPiecesCount" PropertyName="FlightReportView.CargoPiecesCount" Width="36" Index="13" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="CargoWeightSum" PropertyName="FlightReportView.CargoWeightSum" Width="37" Index="14" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="HasSpecialService" PropertyName="FlightReportView.HasSpecialService" Width="39" Index="15" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="ArrivalTimeUtc" PropertyName="FlightReportView.ActualArrivalDateTime.TimeUtc" Width="51" Index="16" View="" EditMaskType="DateTime" EditMask="t" Caption="Arrival" IsNewNode="True" />
+        <ColumnInfo Id="Aircraft Register" PropertyName="FlightReportView.AircraftRegister" Index="17" Width="60" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="AircraftType" PropertyName="FlightReportView.ScheduledAircraftType" Width="53" Index="18" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="FWStatus" PropertyName="FlightReportView.Status" Width="38" Index="19" View="" Caption="FW" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="FRIcon" PropertyName="Icon" Caption="FR" Index="20" Width="26" IsNewNode="True" />
+        <ColumnInfo Id="FlightReportState" PropertyName="FlightReportState" Width="206" Index="21" View="" Caption="FR State" AllowEdit="False" IsNewNode="True" />
+      </Columns>
+      <BandsLayout Enable="False" IsNewNode="True" />
+    </ListView>
+    <ListView Id="FR_Current_UTC_ListView" ClassName="Mahan.Tralus.Stations.BusinessModel.FlightReport" Caption="FR Current UTC" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="FlightLeg" PropertyName="FlightLeg" Width="400" Index="-1" View="" IsNewNode="True" />
+        <ColumnInfo Id="FlightLegId" PropertyName="FlightLegId" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="FlightReportStateId" PropertyName="FlightReportStateId" Width="70" Index="-1" View="" IsNewNode="True" />
+        <ColumnInfo Id="Retraction" PropertyName="FlightReportView.RetractionStatus" Index="0" Width="31" SortIndex="0" SortOrder="Ascending" IsNewNode="True" />
+        <ColumnInfo Id="FlightNumber" PropertyName="FlightReportView.FlightNumber" Index="1" Caption="Flight" Width="59" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="DepartureAirport" PropertyName="FlightReportView.DepartureAirport" Width="39" Index="2" View="" Caption="DEP" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="ArrivalAirport" PropertyName="FlightReportView.ArrivalAirport" Width="41" Index="3" View="" Caption="ARR" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="STDUtc" PropertyName="FlightReportView.ScheduledDepartureDateTime.DateTimeUtc" EditMaskType="DateTime" EditMask="g" Index="4" Width="113" Caption="STD" DisplayFormat="{0:g}" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="MinutesTillDeparture" PropertyName="FlightReportView.MinutesTillDeparture" Width="46" Index="5" View="" Caption="Mins" IsNewNode="True" />
+        <ColumnInfo Id="InEventTimeUtc" PropertyName="FlightReportView.InEventDateTime.TimeUtc" Width="43" Index="6" View="" AllowEdit="False" Caption="IN" IsNewNode="True" />
+        <ColumnInfo Id="CctEventTimeUtc" PropertyName="FlightReportView.CctEventDateTime.TimeUtc" Width="44" Index="7" View="" AllowEdit="False" Caption="CCT" IsNewNode="True" />
+        <ColumnInfo Id="DctEventTimeUtc" PropertyName="FlightReportView.DctEventDateTime.TimeUtc" Width="44" Index="8" View="" AllowEdit="False" Caption="DCT" IsNewNode="True" />
+        <ColumnInfo Id="OffEventTimeUtc" PropertyName="FlightReportView.OffEventDateTime.TimeUtc" Width="40" Index="9" View="" AllowEdit="False" Caption="OFF" IsNewNode="True" />
+        <ColumnInfo Id="OutEventTimeUtc" PropertyName="FlightReportView.OutEventDateTime.TimeUtc" Width="50" Index="10" View="" AllowEdit="False" Caption="OUT" IsNewNode="True" />
+        <ColumnInfo Id="DelaySum" PropertyName="FlightReportView.DelaySum" Width="47" Index="11" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="PassengersCount" PropertyName="FlightReportView.PassengersCount" Width="39" Index="12" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="CargoPiecesCount" PropertyName="FlightReportView.CargoPiecesCount" Width="36" Index="13" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="CargoWeightSum" PropertyName="FlightReportView.CargoWeightSum" Width="37" Index="14" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="HasSpecialService" PropertyName="FlightReportView.HasSpecialService" Width="39" Index="15" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="ArrivalTimeUtc" PropertyName="FlightReportView.ActualArrivalDateTime.TimeUtc" Width="51" Index="16" View="" EditMaskType="DateTime" EditMask="t" Caption="Arrival" IsNewNode="True" />
+        <ColumnInfo Id="Aircraft Register" PropertyName="FlightReportView.AircraftRegister" Index="17" Width="60" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="AircraftType" PropertyName="FlightReportView.ScheduledAircraftType" Width="53" Index="18" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="FWStatus" PropertyName="FlightReportView.Status" Width="38" Index="19" View="" Caption="FW" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="FRIcon" PropertyName="Icon" Caption="FR" Index="20" Width="26" IsNewNode="True" />
+        <ColumnInfo Id="FlightReportState" PropertyName="FlightReportState" Width="206" Index="21" View="" Caption="FR State" AllowEdit="False" IsNewNode="True" />
+      </Columns>
+      <BandsLayout Enable="False" IsNewNode="True" />
+    </ListView>
+    <ListView Id="FR_ListView_All_UTC" ClassName="Mahan.Tralus.Stations.BusinessModel.FlightReport" Caption="FR All UTC" AllowDelete="False" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="FlightLeg" PropertyName="FlightLeg" Width="400" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="FlightLegId" PropertyName="FlightLegId" Width="70" Index="1" IsNewNode="True" />
+      </Columns>
+    </ListView>
+    <ListView Id="FR_ListView_Current_Local" ClassName="Mahan.Tralus.Stations.BusinessModel.FlightReport" Caption="FR Current Local" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="FlightLeg" PropertyName="FlightLeg" Width="400" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="FlightLegId" PropertyName="FlightLegId" Width="70" Index="1" IsNewNode="True" />
+      </Columns>
+    </ListView>
+    <ListView Id="FR_ListView_Current_UTC" ClassName="Mahan.Tralus.Stations.BusinessModel.FlightReport" Caption="FR Current UTC" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="FlightLeg" PropertyName="FlightLeg" Width="400" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="FlightLegId" PropertyName="FlightLegId" Width="70" Index="1" IsNewNode="True" />
+      </Columns>
+    </ListView>
+    <ListView Id="FR_Local_Arrivals_ListView" ClassName="Mahan.Tralus.Stations.BusinessModel.FlightReport" Caption="FR Local Arrivals" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="FlightLeg" PropertyName="FlightLeg" Width="400" Index="-1" View="" IsNewNode="True" />
+        <ColumnInfo Id="FlightLegId" PropertyName="FlightLegId" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="FlightReportStateId" PropertyName="FlightReportStateId" Width="70" Index="-1" View="" IsNewNode="True" />
+        <ColumnInfo Id="Retraction" PropertyName="FlightReportView.RetractionStatus" Index="0" Width="31" SortIndex="0" SortOrder="Ascending" IsNewNode="True" />
+        <ColumnInfo Id="FlightNumber" PropertyName="FlightReportView.FlightNumber" Index="1" Caption="Flight" Width="59" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="DepartureAirport" PropertyName="FlightReportView.DepartureAirport" Width="39" Index="2" View="" Caption="DEP" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="ArrivalAirport" PropertyName="FlightReportView.ArrivalAirport" Width="41" Index="3" View="" Caption="ARR" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="STD_UTC" PropertyName="FlightReportView.ScheduledDepartureDateTime.DateTimeUtc" EditMaskType="DateTime" EditMask="g" Index="4" Width="113" Caption="STD" DisplayFormat="{0:g}" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="MinutesTillDeparture" PropertyName="FlightReportView.MinutesTillDeparture" Width="46" Index="5" View="" Caption="Mins" IsNewNode="True" />
+        <ColumnInfo Id="InEventTimeUtc" PropertyName="FlightReportView.InEventDateTime.TimeUtc" Width="43" Index="6" View="" Caption="IN" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="CctEventTimeUtc" PropertyName="FlightReportView.CctEventDateTime.TimeUtc" Width="44" Index="7" View="" Caption="CCT" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="DctEventTimeUtc" PropertyName="FlightReportView.DctEventDateTime.TimeUtc" Width="44" Index="8" View="" Caption="DCT" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="OffEventTimeUtc" PropertyName="FlightReportView.OffEventDateTime.TimeUtc" Width="40" Index="9" View="" Caption="OFF" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="OutEventTimeUtc" PropertyName="FlightReportView.OutEventDateTime.TimeUtc" Width="41" Index="10" View="" Caption="OUT" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="DelaySum" PropertyName="FlightReportView.DelaySum" Width="47" Index="11" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="PassengersCount" PropertyName="FlightReportView.PassengersCount" Width="39" Index="12" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="CargoPiecesCount" PropertyName="FlightReportView.CargoPiecesCount" Width="36" Index="13" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="CargoWeightSum" PropertyName="FlightReportView.CargoWeightSum" Width="37" Index="14" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="HasSpecialService" PropertyName="FlightReportView.HasSpecialService" Width="39" Index="15" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="ArrivalDateTime" PropertyName="FlightReportView.ActualArrivalDateTime.TimeUtc" Width="51" Index="16" View="" EditMaskType="DateTime" EditMask="t" IsNewNode="True" />
+        <ColumnInfo Id="Aircraft Register" PropertyName="FlightReportView.AircraftRegister" Index="17" Width="60" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="ScheduledAircraftType" PropertyName="FlightReportView.ScheduledAircraftType" Width="53" Index="18" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="Status" PropertyName="FlightReportView.Status" Width="34" Index="19" View="" Caption="FW" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="FlightType" PropertyName="FlightReportView.FlightType" Width="33" Index="20" View="" Caption="FR" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="FlightReportState" PropertyName="FlightReportState" Width="206" Index="21" View="" Caption="FR State" AllowEdit="False" IsNewNode="True" />
+      </Columns>
+      <BandsLayout Enable="False" IsNewNode="True" />
+    </ListView>
+    <ListView Id="FR_Local_Departures_ListView" ClassName="Mahan.Tralus.Stations.BusinessModel.FlightReport" Caption="FR Local Departures" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="FlightLeg" PropertyName="FlightLeg" Width="400" Index="-1" View="" IsNewNode="True" />
+        <ColumnInfo Id="FlightLegId" PropertyName="FlightLegId" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="FlightReportStateId" PropertyName="FlightReportStateId" Width="70" Index="-1" View="" IsNewNode="True" />
+        <ColumnInfo Id="Retraction" PropertyName="FlightReportView.RetractionStatus" Index="0" Width="31" SortIndex="0" SortOrder="Ascending" IsNewNode="True" />
+        <ColumnInfo Id="FlightNumber" PropertyName="FlightReportView.FlightNumber" Index="1" Caption="Flight" Width="59" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="DepartureAirport" PropertyName="FlightReportView.DepartureAirport" Width="39" Index="2" View="" Caption="DEP" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="ArrivalAirport" PropertyName="FlightReportView.ArrivalAirport" Width="41" Index="3" View="" Caption="ARR" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="STD_UTC" PropertyName="FlightReportView.ScheduledDepartureDateTime.DateTimeUtc" EditMaskType="DateTime" EditMask="g" Index="4" Width="113" Caption="STD" DisplayFormat="{0:g}" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="MinutesTillDeparture" PropertyName="FlightReportView.MinutesTillDeparture" Width="46" Index="5" View="" Caption="Mins" IsNewNode="True" />
+        <ColumnInfo Id="InEventTimeUtc" PropertyName="FlightReportView.InEventDateTime.TimeUtc" Width="43" Index="6" View="" Caption="IN" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="CctEventTimeUtc" PropertyName="FlightReportView.CctEventDateTime.TimeUtc" Width="44" Index="7" View="" Caption="CCT" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="DctEventTimeUtc" PropertyName="FlightReportView.DctEventDateTime.TimeUtc" Width="44" Index="8" View="" Caption="DCT" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="OffEventTimeUtc" PropertyName="FlightReportView.OffEventDateTime.TimeUtc" Width="40" Index="9" View="" Caption="OFF" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="OutEventTimeUtc" PropertyName="FlightReportView.OutEventDateTime.TimeUtc" Width="41" Index="10" View="" Caption="OUT" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="DelaySum" PropertyName="FlightReportView.DelaySum" Width="47" Index="11" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="PassengersCount" PropertyName="FlightReportView.PassengersCount" Width="39" Index="12" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="CargoPiecesCount" PropertyName="FlightReportView.CargoPiecesCount" Width="36" Index="13" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="CargoWeightSum" PropertyName="FlightReportView.CargoWeightSum" Width="37" Index="14" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="HasSpecialService" PropertyName="FlightReportView.HasSpecialService" Width="39" Index="15" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="ArrivalDateTime" PropertyName="FlightReportView.ActualArrivalDateTime.TimeUtc" Width="51" Index="16" View="" EditMaskType="DateTime" EditMask="t" IsNewNode="True" />
+        <ColumnInfo Id="Aircraft Register" PropertyName="FlightReportView.AircraftRegister" Index="17" Width="60" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="ScheduledAircraftType" PropertyName="FlightReportView.ScheduledAircraftType" Width="53" Index="18" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="Status" PropertyName="FlightReportView.Status" Width="34" Index="19" View="" Caption="FW" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="FlightType" PropertyName="FlightReportView.FlightType" Width="33" Index="20" View="" Caption="FR" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="FlightReportState" PropertyName="FlightReportState" Width="206" Index="21" View="" Caption="FR State" AllowEdit="False" IsNewNode="True" />
+      </Columns>
+      <BandsLayout Enable="False" IsNewNode="True" />
+    </ListView>
+    <ListView Id="FR_UTC_Arrivals_ListView" ClassName="Mahan.Tralus.Stations.BusinessModel.FlightReport" Caption="FR UTC Arrivals" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="FlightLeg" PropertyName="FlightLeg" Width="400" Index="-1" View="" IsNewNode="True" />
+        <ColumnInfo Id="FlightLegId" PropertyName="FlightLegId" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="FlightReportStateId" PropertyName="FlightReportStateId" Width="70" Index="-1" View="" IsNewNode="True" />
+        <ColumnInfo Id="Retraction" PropertyName="FlightReportView.RetractionStatus" Index="0" Width="31" SortIndex="0" SortOrder="Ascending" IsNewNode="True" />
+        <ColumnInfo Id="FlightNumber" PropertyName="FlightReportView.FlightNumber" Index="1" Caption="Flight" Width="59" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="DepartureAirport" PropertyName="FlightReportView.DepartureAirport" Width="39" Index="2" View="" Caption="DEP" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="ArrivalAirport" PropertyName="FlightReportView.ArrivalAirport" Width="41" Index="3" View="" Caption="ARR" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="STD_UTC" PropertyName="FlightReportView.ScheduledDepartureDateTime.DateTimeUtc" EditMaskType="DateTime" EditMask="g" Index="4" Width="113" Caption="STD" DisplayFormat="{0:g}" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="MinutesTillDeparture" PropertyName="FlightReportView.MinutesTillDeparture" Width="46" Index="5" View="" Caption="Mins" IsNewNode="True" />
+        <ColumnInfo Id="InEventTimeUtc" PropertyName="FlightReportView.InEventDateTime.TimeUtc" Width="43" Index="6" View="" Caption="IN" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="CctEventTimeUtc" PropertyName="FlightReportView.CctEventDateTime.TimeUtc" Width="44" Index="7" View="" Caption="CCT" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="DctEventTimeUtc" PropertyName="FlightReportView.DctEventDateTime.TimeUtc" Width="44" Index="8" View="" Caption="DCT" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="OffEventTimeUtc" PropertyName="FlightReportView.OffEventDateTime.TimeUtc" Width="40" Index="9" View="" Caption="OFF" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="OutEventTimeUtc" PropertyName="FlightReportView.OutEventDateTime.TimeUtc" Width="41" Index="10" View="" Caption="OUT" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="DelaySum" PropertyName="FlightReportView.DelaySum" Width="47" Index="11" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="PassengersCount" PropertyName="FlightReportView.PassengersCount" Width="39" Index="12" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="CargoPiecesCount" PropertyName="FlightReportView.CargoPiecesCount" Width="36" Index="13" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="CargoWeightSum" PropertyName="FlightReportView.CargoWeightSum" Width="37" Index="14" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="HasSpecialService" PropertyName="FlightReportView.HasSpecialService" Width="39" Index="15" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="ArrivalDateTime" PropertyName="FlightReportView.ActualArrivalDateTime.TimeUtc" Width="51" Index="16" View="" EditMaskType="DateTime" EditMask="t" IsNewNode="True" />
+        <ColumnInfo Id="Aircraft Register" PropertyName="FlightReportView.AircraftRegister" Index="17" Width="60" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="ScheduledAircraftType" PropertyName="FlightReportView.ScheduledAircraftType" Width="53" Index="18" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="Status" PropertyName="FlightReportView.Status" Width="34" Index="19" View="" Caption="FW" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="FlightType" PropertyName="FlightReportView.FlightType" Width="33" Index="20" View="" Caption="FR" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="FlightReportState" PropertyName="FlightReportState" Width="206" Index="21" View="" Caption="FR State" AllowEdit="False" IsNewNode="True" />
+      </Columns>
+      <BandsLayout Enable="False" IsNewNode="True" />
+    </ListView>
+    <ListView Id="FR_UTC_Departures_ListView" ClassName="Mahan.Tralus.Stations.BusinessModel.FlightReport" Caption="FR UTC Departures" Criteria="" IsNewNode="True">
+      <Columns IsNewNode="True">
+        <ColumnInfo Id="FlightLeg" PropertyName="FlightLeg" Width="400" Index="-1" View="" IsNewNode="True" />
+        <ColumnInfo Id="FlightLegId" PropertyName="FlightLegId" Width="70" Index="-1" IsNewNode="True" />
+        <ColumnInfo Id="FlightReportStateId" PropertyName="FlightReportStateId" Width="70" Index="-1" View="" IsNewNode="True" />
+        <ColumnInfo Id="Retraction" PropertyName="FlightReportView.RetractionStatus" Index="0" Width="31" SortIndex="0" SortOrder="Ascending" IsNewNode="True" />
+        <ColumnInfo Id="FlightNumber" PropertyName="FlightReportView.FlightNumber" Index="1" Caption="Flight" Width="59" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="DepartureAirport" PropertyName="FlightReportView.DepartureAirport" Width="39" Index="2" View="" Caption="DEP" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="ArrivalAirport" PropertyName="FlightReportView.ArrivalAirport" Width="41" Index="3" View="" Caption="ARR" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="STD_UTC" PropertyName="FlightReportView.ScheduledDepartureDateTime.DateTimeUtc" EditMaskType="DateTime" EditMask="g" Index="4" Width="113" Caption="STD" DisplayFormat="{0:g}" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="MinutesTillDeparture" PropertyName="FlightReportView.MinutesTillDeparture" Width="46" Index="5" View="" Caption="Mins" IsNewNode="True" />
+        <ColumnInfo Id="InEventTimeUtc" PropertyName="FlightReportView.InEventDateTime.TimeUtc" Width="43" Index="6" View="" Caption="IN" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="CctEventTimeUtc" PropertyName="FlightReportView.CctEventDateTime.TimeUtc" Width="44" Index="7" View="" Caption="CCT" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="DctEventTimeUtc" PropertyName="FlightReportView.DctEventDateTime.TimeUtc" Width="44" Index="8" View="" Caption="DCT" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="OffEventTimeUtc" PropertyName="FlightReportView.OffEventDateTime.TimeUtc" Width="40" Index="9" View="" Caption="OFF" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="OutEventTimeUtc" PropertyName="FlightReportView.OutEventDateTime.TimeUtc" Width="41" Index="10" View="" Caption="OUT" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="DelaySum" PropertyName="FlightReportView.DelaySum" Width="47" Index="11" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="PassengersCount" PropertyName="FlightReportView.PassengersCount" Width="39" Index="12" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="CargoPiecesCount" PropertyName="FlightReportView.CargoPiecesCount" Width="36" Index="13" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="CargoWeightSum" PropertyName="FlightReportView.CargoWeightSum" Width="37" Index="14" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="HasSpecialService" PropertyName="FlightReportView.HasSpecialService" Width="39" Index="15" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="ArrivalDateTime" PropertyName="FlightReportView.ActualArrivalDateTime.TimeUtc" Width="51" Index="16" View="" EditMaskType="DateTime" EditMask="t" IsNewNode="True" />
+        <ColumnInfo Id="Aircraft Register" PropertyName="FlightReportView.AircraftRegister" Index="17" Width="60" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="ScheduledAircraftType" PropertyName="FlightReportView.ScheduledAircraftType" Width="53" Index="18" View="" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="Status" PropertyName="FlightReportView.Status" Width="34" Index="19" View="" Caption="FW" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="FlightType" PropertyName="FlightReportView.FlightType" Width="33" Index="20" View="" Caption="FR" AllowEdit="False" IsNewNode="True" />
+        <ColumnInfo Id="FlightReportState" PropertyName="FlightReportState" Width="206" Index="21" View="" Caption="FR State" AllowEdit="False" IsNewNode="True" />
+      </Columns>
+      <BandsLayout Enable="False" IsNewNode="True" />
+    </ListView>
+    <ListView Id="FuellingType_LookupListView" AllowDelete="False" AllowNew="False">
+      <Columns>
+        <ColumnInfo Id="Code" Index="-1" />
+        <ColumnInfo Id="Name" PropertyName="Name" AllowEdit="False" Caption="Name" Width="116" IsNewNode="True" />
+      </Columns>
+    </ListView>
+  </Views>
+</Application>

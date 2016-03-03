@@ -1,0 +1,121 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mahan.Tralus.Stations.Module", "Mahan.Tralus.Stations.Module\Mahan.Tralus.Stations.Module.csproj", "{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mahan.Tralus.Stations.Module.Web", "Mahan.Tralus.Stations.Module.Web\Mahan.Tralus.Stations.Module.Web.csproj", "{0C729AAD-7626-4668-A7F1-35F7D240489D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mahan.Tralus.Stations.Module.Win", "Mahan.Tralus.Stations.Module.Win\Mahan.Tralus.Stations.Module.Win.csproj", "{7964F87D-BC5D-4C4E-8B2F-71E89739AA97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mahan.Tralus.Stations.Data", "Mahan.Tralus.Stations.Data\Mahan.Tralus.Stations.Data.csproj", "{95ED2C98-8E5B-4633-95F6-F46B0E1A2AAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mahan.Tralus.Stations.Migration", "Mahan.Tralus.Stations.Migration\Mahan.Tralus.Stations.Migration.csproj", "{BF88A671-6683-4CBB-8B16-1E9DFC5CF467}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Runner.Win", "Runner.Win\Runner.Win.csproj", "{32984C10-93E5-452C-9603-9D14334E6D95}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DAA58C45-936B-4E36-AF72-F28412C9B8AA} = {DAA58C45-936B-4E36-AF72-F28412C9B8AA}
+		{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D} = {5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}
+		{7964F87D-BC5D-4C4E-8B2F-71E89739AA97} = {7964F87D-BC5D-4C4E-8B2F-71E89739AA97}
+		{95ED2C98-8E5B-4633-95F6-F46B0E1A2AAD} = {95ED2C98-8E5B-4633-95F6-F46B0E1A2AAD}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mahan.Tralus.Stations.BusinessModel", "Mahan.Tralus.Stations.BusinessModel\Mahan.Tralus.Stations.BusinessModel.csproj", "{DAA58C45-936B-4E36-AF72-F28412C9B8AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Runner.Web", "Runner.Web\Runner.Web.csproj", "{560BA78F-AFA7-4073-A6EA-A8F8E1C060C8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DAA58C45-936B-4E36-AF72-F28412C9B8AA} = {DAA58C45-936B-4E36-AF72-F28412C9B8AA}
+		{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D} = {5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}
+		{95ED2C98-8E5B-4633-95F6-F46B0E1A2AAD} = {95ED2C98-8E5B-4633-95F6-F46B0E1A2AAD}
+		{0C729AAD-7626-4668-A7F1-35F7D240489D} = {0C729AAD-7626-4668-A7F1-35F7D240489D}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		EasyTest|Any CPU = EasyTest|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}.EasyTest|Any CPU.ActiveCfg = EasyTest|Any CPU
+		{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
+		{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C729AAD-7626-4668-A7F1-35F7D240489D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C729AAD-7626-4668-A7F1-35F7D240489D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C729AAD-7626-4668-A7F1-35F7D240489D}.EasyTest|Any CPU.ActiveCfg = EasyTest|Any CPU
+		{0C729AAD-7626-4668-A7F1-35F7D240489D}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
+		{0C729AAD-7626-4668-A7F1-35F7D240489D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C729AAD-7626-4668-A7F1-35F7D240489D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7964F87D-BC5D-4C4E-8B2F-71E89739AA97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7964F87D-BC5D-4C4E-8B2F-71E89739AA97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7964F87D-BC5D-4C4E-8B2F-71E89739AA97}.EasyTest|Any CPU.ActiveCfg = EasyTest|Any CPU
+		{7964F87D-BC5D-4C4E-8B2F-71E89739AA97}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
+		{7964F87D-BC5D-4C4E-8B2F-71E89739AA97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7964F87D-BC5D-4C4E-8B2F-71E89739AA97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95ED2C98-8E5B-4633-95F6-F46B0E1A2AAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95ED2C98-8E5B-4633-95F6-F46B0E1A2AAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95ED2C98-8E5B-4633-95F6-F46B0E1A2AAD}.EasyTest|Any CPU.ActiveCfg = Release|Any CPU
+		{95ED2C98-8E5B-4633-95F6-F46B0E1A2AAD}.EasyTest|Any CPU.Build.0 = Release|Any CPU
+		{95ED2C98-8E5B-4633-95F6-F46B0E1A2AAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95ED2C98-8E5B-4633-95F6-F46B0E1A2AAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF88A671-6683-4CBB-8B16-1E9DFC5CF467}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF88A671-6683-4CBB-8B16-1E9DFC5CF467}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF88A671-6683-4CBB-8B16-1E9DFC5CF467}.EasyTest|Any CPU.ActiveCfg = Release|Any CPU
+		{BF88A671-6683-4CBB-8B16-1E9DFC5CF467}.EasyTest|Any CPU.Build.0 = Release|Any CPU
+		{BF88A671-6683-4CBB-8B16-1E9DFC5CF467}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF88A671-6683-4CBB-8B16-1E9DFC5CF467}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32984C10-93E5-452C-9603-9D14334E6D95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32984C10-93E5-452C-9603-9D14334E6D95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32984C10-93E5-452C-9603-9D14334E6D95}.EasyTest|Any CPU.ActiveCfg = Release|Any CPU
+		{32984C10-93E5-452C-9603-9D14334E6D95}.EasyTest|Any CPU.Build.0 = Release|Any CPU
+		{32984C10-93E5-452C-9603-9D14334E6D95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAA58C45-936B-4E36-AF72-F28412C9B8AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAA58C45-936B-4E36-AF72-F28412C9B8AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAA58C45-936B-4E36-AF72-F28412C9B8AA}.EasyTest|Any CPU.ActiveCfg = Release|Any CPU
+		{DAA58C45-936B-4E36-AF72-F28412C9B8AA}.EasyTest|Any CPU.Build.0 = Release|Any CPU
+		{DAA58C45-936B-4E36-AF72-F28412C9B8AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAA58C45-936B-4E36-AF72-F28412C9B8AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{560BA78F-AFA7-4073-A6EA-A8F8E1C060C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{560BA78F-AFA7-4073-A6EA-A8F8E1C060C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{560BA78F-AFA7-4073-A6EA-A8F8E1C060C8}.EasyTest|Any CPU.ActiveCfg = Release|Any CPU
+		{560BA78F-AFA7-4073-A6EA-A8F8E1C060C8}.EasyTest|Any CPU.Build.0 = Release|Any CPU
+		{560BA78F-AFA7-4073-A6EA-A8F8E1C060C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 9
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfs.mahanair.aero:8080/tfs/mahan
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Mahan.Tralus.Stations.Module.Web\\Mahan.Tralus.Stations.Module.Web.csproj
+		SccProjectName1 = Mahan.Tralus.Stations.Module.Web
+		SccLocalPath1 = Mahan.Tralus.Stations.Module.Web
+		SccProjectUniqueName2 = Mahan.Tralus.Stations.Module.Win\\Mahan.Tralus.Stations.Module.Win.csproj
+		SccProjectName2 = Mahan.Tralus.Stations.Module.Win
+		SccLocalPath2 = Mahan.Tralus.Stations.Module.Win
+		SccProjectUniqueName3 = Mahan.Tralus.Stations.Module\\Mahan.Tralus.Stations.Module.csproj
+		SccProjectName3 = Mahan.Tralus.Stations.Module
+		SccLocalPath3 = Mahan.Tralus.Stations.Module
+		SccProjectUniqueName4 = Mahan.Tralus.Stations.Data\\Mahan.Tralus.Stations.Data.csproj
+		SccProjectName4 = Mahan.Tralus.Stations.Data
+		SccLocalPath4 = Mahan.Tralus.Stations.Data
+		SccProjectUniqueName5 = Mahan.Tralus.Stations.Migration\\Mahan.Tralus.Stations.Migration.csproj
+		SccProjectName5 = Mahan.Tralus.Stations.Migration
+		SccLocalPath5 = Mahan.Tralus.Stations.Migration
+		SccProjectUniqueName6 = Runner.Win\\Runner.Win.csproj
+		SccProjectName6 = Runner.Win
+		SccLocalPath6 = Runner.Win
+		SccProjectUniqueName7 = Mahan.Tralus.Stations.BusinessModel\\Mahan.Tralus.Stations.BusinessModel.csproj
+		SccProjectName7 = Mahan.Tralus.Stations.BusinessModel
+		SccLocalPath7 = Mahan.Tralus.Stations.BusinessModel
+		SccProjectUniqueName8 = Runner.Web\\Runner.Web.csproj
+		SccProjectName8 = Runner.Web
+		SccLocalPath8 = Runner.Web
+	EndGlobalSection
+EndGlobal

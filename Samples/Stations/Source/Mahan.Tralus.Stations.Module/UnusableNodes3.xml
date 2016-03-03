@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel Id="BOModel">
+    <Class Name="Mahan.Tralus.Stations.BusinessModel.FlightReport">
+      <OwnMembers Id="OwnMembers">
+        <Member Name="FlightLeg.ArrivalAirport" IsCustom="True" IsCalculated="False" Caption="Arrival Airport" />
+        <Member Name="FlightLeg.DepartureAirport" IsCustom="True" IsCalculated="False" ImmediatePostData="True" Caption="Departure Airport" AllowEdit="True" />
+        <Member Name="FlightLeg.FlightNumber" IsCustom="True" IsCalculated="False" Caption="Flight Number" />
+        <Member Name="FlightLeg.ScheduledDepartureDateTime.DateTimeLocal" IsCustom="True" IsCalculated="False" Caption="STD Local" />
+        <Member Name="FlightLeg.ScheduledDepartureDateTime.DateTimeUtc" IsCustom="True" IsCalculated="False" Caption="STD UTC" />
+        <Member Name="IN" IsCustom="True" IsCalculated="False" Caption="IN" Type="System.String" />
+        <Member Name="Mins" IsCustom="True" IsCalculated="True" Type="System.UInt16" Expression="[FlightLeg.ScheduledDepartureDateTime.DateTimeUtc]" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <Views Id="Views">
+    <DetailView Id="FlightReport_DetailView" Removed="True" />
+    <ListView Id="FlightReport_LookupListView" Removed="True" />
+    <ListView Id="FlightReportView_DestinationProfiles_ListView" MasterDetailMode="ListViewAndDetailView">
+      <SplitLayout Id="SplitLayout" SplitterPosition="386" />
+    </ListView>
+    <ListView Id="FlightReportView_ListView" MasterDetailMode="ListViewAndDetailView" />
+    <ListView Id="FlightReport_ListView_FR_UTC_Departure" ClassName="Mahan.Tralus.Stations.BusinessModel.FlightReport" Caption="FR UTC Departure">
+      <Columns Id="Columns">
+        <ColumnInfo Id="FlightLeg" PropertyName="FlightLeg" Width="400" Index="0" />
+        <ColumnInfo Id="FlightLegId" PropertyName="FlightLegId" Width="70" Index="1" />
+      </Columns>
+    </ListView>
+    <ListView Id="FlightReport_ListView_FR_UTC_Arrivals" ClassName="Mahan.Tralus.Stations.BusinessModel.FlightReport" Caption="FR UTC Arrivals">
+      <Columns Id="Columns">
+        <ColumnInfo Id="FlightLeg" PropertyName="FlightLeg" Width="400" Index="0" />
+        <ColumnInfo Id="FlightLegId" PropertyName="FlightLegId" Width="70" Index="1" />
+      </Columns>
+    </ListView>
+    <ListView Id="FlightReport_ListView_FR_Local_Departure" ClassName="Mahan.Tralus.Stations.BusinessModel.FlightReport" Caption="FR Local Departure">
+      <Columns Id="Columns">
+        <ColumnInfo Id="FlightLeg" PropertyName="FlightLeg" Width="400" Index="0" />
+        <ColumnInfo Id="FlightLegId" PropertyName="FlightLegId" Width="70" Index="1" />
+      </Columns>
+    </ListView>
+    <ListView Id="FlightReport_ListView_FR_Local_Arrivals" ClassName="Mahan.Tralus.Stations.BusinessModel.FlightReport" Caption="FR Local Arrivals">
+      <Columns Id="Columns">
+        <ColumnInfo Id="FlightLeg" PropertyName="FlightLeg" Width="400" Index="0" />
+        <ColumnInfo Id="FlightLegId" PropertyName="FlightLegId" Width="70" Index="1" />
+      </Columns>
+    </ListView>
+    <ListView Id="FlightReport_ListView_FR_Current_UTC" ClassName="Mahan.Tralus.Stations.BusinessModel.FlightReport" Caption="FR Current UTC">
+      <Columns Id="Columns">
+        <ColumnInfo Id="FlightLeg" PropertyName="FlightLeg" Width="400" Index="0" />
+        <ColumnInfo Id="FlightLegId" PropertyName="FlightLegId" Width="70" Index="1" />
+      </Columns>
+    </ListView>
+    <ListView Id="FlightReport_ListView_FR_Current_Local" ClassName="Mahan.Tralus.Stations.BusinessModel.FlightReport" Caption="FR Current Local">
+      <Columns Id="Columns">
+        <ColumnInfo Id="FlightLeg" PropertyName="FlightLeg" Width="400" Index="0" />
+        <ColumnInfo Id="FlightLegId" PropertyName="FlightLegId" Width="70" Index="1" />
+      </Columns>
+    </ListView>
+    <ListView Id="FlightReport_ListView_FR_All_UTC" ClassName="Mahan.Tralus.Stations.BusinessModel.FlightReport" Caption="FR All UTC">
+      <Columns Id="Columns">
+        <ColumnInfo Id="FlightLeg" PropertyName="FlightLeg" Width="400" Index="0" />
+        <ColumnInfo Id="FlightLegId" PropertyName="FlightLegId" Width="70" Index="1" />
+      </Columns>
+    </ListView>
+    <ListView Id="FlightReport_ListView_FR_All_Local" ClassName="Mahan.Tralus.Stations.BusinessModel.FlightReport" Caption="FR All Local">
+      <Columns Id="Columns">
+        <ColumnInfo Id="FlightLeg" PropertyName="FlightLeg" Width="400" Index="0" />
+        <ColumnInfo Id="FlightLegId" PropertyName="FlightLegId" Width="70" Index="1" />
+      </Columns>
+    </ListView>
+    <ListView Id="FlightReport_ListView_FR_Airport_Departure" ClassName="Mahan.Tralus.Stations.BusinessModel.FlightReport" Caption="FR Airport Departure">
+      <Columns Id="Columns">
+        <ColumnInfo Id="FlightLeg" PropertyName="FlightLeg" Width="400" Index="0" />
+        <ColumnInfo Id="FlightLegId" PropertyName="FlightLegId" Width="70" Index="1" />
+      </Columns>
+    </ListView>
+    <ListView Id="FlightReport_ListView_FR_Airport_Arrivals" ClassName="Mahan.Tralus.Stations.BusinessModel.FlightReport" Caption="FR Airport Arrivals">
+      <Columns Id="Columns">
+        <ColumnInfo Id="FlightLeg" PropertyName="FlightLeg" Width="400" Index="-1" />
+        <ColumnInfo Id="FlightLegId" PropertyName="FlightLegId" Width="70" Index="-1" />
+        <ColumnInfo Id="FlightNumber" PropertyName="FlightLeg.FlightNumber" AllowEdit="False" ImmediatePostData="True" Width="102" Index="0" Caption="Flight" />
+        <ColumnInfo Id="DepartureAirport" PropertyName="FlightLeg.DepartureAirport" Index="1" Width="123" Caption="DEP" />
+        <ColumnInfo Id="ArrivalAirport" PropertyName="FlightLeg.ArrivalAirport" Index="2" Width="123" Caption="ARR" />
+        <ColumnInfo Id="STDLocal" PropertyName="FlightLeg.ScheduledDepartureDateTime.DateTimeLocal" Caption="STD - Local" />
+        <ColumnInfo Id="STDUTC" PropertyName="FlightLeg.ScheduledDepartureDateTime.DateTimeUtc" Caption="STD" />
+      </Columns>
+    </ListView>
+    <ListView Id="FlightReport_ListView" ClassName="Mahan.Tralus.Stations.BusinessModel.FlightReport" Removed="True">
+      <Columns Id="Columns">
+        <ColumnInfo Id="FlightLeg" PropertyName="FlightLeg" Index="0" Width="400" />
+        <ColumnInfo Id="FlightLegId" PropertyName="FlightLegId" Index="1" Width="70" />
+        <ColumnInfo Id="FlightNumber" PropertyName="FlightLeg.FlightNumber" ImmediatePostData="True" AllowEdit="False" />
+      </Columns>
+    </ListView>
+  </Views>
+  <NavigationItems Id="NavigationItems">
+    <Items Id="Items">
+      <Item Id="@8a384c58-8446-4446-8d48-7f69dc150ba8">
+        <Items Id="Items">
+          <Item Id="@feb740c3-4867-4228-9b4a-4d8d0d95d74c">
+            <Items Id="Items">
+              <Item Id="@4c955e63-f895-4ea9-bad3-8885c098fcbb" ViewId="FlightReport_ListView_FR_Local_Arrivals" />
+              <Item Id="@35ebe81f-ffe4-480e-a490-fb0e2c47457b" ViewId="FlightReport_ListView_FR_Local_Departure" />
+            </Items>
+          </Item>
+          <Item Id="@5c3699d4-54b5-4ae5-86a8-3dc68a27d181">
+            <Items Id="Items">
+              <Item Id="@b9b6f889-b7b5-4b31-a1d8-b869902ddcca" ViewId="FlightReport_ListView_FR_Airport_Arrivals" />
+              <Item Id="@0bcb9595-6436-4819-9db9-de8773242996" ViewId="FlightReport_ListView_FR_Airport_Departure" />
+            </Items>
+          </Item>
+          <Item Id="@44f73ae0-f8ed-43df-b105-59c7ead70972">
+            <Items Id="Items">
+              <Item Id="@f6c5b5fe-ce81-491b-9a06-a25a7a7f0710" ViewId="FlightReport_ListView_FR_UTC_Departure" />
+              <Item Id="@5635faa9-09ab-47ad-b8e8-0982a3b86be9" ViewId="FlightReport_ListView_FR_UTC_Arrivals" />
+            </Items>
+          </Item>
+          <Item Id="@25df1e46-53ac-4679-aaad-3b25d542abfa">
+            <Items Id="Items">
+              <Item Id="@ce313657-659e-40a1-b5cc-0845e1e0dd22" ViewId="FlightReport_ListView_FR_Current_Local" />
+              <Item Id="@619a7a18-fef3-4967-8cc2-92e6abbd440c" ViewId="FlightReportView_ListView" />
+              <Item Id="@41cf0249-6b29-4018-bbe4-485be01ccdf7" ViewId="FlightReport_ListView_FR_Current_UTC" />
+              <Item Id="@3620f0df-d677-4caf-8f14-d3bdc75ec8a8" ViewId="FlightReport_ListView_FR_All_Local" />
+            </Items>
+          </Item>
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+</Application>
