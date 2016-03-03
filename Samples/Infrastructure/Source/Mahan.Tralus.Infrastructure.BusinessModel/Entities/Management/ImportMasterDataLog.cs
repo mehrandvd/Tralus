@@ -4,9 +4,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Mahan.Tralus.Framework.BusinessModel.Entities;
+using Tralus.Framework.BusinessModel.Entities;
 
-namespace Mahan.Tralus.Infrastructure.BusinessModel
+namespace Mahan.Infrastructure.BusinessModel
 {
     [Table("ImportMasterDataLog", Schema = "Infrastructure")]
     public class ImportMasterDataLog : EntityBase

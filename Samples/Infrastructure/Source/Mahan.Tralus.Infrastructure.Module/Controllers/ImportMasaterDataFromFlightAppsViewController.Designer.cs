@@ -1,4 +1,4 @@
-namespace Mahan.Tralus.Infrastructure.Module.Controllers
+namespace Mahan.Infrastructure.Module.Controllers
 {
     partial class ImportMasaterDataFromFlightAppsViewController
     {

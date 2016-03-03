@@ -7,13 +7,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Globalization;
 using System.Threading;
 using DevExpress.Persistent.Base;
-using Mahan.Tralus.Framework.BusinessModel.Entities;
-using Mahan.Tralus.Framework.BusinessModel.Utility;
+using Tralus.Framework.BusinessModel.Entities;
+using Tralus.Framework.BusinessModel.Utility;
 using NodaTime;
 using Persia;
 using Calendar = System.Globalization.Calendar;
 
-namespace Mahan.Tralus.Infrastructure.BusinessModel
+namespace Mahan.Infrastructure.BusinessModel
 {/// <summary>
     /// این شی اطلاعات یک رجیستر هواپیما را نگه می‌دارد.
     /// یک رجیستر، یک هواپیما است که به واسطه اینکه در حال حاضر متعلق

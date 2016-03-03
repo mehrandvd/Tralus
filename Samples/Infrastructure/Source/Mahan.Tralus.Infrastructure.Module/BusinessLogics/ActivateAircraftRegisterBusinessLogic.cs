@@ -7,12 +7,12 @@ using System.Text;
 using System.Threading.Tasks;
 using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.Security;
-using Mahan.Tralus.Framework.BusinessModel.Entities;
-using Mahan.Tralus.Framework.Module;
-using Mahan.Tralus.Infrastructure.BusinessModel;
-using Mahan.Tralus.Infrastructure.Module.Security;
+using Tralus.Framework.BusinessModel.Entities;
+using Tralus.Framework.Module;
+using Mahan.Infrastructure.BusinessModel;
+using Mahan.Infrastructure.Module.Security;
 
-namespace Mahan.Tralus.Infrastructure.Module.BusinessLogics
+namespace Mahan.Infrastructure.Module.BusinessLogics
 {
     public class ActivateAircraftRegisterBusinessLogic : TralusEntityBusinessLogic<AircraftRegister>
     {

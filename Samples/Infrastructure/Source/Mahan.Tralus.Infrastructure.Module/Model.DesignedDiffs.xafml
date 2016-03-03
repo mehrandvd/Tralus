@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Application Title="Mahan.Tralus.Infrastructure" Logo="ExpressAppLogo">
+<Application Title="Mahan.Infrastructure" Logo="ExpressAppLogo">
   <ActionDesign>
     <Actions>
-      <Action Id="Mahan.Tralus.Infrastructure.Module.Controllers.ImportMasaterDataFromFlightAppsViewController" Caption="Import from FlightDb" ImageName="Action_Workflow_Deactivate" />
+      <Action Id="Mahan.Infrastructure.Module.Controllers.ImportMasaterDataFromFlightAppsViewController" Caption="Import from FlightDb" ImageName="Action_Workflow_Deactivate" />
     </Actions>
   </ActionDesign>
   <BOModel>
-    <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.DelayType">
+    <Class Name="Mahan.Infrastructure.BusinessModel.DelayType">
       <OwnMembers>
         <Member Name="DelayCodes" ImmediatePostData="True" />
       </OwnMembers>

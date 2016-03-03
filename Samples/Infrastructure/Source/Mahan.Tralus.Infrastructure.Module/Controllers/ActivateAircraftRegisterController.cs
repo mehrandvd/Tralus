@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using DevExpress.XtraPrinting.Native;
-using Mahan.Tralus.Framework.Module;
-using Mahan.Tralus.Infrastructure.BusinessModel;
-using Mahan.Tralus.Infrastructure.Module.BusinessLogics;
+using Tralus.Framework.Module;
+using Mahan.Infrastructure.BusinessModel;
+using Mahan.Infrastructure.Module.BusinessLogics;
 
-namespace Mahan.Tralus.Infrastructure.Module.Controllers
+namespace Mahan.Infrastructure.Module.Controllers
 {
     public class ActivateAircraftRegisterController : TralusBusinessLogicViewController<AircraftRegister, ActivateAircraftRegisterBusinessLogic>, IMultipleExecution<AircraftRegister>
     {

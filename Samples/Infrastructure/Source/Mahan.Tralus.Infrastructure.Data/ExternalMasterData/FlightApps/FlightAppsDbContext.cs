@@ -1,4 +1,4 @@
-namespace Mahan.Tralus.Infrastructure.Data.ExternalMasterData.FlightApps
+namespace Mahan.Infrastructure.Data.ExternalMasterData.FlightApps
 {
     using System;
     using System.Data.Entity;

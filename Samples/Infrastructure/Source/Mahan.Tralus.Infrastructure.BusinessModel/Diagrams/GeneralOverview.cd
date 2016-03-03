@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.Aircraft" Collapsed="true">
+  <Class Name="Mahan.Infrastructure.BusinessModel.Aircraft" Collapsed="true">
     <Position X="3" Y="1.25" Width="1.5" />
-    <AssociationLine Name="AircraftType" Type="Mahan.Tralus.Infrastructure.BusinessModel.AircraftType">
+    <AssociationLine Name="AircraftType" Type="Mahan.Infrastructure.BusinessModel.AircraftType">
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="0.037" Y="0.07" />
       </MemberNameLabel>
@@ -15,7 +15,7 @@
       <Property Name="AircraftType" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.AircraftRegister" Collapsed="true">
+  <Class Name="Mahan.Infrastructure.BusinessModel.AircraftRegister" Collapsed="true">
     <Position X="2.25" Y="4.75" Width="2.5" />
     <TypeIdentifier>
       <HashCode>QSAAAAAEgAAAAACBEAAiAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
@@ -26,7 +26,7 @@
       <Property Name="LirRegisterGroup" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.AircraftRegisterNonAvailableSeat" Collapsed="true">
+  <Class Name="Mahan.Infrastructure.BusinessModel.AircraftRegisterNonAvailableSeat" Collapsed="true">
     <Position X="0.5" Y="3" Width="2.5" />
     <TypeIdentifier>
       <HashCode>ASQAQAAAAAAAAAIAAAAAAAAgAAAAASAAAAAAAEAIAAA=</HashCode>
@@ -36,9 +36,9 @@
       <Property Name="AircraftRegister" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.AircraftRegisterSeatInfo" Collapsed="true">
+  <Class Name="Mahan.Infrastructure.BusinessModel.AircraftRegisterSeatInfo" Collapsed="true">
     <Position X="5.25" Y="3.25" Width="2.25" />
-    <AssociationLine Name="AircraftRegister" Type="Mahan.Tralus.Infrastructure.BusinessModel.AircraftRegister" FixedFromPoint="true" FixedToPoint="true">
+    <AssociationLine Name="AircraftRegister" Type="Mahan.Infrastructure.BusinessModel.AircraftRegister" FixedFromPoint="true" FixedToPoint="true">
       <Path>
         <Point X="5.25" Y="3.682" />
         <Point X="4.562" Y="3.682" />
@@ -56,16 +56,16 @@
       <Property Name="AircraftRegister" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.AircraftType" Collapsed="true">
+  <Class Name="Mahan.Infrastructure.BusinessModel.AircraftType" Collapsed="true">
     <Position X="0.5" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>gAgIAAAEAAAAAAAEAEAAAAQAAAAAAAAACAAAAAAAAAA=</HashCode>
       <FileName>Entities\General\AircraftType.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.Airline" Collapsed="true">
+  <Class Name="Mahan.Infrastructure.BusinessModel.Airline" Collapsed="true">
     <Position X="9.25" Y="7.25" Width="1.5" />
-    <AssociationLine Name="Country" Type="Mahan.Tralus.Infrastructure.BusinessModel.Country" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+    <AssociationLine Name="Country" Type="Mahan.Infrastructure.BusinessModel.Country" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
         <Point X="9.875" Y="7.25" />
         <Point X="9.875" Y="6.441" />
@@ -82,7 +82,7 @@
       <Property Name="Country" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.Airport" Collapsed="true">
+  <Class Name="Mahan.Infrastructure.BusinessModel.Airport" Collapsed="true">
     <Position X="5.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAFAAAAAAAIACAAAAQAACAAAAEAIAAAAAAAAQA=</HashCode>
@@ -92,7 +92,7 @@
       <Property Name="LocalityType" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.City" Collapsed="true">
+  <Class Name="Mahan.Infrastructure.BusinessModel.City" Collapsed="true">
     <Position X="8.5" Y="4.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAIAAAAAACAAAAQAAAIQAAAAAAAAAAAAAAA=</HashCode>
@@ -102,9 +102,9 @@
       <Property Name="Country" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.CityOffsetDst" Collapsed="true">
+  <Class Name="Mahan.Infrastructure.BusinessModel.CityOffsetDst" Collapsed="true">
     <Position X="11.5" Y="4.25" Width="1.5" />
-    <AssociationLine Name="City" Type="Mahan.Tralus.Infrastructure.BusinessModel.City">
+    <AssociationLine Name="City" Type="Mahan.Infrastructure.BusinessModel.City">
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="0.881" Y="0.07" />
       </MemberNameLabel>
@@ -117,9 +117,9 @@
       <Property Name="City" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.CityOffsetUtc" Collapsed="true">
+  <Class Name="Mahan.Infrastructure.BusinessModel.CityOffsetUtc" Collapsed="true">
     <Position X="11.5" Y="3.25" Width="1.5" />
-    <AssociationLine Name="City" Type="Mahan.Tralus.Infrastructure.BusinessModel.City" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+    <AssociationLine Name="City" Type="Mahan.Infrastructure.BusinessModel.City" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
         <Point X="11.5" Y="3.625" />
         <Point X="11.422" Y="3.629" />
@@ -138,23 +138,23 @@
       <Property Name="City" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.Company" Collapsed="true">
+  <Class Name="Mahan.Infrastructure.BusinessModel.Company" Collapsed="true">
     <Position X="14.25" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAEAAAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Entities\General\Company.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.Continent" Collapsed="true">
+  <Class Name="Mahan.Infrastructure.BusinessModel.Continent" Collapsed="true">
     <Position X="11.5" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAACAgAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Entities\General\Continent.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.Country" Collapsed="true">
+  <Class Name="Mahan.Infrastructure.BusinessModel.Country" Collapsed="true">
     <Position X="8" Y="5.75" Width="2.25" />
-    <AssociationLine Name="IataRegionCode" Type="Mahan.Tralus.Infrastructure.BusinessModel.IataRegionCode" FixedFromPoint="true">
+    <AssociationLine Name="IataRegionCode" Type="Mahan.Infrastructure.BusinessModel.IataRegionCode" FixedFromPoint="true">
       <Path>
         <Point X="8" Y="6.062" />
         <Point X="6.75" Y="6.062" />
@@ -173,14 +173,14 @@
       <Property Name="Continent" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.Currency" Collapsed="true">
+  <Class Name="Mahan.Infrastructure.BusinessModel.Currency" Collapsed="true">
     <Position X="7.25" Y="7.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAACAgAAQAAAAAAAAAAAAAAAAACAA=</HashCode>
       <FileName>Entities\General\Currency.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.IataCountryCode" Collapsed="true">
+  <Class Name="Mahan.Infrastructure.BusinessModel.IataCountryCode" Collapsed="true">
     <Position X="11.5" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAIQAAAAAAAAAAAAAAA=</HashCode>
@@ -190,37 +190,37 @@
       <Property Name="Country" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.IataRegionCode" Collapsed="true">
+  <Class Name="Mahan.Infrastructure.BusinessModel.IataRegionCode" Collapsed="true">
     <Position X="5.25" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAAAQAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Entities\General\IataRegionCode.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.LirRegisterGroup" Collapsed="true">
+  <Class Name="Mahan.Infrastructure.BusinessModel.LirRegisterGroup" Collapsed="true">
     <Position X="2.75" Y="6.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Entities\General\LirRegisterGroup.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.LocalityType" Collapsed="true">
+  <Class Name="Mahan.Infrastructure.BusinessModel.LocalityType" Collapsed="true">
     <Position X="8.75" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAACAgAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Entities\General\LocalityType.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.Person" Collapsed="true">
+  <Class Name="Mahan.Infrastructure.BusinessModel.Person" Collapsed="true">
     <Position X="14.25" Y="3.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAEAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAgAg=</HashCode>
       <FileName>Entities\General\Person.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.RouteLegAirport" Collapsed="true">
+  <Class Name="Mahan.Infrastructure.BusinessModel.RouteLegAirport" Collapsed="true">
     <Position X="5.5" Y="0.5" Width="2" />
-    <AssociationLine Name="ArrivalAirport" Type="Mahan.Tralus.Infrastructure.BusinessModel.Airport" FixedFromPoint="true">
+    <AssociationLine Name="ArrivalAirport" Type="Mahan.Infrastructure.BusinessModel.Airport" FixedFromPoint="true">
       <Path>
         <Point X="6.125" Y="1.191" />
         <Point X="6.125" Y="2.25" />
@@ -229,7 +229,7 @@
         <Position X="0.112" Y="0.495" />
       </MemberNameLabel>
     </AssociationLine>
-    <AssociationLine Name="DepartureAirport" Type="Mahan.Tralus.Infrastructure.BusinessModel.Airport" ManuallyRouted="true">
+    <AssociationLine Name="DepartureAirport" Type="Mahan.Infrastructure.BusinessModel.Airport" ManuallyRouted="true">
       <Path>
         <Point X="6.75" Y="1.191" />
         <Point X="6.75" Y="2.25" />
@@ -247,7 +247,7 @@
       <Property Name="DepartureAirport" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.Unit" Collapsed="true">
+  <Class Name="Mahan.Infrastructure.BusinessModel.Unit" Collapsed="true">
     <Position X="14.25" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>

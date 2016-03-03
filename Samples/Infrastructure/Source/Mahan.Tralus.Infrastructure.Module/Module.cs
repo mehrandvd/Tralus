@@ -14,11 +14,11 @@ using DevExpress.ExpressApp.Model.Core;
 using DevExpress.ExpressApp.Model.DomainLogics;
 using DevExpress.ExpressApp.Model.NodeGenerators;
 using System.Data.Entity;
-using Mahan.Tralus.Framework.BusinessModel.Entities;
-using Mahan.Tralus.Framework.Module;
-using Mahan.Tralus.Infrastructure.BusinessModel;
+using Tralus.Framework.BusinessModel.Entities;
+using Tralus.Framework.Module;
+using Mahan.Infrastructure.BusinessModel;
 
-namespace Mahan.Tralus.Infrastructure.Module {
+namespace Mahan.Infrastructure.Module {
     // For more typical usage scenarios, be sure to check out http://documentation.devexpress.com/#Xaf/clsDevExpressExpressAppModuleBasetopic.
     public sealed partial class InfrastructureModule : TralusModule {
         static InfrastructureModule() {

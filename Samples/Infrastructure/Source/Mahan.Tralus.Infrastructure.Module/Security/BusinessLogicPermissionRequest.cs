@@ -1,6 +1,6 @@
 ﻿using DevExpress.ExpressApp.Security;
 
-namespace Mahan.Tralus.Infrastructure.Module.Security
+namespace Mahan.Infrastructure.Module.Security
 {
     public class BusinessLogicPermissionRequest : IPermissionRequest
     {

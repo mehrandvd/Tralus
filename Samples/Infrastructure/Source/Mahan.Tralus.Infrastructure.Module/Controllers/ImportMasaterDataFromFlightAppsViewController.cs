@@ -13,11 +13,11 @@ using DevExpress.ExpressApp.Templates;
 using DevExpress.ExpressApp.Utils;
 using DevExpress.Persistent.Base;
 using DevExpress.Persistent.Validation;
-using Mahan.Tralus.Framework.Module;
-using Mahan.Tralus.Infrastructure.BusinessModel;
-using Mahan.Tralus.Infrastructure.Module.BusinessLogics;
+using Tralus.Framework.Module;
+using Mahan.Infrastructure.BusinessModel;
+using Mahan.Infrastructure.Module.BusinessLogics;
 
-namespace Mahan.Tralus.Infrastructure.Module.Controllers
+namespace Mahan.Infrastructure.Module.Controllers
 {
     // For more typical usage scenarios, be sure to check out http://documentation.devexpress.com/#Xaf/clsDevExpressExpressAppViewControllertopic.
     public partial class ImportMasaterDataFromFlightAppsViewController : TralusBusinessLogicViewController<ImportMasterDataLog, ImportMasterDataFromFlightAppsBusinessLogic>

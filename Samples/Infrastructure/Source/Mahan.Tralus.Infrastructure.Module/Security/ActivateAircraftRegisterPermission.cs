@@ -1,7 +1,7 @@
-﻿using Mahan.Tralus.Infrastructure.BusinessModel;
-using Mahan.Tralus.Infrastructure.Module.BusinessLogics;
+﻿using Mahan.Infrastructure.BusinessModel;
+using Mahan.Infrastructure.Module.BusinessLogics;
 
-namespace Mahan.Tralus.Infrastructure.Module.Security
+namespace Mahan.Infrastructure.Module.Security
 {
     public class ActivateAircraftRegisterPermission : EntityLogicPermission<ActivateAircraftRegisterBusinessLogic, AircraftRegister>
     { }

@@ -1,4 +1,4 @@
-namespace Mahan.Tralus.Infrastructure.Module.Win {
+namespace Mahan.Infrastructure.Module.Win {
     partial class InfrastructureWindowsFormsModule {
         /// <summary> 
         /// Required designer variable.
@@ -26,9 +26,9 @@ namespace Mahan.Tralus.Infrastructure.Module.Win {
             // 
             // InfrastructureWindowsFormsModule
             // 
-            this.RequiredModuleTypes.Add(typeof(Mahan.Tralus.Infrastructure.Module.InfrastructureModule));
+            this.RequiredModuleTypes.Add(typeof(Mahan.Infrastructure.Module.InfrastructureModule));
             this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Win.SystemModule.SystemWindowsFormsModule));
-            this.RequiredModuleTypes.Add(typeof(Mahan.Tralus.Framework.Module.Win.TralusWinModule));
+            this.RequiredModuleTypes.Add(typeof(Tralus.Framework.Module.Win.TralusWinModule));
         }
 
         #endregion

@@ -1,10 +1,10 @@
 using System;
 using System.Data.Common;
 using System.Data.Entity;
-using Mahan.Tralus.Framework.Data;
-using Mahan.Tralus.Infrastructure.BusinessModel;
+using Tralus.Framework.Data;
+using Mahan.Infrastructure.BusinessModel;
 
-namespace  Mahan.Tralus.Infrastructure.Data {
+namespace  Mahan.Infrastructure.Data {
     public class InfrastructureDbContext : DbContextBase<InfrastructureDbContext>
 	{
 		public InfrastructureDbContext(String connectionString): base(connectionString) 
