@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <ListView Id="FlightReportView_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="AtaEventDateTime" Index="-1" />
+        <ColumnInfo Id="EstimatedArrivalDateTime" Index="-1" />
+        <ColumnInfo Id="EstimatedDepartureDateTime" Index="-1" />
+        <ColumnInfo Id="SpecialServicesCount" Index="-1" SortIndex="-1" SortOrder="None" />
+        <ColumnInfo Id="TakeOffDateTime" Index="-1" />
+      </Columns>
+    </ListView>
+  </Views>
+</Application>

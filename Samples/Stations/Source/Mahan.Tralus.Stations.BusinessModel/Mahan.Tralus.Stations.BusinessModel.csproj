@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DAA58C45-936B-4E36-AF72-F28412C9B8AA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mahan.Tralus.Stations.BusinessModel</RootNamespace>
+    <AssemblyName>Mahan.Tralus.Stations.BusinessModel</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Security.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Persistent.Base.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Mahan.Tralus.Framework.BusinessModel, Version=1.0.0.70, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Users\hamidreza.mahyar\TralusLocal\web\bin\Mahan.Tralus.Framework.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Mahan.Tralus.Infrastructure.BusinessModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Users\hamidreza.mahyar\TralusLocal\win\Mahan.Tralus.Infrastructure.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\DestinationCargo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\DestinationPassenger.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\DestinationProfile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\DestinationProfile_PartialClass.cs" />
+    <Compile Include="Entities\DestinationSpecialService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\FlightDelay.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\FlightEvent.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\FlightEventType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\FlightFuelling.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\FlightProfile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\FlightRemark.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\FlightRemarkType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\FlightReport.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\FlightReportActivityTimingSetup.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\FlightReportFileAttachment.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\FlightReportFileAttachmentType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\FlightReportFilter.cs" />
+    <Compile Include="Entities\FlightReportState.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\FlightReportView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\FlightReport_ConditionalAppearance.cs" />
+    <Compile Include="Entities\FlightReport_SummaryIcon.cs" />
+    <Compile Include="Enums\FlightStatus.cs" />
+    <Compile Include="Entities\FuellingType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\SpecialServiceType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Enums\FlightReportTimingStatus.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Diagram\StationsOverview.cd" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>powershell -noprofile -command "&amp; {Copy-Item '$(TargetPath)' (Join-Path $HOME 'TralusLocal\win') -Force -Recurse}"
+powershell -noprofile -command "&amp; {Copy-Item '$(TargetPath)' (Join-Path $HOME 'TralusLocal\web\bin') -Force -Recurse}"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

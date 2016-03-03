@@ -1,0 +1,2 @@
+﻿if OBJECT_ID('{0}') IS NOT NULL
+	DROP VIEW Stations.FlightReportView;

@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BF88A671-6683-4CBB-8B16-1E9DFC5CF467}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mahan.Tralus.Stations.Migration</RootNamespace>
+    <AssemblyName>Mahan.Tralus.Stations.Migration</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Mahan.Tralus.Framework.BusinessModel">
+      <HintPath>..\..\..\..\..\..\..\Users\hamidreza.mahyar\TralusLocal\web\bin\Mahan.Tralus.Framework.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Mahan.Tralus.Framework.Data">
+      <HintPath>..\..\..\..\..\..\..\Users\hamidreza.mahyar\TralusLocal\web\bin\Mahan.Tralus.Framework.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Mahan.Tralus.Framework.Migration, Version=1.0.0.95, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Users\mehran.davoodi\TralusLocal\win\Mahan.Tralus.Framework.Migration.dll</HintPath>
+    </Reference>
+    <Reference Include="Mahan.Tralus.Framework.Utility, Version=1.0.0.70, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Users\hamidreza.mahyar\TralusLocal\web\bin\Mahan.Tralus.Framework.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Migrations\201509291438412_MergeFrameworkChanges.cs" />
+    <Compile Include="Migrations\201509291438412_MergeFrameworkChanges.Designer.cs">
+      <DependentUpon>201509291438412_MergeFrameworkChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201509291458470_InitForDevDb.cs" />
+    <Compile Include="Migrations\201509291458470_InitForDevDb.Designer.cs">
+      <DependentUpon>201509291458470_InitForDevDb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510040534098_FlightReportStateUpdated.cs" />
+    <Compile Include="Migrations\201510040534098_FlightReportStateUpdated.Designer.cs">
+      <DependentUpon>201510040534098_FlightReportStateUpdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510061654403_UpdateFlightReportView.cs" />
+    <Compile Include="Migrations\201510061654403_UpdateFlightReportView.Designer.cs">
+      <DependentUpon>201510061654403_UpdateFlightReportView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510101020437_ChangeTypeOfFlighReportStateIdInFlightReport.cs" />
+    <Compile Include="Migrations\201510101020437_ChangeTypeOfFlighReportStateIdInFlightReport.Designer.cs">
+      <DependentUpon>201510101020437_ChangeTypeOfFlighReportStateIdInFlightReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510181054335_ChangeTypeOfFlightRemarkTypeAndFuellingTypeToFixedEntityBase.cs" />
+    <Compile Include="Migrations\201510181054335_ChangeTypeOfFlightRemarkTypeAndFuellingTypeToFixedEntityBase.Designer.cs">
+      <DependentUpon>201510181054335_ChangeTypeOfFlightRemarkTypeAndFuellingTypeToFixedEntityBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510210745035_addOverallRemarkDelayInDelayandTitleInFlightRemark.cs" />
+    <Compile Include="Migrations\201510210745035_addOverallRemarkDelayInDelayandTitleInFlightRemark.Designer.cs">
+      <DependentUpon>201510210745035_addOverallRemarkDelayInDelayandTitleInFlightRemark.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511140507446_RemovingDesriptionENandFAfromFlightDelay.cs" />
+    <Compile Include="Migrations\201511140507446_RemovingDesriptionENandFAfromFlightDelay.Designer.cs">
+      <DependentUpon>201511140507446_RemovingDesriptionENandFAfromFlightDelay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511150700377_addRelationbetweenFlightFuellingandFlightLeg.cs" />
+    <Compile Include="Migrations\201511150700377_addRelationbetweenFlightFuellingandFlightLeg.Designer.cs">
+      <DependentUpon>201511150700377_addRelationbetweenFlightFuellingandFlightLeg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511160801299_FlightReportFilter.cs" />
+    <Compile Include="Migrations\201511160801299_FlightReportFilter.Designer.cs">
+      <DependentUpon>201511160801299_FlightReportFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SqlResource.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mahan.Tralus.Stations.BusinessModel\Mahan.Tralus.Stations.BusinessModel.csproj">
+      <Project>{daa58c45-936b-4e36-af72-f28412c9b8aa}</Project>
+      <Name>Mahan.Tralus.Stations.BusinessModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mahan.Tralus.Stations.Data\Mahan.Tralus.Stations.Data.csproj">
+      <Project>{95ed2c98-8e5b-4633-95f6-f46b0e1a2aad}</Project>
+      <Name>Mahan.Tralus.Stations.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201509291438412_MergeFrameworkChanges.resx">
+      <DependentUpon>201509291438412_MergeFrameworkChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509291458470_InitForDevDb.resx">
+      <DependentUpon>201509291458470_InitForDevDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510040534098_FlightReportStateUpdated.resx">
+      <DependentUpon>201510040534098_FlightReportStateUpdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510061654403_UpdateFlightReportView.resx">
+      <DependentUpon>201510061654403_UpdateFlightReportView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510101020437_ChangeTypeOfFlighReportStateIdInFlightReport.resx">
+      <DependentUpon>201510101020437_ChangeTypeOfFlighReportStateIdInFlightReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510181054335_ChangeTypeOfFlightRemarkTypeAndFuellingTypeToFixedEntityBase.resx">
+      <DependentUpon>201510181054335_ChangeTypeOfFlightRemarkTypeAndFuellingTypeToFixedEntityBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510210745035_addOverallRemarkDelayInDelayandTitleInFlightRemark.resx">
+      <DependentUpon>201510210745035_addOverallRemarkDelayInDelayandTitleInFlightRemark.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511140507446_RemovingDesriptionENandFAfromFlightDelay.resx">
+      <DependentUpon>201511140507446_RemovingDesriptionENandFAfromFlightDelay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511150700377_addRelationbetweenFlightFuellingandFlightLeg.resx">
+      <DependentUpon>201511150700377_addRelationbetweenFlightFuellingandFlightLeg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511160801299_FlightReportFilter.resx">
+      <DependentUpon>201511160801299_FlightReportFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SqlResource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SqlResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\FlightReportView.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scripts\DropViewIfExists.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>powershell -noprofile -command "&amp; {Copy-Item '$(TargetPath)' (Join-Path $HOME 'TralusLocal\win') -Force -Recurse}"
+powershell -noprofile -command "&amp; {Copy-Item '$(TargetPath)' (Join-Path $HOME 'TralusLocal\web\bin') -Force -Recurse}"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
