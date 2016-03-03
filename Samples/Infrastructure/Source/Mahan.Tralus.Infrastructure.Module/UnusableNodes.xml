@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <ActionDesign Id="ActionDesign">
+    <Actions Id="Actions">
+      <Action Id="Mahan.Tralus.Infrastructure.Module.Controllers.ActivateAircraftRegisterController" Caption="Activate" ImageName="Action_Validation_Validate" />
+      <Action Id="Mahan.Tralus.Infrastructure.Module.Controllers.DeactivateAircraftRegisterController" Caption="Deactivate" ImageName="Action_Deny" />
+    </Actions>
+  </ActionDesign>
+  <NavigationItems Id="NavigationItems">
+    <Items Id="Items">
+      <Item Id="@a81babc6-d2ed-4545-b050-de37114fa71e">
+        <Items Id="Items">
+          <Item Id="@788e5aa8-69bc-4005-beb4-55d97914a1fd">
+            <Items Id="Items">
+              <Item Id="@ea230585-73c8-4ce7-ac97-4413dd81afb0" ViewId="RouteLegAirport_ListView" />
+              <Item Id="@e3689cf7-c345-4bea-ae90-48b23d784a10" ViewId="Currency_ListView" />
+              <Item Id="@ce9d8d46-e992-48ef-aefe-1e790ab53f45" ViewId="Person_ListView" />
+              <Item Id="@ccf7902b-44db-4c08-af60-10ac75cd8a93" ViewId="IataCountryCode_ListView" />
+              <Item Id="@caa4567b-f9d3-47b7-a75e-46a67c86f1c7" ViewId="Unit_ListView" />
+              <Item Id="@c771d527-5a9e-4f49-ac5a-7141633cb1e9" ViewId="AircraftRegisterSeatInfo_ListView" />
+              <Item Id="@bcbdd275-2825-43cd-9ece-d2f7cc45dd6a" ViewId="LocalityType_ListView" />
+              <Item Id="@b1557e91-9104-4cd3-a9d6-817bb8246061" ViewId="Airport_ListView" />
+              <Item Id="@ad6df94e-6c5f-4230-bf1d-8c50e23bd298" ViewId="AircraftType_ListView" />
+              <Item Id="@919323df-f8c1-4ddc-9dc0-b998efb10f6b" ViewId="CityOffsetUtc_ListView" />
+              <Item Id="@8cee729e-6467-48fb-92b6-141614f527d2" ViewId="Aircraft_ListView" />
+              <Item Id="@838d7df2-2329-4a7d-9e1c-1f87290fce97" ViewId="AircraftRegisterNonAvailableSeat_ListView" />
+              <Item Id="@82e654bd-4b9f-4e9d-b1ca-e2711fa6b064" ViewId="Airline_ListView" />
+              <Item Id="@640d7695-59bf-4ed2-98c8-a19eeb4cf3f4" ViewId="Company_ListView" />
+              <Item Id="@5366528f-3631-4d2b-82b0-eda628496dba" ViewId="City_ListView" />
+              <Item Id="@5321379e-bf11-4ef8-ba74-52aeb288d77e" ViewId="Continent_ListView" />
+              <Item Id="@3808b67e-dffb-4a48-90d3-df3a9cd9aaee" ViewId="CityOffsetDst_ListView" />
+              <Item Id="@34879148-649c-4547-94f6-d43c40492fea" ViewId="AircraftRegister_ListView" />
+              <Item Id="@2732b38b-66c3-43e2-a2d5-4be251b5874e" ViewId="Country_ListView" />
+              <Item Id="@0a80f10a-188b-4186-8d86-948db7af942f" ViewId="LirRegisterGroup_ListView" />
+              <Item Id="@08ba1698-f6ec-4464-9289-5a13118cfadd" ViewId="IataRegionCode_ListView" />
+            </Items>
+          </Item>
+          <Item Id="@4880719e-78d2-4acf-bf37-b818256f91fb">
+            <Items Id="Items">
+              <Item Id="@f768b36b-5489-446d-8792-63c30d2b609a" ViewId="ScheduledFlightLegRegular_ListView" />
+              <Item Id="@eb4e0272-c517-4dcb-86fa-fdb168bd1bbc" ViewId="FuelingOperation_ListView" />
+              <Item Id="@e55c1a35-5353-46e7-932e-1db8ffd15b14" ViewId="ScheduledFlightAdHoc_ListView" />
+              <Item Id="@cf31daed-638a-40c0-a29c-5f05c82aa984" ViewId="FlightNumber_ListView" />
+              <Item Id="@cabc621a-49c3-49dd-822c-967b44dd848b" ViewId="SeatClass_ListView" />
+              <Item Id="@b71f1fe9-3563-46d6-ad74-c5e9f4a50526" ViewId="RouteTripLegTemplate_ListView" />
+              <Item Id="@b0bb7d42-feda-4b2a-98d3-69974b7b2126" ViewId="OperationsMaster_ListView" />
+              <Item Id="@aa82bf8e-d58b-4170-8248-6b491b283b1c" ViewId="DelayCode_ListView" />
+              <Item Id="@aa2f9995-828b-488d-a1e8-78385bf963b2" ViewId="ScheduledFlightRegular_ListView" />
+              <Item Id="@a4d1015e-4a5c-41d2-9d89-be0ce057ef3b" ViewId="RouteFlightLeg_ListView" />
+              <Item Id="@a010c91e-81d1-4e04-8bcd-1c9d5483cc57" ViewId="FlightLeg_ListView" />
+              <Item Id="@94924b6d-23ce-4a25-bf1b-a762d32868fd" ViewId="SpecialServiceType_ListView" />
+              <Item Id="@7d44a992-6977-4aa6-8e71-41cdc045c03f" ViewId="RouteTripLeg_ListView" />
+              <Item Id="@7c15afb2-d583-4375-b2cd-fbf1c936c72c" ViewId="Flight_ListView" />
+              <Item Id="@78928935-25b1-4814-8cf3-e0cc6fb9fe12" ViewId="DelayType_ListView" />
+              <Item Id="@691f6304-4e24-4adf-bf87-4145eac0ac92" ViewId="ScheduledFlightLegAdHoc_ListView" />
+              <Item Id="@68cbad2b-d24a-4c9b-8077-bb7ae548a865" ViewId="TicketType_ListView" />
+              <Item Id="@6394bd9f-28f1-43da-a081-10217d711236" ViewId="PaxType_ListView" />
+              <Item Id="@5a37d0d5-9efb-4990-b393-2a71693a7466" ViewId="FlightLegFw_ListView" />
+              <Item Id="@5034269c-96a9-4cb5-8302-10aa4e377d4c" ViewId="RouteTripTemplate_ListView" />
+              <Item Id="@451766b4-08ea-4510-927a-1ec91028656b" ViewId="NonFlightOperationsMaster_ListView" />
+              <Item Id="@3f2d3541-a7d6-4654-ab6c-3bb9741efc50" ViewId="Uld_ListView" />
+              <Item Id="@356fd8f1-1459-488a-9bd7-5f3d816b4e4f" ViewId="NonFlightOperationType_ListView" />
+              <Item Id="@30073bbb-38f7-4ec3-879e-4019b497653f" ViewId="RouteAircraft_ListView" />
+              <Item Id="@2ebc181d-7879-4533-b758-56caac091670" ViewId="CargoType_ListView" />
+              <Item Id="@28207903-dea6-49b5-8cd3-cb9894afa51d" ViewId="RouteTrip_ListView" />
+              <Item Id="@164aef90-d007-4cc2-a01f-adfdcc89f491" ViewId="FlightType_ListView" />
+              <Item Id="@11dd572d-b78b-4387-a64b-d7ca563731a2" ViewId="FlightLegAircraftRegister_ListView" />
+            </Items>
+          </Item>
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+</Application>

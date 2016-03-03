@@ -1,0 +1,1535 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="Aircraft_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Aircraft" RelativeSize="100">
+              <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" Caption="Aircrafts" Direction="Horizontal">
+                <LayoutGroup Id="Auto38371768-17a4-44cc-9ec1-22f370012005" ShowCaption="False" Caption="" Index="0" RelativeSize="50">
+                  <LayoutItem Id="SerialNo" ViewItem="SerialNo" SizeConstraintsType="Default" Index="0" RelativeSize="3.9653035935563818" />
+                  <LayoutItem Id="Register" ViewItem="Register" SizeConstraintsType="Default" Index="1" RelativeSize="96.034696406443615" />
+                </LayoutGroup>
+                <LayoutGroup Id="Autofb3cf33d-baae-4d5f-8d07-9340308b192a" ShowCaption="False" Caption="" Index="1" RelativeSize="50">
+                  <LayoutItem Id="AircraftType" ViewItem="AircraftType" SizeConstraintsType="Default" Index="0" RelativeSize="3.9653035935563818" />
+                  <LayoutItem Id="Item2" ShowCaption="False" ViewItem="" SizeConstraintsType="Default" Index="1" RelativeSize="96.034696406443615" />
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutItem Id="Register" SizeConstraintsType="Default" Index="2" RelativeSize="92.533333333333331" Removed="True" />
+              <LayoutItem Id="AircraftType" SizeConstraintsType="Default" RelativeSize="3.2" Removed="True" />
+              <LayoutItem Id="AircraftTypeId" Removed="True" />
+              <LayoutItem Id="SerialNo" SizeConstraintsType="Default" RelativeSize="4.2666666666666666" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Aircraft_ListView" AllowDelete="True" AllowEdit="True">
+      <Columns Id="Columns">
+        <ColumnInfo Id="AircraftTypeId" Index="-1" />
+      </Columns>
+    </ListView>
+    <DetailView Id="AircraftRegister_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="AircraftRegister" RelativeSize="100">
+              <LayoutGroup Id="AircraftRegister_col1" RelativeSize="50">
+                <LayoutItem Id="Code" SizeConstraintsType="Default" RelativeSize="3.9653035935563818" />
+                <LayoutItem Id="Aircraft" SizeConstraintsType="Default" RelativeSize="2.9739776951672861" />
+                <LayoutItem Id="HasFirstClassSeat" SizeConstraintsType="Default" RelativeSize="90.086741016109045" Index="3" />
+                <LayoutItem Id="ShortRegisterCode" SizeConstraintsType="Default" RelativeSize="2.9739776951672861" />
+                <LayoutItem Id="Status" SizeConstraintsType="Default" RelativeSize="85.352112676056336" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="AircraftRegister_col2" RelativeSize="50">
+                <LayoutItem Id="LirRegisterGroup" SizeConstraintsType="Default" RelativeSize="3.9653035935563818" />
+                <LayoutItem Id="Timestamp" SizeConstraintsType="Default" Index="1" RelativeSize="2.9739776951672861" />
+                <LayoutItem Id="IsActive" SizeConstraintsType="Default" Index="2" RelativeSize="2.9739776951672861" />
+                <LayoutItem Id="CreationDate" SizeConstraintsType="Default" Index="3" RelativeSize="2.9739776951672861" />
+                <LayoutItem Id="Status" ViewItem="Status" SizeConstraintsType="Default" Index="4" RelativeSize="87.112763320941767" />
+                <LayoutItem Id="LirRegisterGroupId" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="AircraftRegister_ListView" AllowEdit="True" IsFooterVisible="False">
+      <Columns Id="Columns">
+        <ColumnInfo Id="LirRegisterGroupId" Width="132" Index="-1" />
+        <ColumnInfo Id="Code" Width="81" />
+        <ColumnInfo Id="Aircraft" Width="81" />
+        <ColumnInfo Id="ShortRegisterCode" Width="123" />
+        <ColumnInfo Id="HasFirstClassSeat" Width="118" />
+        <ColumnInfo Id="Status" Width="85" />
+        <ColumnInfo Id="LirRegisterGroup" Width="140" />
+        <ColumnInfo Id="Timestamp" Index="6" />
+        <ColumnInfo Id="IsActive" Index="7" />
+        <ColumnInfo Id="CreationDate" Index="8" />
+      </Columns>
+    </ListView>
+    <DetailView Id="AircraftRegisterNonAvailableSeat_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="AircraftRegisterNonAvailableSeat" RelativeSize="100">
+              <LayoutGroup Id="AircraftRegisterNonAvailableSeat_col1" RelativeSize="50">
+                <LayoutItem Id="StartDate" SizeConstraintsType="Default" RelativeSize="3.9653035935563818" />
+                <LayoutItem Id="EndDate" SizeConstraintsType="Default" RelativeSize="2.9739776951672861" />
+                <LayoutItem Id="AircraftRegister" SizeConstraintsType="Default" RelativeSize="2.9739776951672861" />
+                <LayoutItem Id="SeatNumberEconomy" ViewItem="SeatNumberEconomy" SizeConstraintsType="Default" Index="3" RelativeSize="2.9739776951672861" />
+                <LayoutItem Id="SeatCountBusiness" SizeConstraintsType="Default" Index="4" RelativeSize="87.112763320941767" />
+                <LayoutItem Id="AircraftRegisterId" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="AircraftRegisterNonAvailableSeat_col2" RelativeSize="50">
+                <LayoutItem Id="SeatCountBusinessPlus" SizeConstraintsType="Default" RelativeSize="3.9653035935563818" />
+                <LayoutItem Id="SeatCountEconomy" SizeConstraintsType="Default" RelativeSize="2.9739776951672861" />
+                <LayoutItem Id="SeatNumberBusiness" SizeConstraintsType="Default" RelativeSize="2.9739776951672861" />
+                <LayoutItem Id="SeatNumberBusinessPlus" SizeConstraintsType="Default" RelativeSize="90.086741016109045" />
+                <LayoutItem Id="SeatNumberEconomy" SizeConstraintsType="Default" RelativeSize="85.352112676056336" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="AircraftRegisterNonAvailableSeat_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="AircraftRegisterId" Index="-1" />
+        <ColumnInfo Id="AircraftRegister" Width="113" />
+        <ColumnInfo Id="SeatCountBusiness" Index="3" />
+        <ColumnInfo Id="SeatCountBusinessPlus" Index="4" />
+        <ColumnInfo Id="SeatCountEconomy" Index="5" />
+        <ColumnInfo Id="SeatNumberBusiness" Index="6" />
+        <ColumnInfo Id="SeatNumberBusinessPlus" Index="7" />
+        <ColumnInfo Id="SeatNumberEconomy" Index="8" />
+      </Columns>
+    </ListView>
+    <DetailView Id="AircraftRegisterSeatInfo_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="AircraftRegisterSeatInfo" RelativeSize="100">
+              <LayoutGroup Id="AircraftRegisterSeatInfo_col1" RelativeSize="50">
+                <LayoutItem Id="StartDate" SizeConstraintsType="Default" RelativeSize="4.507042253521127" />
+                <LayoutItem Id="EndDate" SizeConstraintsType="Default" RelativeSize="3.380281690140845" />
+                <LayoutItem Id="SeatCountBusiness" SizeConstraintsType="Default" RelativeSize="92.112676056338032" />
+              </LayoutGroup>
+              <LayoutGroup Id="AircraftRegisterSeatInfo_col2" RelativeSize="50">
+                <LayoutItem Id="SeatCountEconomy" SizeConstraintsType="Default" RelativeSize="4.507042253521127" />
+                <LayoutItem Id="AircraftRegister" SizeConstraintsType="Default" RelativeSize="95.492957746478879" />
+                <LayoutItem Id="AircraftRegisterId" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="AircraftRegisterSeatInfo_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="AircraftRegisterId" Index="-1" />
+        <ColumnInfo Id="AircraftRegister" Width="143" />
+      </Columns>
+    </ListView>
+    <DetailView Id="AircraftType_DetailView" AllowDelete="True" AllowEdit="True" AllowNew="True" />
+    <ListView Id="AircraftType_ListView" AllowDelete="True" AllowNew="True" AllowEdit="True">
+      <Columns Id="Columns">
+        <ColumnInfo Id="Status" Index="-1" />
+        <ColumnInfo Id="Manufacturer" Index="0" Width="98" SortIndex="0" SortOrder="Ascending" AllowEdit="False" />
+        <ColumnInfo Id="FullTypeName" Width="93" Index="1" />
+        <ColumnInfo Id="TypeVariation" Index="2" Width="89" />
+        <ColumnInfo Id="Name" Index="3" Width="47" SortIndex="-1" SortOrder="None" />
+        <ColumnInfo Id="IataCode" Width="68" Caption="IATA Code" />
+        <ColumnInfo Id="IcaoCode" Width="69" Caption="ICAO Code" />
+        <ColumnInfo Id="FwName" Width="147" Caption="FleetWatch Name" />
+      </Columns>
+    </ListView>
+    <DetailView Id="Airline_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Airline" RelativeSize="100">
+              <LayoutGroup Id="Airline_col1" RelativeSize="50">
+                <LayoutItem Id="Name" SizeConstraintsType="Default" RelativeSize="4.507042253521127" />
+                <LayoutItem Id="Country" SizeConstraintsType="Default" RelativeSize="3.380281690140845" />
+                <LayoutItem Id="IataCode" SizeConstraintsType="Default" Index="2" RelativeSize="3.380281690140845" />
+                <LayoutItem Id="IcaoCode" SizeConstraintsType="Default" Index="3" RelativeSize="88.732394366197184" />
+                <LayoutItem Id="CountryId" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Airline_col2" RelativeSize="50">
+                <LayoutItem Id="Abv" SizeConstraintsType="Default" RelativeSize="4.507042253521127" />
+                <LayoutItem Id="FullName" SizeConstraintsType="Default" RelativeSize="3.380281690140845" />
+                <LayoutItem Id="ShortName" SizeConstraintsType="Default" RelativeSize="3.380281690140845" />
+                <LayoutItem Id="Status" SizeConstraintsType="Default" RelativeSize="88.732394366197184" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Airline_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="CountryId" Index="-1" />
+        <ColumnInfo Id="Name" Width="176" />
+        <ColumnInfo Id="IataCode" Index="2" />
+        <ColumnInfo Id="IcaoCode" Index="3" />
+        <ColumnInfo Id="Abv" Index="4" />
+        <ColumnInfo Id="FullName" Index="5" />
+        <ColumnInfo Id="ShortName" Index="6" />
+        <ColumnInfo Id="Status" Index="7" />
+      </Columns>
+    </ListView>
+    <DetailView Id="Airport_DetailView">
+      <Items Id="Items">
+        <PropertyEditor Id="City.Country" PropertyName="City.Country" AllowEdit="False" />
+      </Items>
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Airport" RelativeSize="100">
+              <LayoutGroup Id="Airport_col1" RelativeSize="50">
+                <LayoutItem Id="Name" SizeConstraintsType="Default" RelativeSize="3.9653035935563818" />
+                <LayoutItem Id="IataAirportCode" SizeConstraintsType="Default" RelativeSize="2.9739776951672861" />
+                <LayoutItem Id="NameEn" SizeConstraintsType="Default" RelativeSize="2.9739776951672861" />
+                <LayoutItem Id="City" SizeConstraintsType="Default" RelativeSize="90.086741016109045" Index="3" />
+                <LayoutItem Id="CityId" SizeConstraintsType="Default" RelativeSize="85.352112676056336" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Airport_col2" RelativeSize="50">
+                <LayoutItem Id="Status" SizeConstraintsType="Default" RelativeSize="3.9653035935563818" />
+                <LayoutItem Id="LocalityType" SizeConstraintsType="Default" RelativeSize="2.9739776951672861" />
+                <LayoutItem Id="NickName" SizeConstraintsType="Default" Index="2" RelativeSize="2.9739776951672861" />
+                <LayoutItem Id="City.Country" ViewItem="City.Country" SizeConstraintsType="Default" Index="3" RelativeSize="90.086741016109045" />
+                <LayoutItem Id="LocalityTypeId" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Airport_ListView" AllowEdit="True">
+      <Columns Id="Columns">
+        <ColumnInfo Id="CityId" Index="-1" />
+        <ColumnInfo Id="LocalityTypeId" Index="-1" Width="204" />
+        <ColumnInfo Id="IataAirportCode" Index="0" Width="170" />
+        <ColumnInfo Id="Name" Index="1" Width="110" />
+        <ColumnInfo Id="City" Width="109" />
+        <ColumnInfo Id="Status" Index="4" />
+        <ColumnInfo Id="LocalityType" Index="5" Width="143" />
+        <ColumnInfo Id="NickName" Index="6" Width="242" />
+        <ColumnInfo Id="Country" Caption="Country" PropertyName="City.Country" />
+      </Columns>
+    </ListView>
+    <DetailView Id="CargoType_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="CargoType" Direction="Vertical" RelativeSize="100">
+              <LayoutItem Id="Code" SizeConstraintsType="Default" Index="0" RelativeSize="50" Removed="True" />
+              <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Direction="Horizontal" Index="0" RelativeSize="100" Caption="Cargo type">
+                <LayoutItem Id="Code" ViewItem="Code" SizeConstraintsType="Default" Index="0" RelativeSize="50" />
+                <LayoutItem Id="Name" ViewItem="Name" SizeConstraintsType="Default" Index="1" RelativeSize="50" />
+              </LayoutGroup>
+              <LayoutItem Id="Name" SizeConstraintsType="Default" Index="1" RelativeSize="50" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="CargoType_ListView" AllowEdit="True" />
+    <DetailView Id="City_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="City" RelativeSize="100">
+              <LayoutGroup Id="City_col1" RelativeSize="50">
+                <LayoutItem Id="Name" SizeConstraintsType="Default" RelativeSize="4.507042253521127" />
+                <LayoutItem Id="Country" SizeConstraintsType="Default" RelativeSize="95.492957746478879" />
+                <LayoutItem Id="CountryId" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="City_col2" RelativeSize="50">
+                <LayoutItem Id="NameEn" SizeConstraintsType="Default" RelativeSize="4.507042253521127" />
+                <LayoutItem Id="TimeZone" SizeConstraintsType="Default" RelativeSize="95.492957746478879" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="City_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="CountryId" Index="-1" />
+        <ColumnInfo Id="Name" Width="140" />
+        <ColumnInfo Id="NameEn" Index="2" />
+        <ColumnInfo Id="TimeZone" Index="3" />
+      </Columns>
+    </ListView>
+    <DetailView Id="CityOffsetDst_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="CityOffsetDst" RelativeSize="100">
+              <LayoutGroup Id="CityOffsetDst_col1" RelativeSize="50">
+                <LayoutItem Id="City" SizeConstraintsType="Default" RelativeSize="4.507042253521127" />
+                <LayoutItem Id="FromDateTime" SizeConstraintsType="Default" Index="1" RelativeSize="95.492957746478879" />
+                <LayoutItem Id="CityId" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="CityOffsetDst_col2" RelativeSize="50">
+                <LayoutItem Id="ToDateTime" SizeConstraintsType="Default" RelativeSize="4.507042253521127" />
+                <LayoutItem Id="OffsetDst" SizeConstraintsType="Default" RelativeSize="95.492957746478879" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="CityOffsetDst_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="CityId" Index="-1" />
+        <ColumnInfo Id="FromDateTime" Index="1" />
+        <ColumnInfo Id="ToDateTime" Index="2" />
+        <ColumnInfo Id="OffsetDst" Index="3" />
+      </Columns>
+    </ListView>
+    <DetailView Id="Company_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Company" RelativeSize="100">
+              <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" Caption="Company" Direction="Horizontal">
+                <LayoutItem Id="Title" ViewItem="Title" SizeConstraintsType="Default" Index="0" RelativeSize="50" />
+                <LayoutItem Id="CommercialCode" ViewItem="CommercialCode" SizeConstraintsType="Default" Index="1" RelativeSize="50" />
+              </LayoutGroup>
+              <LayoutItem Id="CommercialCode" Removed="True" />
+              <LayoutItem Id="Title" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Continent_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Continent" RelativeSize="100">
+              <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" Caption="Continent" Direction="Vertical">
+                <LayoutGroup Id="Autof3845b53-be70-403c-990a-ce87df339afd" ShowCaption="False" Caption="" Direction="Horizontal" Index="0" RelativeSize="3.9653035935563818">
+                  <LayoutItem Id="NameEn" ViewItem="NameEn" SizeConstraintsType="Default" Index="0" RelativeSize="50" />
+                  <LayoutItem Id="Name" ViewItem="Name" SizeConstraintsType="Default" Index="1" RelativeSize="50" />
+                </LayoutGroup>
+                <LayoutItem Id="Code" ViewItem="Code" SizeConstraintsType="Default" Index="1" RelativeSize="96.034696406443615" />
+              </LayoutGroup>
+              <LayoutItem Id="Code" Removed="True" />
+              <LayoutItem Id="Name" Removed="True" />
+              <LayoutItem Id="NameEn" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Country_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Country" RelativeSize="100">
+              <LayoutGroup Id="Country_col1" RelativeSize="50">
+                <LayoutItem Id="Name" SizeConstraintsType="Default" RelativeSize="3.9653035935563818" />
+                <LayoutItem Id="IsoAlpha3" SizeConstraintsType="Default" RelativeSize="2.9739776951672861" />
+                <LayoutItem Id="IsoAlpha2" SizeConstraintsType="Default" RelativeSize="2.9739776951672861" />
+                <LayoutItem Id="NameEn" SizeConstraintsType="Default" RelativeSize="2.9739776951672861" />
+                <LayoutItem Id="UnNumeric3" SizeConstraintsType="Default" RelativeSize="87.112763320941767" />
+                <LayoutItem Id="Fips104" SizeConstraintsType="Default" RelativeSize="81.971830985915489" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Country_col2" RelativeSize="50">
+                <LayoutItem Id="IataRegionCode" SizeConstraintsType="Default" RelativeSize="3.9653035935563818" />
+                <LayoutItem Id="Currency" SizeConstraintsType="Default" RelativeSize="2.9739776951672861" Index="1" />
+                <LayoutItem Id="Fips104" ViewItem="Fips104" SizeConstraintsType="Default" Index="2" RelativeSize="2.9739776951672861" />
+                <LayoutItem Id="Continent" SizeConstraintsType="Default" Index="3" RelativeSize="90.086741016109045" />
+                <LayoutItem Id="ContinentId" SizeConstraintsType="Default" Index="4" RelativeSize="85.352112676056336" Removed="True" />
+                <LayoutItem Id="CurrencyId" Removed="True" />
+                <LayoutItem Id="IataRegionCodeId" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Country_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="ContinentId" Index="-1" />
+        <ColumnInfo Id="CurrencyId" Index="-1" />
+        <ColumnInfo Id="IataRegionCodeId" Index="-1" />
+        <ColumnInfo Id="Name" Width="121" />
+        <ColumnInfo Id="Currency" Index="7" />
+        <ColumnInfo Id="Continent" Index="8" />
+      </Columns>
+    </ListView>
+    <DetailView Id="Currency_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Currency" RelativeSize="100" Direction="Vertical">
+              <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Direction="Horizontal" Index="0" RelativeSize="100" Caption="Currency">
+                <LayoutGroup Id="Autofca6d7db-2b43-4a73-95d3-66185067c4cd" ShowCaption="False" Caption="" Index="0" RelativeSize="50">
+                  <LayoutItem Id="Name" ViewItem="Name" SizeConstraintsType="Default" Index="0" RelativeSize="3.9653035935563818" />
+                  <LayoutItem Id="Symbol" ViewItem="Symbol" SizeConstraintsType="Default" Index="1" RelativeSize="96.034696406443615" />
+                </LayoutGroup>
+                <LayoutGroup Id="Autof16faea5-3393-4408-b65c-f2e78fc29b4c" ShowCaption="False" Caption="" Index="1" RelativeSize="50">
+                  <LayoutItem Id="NameEn" ViewItem="NameEn" SizeConstraintsType="Default" Index="0" RelativeSize="3.9653035935563818" />
+                  <LayoutItem Id="Code" ViewItem="Code" SizeConstraintsType="Default" Index="1" RelativeSize="96.034696406443615" />
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutItem Id="Code" SizeConstraintsType="Default" Index="2" RelativeSize="93.388429752066116" Removed="True" />
+              <LayoutItem Id="Name" Removed="True" />
+              <LayoutItem Id="NameEn" Removed="True" />
+              <LayoutItem Id="Symbol" SizeConstraintsType="Default" RelativeSize="2.833530106257379" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="DelayCode_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="DelayCode" RelativeSize="100">
+              <LayoutGroup Id="DelayCode_col1" RelativeSize="50">
+                <LayoutItem Id="DelayType" SizeConstraintsType="Default" RelativeSize="4.166666666666667" />
+                <LayoutItem Id="Code" ViewItem="Code" SizeConstraintsType="Default" Index="1" RelativeSize="3.125" />
+                <LayoutItem Id="Description" SizeConstraintsType="Default" Index="2" RelativeSize="92.708333333333329" Removed="True" />
+                <LayoutItem Id="IsEnabled" ViewItem="IsEnabled" SizeConstraintsType="Default" Index="2" RelativeSize="92.708333333333329" />
+                <LayoutItem Id="DelayTypeId" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="DelayCode_col2" RelativeSize="50">
+                <LayoutItem Id="DescriptionEn" SizeConstraintsType="Default" RelativeSize="4.166666666666667" />
+                <LayoutItem Id="Code" SizeConstraintsType="Default" RelativeSize="3.125" Index="1" Removed="True" />
+                <LayoutItem Id="Description" ViewItem="Description" SizeConstraintsType="Default" Index="1" RelativeSize="95.833333333333329" />
+                <LayoutItem Id="IsEnabled" SizeConstraintsType="Default" RelativeSize="92.112676056338032" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="DelayCode_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="DelayTypeId" Width="143" Index="-1" />
+        <ColumnInfo Id="Code" Width="160" />
+        <ColumnInfo Id="DelayType" Width="114" />
+        <ColumnInfo Id="Description" Index="2" Width="179" />
+        <ColumnInfo Id="DescriptionEn" Index="3" Width="175" />
+        <ColumnInfo Id="IsEnabled" Index="4" />
+      </Columns>
+    </ListView>
+    <DetailView Id="DelayType_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="DelayType" RelativeSize="100" Caption="Name">
+              <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" Caption="Delay Type" Direction="Horizontal">
+                <LayoutItem Id="Name" ViewItem="Name" SizeConstraintsType="Default" Index="0" RelativeSize="50" />
+                <LayoutItem Id="Item2" ShowCaption="False" ViewItem="" SizeConstraintsType="Default" Index="1" RelativeSize="50" />
+              </LayoutGroup>
+              <LayoutItem Id="Name" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Flight_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Flight" RelativeSize="100">
+              <LayoutGroup Id="Flight_col1" RelativeSize="50">
+                <LayoutItem Id="FlightDate" SizeConstraintsType="Default" RelativeSize="4.507042253521127" />
+                <LayoutItem Id="FlightNo" SizeConstraintsType="Default" RelativeSize="3.380281690140845" />
+                <LayoutItem Id="ScheduledFlightRegular" SizeConstraintsType="Default" RelativeSize="3.380281690140845" />
+                <LayoutItem Id="Status" SizeConstraintsType="Default" Index="3" RelativeSize="88.732394366197184" />
+                <LayoutItem Id="ScheduledFlightRegularId" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Flight_col2" RelativeSize="50">
+                <LayoutItem Id="ScheduledFlightAdHoc" SizeConstraintsType="Default" RelativeSize="4.507042253521127" />
+                <LayoutItem Id="IsAdHoc" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Index="1" />
+                <LayoutItem Id="FlightNumber" SizeConstraintsType="Default" RelativeSize="92.112676056338032" Index="2" />
+                <LayoutItem Id="FlightNumberId" SizeConstraintsType="Default" RelativeSize="88.732394366197184" Index="3" Removed="True" />
+                <LayoutItem Id="ScheduledFlightAdHocId" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Flight_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="FlightNumberId" Index="-1" Width="197" />
+        <ColumnInfo Id="ScheduledFlightAdHocId" Index="-1" Width="177" />
+        <ColumnInfo Id="ScheduledFlightRegularId" Width="163" Index="-1" />
+        <ColumnInfo Id="FlightNo" Width="194" />
+        <ColumnInfo Id="FlightDate" Width="94" />
+        <ColumnInfo Id="ScheduledFlightRegular" Width="124" />
+        <ColumnInfo Id="Status" Index="3" />
+        <ColumnInfo Id="ScheduledFlightAdHoc" Index="4" Width="202" />
+        <ColumnInfo Id="IsAdHoc" Index="5" />
+        <ColumnInfo Id="FlightNumber" Index="6" Width="172" />
+      </Columns>
+    </ListView>
+    <DetailView Id="FlightLeg_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="FlightLeg" RelativeSize="100" Direction="Horizontal">
+              <LayoutGroup Id="Autoffba1225-dbeb-4125-a7f8-7294946492a7" ShowCaption="False" Caption="" Index="0" RelativeSize="50">
+                <LayoutItem Id="Flight" ViewItem="Flight" SizeConstraintsType="Default" Index="0" RelativeSize="3.9653035935563818" />
+                <LayoutItem Id="ActualFlightLegAircraftRegister" ViewItem="ActualFlightLegAircraftRegister" SizeConstraintsType="Default" Index="1" RelativeSize="2.9739776951672861" />
+                <LayoutGroup Id="FlightLeg_col1" ShowCaption="False" Index="2" RelativeSize="93.060718711276337">
+                  <LayoutGroup Id="FlightLeg_col2" ShowCaption="False" Index="0" RelativeSize="100">
+                    <LayoutItem Id="Item3" ShowCaption="False" ViewItem="" SizeConstraintsType="Default" Index="0" RelativeSize="100" />
+                  </LayoutGroup>
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="Auto49bc25dc-8640-456d-abb4-163d66d888f9" ShowCaption="False" Caption="" Index="1" RelativeSize="50">
+                <LayoutItem Id="FlightLegFw" ViewItem="FlightLegFw" SizeConstraintsType="Default" Index="0" RelativeSize="3.9653035935563818" />
+                <LayoutItem Id="Item2" ShowCaption="False" ViewItem="" SizeConstraintsType="Default" Index="1" RelativeSize="2.9739776951672861" />
+                <LayoutItem Id="Item1" ShowCaption="False" ViewItem="" SizeConstraintsType="Default" Index="2" RelativeSize="93.060718711276337" />
+              </LayoutGroup>
+              <LayoutGroup Id="FlightLeg_col1" RelativeSize="50" Removed="True">
+                <LayoutItem Id="FlightLegFw" ViewItem="FlightLegFw" SizeConstraintsType="Default" Index="1" RelativeSize="2.9739776951672861" />
+                <LayoutItem Id="ActualFlightLegAircraftRegister" SizeConstraintsType="Default" Index="2" RelativeSize="93.060718711276337" />
+                <LayoutItem Id="Flight" SizeConstraintsType="Default" RelativeSize="3.9653035935563818" />
+                <LayoutItem Id="FlightId" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="FlightLeg_col2" RelativeSize="50" Caption="FlightLeg_col2" Direction="Horizontal" Removed="True">
+                <LayoutItem Id="FlightLegFw" Removed="True" />
+                <LayoutItem Id="FlightLegFwId" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="FlightLeg_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="FlightId" Index="-1" />
+        <ColumnInfo Id="FlightLegFwId" Index="-1" Width="203" />
+        <ColumnInfo Id="ActualFlightLegAircraftRegister" Width="236" />
+        <ColumnInfo Id="Flight" Width="113" />
+        <ColumnInfo Id="FlightLegFw" Index="2" Width="169" />
+      </Columns>
+    </ListView>
+    <DetailView Id="FlightLegAircraftRegister_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="FlightLegAircraftRegister" RelativeSize="100">
+              <LayoutGroup Id="FlightLegAircraftRegister_col1" RelativeSize="50">
+                <LayoutItem Id="FlightLeg" SizeConstraintsType="Default" RelativeSize="4.507042253521127" />
+                <LayoutItem Id="ScheduledOnDateTime" SizeConstraintsType="Default" RelativeSize="95.492957746478879" Index="1" />
+                <LayoutItem Id="FlightLegId" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="FlightLegAircraftRegister_col2" RelativeSize="50">
+                <LayoutItem Id="Status" SizeConstraintsType="Default" RelativeSize="4.507042253521127" />
+                <LayoutItem Id="AircraftRegister" SizeConstraintsType="Default" RelativeSize="95.492957746478879" />
+                <LayoutItem Id="AircraftRegisterId" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="FlightLegAircraftRegister_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="AircraftRegisterId" Index="-1" Width="236" />
+        <ColumnInfo Id="FlightLegId" Index="-1" />
+        <ColumnInfo Id="FlightLeg" Index="0" />
+        <ColumnInfo Id="Status" Width="181" Index="1" />
+        <ColumnInfo Id="ScheduledOnDateTime" Index="2" Width="163" />
+        <ColumnInfo Id="AircraftRegister" Index="3" Width="158" />
+      </Columns>
+    </ListView>
+    <DetailView Id="FlightLegFw_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="FlightLegFw" RelativeSize="100">
+              <LayoutGroup Id="FlightLegFw_col1" RelativeSize="50">
+                <LayoutItem Id="FlightNumber" SizeConstraintsType="Default" RelativeSize="4.507042253521127" />
+                <LayoutItem Id="FlightType" SizeConstraintsType="Default" Index="1" RelativeSize="3.380281690140845" />
+                <LayoutItem Id="ActualArrivalDateTime" SizeConstraintsType="Default" Index="2" RelativeSize="3.380281690140845" />
+                <LayoutItem Id="FlightTypeId" SizeConstraintsType="Default" Index="2" RelativeSize="3.380281690140845" Removed="True" />
+                <LayoutItem Id="ActualDepartureDateTime" SizeConstraintsType="Default" Index="3" RelativeSize="3.380281690140845" />
+                <LayoutItem Id="RouteFlightLegActual" SizeConstraintsType="Default" Index="4" RelativeSize="3.380281690140845" />
+                <LayoutItem Id="LegNumber" SizeConstraintsType="Default" Index="5" RelativeSize="3.380281690140845" />
+                <LayoutItem Id="RouteFlightLegActualId" SizeConstraintsType="Default" Index="5" RelativeSize="3.380281690140845" Removed="True" />
+                <LayoutItem Id="Status" SizeConstraintsType="Default" Index="6" RelativeSize="3.380281690140845" />
+                <LayoutItem Id="TakeoffTime" SizeConstraintsType="Default" Index="7" RelativeSize="3.380281690140845" />
+                <LayoutItem Id="TDwnTime" SizeConstraintsType="Default" Index="8" RelativeSize="3.380281690140845" />
+                <LayoutItem Id="FwTimestamp" SizeConstraintsType="Default" Index="9" RelativeSize="3.380281690140845" />
+                <LayoutItem Id="RouteFlightLegScheduled" SizeConstraintsType="Default" Index="10" RelativeSize="3.380281690140845" />
+                <LayoutItem Id="AircraftRegister" SizeConstraintsType="Default" Index="11" RelativeSize="61.690140845070424" />
+                <LayoutItem Id="RouteFlightLegScheduledId" SizeConstraintsType="Default" Index="11" RelativeSize="3.380281690140845" Removed="True" />
+                <LayoutItem Id="FlightNumberId" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="FlightLegFw_col2" RelativeSize="50">
+                <LayoutItem Id="AircraftTypeScheduled" SizeConstraintsType="Default" RelativeSize="4.507042253521127" Index="0" />
+                <LayoutItem Id="AircraftTypeScheduledId" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Index="1" Removed="True" />
+                <LayoutItem Id="ScheduledDepartureDateTime" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Index="1" />
+                <LayoutItem Id="ScheduledArrivalDateTime" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Index="2" />
+                <LayoutItem Id="ActualFlightDurationInMinutes" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Index="3" />
+                <LayoutItem Id="ScheduledFlightDurationInMinutes" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Index="4" />
+                <LayoutItem Id="AircraftTypeActual" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Index="5" />
+                <LayoutItem Id="AircraftTypeActualId" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Index="6" Removed="True" />
+                <LayoutItem Id="Note" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Index="6" />
+                <LayoutItem Id="DaTop" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Index="7" />
+                <LayoutItem Id="FltId" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Index="8" Removed="True" />
+                <LayoutItem Id="LegNo" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Index="8" />
+                <LayoutItem Id="Ac" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Index="9" />
+                <LayoutItem Id="ForceDuplicate" SizeConstraintsType="Default" RelativeSize="65.070422535211264" Index="10" />
+                <LayoutItem Id="AircraftRegisterId" SizeConstraintsType="Default" RelativeSize="4.507042253521127" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="FlightLegFw_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="AircraftRegisterId" Index="-1" />
+        <ColumnInfo Id="AircraftTypeActualId" Index="-1" />
+        <ColumnInfo Id="AircraftTypeScheduledId" Index="-1" />
+        <ColumnInfo Id="FlightNumberId" Width="190" Index="-1" />
+        <ColumnInfo Id="FlightTypeId" Index="-1" Width="141" />
+        <ColumnInfo Id="FltId" Index="-1" />
+        <ColumnInfo Id="RouteFlightLegActualId" Index="-1" />
+        <ColumnInfo Id="RouteFlightLegScheduledId" Index="-1" />
+        <ColumnInfo Id="LegNumber" Width="98" />
+        <ColumnInfo Id="FlightNumber" Width="102" />
+        <ColumnInfo Id="FlightType" Index="2" Width="89" />
+        <ColumnInfo Id="ActualArrivalDateTime" Index="3" Width="124" />
+        <ColumnInfo Id="ActualDepartureDateTime" Index="4" Width="170" />
+        <ColumnInfo Id="RouteFlightLegActual" Index="5" Width="120" />
+        <ColumnInfo Id="Status" Index="6" />
+        <ColumnInfo Id="TakeoffTime" Index="7" />
+        <ColumnInfo Id="TDwnTime" Index="8" Width="32" />
+        <ColumnInfo Id="FwTimestamp" Index="9" />
+        <ColumnInfo Id="RouteFlightLegScheduled" Index="10" />
+        <ColumnInfo Id="AircraftRegister" Index="11" />
+        <ColumnInfo Id="AircraftTypeScheduled" Index="12" />
+        <ColumnInfo Id="ScheduledDepartureDateTime" Index="13" />
+        <ColumnInfo Id="ScheduledArrivalDateTime" Index="14" />
+        <ColumnInfo Id="ActualFlightDurationInMinutes" Index="15" />
+        <ColumnInfo Id="ScheduledFlightDurationInMinutes" Index="16" />
+        <ColumnInfo Id="AircraftTypeActual" Index="17" />
+        <ColumnInfo Id="Note" Index="18" />
+        <ColumnInfo Id="DaTop" Index="19" />
+        <ColumnInfo Id="LegNo" Index="20" />
+        <ColumnInfo Id="Ac" Index="21" />
+        <ColumnInfo Id="ForceDuplicate" Index="22" />
+      </Columns>
+    </ListView>
+    <ListView Id="FlightNumber_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="FlightNumberAirlineAbvNumber" Width="273" />
+        <ColumnInfo Id="FlightNumberAbvNumber" Width="189" />
+        <ColumnInfo Id="FlightNumberNo" Width="201" />
+        <ColumnInfo Id="FlightNumberNumeric" Width="162" />
+      </Columns>
+    </ListView>
+    <DetailView Id="FlightType_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="FlightType" Direction="Vertical" RelativeSize="100">
+              <LayoutItem Id="Code" SizeConstraintsType="Default" Index="0" RelativeSize="50" Removed="True" />
+              <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Direction="Horizontal" Index="0" RelativeSize="100" Caption="Flight Type">
+                <LayoutItem Id="Code" ViewItem="Code" SizeConstraintsType="Default" Index="0" RelativeSize="50" />
+                <LayoutItem Id="Name" ViewItem="Name" SizeConstraintsType="Default" Index="1" RelativeSize="50" />
+              </LayoutGroup>
+              <LayoutItem Id="Name" SizeConstraintsType="Default" Index="1" RelativeSize="50" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="FlightType_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="Name" Width="205" />
+      </Columns>
+    </ListView>
+    <DetailView Id="IataCountryCode_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="IataCountryCode" RelativeSize="100" Direction="Vertical">
+              <LayoutItem Id="Country" SizeConstraintsType="Default" RelativeSize="50" Index="0" Removed="True" />
+              <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Direction="Horizontal" Index="0" RelativeSize="100" Caption="IATA Country Code">
+                <LayoutItem Id="Country" ViewItem="Country" SizeConstraintsType="Default" Index="0" RelativeSize="50" />
+                <LayoutItem Id="IataCode" ViewItem="IataCode" SizeConstraintsType="Default" Index="1" RelativeSize="50" />
+              </LayoutGroup>
+              <LayoutItem Id="IataCode" SizeConstraintsType="Default" RelativeSize="50" Index="1" Removed="True" />
+              <LayoutItem Id="CountryId" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="IataCountryCode_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="CountryId" Index="-1" />
+        <ColumnInfo Id="IataCode" Width="182" />
+      </Columns>
+    </ListView>
+    <DetailView Id="IataRegionCode_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="IataRegionCode" RelativeSize="100">
+              <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" Caption="IATA Region Code" Direction="Horizontal">
+                <LayoutGroup Id="Autoa91794ac-deb8-4cbd-bc3b-bdadc2b86f55" ShowCaption="False" Caption="" Index="0" RelativeSize="50">
+                  <LayoutItem Id="RegionName" ViewItem="RegionName" SizeConstraintsType="Default" Index="0" RelativeSize="3.9653035935563818" />
+                  <LayoutItem Id="RegionNameEn" ViewItem="RegionNameEn" SizeConstraintsType="Default" Index="1" RelativeSize="96.034696406443615" />
+                </LayoutGroup>
+                <LayoutGroup Id="Auto1f2c6f29-53f8-4d5d-a4a7-ae8ae4eb6925" ShowCaption="False" Caption="" Index="1" RelativeSize="50">
+                  <LayoutItem Id="RegionCode" ViewItem="RegionCode" SizeConstraintsType="Default" Index="0" RelativeSize="3.9653035935563818" />
+                  <LayoutItem Id="Item2" ShowCaption="False" ViewItem="" SizeConstraintsType="Default" Index="1" RelativeSize="96.034696406443615" />
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutItem Id="RegionCode" Removed="True" />
+              <LayoutItem Id="RegionName" Removed="True" />
+              <LayoutItem Id="RegionNameEn" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="IataRegionCode_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="RegionName" Width="167" />
+        <ColumnInfo Id="RegionCode" Width="151" />
+        <ColumnInfo Id="RegionNameEn" Width="153" />
+      </Columns>
+    </ListView>
+    <DetailView Id="LocalityType_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="LocalityType" RelativeSize="100">
+              <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" Caption="Locality Type" Direction="Horizontal">
+                <LayoutGroup Id="Autob6a79a41-d72d-4000-8157-31966795ee8c" ShowCaption="False" Caption="" Index="0" RelativeSize="50">
+                  <LayoutItem Id="Name" ViewItem="Name" SizeConstraintsType="Default" Index="0" RelativeSize="3.9653035935563818" />
+                  <LayoutItem Id="Code" ViewItem="Code" SizeConstraintsType="Default" Index="1" RelativeSize="96.034696406443615" />
+                </LayoutGroup>
+                <LayoutGroup Id="Auto60167b5d-4ce8-43c4-b7de-7a71400891a8" ShowCaption="False" Caption="" Index="1" RelativeSize="50">
+                  <LayoutItem Id="NameEn" ViewItem="NameEn" SizeConstraintsType="Default" Index="0" RelativeSize="3.9653035935563818" />
+                  <LayoutItem Id="Item2" ShowCaption="False" ViewItem="" SizeConstraintsType="Default" Index="1" RelativeSize="96.034696406443615" />
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutItem Id="Code" Removed="True" />
+              <LayoutItem Id="Name" Removed="True" />
+              <LayoutItem Id="NameEn" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="NonFlightOperationsMaster_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="NonFlightOperationsMaster" RelativeSize="100">
+              <LayoutGroup Id="NonFlightOperationsMaster_col1" RelativeSize="50">
+                <LayoutItem Id="HasFuellingOperation" SizeConstraintsType="Default" RelativeSize="4.507042253521127" />
+                <LayoutItem Id="AircraftRegister" SizeConstraintsType="Default" RelativeSize="3.380281690140845" />
+                <LayoutItem Id="AircraftType" SizeConstraintsType="Default" Index="2" RelativeSize="92.112676056338032" />
+                <LayoutItem Id="AircraftTypeId" SizeConstraintsType="Default" Index="3" RelativeSize="88.732394366197184" Removed="True" />
+                <LayoutItem Id="AircraftRegisterId" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="NonFlightOperationsMaster_col2" RelativeSize="50">
+                <LayoutItem Id="Airport" SizeConstraintsType="Default" RelativeSize="4.507042253521127" />
+                <LayoutItem Id="PeriodBeginDate" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Index="1" />
+                <LayoutItem Id="PeriodEndDate" SizeConstraintsType="Default" RelativeSize="92.112676056338032" Index="2" />
+                <LayoutItem Id="AirportId" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="NonFlightOperationsMaster_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="AircraftRegisterId" Width="143" Index="-1" />
+        <ColumnInfo Id="AircraftTypeId" Width="146" Index="-1" />
+        <ColumnInfo Id="AirportId" Index="-1" />
+        <ColumnInfo Id="HasFuellingOperation" Width="93" />
+        <ColumnInfo Id="AircraftRegister" Width="113" />
+        <ColumnInfo Id="AircraftType" Width="96" Index="2" />
+        <ColumnInfo Id="Airport" Index="3" />
+        <ColumnInfo Id="PeriodBeginDate" Index="4" Width="148" />
+        <ColumnInfo Id="PeriodEndDate" Index="5" Width="168" />
+      </Columns>
+    </ListView>
+    <DetailView Id="NonFlightOperationType_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="NonFlightOperationType" RelativeSize="100">
+              <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" Caption="Non Flight Operation Type" Direction="Horizontal">
+                <LayoutItem Id="Title" ViewItem="Title" SizeConstraintsType="Default" Index="0" RelativeSize="50" />
+                <LayoutItem Id="Code" ViewItem="Code" SizeConstraintsType="Default" Index="1" RelativeSize="50" />
+              </LayoutGroup>
+              <LayoutItem Id="Code" Removed="True" />
+              <LayoutItem Id="Title" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="NonFlightOperationType_ListView" AllowEdit="True" />
+    <DetailView Id="OperationsMaster_DetailView">
+      <Items Id="Items">
+        <PropertyEditor Id="AirportArrival" Caption="Origin" />
+        <PropertyEditor Id="AirportDeparture" Caption="Destination" />
+        <PropertyEditor Id="ScheduledDepartureDateTime" Caption="STD" />
+      </Items>
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="OperationsMaster" RelativeSize="11.881188118811881">
+              <LayoutGroup Id="OperationsMaster_col1" RelativeSize="26.836158192090394">
+                <LayoutItem Id="FlightNumber" SizeConstraintsType="Default" RelativeSize="50" />
+                <LayoutItem Id="AirportArrival" SizeConstraintsType="Default" Index="1" RelativeSize="50" />
+                <LayoutItem Id="AircraftType" SizeConstraintsType="Default" Index="2" RelativeSize="92.708333333333329" Removed="True" />
+                <LayoutItem Id="FlightType" SizeConstraintsType="Default" Index="2" RelativeSize="3.125" Removed="True" />
+                <LayoutItem Id="FlightTypeId" SizeConstraintsType="Default" Index="2" RelativeSize="3.380281690140845" Removed="True" />
+                <LayoutItem Id="RouteFlightLeg" SizeConstraintsType="Default" Index="2" RelativeSize="3.125" Removed="True" />
+                <LayoutItem Id="ScheduledDepartureDateTime" SizeConstraintsType="Default" Index="2" RelativeSize="3.125" Removed="True" />
+                <LayoutItem Id="Status" SizeConstraintsType="Default" Index="2" RelativeSize="3.125" Removed="True" />
+                <LayoutItem Id="AircraftRegister" SizeConstraintsType="Default" Index="3" RelativeSize="3.125" Removed="True" />
+                <LayoutItem Id="AircraftRegisterId" SizeConstraintsType="Default" Index="5" RelativeSize="3.380281690140845" Removed="True" />
+                <LayoutItem Id="RouteFlightLegId" SizeConstraintsType="Default" Index="6" RelativeSize="3.380281690140845" Removed="True" />
+                <LayoutItem Id="Timestamp" SizeConstraintsType="Default" Index="6" RelativeSize="3.380281690140845" Removed="True" />
+                <LayoutItem Id="AircraftTypeId" SizeConstraintsType="Default" Index="7" RelativeSize="3.380281690140845" Removed="True" />
+                <LayoutItem Id="AirportArrivalId" SizeConstraintsType="Default" Index="8" RelativeSize="71.83098591549296" Removed="True" />
+                <LayoutItem Id="FlightNumberId" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="OperationsMaster_col2" RelativeSize="73.1638418079096" Caption="OperationsMaster_col2" Direction="Horizontal">
+                <LayoutItem Id="AirportDeparture" ViewItem="AirportDeparture" SizeConstraintsType="Default" Index="0" RelativeSize="17.355371900826448" Removed="True" />
+                <LayoutGroup Id="Auto1ba6e9f2-71fe-403f-ab49-d52cf9dbe0f6" ShowCaption="False" Caption="" Index="0" RelativeSize="33.97683397683398">
+                  <LayoutItem Id="AirportDeparture" ViewItem="AirportDeparture" SizeConstraintsType="Default" Index="0" RelativeSize="50" />
+                  <LayoutItem Id="ScheduledDepartureDateTime" ViewItem="ScheduledDepartureDateTime" SizeConstraintsType="Default" Index="1" RelativeSize="50" />
+                </LayoutGroup>
+                <LayoutItem Id="AircraftRegisterFw" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Index="1" Removed="True" />
+                <LayoutGroup Id="Auto66f2dd03-f38a-4b8a-9e2e-53d681b13d89" ShowCaption="False" Caption="" Direction="Horizontal" Index="1" RelativeSize="66.023166023166027">
+                  <LayoutGroup Id="Autod461125c-8b1d-4c0e-881b-ecbc260fb012" ShowCaption="False" Caption="" Index="0" RelativeSize="50.682261208576996">
+                    <LayoutItem Id="AircraftType" ViewItem="AircraftType" SizeConstraintsType="Default" Index="0" RelativeSize="50" />
+                    <LayoutItem Id="Status" ViewItem="Status" SizeConstraintsType="Default" Index="1" RelativeSize="50" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Autob8a05194-2125-460f-82ab-9c332209a63e" ShowCaption="False" Caption="" Index="1" RelativeSize="49.317738791423004">
+                    <LayoutItem Id="FlightType" ViewItem="FlightType" SizeConstraintsType="Default" Index="0" RelativeSize="50" />
+                    <LayoutItem Id="AircraftRegister" ViewItem="AircraftRegister" SizeConstraintsType="Default" Index="1" RelativeSize="50" />
+                  </LayoutGroup>
+                </LayoutGroup>
+                <LayoutItem Id="LegNumber" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Index="1" Removed="True" />
+                <LayoutItem Id="TagArrivalAirport" SizeConstraintsType="Default" RelativeSize="95.833333333333329" Index="1" Removed="True" />
+                <LayoutItem Id="TbentFlightLeg" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Index="1" Removed="True" />
+                <LayoutItem Id="AircraftRegisterFwId" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Index="2" Removed="True" />
+                <LayoutItem Id="TagDepartureAirport" SizeConstraintsType="Default" RelativeSize="92.112676056338032" Index="2" Removed="True" />
+                <LayoutItem Id="TbentFlightLegId" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Index="3" Removed="True" />
+                <LayoutItem Id="CityArrival" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Index="5" Removed="True" />
+                <LayoutItem Id="CityArrivalId" SizeConstraintsType="Default" RelativeSize="81.971830985915489" Index="5" Removed="True" />
+                <LayoutItem Id="CityDeparture" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Index="5" Removed="True" />
+                <LayoutItem Id="CityDepartureId" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Index="5" Removed="True" />
+                <LayoutItem Id="TagAircraftType" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Index="5" Removed="True" />
+                <LayoutItem Id="TagRegister" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Index="5" Removed="True" />
+                <LayoutItem Id="AirportDepartureId" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutItem Id="Item1" ShowCaption="False" ViewItem="" SizeConstraintsType="Default" Index="1" RelativeSize="88.118811881188122" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="OperationsMaster_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="AircraftRegisterFwId" Index="-1" />
+        <ColumnInfo Id="AircraftRegisterId" Index="-1" />
+        <ColumnInfo Id="AircraftTypeId" Index="-1" />
+        <ColumnInfo Id="AirportArrivalId" Index="-1" />
+        <ColumnInfo Id="AirportDepartureId" Index="-1" />
+        <ColumnInfo Id="CityArrivalId" Index="-1" />
+        <ColumnInfo Id="CityDepartureId" Index="-1" />
+        <ColumnInfo Id="FlightNumberId" Index="-1" />
+        <ColumnInfo Id="FlightTypeId" Index="-1" />
+        <ColumnInfo Id="RouteFlightLegId" Index="-1" />
+        <ColumnInfo Id="TbentFlightLegId" Index="-1" />
+        <ColumnInfo Id="FlightNumber" Width="91" />
+        <ColumnInfo Id="FlightType" Index="1" />
+        <ColumnInfo Id="Status" Index="2" />
+        <ColumnInfo Id="ScheduledDepartureDateTime" Index="3" />
+        <ColumnInfo Id="AircraftRegister" Index="4" />
+        <ColumnInfo Id="RouteFlightLeg" Index="5" />
+        <ColumnInfo Id="Timestamp" Index="6" />
+        <ColumnInfo Id="AircraftType" Index="7" />
+        <ColumnInfo Id="AirportArrival" Index="8" />
+        <ColumnInfo Id="AirportDeparture" Index="9" SortIndex="0" SortOrder="Ascending" />
+        <ColumnInfo Id="LegNumber" Index="10" />
+        <ColumnInfo Id="AircraftRegisterFw" Index="11" />
+        <ColumnInfo Id="TbentFlightLeg" Index="12" Width="20" />
+        <ColumnInfo Id="TagArrivalAirport" Index="13" Width="21" />
+        <ColumnInfo Id="TagDepartureAirport" Index="14" Width="100" />
+        <ColumnInfo Id="TagRegister" Index="15" Width="92" />
+        <ColumnInfo Id="TagAircraftType" Index="16" Width="109" />
+        <ColumnInfo Id="CityDeparture" Index="17" />
+        <ColumnInfo Id="CityArrival" Index="18" />
+      </Columns>
+    </ListView>
+    <DetailView Id="PaxType_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="PaxType" RelativeSize="100">
+              <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" Caption="Pax Type" Direction="Horizontal">
+                <LayoutItem Id="Code" ViewItem="Code" SizeConstraintsType="Default" Index="0" RelativeSize="50" />
+                <LayoutItem Id="Name" ViewItem="Name" SizeConstraintsType="Default" Index="1" RelativeSize="50" />
+              </LayoutGroup>
+              <LayoutItem Id="Code" Removed="True" />
+              <LayoutItem Id="Name" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Person_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Person" RelativeSize="100">
+              <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" Caption="Person" Direction="Horizontal">
+                <LayoutGroup Id="Auto43a71e3d-3acd-41b9-8988-7146dcc9c9d8" ShowCaption="False" Caption="" Index="0" RelativeSize="50">
+                  <LayoutItem Id="FirstName" ViewItem="FirstName" SizeConstraintsType="Default" Index="0" RelativeSize="3.9653035935563818" />
+                  <LayoutItem Id="NationalCode" ViewItem="NationalCode" SizeConstraintsType="Default" Index="1" RelativeSize="96.034696406443615" />
+                </LayoutGroup>
+                <LayoutGroup Id="Auto5164535d-2a96-4a2d-ac13-d68eb9495f4e" ShowCaption="False" Caption="" Index="1" RelativeSize="50">
+                  <LayoutItem Id="LastName" ViewItem="LastName" SizeConstraintsType="Default" Index="0" RelativeSize="3.9653035935563818" />
+                  <LayoutItem Id="IdentificationNumber" ViewItem="IdentificationNumber" SizeConstraintsType="Default" Index="1" RelativeSize="96.034696406443615" />
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutItem Id="FirstName" Removed="True" />
+              <LayoutItem Id="IdentificationNumber" Removed="True" />
+              <LayoutItem Id="LastName" Removed="True" />
+              <LayoutItem Id="NationalCode" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="RouteAircraft_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="RouteAircraft" RelativeSize="100">
+              <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" Caption="Route Aircraft" Direction="Horizontal">
+                <LayoutGroup Id="Auto48b62be1-6507-4adb-be95-a9f4a86eedaf" ShowCaption="False" Caption="" Index="0" RelativeSize="50">
+                  <LayoutItem Id="Name" ViewItem="Name" SizeConstraintsType="Default" Index="0" RelativeSize="3.9653035935563818" />
+                  <LayoutItem Id="LocalityType" ViewItem="LocalityType" SizeConstraintsType="Default" Index="1" RelativeSize="96.034696406443615" />
+                </LayoutGroup>
+                <LayoutGroup Id="Autoeeae71f8-e09b-4c8b-b701-ba607dcc6eeb" ShowCaption="False" Caption="" Index="1" RelativeSize="50">
+                  <LayoutItem Id="NumLegs" ViewItem="NumLegs" SizeConstraintsType="Default" Index="0" RelativeSize="3.9653035935563818" />
+                  <LayoutItem Id="Item2" ShowCaption="False" ViewItem="" SizeConstraintsType="Default" Index="1" RelativeSize="96.034696406443615" />
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutItem Id="NumLegs" SizeConstraintsType="Default" Index="2" RelativeSize="92.533333333333331" Removed="True" />
+              <LayoutItem Id="LocalityType" SizeConstraintsType="Default" RelativeSize="3.2" Removed="True" />
+              <LayoutItem Id="LocalityTypeId" Removed="True" />
+              <LayoutItem Id="Name" SizeConstraintsType="Default" RelativeSize="4.2666666666666666" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="RouteAircraft_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="LocalityTypeId" Width="180" Index="-1" />
+        <ColumnInfo Id="Name" Width="129" />
+        <ColumnInfo Id="LocalityType" Width="131" />
+        <ColumnInfo Id="NumLegs" Index="2" />
+      </Columns>
+    </ListView>
+    <DetailView Id="RouteAircraftLeg_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="RouteAircraftLeg" RelativeSize="100">
+              <LayoutGroup Id="RouteAircraftLeg_col1" RelativeSize="50">
+                <LayoutItem Id="RouteAircraft" SizeConstraintsType="Default" RelativeSize="4.507042253521127" />
+                <LayoutItem Id="RouteLegAirport" SizeConstraintsType="Default" RelativeSize="95.492957746478879" Index="1" />
+                <LayoutItem Id="RouteLegAirportId" SizeConstraintsType="Default" RelativeSize="92.112676056338032" Index="2" Removed="True" />
+                <LayoutItem Id="RouteAircraftId" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="RouteAircraftLeg_col2" RelativeSize="50">
+                <LayoutItem Id="LocalityType" SizeConstraintsType="Default" RelativeSize="4.507042253521127" />
+                <LayoutItem Id="LegNo" SizeConstraintsType="Default" Index="1" RelativeSize="95.492957746478879" />
+                <LayoutItem Id="LocalityTypeId" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="RouteAircraftLeg_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="LocalityTypeId" Width="195" Index="-1" />
+        <ColumnInfo Id="RouteAircraftId" Width="190" Index="-1" />
+        <ColumnInfo Id="RouteLegAirportId" Width="144" Index="-1" />
+        <ColumnInfo Id="LegNo" Width="86" />
+        <ColumnInfo Id="RouteLegAirport" Width="201" Index="2" />
+        <ColumnInfo Id="LocalityType" Width="182" Index="3" />
+      </Columns>
+    </ListView>
+    <DetailView Id="RouteFlight_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="RouteFlight" RelativeSize="100">
+              <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" Caption="Route Flight" Direction="Horizontal">
+                <LayoutGroup Id="Auto67372662-7fe4-40bc-9610-5830155ded29" ShowCaption="False" Caption="" Index="0" RelativeSize="50">
+                  <LayoutItem Id="Name" ViewItem="Name" SizeConstraintsType="Default" Index="0" RelativeSize="3.9653035935563818" />
+                  <LayoutItem Id="NumLegs" ViewItem="NumLegs" SizeConstraintsType="Default" Index="1" RelativeSize="96.034696406443615" />
+                </LayoutGroup>
+                <LayoutGroup Id="Auto5c138614-aaca-4c62-b0b0-4541c5f48bf1" ShowCaption="False" Caption="" Index="1" RelativeSize="50">
+                  <LayoutItem Id="LocalityType" ViewItem="LocalityType" SizeConstraintsType="Default" Index="0" RelativeSize="3.9653035935563818" />
+                  <LayoutItem Id="Item2" ShowCaption="False" ViewItem="" SizeConstraintsType="Default" Index="1" RelativeSize="96.034696406443615" />
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutItem Id="LocalityType" SizeConstraintsType="Default" RelativeSize="92.533333333333331" Removed="True" />
+              <LayoutItem Id="LocalityTypeId" Removed="True" />
+              <LayoutItem Id="Name" SizeConstraintsType="Default" RelativeSize="4.2666666666666666" Removed="True" />
+              <LayoutItem Id="NumLegs" SizeConstraintsType="Default" RelativeSize="3.2" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="RouteFlight_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="LocalityTypeId" Width="166" Index="-1" />
+        <ColumnInfo Id="Name" Width="173" />
+        <ColumnInfo Id="LocalityType" Width="123" />
+      </Columns>
+    </ListView>
+    <DetailView Id="RouteFlightLeg_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="RouteFlightLeg" RelativeSize="100">
+              <LayoutGroup Id="RouteFlightLeg_col1" RelativeSize="50">
+                <LayoutItem Id="RouteLegAirport" SizeConstraintsType="Default" RelativeSize="3.9653035935563818" />
+                <LayoutItem Id="RouteFlight" SizeConstraintsType="Default" Index="1" RelativeSize="2.9739776951672861" />
+                <LayoutItem Id="RouteFlightId" SizeConstraintsType="Default" Index="2" RelativeSize="3.380281690140845" Removed="True" />
+                <LayoutItem Id="Status" ViewItem="Status" SizeConstraintsType="Default" Index="2" RelativeSize="2.9739776951672861" />
+                <LayoutItem Id="LegNo" SizeConstraintsType="Default" Index="3" RelativeSize="90.086741016109045" Removed="True" />
+                <LayoutItem Id="Timestamp" ViewItem="Timestamp" SizeConstraintsType="Default" Index="3" RelativeSize="90.086741016109045" />
+                <LayoutItem Id="RouteLegAirportId" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="RouteFlightLeg_col2" RelativeSize="50">
+                <LayoutItem Id="LocalityType" SizeConstraintsType="Default" RelativeSize="3.9653035935563818" />
+                <LayoutItem Id="Name" SizeConstraintsType="Default" RelativeSize="2.9739776951672861" Index="1" />
+                <LayoutItem Id="LegNo" ViewItem="LegNo" SizeConstraintsType="Default" Index="2" RelativeSize="93.060718711276337" />
+                <LayoutItem Id="Status" SizeConstraintsType="Default" RelativeSize="90.086741016109045" Index="3" Removed="True" />
+                <LayoutItem Id="Timestamp" SizeConstraintsType="Default" RelativeSize="88.732394366197184" Index="3" Removed="True" />
+                <LayoutItem Id="LocalityTypeId" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="RouteFlightLeg_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="LocalityTypeId" Index="-1" />
+        <ColumnInfo Id="RouteFlightId" Index="-1" />
+        <ColumnInfo Id="RouteLegAirportId" Width="206" Index="-1" />
+        <ColumnInfo Id="Name" Width="92" />
+        <ColumnInfo Id="RouteFlight" Index="2" />
+        <ColumnInfo Id="LegNo" Index="3" />
+        <ColumnInfo Id="LocalityType" Index="4" />
+        <ColumnInfo Id="Status" Index="5" />
+        <ColumnInfo Id="Timestamp" Index="6" />
+      </Columns>
+    </ListView>
+    <DetailView Id="RouteLegAirport_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="RouteLegAirport" RelativeSize="100">
+              <LayoutGroup Id="RouteLegAirport_col1" RelativeSize="50">
+                <LayoutItem Id="ArrivalAirport" SizeConstraintsType="Default" RelativeSize="4.507042253521127" />
+                <LayoutItem Id="DepartureAirport" SizeConstraintsType="Default" RelativeSize="95.492957746478879" Index="1" />
+                <LayoutItem Id="ArrivalAirportId" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="RouteLegAirport_col2" RelativeSize="50">
+                <LayoutItem Id="Name" SizeConstraintsType="Default" Index="0" RelativeSize="4.507042253521127" />
+                <LayoutItem Id="Status" SizeConstraintsType="Default" Index="1" RelativeSize="95.492957746478879" />
+                <LayoutItem Id="DepartureAirportId" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="RouteLegAirport_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="ArrivalAirportId" Width="140" Index="-1" />
+        <ColumnInfo Id="DepartureAirportId" Width="193" Index="-1" />
+        <ColumnInfo Id="Name" Width="115" />
+        <ColumnInfo Id="ArrivalAirport" Width="143" />
+        <ColumnInfo Id="DepartureAirport" Index="2" Width="124" />
+        <ColumnInfo Id="Status" Index="3" />
+      </Columns>
+    </ListView>
+    <DetailView Id="RouteTrip_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="RouteTrip" RelativeSize="100">
+              <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" Caption="Route trip" Direction="Horizontal">
+                <LayoutGroup Id="Auto0fc9c9c7-edca-442c-8e45-a3e5958d4727" ShowCaption="False" Caption="" Index="0" RelativeSize="50">
+                  <LayoutItem Id="Name" ViewItem="Name" SizeConstraintsType="Default" Index="0" RelativeSize="3.9653035935563818" />
+                  <LayoutItem Id="NumLegs" ViewItem="NumLegs" SizeConstraintsType="Default" Index="1" RelativeSize="96.034696406443615" />
+                </LayoutGroup>
+                <LayoutGroup Id="Autoe8ed35ee-71bd-4b54-8c4c-3803262c952d" ShowCaption="False" Caption="" Index="1" RelativeSize="50">
+                  <LayoutItem Id="LocalityType" ViewItem="LocalityType" SizeConstraintsType="Default" Index="0" RelativeSize="3.9653035935563818" />
+                  <LayoutItem Id="Item2" ShowCaption="False" ViewItem="" SizeConstraintsType="Default" Index="1" RelativeSize="96.034696406443615" />
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutItem Id="NumLegs" SizeConstraintsType="Default" Index="2" RelativeSize="92.533333333333331" Removed="True" />
+              <LayoutItem Id="LocalityType" SizeConstraintsType="Default" RelativeSize="3.2" Removed="True" />
+              <LayoutItem Id="LocalityTypeId" Removed="True" />
+              <LayoutItem Id="Name" SizeConstraintsType="Default" RelativeSize="4.2666666666666666" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="RouteTrip_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="LocalityTypeId" Index="-1" />
+        <ColumnInfo Id="Name" Width="193" />
+        <ColumnInfo Id="LocalityType" Width="129" />
+        <ColumnInfo Id="NumLegs" Index="2" />
+      </Columns>
+    </ListView>
+    <DetailView Id="RouteTripLeg_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="RouteTripLeg" RelativeSize="100">
+              <LayoutGroup Id="RouteTripLeg_col1" RelativeSize="50">
+                <LayoutItem Id="RouteTrip" SizeConstraintsType="Default" RelativeSize="4.507042253521127" />
+                <LayoutItem Id="RouteLegAirport" SizeConstraintsType="Default" RelativeSize="95.492957746478879" Index="1" />
+                <LayoutItem Id="RouteLegAirportId" SizeConstraintsType="Default" RelativeSize="92.112676056338032" Index="2" Removed="True" />
+                <LayoutItem Id="RouteTripId" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="RouteTripLeg_col2" RelativeSize="50">
+                <LayoutItem Id="LocalityType" SizeConstraintsType="Default" RelativeSize="4.507042253521127" />
+                <LayoutItem Id="LegNo" SizeConstraintsType="Default" Index="1" RelativeSize="95.492957746478879" />
+                <LayoutItem Id="LocalityTypeId" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="RouteTripLeg_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="LocalityTypeId" Index="-1" />
+        <ColumnInfo Id="RouteLegAirportId" Index="-1" />
+        <ColumnInfo Id="RouteTripId" Index="-1" />
+        <ColumnInfo Id="LegNo" Width="157" />
+        <ColumnInfo Id="RouteLegAirport" Index="2" />
+        <ColumnInfo Id="LocalityType" Index="3" />
+      </Columns>
+    </ListView>
+    <DetailView Id="RouteTripLegTemplate_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="RouteTripLegTemplate" RelativeSize="100">
+              <LayoutGroup Id="RouteTripLegTemplate_col1" RelativeSize="50">
+                <LayoutItem Id="RouteLegAirport" SizeConstraintsType="Default" RelativeSize="3.9653035935563818" />
+                <LayoutItem Id="Name" ViewItem="Name" SizeConstraintsType="Default" Index="1" RelativeSize="2.9739776951672861" />
+                <LayoutItem Id="RouteTripTemplate" SizeConstraintsType="Default" Index="2" RelativeSize="93.060718711276337" />
+                <LayoutItem Id="RouteTripTemplateId" SizeConstraintsType="Default" Index="2" RelativeSize="92.112676056338032" Removed="True" />
+                <LayoutItem Id="RouteLegAirportId" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="RouteTripLegTemplate_col2" RelativeSize="50">
+                <LayoutItem Id="LegNo" SizeConstraintsType="Default" RelativeSize="3.9653035935563818" />
+                <LayoutItem Id="LocalityType" SizeConstraintsType="Default" RelativeSize="96.034696406443615" />
+                <LayoutItem Id="Name" SizeConstraintsType="Default" RelativeSize="92.112676056338032" Index="2" Removed="True" />
+                <LayoutItem Id="LocalityTypeId" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="RouteTripLegTemplate_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="LocalityTypeId" Index="-1" />
+        <ColumnInfo Id="RouteLegAirportId" Width="171" Index="-1" />
+        <ColumnInfo Id="RouteTripTemplateId" Index="-1" Width="156" />
+        <ColumnInfo Id="Name" Width="159" />
+        <ColumnInfo Id="RouteLegAirport" Width="119" />
+        <ColumnInfo Id="RouteTripTemplate" Index="2" Width="130" />
+        <ColumnInfo Id="LegNo" Index="3" />
+        <ColumnInfo Id="LocalityType" Index="4" Width="116" />
+      </Columns>
+    </ListView>
+    <DetailView Id="RouteTripTemplate_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="RouteTripTemplate" RelativeSize="100">
+              <LayoutGroup Id="RouteTripTemplate_col1" RelativeSize="50">
+                <LayoutItem Id="Name" SizeConstraintsType="Default" RelativeSize="3.9653035935563818" />
+                <LayoutItem Id="NumLegs" SizeConstraintsType="Default" RelativeSize="96.034696406443615" />
+                <LayoutItem Id="LocalityType" SizeConstraintsType="Default" RelativeSize="92.112676056338032" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="RouteTripTemplate_col2" RelativeSize="50" Caption="RouteTripTemplate_col2">
+                <LayoutItem Id="LocalityType" ViewItem="LocalityType" SizeConstraintsType="Default" Index="0" RelativeSize="3.9653035935563818" />
+                <LayoutItem Id="FlightCount" SizeConstraintsType="Default" Index="1" RelativeSize="96.034696406443615" />
+                <LayoutItem Id="LocalityTypeId" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="RouteTripTemplate_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="LocalityTypeId" Width="164" Index="-1" />
+        <ColumnInfo Id="Name" Width="100" />
+        <ColumnInfo Id="LocalityType" Width="125" />
+        <ColumnInfo Id="FlightCount" Index="3" />
+      </Columns>
+    </ListView>
+    <DetailView Id="ScheduledFlightAdHoc_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="ScheduledFlightAdHoc" RelativeSize="100">
+              <LayoutGroup Id="ScheduledFlightAdHoc_col1" RelativeSize="50">
+                <LayoutItem Id="FlightDate" SizeConstraintsType="Default" RelativeSize="4.507042253521127" />
+                <LayoutItem Id="CharteredBy" SizeConstraintsType="Default" RelativeSize="3.380281690140845" />
+                <LayoutItem Id="Status" SizeConstraintsType="Default" RelativeSize="3.380281690140845" />
+                <LayoutItem Id="RouteFlight" SizeConstraintsType="Default" RelativeSize="3.380281690140845" />
+                <LayoutItem Id="Parent" SizeConstraintsType="Default" Index="4" RelativeSize="85.352112676056336" />
+                <LayoutItem Id="RouteFlightId" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="ScheduledFlightAdHoc_col2" RelativeSize="50">
+                <LayoutItem Id="FlightNumber" SizeConstraintsType="Default" RelativeSize="4.507042253521127" Index="0" />
+                <LayoutItem Id="FlightNumberId" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Index="1" Removed="True" />
+                <LayoutItem Id="IsChartered" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Index="1" />
+                <LayoutItem Id="FlightType" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Index="2" />
+                <LayoutItem Id="IsForcedRouteChange" SizeConstraintsType="Default" RelativeSize="88.732394366197184" Index="3" />
+                <LayoutItem Id="ParentId" SizeConstraintsType="Default" RelativeSize="4.507042253521127" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="ScheduledFlightAdHoc_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="CharteredBy" Index="-1" />
+        <ColumnInfo Id="FlightNumberId" Index="-1" />
+        <ColumnInfo Id="ParentId" Index="-1" />
+        <ColumnInfo Id="RouteFlightId" Index="-1" />
+        <ColumnInfo Id="Status" Width="127" />
+        <ColumnInfo Id="RouteFlight" Index="2" />
+        <ColumnInfo Id="Parent" Index="3" />
+        <ColumnInfo Id="FlightNumber" Index="4" Width="112" />
+        <ColumnInfo Id="FlightType" Index="5" Width="116" />
+        <ColumnInfo Id="IsChartered" Index="6" />
+        <ColumnInfo Id="IsForcedRouteChange" Index="7" />
+      </Columns>
+    </ListView>
+    <DetailView Id="ScheduledFlightLegAdHoc_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="ScheduledFlightLegAdHoc" RelativeSize="100">
+              <LayoutGroup Id="ScheduledFlightLegAdHoc_col1" RelativeSize="50">
+                <LayoutItem Id="ScheduledFlightAdHoc" SizeConstraintsType="Default" RelativeSize="4.507042253521127" />
+                <LayoutItem Id="Status" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Index="1" />
+                <LayoutItem Id="FlightDurationInMinutes" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Index="2" />
+                <LayoutItem Id="RouteFlightLeg" SizeConstraintsType="Default" RelativeSize="88.732394366197184" Index="3" />
+                <LayoutItem Id="RouteFlightLegId" SizeConstraintsType="Default" RelativeSize="85.352112676056336" Index="4" Removed="True" />
+                <LayoutItem Id="ScheduledFlightAdHocId" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="ScheduledFlightLegAdHoc_col2" RelativeSize="50">
+                <LayoutItem Id="LegNo" SizeConstraintsType="Default" RelativeSize="4.507042253521127" />
+                <LayoutItem Id="ArrivalDateTime" SizeConstraintsType="Default" RelativeSize="3.380281690140845" />
+                <LayoutItem Id="DepartureDateTime" SizeConstraintsType="Default" RelativeSize="3.380281690140845" />
+                <LayoutItem Id="FlightLeg" SizeConstraintsType="Default" RelativeSize="88.732394366197184" />
+                <LayoutItem Id="FlightLegId" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="ScheduledFlightLegAdHoc_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="FlightLegId" Index="-1" />
+        <ColumnInfo Id="RouteFlightLegId" Index="-1" Width="114" />
+        <ColumnInfo Id="ScheduledFlightAdHocId" Index="-1" />
+        <ColumnInfo Id="FlightDurationInMinutes" Width="164" />
+        <ColumnInfo Id="ScheduledFlightAdHoc" Width="140" />
+        <ColumnInfo Id="Status" Index="2" />
+        <ColumnInfo Id="RouteFlightLeg" Index="3" Width="108" />
+        <ColumnInfo Id="LegNo" Index="4" />
+        <ColumnInfo Id="ArrivalDateTime" Index="5" Width="123" />
+        <ColumnInfo Id="DepartureDateTime" Index="6" Width="108" />
+        <ColumnInfo Id="FlightLeg" Index="7" />
+      </Columns>
+    </ListView>
+    <DetailView Id="ScheduledFlightLegRegular_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="ScheduledFlightLegRegular" RelativeSize="100">
+              <LayoutGroup Id="ScheduledFlightLegRegular_col1" RelativeSize="50">
+                <LayoutItem Id="ArrivalDateTime" SizeConstraintsType="Default" RelativeSize="4.507042253521127" />
+                <LayoutItem Id="DepartureDateTime" SizeConstraintsType="Default" RelativeSize="3.380281690140845" />
+                <LayoutItem Id="FlightDurationInMinutes" SizeConstraintsType="Default" RelativeSize="3.380281690140845" />
+                <LayoutItem Id="LegNo" SizeConstraintsType="Default" RelativeSize="3.380281690140845" />
+                <LayoutItem Id="RouteFlightLeg" SizeConstraintsType="Default" RelativeSize="85.352112676056336" />
+                <LayoutItem Id="RouteFlightLegId" SizeConstraintsType="Default" RelativeSize="81.971830985915489" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="ScheduledFlightLegRegular_col2" RelativeSize="50">
+                <LayoutItem Id="ScheduledFlightRegular" SizeConstraintsType="Default" RelativeSize="4.507042253521127" />
+                <LayoutItem Id="Status" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Index="1" />
+                <LayoutItem Id="WeekDayLocal" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Index="2" />
+                <LayoutItem Id="FlightLeg" SizeConstraintsType="Default" RelativeSize="88.732394366197184" Index="3" />
+                <LayoutItem Id="FlightLegId" Removed="True" />
+                <LayoutItem Id="ScheduledFlightRegularId" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="ScheduledFlightLegRegular_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="FlightLegId" Index="-1" />
+        <ColumnInfo Id="RouteFlightLegId" Index="-1" />
+        <ColumnInfo Id="ScheduledFlightRegularId" Index="-1" />
+        <ColumnInfo Id="FlightDurationInMinutes" Width="135" />
+        <ColumnInfo Id="ArrivalDateTime" Width="130" />
+        <ColumnInfo Id="DepartureDateTime" Width="143" />
+        <ColumnInfo Id="RouteFlightLeg" Width="141" />
+        <ColumnInfo Id="ScheduledFlightRegular" Index="5" Width="149" />
+        <ColumnInfo Id="Status" Index="6" />
+        <ColumnInfo Id="WeekDayLocal" Index="7" Width="141" />
+        <ColumnInfo Id="FlightLeg" Index="8" Width="129" />
+      </Columns>
+    </ListView>
+    <DetailView Id="ScheduledFlightRegular_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="ScheduledFlightRegular" RelativeSize="100">
+              <LayoutGroup Id="ScheduledFlightRegular_col1" RelativeSize="50">
+                <LayoutItem Id="EffectiveBeginDate" SizeConstraintsType="Default" RelativeSize="4.507042253521127" />
+                <LayoutItem Id="EffectiveEndDate" SizeConstraintsType="Default" RelativeSize="3.380281690140845" />
+                <LayoutItem Id="CharteredBy" SizeConstraintsType="Default" RelativeSize="3.380281690140845" />
+                <LayoutItem Id="FlightNumber" SizeConstraintsType="Default" RelativeSize="3.380281690140845" />
+                <LayoutItem Id="FlightTime" SizeConstraintsType="Default" RelativeSize="85.352112676056336" Index="4" />
+                <LayoutItem Id="FlightNumberId" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="ScheduledFlightRegular_col2" RelativeSize="50">
+                <LayoutItem Id="IsChartered" SizeConstraintsType="Default" RelativeSize="4.507042253521127" />
+                <LayoutItem Id="RouteFlight" SizeConstraintsType="Default" RelativeSize="3.380281690140845" />
+                <LayoutItem Id="Status" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Index="2" />
+                <LayoutItem Id="Parent" SizeConstraintsType="Default" RelativeSize="88.732394366197184" Index="3" />
+                <LayoutItem Id="ParentId" Removed="True" />
+                <LayoutItem Id="RouteFlightId" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="ScheduledFlightRegular_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="FlightNumberId" Index="-1" />
+        <ColumnInfo Id="ParentId" Index="-1" />
+        <ColumnInfo Id="RouteFlightId" Index="-1" />
+        <ColumnInfo Id="EffectiveBeginDate" Width="158" />
+        <ColumnInfo Id="FlightTime" Width="117" />
+        <ColumnInfo Id="EffectiveEndDate" Width="126" />
+        <ColumnInfo Id="CharteredBy" Index="3" />
+        <ColumnInfo Id="FlightNumber" Index="4" />
+        <ColumnInfo Id="IsChartered" Index="5" />
+        <ColumnInfo Id="RouteFlight" Index="6" />
+        <ColumnInfo Id="Status" Index="7" />
+        <ColumnInfo Id="Parent" Index="8" />
+      </Columns>
+    </ListView>
+    <DetailView Id="SeatClass_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="SeatClass" RelativeSize="100">
+              <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" Caption="Seat Class" Direction="Horizontal">
+                <LayoutItem Id="Code" ViewItem="Code" SizeConstraintsType="Default" Index="0" RelativeSize="50" />
+                <LayoutItem Id="Name" ViewItem="Name" SizeConstraintsType="Default" Index="1" RelativeSize="50" />
+              </LayoutGroup>
+              <LayoutItem Id="Code" Removed="True" />
+              <LayoutItem Id="Name" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="SpecialServiceType_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="SpecialServiceType" RelativeSize="100">
+              <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" Caption="Special Service" Direction="Horizontal">
+                <LayoutItem Id="Code" ViewItem="Code" SizeConstraintsType="Default" Index="0" RelativeSize="50" />
+                <LayoutItem Id="Name" ViewItem="Name" SizeConstraintsType="Default" Index="1" RelativeSize="50" />
+              </LayoutGroup>
+              <LayoutItem Id="Code" Removed="True" />
+              <LayoutItem Id="Name" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="SpecialServiceType_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="Name" Width="219" />
+      </Columns>
+    </ListView>
+    <DetailView Id="TicketType_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="TicketType" RelativeSize="100">
+              <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" Caption="Ticket Type" Direction="Horizontal">
+                <LayoutItem Id="Code" ViewItem="Code" SizeConstraintsType="Default" Index="0" RelativeSize="50" />
+                <LayoutItem Id="Name" ViewItem="Name" SizeConstraintsType="Default" Index="1" RelativeSize="50" />
+              </LayoutGroup>
+              <LayoutItem Id="Code" Removed="True" />
+              <LayoutItem Id="Name" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Uld_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Uld" RelativeSize="100">
+              <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" Caption="ULD" Direction="Horizontal">
+                <LayoutItem Id="UldNumber" ViewItem="UldNumber" SizeConstraintsType="Default" Index="0" RelativeSize="50" />
+                <LayoutItem Id="UldType" ViewItem="UldType" SizeConstraintsType="Default" Index="1" RelativeSize="50" />
+              </LayoutGroup>
+              <LayoutItem Id="UldNumber" Removed="True" />
+              <LayoutItem Id="UldType" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Uld_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="UldNumber" Width="237" />
+        <ColumnInfo Id="UldType" Width="158" />
+      </Columns>
+    </ListView>
+    <DetailView Id="Unit_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Unit" RelativeSize="100" Caption="Name">
+              <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" Caption="Unit">
+                <LayoutItem Id="Name" ViewItem="Name" SizeConstraintsType="Default" Index="0" RelativeSize="100" />
+              </LayoutGroup>
+              <LayoutItem Id="Name" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+  <NavigationItems Id="NavigationItems">
+    <Items Id="Items">
+      <Item Id="@a81babc6-d2ed-4545-b050-de37114fa71e">
+        <Items Id="Items">
+          <Item Id="@788e5aa8-69bc-4005-beb4-55d97914a1fd">
+            <Items Id="Items">
+              <Item Id="@ea230585-73c8-4ce7-ac97-4413dd81afb0" ViewId="RouteLegAirport_ListView" />
+              <Item Id="@e3689cf7-c345-4bea-ae90-48b23d784a10" ViewId="Currency_ListView" />
+              <Item Id="@ce9d8d46-e992-48ef-aefe-1e790ab53f45" ViewId="Person_ListView" />
+              <Item Id="@ccf7902b-44db-4c08-af60-10ac75cd8a93" ViewId="IataCountryCode_ListView" />
+              <Item Id="@caa4567b-f9d3-47b7-a75e-46a67c86f1c7" ViewId="Unit_ListView" />
+              <Item Id="@c771d527-5a9e-4f49-ac5a-7141633cb1e9" ViewId="AircraftRegisterSeatInfo_ListView" />
+              <Item Id="@bcbdd275-2825-43cd-9ece-d2f7cc45dd6a" ViewId="LocalityType_ListView" />
+              <Item Id="@b1557e91-9104-4cd3-a9d6-817bb8246061" ViewId="Airport_ListView" />
+              <Item Id="@ad6df94e-6c5f-4230-bf1d-8c50e23bd298" ViewId="AircraftType_ListView" />
+              <Item Id="@919323df-f8c1-4ddc-9dc0-b998efb10f6b" ViewId="CityOffsetUtc_ListView" />
+              <Item Id="@8cee729e-6467-48fb-92b6-141614f527d2" ViewId="Aircraft_ListView" />
+              <Item Id="@838d7df2-2329-4a7d-9e1c-1f87290fce97" ViewId="AircraftRegisterNonAvailableSeat_ListView" />
+              <Item Id="@82e654bd-4b9f-4e9d-b1ca-e2711fa6b064" ViewId="Airline_ListView" />
+              <Item Id="@640d7695-59bf-4ed2-98c8-a19eeb4cf3f4" ViewId="Company_ListView" />
+              <Item Id="@5366528f-3631-4d2b-82b0-eda628496dba" ViewId="City_ListView" />
+              <Item Id="@5321379e-bf11-4ef8-ba74-52aeb288d77e" ViewId="Continent_ListView" />
+              <Item Id="@3808b67e-dffb-4a48-90d3-df3a9cd9aaee" ViewId="CityOffsetDst_ListView" />
+              <Item Id="@34879148-649c-4547-94f6-d43c40492fea" ViewId="AircraftRegister_ListView" />
+              <Item Id="@2732b38b-66c3-43e2-a2d5-4be251b5874e" ViewId="Country_ListView" />
+              <Item Id="@0a80f10a-188b-4186-8d86-948db7af942f" ViewId="LirRegisterGroup_ListView" />
+              <Item Id="@08ba1698-f6ec-4464-9289-5a13118cfadd" ViewId="IataRegionCode_ListView" />
+            </Items>
+          </Item>
+          <Item Id="@4880719e-78d2-4acf-bf37-b818256f91fb">
+            <Items Id="Items">
+              <Item Id="@f768b36b-5489-446d-8792-63c30d2b609a" ViewId="ScheduledFlightLegRegular_ListView" />
+              <Item Id="@eb4e0272-c517-4dcb-86fa-fdb168bd1bbc" ViewId="FuelingOperation_ListView" />
+              <Item Id="@e55c1a35-5353-46e7-932e-1db8ffd15b14" ViewId="ScheduledFlightAdHoc_ListView" />
+              <Item Id="@cf31daed-638a-40c0-a29c-5f05c82aa984" ViewId="FlightNumber_ListView" />
+              <Item Id="@cabc621a-49c3-49dd-822c-967b44dd848b" ViewId="SeatClass_ListView" />
+              <Item Id="@b71f1fe9-3563-46d6-ad74-c5e9f4a50526" ViewId="RouteTripLegTemplate_ListView" />
+              <Item Id="@b0bb7d42-feda-4b2a-98d3-69974b7b2126" ViewId="OperationsMaster_ListView" />
+              <Item Id="@aa82bf8e-d58b-4170-8248-6b491b283b1c" ViewId="DelayCode_ListView" />
+              <Item Id="@aa2f9995-828b-488d-a1e8-78385bf963b2" ViewId="ScheduledFlightRegular_ListView" />
+              <Item Id="@a4d1015e-4a5c-41d2-9d89-be0ce057ef3b" ViewId="RouteFlightLeg_ListView" />
+              <Item Id="@a010c91e-81d1-4e04-8bcd-1c9d5483cc57" ViewId="FlightLeg_ListView" />
+              <Item Id="@94924b6d-23ce-4a25-bf1b-a762d32868fd" ViewId="SpecialServiceType_ListView" />
+              <Item Id="@7d44a992-6977-4aa6-8e71-41cdc045c03f" ViewId="RouteTripLeg_ListView" />
+              <Item Id="@7c15afb2-d583-4375-b2cd-fbf1c936c72c" ViewId="Flight_ListView" />
+              <Item Id="@78928935-25b1-4814-8cf3-e0cc6fb9fe12" ViewId="DelayType_ListView" />
+              <Item Id="@691f6304-4e24-4adf-bf87-4145eac0ac92" ViewId="ScheduledFlightLegAdHoc_ListView" />
+              <Item Id="@68cbad2b-d24a-4c9b-8077-bb7ae548a865" ViewId="TicketType_ListView" />
+              <Item Id="@6394bd9f-28f1-43da-a081-10217d711236" ViewId="PaxType_ListView" />
+              <Item Id="@5a37d0d5-9efb-4990-b393-2a71693a7466" ViewId="FlightLegFw_ListView" />
+              <Item Id="@5034269c-96a9-4cb5-8302-10aa4e377d4c" ViewId="RouteTripTemplate_ListView" />
+              <Item Id="@451766b4-08ea-4510-927a-1ec91028656b" ViewId="NonFlightOperationsMaster_ListView" />
+              <Item Id="@3f2d3541-a7d6-4654-ab6c-3bb9741efc50" ViewId="Uld_ListView" />
+              <Item Id="@356fd8f1-1459-488a-9bd7-5f3d816b4e4f" ViewId="NonFlightOperationType_ListView" />
+              <Item Id="@30073bbb-38f7-4ec3-879e-4019b497653f" ViewId="RouteAircraft_ListView" />
+              <Item Id="@2ebc181d-7879-4533-b758-56caac091670" ViewId="CargoType_ListView" />
+              <Item Id="@28207903-dea6-49b5-8cd3-cb9894afa51d" ViewId="RouteTrip_ListView" />
+              <Item Id="@164aef90-d007-4cc2-a01f-adfdcc89f491" ViewId="FlightType_ListView" />
+              <Item Id="@11dd572d-b78b-4387-a64b-d7ca563731a2" ViewId="FlightLegAircraftRegister_ListView" />
+            </Items>
+          </Item>
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+</Application>

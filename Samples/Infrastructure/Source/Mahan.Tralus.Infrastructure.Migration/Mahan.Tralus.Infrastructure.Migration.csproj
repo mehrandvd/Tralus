@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1BE67044-780C-4D2F-8BE8-BA328DE99AC5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mahan.Tralus.Infrastructure.Migration</RootNamespace>
+    <AssemblyName>Mahan.Tralus.Infrastructure.Migration</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Mahan.Tralus.Framework.BusinessModel">
+      <HintPath>..\..\..\..\..\..\..\TralusLocal\Mahan.Tralus.Framework.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Mahan.Tralus.Framework.Data">
+      <HintPath>..\..\..\..\..\..\..\TralusLocal\Mahan.Tralus.Framework.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Mahan.Tralus.Framework.Migration, Version=1.0.0.95, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Users\mehran.davoodi\TralusLocal\win\Mahan.Tralus.Framework.Migration.dll</HintPath>
+    </Reference>
+    <Reference Include="Mahan.Tralus.Framework.Utility, Version=1.0.0.73, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Users\hamidreza.mahyar\TralusLocal\web\bin\Mahan.Tralus.Framework.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Migrations\201509291416466_MergeFrameworkChanges.cs" />
+    <Compile Include="Migrations\201509291416466_MergeFrameworkChanges.Designer.cs">
+      <DependentUpon>201509291416466_MergeFrameworkChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201509291419488_InitForDevDb.cs" />
+    <Compile Include="Migrations\201509291419488_InitForDevDb.Designer.cs">
+      <DependentUpon>201509291419488_InitForDevDb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510040526264_AddingTakeoffToFlightLeg.cs" />
+    <Compile Include="Migrations\201510040526264_AddingTakeoffToFlightLeg.Designer.cs">
+      <DependentUpon>201510040526264_AddingTakeoffToFlightLeg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510041101562_FixedTypeCompleted.cs" />
+    <Compile Include="Migrations\201510041101562_FixedTypeCompleted.Designer.cs">
+      <DependentUpon>201510041101562_FixedTypeCompleted.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510050856525_changeNameOfAircraftClassFromAircaftsToAircraft.cs" />
+    <Compile Include="Migrations\201510050856525_changeNameOfAircraftClassFromAircaftsToAircraft.Designer.cs">
+      <DependentUpon>201510050856525_changeNameOfAircraftClassFromAircaftsToAircraft.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510131019281_ChangeTypeOfSevralClassesToFixedType.cs" />
+    <Compile Include="Migrations\201510131019281_ChangeTypeOfSevralClassesToFixedType.Designer.cs">
+      <DependentUpon>201510131019281_ChangeTypeOfSevralClassesToFixedType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510181024591_ChangeTypeOfDelayCodeAndDelayTypeToFixedEntityBase.cs" />
+    <Compile Include="Migrations\201510181024591_ChangeTypeOfDelayCodeAndDelayTypeToFixedEntityBase.Designer.cs">
+      <DependentUpon>201510181024591_ChangeTypeOfDelayCodeAndDelayTypeToFixedEntityBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201511091127459_ImportLogAdded.cs" />
+    <Compile Include="Migrations\201511091127459_ImportLogAdded.Designer.cs">
+      <DependentUpon>201511091127459_ImportLogAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mahan.Tralus.Infrastructure.BusinessModel\Mahan.Tralus.Infrastructure.BusinessModel.csproj">
+      <Project>{d2f7f5a0-804b-4e92-a3bb-780269caed96}</Project>
+      <Name>Mahan.Tralus.Infrastructure.BusinessModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mahan.Tralus.Infrastructure.Data\Mahan.Tralus.Infrastructure.Data.csproj">
+      <Project>{05404d4c-96f7-4a0e-8cd2-5b83630102b7}</Project>
+      <Name>Mahan.Tralus.Infrastructure.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201509291416466_MergeFrameworkChanges.resx">
+      <DependentUpon>201509291416466_MergeFrameworkChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509291419488_InitForDevDb.resx">
+      <DependentUpon>201509291419488_InitForDevDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510040526264_AddingTakeoffToFlightLeg.resx">
+      <DependentUpon>201510040526264_AddingTakeoffToFlightLeg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510041101562_FixedTypeCompleted.resx">
+      <DependentUpon>201510041101562_FixedTypeCompleted.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510050856525_changeNameOfAircraftClassFromAircaftsToAircraft.resx">
+      <DependentUpon>201510050856525_changeNameOfAircraftClassFromAircaftsToAircraft.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510131019281_ChangeTypeOfSevralClassesToFixedType.resx">
+      <DependentUpon>201510131019281_ChangeTypeOfSevralClassesToFixedType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510181024591_ChangeTypeOfDelayCodeAndDelayTypeToFixedEntityBase.resx">
+      <DependentUpon>201510181024591_ChangeTypeOfDelayCodeAndDelayTypeToFixedEntityBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511091127459_ImportLogAdded.resx">
+      <DependentUpon>201511091127459_ImportLogAdded.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>powershell -noprofile -command "&amp; {Copy-Item '$(TargetPath)' (Join-Path $HOME 'TralusLocal\win') -Force -Recurse}"
+powershell -noprofile -command "&amp; {Copy-Item '$(TargetPath)' (Join-Path $HOME 'TralusLocal\web\bin') -Force -Recurse}"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

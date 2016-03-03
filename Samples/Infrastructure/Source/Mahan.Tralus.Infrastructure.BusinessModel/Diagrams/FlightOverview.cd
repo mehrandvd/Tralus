@@ -1,0 +1,584 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.CargoType" Collapsed="true">
+    <Position X="28" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Flight\CargoType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.DelayCode" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <AssociationLine Name="DelayType" Type="Mahan.Tralus.Infrastructure.BusinessModel.DelayType">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.008" Y="0.568" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAwggAAAAAEgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Flight\DelayCode.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="DelayType" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.DelayType" Collapsed="true">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Flight\DelayType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.Flight" Collapsed="true">
+    <Position X="3" Y="1.25" Width="1.25" />
+    <AssociationLine Name="FlightNumber" Type="Mahan.Tralus.Infrastructure.BusinessModel.FlightNumber">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-0.515" Y="0.956" Height="0.182" Width="1.17" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="ScheduledFlightAdHoc" Type="Mahan.Tralus.Infrastructure.BusinessModel.ScheduledFlightAdHoc" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.625" Y="1.25" />
+        <Point X="3.625" Y="0.875" />
+        <Point X="7.125" Y="0.875" />
+        <Point X="7.125" Y="2" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.06" Y="0.37" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="ScheduledFlightRegular" Type="Mahan.Tralus.Infrastructure.BusinessModel.ScheduledFlightRegular" FixedFromPoint="true">
+      <Path>
+        <Point X="3.312" Y="1.941" />
+        <Point X="3.312" Y="5" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.068" Y="1.716" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AgBAIAAEAQAAAAAAAAAAEAAAACAAAQAIAAAABAAAAAA=</HashCode>
+      <FileName>Entities\Flight\Flight.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="FlightNumber" />
+      <Property Name="ScheduledFlightAdHoc" />
+      <Property Name="ScheduledFlightRegular" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.FlightLeg" Collapsed="true">
+    <Position X="15.25" Y="3" Width="1.5" />
+    <AssociationLine Name="FlightLegFw" Type="Mahan.Tralus.Infrastructure.BusinessModel.FlightLegFw" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="15.25" Y="3.25" />
+        <Point X="13.765" Y="3.25" />
+        <Point X="13.765" Y="3.312" />
+        <Point X="12.333" Y="3.312" Type="JumpStart" />
+        <Point X="12.167" Y="3.312" Type="JumpEnd" />
+        <Point X="10.75" Y="3.312" />
+        <Point X="10.75" Y="3.75" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAABAAAAAACCAAAAAgAA=</HashCode>
+      <FileName>Entities\Flight\FlightLeg.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Flight" />
+      <Property Name="FlightLegFw" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.FlightLegAircraftRegister" Collapsed="true">
+    <Position X="14" Y="1.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>EAAAQAAEAAACAAAAAAAAAAAAAAAAACAAEAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Flight\FlightLegAircraftRegister.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="AircraftRegister" />
+      <Property Name="FlightLeg" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.FlightLegFw" Collapsed="true">
+    <Position X="9" Y="3.75" Width="2.5" />
+    <AssociationLine Name="AircraftRegister" Type="Mahan.Tralus.Infrastructure.BusinessModel.AircraftRegister" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.312" Y="3.75" />
+        <Point X="10.312" Y="3.24" />
+        <Point X="11.25" Y="3.24" />
+        <Point X="11.25" Y="2.691" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="AircraftTypeActual" Type="Mahan.Tralus.Infrastructure.BusinessModel.AircraftType" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="11.188" Y="3.75" />
+        <Point X="11.188" Y="3.51" />
+        <Point X="12.167" Y="3.51" Type="JumpStart" />
+        <Point X="12.333" Y="3.51" Type="JumpEnd" />
+        <Point X="13.625" Y="3.51" />
+        <Point X="13.625" Y="3.75" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-0.013" Y="0.37" Height="0.182" Width="1.459" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="AircraftTypeScheduled" Type="Mahan.Tralus.Infrastructure.BusinessModel.AircraftType" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="11.188" Y="4.441" />
+        <Point X="11.188" Y="4.816" />
+        <Point X="12.167" Y="4.816" Type="JumpStart" />
+        <Point X="12.333" Y="4.816" Type="JumpEnd" />
+        <Point X="13.562" Y="4.816" />
+        <Point X="13.562" Y="4.441" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="RouteFlightLegActual" Type="Mahan.Tralus.Infrastructure.BusinessModel.RouteFlightLeg" FixedFromPoint="true">
+      <Path>
+        <Point X="10.875" Y="4.441" />
+        <Point X="10.875" Y="6" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.473" Y="0.456" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="RouteFlightLegScheduled" Type="Mahan.Tralus.Infrastructure.BusinessModel.RouteFlightLeg" FixedFromPoint="true">
+      <Path>
+        <Point X="9.688" Y="4.441" />
+        <Point X="9.688" Y="6" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.112" Y="0.214" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>BIBAQAAUCIgQACAIAQAAQAAACCQgQCCAgIwAAAkCBFA=</HashCode>
+      <FileName>Entities\Flight\FlightLegFw.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="AircraftRegister" />
+      <Property Name="AircraftTypeActual" />
+      <Property Name="AircraftTypeScheduled" />
+      <Property Name="FlightNumber" />
+      <Property Name="FlightType" />
+      <Property Name="RouteFlightLegActual" />
+      <Property Name="RouteFlightLegScheduled" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.FlightNumber" Collapsed="true">
+    <Position X="4.25" Y="3.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEBAAAAAAAAAgCEAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Entities\Flight\FlightNumber.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.FlightType" Collapsed="true">
+    <Position X="8.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Flight\FlightType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.FuelingOperation" Collapsed="true">
+    <Position X="30" Y="7" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Flight\FuelingOperation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.NonFlightOperationsMaster" Collapsed="true">
+    <Position X="19.75" Y="1.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAQgAAAQAAAQIAAAAABAAABAAAACAAQAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Flight\NonFlightOperationsMaster.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="AircraftRegister" />
+      <Property Name="AircraftType" />
+      <Property Name="Airport" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.NonFlightOperationType" Collapsed="true">
+    <Position X="27.25" Y="2" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Flight\NonFlightOperationType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.OperationsMaster" Collapsed="true">
+    <Position X="25.5" Y="6" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AABAQgCUaAAIAAQEAYQiAgAgACAAACECQCwAAIkAAAA=</HashCode>
+      <FileName>Entities\Flight\OperationsMaster.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.PaxType" Collapsed="true">
+    <Position X="30" Y="1" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Flight\PaxType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.RouteAircraft" Collapsed="true">
+    <Position X="15.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAAAAAAAAQAACAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Entities\Flight\RouteAircraft.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.RouteAircraftLeg" Collapsed="true">
+    <Position X="15.25" Y="8.75" Width="2" />
+    <AssociationLine Name="LocalityType" Type="Mahan.Tralus.Infrastructure.BusinessModel.LocalityType" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="16.375" Y="8.75" />
+        <Point X="16.375" Y="6.991" />
+        <Point X="14" Y="6.991" />
+        <Point X="14" Y="6.691" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAJAAAgAAAAAAAAAAAAACAAQAAAAAEAAAAAAQA=</HashCode>
+      <FileName>Entities\Flight\RouteAircraftLeg.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="LocalityType" />
+      <Property Name="RouteAircraft" />
+      <Property Name="RouteLegAirport" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.RouteFlight" Collapsed="true">
+    <Position X="4.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAAAAAAAAQAACAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Entities\Flight\RouteFlight.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.RouteFlightLeg" Collapsed="true">
+    <Position X="9.25" Y="6" Width="2" />
+    <AssociationLine Name="RouteFlight" Type="Mahan.Tralus.Infrastructure.BusinessModel.RouteFlight" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="9.75" Y="6.691" />
+        <Point X="9.75" Y="7.566" />
+        <Point X="5.5" Y="7.566" />
+        <Point X="5.5" Y="7.191" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="RouteLegAirport" Type="Mahan.Tralus.Infrastructure.BusinessModel.RouteLegAirport" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.531" Y="6.691" />
+        <Point X="10.531" Y="7.625" />
+        <Point X="12" Y="7.625" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAIAgAAAAAAACAAQAACAAQAAAAAEAAAAAASA=</HashCode>
+      <FileName>Entities\Flight\RouteFlightLeg.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="LocalityType" />
+      <Property Name="RouteFlight" />
+      <Property Name="RouteLegAirport" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.RouteTrip" Collapsed="true">
+    <Position X="17" Y="5" Width="1.5" />
+    <AssociationLine Name="LocalityType" Type="Mahan.Tralus.Infrastructure.BusinessModel.LocalityType" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="17" Y="5.504" />
+        <Point X="16.375" Y="5.504" />
+        <Point X="16.375" Y="6.146" />
+        <Point X="15.119" Y="6.146" />
+        <Point X="15.119" Y="6.125" />
+        <Point X="14.5" Y="6.125" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAAAAAAAAQAACAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Entities\Flight\RouteTrip.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="LocalityType" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.RouteTripLeg" Collapsed="true">
+    <Position X="17" Y="6.5" Width="1.5" />
+    <AssociationLine Name="RouteLegAirport" Type="Mahan.Tralus.Infrastructure.BusinessModel.RouteLegAirport" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="17.589" Y="7.191" />
+        <Point X="17.589" Y="7.625" />
+        <Point X="16.458" Y="7.625" Type="JumpStart" />
+        <Point X="16.292" Y="7.625" Type="JumpEnd" />
+        <Point X="14" Y="7.625" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAiAAQAAAAAEAQAAAAQA=</HashCode>
+      <FileName>Entities\Flight\RouteTripLeg.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="LocalityType" />
+      <Property Name="RouteLegAirport" />
+      <Property Name="RouteTrip" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.RouteTripLegTemplate" Collapsed="true">
+    <Position X="22.25" Y="6.5" Width="2" />
+    <AssociationLine Name="RouteTripTemplate" Type="Mahan.Tralus.Infrastructure.BusinessModel.RouteTripTemplate" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="23.938" Y="6.5" />
+        <Point X="23.938" Y="4.469" />
+        <Point X="21.208" Y="4.469" Type="JumpStart" />
+        <Point X="21.042" Y="4.469" Type="JumpEnd" />
+        <Point X="20.052" Y="4.469" Type="JumpStart" />
+        <Point X="19.885" Y="4.469" Type="JumpEnd" />
+        <Point X="17" Y="4.469" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgIAAAAACAAAQAACAAQAAAAAEAAAAAAQA=</HashCode>
+      <FileName>Entities\Flight\RouteTripLegTemplate.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="LocalityType" />
+      <Property Name="RouteLegAirport" />
+      <Property Name="RouteTripTemplate" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.RouteTripTemplate" Collapsed="true">
+    <Position X="15" Y="4.25" Width="2" />
+    <AssociationLine Name="LocalityType" Type="Mahan.Tralus.Infrastructure.BusinessModel.LocalityType" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="16" Y="4.941" />
+        <Point X="16" Y="5.077" />
+        <Point X="14" Y="5.077" />
+        <Point X="14" Y="6" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAACAAAAAAAAAQAACAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Entities\Flight\RouteTripTemplate.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="LocalityType" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.ScheduledFlightAdHoc" Collapsed="true">
+    <Position X="6" Y="2" Width="2.25" />
+    <AssociationLine Name="FlightNumber" Type="Mahan.Tralus.Infrastructure.BusinessModel.FlightNumber" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="7.062" Y="2.691" />
+        <Point X="7.062" Y="3.596" />
+        <Point X="6.146" Y="3.596" Type="JumpStart" />
+        <Point X="5.979" Y="3.596" Type="JumpEnd" />
+        <Point X="5.5" Y="3.596" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Parent" Type="Mahan.Tralus.Infrastructure.BusinessModel.ScheduledFlightAdHoc" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6" Y="2.245" />
+        <Point X="5.625" Y="2.245" />
+        <Point X="5.625" Y="2.91" />
+        <Point X="5.979" Y="2.91" Type="JumpStart" />
+        <Point X="6.146" Y="2.91" Type="JumpEnd" />
+        <Point X="6.25" Y="2.91" />
+        <Point X="6.25" Y="2.691" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.62" Y="-0.252" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="RouteFlight" Type="Mahan.Tralus.Infrastructure.BusinessModel.RouteFlight">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.04" Y="1.219" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AABAAAAECKAAAAAAAAAAQAAAACAAAAAoAgAAAAEAACA=</HashCode>
+      <FileName>Entities\Flight\ScheduledFlightAdHoc.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="FlightNumber" />
+      <Property Name="Parent" />
+      <Property Name="RouteFlight" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.ScheduledFlightLegAdHoc" Collapsed="true">
+    <Position X="18.75" Y="0.5" Width="2.75" />
+    <AssociationLine Name="FlightLeg" Type="Mahan.Tralus.Infrastructure.BusinessModel.FlightLeg">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="1.734" Y="0.313" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="RouteFlightLeg" Type="Mahan.Tralus.Infrastructure.BusinessModel.RouteFlightLeg" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="18.75" Y="0.938" />
+        <Point X="12.25" Y="0.938" />
+        <Point X="12.25" Y="6.142" />
+        <Point X="11.25" Y="6.142" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAACEIAACAAAAAAIAEBAAAAAAQQAgEAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Flight\ScheduledFlightLegAdHoc.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="FlightLeg" />
+      <Property Name="RouteFlightLeg" />
+      <Property Name="ScheduledFlightAdHoc" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.ScheduledFlightLegRegular" Collapsed="true">
+    <Position X="20.25" Y="4.75" Width="1.75" />
+    <AssociationLine Name="FlightLeg" Type="Mahan.Tralus.Infrastructure.BusinessModel.FlightLeg">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.133" Y="-0.286" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="RouteFlightLeg" Type="Mahan.Tralus.Infrastructure.BusinessModel.RouteFlightLeg" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="21.188" Y="5.441" />
+        <Point X="21.188" Y="12.075" />
+        <Point X="10.188" Y="12.075" />
+        <Point X="10.188" Y="6.691" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="ScheduledFlightRegular" Type="Mahan.Tralus.Infrastructure.BusinessModel.ScheduledFlightRegular" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="20.812" Y="5.441" />
+        <Point X="20.812" Y="11.687" />
+        <Point X="10.271" Y="11.687" Type="JumpStart" />
+        <Point X="10.104" Y="11.687" Type="JumpEnd" />
+        <Point X="3.688" Y="11.687" />
+        <Point X="3.688" Y="5.691" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAIACEIAACAAAAAAIBABAAAAAAQAAgEAAABAAAAAA=</HashCode>
+      <FileName>Entities\Flight\ScheduledFlightLegRegular.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="FlightLeg" />
+      <Property Name="RouteFlightLeg" />
+      <Property Name="ScheduledFlightRegular" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.ScheduledFlightRegular" Collapsed="true">
+    <Position X="2.75" Y="5" Width="2" />
+    <AssociationLine Name="Parent" Type="Mahan.Tralus.Infrastructure.BusinessModel.ScheduledFlightRegular" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.75" Y="5.296" />
+        <Point X="1.917" Y="5.296" />
+        <Point X="1.917" Y="5.53" />
+        <Point X="2.75" Y="5.53" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.164" Y="0.308" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="RouteFlight" Type="Mahan.Tralus.Infrastructure.BusinessModel.RouteFlight" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.25" Y="5.691" />
+        <Point X="4.25" Y="6.066" />
+        <Point X="5.438" Y="6.066" />
+        <Point X="5.438" Y="6.5" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.133" Y="0.11" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AABAACAEAKAAAAAAAAAAQAgAACAAAAAgAiAAAAAAACA=</HashCode>
+      <FileName>Entities\Flight\ScheduledFlightRegular.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="FlightNumber" />
+      <Property Name="Parent" />
+      <Property Name="RouteFlight" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.SeatClass" Collapsed="true">
+    <Position X="30" Y="4.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Flight\SeatClass.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.SpecialServiceType" Collapsed="true">
+    <Position X="30" Y="3.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Flight\SpecialServiceType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.TicketType" Collapsed="true">
+    <Position X="30" Y="2" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Flight\TicketType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.Uld" Collapsed="true">
+    <Position X="30" Y="5.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Flight\Uld.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.AircraftRegister" Collapsed="true">
+    <Position X="10.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QSAAAAAEgAAAAACBEAAiAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>Entities\General\AircraftRegister.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.AircraftType" Collapsed="true">
+    <Position X="12.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAgIAAAEAAAAAAAEAEAAAAQAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Entities\General\AircraftType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.LocalityType" Collapsed="true">
+    <Position X="13" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAgAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\General\LocalityType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.RouteLegAirport" Collapsed="true">
+    <Position X="12" Y="7.25" Width="2" />
+    <AssociationLine Name="ArrivalAirport" Type="Mahan.Tralus.Infrastructure.BusinessModel.Airport" FixedFromPoint="true">
+      <Path>
+        <Point X="12.562" Y="7.941" />
+        <Point X="12.562" Y="9" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.05" Y="0.339" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="DepartureAirport" Type="Mahan.Tralus.Infrastructure.BusinessModel.Airport" FixedFromPoint="true">
+      <Path>
+        <Point X="13.5" Y="7.941" />
+        <Point X="13.5" Y="9" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.263" Y="0.37" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAABEIAAgAAAAAAAAAIQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\General\RouteLegAirports.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ArrivalAirport" />
+      <Property Name="DepartureAirport" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.Airport" Collapsed="true">
+    <Position X="12.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAFAAAAAAAIACAAAAQAACAAAAEAIAAAAAAAAQA=</HashCode>
+      <FileName>Entities\General\Airport.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.FlightLeg">
+    <Position X="7" Y="0.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>ABDAQABEKAAgAIAAAEAEAIAACCBgACAAgAQAAAgAAAE=</HashCode>
+      <FileName>Entities\Flight\FlightLeg.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="FlightNumber" />
+      <Property Name="FlightType" />
+      <Property Name="AircraftRegister" />
+      <Property Name="Leg" />
+      <Property Name="ArrivalAirport" />
+      <Property Name="DepartureAirport" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.AircraftRegister">
+    <Position X="7" Y="6.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>ASAAAAAEgAAAAACAEAAiAAQAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Entities\General\AircraftRegister.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Aircraft" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.AircraftType">
+    <Position X="3.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gCgIAAAEAAAAAAAEAEAAAAQAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Entities\General\AircraftType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.Airport">
+    <Position X="11.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAFAAAAAAAIACAAAAQAACAAAAEAIAAAAAAAAQA=</HashCode>
+      <FileName>Entities\General\Airport.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="City" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.FlightNumber">
+    <Position X="3" Y="1.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAIAAAAAAAAAAAEAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>Entities\Flight\FlightNumber.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Airline" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.FlightType">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAIAAAAAAEgAAAAAAAAgAAAAAEAAAAAAAAAAAAAAAhA=</HashCode>
+      <FileName>Entities\Flight\FlightType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.Leg">
+    <Position X="10.75" Y="5.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABEIAAgAAAAAAAAAIQAACAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Entities\General\Leg.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ArrivalAirport" />
+      <Property Name="DepartureAirport" />
+      <Property Name="LocalityType" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.Aircraft">
+    <Position X="1.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAgAAAAAAAAAAAAIAAAAAAAABAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Entities\General\Aircraft.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="AircraftType" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.RouteTemplate">
+    <Position X="15.75" Y="4" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAACAAAAAAAAIAA=</HashCode>
+      <FileName>Entities\Flight\RouteTemplate.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="RouteTemplateType" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.RouteTemplateLeg">
+    <Position X="15.5" Y="6.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>ABAAYAAAAAAAAIAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Flight\RouteTemplateLeg.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="RouteTemplate" />
+      <Property Name="Leg" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.RouteTemplateType">
+    <Position X="15.75" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Flight\RouteTemplateType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.Airline">
+    <Position X="0.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAIAAAEAAAAAIAAgAAAAAQAAAIQAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\General\Airline.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.LocalityType">
+    <Position X="13.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAACAgAAAAAABAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Entities\General\LocalityType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.City" Collapsed="true">
+    <Position X="13.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>4FwEQ43GFHrQ0BHgk32dVV8pED49hXiFgRpTvmbPDeg=</HashCode>
+      <FileName>Entities\General\City.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Country" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.Country">
+    <Position X="13.5" Y="5.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>i3N5bPfTI3r2mv0InbU01ld6m5h+d7zXF/f37xXC/b4=</HashCode>
+      <FileName>Entities\General\Country.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

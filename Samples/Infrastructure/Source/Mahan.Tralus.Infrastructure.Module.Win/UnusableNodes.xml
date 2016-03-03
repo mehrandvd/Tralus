@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="AircraftRegister_DetailView">
+      <Items Id="Items">
+        <PropertyEditor Id="CreationDate" PropertyName="CreationDate" Removed="True" />
+      </Items>
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="AircraftRegister" RelativeSize="100">
+              <LayoutGroup Id="AircraftRegister_col1" RelativeSize="50.055370985603545">
+                <LayoutItem Id="Code" SizeConstraintsType="Default" RelativeSize="3.551609322974473" />
+                <LayoutItem Id="Aircraft" SizeConstraintsType="Default" RelativeSize="2.6637069922308547" />
+                <LayoutItem Id="AircraftId" SizeConstraintsType="Default" RelativeSize="2.6637069922308547" />
+                <LayoutItem Id="ShortRegisterCode" SizeConstraintsType="Default" RelativeSize="2.6637069922308547" />
+                <LayoutItem Id="HasFirstClassSeat" SizeConstraintsType="Default" RelativeSize="2.6637069922308547" />
+                <LayoutItem Id="Status" SizeConstraintsType="Default" RelativeSize="85.793562708102115" />
+              </LayoutGroup>
+              <LayoutGroup Id="AircraftRegister_col2" RelativeSize="49.944629014396455">
+                <LayoutItem Id="LirRegisterGroup" SizeConstraintsType="Default" RelativeSize="3.551609322974473" />
+                <LayoutItem Id="LirRegisterGroupId" SizeConstraintsType="Default" RelativeSize="2.6637069922308547" />
+                <LayoutItem Id="Timestamp" SizeConstraintsType="Default" RelativeSize="2.6637069922308547" />
+                <LayoutItem Id="IsActive" SizeConstraintsType="Default" RelativeSize="2.6637069922308547" Index="3" />
+                <LayoutItem Id="CreationDate" ViewItem="CreationDate" SizeConstraintsType="Default" Index="4" RelativeSize="2.6637069922308547" Removed="True" />
+                <LayoutItem Id="Item1" ShowCaption="False" ViewItem="" SizeConstraintsType="Default" Index="5" RelativeSize="85.793562708102115" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>
