@@ -10,7 +10,6 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Timers;
-using DevExpress.ExpressApp.EF;
 using Tralus.Framework.BusinessModel.Utility;
 using Timer = System.Timers.Timer;
 
