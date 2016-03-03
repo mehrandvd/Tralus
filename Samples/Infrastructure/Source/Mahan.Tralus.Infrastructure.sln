@@ -1,0 +1,109 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mahan.Tralus.Infrastructure.Module", "Mahan.Tralus.Infrastructure.Module\Mahan.Tralus.Infrastructure.Module.csproj", "{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mahan.Tralus.Infrastructure.Module.Web", "Mahan.Tralus.Infrastructure.Module.Web\Mahan.Tralus.Infrastructure.Module.Web.csproj", "{0C729AAD-7626-4668-A7F1-35F7D240489D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mahan.Tralus.Infrastructure.Module.Win", "Mahan.Tralus.Infrastructure.Module.Win\Mahan.Tralus.Infrastructure.Module.Win.csproj", "{7964F87D-BC5D-4C4E-8B2F-71E89739AA97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mahan.Tralus.Infrastructure.BusinessModel", "Mahan.Tralus.Infrastructure.BusinessModel\Mahan.Tralus.Infrastructure.BusinessModel.csproj", "{D2F7F5A0-804B-4E92-A3BB-780269CAED96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mahan.Tralus.Infrastructure.Data", "Mahan.Tralus.Infrastructure.Data\Mahan.Tralus.Infrastructure.Data.csproj", "{05404D4C-96F7-4A0E-8CD2-5B83630102B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mahan.Tralus.Infrastructure.Migration", "Mahan.Tralus.Infrastructure.Migration\Mahan.Tralus.Infrastructure.Migration.csproj", "{1BE67044-780C-4D2F-8BE8-BA328DE99AC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Runner.Win", "Runner.Win\Runner.Win.csproj", "{09BB7771-9E53-4527-A015-777D7D8007E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Runner.Web", "Runner.Web\Runner.Web.csproj", "{0A55ED74-F87C-40D4-B3A4-8BE9B8B792A2}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 9
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://mhn001vw107:8080/tfs/mahan
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Mahan.Tralus.Infrastructure.Module.Web\\Mahan.Tralus.Infrastructure.Module.Web.csproj
+		SccProjectName1 = Mahan.Tralus.Infrastructure.Module.Web
+		SccLocalPath1 = Mahan.Tralus.Infrastructure.Module.Web
+		SccProjectUniqueName2 = Mahan.Tralus.Infrastructure.Module.Win\\Mahan.Tralus.Infrastructure.Module.Win.csproj
+		SccProjectName2 = Mahan.Tralus.Infrastructure.Module.Win
+		SccLocalPath2 = Mahan.Tralus.Infrastructure.Module.Win
+		SccProjectUniqueName3 = Mahan.Tralus.Infrastructure.Module\\Mahan.Tralus.Infrastructure.Module.csproj
+		SccProjectName3 = Mahan.Tralus.Infrastructure.Module
+		SccLocalPath3 = Mahan.Tralus.Infrastructure.Module
+		SccProjectUniqueName4 = Mahan.Tralus.Infrastructure.BusinessModel\\Mahan.Tralus.Infrastructure.BusinessModel.csproj
+		SccProjectName4 = Mahan.Tralus.Infrastructure.BusinessModel
+		SccLocalPath4 = Mahan.Tralus.Infrastructure.BusinessModel
+		SccProjectUniqueName5 = Mahan.Tralus.Infrastructure.Data\\Mahan.Tralus.Infrastructure.Data.csproj
+		SccProjectName5 = Mahan.Tralus.Infrastructure.Data
+		SccLocalPath5 = Mahan.Tralus.Infrastructure.Data
+		SccProjectUniqueName6 = Mahan.Tralus.Infrastructure.Migration\\Mahan.Tralus.Infrastructure.Migration.csproj
+		SccProjectName6 = Mahan.Tralus.Infrastructure.Migration
+		SccLocalPath6 = Mahan.Tralus.Infrastructure.Migration
+		SccProjectUniqueName7 = Runner.Win\\Runner.Win.csproj
+		SccProjectName7 = Runner.Win
+		SccLocalPath7 = Runner.Win
+		SccProjectUniqueName8 = Runner.Web\\Runner.Web.csproj
+		SccProjectName8 = Runner.Web
+		SccLocalPath8 = Runner.Web
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		EasyTest|Any CPU = EasyTest|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}.EasyTest|Any CPU.ActiveCfg = EasyTest|Any CPU
+		{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
+		{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C729AAD-7626-4668-A7F1-35F7D240489D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C729AAD-7626-4668-A7F1-35F7D240489D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C729AAD-7626-4668-A7F1-35F7D240489D}.EasyTest|Any CPU.ActiveCfg = EasyTest|Any CPU
+		{0C729AAD-7626-4668-A7F1-35F7D240489D}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
+		{0C729AAD-7626-4668-A7F1-35F7D240489D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C729AAD-7626-4668-A7F1-35F7D240489D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7964F87D-BC5D-4C4E-8B2F-71E89739AA97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7964F87D-BC5D-4C4E-8B2F-71E89739AA97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7964F87D-BC5D-4C4E-8B2F-71E89739AA97}.EasyTest|Any CPU.ActiveCfg = EasyTest|Any CPU
+		{7964F87D-BC5D-4C4E-8B2F-71E89739AA97}.EasyTest|Any CPU.Build.0 = EasyTest|Any CPU
+		{7964F87D-BC5D-4C4E-8B2F-71E89739AA97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7964F87D-BC5D-4C4E-8B2F-71E89739AA97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2F7F5A0-804B-4E92-A3BB-780269CAED96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2F7F5A0-804B-4E92-A3BB-780269CAED96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2F7F5A0-804B-4E92-A3BB-780269CAED96}.EasyTest|Any CPU.ActiveCfg = Release|Any CPU
+		{D2F7F5A0-804B-4E92-A3BB-780269CAED96}.EasyTest|Any CPU.Build.0 = Release|Any CPU
+		{D2F7F5A0-804B-4E92-A3BB-780269CAED96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2F7F5A0-804B-4E92-A3BB-780269CAED96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05404D4C-96F7-4A0E-8CD2-5B83630102B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05404D4C-96F7-4A0E-8CD2-5B83630102B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05404D4C-96F7-4A0E-8CD2-5B83630102B7}.EasyTest|Any CPU.ActiveCfg = Release|Any CPU
+		{05404D4C-96F7-4A0E-8CD2-5B83630102B7}.EasyTest|Any CPU.Build.0 = Release|Any CPU
+		{05404D4C-96F7-4A0E-8CD2-5B83630102B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05404D4C-96F7-4A0E-8CD2-5B83630102B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BE67044-780C-4D2F-8BE8-BA328DE99AC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BE67044-780C-4D2F-8BE8-BA328DE99AC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BE67044-780C-4D2F-8BE8-BA328DE99AC5}.EasyTest|Any CPU.ActiveCfg = Release|Any CPU
+		{1BE67044-780C-4D2F-8BE8-BA328DE99AC5}.EasyTest|Any CPU.Build.0 = Release|Any CPU
+		{1BE67044-780C-4D2F-8BE8-BA328DE99AC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BE67044-780C-4D2F-8BE8-BA328DE99AC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09BB7771-9E53-4527-A015-777D7D8007E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09BB7771-9E53-4527-A015-777D7D8007E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09BB7771-9E53-4527-A015-777D7D8007E0}.EasyTest|Any CPU.ActiveCfg = Release|Any CPU
+		{09BB7771-9E53-4527-A015-777D7D8007E0}.EasyTest|Any CPU.Build.0 = Release|Any CPU
+		{09BB7771-9E53-4527-A015-777D7D8007E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A55ED74-F87C-40D4-B3A4-8BE9B8B792A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A55ED74-F87C-40D4-B3A4-8BE9B8B792A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A55ED74-F87C-40D4-B3A4-8BE9B8B792A2}.EasyTest|Any CPU.ActiveCfg = Release|Any CPU
+		{0A55ED74-F87C-40D4-B3A4-8BE9B8B792A2}.EasyTest|Any CPU.Build.0 = Release|Any CPU
+		{0A55ED74-F87C-40D4-B3A4-8BE9B8B792A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

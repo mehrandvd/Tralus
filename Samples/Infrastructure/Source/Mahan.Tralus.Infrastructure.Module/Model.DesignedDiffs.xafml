@@ -1,0 +1,1179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="Mahan.Tralus.Infrastructure" Logo="ExpressAppLogo">
+  <ActionDesign>
+    <Actions>
+      <Action Id="Mahan.Tralus.Infrastructure.Module.Controllers.ImportMasaterDataFromFlightAppsViewController" Caption="Import from FlightDb" ImageName="Action_Workflow_Deactivate" />
+    </Actions>
+  </ActionDesign>
+  <BOModel>
+    <Class Name="Mahan.Tralus.Infrastructure.BusinessModel.DelayType">
+      <OwnMembers>
+        <Member Name="DelayCodes" ImmediatePostData="True" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <NavigationItems DefaultChildItemsDisplayStyle="List" NavigationStyle="NavBar">
+    <Items>
+      <Item Id="@a81babc6-d2ed-4545-b050-de37114fa71e" Caption="Infrastructure" ChildItemsDisplayStyle="List" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="@0f77906f-e3b9-4d6a-b3b3-927ac37c3036" Caption="Management" ImageName="ModelEditor_Action_Modules" IsNewNode="True">
+            <Items IsNewNode="True">
+              <Item Id="@610cdd0f-27ac-467d-98c7-06f3bf742496" Caption="Import data" ViewId="ImportMasterDataLog_ListView" IsNewNode="True" />
+            </Items>
+          </Item>
+          <Item Id="@4880719e-78d2-4acf-bf37-b818256f91fb" Caption="Flights" IsNewNode="True">
+            <Items IsNewNode="True">
+              <Item Id="@164aef90-d007-4cc2-a01f-adfdcc89f491" ViewId="FlightType_ListView" ImageName="" Caption="Flight Types" IsNewNode="True" />
+              <Item Id="@2ebc181d-7879-4533-b758-56caac091670" Caption="Cargo Types" ImageName="" ViewId="CargoType_ListView" IsNewNode="True" />
+              <Item Id="@78928935-25b1-4814-8cf3-e0cc6fb9fe12" ViewId="DelayType_ListView" ImageName="" Caption="Delay Types" IsNewNode="True" />
+              <Item Id="@94924b6d-23ce-4a25-bf1b-a762d32868fd" Caption="Special Services" ImageName="" ViewId="SpecialServiceType_ListView" IsNewNode="True" />
+              <Item Id="@aa82bf8e-d58b-4170-8248-6b491b283b1c" ViewId="DelayCode_ListView" ImageName="" Caption="Delay Codes" IsNewNode="True" />
+              <Item Id="FR File Attachment Types" ImageName="Action_Debug_Breakpoint_Toggle" IsNewNode="True" />
+              <Item Id="Passenger Types" ViewId="PassengerType_ListView" IsNewNode="True" />
+              <Item Id="Seat Classes" ViewId="SeatClass_ListView" IsNewNode="True" />
+              <Item Id="Ticket Types" ViewId="TicketType_ListView" IsNewNode="True" />
+            </Items>
+          </Item>
+          <Item Id="Aircrafts" Caption="Aircrafts" IsNewNode="True">
+            <Items IsNewNode="True">
+              <Item Id="@34879148-649c-4547-94f6-d43c40492fea" ViewId="AircraftRegister_ListView" Caption="Registers" IsNewNode="True" />
+              <Item Id="@8cee729e-6467-48fb-92b6-141614f527d2" ViewId="Aircraft_ListView" Caption="Aircrafts" IsNewNode="True" />
+              <Item Id="@ad6df94e-6c5f-4230-bf1d-8c50e23bd298" ViewId="AircraftType_ListView" Caption="Aircraft Types" IsNewNode="True" />
+            </Items>
+          </Item>
+          <Item Id="Airports" Caption="Airports" IsNewNode="True">
+            <Items IsNewNode="True">
+              <Item Id="@b1557e91-9104-4cd3-a9d6-817bb8246061" ViewId="Airport_ListView" Caption="Airports" IsNewNode="True" />
+              <Item Id="Stations" ImageName="" ViewId="AirlineStation_ListView" Caption="Stations" IsNewNode="True" />
+            </Items>
+          </Item>
+          <Item Id="Geographical Information" IsNewNode="True">
+            <Items IsNewNode="True">
+              <Item Id="@2732b38b-66c3-43e2-a2d5-4be251b5874e" ViewId="Country_ListView" Caption="Countries" IsNewNode="True" />
+              <Item Id="@5366528f-3631-4d2b-82b0-eda628496dba" ViewId="City_ListView" Caption="Cities" IsNewNode="True" />
+            </Items>
+          </Item>
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <SchemaModules>
+    <SchemaModule Name="SystemModule" Version="15.1.4.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <ListView Id="Aircraft_AircraftRegisters_ListView" AllowDelete="False" AllowNew="False">
+      <Columns>
+        <ColumnInfo Id="AircraftId" Index="-1" />
+        <ColumnInfo Id="HasFirstClassSeat" Index="-1" />
+        <ColumnInfo Id="IsActive" Index="-1" />
+        <ColumnInfo Id="ShortRegisterCode" Index="-1" />
+        <ColumnInfo Id="Status" Index="-1" />
+        <ColumnInfo Id="Timestamp" Index="-1" />
+        <ColumnInfo Id="Aircraft" Index="0" Width="219" />
+        <ColumnInfo Id="Code" Index="1" Width="246" />
+      </Columns>
+    </ListView>
+    <DetailView Id="Aircraft_DetailView" AllowDelete="False" AllowEdit="False" AllowNew="False">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Aircraft" RelativeSize="100" Direction="Vertical">
+              <LayoutGroup Id="Auto38371768-17a4-44cc-9ec1-22f370012005" ShowCaption="False" Caption="Auto38371768-17a4-44cc-9ec1-22f370012005(5)" Index="0" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="Register" ViewItem="Register" SizeConstraintsType="Default" Index="0" RelativeSize="4.2666666666666666" IsNewNode="True" />
+                <LayoutItem Id="AircraftType" ViewItem="AircraftType" SizeConstraintsType="Default" Index="1" RelativeSize="3.2" IsNewNode="True" />
+                <TabbedGroup Id="Item4" CaptionLocation="Top" Index="2" RelativeSize="92.533333333333331" IsNewNode="True">
+                  <LayoutGroup Id="Item3" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" Caption="Aircraft Register" Direction="Vertical" IsNewNode="True">
+                    <LayoutItem Id="AircraftRegisters" ViewItem="AircraftRegisters" SizeConstraintsType="Default" Index="0" RelativeSize="100" ShowCaption="False" IsNewNode="True" />
+                  </LayoutGroup>
+                </TabbedGroup>
+              </LayoutGroup>
+              <LayoutItem Id="Register" SizeConstraintsType="Default" Index="2" RelativeSize="92.533333333333331" Removed="True" />
+              <LayoutItem Id="AircraftType" SizeConstraintsType="Default" RelativeSize="3.2" Removed="True" />
+              <LayoutItem Id="AircraftTypeId" Removed="True" />
+              <LayoutItem Id="SerialNo" SizeConstraintsType="Default" RelativeSize="4.2666666666666666" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="AircraftRegisters_Group" RelativeSize="33.293978748524204" Caption="Aircraft Registers" Removed="True">
+            <LayoutItem Id="AircraftRegisters" Removed="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Aircraft_ListView" AllowDelete="False" AllowEdit="False" AllowNew="False">
+      <Columns>
+        <ColumnInfo Id="AircraftTypeId" Index="-1" />
+        <ColumnInfo Id="SerialNo" Width="171" Index="-1" />
+        <ColumnInfo Id="Register" Width="170" />
+        <ColumnInfo Id="AircraftType" Index="1" Width="142" />
+        <ColumnInfo Id="Manufacturer" PropertyName="AircraftType.Manufacturer" Width="187" IsNewNode="True" />
+      </Columns>
+    </ListView>
+    <ListView Id="Aircraft_LookupListView" AllowDelete="False" AllowNew="False" />
+    <DetailView Id="AircraftRegister_DetailView" AllowDelete="False" AllowEdit="True" AllowNew="False">
+      <Items>
+        <PropertyEditor Id="AircratType" PropertyName="Aircraft.AircraftType.FwName" Caption="Aircraft Type" AllowEdit="False" IsNewNode="True" />
+        <PropertyEditor Id="Code" AllowEdit="False" />
+        <PropertyEditor Id="IsActive" Caption="Active" />
+        <PropertyEditor Id="UnAvailableSeats" Caption="Non Available Seats" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="8.7367178276269186" Direction="Vertical">
+            <LayoutGroup Id="Autoe3a2960d-1f22-4733-893d-2cc3007c279b" ShowCaption="False" Caption="Autoe3a2960d-1f22-4733-893d-2cc3007c279b(3)" Direction="Vertical" Index="0" RelativeSize="51.351351351351354" IsNewNode="True">
+              <LayoutGroup Id="Item5" ShowCaption="False" CaptionLocation="Top" Direction="Horizontal" Index="0" RelativeSize="100" Caption="Date" IsNewNode="True">
+                <LayoutItem Id="Code" ViewItem="Code" SizeConstraintsType="Default" Index="0" RelativeSize="50" IsNewNode="True" />
+                <LayoutItem Id="AircratType" ViewItem="AircratType" SizeConstraintsType="Default" Index="1" RelativeSize="50" IsNewNode="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="AircraftRegister_col1" ShowCaption="False" Index="1" RelativeSize="48.648648648648646" Caption="AircraftRegister_col1" Direction="Vertical" IsNewNode="True">
+              <LayoutGroup Id="Auto261d7270-4347-4105-b7d0-a21d7ee5449e" ShowCaption="False" Caption="Auto261d7270-4347-4105-b7d0-a21d7ee5449e(7)" Direction="Horizontal" Index="0" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="IsActive" ViewItem="IsActive" SizeConstraintsType="Default" Index="0" RelativeSize="50" IsNewNode="True" />
+                <LayoutItem Id="Item1" ShowCaption="False" ViewItem="" SizeConstraintsType="Default" Index="1" RelativeSize="50" IsNewNode="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="AircraftRegister" RelativeSize="100" Removed="True">
+              <LayoutGroup Id="AircraftRegister_col1" RelativeSize="50">
+                <LayoutItem Id="HasFirstClassSeat" SizeConstraintsType="Default" RelativeSize="90.086741016109045" Index="3" />
+                <LayoutItem Id="Aircraft" SizeConstraintsType="Default" RelativeSize="2.9739776951672861" />
+                <LayoutItem Id="Code" SizeConstraintsType="Default" RelativeSize="3.9653035935563818" />
+                <LayoutItem Id="ShortRegisterCode" SizeConstraintsType="Default" RelativeSize="2.9739776951672861" />
+              </LayoutGroup>
+              <LayoutGroup Id="AircraftRegister_col2" RelativeSize="50">
+                <LayoutItem Id="Timestamp" SizeConstraintsType="Default" Index="1" RelativeSize="2.9739776951672861" />
+                <LayoutItem Id="IsActive" SizeConstraintsType="Default" Index="2" RelativeSize="2.9739776951672861" />
+                <LayoutItem Id="CreationDate" SizeConstraintsType="Default" Index="3" RelativeSize="2.9739776951672861" />
+                <LayoutItem Id="Status" SizeConstraintsType="Default" Index="4" RelativeSize="87.112763320941767" ViewItem="Status" IsNewNode="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="91.263282172373081">
+            <LayoutGroup Id="SeatInfo" RelativeSize="100" Index="0" Direction="Vertical" Caption="Seat Info">
+              <LayoutItem Id="SeatInfo" SizeConstraintsType="Default" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="UnAvailableSeats" RelativeSize="100" Index="1" Caption="Non Available Seats" Direction="Vertical">
+              <LayoutItem Id="UnAvailableSeats" SizeConstraintsType="Default" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="AircraftRegister_ListView" AllowEdit="False" IsFooterVisible="False" AllowDelete="False" AllowNew="False" Caption="Registers">
+      <Columns>
+        <ColumnInfo Id="Aircraft" Width="119" Index="-1" />
+        <ColumnInfo Id="AircraftId" Index="-1" />
+        <ColumnInfo Id="HasFirstClassSeat" Width="118" Index="-1" />
+        <ColumnInfo Id="ShortRegisterCode" Width="123" Index="-1" />
+        <ColumnInfo Id="Status" Width="85" Index="-1" />
+        <ColumnInfo Id="Timestamp" Index="-1" />
+        <ColumnInfo Id="Code" Width="111" />
+        <ColumnInfo Id="AircraftType" Caption="Aircraft Type" PropertyName="Aircraft.AircraftType.FwName" Width="208" Index="1" IsNewNode="True" />
+        <ColumnInfo Id="IsActive" Index="2" Caption="Active" />
+      </Columns>
+    </ListView>
+    <ListView Id="AircraftRegister_LookupListView" AllowDelete="False" AllowNew="False" />
+    <ListView Id="AircraftRegister_SeatInfo_ListView" AllowEdit="False">
+      <Columns>
+        <ColumnInfo Id="AircraftRegister" Index="-1" />
+        <ColumnInfo Id="AircraftRegisterId" Index="-1" />
+        <ColumnInfo Id="StartDate" Index="0" Width="148" />
+        <ColumnInfo Id="EndDate" Index="1" Width="143" />
+        <ColumnInfo Id="SeatCountBusiness" Index="2" Width="136" Caption="C Count" />
+        <ColumnInfo Id="SeatCountEconomy" Index="3" Width="152" Caption="Y Count" />
+      </Columns>
+    </ListView>
+    <ListView Id="AircraftRegister_UnAvailableSeats_ListView" AllowEdit="False">
+      <Columns>
+        <ColumnInfo Id="AircraftRegister" Index="-1" />
+        <ColumnInfo Id="AircraftRegisterId" Index="-1" />
+        <ColumnInfo Id="SeatCountBusinessPlus" Index="-1" Width="211" />
+        <ColumnInfo Id="SeatNumberBusinessPlus" Index="-1" SortIndex="0" SortOrder="Ascending" Width="189" />
+        <ColumnInfo Id="StartDate" Index="0" Width="149" />
+        <ColumnInfo Id="EndDate" Index="1" Width="135" />
+        <ColumnInfo Id="SeatCountBusiness" Index="2" Width="73" Caption="C Count" />
+        <ColumnInfo Id="SeatNumberBusiness" Index="3" Width="91" Caption="Seat Numbers" />
+        <ColumnInfo Id="SeatCountEconomy" Index="4" Width="76" Caption="Y Count" />
+        <ColumnInfo Id="SeatNumberEconomy" Index="5" Width="56" Caption="Seat Numbers" />
+      </Columns>
+    </ListView>
+    <DetailView Id="AircraftRegisterNonAvailableSeat_DetailView" AllowDelete="False" AllowNew="False">
+      <Items>
+        <StaticText Id="Cclass" Text="C" Caption="C" HorizontalAlign="Center" VerticalAlign="Middle" IsNewNode="True" />
+        <StaticText Id="Yclass" Text="Y" Caption="Y" HorizontalAlign="Center" VerticalAlign="Middle" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Auto9d3024fb-5a12-4c04-9dbc-f598c5235346" ShowCaption="False" Caption="Auto9d3024fb-5a12-4c04-9dbc-f598c5235346(1)" Index="0" RelativeSize="100" IsNewNode="True">
+          <LayoutGroup Id="Auto6c24d09b-2ef0-457d-9ffe-c6d034f583be" ShowCaption="False" Caption="Auto6c24d09b-2ef0-457d-9ffe-c6d034f583be(2)" Direction="Vertical" Index="0" RelativeSize="100" IsNewNode="True">
+            <LayoutGroup Id="Autobec184a5-e9fe-495b-ba37-b777e7e7a69f" ShowCaption="False" Caption="Autobec184a5-e9fe-495b-ba37-b777e7e7a69f(3)" Index="0" RelativeSize="100" IsNewNode="True">
+              <LayoutGroup Id="Main" ShowCaption="False" Index="0" RelativeSize="4.48642266824085" IsNewNode="True">
+                <LayoutGroup Id="SimpleEditors" ShowCaption="False" Index="0" RelativeSize="100" IsNewNode="True">
+                  <LayoutGroup Id="AircraftRegisterNonAvailableSeat_col1" ShowCaption="False" Index="0" RelativeSize="100" IsNewNode="True">
+                    <LayoutGroup Id="Item1" ShowCaption="False" CaptionLocation="Top" Index="0" RelativeSize="100" IsNewNode="True">
+                      <LayoutGroup Id="Item2" ShowCaption="False" CaptionLocation="Top" Direction="Horizontal" Index="0" RelativeSize="100" IsNewNode="True">
+                        <LayoutItem Id="StartDate" ViewItem="StartDate" SizeConstraintsType="Default" Index="0" RelativeSize="49.537037037037038" IsNewNode="True" />
+                        <LayoutItem Id="EndDate" ViewItem="EndDate" SizeConstraintsType="Default" Index="1" RelativeSize="50.462962962962962" IsNewNode="True" />
+                      </LayoutGroup>
+                    </LayoutGroup>
+                  </LayoutGroup>
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="Item3" ShowCaption="True" Caption="Non Available Seats" CaptionLocation="Top" Direction="Horizontal" Index="1" RelativeSize="95.513577331759151" IsNewNode="True">
+                <LayoutGroup Id="Item7" ShowCaption="True" Caption="Class" CaptionLocation="Top" Index="0" RelativeSize="15.855572998430141" IsNewNode="True">
+                  <LayoutItem Id="Cclass" ViewItem="Cclass" SizeConstraintsType="Default" Index="0" RelativeSize="4.3419267299864313" IsNewNode="True" />
+                  <LayoutItem Id="Yclass" ViewItem="Yclass" SizeConstraintsType="Default" Index="1" RelativeSize="3.2564450474898234" IsNewNode="True" />
+                  <LayoutItem Id="Item6" ShowCaption="False" ViewItem="" SizeConstraintsType="Default" Index="2" RelativeSize="92.40162822252374" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Item4" ShowCaption="True" Caption="Count" CaptionLocation="Top" Index="1" RelativeSize="15.54160125588697" IsNewNode="True">
+                  <LayoutItem Id="SeatCountBusiness" ShowCaption="False" ViewItem="SeatCountBusiness" SizeConstraintsType="Default" Index="0" RelativeSize="4.3419267299864313" IsNewNode="True" />
+                  <LayoutItem Id="SeatCountEconomy" ShowCaption="False" ViewItem="SeatCountEconomy" SizeConstraintsType="Default" Index="1" RelativeSize="3.2564450474898234" IsNewNode="True" />
+                  <LayoutItem Id="Item8" ShowCaption="False" ViewItem="" SizeConstraintsType="Default" Index="2" RelativeSize="92.40162822252374" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Item5" ShowCaption="True" Caption="Numbers" CaptionLocation="Top" Index="2" RelativeSize="68.602825745682892" IsNewNode="True">
+                  <LayoutItem Id="SeatNumberBusiness" ShowCaption="False" ViewItem="SeatNumberBusiness" SizeConstraintsType="Default" Index="0" RelativeSize="4.3419267299864313" IsNewNode="True" />
+                  <LayoutItem Id="SeatNumberEconomy" ShowCaption="False" ViewItem="SeatNumberEconomy" SizeConstraintsType="Default" Index="1" RelativeSize="3.2564450474898234" IsNewNode="True" />
+                  <LayoutItem Id="Item9" ShowCaption="False" ViewItem="" SizeConstraintsType="Default" Index="2" RelativeSize="92.40162822252374" IsNewNode="True" />
+                </LayoutGroup>
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+        <LayoutGroup Id="Main" RelativeSize="4.48642266824085" Removed="True">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="AircraftRegisterNonAvailableSeat_col1" ShowCaption="False" Index="0" RelativeSize="100" IsNewNode="True">
+              <LayoutGroup Id="Item1" ShowCaption="False" CaptionLocation="Top" Direction="Vertical" Index="0" RelativeSize="100" IsNewNode="True">
+                <LayoutGroup Id="Item2" ShowCaption="False" CaptionLocation="Top" Direction="Horizontal" Index="0" RelativeSize="100" IsNewNode="True">
+                  <LayoutItem Id="StartDate" ViewItem="StartDate" SizeConstraintsType="Default" Index="0" RelativeSize="25.714285714285715" IsNewNode="True" />
+                  <LayoutItem Id="EndDate" ViewItem="EndDate" SizeConstraintsType="Default" Index="1" RelativeSize="29.034749034749034" IsNewNode="True" />
+                  <LayoutItem Id="Item8" ShowCaption="False" ViewItem="" SizeConstraintsType="Default" Index="2" RelativeSize="45.250965250965251" IsNewNode="True" />
+                </LayoutGroup>
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="AircraftRegisterNonAvailableSeat" RelativeSize="100" Direction="Vertical" Removed="True">
+              <LayoutGroup Id="AircraftRegisterNonAvailableSeat_col1" RelativeSize="100">
+                <LayoutGroup Id="Auto2e588fd5-bb72-463d-b7e6-ed90199e3fb2" ShowCaption="False" Caption="" Direction="Horizontal" Index="0" RelativeSize="3.9653035935563818" IsNewNode="True">
+                  <LayoutItem Id="StartDate" ViewItem="StartDate" SizeConstraintsType="Default" Index="0" RelativeSize="49.960722702278083" IsNewNode="True" />
+                  <LayoutItem Id="EndDate" ViewItem="EndDate" SizeConstraintsType="Default" Index="1" RelativeSize="50.039277297721917" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutItem Id="AircraftRegister" SizeConstraintsType="Default" RelativeSize="2.9739776951672861" Index="1" />
+                <LayoutItem Id="SeatNumberEconomy" ViewItem="SeatNumberEconomy" SizeConstraintsType="Default" Index="2" RelativeSize="2.9739776951672861" IsNewNode="True" />
+                <LayoutItem Id="SeatCountBusiness" SizeConstraintsType="Default" Index="3" RelativeSize="90.086741016109045" />
+                <LayoutItem Id="AircraftRegisterId" Removed="True" />
+                <LayoutItem Id="EndDate" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Removed="True" />
+                <LayoutItem Id="StartDate" SizeConstraintsType="Default" RelativeSize="4.507042253521127" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="AircraftRegisterNonAvailableSeat_col2" RelativeSize="50" Caption="AircraftRegisterNonAvailableSeat_col2" Direction="Horizontal" Removed="True">
+                <LayoutItem Id="SeatCountBusinessPlus" Removed="True" />
+                <LayoutItem Id="SeatCountEconomy" Removed="True" />
+                <LayoutItem Id="SeatNumberBusiness" Removed="True" />
+                <LayoutItem Id="SeatNumberBusinessPlus" Removed="True" />
+                <LayoutItem Id="SeatNumberEconomy" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="AircraftRegisterNonAvailableSeat_ListView" AllowDelete="False" AllowNew="False">
+      <Columns>
+        <ColumnInfo Id="AircraftRegisterId" Index="-1" />
+        <ColumnInfo Id="AircraftRegister" Width="113" />
+        <ColumnInfo Id="SeatCountBusiness" Index="3" />
+        <ColumnInfo Id="SeatCountBusinessPlus" Index="4" />
+        <ColumnInfo Id="SeatCountEconomy" Index="5" />
+        <ColumnInfo Id="SeatNumberBusiness" Index="6" />
+        <ColumnInfo Id="SeatNumberBusinessPlus" Index="7" />
+        <ColumnInfo Id="SeatNumberEconomy" Index="8" />
+      </Columns>
+    </ListView>
+    <ListView Id="AircraftRegisterNonAvailableSeat_LookupListView" AllowDelete="False" AllowNew="False">
+      <Columns>
+        <ColumnInfo Id="AircraftRegister.Code" Caption="Register" />
+      </Columns>
+    </ListView>
+    <DetailView Id="AircraftRegisterSeatInfo_DetailView" AllowDelete="False" AllowNew="False">
+      <Items>
+        <PropertyEditor Id="SeatCountBusiness" Caption="C Count" />
+        <PropertyEditor Id="SeatCountEconomy" Caption="Y Count" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="7.3199527744982289">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100" Direction="Vertical">
+            <LayoutGroup Id="AircraftRegisterSeatInfo_col1" ShowCaption="False" Index="0" RelativeSize="100" Direction="Vertical" IsNewNode="True">
+              <LayoutGroup Id="Item5" ShowCaption="False" CaptionLocation="Top" Index="0" RelativeSize="100" IsNewNode="True">
+                <LayoutGroup Id="Item9" ShowCaption="False" CaptionLocation="Top" Index="0" RelativeSize="100" Direction="Horizontal" Caption="Item9(5)" VerticalAlign="NotSet" IsNewNode="True">
+                  <LayoutGroup Id="Auto93145041-c8fc-4f62-a63e-41e47f520ce7" ShowCaption="False" Caption="" Index="0" RelativeSize="50" IsNewNode="True">
+                    <LayoutItem Id="StartDate" ViewItem="StartDate" SizeConstraintsType="Default" Index="0" RelativeSize="51.612903225806448" IsNewNode="True" />
+                    <LayoutItem Id="EndDate" ViewItem="EndDate" SizeConstraintsType="Default" Index="1" RelativeSize="48.387096774193552" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Auto16dbf545-f8e7-4e35-af04-18a380f79af8" ShowCaption="False" Caption="" Index="1" RelativeSize="50" IsNewNode="True">
+                    <LayoutItem Id="SeatCountBusiness" ViewItem="SeatCountBusiness" SizeConstraintsType="Default" Index="0" RelativeSize="51.612903225806448" IsNewNode="True" />
+                    <LayoutItem Id="SeatCountEconomy" ViewItem="SeatCountEconomy" SizeConstraintsType="Default" Index="1" RelativeSize="48.387096774193552" IsNewNode="True" />
+                  </LayoutGroup>
+                </LayoutGroup>
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="AircraftRegisterSeatInfo" RelativeSize="100" Removed="True">
+              <LayoutGroup Id="AircraftRegisterSeatInfo_col1" RelativeSize="49.960722702278083">
+                <LayoutItem Id="EndDate" SizeConstraintsType="Default" RelativeSize="96.034696406443615" />
+                <LayoutItem Id="SeatCountBusiness" SizeConstraintsType="Default" RelativeSize="92.112676056338032" Removed="True" />
+                <LayoutItem Id="StartDate" SizeConstraintsType="Default" RelativeSize="3.9653035935563818" />
+              </LayoutGroup>
+              <LayoutGroup Id="AircraftRegisterSeatInfo_col2" RelativeSize="50.039277297721917" Caption="AircraftRegisterSeatInfo_col2" Direction="Vertical">
+                <LayoutItem Id="SeatCountEconomy" SizeConstraintsType="Default" RelativeSize="3.9653035935563818" Index="0" />
+                <LayoutItem Id="SeatCountBusiness" ViewItem="SeatCountBusiness" SizeConstraintsType="Default" Index="1" RelativeSize="96.034696406443615" IsNewNode="True" />
+                <LayoutItem Id="AircraftRegister" SizeConstraintsType="Default" RelativeSize="95.492957746478879" Removed="True" />
+                <LayoutItem Id="AircraftRegisterId" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+        <TabbedGroup Id="Item3" CaptionLocation="Top" Index="1" RelativeSize="92.680047225501767" IsNewNode="True">
+          <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" Caption="Image" Direction="Vertical" IsNewNode="True">
+            <LayoutItem Id="Item2" ShowCaption="False" SizeConstraintsType="Default" Index="0" RelativeSize="100" ViewItem="" IsNewNode="True" />
+          </LayoutGroup>
+          <LayoutGroup Id="Item4" ShowCaption="True" CaptionLocation="Top" Direction="Horizontal" Index="1" RelativeSize="0" Caption="File Attachment" IsNewNode="True" />
+        </TabbedGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="AircraftRegisterSeatInfo_ListView" AllowDelete="False" AllowNew="False">
+      <Columns>
+        <ColumnInfo Id="AircraftRegisterId" Index="-1" />
+        <ColumnInfo Id="AircraftRegister" Width="143" />
+      </Columns>
+    </ListView>
+    <ListView Id="AircraftRegisterSeatInfo_LookupListView" AllowDelete="False" AllowNew="False">
+      <Columns>
+        <ColumnInfo Id="AircraftRegister.Code" Caption="Register" />
+      </Columns>
+    </ListView>
+    <ListView Id="AircraftType_Aircrafts_ListView" AllowDelete="False" AllowNew="False">
+      <Columns>
+        <ColumnInfo Id="AircraftTypeId" Index="-1" />
+        <ColumnInfo Id="SerialNo" Index="-1" />
+        <ColumnInfo Id="Register" Width="143" />
+        <ColumnInfo Id="AircraftType" Index="1" Width="185" />
+      </Columns>
+    </ListView>
+    <DetailView Id="AircraftType_DetailView" AllowDelete="False" AllowEdit="False" AllowNew="False">
+      <Items>
+        <PropertyEditor Id="FwName" Caption="FLeetWatch Name" />
+        <PropertyEditor Id="IataCode" Caption="IATA Code" />
+        <PropertyEditor Id="IcaoCode" Caption="ICAO Code" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="AircraftType_col1" ShowCaption="False" Direction="Vertical" Index="0" RelativeSize="100" IsNewNode="True">
+              <LayoutGroup Id="Auto3c737f68-ae24-45d1-b4a5-ae472533ba92" ShowCaption="False" Caption="Auto3c737f68-ae24-45d1-b4a5-ae472533ba92(4)" Index="0" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="Manufacturer" ViewItem="Manufacturer" SizeConstraintsType="Default" Index="0" RelativeSize="4.2666666666666666" IsNewNode="True" />
+                <LayoutItem Id="FullTypeName" ViewItem="FullTypeName" SizeConstraintsType="Default" Index="1" RelativeSize="3.2" IsNewNode="True" />
+                <LayoutItem Id="TypeVariation" ViewItem="TypeVariation" SizeConstraintsType="Default" Index="2" RelativeSize="3.2" IsNewNode="True" />
+                <LayoutItem Id="Name" ViewItem="Name" SizeConstraintsType="Default" Index="3" RelativeSize="3.2" IsNewNode="True" />
+                <LayoutItem Id="IataCode" ViewItem="IataCode" SizeConstraintsType="Default" Index="4" RelativeSize="3.2" IsNewNode="True" />
+                <LayoutItem Id="FwName" ViewItem="FwName" SizeConstraintsType="Default" Index="5" RelativeSize="3.2" IsNewNode="True" />
+                <LayoutItem Id="IcaoCode" ViewItem="IcaoCode" SizeConstraintsType="Default" Index="6" RelativeSize="3.2" IsNewNode="True" />
+                <TabbedGroup Id="Item5" CaptionLocation="Top" Index="7" RelativeSize="76.533333333333331" IsNewNode="True">
+                  <LayoutGroup Id="Item4" ShowCaption="True" Caption="Aircrafts" CaptionLocation="Top" Index="0" RelativeSize="100" Direction="Vertical" IsNewNode="True">
+                    <LayoutItem Id="Aircrafts" ViewItem="Aircrafts" SizeConstraintsType="Default" Index="0" RelativeSize="100" ShowCaption="False" IsNewNode="True" />
+                  </LayoutGroup>
+                </TabbedGroup>
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="AircraftType" RelativeSize="100" Direction="Vertical" Removed="True">
+              <LayoutGroup Id="AircraftType_col1" RelativeSize="100" Direction="Horizontal">
+                <LayoutGroup Id="Autoe3dc93b3-5097-409d-b6d0-4ad6d43d2bd6" ShowCaption="False" Caption="" Index="0" RelativeSize="59.889676910953504" IsNewNode="True">
+                  <LayoutGroup Id="Item3" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="28.125" IsNewNode="True">
+                    <LayoutItem Id="Manufacturer" ViewItem="Manufacturer" SizeConstraintsType="Default" Index="0" RelativeSize="17.391304347826086" IsNewNode="True" />
+                    <LayoutItem Id="FullTypeName" ViewItem="FullTypeName" SizeConstraintsType="Default" Index="1" RelativeSize="13.043478260869565" IsNewNode="True" />
+                    <LayoutItem Id="TypeVariation" ViewItem="TypeVariation" SizeConstraintsType="Default" Index="2" RelativeSize="13.043478260869565" IsNewNode="True" />
+                    <LayoutItem Id="Name" ViewItem="Name" SizeConstraintsType="Default" Index="3" RelativeSize="13.043478260869565" IsNewNode="True" />
+                    <LayoutItem Id="IataCode" ViewItem="IataCode" SizeConstraintsType="Default" Index="4" RelativeSize="13.043478260869565" IsNewNode="True" />
+                    <LayoutItem Id="FwName" ViewItem="FwName" SizeConstraintsType="Default" Index="5" RelativeSize="13.043478260869565" IsNewNode="True" />
+                    <LayoutItem Id="IcaoCode" ViewItem="IcaoCode" SizeConstraintsType="Default" Index="6" RelativeSize="17.391304347826086" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutItem Id="Item2" ShowCaption="False" ViewItem="" SizeConstraintsType="Default" Index="1" RelativeSize="71.875" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutItem Id="Manufacturer" SizeConstraintsType="Default" RelativeSize="4.166666666666667" Index="0" Removed="True" />
+                <LayoutItem Id="FullTypeName" SizeConstraintsType="Default" Index="1" RelativeSize="3.125" Removed="True" />
+                <LayoutItem Id="Item1" ShowCaption="False" ViewItem="" SizeConstraintsType="Default" Index="1" RelativeSize="40.110323089046496" IsNewNode="True" />
+                <LayoutItem Id="TypeVariation" SizeConstraintsType="Default" RelativeSize="3.125" Index="2" Removed="True" />
+                <LayoutItem Id="Name" SizeConstraintsType="Default" RelativeSize="3.125" Index="3" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="AircraftType_col2" RelativeSize="50.039401103230894" Caption="AircraftType_col2" Direction="Horizontal" Removed="True">
+                <LayoutItem Id="FwName" Removed="True" />
+                <LayoutItem Id="IataCode" Removed="True" />
+                <LayoutItem Id="IcaoCode" Removed="True" />
+                <LayoutItem Id="Status" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="Aircrafts_Group" RelativeSize="33.293978748524204" Caption="Aircrafts" Removed="True">
+            <LayoutItem Id="Aircrafts" Removed="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="AircraftType_ListView" AllowDelete="False" AllowNew="False" AllowEdit="False" MasterDetailMode="ListViewOnly">
+      <Columns>
+        <ColumnInfo Id="Status" Index="-1" />
+        <ColumnInfo Id="Manufacturer" Index="0" Width="136" SortIndex="0" SortOrder="Ascending" AllowEdit="False" />
+        <ColumnInfo Id="FullTypeName" Width="167" Index="1" />
+        <ColumnInfo Id="TypeVariation" Index="2" Width="134" />
+        <ColumnInfo Id="Name" Index="3" Width="112" SortIndex="-1" SortOrder="None" />
+        <ColumnInfo Id="IataCode" Width="125" Caption="IATA Code" />
+        <ColumnInfo Id="IcaoCode" Width="141" Caption="ICAO Code" />
+        <ColumnInfo Id="FwName" Width="147" Caption="FleetWatch Name" />
+      </Columns>
+    </ListView>
+    <ListView Id="AircraftType_LookupListView" AllowDelete="False" AllowNew="False" />
+    <DetailView Id="Airline_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Airline" RelativeSize="100">
+              <LayoutGroup Id="Airline_col1" RelativeSize="50">
+                <LayoutItem Id="Name" SizeConstraintsType="Default" RelativeSize="4.507042253521127" />
+                <LayoutItem Id="Country" SizeConstraintsType="Default" RelativeSize="3.380281690140845" />
+                <LayoutItem Id="IataCode" SizeConstraintsType="Default" Index="2" RelativeSize="3.380281690140845" />
+                <LayoutItem Id="IcaoCode" SizeConstraintsType="Default" Index="3" RelativeSize="88.732394366197184" />
+                <LayoutItem Id="CountryId" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Airline_col2" RelativeSize="50">
+                <LayoutItem Id="Abv" SizeConstraintsType="Default" RelativeSize="4.507042253521127" />
+                <LayoutItem Id="FullName" SizeConstraintsType="Default" RelativeSize="3.380281690140845" />
+                <LayoutItem Id="ShortName" SizeConstraintsType="Default" RelativeSize="3.380281690140845" />
+                <LayoutItem Id="Status" SizeConstraintsType="Default" RelativeSize="88.732394366197184" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Airline_ListView" AllowDelete="False" AllowNew="False">
+      <Columns>
+        <ColumnInfo Id="CountryId" Index="-1" />
+        <ColumnInfo Id="Name" Width="176" />
+        <ColumnInfo Id="IataCode" Index="2" />
+        <ColumnInfo Id="IcaoCode" Index="3" />
+        <ColumnInfo Id="Abv" Index="4" />
+        <ColumnInfo Id="FullName" Index="5" />
+        <ColumnInfo Id="ShortName" Index="6" />
+        <ColumnInfo Id="Status" Index="7" />
+      </Columns>
+    </ListView>
+    <ListView Id="Airline_LookupListView" AllowDelete="False" AllowNew="False" />
+    <ListView Id="AirlineStation_Airports_ListView" AllowEdit="False" AllowDelete="True">
+      <Columns>
+        <ColumnInfo Id="AirlineStationId" Width="153" Index="-1" />
+        <ColumnInfo Id="AirportId" Index="-1" />
+        <ColumnInfo Id="AirlineStation" Width="157" Caption="Station" />
+        <ColumnInfo Id="Airport" Index="1" Width="197" />
+        <ColumnInfo Id="Email" Index="2" Width="290" />
+      </Columns>
+    </ListView>
+    <DetailView Id="AirlineStation_DetailView" AllowDelete="False" AllowEdit="True" AllowNew="False">
+      <Items>
+        <PropertyEditor Id="Airports" ImmediatePostData="True" />
+        <PropertyEditor Id="Name" Caption="Station Name - FA" />
+        <PropertyEditor Id="NameEn" Caption="Station Name - EN" />
+        <PropertyEditor Id="PhoneNo" Caption="Tel" />
+        <PropertyEditor Id="StationManagerName" Caption="Station Manager" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" Direction="Vertical" RelativeSize="100">
+            <LayoutGroup Id="AirlineStation_col1" ShowCaption="False" Index="0" RelativeSize="100" Direction="Vertical" IsNewNode="True">
+              <LayoutGroup Id="Autob6c7d5a0-2ed5-49e4-9a28-ddfb5bc0d442" ShowCaption="False" Caption="Autob6c7d5a0-2ed5-49e4-9a28-ddfb5bc0d442(4)" Direction="Horizontal" Index="0" RelativeSize="16.584158415841586" IsNewNode="True">
+                <LayoutGroup Id="Auto4b84c632-f031-4e92-8858-418d4896cdb8" ShowCaption="False" Caption="Auto4b84c632-f031-4e92-8858-418d4896cdb8(5)" Index="0" RelativeSize="49.899396378269614" IsNewNode="True">
+                  <LayoutItem Id="Name" ViewItem="Name" SizeConstraintsType="Default" Index="0" RelativeSize="23.880597014925375" IsNewNode="True" />
+                  <LayoutItem Id="PhoneNo" ViewItem="PhoneNo" SizeConstraintsType="Default" Index="1" RelativeSize="17.910447761194028" IsNewNode="True" />
+                  <LayoutItem Id="Fax" ViewItem="Fax" SizeConstraintsType="Default" Index="2" RelativeSize="17.910447761194028" IsNewNode="True" />
+                  <LayoutItem Id="StationManagerName" ViewItem="StationManagerName" SizeConstraintsType="Default" Index="3" RelativeSize="17.910447761194028" IsNewNode="True" />
+                  <LayoutItem Id="LocalityType" ViewItem="LocalityType" SizeConstraintsType="Default" Index="4" RelativeSize="22.388059701492537" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Auto598719a7-ceb4-4182-b520-f4e355cdb76c" ShowCaption="False" Caption="Auto598719a7-ceb4-4182-b520-f4e355cdb76c(11)" Index="1" RelativeSize="50.100603621730386" IsNewNode="True">
+                  <LayoutItem Id="NameEn" ViewItem="NameEn" SizeConstraintsType="Default" Index="0" RelativeSize="23.880597014925375" IsNewNode="True" />
+                  <LayoutItem Id="Extension" ViewItem="Extension" SizeConstraintsType="Default" Index="1" RelativeSize="17.910447761194028" IsNewNode="True" />
+                  <LayoutItem Id="StationManagerMobilePhone" ViewItem="StationManagerMobilePhone" SizeConstraintsType="Default" Index="2" RelativeSize="17.910447761194028" IsNewNode="True" />
+                  <LayoutItem Id="Item1" ShowCaption="False" SizeConstraintsType="Default" Index="3" RelativeSize="17.910447761194028" ViewItem="" IsNewNode="True" />
+                  <LayoutItem Id="Item2" ShowCaption="False" SizeConstraintsType="Default" Index="4" RelativeSize="22.388059701492537" ViewItem="" IsNewNode="True" />
+                </LayoutGroup>
+              </LayoutGroup>
+              <TabbedGroup Id="Item5" CaptionLocation="Top" Index="1" RelativeSize="83.415841584158414" IsNewNode="True">
+                <LayoutGroup Id="Item4" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" Caption="Airports" Direction="Vertical" IsNewNode="True">
+                  <LayoutItem Id="Airports" ShowCaption="False" ViewItem="Airports" SizeConstraintsType="Default" Index="0" RelativeSize="100" IsNewNode="True" />
+                </LayoutGroup>
+              </TabbedGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="AirlineStation" Removed="True" />
+          </LayoutGroup>
+          <LayoutGroup Id="Airports_Group" Removed="True" />
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="AirlineStation_ListView" AllowEdit="False" AllowDelete="True">
+      <Columns>
+        <ColumnInfo Id="EmailAddress" Width="236" Index="-1" />
+        <ColumnInfo Id="LocalityType" Width="182" Index="-1" />
+        <ColumnInfo Id="LocalityTypeId" Width="200" Index="-1" />
+        <ColumnInfo Id="Name" Width="173" Index="0" Caption="Station Name - FA" />
+        <ColumnInfo Id="NameEn" Width="168" Index="1" Caption="Station Name - EN" />
+        <ColumnInfo Id="PhoneNo" Width="128" Caption="Tel" Index="2" />
+        <ColumnInfo Id="Extension" Width="78" Index="3" />
+        <ColumnInfo Id="Fax" Width="147" Index="4" />
+        <ColumnInfo Id="StationManagerName" Width="192" Caption="Station Manager" Index="5" />
+        <ColumnInfo Id="StationManagerMobilePhone" Width="179" Index="6" />
+      </Columns>
+    </ListView>
+    <ListView Id="AirlineStation_LookupListView" AllowDelete="False" AllowNew="False" />
+    <DetailView Id="Airport_DetailView" AllowDelete="False">
+      <Items>
+        <PropertyEditor Id="City.Country" PropertyName="City.Country" AllowEdit="False" IsNewNode="True" />
+        <PropertyEditor Id="IataAirportCode" Caption="IATA Code" />
+        <PropertyEditor Id="Name" Caption="Name - FA" />
+        <PropertyEditor Id="NameEn" Caption="Name - En" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100" Direction="Vertical">
+            <LayoutGroup Id="Airport_col1" ShowCaption="False" Index="0" RelativeSize="100" IsNewNode="True">
+              <LayoutItem Id="IataAirportCode" ViewItem="IataAirportCode" SizeConstraintsType="Default" Index="0" RelativeSize="4.2666666666666666" IsNewNode="True" />
+              <LayoutItem Id="NameEn" ViewItem="NameEn" SizeConstraintsType="Default" Index="1" RelativeSize="3.2" IsNewNode="True" />
+              <LayoutItem Id="Name" ViewItem="Name" SizeConstraintsType="Default" Index="2" RelativeSize="3.2" IsNewNode="True" />
+              <LayoutItem Id="City" ViewItem="City" SizeConstraintsType="Default" Index="3" RelativeSize="3.2" IsNewNode="True" />
+              <LayoutItem Id="City.Country" ViewItem="City.Country" SizeConstraintsType="Default" Index="4" RelativeSize="3.2" IsNewNode="True" />
+              <LayoutItem Id="Item1" ShowCaption="False" SizeConstraintsType="Default" Index="5" RelativeSize="82.933333333333337" ViewItem="" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="Airport" RelativeSize="100" Removed="True">
+              <LayoutGroup Id="Airport_col1" RelativeSize="50">
+                <LayoutItem Id="City" SizeConstraintsType="Default" RelativeSize="90.086741016109045" Index="3" />
+                <LayoutItem Id="CityId" SizeConstraintsType="Default" RelativeSize="85.352112676056336" Removed="True" />
+                <LayoutItem Id="IataAirportCode" SizeConstraintsType="Default" RelativeSize="2.9739776951672861" />
+                <LayoutItem Id="Name" SizeConstraintsType="Default" RelativeSize="3.9653035935563818" />
+                <LayoutItem Id="NameEn" SizeConstraintsType="Default" RelativeSize="2.9739776951672861" />
+              </LayoutGroup>
+              <LayoutGroup Id="Airport_col2" RelativeSize="50">
+                <LayoutItem Id="NickName" SizeConstraintsType="Default" Index="2" RelativeSize="2.9739776951672861" />
+                <LayoutItem Id="City.Country" ViewItem="City.Country" SizeConstraintsType="Default" Index="3" RelativeSize="90.086741016109045" IsNewNode="True" />
+                <LayoutItem Id="LocalityType" SizeConstraintsType="Default" RelativeSize="2.9739776951672861" />
+                <LayoutItem Id="LocalityTypeId" Removed="True" />
+                <LayoutItem Id="Status" SizeConstraintsType="Default" RelativeSize="3.9653035935563818" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Airport_ListView" AllowEdit="False" AllowDelete="True">
+      <Columns>
+        <ColumnInfo Id="CityId" Index="-1" />
+        <ColumnInfo Id="LocalityType" Index="-1" Width="143" />
+        <ColumnInfo Id="LocalityTypeId" Index="-1" Width="204" />
+        <ColumnInfo Id="Name" Index="-1" Width="110" SortIndex="-1" SortOrder="None" />
+        <ColumnInfo Id="NickName" Index="-1" Width="242" />
+        <ColumnInfo Id="Status" Index="-1" />
+        <ColumnInfo Id="IataAirportCode" Index="0" Width="112" Caption="IATA Code" SortIndex="0" SortOrder="Ascending" />
+        <ColumnInfo Id="NameEn" Width="274" Caption="Name - EN" />
+        <ColumnInfo Id="City" Width="143" Index="2" />
+        <ColumnInfo Id="Country" Caption="Country" PropertyName="City.Country" Index="3" Width="125" IsNewNode="True" />
+      </Columns>
+    </ListView>
+    <ListView Id="Airport_LookupListView" AllowDelete="False" AllowNew="False" />
+    <DetailView Id="AirportAirlineStation_DetailView" AllowDelete="False" AllowEdit="True" AllowNew="False">
+      <Items>
+        <PropertyEditor Id="AirlineStation" Caption="Station" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="AirportAirlineStation_col1" ShowCaption="False" Index="0" RelativeSize="100" Direction="Vertical" IsNewNode="True">
+              <LayoutGroup Id="Autof5185683-61a9-40a0-acba-ce165b62ca28" ShowCaption="False" Caption="Autof5185683-61a9-40a0-acba-ce165b62ca28(4)" Index="0" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="AirlineStation" ViewItem="AirlineStation" SizeConstraintsType="Default" Index="0" RelativeSize="4.2666666666666666" IsNewNode="True" />
+                <LayoutItem Id="Airport" ViewItem="Airport" SizeConstraintsType="Default" Index="1" RelativeSize="3.2" IsNewNode="True" />
+                <LayoutItem Id="Email" ViewItem="Email" SizeConstraintsType="Default" Index="2" RelativeSize="92.533333333333331" IsNewNode="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="AirportAirlineStation" RelativeSize="100" Direction="Vertical" Removed="True">
+              <LayoutGroup Id="AirportAirlineStation_col1" RelativeSize="100">
+                <LayoutItem Id="Airport" SizeConstraintsType="Default" RelativeSize="3.125" Index="1" />
+                <LayoutItem Id="Email" ViewItem="Email" SizeConstraintsType="Default" Index="2" RelativeSize="92.708333333333329" IsNewNode="True" />
+                <LayoutItem Id="AirlineStation" SizeConstraintsType="Default" RelativeSize="4.166666666666667" />
+                <LayoutItem Id="AirlineStationId" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="AirportAirlineStation_col2" RelativeSize="49.96066089693155" Caption="AirportAirlineStation_col2" Direction="Horizontal" Removed="True">
+                <LayoutItem Id="AirportId" Removed="True" />
+                <LayoutItem Id="Email" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="AirportAirlineStation_ListView" AllowEdit="False" AllowDelete="False" AllowNew="False">
+      <Columns>
+        <ColumnInfo Id="AirlineStationId" Width="142" Index="-1" />
+        <ColumnInfo Id="AirportId" Index="-1" />
+        <ColumnInfo Id="AirlineStation" Width="213" Caption="Station" />
+        <ColumnInfo Id="Airport" Index="1" Width="192" />
+        <ColumnInfo Id="Email" Index="2" Width="284" />
+      </Columns>
+    </ListView>
+    <ListView Id="AirportAirlineStation_LookupListView" AllowDelete="False" AllowNew="False">
+      <Columns>
+        <ColumnInfo Id="AirlineStation.NameEn" Caption="Station" />
+      </Columns>
+    </ListView>
+    <DetailView Id="CargoType_DetailView" AllowDelete="False" AllowEdit="False" AllowNew="False">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="CargoType" Direction="Vertical" RelativeSize="100">
+              <LayoutGroup Id="Autob0b9891b-7725-493c-8bb7-13288aa2ff88" ShowCaption="False" Caption="Autob0b9891b-7725-493c-8bb7-13288aa2ff88(4)" Index="0" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="Name" ViewItem="Name" SizeConstraintsType="Default" Index="0" RelativeSize="4.2666666666666666" IsNewNode="True" />
+                <LayoutItem Id="Code" ViewItem="Code" SizeConstraintsType="Default" Index="1" RelativeSize="95.733333333333334" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutItem Id="Name" ViewItem="Name" SizeConstraintsType="Default" Index="0" RelativeSize="3.9603960396039604" Removed="True" />
+              <LayoutItem Id="Code" ViewItem="Code" SizeConstraintsType="Default" Index="1" RelativeSize="96.039603960396036" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="CargoType_ListView" AllowEdit="False" AllowDelete="False" AllowNew="False">
+      <Columns>
+        <ColumnInfo Id="Code" Index="-1" />
+        <ColumnInfo Id="Name" Index="0" Width="251" />
+      </Columns>
+    </ListView>
+    <ListView Id="CargoType_LookupListView" AllowDelete="False" AllowNew="False" />
+    <DetailView Id="City_DetailView" AllowDelete="False" AllowEdit="False" AllowNew="False">
+      <Items>
+        <PropertyEditor Id="NameEn" Caption="Name - EN" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100" Direction="Vertical">
+            <LayoutGroup Id="City_col1" ShowCaption="False" Index="0" RelativeSize="100" Direction="Vertical" IsNewNode="True">
+              <LayoutGroup Id="Auto2b3d7ced-0340-45d9-9883-858e6da24e21" ShowCaption="False" Caption="Auto2b3d7ced-0340-45d9-9883-858e6da24e21(4)" Index="0" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="NameEn" ViewItem="NameEn" SizeConstraintsType="Default" Index="0" RelativeSize="4.2666666666666666" IsNewNode="True" />
+                <LayoutItem Id="Name" ViewItem="Name" SizeConstraintsType="Default" Index="1" RelativeSize="3.2" IsNewNode="True" />
+                <LayoutItem Id="Country" ViewItem="Country" SizeConstraintsType="Default" Index="2" RelativeSize="92.533333333333331" IsNewNode="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="City" RelativeSize="100" Removed="True">
+              <LayoutGroup Id="City_col1" RelativeSize="50">
+                <LayoutItem Id="Country" SizeConstraintsType="Default" RelativeSize="95.492957746478879" />
+                <LayoutItem Id="CountryId" Removed="True" />
+                <LayoutItem Id="Name" SizeConstraintsType="Default" RelativeSize="4.507042253521127" />
+              </LayoutGroup>
+              <LayoutGroup Id="City_col2" RelativeSize="50">
+                <LayoutItem Id="NameEn" SizeConstraintsType="Default" RelativeSize="4.507042253521127" />
+                <LayoutItem Id="TimeZone" SizeConstraintsType="Default" RelativeSize="95.492957746478879" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="City_ListView" AllowDelete="False" AllowNew="False">
+      <Columns>
+        <ColumnInfo Id="CountryId" Index="-1" />
+        <ColumnInfo Id="TimeZone" Index="-1" />
+        <ColumnInfo Id="NameEn" Index="0" Caption="City Name - EN" Width="179" SortIndex="0" SortOrder="Ascending" />
+        <ColumnInfo Id="Name" Width="189" Caption="City Name - FA" Index="1" SortIndex="-1" SortOrder="None" />
+        <ColumnInfo Id="CountryNameEn" PropertyName="Country.NameEn" Caption="Country Name - EN" Width="161" Index="2" IsNewNode="True" />
+        <ColumnInfo Id="Country" Caption="Country Name - FA" Index="3" Width="152" />
+      </Columns>
+    </ListView>
+    <ListView Id="City_LookupListView" AllowDelete="False" AllowNew="False" />
+    <DetailView Id="Company_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Company" RelativeSize="100">
+              <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" Caption="Company" Direction="Horizontal" IsNewNode="True">
+                <LayoutItem Id="Title" ViewItem="Title" SizeConstraintsType="Default" Index="0" RelativeSize="50" IsNewNode="True" />
+                <LayoutItem Id="CommercialCode" ViewItem="CommercialCode" SizeConstraintsType="Default" Index="1" RelativeSize="50" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutItem Id="CommercialCode" Removed="True" />
+              <LayoutItem Id="Title" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Continent_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Continent" RelativeSize="100">
+              <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" Caption="Continent" Direction="Vertical" IsNewNode="True">
+                <LayoutGroup Id="Autof3845b53-be70-403c-990a-ce87df339afd" ShowCaption="False" Caption="" Direction="Horizontal" Index="0" RelativeSize="3.9653035935563818" IsNewNode="True">
+                  <LayoutItem Id="NameEn" ViewItem="NameEn" SizeConstraintsType="Default" Index="0" RelativeSize="50" IsNewNode="True" />
+                  <LayoutItem Id="Name" ViewItem="Name" SizeConstraintsType="Default" Index="1" RelativeSize="50" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutItem Id="Code" ViewItem="Code" SizeConstraintsType="Default" Index="1" RelativeSize="96.034696406443615" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutItem Id="Code" Removed="True" />
+              <LayoutItem Id="Name" Removed="True" />
+              <LayoutItem Id="NameEn" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Continent_LookupListView" AllowDelete="False" AllowNew="False" />
+    <DetailView Id="Country_DetailView" AllowDelete="False" AllowEdit="False" AllowNew="False">
+      <Items>
+        <PropertyEditor Id="IsoAlpha2" Caption="ISO Alpha2" />
+        <PropertyEditor Id="IsoAlpha3" Caption="ISO Alpha3" />
+        <PropertyEditor Id="Name" Caption="Country - FA" />
+        <PropertyEditor Id="NameEn" Caption="Country- EN" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="15.820543093270366">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Country_col1" ShowCaption="False" Index="0" RelativeSize="100" Direction="Vertical" IsNewNode="True">
+              <LayoutGroup Id="Auto88307a4c-fb62-4686-a01f-980808ae35d4" ShowCaption="False" Caption="Auto88307a4c-fb62-4686-a01f-980808ae35d4(4)" Direction="Vertical" Index="0" RelativeSize="100" IsNewNode="True">
+                <LayoutGroup Id="Auto02ceedea-e6d7-4c19-8193-9656662d2cec" ShowCaption="False" Caption="Auto02ceedea-e6d7-4c19-8193-9656662d2cec(5)" Index="0" RelativeSize="100" IsNewNode="True">
+                  <LayoutItem Id="NameEn" ViewItem="NameEn" SizeConstraintsType="Default" Index="0" RelativeSize="23.880597014925375" IsNewNode="True" />
+                  <LayoutItem Id="Name" ViewItem="Name" SizeConstraintsType="Default" Index="1" RelativeSize="17.910447761194028" IsNewNode="True" />
+                  <LayoutItem Id="IsoAlpha2" ViewItem="IsoAlpha2" SizeConstraintsType="Default" Index="2" RelativeSize="17.910447761194028" IsNewNode="True" />
+                  <LayoutItem Id="IsoAlpha3" ViewItem="IsoAlpha3" SizeConstraintsType="Default" Index="3" RelativeSize="17.910447761194028" IsNewNode="True" />
+                  <LayoutItem Id="Currency" ViewItem="Currency" SizeConstraintsType="Default" Index="4" RelativeSize="22.388059701492537" IsNewNode="True" />
+                </LayoutGroup>
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="Country" RelativeSize="100" Direction="Vertical" Removed="True">
+              <LayoutGroup Id="Country_col1" RelativeSize="100">
+                <LayoutItem Id="NameEn" SizeConstraintsType="Default" RelativeSize="4.166666666666667" Index="0" />
+                <LayoutItem Id="Name" SizeConstraintsType="Default" RelativeSize="3.125" Index="1" />
+                <LayoutItem Id="IsoAlpha2" SizeConstraintsType="Default" RelativeSize="3.125" Index="2" />
+                <LayoutItem Id="IsoAlpha3" SizeConstraintsType="Default" RelativeSize="3.125" Index="3" />
+                <LayoutItem Id="IataCode" SizeConstraintsType="Default" RelativeSize="3.125" Index="4" />
+                <LayoutItem Id="Currency" ViewItem="Currency" SizeConstraintsType="Default" Index="5" RelativeSize="83.333333333333329" IsNewNode="True" />
+                <LayoutItem Id="UnNumeric3" SizeConstraintsType="Default" RelativeSize="80.208333333333329" Index="6" Removed="True" />
+                <LayoutItem Id="Fips104" SizeConstraintsType="Default" RelativeSize="81.971830985915489" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Country_col2" RelativeSize="50.039401103230894" Caption="Country_col2" Direction="Horizontal" Removed="True">
+                <LayoutItem Id="Continent" Removed="True" />
+                <LayoutItem Id="ContinentId" Removed="True" />
+                <LayoutItem Id="Currency" Removed="True" />
+                <LayoutItem Id="CurrencyId" Removed="True" />
+                <LayoutItem Id="IataRegionCode" Removed="True" />
+                <LayoutItem Id="IataRegionCodeId" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+        <LayoutItem Id="Item1" ShowCaption="False" ViewItem="" SizeConstraintsType="Default" Index="1" RelativeSize="84.179456906729641" IsNewNode="True" />
+      </Layout>
+    </DetailView>
+    <ListView Id="Country_ListView" AllowDelete="False" AllowNew="False">
+      <Columns>
+        <ColumnInfo Id="Continent" Index="-1" />
+        <ColumnInfo Id="ContinentId" Index="-1" />
+        <ColumnInfo Id="CurrencyId" Index="-1" />
+        <ColumnInfo Id="Fips104" Index="-1" />
+        <ColumnInfo Id="IataCode" Index="-1" />
+        <ColumnInfo Id="IataRegionCode" Index="-1" />
+        <ColumnInfo Id="IataRegionCodeId" Index="-1" />
+        <ColumnInfo Id="UnNumeric3" Index="-1" />
+        <ColumnInfo Id="NameEn" Caption="County Name - EN" Index="0" Width="155" SortIndex="0" SortOrder="Ascending" />
+        <ColumnInfo Id="Name" Width="162" Caption="Country Name - FA" Index="1" SortIndex="-1" SortOrder="None" />
+        <ColumnInfo Id="IsoAlpha2" Caption="ISO Alpha2" Index="2" Width="123" />
+        <ColumnInfo Id="IsoAlpha3" Caption="ISO Alpha3" Index="3" Width="119" />
+        <ColumnInfo Id="Currency" Index="4" Width="110" />
+      </Columns>
+    </ListView>
+    <ListView Id="Country_LookupListView" AllowDelete="False" AllowNew="False" />
+    <DetailView Id="Currency_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Currency" RelativeSize="100" Direction="Vertical">
+              <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Direction="Horizontal" Index="0" RelativeSize="100" Caption="Currency" IsNewNode="True">
+                <LayoutGroup Id="Autofca6d7db-2b43-4a73-95d3-66185067c4cd" ShowCaption="False" Caption="" Index="0" RelativeSize="50" IsNewNode="True">
+                  <LayoutItem Id="Name" ViewItem="Name" SizeConstraintsType="Default" Index="0" RelativeSize="3.9653035935563818" IsNewNode="True" />
+                  <LayoutItem Id="Symbol" ViewItem="Symbol" SizeConstraintsType="Default" Index="1" RelativeSize="96.034696406443615" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Autof16faea5-3393-4408-b65c-f2e78fc29b4c" ShowCaption="False" Caption="" Index="1" RelativeSize="50" IsNewNode="True">
+                  <LayoutItem Id="NameEn" ViewItem="NameEn" SizeConstraintsType="Default" Index="0" RelativeSize="3.9653035935563818" IsNewNode="True" />
+                  <LayoutItem Id="Code" ViewItem="Code" SizeConstraintsType="Default" Index="1" RelativeSize="96.034696406443615" IsNewNode="True" />
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutItem Id="Code" SizeConstraintsType="Default" Index="2" RelativeSize="93.388429752066116" Removed="True" />
+              <LayoutItem Id="Name" Removed="True" />
+              <LayoutItem Id="NameEn" Removed="True" />
+              <LayoutItem Id="Symbol" SizeConstraintsType="Default" RelativeSize="2.833530106257379" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Currency_LookupListView" AllowDelete="False" AllowNew="False" />
+    <DetailView Id="DelayCode_DetailView" AllowDelete="False" AllowEdit="False" AllowNew="False">
+      <Items>
+        <PropertyEditor Id="Description" Caption="Description - FA" />
+        <PropertyEditor Id="DescriptionEn" Caption="Description - EN" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100" Direction="Vertical">
+            <LayoutGroup Id="DelayCode_col1" ShowCaption="False" Index="0" RelativeSize="100" Direction="Vertical" IsNewNode="True">
+              <LayoutGroup Id="Auto79a01eca-b517-43ed-917c-65f7e1873463" ShowCaption="False" Caption="Auto79a01eca-b517-43ed-917c-65f7e1873463(4)" Index="0" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="Code" ViewItem="Code" SizeConstraintsType="Default" Index="0" RelativeSize="4.2666666666666666" IsNewNode="True" />
+                <LayoutItem Id="DelayType" ViewItem="DelayType" SizeConstraintsType="Default" Index="1" RelativeSize="3.2" IsNewNode="True" />
+                <LayoutItem Id="Description" ViewItem="Description" SizeConstraintsType="Default" Index="2" RelativeSize="3.2" IsNewNode="True" />
+                <LayoutItem Id="DescriptionEn" ViewItem="DescriptionEn" SizeConstraintsType="Default" Index="3" RelativeSize="3.2" IsNewNode="True" />
+                <LayoutItem Id="Item4" ShowCaption="False" SizeConstraintsType="Default" Index="4" RelativeSize="86.13333333333334" ViewItem="" IsNewNode="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="DelayCode" RelativeSize="100" Removed="True">
+              <LayoutGroup Id="DelayCode_col1" RelativeSize="50">
+                <LayoutItem Id="Code" ViewItem="Code" SizeConstraintsType="Default" Index="1" RelativeSize="3.125" IsNewNode="True" />
+                <LayoutItem Id="Description" SizeConstraintsType="Default" Index="2" RelativeSize="92.708333333333329" Removed="True" />
+                <LayoutItem Id="IsEnabled" ViewItem="IsEnabled" SizeConstraintsType="Default" Index="2" RelativeSize="92.708333333333329" IsNewNode="True" />
+                <LayoutItem Id="DelayType" SizeConstraintsType="Default" RelativeSize="4.166666666666667" />
+                <LayoutItem Id="DelayTypeId" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="DelayCode_col2" RelativeSize="50">
+                <LayoutItem Id="Code" SizeConstraintsType="Default" RelativeSize="3.125" Index="1" Removed="True" />
+                <LayoutItem Id="Description" ViewItem="Description" SizeConstraintsType="Default" Index="1" RelativeSize="95.833333333333329" IsNewNode="True" />
+                <LayoutItem Id="DescriptionEn" SizeConstraintsType="Default" RelativeSize="4.166666666666667" />
+                <LayoutItem Id="IsEnabled" SizeConstraintsType="Default" RelativeSize="92.112676056338032" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="DelayCode_ListView" AllowDelete="False" AllowEdit="False" AllowNew="False">
+      <Columns>
+        <ColumnInfo Id="DelayTypeId" Width="143" Index="-1" />
+        <ColumnInfo Id="IsEnabled" Index="-1" />
+        <ColumnInfo Id="Code" Width="99" Caption="Delay Code" />
+        <ColumnInfo Id="DelayType" Width="214" />
+        <ColumnInfo Id="Description" Index="2" Width="314" Caption="Description - FA" />
+        <ColumnInfo Id="DescriptionEn" Index="3" Width="302" Caption="Description - EN" />
+      </Columns>
+    </ListView>
+    <ListView Id="DelayCode_LookupListView" AllowDelete="False" AllowNew="False" />
+    <ListView Id="DelayType_DelayCodes_ListView" AllowDelete="False" AllowNew="False">
+      <Columns>
+        <ColumnInfo Id="DelayTypeId" Width="133" Index="-1" />
+        <ColumnInfo Id="IsEnabled" Index="-1" />
+        <ColumnInfo Id="Code" Width="170" SortIndex="-1" SortOrder="None" />
+        <ColumnInfo Id="DelayType" Width="102" Index="1" />
+        <ColumnInfo Id="Description" Index="2" Width="154" SortIndex="0" SortOrder="Ascending" Caption="Delay Type - FA" />
+        <ColumnInfo Id="DescriptionEn" Index="3" Width="157" Caption="English Description" />
+      </Columns>
+    </ListView>
+    <DetailView Id="DelayType_DetailView" AllowDelete="False" AllowEdit="False" AllowNew="False">
+      <Items>
+        <PropertyEditor Id="DelayCodes" AllowEdit="False" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="DelayType" RelativeSize="100" Caption="Name" Direction="Vertical">
+              <LayoutGroup Id="Autoe86a9411-b949-4f91-bf00-9cc619cb11ca" ShowCaption="False" Caption="Autoe86a9411-b949-4f91-bf00-9cc619cb11ca(4)" Index="0" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="Name" ViewItem="Name" SizeConstraintsType="Default" Index="0" RelativeSize="4.2666666666666666" IsNewNode="True" />
+                <TabbedGroup Id="Item4" CaptionLocation="Top" Index="1" RelativeSize="95.733333333333334" IsNewNode="True">
+                  <LayoutGroup Id="Item3" ShowCaption="True" Caption="Delay Code" CaptionLocation="Top" Index="0" RelativeSize="100" IsNewNode="True">
+                    <LayoutItem Id="@d3772b45-33d4-4d89-9754-3c92ce8a2658" SizeConstraintsType="Default" Index="0" RelativeSize="4.5722713864306783" ShowCaption="False" ViewItem="" IsNewNode="True" />
+                    <LayoutItem Id="DelayCodes" ViewItem="DelayCodes" SizeConstraintsType="Default" Index="1" RelativeSize="95.427728613569315" ShowCaption="False" IsNewNode="True" />
+                  </LayoutGroup>
+                </TabbedGroup>
+              </LayoutGroup>
+              <LayoutItem Id="Name" ViewItem="Name" SizeConstraintsType="Default" Index="0" RelativeSize="49.961270333075134" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="DelayCodes_Group" RelativeSize="33.292079207920793" Caption="Delay Codes" Removed="True">
+            <LayoutItem Id="DelayCodes" Removed="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="DelayType_ListView" AllowDelete="False" AllowNew="False">
+      <Columns>
+        <ColumnInfo Id="Name" SortOrder="Ascending" />
+      </Columns>
+    </ListView>
+    <ListView Id="DelayType_LookupListView" AllowDelete="False" AllowNew="False" />
+    <DetailView Id="FlightType_DetailView" AllowDelete="False" AllowEdit="False" AllowNew="False">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="FlightType" Direction="Vertical" RelativeSize="100">
+              <LayoutGroup Id="Autod7279565-ab76-416f-92eb-f6667ad25f8b" ShowCaption="False" Caption="Autod7279565-ab76-416f-92eb-f6667ad25f8b(4)" Index="0" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="Name" ViewItem="Name" SizeConstraintsType="Default" Index="0" RelativeSize="4.2666666666666666" IsNewNode="True" />
+                <LayoutItem Id="Code" ViewItem="Code" SizeConstraintsType="Default" Index="1" RelativeSize="95.733333333333334" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutItem Id="Name" ViewItem="Name" SizeConstraintsType="Default" Index="0" RelativeSize="3.9603960396039604" Removed="True" />
+              <LayoutItem Id="Code" ViewItem="Code" SizeConstraintsType="Default" Index="1" RelativeSize="96.039603960396036" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="FlightType_ListView" AllowNew="False" AllowDelete="False">
+      <Columns>
+        <ColumnInfo Id="Code" Index="-1" />
+        <ColumnInfo Id="Name" Width="414" />
+      </Columns>
+    </ListView>
+    <ListView Id="FlightType_LookupListView" AllowDelete="False" AllowNew="False" />
+    <DetailView Id="IataRegionCode_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="IataRegionCode" RelativeSize="100">
+              <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" Caption="IATA Region Code" Direction="Horizontal" IsNewNode="True">
+                <LayoutGroup Id="Autoa91794ac-deb8-4cbd-bc3b-bdadc2b86f55" ShowCaption="False" Caption="" Index="0" RelativeSize="50" IsNewNode="True">
+                  <LayoutItem Id="RegionName" ViewItem="RegionName" SizeConstraintsType="Default" Index="0" RelativeSize="3.9653035935563818" IsNewNode="True" />
+                  <LayoutItem Id="RegionNameEn" ViewItem="RegionNameEn" SizeConstraintsType="Default" Index="1" RelativeSize="96.034696406443615" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Auto1f2c6f29-53f8-4d5d-a4a7-ae8ae4eb6925" ShowCaption="False" Caption="" Index="1" RelativeSize="50" IsNewNode="True">
+                  <LayoutItem Id="RegionCode" ViewItem="RegionCode" SizeConstraintsType="Default" Index="0" RelativeSize="3.9653035935563818" IsNewNode="True" />
+                  <LayoutItem Id="Item2" ShowCaption="False" ViewItem="" SizeConstraintsType="Default" Index="1" RelativeSize="96.034696406443615" IsNewNode="True" />
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutItem Id="RegionCode" Removed="True" />
+              <LayoutItem Id="RegionName" Removed="True" />
+              <LayoutItem Id="RegionNameEn" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="IataRegionCode_ListView">
+      <Columns>
+        <ColumnInfo Id="RegionName" Width="167" />
+        <ColumnInfo Id="RegionCode" Width="151" />
+        <ColumnInfo Id="RegionNameEn" Width="153" />
+      </Columns>
+    </ListView>
+    <DetailView Id="ImportMasterDataLog_DetailView">
+      <Items>
+        <PropertyEditor Id="LogResult" RowCount="10" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="ImportMasterDataLog" RelativeSize="100" Direction="Vertical">
+              <LayoutGroup Id="ImportMasterDataLog_col1" RelativeSize="100">
+                <LayoutGroup Id="Auto377a5ba0-942e-4f2f-9f19-dfd4a88af66a" ShowCaption="False" Caption="" Direction="Horizontal" Index="0" RelativeSize="8.32282471626734" IsNewNode="True">
+                  <LayoutGroup Id="Autof4deae6e-504a-4941-9467-965ebc187a59" ShowCaption="False" Caption="" Index="0" RelativeSize="45.046235138705413" IsNewNode="True">
+                    <LayoutItem Id="LogDateTime" ViewItem="LogDateTime" SizeConstraintsType="Default" Index="0" RelativeSize="63.636363636363633" IsNewNode="True" />
+                    <LayoutItem Id="Creator" ViewItem="Creator" SizeConstraintsType="Default" Index="1" RelativeSize="36.363636363636367" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Auto13bb1672-f2a6-4de1-b4e1-ebcc6898d17e" ShowCaption="False" Caption="" Index="1" RelativeSize="54.953764861294587" IsNewNode="True">
+                    <LayoutItem Id="Duration" ViewItem="Duration" SizeConstraintsType="Default" Index="0" RelativeSize="48.484848484848484" IsNewNode="True" />
+                    <LayoutItem Id="Item1" ShowCaption="False" ViewItem="" SizeConstraintsType="Default" Index="1" RelativeSize="15.151515151515152" IsNewNode="True" />
+                    <LayoutItem Id="IsFailed" ViewItem="IsFailed" SizeConstraintsType="Default" Index="2" RelativeSize="36.363636363636367" IsNewNode="True" />
+                  </LayoutGroup>
+                </LayoutGroup>
+                <LayoutItem Id="Creator" ViewItem="Creator" SizeConstraintsType="Default" Index="1" RelativeSize="3.0264817150063053" Removed="True" />
+                <LayoutItem Id="LogDateTime" SizeConstraintsType="Default" RelativeSize="3.0264817150063053" Index="1" Removed="True" />
+                <LayoutItem Id="LogResult" ViewItem="LogResult" SizeConstraintsType="Default" Index="1" RelativeSize="91.677175283732666" IsNewNode="True" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="ImportMasterDataLog_col2" RelativeSize="44.649933949801849" Caption="ImportMasterDataLog_col2" Direction="Horizontal" Removed="True">
+                <LayoutItem Id="Duration" Removed="True" />
+                <LayoutItem Id="IsFailed" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="ImportMasterDataLog_ListView">
+      <Columns>
+        <ColumnInfo Id="Creator" Index="-1" />
+        <ColumnInfo Id="LogDateTime" DisplayFormat="{0:yyyy/MM/dd HH:mm:ss}" EditMask="yyyy/MM/dd HH:mm:ss" Width="82" />
+        <ColumnInfo Id="LogResult" Width="503" Index="1" />
+      </Columns>
+    </ListView>
+    <DetailView Id="LocalityType_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="LocalityType" RelativeSize="100">
+              <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" Caption="Locality Type" Direction="Horizontal" IsNewNode="True">
+                <LayoutGroup Id="Autob6a79a41-d72d-4000-8157-31966795ee8c" ShowCaption="False" Caption="" Index="0" RelativeSize="50" IsNewNode="True">
+                  <LayoutItem Id="Name" ViewItem="Name" SizeConstraintsType="Default" Index="0" RelativeSize="3.9653035935563818" IsNewNode="True" />
+                  <LayoutItem Id="Code" ViewItem="Code" SizeConstraintsType="Default" Index="1" RelativeSize="96.034696406443615" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Auto60167b5d-4ce8-43c4-b7de-7a71400891a8" ShowCaption="False" Caption="" Index="1" RelativeSize="50" IsNewNode="True">
+                  <LayoutItem Id="NameEn" ViewItem="NameEn" SizeConstraintsType="Default" Index="0" RelativeSize="3.9653035935563818" IsNewNode="True" />
+                  <LayoutItem Id="Item2" ShowCaption="False" ViewItem="" SizeConstraintsType="Default" Index="1" RelativeSize="96.034696406443615" IsNewNode="True" />
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutItem Id="Code" Removed="True" />
+              <LayoutItem Id="Name" Removed="True" />
+              <LayoutItem Id="NameEn" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="LocalityType_LookupListView" AllowDelete="False" AllowNew="True" />
+    <DetailView Id="PassengerType_DetailView" AllowDelete="False" AllowEdit="False" AllowNew="False">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="PassengerType" Direction="Vertical" RelativeSize="100">
+              <LayoutGroup Id="Autob43ba7b8-9bc3-4d7b-aa58-6e98503ed367" ShowCaption="False" Caption="Autob43ba7b8-9bc3-4d7b-aa58-6e98503ed367(4)" Index="0" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="Name" ViewItem="Name" SizeConstraintsType="Default" Index="0" RelativeSize="4.2666666666666666" IsNewNode="True" />
+                <LayoutItem Id="Code" ViewItem="Code" SizeConstraintsType="Default" Index="1" RelativeSize="95.733333333333334" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutItem Id="Name" ViewItem="Name" SizeConstraintsType="Default" Index="0" RelativeSize="3.9603960396039604" Removed="True" />
+              <LayoutItem Id="Code" ViewItem="Code" SizeConstraintsType="Default" Index="1" RelativeSize="96.039603960396036" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="PassengerType_ListView" AllowDelete="False" AllowNew="False">
+      <Columns>
+        <ColumnInfo Id="Code" Index="-1" />
+      </Columns>
+    </ListView>
+    <ListView Id="PassengerType_LookupListView" AllowDelete="False" AllowNew="False" />
+    <DetailView Id="RouteAircraft_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="RouteAircraft" RelativeSize="100">
+              <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" Caption="Route Aircraft" Direction="Horizontal" IsNewNode="True">
+                <LayoutGroup Id="Auto48b62be1-6507-4adb-be95-a9f4a86eedaf" ShowCaption="False" Caption="" Index="0" RelativeSize="50" IsNewNode="True">
+                  <LayoutItem Id="Name" ViewItem="Name" SizeConstraintsType="Default" Index="0" RelativeSize="3.9653035935563818" IsNewNode="True" />
+                  <LayoutItem Id="LocalityType" ViewItem="LocalityType" SizeConstraintsType="Default" Index="1" RelativeSize="96.034696406443615" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Autoeeae71f8-e09b-4c8b-b701-ba607dcc6eeb" ShowCaption="False" Caption="" Index="1" RelativeSize="50" IsNewNode="True">
+                  <LayoutItem Id="NumLegs" ViewItem="NumLegs" SizeConstraintsType="Default" Index="0" RelativeSize="3.9653035935563818" IsNewNode="True" />
+                  <LayoutItem Id="Item2" ShowCaption="False" ViewItem="" SizeConstraintsType="Default" Index="1" RelativeSize="96.034696406443615" IsNewNode="True" />
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutItem Id="NumLegs" SizeConstraintsType="Default" Index="2" RelativeSize="92.533333333333331" Removed="True" />
+              <LayoutItem Id="Name" SizeConstraintsType="Default" RelativeSize="4.2666666666666666" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="RouteAircraft_ListView">
+      <Columns>
+        <ColumnInfo Id="Name" Width="129" />
+        <ColumnInfo Id="NumLegs" Index="2" />
+      </Columns>
+    </ListView>
+    <DetailView Id="RouteAircraftLeg_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="RouteAircraftLeg" RelativeSize="100">
+              <LayoutGroup Id="RouteAircraftLeg_col1" RelativeSize="50">
+                <LayoutItem Id="RouteAircraft" SizeConstraintsType="Default" RelativeSize="4.507042253521127" />
+                <LayoutItem Id="Leg" SizeConstraintsType="Default" Index="1" RelativeSize="95.492957746478879" />
+                <LayoutItem Id="RouteAircraftId" SizeConstraintsType="Default" RelativeSize="3.380281690140845" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="RouteAircraftLeg_col2" RelativeSize="50" Caption="RouteAircraftLeg_col2">
+                <LayoutItem Id="LegNo" SizeConstraintsType="Default" Index="0" RelativeSize="100" />
+                <LayoutItem Id="LegId" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="RouteAircraftLeg_ListView">
+      <Columns>
+        <ColumnInfo Id="RouteAircraftId" Width="190" Index="-1" />
+        <ColumnInfo Id="LegNo" Width="86" />
+      </Columns>
+    </ListView>
+    <DetailView Id="SeatClass_DetailView" AllowDelete="False" AllowEdit="False" AllowNew="False">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="SeatClass" RelativeSize="100" Direction="Vertical">
+              <LayoutGroup Id="Autoc9cf5ed8-c866-496e-9c9f-9ba4ebc4b467" ShowCaption="False" Caption="Autoc9cf5ed8-c866-496e-9c9f-9ba4ebc4b467(4)" Index="0" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="Name" ViewItem="Name" SizeConstraintsType="Default" Index="0" RelativeSize="4.2666666666666666" IsNewNode="True" />
+                <LayoutItem Id="Code" ViewItem="Code" SizeConstraintsType="Default" Index="1" RelativeSize="95.733333333333334" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutItem Id="Name" ViewItem="Name" SizeConstraintsType="Default" Index="0" RelativeSize="3.9603960396039604" Removed="True" />
+              <LayoutItem Id="Code" ViewItem="Code" SizeConstraintsType="Default" Index="1" RelativeSize="96.039603960396036" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="SeatClass_ListView" AllowDelete="False" AllowNew="False">
+      <Columns>
+        <ColumnInfo Id="Code" Index="-1" />
+        <ColumnInfo Id="Name" Width="288" />
+      </Columns>
+    </ListView>
+    <ListView Id="SeatClass_LookupListView" AllowDelete="False" AllowNew="False" />
+    <DetailView Id="SpecialServiceType_DetailView" AllowDelete="False" AllowEdit="False" AllowNew="False">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="SpecialServiceType" RelativeSize="100" Direction="Vertical">
+              <LayoutGroup Id="Auto0fe97f95-5710-49ee-9294-24de20756657" ShowCaption="False" Caption="Auto0fe97f95-5710-49ee-9294-24de20756657(4)" Index="0" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="Name" ViewItem="Name" SizeConstraintsType="Default" Index="0" RelativeSize="4.2666666666666666" IsNewNode="True" />
+                <LayoutItem Id="Code" ViewItem="Code" SizeConstraintsType="Default" Index="1" RelativeSize="95.733333333333334" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutItem Id="Name" ViewItem="Name" SizeConstraintsType="Default" Index="0" RelativeSize="3.9603960396039604" Removed="True" />
+              <LayoutItem Id="Code" ViewItem="Code" SizeConstraintsType="Default" Index="1" RelativeSize="96.039603960396036" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="SpecialServiceType_ListView" AllowDelete="False" AllowNew="False">
+      <Columns>
+        <ColumnInfo Id="Code" Index="-1" />
+        <ColumnInfo Id="Name" Width="405" />
+      </Columns>
+    </ListView>
+    <ListView Id="SpecialServiceType_LookupListView" AllowDelete="False" AllowNew="False" />
+    <DetailView Id="TicketType_DetailView" AllowDelete="False" AllowEdit="False" AllowNew="False">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="TicketType" RelativeSize="100" Direction="Vertical">
+              <LayoutGroup Id="Auto4df3460c-569b-4c32-b2b6-a086496fd873" ShowCaption="False" Caption="Auto4df3460c-569b-4c32-b2b6-a086496fd873(4)" Index="0" RelativeSize="100" IsNewNode="True">
+                <LayoutItem Id="Name" ViewItem="Name" SizeConstraintsType="Default" Index="0" RelativeSize="4.2666666666666666" IsNewNode="True" />
+                <LayoutItem Id="Code" ViewItem="Code" SizeConstraintsType="Default" Index="1" RelativeSize="95.733333333333334" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutItem Id="Name" ViewItem="Name" SizeConstraintsType="Default" Index="0" RelativeSize="3.9603960396039604" Removed="True" />
+              <LayoutItem Id="Code" ViewItem="Code" SizeConstraintsType="Default" Index="1" RelativeSize="96.039603960396036" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="TicketType_ListView" AllowDelete="False" AllowNew="False">
+      <Columns>
+        <ColumnInfo Id="Code" Index="-1" />
+      </Columns>
+    </ListView>
+    <ListView Id="TicketType_LookupListView" AllowDelete="False" AllowNew="False" />
+    <DetailView Id="Unit_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Unit" RelativeSize="100" Caption="Name">
+              <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" Caption="Unit" IsNewNode="True">
+                <LayoutItem Id="Name" ViewItem="Name" SizeConstraintsType="Default" Index="0" RelativeSize="100" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutItem Id="Name" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Unit_LookupListView" AllowDelete="False" AllowNew="False" />
+  </Views>
+</Application>
