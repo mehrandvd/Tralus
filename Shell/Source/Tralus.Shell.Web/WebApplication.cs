@@ -26,16 +26,19 @@ namespace Tralus.Shell.Web
         public ShellAspNetApplication()
         {
             InitializeComponent();
-
-
+            
             try
             {
                 AppDomain.CurrentDomain.AssemblyResolve += (sender, args) =>
                 {
                     var location = Path.Combine(AppDomain.CurrentDomain.RelativeSearchPath,
                         args.Name.Split(',')[0] + ".dll");
-                    var assembly = Assembly.LoadFrom(location);
-                    return assembly;
+                    if (File.Exists(location))
+                    {
+                        var assembly = Assembly.LoadFrom(location);
+                        return assembly;
+                    }
+                    return null;
                 };
 
                 ReflectionHelper.GetImportedModules(out _loadedModuleTypes, out _loadedContextTypes);
