@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Application Title="Mahan.Tralus.Stations" Logo="ExpressAppLogo">
+<Application Title="Mahan.Stations" Logo="ExpressAppLogo">
   <BOModel>
-    <Class Name="Mahan.Tralus.Stations.BusinessModel.DestinationProfile">
+    <Class Name="Mahan.Stations.BusinessModel.DestinationProfile">
       <AppearanceRules>
         <AppearanceRule Id="PaxP" Criteria="[FlightLeg.AircraftRegister.HasFirstClassSeat] = False" Context="DetailView" Priority="0" Enabled="False" TargetItems="P_ADL_PGS;P_ADL_ETKT;P_ADL_FOC;P_CHD_ETKT;P_CHD_FOC;P_CHD_PGS;P_INF_ETKT;P_INF_FOC;P_INF_PGS" AppearanceItemType="ViewItem" IsNewNode="True" />
       </AppearanceRules>
@@ -10,21 +10,21 @@
         <Member Name="P_ADL_FOC" ImmediatePostData="True" />
       </OwnMembers>
     </Class>
-    <Class Name="Mahan.Tralus.Stations.BusinessModel.DestinationSpecialService">
+    <Class Name="Mahan.Stations.BusinessModel.DestinationSpecialService">
       <OwnMembers>
         <Member Name="SpecialServiceType" ImmediatePostData="True" />
         <Member Name="SpecialServiceType.Description" IsCustom="True" IsCalculated="False" IsNewNode="True" />
         <Member Name="SpecialServiceType.DescriptionEn" IsCustom="True" IsCalculated="False" IsNewNode="True" />
       </OwnMembers>
     </Class>
-    <Class Name="Mahan.Tralus.Stations.BusinessModel.FlightDelay">
+    <Class Name="Mahan.Stations.BusinessModel.FlightDelay">
       <OwnMembers>
         <Member Name="DelayCode" ImmediatePostData="True" />
         <Member Name="DelayCode.Description" IsCustom="True" IsCalculated="False" ImmediatePostData="False" IsNewNode="True" />
         <Member Name="DelayCode.DescriptionEn" IsCustom="True" IsCalculated="False" ImmediatePostData="False" IsNewNode="True" />
       </OwnMembers>
     </Class>
-    <Class Name="Mahan.Tralus.Stations.BusinessModel.FlightReport" DefaultDetailView="FlightReport_DetailView">
+    <Class Name="Mahan.Stations.BusinessModel.FlightReport" DefaultDetailView="FlightReport_DetailView">
       <AppearanceRules>
         <AppearanceRule Id="IsCanceled" Context="ListView" Criteria="[ConditionalAppearance_Cancelled_RedCrossOut] = True" TargetItems="*" FontColor="255, 128, 128" FontStyle="Strikeout" BackColor="White" IsNewNode="True" />
         <AppearanceRule Id="IsDepartured" Criteria="[ConditionalAppearance_Departed_LightGreen] = True" Context="ListView" BackColor="LightGreen" TargetItems="*" IsNewNode="True" />
@@ -74,7 +74,7 @@
         <Member Name="FlightReportView.Status" IsCustom="True" IsCalculated="False" Caption="Status" IsNewNode="True" />
       </OwnMembers>
     </Class>
-    <Class Name="Mahan.Tralus.Stations.BusinessModel.FlightReportView">
+    <Class Name="Mahan.Stations.BusinessModel.FlightReportView">
       <AppearanceRules>
         <AppearanceRule Id="IsCancelled" Criteria="[IsCanceled] = True" Context="ListView" FontStyle="Strikeout" FontColor="Red" TargetItems="*" IsNewNode="True" />
         <AppearanceRule Id="IsDepartured" Criteria="[IsDepartured] = True" Context="ListView" BackColor="LightGreen" TargetItems="*" IsNewNode="True" />
@@ -88,7 +88,7 @@
         <Member Name="FlightReport.FlightReportState" IsCustom="True" IsCalculated="False" Caption="FlightReport_FlightReportState" IsNewNode="True" />
       </OwnMembers>
     </Class>
-    <Class Name="Mahan.Tralus.Stations.BusinessModel.FuellingType">
+    <Class Name="Mahan.Stations.BusinessModel.FuellingType">
       <OwnMembers>
         <Member Name="Code" LookupEditorMode="AllItems" />
         <Member Name="Name" IsCustom="True" IsCalculated="False" IsNewNode="True" />
@@ -244,7 +244,7 @@
         <ColumnInfo Id="SpecialServiceCount" Index="1" Width="135" Caption="Num Requests" />
       </Columns>
     </ListView>
-    <DetailView Id="DestinationProfile_DetailView" ClassName="Mahan.Tralus.Stations.BusinessModel.DestinationProfile" IsNewNode="True" Removed="True">
+    <DetailView Id="DestinationProfile_DetailView" ClassName="Mahan.Stations.BusinessModel.DestinationProfile" IsNewNode="True" Removed="True">
       <Items IsNewNode="True">
         <PropertyEditor Id="Airport" PropertyName="Airport" IsNewNode="True" />
         <PropertyEditor Id="AirportId" PropertyName="AirportId" IsNewNode="True" />
@@ -687,7 +687,7 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
-    <DetailView Id="FlightReport_DetailView" ClassName="Mahan.Tralus.Stations.BusinessModel.FlightReport" AllowDelete="True" AllowEdit="True" AllowNew="True" IsNewNode="True" Removed="True">
+    <DetailView Id="FlightReport_DetailView" ClassName="Mahan.Stations.BusinessModel.FlightReport" AllowDelete="True" AllowEdit="True" AllowNew="True" IsNewNode="True" Removed="True">
       <Items IsNewNode="True">
         <PropertyEditor Id="ActualDepartureTimeUtc" PropertyName="FlightReportView.ActualDepartureDateTime.TimeUtc" Caption="ATD" IsNewNode="True" />
         <PropertyEditor Id="AircraftRegister" PropertyName="FlightReportView.AircraftRegister" View="" Caption="Register" AllowEdit="False" IsNewNode="True" />
@@ -825,7 +825,7 @@
         </LayoutGroup>
       </Layout>
     </DetailView>
-    <ListView Id="FlightReport_ListView_Base" ClassName="Mahan.Tralus.Stations.BusinessModel.FlightReport" IsNewNode="True" Removed="True">
+    <ListView Id="FlightReport_ListView_Base" ClassName="Mahan.Stations.BusinessModel.FlightReport" IsNewNode="True" Removed="True">
       <Columns IsNewNode="True">
         <ColumnInfo Id="CctEventDateTime" PropertyName="FlightReportView.CctEventDateTime" Width="44" Index="-1" View="" Caption="CCT" AllowEdit="False" IsNewNode="True" />
         <ColumnInfo Id="DctEventDateTime" PropertyName="FlightReportView.DctEventDateTime" Width="44" Index="-1" View="" Caption="DCT" AllowEdit="False" IsNewNode="True" />
@@ -1136,7 +1136,7 @@
       </Columns>
       <BandsLayout Enable="False" />
     </ListView>
-    <ListView Id="FR_Airport_Arrivals_ListView" ClassName="Mahan.Tralus.Stations.BusinessModel.FlightReport" Caption="FR Airport Arrivals" IsNewNode="True">
+    <ListView Id="FR_Airport_Arrivals_ListView" ClassName="Mahan.Stations.BusinessModel.FlightReport" Caption="FR Airport Arrivals" IsNewNode="True">
       <Columns IsNewNode="True">
         <ColumnInfo Id="FlightLeg" PropertyName="FlightLeg" Width="400" Index="-1" View="" IsNewNode="True" />
         <ColumnInfo Id="FlightLegId" PropertyName="FlightLegId" Width="70" Index="-1" IsNewNode="True" />
@@ -1166,7 +1166,7 @@
       </Columns>
       <BandsLayout Enable="False" IsNewNode="True" />
     </ListView>
-    <ListView Id="FR_Airport_Departures_ListView" ClassName="Mahan.Tralus.Stations.BusinessModel.FlightReport" Caption="FR Airport Departures" IsNewNode="True">
+    <ListView Id="FR_Airport_Departures_ListView" ClassName="Mahan.Stations.BusinessModel.FlightReport" Caption="FR Airport Departures" IsNewNode="True">
       <Columns IsNewNode="True">
         <ColumnInfo Id="FlightLeg" PropertyName="FlightLeg" Width="400" Index="-1" View="" IsNewNode="True" />
         <ColumnInfo Id="FlightLegId" PropertyName="FlightLegId" Width="70" Index="-1" IsNewNode="True" />
@@ -1196,7 +1196,7 @@
       </Columns>
       <BandsLayout Enable="False" IsNewNode="True" />
     </ListView>
-    <ListView Id="FR_All_Local_ListView" ClassName="Mahan.Tralus.Stations.BusinessModel.FlightReport" Caption="FR All Local" IsNewNode="True">
+    <ListView Id="FR_All_Local_ListView" ClassName="Mahan.Stations.BusinessModel.FlightReport" Caption="FR All Local" IsNewNode="True">
       <Columns IsNewNode="True">
         <ColumnInfo Id="FlightLeg" PropertyName="FlightLeg" Width="400" Index="-1" View="" IsNewNode="True" />
         <ColumnInfo Id="FlightLegId" PropertyName="FlightLegId" Width="70" Index="-1" IsNewNode="True" />
@@ -1227,7 +1227,7 @@
       </Columns>
       <BandsLayout Enable="False" IsNewNode="True" />
     </ListView>
-    <ListView Id="FR_All_UTC_ListView" ClassName="Mahan.Tralus.Stations.BusinessModel.FlightReport" Caption="FR All UTC" IsNewNode="True">
+    <ListView Id="FR_All_UTC_ListView" ClassName="Mahan.Stations.BusinessModel.FlightReport" Caption="FR All UTC" IsNewNode="True">
       <Columns IsNewNode="True">
         <ColumnInfo Id="FlightLeg" PropertyName="FlightLeg" Width="400" Index="-1" View="" IsNewNode="True" />
         <ColumnInfo Id="FlightLegId" PropertyName="FlightLegId" Width="70" Index="-1" IsNewNode="True" />
@@ -1257,7 +1257,7 @@
       </Columns>
       <BandsLayout Enable="False" IsNewNode="True" />
     </ListView>
-    <ListView Id="FR_Current_Local_ListView" ClassName="Mahan.Tralus.Stations.BusinessModel.FlightReport" Caption="FR Current Local" IsNewNode="True">
+    <ListView Id="FR_Current_Local_ListView" ClassName="Mahan.Stations.BusinessModel.FlightReport" Caption="FR Current Local" IsNewNode="True">
       <Columns IsNewNode="True">
         <ColumnInfo Id="FlightLeg" PropertyName="FlightLeg" Width="400" Index="-1" View="" IsNewNode="True" />
         <ColumnInfo Id="FlightLegId" PropertyName="FlightLegId" Width="70" Index="-1" IsNewNode="True" />
@@ -1287,7 +1287,7 @@
       </Columns>
       <BandsLayout Enable="False" IsNewNode="True" />
     </ListView>
-    <ListView Id="FR_Current_UTC_ListView" ClassName="Mahan.Tralus.Stations.BusinessModel.FlightReport" Caption="FR Current UTC" IsNewNode="True">
+    <ListView Id="FR_Current_UTC_ListView" ClassName="Mahan.Stations.BusinessModel.FlightReport" Caption="FR Current UTC" IsNewNode="True">
       <Columns IsNewNode="True">
         <ColumnInfo Id="FlightLeg" PropertyName="FlightLeg" Width="400" Index="-1" View="" IsNewNode="True" />
         <ColumnInfo Id="FlightLegId" PropertyName="FlightLegId" Width="70" Index="-1" IsNewNode="True" />
@@ -1317,25 +1317,25 @@
       </Columns>
       <BandsLayout Enable="False" IsNewNode="True" />
     </ListView>
-    <ListView Id="FR_ListView_All_UTC" ClassName="Mahan.Tralus.Stations.BusinessModel.FlightReport" Caption="FR All UTC" AllowDelete="False" IsNewNode="True">
+    <ListView Id="FR_ListView_All_UTC" ClassName="Mahan.Stations.BusinessModel.FlightReport" Caption="FR All UTC" AllowDelete="False" IsNewNode="True">
       <Columns IsNewNode="True">
         <ColumnInfo Id="FlightLeg" PropertyName="FlightLeg" Width="400" Index="0" IsNewNode="True" />
         <ColumnInfo Id="FlightLegId" PropertyName="FlightLegId" Width="70" Index="1" IsNewNode="True" />
       </Columns>
     </ListView>
-    <ListView Id="FR_ListView_Current_Local" ClassName="Mahan.Tralus.Stations.BusinessModel.FlightReport" Caption="FR Current Local" IsNewNode="True">
+    <ListView Id="FR_ListView_Current_Local" ClassName="Mahan.Stations.BusinessModel.FlightReport" Caption="FR Current Local" IsNewNode="True">
       <Columns IsNewNode="True">
         <ColumnInfo Id="FlightLeg" PropertyName="FlightLeg" Width="400" Index="0" IsNewNode="True" />
         <ColumnInfo Id="FlightLegId" PropertyName="FlightLegId" Width="70" Index="1" IsNewNode="True" />
       </Columns>
     </ListView>
-    <ListView Id="FR_ListView_Current_UTC" ClassName="Mahan.Tralus.Stations.BusinessModel.FlightReport" Caption="FR Current UTC" IsNewNode="True">
+    <ListView Id="FR_ListView_Current_UTC" ClassName="Mahan.Stations.BusinessModel.FlightReport" Caption="FR Current UTC" IsNewNode="True">
       <Columns IsNewNode="True">
         <ColumnInfo Id="FlightLeg" PropertyName="FlightLeg" Width="400" Index="0" IsNewNode="True" />
         <ColumnInfo Id="FlightLegId" PropertyName="FlightLegId" Width="70" Index="1" IsNewNode="True" />
       </Columns>
     </ListView>
-    <ListView Id="FR_Local_Arrivals_ListView" ClassName="Mahan.Tralus.Stations.BusinessModel.FlightReport" Caption="FR Local Arrivals" IsNewNode="True">
+    <ListView Id="FR_Local_Arrivals_ListView" ClassName="Mahan.Stations.BusinessModel.FlightReport" Caption="FR Local Arrivals" IsNewNode="True">
       <Columns IsNewNode="True">
         <ColumnInfo Id="FlightLeg" PropertyName="FlightLeg" Width="400" Index="-1" View="" IsNewNode="True" />
         <ColumnInfo Id="FlightLegId" PropertyName="FlightLegId" Width="70" Index="-1" IsNewNode="True" />
@@ -1365,7 +1365,7 @@
       </Columns>
       <BandsLayout Enable="False" IsNewNode="True" />
     </ListView>
-    <ListView Id="FR_Local_Departures_ListView" ClassName="Mahan.Tralus.Stations.BusinessModel.FlightReport" Caption="FR Local Departures" IsNewNode="True">
+    <ListView Id="FR_Local_Departures_ListView" ClassName="Mahan.Stations.BusinessModel.FlightReport" Caption="FR Local Departures" IsNewNode="True">
       <Columns IsNewNode="True">
         <ColumnInfo Id="FlightLeg" PropertyName="FlightLeg" Width="400" Index="-1" View="" IsNewNode="True" />
         <ColumnInfo Id="FlightLegId" PropertyName="FlightLegId" Width="70" Index="-1" IsNewNode="True" />
@@ -1395,7 +1395,7 @@
       </Columns>
       <BandsLayout Enable="False" IsNewNode="True" />
     </ListView>
-    <ListView Id="FR_UTC_Arrivals_ListView" ClassName="Mahan.Tralus.Stations.BusinessModel.FlightReport" Caption="FR UTC Arrivals" IsNewNode="True">
+    <ListView Id="FR_UTC_Arrivals_ListView" ClassName="Mahan.Stations.BusinessModel.FlightReport" Caption="FR UTC Arrivals" IsNewNode="True">
       <Columns IsNewNode="True">
         <ColumnInfo Id="FlightLeg" PropertyName="FlightLeg" Width="400" Index="-1" View="" IsNewNode="True" />
         <ColumnInfo Id="FlightLegId" PropertyName="FlightLegId" Width="70" Index="-1" IsNewNode="True" />
@@ -1425,7 +1425,7 @@
       </Columns>
       <BandsLayout Enable="False" IsNewNode="True" />
     </ListView>
-    <ListView Id="FR_UTC_Departures_ListView" ClassName="Mahan.Tralus.Stations.BusinessModel.FlightReport" Caption="FR UTC Departures" Criteria="" IsNewNode="True">
+    <ListView Id="FR_UTC_Departures_ListView" ClassName="Mahan.Stations.BusinessModel.FlightReport" Caption="FR UTC Departures" Criteria="" IsNewNode="True">
       <Columns IsNewNode="True">
         <ColumnInfo Id="FlightLeg" PropertyName="FlightLeg" Width="400" Index="-1" View="" IsNewNode="True" />
         <ColumnInfo Id="FlightLegId" PropertyName="FlightLegId" Width="70" Index="-1" IsNewNode="True" />

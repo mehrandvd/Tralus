@@ -1,17 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mahan.Tralus.Stations.Module", "Mahan.Tralus.Stations.Module\Mahan.Tralus.Stations.Module.csproj", "{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mahan.Stations.Module", "Mahan.Tralus.Stations.Module\Mahan.Stations.Module.csproj", "{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mahan.Tralus.Stations.Module.Web", "Mahan.Tralus.Stations.Module.Web\Mahan.Tralus.Stations.Module.Web.csproj", "{0C729AAD-7626-4668-A7F1-35F7D240489D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mahan.Stations.Module.Web", "Mahan.Tralus.Stations.Module.Web\Mahan.Stations.Module.Web.csproj", "{0C729AAD-7626-4668-A7F1-35F7D240489D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mahan.Tralus.Stations.Module.Win", "Mahan.Tralus.Stations.Module.Win\Mahan.Tralus.Stations.Module.Win.csproj", "{7964F87D-BC5D-4C4E-8B2F-71E89739AA97}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mahan.Stations.Module.Win", "Mahan.Tralus.Stations.Module.Win\Mahan.Stations.Module.Win.csproj", "{7964F87D-BC5D-4C4E-8B2F-71E89739AA97}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mahan.Tralus.Stations.Data", "Mahan.Tralus.Stations.Data\Mahan.Tralus.Stations.Data.csproj", "{95ED2C98-8E5B-4633-95F6-F46B0E1A2AAD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mahan.Stations.Data", "Mahan.Tralus.Stations.Data\Mahan.Stations.Data.csproj", "{95ED2C98-8E5B-4633-95F6-F46B0E1A2AAD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mahan.Tralus.Stations.Migration", "Mahan.Tralus.Stations.Migration\Mahan.Tralus.Stations.Migration.csproj", "{BF88A671-6683-4CBB-8B16-1E9DFC5CF467}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mahan.Stations.Migration", "Mahan.Tralus.Stations.Migration\Mahan.Stations.Migration.csproj", "{BF88A671-6683-4CBB-8B16-1E9DFC5CF467}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Runner.Win", "Runner.Win\Runner.Win.csproj", "{32984C10-93E5-452C-9603-9D14334E6D95}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -21,7 +21,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Runner.Win", "Runner.Win\Ru
 		{95ED2C98-8E5B-4633-95F6-F46B0E1A2AAD} = {95ED2C98-8E5B-4633-95F6-F46B0E1A2AAD}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mahan.Tralus.Stations.BusinessModel", "Mahan.Tralus.Stations.BusinessModel\Mahan.Tralus.Stations.BusinessModel.csproj", "{DAA58C45-936B-4E36-AF72-F28412C9B8AA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mahan.Stations.BusinessModel", "Mahan.Tralus.Stations.BusinessModel\Mahan.Stations.BusinessModel.csproj", "{DAA58C45-936B-4E36-AF72-F28412C9B8AA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Runner.Web", "Runner.Web\Runner.Web.csproj", "{560BA78F-AFA7-4073-A6EA-A8F8E1C060C8}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -87,35 +87,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 9
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = http://tfs.mahanair.aero:8080/tfs/mahan
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = Mahan.Tralus.Stations.Module.Web\\Mahan.Tralus.Stations.Module.Web.csproj
-		SccProjectName1 = Mahan.Tralus.Stations.Module.Web
-		SccLocalPath1 = Mahan.Tralus.Stations.Module.Web
-		SccProjectUniqueName2 = Mahan.Tralus.Stations.Module.Win\\Mahan.Tralus.Stations.Module.Win.csproj
-		SccProjectName2 = Mahan.Tralus.Stations.Module.Win
-		SccLocalPath2 = Mahan.Tralus.Stations.Module.Win
-		SccProjectUniqueName3 = Mahan.Tralus.Stations.Module\\Mahan.Tralus.Stations.Module.csproj
-		SccProjectName3 = Mahan.Tralus.Stations.Module
-		SccLocalPath3 = Mahan.Tralus.Stations.Module
-		SccProjectUniqueName4 = Mahan.Tralus.Stations.Data\\Mahan.Tralus.Stations.Data.csproj
-		SccProjectName4 = Mahan.Tralus.Stations.Data
-		SccLocalPath4 = Mahan.Tralus.Stations.Data
-		SccProjectUniqueName5 = Mahan.Tralus.Stations.Migration\\Mahan.Tralus.Stations.Migration.csproj
-		SccProjectName5 = Mahan.Tralus.Stations.Migration
-		SccLocalPath5 = Mahan.Tralus.Stations.Migration
-		SccProjectUniqueName6 = Runner.Win\\Runner.Win.csproj
-		SccProjectName6 = Runner.Win
-		SccLocalPath6 = Runner.Win
-		SccProjectUniqueName7 = Mahan.Tralus.Stations.BusinessModel\\Mahan.Tralus.Stations.BusinessModel.csproj
-		SccProjectName7 = Mahan.Tralus.Stations.BusinessModel
-		SccLocalPath7 = Mahan.Tralus.Stations.BusinessModel
-		SccProjectUniqueName8 = Runner.Web\\Runner.Web.csproj
-		SccProjectName8 = Runner.Web
-		SccLocalPath8 = Runner.Web
 	EndGlobalSection
 EndGlobal

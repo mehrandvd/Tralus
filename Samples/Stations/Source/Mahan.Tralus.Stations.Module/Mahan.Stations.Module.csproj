@@ -8,8 +8,8 @@
     <ProjectGuid>{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Mahan.Tralus.Stations.Module</RootNamespace>
-    <AssemblyName>Mahan.Tralus.Stations.Module</AssemblyName>
+    <RootNamespace>Mahan.Stations.Module</RootNamespace>
+    <AssemblyName>Mahan.Stations.Module</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -48,22 +48,25 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.ExpressApp.EF.45.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.ExpressApp.EF.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Persistent.BaseImpl.EF.v15.1, Version=15.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.Persistent.BaseImpl.EF.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Printing.v15.1.Core">
+    <Reference Include="DevExpress.Printing.v15.2.Core">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Data.v15.1">
+    <Reference Include="DevExpress.Data.v15.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.v15.1">
+    <Reference Include="DevExpress.ExpressApp.Xpo.v15.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Persistent.Base.v15.1">
+    <Reference Include="DevExpress.ExpressApp.v15.2">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Persistent.Base.v15.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="EntityFramework">
@@ -72,21 +75,9 @@
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="Mahan.Tralus.Framework.BusinessModel">
-      <HintPath>..\..\..\..\..\..\..\Users\hamidreza.mahyar\TralusLocal\web\bin\Mahan.Tralus.Framework.BusinessModel.dll</HintPath>
-    </Reference>
-    <Reference Include="Mahan.Tralus.Framework.Data">
-      <HintPath>..\..\..\..\..\..\..\Users\hamidreza.mahyar\TralusLocal\web\bin\Mahan.Tralus.Framework.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="Mahan.Tralus.Framework.Module">
-      <HintPath>..\..\..\..\..\..\..\Users\hamidreza.mahyar\TralusLocal\web\bin\Mahan.Tralus.Framework.Module.dll</HintPath>
-    </Reference>
-    <Reference Include="Mahan.Tralus.Framework.Utility, Version=1.0.0.111, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Mahan.Infrastructure.BusinessModel, Version=1.0.0.25, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\TralusLocal\win\Mahan.Tralus.Framework.Utility.dll</HintPath>
-    </Reference>
-    <Reference Include="Mahan.Tralus.Infrastructure.BusinessModel, Version=1.0.0.25, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\TralusLocal\win\Mahan.Infrastructure.BusinessModel.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <Name>System</Name>
@@ -103,6 +94,22 @@
     <Reference Include="System.Xml">
       <Name>System.XML</Name>
       <Private>False</Private>
+    </Reference>
+    <Reference Include="Tralus.Framework.BusinessModel, Version=1.0.0.126, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\TralusLocal\win\Tralus.Framework.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Tralus.Framework.Data, Version=1.0.0.126, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\TralusLocal\win\Tralus.Framework.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Tralus.Framework.Module, Version=1.0.0.126, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\TralusLocal\win\Tralus.Framework.Module.dll</HintPath>
+    </Reference>
+    <Reference Include="Tralus.Framework.Utility, Version=1.0.0.126, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\TralusLocal\win\Tralus.Framework.Utility.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -166,13 +173,13 @@
     <Content Include="Welcome.html" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Mahan.Tralus.Stations.BusinessModel\Mahan.Tralus.Stations.BusinessModel.csproj">
+    <ProjectReference Include="..\Mahan.Tralus.Stations.BusinessModel\Mahan.Stations.BusinessModel.csproj">
       <Project>{daa58c45-936b-4e36-af72-f28412c9b8aa}</Project>
-      <Name>Mahan.Tralus.Stations.BusinessModel</Name>
+      <Name>Mahan.Stations.BusinessModel</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Mahan.Tralus.Stations.Data\Mahan.Tralus.Stations.Data.csproj">
+    <ProjectReference Include="..\Mahan.Tralus.Stations.Data\Mahan.Stations.Data.csproj">
       <Project>{95ed2c98-8e5b-4633-95f6-f46b0e1a2aad}</Project>
-      <Name>Mahan.Tralus.Stations.Data</Name>
+      <Name>Mahan.Stations.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

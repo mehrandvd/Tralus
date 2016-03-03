@@ -2,10 +2,10 @@ using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Mahan.Tralus.Framework.BusinessModel.Entities;
-using Mahan.Tralus.Infrastructure.BusinessModel;
+using Tralus.Framework.BusinessModel.Entities;
+using Mahan.Infrastructure.BusinessModel;
 
-namespace Mahan.Tralus.Stations.BusinessModel
+namespace Mahan.Stations.BusinessModel
 {
     [Table("FlightDelay", Schema = "Stations")]
     [DefaultProperty("Duration")]

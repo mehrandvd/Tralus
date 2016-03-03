@@ -1,8 +1,8 @@
-;#DropDB Mahan.Tralus.StationsEasyTest
+;#DropDB Mahan.StationsEasyTest
 
-#Application Mahan.Tralus.Stations.Win
-#Application Mahan.Tralus.Stations.Web
-#IfDef Mahan.Tralus.Stations.Win
+#Application Mahan.Stations.Win
+#Application Mahan.Stations.Web
+#IfDef Mahan.Stations.Win
 
 *Action About...
  
@@ -10,7 +10,7 @@
 
 #EndIf
 
-#IfDef Mahan.Tralus.Stations.Web
+#IfDef Mahan.Stations.Web
 
 *Action Choose Theme(Black Glass)
 

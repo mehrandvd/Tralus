@@ -1,7 +1,7 @@
 ﻿using DevExpress.ExpressApp.DC;
-using Mahan.Tralus.Framework.BusinessModel.Entities;
-using Mahan.Tralus.Framework.BusinessModel.Utility;
-using Mahan.Tralus.Infrastructure.BusinessModel;
+using Tralus.Framework.BusinessModel.Entities;
+using Tralus.Framework.BusinessModel.Utility;
+using Mahan.Infrastructure.BusinessModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mahan.Tralus.Stations.BusinessModel
+namespace Mahan.Stations.BusinessModel
 {
     
     [Table("FlightReportFilters", Schema = "Stations")]

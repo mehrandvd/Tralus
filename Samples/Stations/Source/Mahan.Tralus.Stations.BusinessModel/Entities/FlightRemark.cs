@@ -2,12 +2,12 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Mahan.Tralus.Framework.BusinessModel;
-using Mahan.Tralus.Framework.BusinessModel.Entities;
-using Mahan.Tralus.Framework.BusinessModel.Utility;
-using Mahan.Tralus.Infrastructure.BusinessModel;
+using Tralus.Framework.BusinessModel;
+using Tralus.Framework.BusinessModel.Entities;
+using Tralus.Framework.BusinessModel.Utility;
+using Mahan.Infrastructure.BusinessModel;
 
-namespace Mahan.Tralus.Stations.BusinessModel
+namespace Mahan.Stations.BusinessModel
 {
     [Table("FlightRemark", Schema = "Stations")]
     [DefaultProperty("Remark")]

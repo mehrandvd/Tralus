@@ -5,9 +5,9 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-using Mahan.Tralus.Infrastructure.BusinessModel;
+using Mahan.Infrastructure.BusinessModel;
 
-namespace Mahan.Tralus.Stations.BusinessModel
+namespace Mahan.Stations.BusinessModel
 {
     public partial class DestinationProfile
     {

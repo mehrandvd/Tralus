@@ -12,9 +12,9 @@ using DevExpress.ExpressApp.Updating;
 using DevExpress.ExpressApp.Model.Core;
 using DevExpress.ExpressApp.Model.DomainLogics;
 using DevExpress.ExpressApp.Model.NodeGenerators;
-using Mahan.Tralus.Framework.Module.Win;
+using Tralus.Framework.Module.Win;
 
-namespace Mahan.Tralus.Stations.Module.Win {
+namespace Mahan.Stations.Module.Win {
     [ToolboxItemFilter("Xaf.Platform.Win")]
     // For more typical usage scenarios, be sure to check out http://documentation.devexpress.com/#Xaf/clsDevExpressExpressAppModuleBasetopic.
     public sealed partial class StationsWindowsFormsModule : TralusWinModule {

@@ -1,4 +1,4 @@
-namespace Mahan.Tralus.Stations.BusinessModel
+namespace Mahan.Stations.BusinessModel
 {
     public enum FlightStatus
     {

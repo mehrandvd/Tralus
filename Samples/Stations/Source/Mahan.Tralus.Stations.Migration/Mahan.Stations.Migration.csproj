@@ -7,8 +7,8 @@
     <ProjectGuid>{BF88A671-6683-4CBB-8B16-1E9DFC5CF467}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Mahan.Tralus.Stations.Migration</RootNamespace>
-    <AssemblyName>Mahan.Tralus.Stations.Migration</AssemblyName>
+    <RootNamespace>Mahan.Stations.Migration</RootNamespace>
+    <AssemblyName>Mahan.Stations.Migration</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
@@ -40,20 +40,6 @@
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="Mahan.Tralus.Framework.BusinessModel">
-      <HintPath>..\..\..\..\..\..\..\Users\hamidreza.mahyar\TralusLocal\web\bin\Mahan.Tralus.Framework.BusinessModel.dll</HintPath>
-    </Reference>
-    <Reference Include="Mahan.Tralus.Framework.Data">
-      <HintPath>..\..\..\..\..\..\..\Users\hamidreza.mahyar\TralusLocal\web\bin\Mahan.Tralus.Framework.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="Mahan.Tralus.Framework.Migration, Version=1.0.0.95, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Users\mehran.davoodi\TralusLocal\win\Mahan.Tralus.Framework.Migration.dll</HintPath>
-    </Reference>
-    <Reference Include="Mahan.Tralus.Framework.Utility, Version=1.0.0.70, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\Users\hamidreza.mahyar\TralusLocal\web\bin\Mahan.Tralus.Framework.Utility.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -62,6 +48,22 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="Tralus.Framework.BusinessModel, Version=1.0.0.126, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\TralusLocal\win\Tralus.Framework.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Tralus.Framework.Data, Version=1.0.0.126, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\TralusLocal\win\Tralus.Framework.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Tralus.Framework.Migration, Version=1.0.0.126, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\TralusLocal\win\Tralus.Framework.Migration.dll</HintPath>
+    </Reference>
+    <Reference Include="Tralus.Framework.Utility, Version=1.0.0.126, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\TralusLocal\win\Tralus.Framework.Utility.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Migrations\201509291438412_MergeFrameworkChanges.cs" />
@@ -117,13 +119,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Mahan.Tralus.Stations.BusinessModel\Mahan.Tralus.Stations.BusinessModel.csproj">
+    <ProjectReference Include="..\Mahan.Tralus.Stations.BusinessModel\Mahan.Stations.BusinessModel.csproj">
       <Project>{daa58c45-936b-4e36-af72-f28412c9b8aa}</Project>
-      <Name>Mahan.Tralus.Stations.BusinessModel</Name>
+      <Name>Mahan.Stations.BusinessModel</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Mahan.Tralus.Stations.Data\Mahan.Tralus.Stations.Data.csproj">
+    <ProjectReference Include="..\Mahan.Tralus.Stations.Data\Mahan.Stations.Data.csproj">
       <Project>{95ed2c98-8e5b-4633-95f6-f46b0e1a2aad}</Project>
-      <Name>Mahan.Tralus.Stations.Data</Name>
+      <Name>Mahan.Stations.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

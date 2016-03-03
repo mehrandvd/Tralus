@@ -13,9 +13,9 @@ using DevExpress.ExpressApp.Templates;
 using DevExpress.ExpressApp.Utils;
 using DevExpress.Persistent.Base;
 using DevExpress.Persistent.Validation;
-using Mahan.Tralus.Stations.BusinessModel;
+using Mahan.Stations.BusinessModel;
 
-namespace Mahan.Tralus.Stations.Module.Controllers
+namespace Mahan.Stations.Module.Controllers
 {
     // For more typical usage scenarios, be sure to check out http://documentation.devexpress.com/#Xaf/clsDevExpressExpressAppViewControllertopic.
     public partial class ReportViewListFilter : ViewController<ListView>

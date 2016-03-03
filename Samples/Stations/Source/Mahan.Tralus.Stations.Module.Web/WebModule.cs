@@ -12,9 +12,9 @@ using DevExpress.ExpressApp.Updating;
 using DevExpress.ExpressApp.Model.Core;
 using DevExpress.ExpressApp.Model.DomainLogics;
 using DevExpress.ExpressApp.Model.NodeGenerators;
-using Mahan.Tralus.Framework.Module.Web;
+using Tralus.Framework.Module.Web;
 
-namespace Mahan.Tralus.Stations.Module.Web {
+namespace Mahan.Stations.Module.Web {
     [ToolboxItemFilter("Xaf.Platform.Web")]
     // For more typical usage scenarios, be sure to check out http://documentation.devexpress.com/#Xaf/clsDevExpressExpressAppModuleBasetopic.
     public sealed partial class StationsAspNetModule : TralusWebModule {

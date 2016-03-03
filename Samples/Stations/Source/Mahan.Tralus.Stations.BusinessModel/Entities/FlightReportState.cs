@@ -4,9 +4,9 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.CompilerServices;
 using DevExpress.Persistent.Base;
-using Mahan.Tralus.Framework.BusinessModel.Entities;
+using Tralus.Framework.BusinessModel.Entities;
 
-namespace Mahan.Tralus.Stations.BusinessModel
+namespace Mahan.Stations.BusinessModel
 {
     [Table("FlightReportState", Schema = "Stations")]
     [DefaultProperty("Name")]

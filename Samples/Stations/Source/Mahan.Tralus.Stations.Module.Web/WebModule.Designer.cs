@@ -1,4 +1,4 @@
-namespace Mahan.Tralus.Stations.Module.Web {
+namespace Mahan.Stations.Module.Web {
     partial class StationsAspNetModule {
         /// <summary> 
         /// Required designer variable.
@@ -26,9 +26,9 @@ namespace Mahan.Tralus.Stations.Module.Web {
             // 
             // StationsAspNetModule
             // 
-            this.RequiredModuleTypes.Add(typeof(Mahan.Tralus.Stations.Module.StationsModule));
+            this.RequiredModuleTypes.Add(typeof(Mahan.Stations.Module.StationsModule));
             this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Web.SystemModule.SystemAspNetModule));
-            this.RequiredModuleTypes.Add(typeof(Mahan.Tralus.Framework.Module.Web.TralusWebModule));
+            this.RequiredModuleTypes.Add(typeof(Tralus.Framework.Module.Web.TralusWebModule));
         }
 
         #endregion

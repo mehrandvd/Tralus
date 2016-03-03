@@ -1,4 +1,4 @@
-namespace Mahan.Tralus.Stations.Module.Controllers
+namespace Mahan.Stations.Module.Controllers
 {
     partial class ReportViewListFilter
     {
