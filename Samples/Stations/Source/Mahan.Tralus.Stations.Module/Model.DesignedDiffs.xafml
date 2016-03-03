@@ -88,12 +88,6 @@
         <Member Name="FlightReport.FlightReportState" IsCustom="True" IsCalculated="False" Caption="FlightReport_FlightReportState" IsNewNode="True" />
       </OwnMembers>
     </Class>
-    <Class Name="Mahan.Stations.BusinessModel.FuellingType">
-      <OwnMembers>
-        <Member Name="Code" LookupEditorMode="AllItems" />
-        <Member Name="Name" IsCustom="True" IsCalculated="False" IsNewNode="True" />
-      </OwnMembers>
-    </Class>
   </BOModel>
   <NavigationItems DefaultChildItemsDisplayStyle="List">
     <Items>
