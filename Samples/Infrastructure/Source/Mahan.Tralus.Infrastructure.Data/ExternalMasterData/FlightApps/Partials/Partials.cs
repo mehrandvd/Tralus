@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mahan.Tralus.Infrastructure.Data.ExternalMasterData.FlightApps
+namespace Mahan.Infrastructure.Data.ExternalMasterData.FlightApps
 {
     public partial class GI_Airport
     {

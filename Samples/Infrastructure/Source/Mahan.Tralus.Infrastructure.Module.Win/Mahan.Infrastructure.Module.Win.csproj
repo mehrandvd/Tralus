@@ -5,12 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{D05D93DF-312D-4D4E-B980-726871EC7833}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <ProjectGuid>{7964F87D-BC5D-4C4E-8B2F-71E89739AA97}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Mahan.Tralus.Infrastructure.Win</RootNamespace>
-    <AssemblyName>Mahan.Tralus.Infrastructure.Win</AssemblyName>
-    <ApplicationIcon>ExpressApp.ico</ApplicationIcon>
+    <RootNamespace>Mahan.Infrastructure.Module.Win</RootNamespace>
+    <AssemblyName>Mahan.Infrastructure.Module.Win</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -46,7 +45,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -55,7 +53,6 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'EasyTest|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -64,27 +61,12 @@
     <DebugType>full</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.ExpressApp.EF.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Office.v15.2.Core">
-      <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="DevExpress.Persistent.BaseImpl.EF.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="DevExpress.RichEdit.v15.2.Core">
-      <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="DevExpress.Utils.v15.2">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="DevExpress.BonusSkins.v15.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="DevExpress.Printing.v15.2.Core">
@@ -99,45 +81,17 @@
     <Reference Include="DevExpress.ExpressApp.v15.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.Images.v15.2">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
     <Reference Include="DevExpress.ExpressApp.Win.v15.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="DevExpress.Persistent.Base.v15.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.XtraGrid.v15.2">
+    <Reference Include="DevExpress.XtraEditors.v15.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="DevExpress.XtraBars.v15.2">
       <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="DevExpress.XtraEditors.v15.2">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="DevExpress.XtraLayout.v15.2">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="DevExpress.XtraNavBar.v15.2">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="DevExpress.XtraPrinting.v15.2">
-      <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="DevExpress.XtraRichEdit.v15.2">
-      <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="DevExpress.XtraTreeList.v15.2">
-      <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="DevExpress.XtraVerticalGrid.v15.2">
-      <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
     </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
@@ -168,58 +122,54 @@
       <Name>System.XML</Name>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Tralus.Framework.BusinessModel">
+      <HintPath>..\..\..\..\..\..\..\TralusLocal\win\Tralus.Framework.BusinessModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Tralus.Framework.Data">
+      <HintPath>..\..\..\..\..\..\..\TralusLocal\win\Tralus.Framework.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Tralus.Framework.Module">
+      <HintPath>..\..\..\..\..\..\..\TralusLocal\win\Tralus.Framework.Module.dll</HintPath>
+    </Reference>
+    <Reference Include="Tralus.Framework.Module.Win">
+      <HintPath>..\..\..\..\..\..\..\TralusLocal\win\Tralus.Framework.Module.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="Tralus.Framework.Utility">
+      <HintPath>..\..\..\..\..\..\..\TralusLocal\win\Tralus.Framework.Utility.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="WinApplication.resx">
-      <DependentUpon>WinApplication.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="WinApplication.cs">
+    <Compile Include="WinModule.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="WinApplication.Designer.cs">
-      <DependentUpon>WinApplication.cs</DependentUpon>
-    </Compile>
-    <None Include="App.config" />
-    <Content Include="Model.xafml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WinModule.Designer.cs">
+      <DependentUpon>WinModule.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ExpressApp.ico" />
+    <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="WinModule.resx">
+      <DependentUpon>WinModule.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mahan.Tralus.Infrastructure.Module\Mahan.Infrastructure.Module.csproj">
+      <Project>{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}</Project>
+      <Name>Mahan.Infrastructure.Module</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Controllers\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Editors\ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Images\ReadMe.txt" />
     <None Include="ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Mahan.Tralus.Infrastructure.Module.Win\Mahan.Tralus.Infrastructure.Module.Win.csproj">
-      <Project>{7964F87D-BC5D-4C4E-8B2F-71E89739AA97}</Project>
-      <Name>Mahan.Tralus.Infrastructure.Module.Win</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Mahan.Tralus.Infrastructure.Module\Mahan.Tralus.Infrastructure.Module.csproj">
-      <Project>{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}</Project>
-      <Name>Mahan.Tralus.Infrastructure.Module</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -239,6 +189,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>powershell -noprofile -command "&amp; {Copy-Item '$(TargetPath)' (Join-Path $HOME 'TralusLocal\win') -Force -Recurse -Verbos}"</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

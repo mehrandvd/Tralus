@@ -5,9 +5,9 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using DevExpress.ExpressApp.DC;
-using Mahan.Tralus.Framework.BusinessModel.Entities;
+using Tralus.Framework.BusinessModel.Entities;
 
-namespace Mahan.Tralus.Infrastructure.BusinessModel
+namespace Mahan.Infrastructure.BusinessModel
 {
     [Table("AirlineStation", Schema = "Infrastructure")]
     [DefaultProperty("NameEn")]

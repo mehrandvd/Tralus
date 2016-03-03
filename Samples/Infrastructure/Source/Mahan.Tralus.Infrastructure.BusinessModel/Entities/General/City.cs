@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Mahan.Tralus.Framework.BusinessModel.Entities;
-using TimeZone = Mahan.Tralus.Infrastructure.BusinessModel;
+using Tralus.Framework.BusinessModel.Entities;
+using TimeZone = Mahan.Infrastructure.BusinessModel;
 
-namespace Mahan.Tralus.Infrastructure.BusinessModel
+namespace Mahan.Infrastructure.BusinessModel
 {
     [Table("City", Schema = "Infrastructure")]
     [DefaultProperty("Name")]

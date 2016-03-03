@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mahan.Tralus.Infrastructure.Migration
+namespace Mahan.Infrastructure.Migration
 {
     class Program
     {

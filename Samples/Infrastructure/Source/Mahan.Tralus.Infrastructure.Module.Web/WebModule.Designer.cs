@@ -1,4 +1,4 @@
-namespace Mahan.Tralus.Infrastructure.Module.Web {
+namespace Mahan.Infrastructure.Module.Web {
     partial class InfrastructureAspNetModule {
         /// <summary> 
         /// Required designer variable.
@@ -26,9 +26,9 @@ namespace Mahan.Tralus.Infrastructure.Module.Web {
             // 
             // InfrastructureAspNetModule
             // 
-            this.RequiredModuleTypes.Add(typeof(Mahan.Tralus.Infrastructure.Module.InfrastructureModule));
+            this.RequiredModuleTypes.Add(typeof(Mahan.Infrastructure.Module.InfrastructureModule));
             this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Web.SystemModule.SystemAspNetModule));
-            this.RequiredModuleTypes.Add(typeof(Mahan.Tralus.Framework.Module.Web.TralusWebModule));
+            this.RequiredModuleTypes.Add(typeof(Tralus.Framework.Module.Web.TralusWebModule));
         }
 
         #endregion

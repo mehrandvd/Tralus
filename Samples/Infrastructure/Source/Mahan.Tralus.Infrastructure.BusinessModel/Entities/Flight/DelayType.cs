@@ -6,9 +6,9 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity.Core.Metadata.Edm;
 using DevExpress.ExpressApp.DC;
-using Mahan.Tralus.Framework.BusinessModel.Entities;
+using Tralus.Framework.BusinessModel.Entities;
 
-namespace Mahan.Tralus.Infrastructure.BusinessModel
+namespace Mahan.Infrastructure.BusinessModel
 {
     [Table("DelayType", Schema = "Infrastructure")]
     [DefaultProperty("Name")]

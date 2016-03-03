@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DevExpress.ExpressApp.Security;
-using Mahan.Tralus.Framework.BusinessModel.Entities;
-using Mahan.Tralus.Framework.Module;
+using Tralus.Framework.BusinessModel.Entities;
+using Tralus.Framework.Module;
 
-namespace Mahan.Tralus.Infrastructure.Module.Security
+namespace Mahan.Infrastructure.Module.Security
 {
     public class EntityLogicPermission<TBusinessLogic, TBusinessLogicEntity> : IOperationPermission
         where TBusinessLogic : TralusEntityBusinessLogic<TBusinessLogicEntity>

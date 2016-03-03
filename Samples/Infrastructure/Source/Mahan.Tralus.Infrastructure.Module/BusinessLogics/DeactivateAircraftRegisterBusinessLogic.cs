@@ -1,7 +1,7 @@
-using Mahan.Tralus.Framework.Module;
-using Mahan.Tralus.Infrastructure.BusinessModel;
+using Tralus.Framework.Module;
+using Mahan.Infrastructure.BusinessModel;
 
-namespace Mahan.Tralus.Infrastructure.Module.BusinessLogics
+namespace Mahan.Infrastructure.Module.BusinessLogics
 {
     public class DeactivateAircraftRegisterBusinessLogic : TralusEntityBusinessLogic<AircraftRegister>
     {

@@ -1,8 +1,8 @@
-﻿using Mahan.Tralus.Framework.Module;
-using Mahan.Tralus.Infrastructure.BusinessModel;
-using Mahan.Tralus.Infrastructure.Module.BusinessLogics;
+﻿using Tralus.Framework.Module;
+using Mahan.Infrastructure.BusinessModel;
+using Mahan.Infrastructure.Module.BusinessLogics;
 
-namespace Mahan.Tralus.Infrastructure.Module.Controllers
+namespace Mahan.Infrastructure.Module.Controllers
 {
     public class DeactivateAircraftRegisterController : TralusBusinessLogicViewController<AircraftRegister, DeactivateAircraftRegisterBusinessLogic>
     {

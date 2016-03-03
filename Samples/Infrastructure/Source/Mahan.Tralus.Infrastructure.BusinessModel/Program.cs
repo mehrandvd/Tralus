@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mahan.Tralus.Infrastructure.BusinessModel
+namespace Mahan.Infrastructure.BusinessModel
 {
     class Program
     {

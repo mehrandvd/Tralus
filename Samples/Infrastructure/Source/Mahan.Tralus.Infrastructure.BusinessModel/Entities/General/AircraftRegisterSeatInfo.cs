@@ -2,10 +2,10 @@ using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Globalization;
-using Mahan.Tralus.Framework.BusinessModel.Entities;
-using Mahan.Tralus.Framework.BusinessModel.Utility;
+using Tralus.Framework.BusinessModel.Entities;
+using Tralus.Framework.BusinessModel.Utility;
 
-namespace Mahan.Tralus.Infrastructure.BusinessModel
+namespace Mahan.Infrastructure.BusinessModel
 {
     [Table("AircraftRegisterSeatInfo", Schema = "Infrastructure")]
     [DefaultProperty("AircraftRegister")]

@@ -5,12 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DevExpress.ExpressApp;
-using Mahan.Tralus.Framework.BusinessModel.Utility;
-using Mahan.Tralus.Infrastructure.BusinessModel;
-using Mahan.Tralus.Infrastructure.Data;
-using Mahan.Tralus.Infrastructure.Module.BusinessLogics;
+using Tralus.Framework.BusinessModel.Utility;
+using Mahan.Infrastructure.BusinessModel;
+using Mahan.Infrastructure.Data;
+using Mahan.Infrastructure.Module.BusinessLogics;
 
-namespace Mahan.Tralus.Infrastructure.Module.EventManagementLogics
+namespace Mahan.Infrastructure.Module.EventManagementLogics
 {
     public class ImportMasterDataFromFlightAppsIntervalWorker : IntervalWorker<InfrastructureDbContext>
     {

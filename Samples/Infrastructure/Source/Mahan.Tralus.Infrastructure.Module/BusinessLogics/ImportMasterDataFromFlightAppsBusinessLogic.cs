@@ -7,14 +7,14 @@ using System.Text;
 using System.Threading.Tasks;
 using DevExpress.ExpressApp;
 using DevExpress.XtraPrinting.Native;
-using Mahan.Tralus.Framework.BusinessModel.Entities;
-using Mahan.Tralus.Framework.BusinessModel.Utility;
-using Mahan.Tralus.Framework.Module;
-using Mahan.Tralus.Infrastructure.BusinessModel;
-using Mahan.Tralus.Infrastructure.Data;
-using Mahan.Tralus.Infrastructure.Data.ExternalMasterData.FlightApps;
+using Tralus.Framework.BusinessModel.Entities;
+using Tralus.Framework.BusinessModel.Utility;
+using Tralus.Framework.Module;
+using Mahan.Infrastructure.BusinessModel;
+using Mahan.Infrastructure.Data;
+using Mahan.Infrastructure.Data.ExternalMasterData.FlightApps;
 
-namespace Mahan.Tralus.Infrastructure.Module.BusinessLogics
+namespace Mahan.Infrastructure.Module.BusinessLogics
 {
     public class ImportMasterDataFromFlightAppsBusinessLogic : TralusEntityBusinessLogic<ImportMasterDataLog>
     {

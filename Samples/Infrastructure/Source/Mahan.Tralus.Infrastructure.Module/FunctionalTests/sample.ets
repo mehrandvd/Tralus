@@ -1,8 +1,8 @@
-;#DropDB Mahan.Tralus.InfrastructureEasyTest
+;#DropDB Mahan.InfrastructureEasyTest
 
-#Application Mahan.Tralus.Infrastructure.Win
-#Application Mahan.Tralus.Infrastructure.Web
-#IfDef Mahan.Tralus.Infrastructure.Win
+#Application Mahan.Infrastructure.Win
+#Application Mahan.Infrastructure.Web
+#IfDef Mahan.Infrastructure.Win
 
 *Action About...
  
@@ -10,7 +10,7 @@
 
 #EndIf
 
-#IfDef Mahan.Tralus.Infrastructure.Web
+#IfDef Mahan.Infrastructure.Web
 
 *Action Choose Theme(Black Glass)
 

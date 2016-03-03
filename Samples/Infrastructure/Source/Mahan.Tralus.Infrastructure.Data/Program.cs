@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mahan.Tralus.Infrastructure.Data
+namespace Mahan.Infrastructure.Data
 {
     class Program
     {
