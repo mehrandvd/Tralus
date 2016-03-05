@@ -26,41 +26,41 @@ namespace Tralus.Shell.Web
         public ShellAspNetApplication()
         {
             InitializeComponent();
-            
-            try
-            {
-                AppDomain.CurrentDomain.AssemblyResolve += (sender, args) =>
-                {
-                    var location = Path.Combine(AppDomain.CurrentDomain.RelativeSearchPath,
-                        args.Name.Split(',')[0] + ".dll");
-                    if (File.Exists(location))
-                    {
-                        var assembly = Assembly.LoadFrom(location);
-                        return assembly;
-                    }
-                    return null;
-                };
 
-                ReflectionHelper.GetImportedModules(out _loadedModuleTypes, out _loadedContextTypes);
-                foreach (var loadedModuleType in _loadedModuleTypes)
-                {
-                    var loadedModule = (ModuleBase)Activator.CreateInstance(loadedModuleType);
-                    Modules.Insert(0, loadedModule);
-                }
-            }
-            catch
+            //try
+            //{
+            //    AppDomain.CurrentDomain.AssemblyResolve += (sender, args) =>
+            //    {
+            //        var location = Path.Combine(AppDomain.CurrentDomain.RelativeSearchPath,
+            //            args.Name.Split(',')[0] + ".dll");
+            //        if (File.Exists(location))
+            //        {
+            //            var assembly = Assembly.LoadFrom(location);
+            //            return assembly;
+            //        }
+            //        return null;
+            //    };
+
+            //    ReflectionHelper.GetImportedModules(out _loadedModuleTypes, out _loadedContextTypes);
+            foreach (var loadedModuleType in Global.LoadedModuleTypes)
             {
-                Trace.WriteLine(string.Format("Unable to load modules."));
+                var loadedModule = (ModuleBase)Activator.CreateInstance(loadedModuleType);
+                Modules.Insert(0, loadedModule);
             }
+            //}
+            //catch
+            //{
+            //    Trace.WriteLine(string.Format("Unable to load modules."));
+            //}
 
         }
 
-        private IEnumerable<Type> _loadedModuleTypes;
-        private IEnumerable<Type> _loadedContextTypes;
+        //private IEnumerable<Type> _loadedModuleTypes;
+        //private IEnumerable<Type> _loadedContextTypes;
 
         protected override void CreateDefaultObjectSpaceProvider(CreateCustomObjectSpaceProviderEventArgs args)
         {
-            foreach (var dbContext in _loadedContextTypes)
+            foreach (var dbContext in Global.LoadedContextTypes)
             {
                 args.ObjectSpaceProviders.Add(
                     args.Connection != null ?

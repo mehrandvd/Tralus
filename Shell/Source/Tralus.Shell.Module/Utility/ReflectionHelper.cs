@@ -27,18 +27,10 @@ namespace Tralus.Shell.Module.Utility
 
             foreach (var moduleInfosStr in moduleInfosStrings.Split(','))
             {
-                try
-                {
-                    if (string.IsNullOrWhiteSpace(moduleInfosStr))
-                        continue;
+                if (string.IsNullOrWhiteSpace(moduleInfosStr))
+                    continue;
 
-                    LoadModule(moduleInfosStr, tempImprtedModule, tempDbContext);
-                }
-                catch (Exception)
-                {
-
-                    throw;
-                }
+                LoadModule(moduleInfosStr, tempImprtedModule, tempDbContext);
             }
 
             importedModules = tempImprtedModule;
@@ -66,15 +58,15 @@ namespace Tralus.Shell.Module.Utility
             }
 
 
-            var modules = moduleAssembly.GetTypes().Where(t => t.IsSubclassOf(typeof (TralusModule)));
+            var modules = moduleAssembly.GetTypes().Where(t => t.IsSubclassOf(typeof(TralusModule)));
             var modulesSpecific = moduleCustomAssembly.GetTypes().Where(
                 t => t.IsSubclassOf(typeof(TralusModule)) && !t.FullName.Contains("TralusWinModule") && !t.FullName.Contains("TralusWebModule"));
 
             tempImprtedModule.AddRange(modules.Concat(modulesSpecific));
 
             tempDbContext.AddRange(dataAssembly.GetTypes().Where(
-                t => t.IsSubclassOf(typeof (DbContextBase)) && !t.IsAbstract && !t.FullName.Contains("DbContextBase"))
-                
+                t => t.IsSubclassOf(typeof(DbContextBase)) && !t.IsAbstract && !t.FullName.Contains("DbContextBase"))
+
                 );
         }
     }
