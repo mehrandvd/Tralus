@@ -24,10 +24,8 @@ namespace Tralus.Shell.Web
         public static IEnumerable<Type> LoadedModuleTypes;
         public static IEnumerable<Type> LoadedContextTypes;
 
-        public Global()
+        static Global()
         {
-            InitializeComponent();
-
             if (ConfigurationManager.AppSettings["ApplicationStyle"] == "New")
                 WebApplication.Instance.SwitchToNewStyle();
 
@@ -52,10 +50,17 @@ namespace Tralus.Shell.Web
                 //    Modules.Insert(0, loadedModule);
                 //}
             }
-            catch(Exception exception)
+            catch (Exception exception)
             {
                 Trace.WriteLine($"Unable to load modules: {exception}");
             }
+        }
+
+        public Global()
+        {
+            InitializeComponent();
+
+           
 
         }
         protected void Application_Start(Object sender, EventArgs e)
