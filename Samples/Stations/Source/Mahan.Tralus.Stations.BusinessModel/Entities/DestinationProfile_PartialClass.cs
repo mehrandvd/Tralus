@@ -523,7 +523,7 @@ namespace Mahan.Stations.BusinessModel
             get
             {
                 var destinationSpecialService = GetDestinationSpecialService();
-                return destinationSpecialService.SpecialServiceCount;
+                return destinationSpecialService?.SpecialServiceCount;
             }
             set
             {
@@ -538,7 +538,7 @@ namespace Mahan.Stations.BusinessModel
             get
             {
                 var destinationSpecialService = GetDestinationSpecialService();
-                return destinationSpecialService.SpecialServiceCount;
+                return destinationSpecialService?.SpecialServiceCount;
             }
             set
             {
@@ -553,7 +553,7 @@ namespace Mahan.Stations.BusinessModel
             get
             {
                 var destinationSpecialService = GetDestinationSpecialService();
-                return destinationSpecialService.SpecialServiceCount;
+                return destinationSpecialService?.SpecialServiceCount;
             }
             set
             {
@@ -569,7 +569,7 @@ namespace Mahan.Stations.BusinessModel
             get
             {
                 var destinationSpecialService = GetDestinationSpecialService();
-                return destinationSpecialService.SpecialServiceCount;
+                return destinationSpecialService?.SpecialServiceCount;
             }
             set
             {
@@ -584,7 +584,7 @@ namespace Mahan.Stations.BusinessModel
             get
             {
                 var destinationSpecialService = GetDestinationSpecialService();
-                return destinationSpecialService.SpecialServiceCount;
+                return destinationSpecialService?.SpecialServiceCount;
             }
             set
             {
@@ -600,7 +600,7 @@ namespace Mahan.Stations.BusinessModel
             get
             {
                 var destinationSpecialService = GetDestinationSpecialService();
-                return destinationSpecialService.SpecialServiceCount;
+                return destinationSpecialService?.SpecialServiceCount;
             }
             set
             {
@@ -615,7 +615,7 @@ namespace Mahan.Stations.BusinessModel
             get
             {
                 var destinationSpecialService = GetDestinationSpecialService();
-                return destinationSpecialService.SpecialServiceCount;
+                return destinationSpecialService?.SpecialServiceCount;
             }
             set
             {
@@ -630,7 +630,7 @@ namespace Mahan.Stations.BusinessModel
             get
             {
                 var destinationSpecialService = GetDestinationSpecialService();
-                return destinationSpecialService.SpecialServiceCount;
+                return destinationSpecialService?.SpecialServiceCount;
             }
             set
             {
@@ -645,7 +645,7 @@ namespace Mahan.Stations.BusinessModel
             get
             {
                 var destinationSpecialService = GetDestinationSpecialService();
-                return destinationSpecialService.SpecialServiceCount;
+                return destinationSpecialService?.SpecialServiceCount;
             }
             set
             {
@@ -720,8 +720,8 @@ namespace Mahan.Stations.BusinessModel
                     d =>
                         d.SpecialServiceType.Name == SpecialServiceName);
 
-            if (result == null)
-                throw new Exception(String.Format("No DestinationSpecialService for: {0}", propertyName));
+            //if (result == null)
+            //    throw new Exception(String.Format("No DestinationSpecialService for: {0}", propertyName));
 
             return result;
         }
