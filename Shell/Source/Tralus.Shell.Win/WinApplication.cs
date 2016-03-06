@@ -103,11 +103,11 @@ namespace Tralus.Shell.Win
             base.OnCustomizeTemplate(frameTemplate, templateContextName);
             ApplyRightToLeft(frameTemplate as System.Windows.Forms.Form);
         }
-        protected override System.Windows.Forms.Form CreateModelEditorForm()
-        {
-            System.Windows.Forms.Form form = base.CreateModelEditorForm();
-            ApplyRightToLeft(form);
-            return form;
-        }
+        //protected override System.Windows.Forms.Form CreateModelEditorForm()
+        //{
+        //    System.Windows.Forms.Form form = base.CreateModelEditorForm();
+        //    ApplyRightToLeft(form);
+        //    return form;
+        //}
     }
 }
