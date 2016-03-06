@@ -26,8 +26,7 @@ namespace Tralus.Shell.Web
 
         static Global()
         {
-            if (ConfigurationManager.AppSettings["ApplicationStyle"] == "New")
-                WebApplication.Instance.SwitchToNewStyle();
+            
 
             try
             {
@@ -77,7 +76,8 @@ namespace Tralus.Shell.Web
 
             WebApplication.SetInstance(Session, webApplication);
 
-
+            if (ConfigurationManager.AppSettings["ApplicationStyle"] == "New")
+                WebApplication.Instance.SwitchToNewStyle();
 
             if (ConfigurationManager.ConnectionStrings["Default"] != null)
             {
