@@ -13,7 +13,7 @@ namespace Mahan.Stations.Migration.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201511160801299_FlightReportFilter"; }
+            get { return "201603061914404_FlightReportFilter"; }
         }
         
         string IMigrationMetadata.Source
