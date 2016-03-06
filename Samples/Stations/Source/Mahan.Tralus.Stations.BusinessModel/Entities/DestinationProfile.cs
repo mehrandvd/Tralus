@@ -44,7 +44,7 @@ namespace Mahan.Stations.BusinessModel
                                  select new DestinationCargo(true)
                                  {
                                      DestinationProfile = this,
-                                     CargoTypeId = cargoType.Id,
+                                     CargoType = cargoType,
                                  }).ToList();
         }
 
@@ -57,7 +57,7 @@ namespace Mahan.Stations.BusinessModel
                                           select new DestinationSpecialService(true)
                                           {
                                               DestinationProfile = this,
-                                              SpecialServiceTypeId = specialServiceType.Id
+                                              SpecialServiceType = specialServiceType
                                           }).ToList();
         }
 
@@ -74,9 +74,9 @@ namespace Mahan.Stations.BusinessModel
                                      select new DestinationPassenger(true)
                                      {
                                          DestinationProfile = this,
-                                         PassengerTypeId = passengerType.Id,
-                                         TicketTypeId = ticketType.Id,
-                                         SeatClassId = seatClass.Id
+                                         PassengerType = passengerType,
+                                         TicketType = ticketType,
+                                         SeatClass = seatClass
                                      }).ToList();
         }
 
