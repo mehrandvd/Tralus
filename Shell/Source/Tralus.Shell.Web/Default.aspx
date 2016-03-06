@@ -5,7 +5,7 @@
 <%@ Register Assembly="DevExpress.ExpressApp.Web.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
     Namespace="DevExpress.ExpressApp.Web.Controls" TagPrefix="cc4" %>
 <!DOCTYPE html>
-<html style="direction: rtl">
+<html>
 <script src="Scripts/jquery-2.1.4.min.js"></script>
 <script src="Scripts/bootstrap-datepicker-all.js"></script>
 <script src="Scripts/bootstrap-clockpicker.min.js"></script>
