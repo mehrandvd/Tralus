@@ -1310,6 +1310,9 @@
         <ColumnInfo Id="FlightReportState" PropertyName="FlightReportState" Width="206" Index="21" View="" Caption="FR State" AllowEdit="False" IsNewNode="True" />
       </Columns>
       <BandsLayout Enable="False" IsNewNode="True" />
+      <Sorting IsNewNode="True">
+        <SortProperty Id="STD" PropertyName="FlightReportView.ScheduledDepartureDateTime.DateTimeUtc" Direction="Descending" IsNewNode="True" />
+      </Sorting>
     </ListView>
     <ListView Id="FR_ListView_All_UTC" ClassName="Mahan.Stations.BusinessModel.FlightReport" Caption="FR All UTC" AllowDelete="False" TopReturnedObjects="200" IsNewNode="True">
       <Columns IsNewNode="True">

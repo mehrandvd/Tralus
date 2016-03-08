@@ -8,6 +8,7 @@ using DevExpress.ExpressApp.Web;
 using System.Collections.Generic;
 using DevExpress.ExpressApp.EF;
 using System.Data.Common;
+using Tralus.Framework.BusinessModel.Entities.StateMachines;
 using Tralus.Framework.Data;
 using Tralus.Shell.Module.Utility;
 
@@ -22,11 +23,13 @@ namespace Tralus.Shell.Web
         private Tralus.Shell.Module.Web.ShellAspNetModule module4;
         private DevExpress.ExpressApp.Validation.ValidationModule validationModule1;
         private DevExpress.ExpressApp.Security.SecurityModule securityModule;
+        private DevExpress.ExpressApp.ConditionalAppearance.ConditionalAppearanceModule conditionalAppearanceModule1;
+        private DevExpress.ExpressApp.StateMachine.StateMachineModule stateMachineModule;
 
         public ShellAspNetApplication()
         {
             InitializeComponent();
-
+            stateMachineModule.StateMachineStorageType = typeof(StateMachine);
             //try
             //{
             //    AppDomain.CurrentDomain.AssemblyResolve += (sender, args) =>
@@ -107,14 +110,19 @@ namespace Tralus.Shell.Web
             this.module3 = new Tralus.Shell.Module.ShellModule();
             this.module4 = new Tralus.Shell.Module.Web.ShellAspNetModule();
             this.securityModule = new DevExpress.ExpressApp.Security.SecurityModule();
+            this.stateMachineModule = new DevExpress.ExpressApp.StateMachine.StateMachineModule();
             this.validationModule1 = new DevExpress.ExpressApp.Validation.ValidationModule();
+            this.conditionalAppearanceModule1 = new DevExpress.ExpressApp.ConditionalAppearance.ConditionalAppearanceModule();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
+            // 
+            // stateMachineModule
+            // 
+            this.stateMachineModule.StateMachineStorageType = typeof(DevExpress.ExpressApp.StateMachine.Xpo.XpoStateMachine);
             // 
             // validationModule1
             // 
             this.validationModule1.AllowValidationDetailsAccess = true;
             this.validationModule1.IgnoreWarningAndInformationRules = false;
-            // 
             // ShellAspNetApplication
             // 
             this.ApplicationName = "Tralus.Shell";
@@ -125,6 +133,8 @@ namespace Tralus.Shell.Web
             this.Modules.Add(this.module4);
             this.Modules.Add(this.securityModule);
             this.Modules.Add(this.validationModule1);
+            this.Modules.Add(this.conditionalAppearanceModule1);
+            this.Modules.Add(this.stateMachineModule);
             this.DatabaseVersionMismatch += new System.EventHandler<DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs>(this.ShellAspNetApplication_DatabaseVersionMismatch);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
