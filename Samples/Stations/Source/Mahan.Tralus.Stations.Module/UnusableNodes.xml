@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="FlightReportView_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="FlightReportView_col1">
+              <LayoutGroup Id="Item2">
+                <LayoutGroup Id="Auto9e989eba-c63d-4983-a6c3-0a167161d70e">
+                  <LayoutGroup Id="Auto8b9fe9ad-e5ca-4a6d-a9d6-0a758909cda7">
+                    <LayoutGroup Id="Auto55a5ba73-63e3-43d5-884c-6f4824c7cd16">
+                      <LayoutGroup Id="Auto61795cef-c381-40fa-abd4-dcc67ece1d75">
+                        <LayoutGroup Id="Auto69172c42-247a-4b5c-b0b8-ef09e957e2af">
+                          <LayoutGroup Id="Autobb84deff-3166-416e-8880-1f56eb7e2f18">
+                            <LayoutItem Id="ADT_Time_Utc" ViewItem="ADT_Time_Utc" />
+                          </LayoutGroup>
+                        </LayoutGroup>
+                        <LayoutGroup Id="Auto326b96e3-16ad-4bc5-9ba8-316f95aca94b">
+                          <LayoutItem Id="Flight Time Utc" ViewItem="Flight Time Utc" />
+                        </LayoutGroup>
+                      </LayoutGroup>
+                      <LayoutGroup Id="Auto25541121-6feb-4138-83ba-70f3d19fefb3">
+                        <LayoutItem Id="Flight Date Utc" ViewItem="Flight Date Utc" />
+                      </LayoutGroup>
+                    </LayoutGroup>
+                  </LayoutGroup>
+                </LayoutGroup>
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="FuellingType_LookupListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="Name" PropertyName="Name" AllowEdit="False" Caption="Name" Width="116" />
+      </Columns>
+    </ListView>
+  </Views>
+</Application>

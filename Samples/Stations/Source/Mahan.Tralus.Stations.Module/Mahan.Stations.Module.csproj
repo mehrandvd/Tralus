@@ -169,6 +169,10 @@
     <EmbeddedResource Include="Images\GreenCircle.png" />
     <EmbeddedResource Include="Images\RedCircle.png" />
     <EmbeddedResource Include="Images\YellowCircle.png" />
+    <None Include="UnusableNodes.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="UnusableNodes5.xml" />
     <Content Include="Welcome.html" />
   </ItemGroup>
