@@ -1,3 +1,5 @@
+using DevExpress.Persistent.BaseImpl.EF;
+
 namespace Tralus.Shell.Win {
     partial class ShellWindowsFormsApplication {
         /// <summary> 
@@ -34,6 +36,10 @@ namespace Tralus.Shell.Win {
             this.stateMachineModule1 = new DevExpress.ExpressApp.StateMachine.StateMachineModule();
             this.shellModule1 = new Tralus.Shell.Module.ShellModule();
             this.validationWindowsFormsModule1 = new DevExpress.ExpressApp.Validation.Win.ValidationWindowsFormsModule();
+            this.reportsModuleV21 = new DevExpress.ExpressApp.ReportsV2.ReportsModuleV2();
+            this.shellModule2 = new Tralus.Shell.Module.ShellModule();
+            this.reportsWindowsFormsModuleV21 = new DevExpress.ExpressApp.ReportsV2.Win.ReportsWindowsFormsModuleV2();
+            this.shellModule3 = new Tralus.Shell.Module.ShellModule();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // validationModule1
@@ -45,6 +51,13 @@ namespace Tralus.Shell.Win {
             // 
             this.stateMachineModule1.StateMachineStorageType = typeof(DevExpress.ExpressApp.StateMachine.Xpo.XpoStateMachine);
             // 
+            // reportsModuleV21
+            // 
+            this.reportsModuleV21.EnableInplaceReports = true;
+            this.reportsModuleV21.ReportDataType = typeof(ReportDataV2);
+            this.reportsModuleV21.ReportStoreMode = DevExpress.ExpressApp.ReportsV2.ReportStoreModes.XML;
+            this.reportsModuleV21.ShowAdditionalNavigation = true;
+            // 
             // ShellWindowsFormsApplication
             // 
             this.ApplicationName = "Tralus.Shell";
@@ -52,12 +65,14 @@ namespace Tralus.Shell.Win {
             this.Modules.Add(this.module2);
             this.Modules.Add(this.conditionalAppearanceModule1);
             this.Modules.Add(this.validationModule1);
+            this.Modules.Add(this.reportsModuleV21);
             this.Modules.Add(this.module3);
             this.Modules.Add(this.module4);
             this.Modules.Add(this.securityModule1);
             this.Modules.Add(this.businessClassLibraryCustomizationModule1);
             this.Modules.Add(this.stateMachineModule1);
             this.Modules.Add(this.validationWindowsFormsModule1);
+            this.Modules.Add(this.reportsWindowsFormsModuleV21);
             this.UseOldTemplates = false;
             this.DatabaseVersionMismatch += new System.EventHandler<DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs>(this.ShellWindowsFormsApplication_DatabaseVersionMismatch);
             this.CustomizeLanguagesList += new System.EventHandler<DevExpress.ExpressApp.CustomizeLanguagesListEventArgs>(this.ShellWindowsFormsApplication_CustomizeLanguagesList);
@@ -78,5 +93,9 @@ namespace Tralus.Shell.Win {
         private DevExpress.ExpressApp.StateMachine.StateMachineModule stateMachineModule1;
         private Module.ShellModule shellModule1;
         private DevExpress.ExpressApp.Validation.Win.ValidationWindowsFormsModule validationWindowsFormsModule1;
+        private DevExpress.ExpressApp.ReportsV2.ReportsModuleV2 reportsModuleV21;
+        private Module.ShellModule shellModule2;
+        private DevExpress.ExpressApp.ReportsV2.Win.ReportsWindowsFormsModuleV2 reportsWindowsFormsModuleV21;
+        private Module.ShellModule shellModule3;
     }
 }
