@@ -1,7 +1,9 @@
 using System;
 using System.Data.Common;
 using System.Data.Entity;
-using Tralus.Framework.BusinessModel.Entities;
+using DevExpress.Persistent.BaseImpl.EF;
+using Role = Tralus.Framework.BusinessModel.Entities.Role;
+using User = Tralus.Framework.BusinessModel.Entities.User;
 
 namespace  Tralus.Framework.Data {
 	public class FrameworkDbContext : DbContextBase<FrameworkDbContext>
@@ -40,6 +42,8 @@ namespace  Tralus.Framework.Data {
                        .MapLeftKey("ParentRoleId")
                        .MapRightKey("ChildRoleId");
                });
+
+	        modelBuilder.Entity<ReportDataV2>();
 	    }
 	}
 }

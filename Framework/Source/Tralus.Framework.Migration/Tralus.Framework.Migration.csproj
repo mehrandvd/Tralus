@@ -60,6 +60,10 @@
     <Compile Include="Migrations\201510221651057_SystemEnvTestAdded.Designer.cs">
       <DependentUpon>201510221651057_SystemEnvTestAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201604170412495_ReportAdded.cs" />
+    <Compile Include="Migrations\201604170412495_ReportAdded.Designer.cs">
+      <DependentUpon>201604170412495_ReportAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="TralusDbMigrationConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -88,6 +92,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201510221651057_SystemEnvTestAdded.resx">
       <DependentUpon>201510221651057_SystemEnvTestAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604170412495_ReportAdded.resx">
+      <DependentUpon>201604170412495_ReportAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
