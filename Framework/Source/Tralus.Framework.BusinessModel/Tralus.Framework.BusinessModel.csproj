@@ -71,6 +71,7 @@
     <Compile Include="Entities\EntityOperationPermission.cs" />
     <Compile Include="Entities\FixedEntityBase.cs" />
     <Compile Include="Entities\FixedEntityBaseT.cs" />
+    <Compile Include="Entities\IHierarchyEntity.cs" />
     <Compile Include="Entities\Role.cs" />
     <Compile Include="Entities\SecuritySystemInstancePermissionsObject.cs" />
     <Compile Include="Entities\SecuritySystemMemberPermissionsObject.cs" />

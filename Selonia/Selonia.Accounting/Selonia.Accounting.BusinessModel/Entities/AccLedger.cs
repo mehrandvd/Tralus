@@ -1,12 +1,18 @@
-﻿using Tralus.Framework.BusinessModel.Entities;
+﻿using System.ComponentModel;
+using Tralus.Framework.BusinessModel.Entities;
 
 namespace Selonia.Accounting.BusinessModel.Entities
 {
-    public class AccLedger : EntityBase
+    public class AccLedger : AccStructure
     {
-        public string Code { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
         public virtual AccGeneral General { get; set; }
+
+        public override IHierarchyEntity Parent
+        {
+            get { return General; }
+            set { General = (AccGeneral) value; }
+        }
+
+        public override IBindingList Children => new BindingList<AccLedger>();
     }
 }

@@ -40,6 +40,8 @@ namespace Tralus.Shell.Win {
             this.shellModule2 = new Tralus.Shell.Module.ShellModule();
             this.reportsWindowsFormsModuleV21 = new DevExpress.ExpressApp.ReportsV2.Win.ReportsWindowsFormsModuleV2();
             this.shellModule3 = new Tralus.Shell.Module.ShellModule();
+            this.treeListEditorsWindowsFormsModule1 = new DevExpress.ExpressApp.TreeListEditors.Win.TreeListEditorsWindowsFormsModule();
+            this.treeListEditorsModuleBase1 = new DevExpress.ExpressApp.TreeListEditors.TreeListEditorsModuleBase();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // validationModule1
@@ -54,7 +56,7 @@ namespace Tralus.Shell.Win {
             // reportsModuleV21
             // 
             this.reportsModuleV21.EnableInplaceReports = true;
-            this.reportsModuleV21.ReportDataType = typeof(ReportDataV2);
+            this.reportsModuleV21.ReportDataType = typeof(DevExpress.Persistent.BaseImpl.EF.ReportDataV2);
             this.reportsModuleV21.ReportStoreMode = DevExpress.ExpressApp.ReportsV2.ReportStoreModes.XML;
             this.reportsModuleV21.ShowAdditionalNavigation = true;
             // 
@@ -73,6 +75,8 @@ namespace Tralus.Shell.Win {
             this.Modules.Add(this.stateMachineModule1);
             this.Modules.Add(this.validationWindowsFormsModule1);
             this.Modules.Add(this.reportsWindowsFormsModuleV21);
+            this.Modules.Add(this.treeListEditorsModuleBase1);
+            this.Modules.Add(this.treeListEditorsWindowsFormsModule1);
             this.UseOldTemplates = false;
             this.DatabaseVersionMismatch += new System.EventHandler<DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs>(this.ShellWindowsFormsApplication_DatabaseVersionMismatch);
             this.CustomizeLanguagesList += new System.EventHandler<DevExpress.ExpressApp.CustomizeLanguagesListEventArgs>(this.ShellWindowsFormsApplication_CustomizeLanguagesList);
@@ -97,5 +101,7 @@ namespace Tralus.Shell.Win {
         private Module.ShellModule shellModule2;
         private DevExpress.ExpressApp.ReportsV2.Win.ReportsWindowsFormsModuleV2 reportsWindowsFormsModuleV21;
         private Module.ShellModule shellModule3;
+        private DevExpress.ExpressApp.TreeListEditors.Win.TreeListEditorsWindowsFormsModule treeListEditorsWindowsFormsModule1;
+        private DevExpress.ExpressApp.TreeListEditors.TreeListEditorsModuleBase treeListEditorsModuleBase1;
     }
 }
