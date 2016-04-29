@@ -8,6 +8,8 @@ using DevExpress.ExpressApp.Web;
 using System.Collections.Generic;
 using DevExpress.ExpressApp.EF;
 using System.Data.Common;
+using DevExpress.ExpressApp.ReportsV2;
+using DevExpress.Persistent.BaseImpl.EF;
 using Tralus.Framework.BusinessModel.Entities.StateMachines;
 using Tralus.Framework.Data;
 using Tralus.Shell.Module.Utility;
@@ -24,6 +26,8 @@ namespace Tralus.Shell.Web
         private DevExpress.ExpressApp.Validation.ValidationModule validationModule1;
         private DevExpress.ExpressApp.Security.SecurityModule securityModule;
         private DevExpress.ExpressApp.ConditionalAppearance.ConditionalAppearanceModule conditionalAppearanceModule1;
+        private DevExpress.ExpressApp.ReportsV2.ReportsModuleV2 reportsModuleV21;
+        private DevExpress.ExpressApp.ReportsV2.Web.ReportsAspNetModuleV2 reportsAspNetModuleV21;
         private DevExpress.ExpressApp.StateMachine.StateMachineModule stateMachineModule;
 
         public ShellAspNetApplication()
@@ -113,6 +117,8 @@ namespace Tralus.Shell.Web
             this.stateMachineModule = new DevExpress.ExpressApp.StateMachine.StateMachineModule();
             this.validationModule1 = new DevExpress.ExpressApp.Validation.ValidationModule();
             this.conditionalAppearanceModule1 = new DevExpress.ExpressApp.ConditionalAppearance.ConditionalAppearanceModule();
+            this.reportsModuleV21 = new DevExpress.ExpressApp.ReportsV2.ReportsModuleV2();
+            this.reportsAspNetModuleV21 = new DevExpress.ExpressApp.ReportsV2.Web.ReportsAspNetModuleV2();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // stateMachineModule
@@ -123,18 +129,33 @@ namespace Tralus.Shell.Web
             // 
             this.validationModule1.AllowValidationDetailsAccess = true;
             this.validationModule1.IgnoreWarningAndInformationRules = false;
+            // 
+            // reportsModuleV21
+            // 
+            this.reportsModuleV21.EnableInplaceReports = true;
+            this.reportsModuleV21.ReportDataType = typeof(DevExpress.Persistent.BaseImpl.EF.ReportDataV2);
+            this.reportsModuleV21.ReportStoreMode = DevExpress.ExpressApp.ReportsV2.ReportStoreModes.XML;
+            this.reportsModuleV21.ShowAdditionalNavigation = true;
+            // 
+            // reportsAspNetModuleV21
+            // 
+            //this.reportsAspNetModuleV21.ClientLibrariesLocation = DevExpress.ExpressApp.ReportsV2.Web.ClientLibrariesLocations.Embedded;
+            this.reportsAspNetModuleV21.DesignAndPreviewDisplayMode = DevExpress.ExpressApp.ReportsV2.Web.DesignAndPreviewDisplayModes.DetailView;
+            // 
             // ShellAspNetApplication
             // 
             this.ApplicationName = "Tralus.Shell";
             this.CollectionsEditMode = DevExpress.ExpressApp.Editors.ViewEditMode.Edit;
             this.Modules.Add(this.module1);
             this.Modules.Add(this.module2);
+            this.Modules.Add(this.reportsModuleV21);
             this.Modules.Add(this.module3);
             this.Modules.Add(this.module4);
             this.Modules.Add(this.securityModule);
             this.Modules.Add(this.validationModule1);
             this.Modules.Add(this.conditionalAppearanceModule1);
             this.Modules.Add(this.stateMachineModule);
+            this.Modules.Add(this.reportsAspNetModuleV21);
             this.DatabaseVersionMismatch += new System.EventHandler<DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs>(this.ShellAspNetApplication_DatabaseVersionMismatch);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
