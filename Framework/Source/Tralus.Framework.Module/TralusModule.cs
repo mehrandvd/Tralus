@@ -10,6 +10,7 @@ using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.ConditionalAppearance;
 using DevExpress.ExpressApp.Model;
 using DevExpress.ExpressApp.ReportsV2;
+using DevExpress.ExpressApp.TreeListEditors;
 using DevExpress.ExpressApp.Validation;
 using DevExpress.ExpressApp.ViewVariantsModule;
 using Tralus.Framework.BusinessModel.Entities;
@@ -37,6 +38,7 @@ namespace Tralus.Framework.Module
             this.RequiredModuleTypes.Add(typeof(ValidationModule));
             this.RequiredModuleTypes.Add(typeof(ViewVariantsModule));
             this.RequiredModuleTypes.Add(typeof(ReportsModuleV2));
+            this.RequiredModuleTypes.Add(typeof(TreeListEditorsModuleBase));
         }
     }
 }

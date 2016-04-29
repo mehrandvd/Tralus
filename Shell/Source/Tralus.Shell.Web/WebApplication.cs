@@ -28,6 +28,8 @@ namespace Tralus.Shell.Web
         private DevExpress.ExpressApp.ConditionalAppearance.ConditionalAppearanceModule conditionalAppearanceModule1;
         private DevExpress.ExpressApp.ReportsV2.ReportsModuleV2 reportsModuleV21;
         private DevExpress.ExpressApp.ReportsV2.Web.ReportsAspNetModuleV2 reportsAspNetModuleV21;
+        private DevExpress.ExpressApp.TreeListEditors.Web.TreeListEditorsAspNetModule treeListEditorsAspNetModule1;
+        private DevExpress.ExpressApp.TreeListEditors.TreeListEditorsModuleBase treeListEditorsModuleBase1;
         private DevExpress.ExpressApp.StateMachine.StateMachineModule stateMachineModule;
 
         public ShellAspNetApplication()
@@ -119,6 +121,8 @@ namespace Tralus.Shell.Web
             this.conditionalAppearanceModule1 = new DevExpress.ExpressApp.ConditionalAppearance.ConditionalAppearanceModule();
             this.reportsModuleV21 = new DevExpress.ExpressApp.ReportsV2.ReportsModuleV2();
             this.reportsAspNetModuleV21 = new DevExpress.ExpressApp.ReportsV2.Web.ReportsAspNetModuleV2();
+            this.treeListEditorsAspNetModule1 = new DevExpress.ExpressApp.TreeListEditors.Web.TreeListEditorsAspNetModule();
+            this.treeListEditorsModuleBase1 = new DevExpress.ExpressApp.TreeListEditors.TreeListEditorsModuleBase();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // stateMachineModule
@@ -139,7 +143,6 @@ namespace Tralus.Shell.Web
             // 
             // reportsAspNetModuleV21
             // 
-            //this.reportsAspNetModuleV21.ClientLibrariesLocation = DevExpress.ExpressApp.ReportsV2.Web.ClientLibrariesLocations.Embedded;
             this.reportsAspNetModuleV21.DesignAndPreviewDisplayMode = DevExpress.ExpressApp.ReportsV2.Web.DesignAndPreviewDisplayModes.DetailView;
             // 
             // ShellAspNetApplication
@@ -156,6 +159,8 @@ namespace Tralus.Shell.Web
             this.Modules.Add(this.conditionalAppearanceModule1);
             this.Modules.Add(this.stateMachineModule);
             this.Modules.Add(this.reportsAspNetModuleV21);
+            this.Modules.Add(this.treeListEditorsModuleBase1);
+            this.Modules.Add(this.treeListEditorsAspNetModule1);
             this.DatabaseVersionMismatch += new System.EventHandler<DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs>(this.ShellAspNetApplication_DatabaseVersionMismatch);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
