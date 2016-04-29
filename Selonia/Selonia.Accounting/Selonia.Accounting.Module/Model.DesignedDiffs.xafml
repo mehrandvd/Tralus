@@ -1,5 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application Title="Selonia.Accounting" Logo="ExpressAppLogo" PreferredLanguage="fa-IR">
+  <BOModel>
+    <Class Name="Selonia.Accounting.BusinessModel.Entities.AccGeneral" IsVisibleInReports="True" />
+    <Class Name="Selonia.Accounting.BusinessModel.Entities.AccGroup" IsVisibleInReports="True" />
+    <Class Name="Selonia.Accounting.BusinessModel.Entities.AccLedger" IsVisibleInReports="True" />
+    <Class Name="Selonia.Accounting.BusinessModel.Entities.Segment" IsVisibleInReports="True" />
+    <Class Name="Selonia.Accounting.BusinessModel.Entities.Voucher" IsVisibleInReports="True" />
+    <Class Name="Selonia.Accounting.BusinessModel.Entities.VoucherItem" IsVisibleInReports="True" />
+  </BOModel>
   <NavigationItems>
     <Items>
       <Item Id="@7423e3b9-dc05-4606-b948-6fe66bc44285" Caption="Accounting" ChildItemsDisplayStyle="List" IsNewNode="True">
@@ -24,7 +32,7 @@
     </Items>
   </NavigationItems>
   <SchemaModules>
-    <SchemaModule Name="SystemModule" Version="15.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="15.2.5.0" IsNewNode="True" />
   </SchemaModules>
   <Views>
     <DetailView Id="AccGeneral_DetailView">
