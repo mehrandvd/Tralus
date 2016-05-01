@@ -64,6 +64,10 @@
     <Compile Include="Migrations\201604170412495_ReportAdded.Designer.cs">
       <DependentUpon>201604170412495_ReportAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605012002113_AnalysisAdded.cs" />
+    <Compile Include="Migrations\201605012002113_AnalysisAdded.Designer.cs">
+      <DependentUpon>201605012002113_AnalysisAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="TralusDbMigrationConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -95,6 +99,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201604170412495_ReportAdded.resx">
       <DependentUpon>201604170412495_ReportAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605012002113_AnalysisAdded.resx">
+      <DependentUpon>201605012002113_AnalysisAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
