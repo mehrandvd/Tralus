@@ -7,8 +7,11 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using DevExpress.ExpressApp;
+using DevExpress.ExpressApp.Chart;
 using DevExpress.ExpressApp.ConditionalAppearance;
 using DevExpress.ExpressApp.Model;
+using DevExpress.ExpressApp.PivotChart;
+using DevExpress.ExpressApp.PivotGrid;
 using DevExpress.ExpressApp.ReportsV2;
 using DevExpress.ExpressApp.TreeListEditors;
 using DevExpress.ExpressApp.Validation;
@@ -39,6 +42,9 @@ namespace Tralus.Framework.Module
             this.RequiredModuleTypes.Add(typeof(ViewVariantsModule));
             this.RequiredModuleTypes.Add(typeof(ReportsModuleV2));
             this.RequiredModuleTypes.Add(typeof(TreeListEditorsModuleBase));
+            this.RequiredModuleTypes.Add(typeof(ChartModule));
+            this.RequiredModuleTypes.Add(typeof(PivotGridModule));
+            this.RequiredModuleTypes.Add(typeof(PivotChartModuleBase));
         }
     }
 }

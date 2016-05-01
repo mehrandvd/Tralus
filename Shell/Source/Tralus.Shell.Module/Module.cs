@@ -37,6 +37,7 @@ namespace Tralus.Shell.Module {
             this.AdditionalExportedTypes.Add(typeof(User));
             this.AdditionalExportedTypes.Add(typeof(Role));
             this.AdditionalExportedTypes.Add(typeof(ReportDataV2));
+            this.AdditionalExportedTypes.Add(typeof(Analysis));
 
             RequiredModuleTypes.Add(typeof(ReportsModuleV2));
         }

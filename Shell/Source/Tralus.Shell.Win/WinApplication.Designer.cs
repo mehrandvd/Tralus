@@ -42,6 +42,17 @@ namespace Tralus.Shell.Win {
             this.shellModule3 = new Tralus.Shell.Module.ShellModule();
             this.treeListEditorsWindowsFormsModule1 = new DevExpress.ExpressApp.TreeListEditors.Win.TreeListEditorsWindowsFormsModule();
             this.treeListEditorsModuleBase1 = new DevExpress.ExpressApp.TreeListEditors.TreeListEditorsModuleBase();
+            this.pivotGridModule1 = new DevExpress.ExpressApp.PivotGrid.PivotGridModule();
+            this.shellModule4 = new Tralus.Shell.Module.ShellModule();
+            this.pivotGridWindowsFormsModule1 = new DevExpress.ExpressApp.PivotGrid.Win.PivotGridWindowsFormsModule();
+            this.shellModule5 = new Tralus.Shell.Module.ShellModule();
+            this.chartModule1 = new DevExpress.ExpressApp.Chart.ChartModule();
+            this.shellModule6 = new Tralus.Shell.Module.ShellModule();
+            this.chartWindowsFormsModule1 = new DevExpress.ExpressApp.Chart.Win.ChartWindowsFormsModule();
+            this.shellModule7 = new Tralus.Shell.Module.ShellModule();
+            this.pivotChartWindowsFormsModule1 = new DevExpress.ExpressApp.PivotChart.Win.PivotChartWindowsFormsModule();
+            this.shellModule8 = new Tralus.Shell.Module.ShellModule();
+            this.pivotChartModuleBase1 = new DevExpress.ExpressApp.PivotChart.PivotChartModuleBase();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // validationModule1
@@ -60,6 +71,10 @@ namespace Tralus.Shell.Win {
             this.reportsModuleV21.ReportStoreMode = DevExpress.ExpressApp.ReportsV2.ReportStoreModes.XML;
             this.reportsModuleV21.ShowAdditionalNavigation = true;
             // 
+            // pivotChartModuleBase1
+            // 
+            this.pivotChartModuleBase1.ShowAdditionalNavigation = true;
+            // 
             // ShellWindowsFormsApplication
             // 
             this.ApplicationName = "Tralus.Shell";
@@ -77,6 +92,12 @@ namespace Tralus.Shell.Win {
             this.Modules.Add(this.reportsWindowsFormsModuleV21);
             this.Modules.Add(this.treeListEditorsModuleBase1);
             this.Modules.Add(this.treeListEditorsWindowsFormsModule1);
+            this.Modules.Add(this.pivotGridModule1);
+            this.Modules.Add(this.pivotGridWindowsFormsModule1);
+            this.Modules.Add(this.chartModule1);
+            this.Modules.Add(this.chartWindowsFormsModule1);
+            this.Modules.Add(this.pivotChartModuleBase1);
+            this.Modules.Add(this.pivotChartWindowsFormsModule1);
             this.UseOldTemplates = false;
             this.DatabaseVersionMismatch += new System.EventHandler<DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs>(this.ShellWindowsFormsApplication_DatabaseVersionMismatch);
             this.CustomizeLanguagesList += new System.EventHandler<DevExpress.ExpressApp.CustomizeLanguagesListEventArgs>(this.ShellWindowsFormsApplication_CustomizeLanguagesList);
@@ -103,5 +124,16 @@ namespace Tralus.Shell.Win {
         private Module.ShellModule shellModule3;
         private DevExpress.ExpressApp.TreeListEditors.Win.TreeListEditorsWindowsFormsModule treeListEditorsWindowsFormsModule1;
         private DevExpress.ExpressApp.TreeListEditors.TreeListEditorsModuleBase treeListEditorsModuleBase1;
+        private DevExpress.ExpressApp.PivotGrid.PivotGridModule pivotGridModule1;
+        private Module.ShellModule shellModule4;
+        private DevExpress.ExpressApp.PivotGrid.Win.PivotGridWindowsFormsModule pivotGridWindowsFormsModule1;
+        private Module.ShellModule shellModule5;
+        private DevExpress.ExpressApp.Chart.ChartModule chartModule1;
+        private Module.ShellModule shellModule6;
+        private DevExpress.ExpressApp.Chart.Win.ChartWindowsFormsModule chartWindowsFormsModule1;
+        private Module.ShellModule shellModule7;
+        private DevExpress.ExpressApp.PivotChart.Win.PivotChartWindowsFormsModule pivotChartWindowsFormsModule1;
+        private Module.ShellModule shellModule8;
+        private DevExpress.ExpressApp.PivotChart.PivotChartModuleBase pivotChartModuleBase1;
     }
 }

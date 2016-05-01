@@ -30,6 +30,12 @@ namespace Tralus.Shell.Web
         private DevExpress.ExpressApp.ReportsV2.Web.ReportsAspNetModuleV2 reportsAspNetModuleV21;
         private DevExpress.ExpressApp.TreeListEditors.Web.TreeListEditorsAspNetModule treeListEditorsAspNetModule1;
         private DevExpress.ExpressApp.TreeListEditors.TreeListEditorsModuleBase treeListEditorsModuleBase1;
+        private DevExpress.ExpressApp.Chart.ChartModule chartModule1;
+        private DevExpress.ExpressApp.Chart.Web.ChartAspNetModule chartAspNetModule1;
+        private DevExpress.ExpressApp.PivotGrid.PivotGridModule pivotGridModule1;
+        private DevExpress.ExpressApp.PivotGrid.Web.PivotGridAspNetModule pivotGridAspNetModule1;
+        private DevExpress.ExpressApp.PivotChart.Web.PivotChartAspNetModule pivotChartAspNetModule1;
+        private DevExpress.ExpressApp.PivotChart.PivotChartModuleBase pivotChartModuleBase1;
         private DevExpress.ExpressApp.StateMachine.StateMachineModule stateMachineModule;
 
         public ShellAspNetApplication()
@@ -123,6 +129,12 @@ namespace Tralus.Shell.Web
             this.reportsAspNetModuleV21 = new DevExpress.ExpressApp.ReportsV2.Web.ReportsAspNetModuleV2();
             this.treeListEditorsAspNetModule1 = new DevExpress.ExpressApp.TreeListEditors.Web.TreeListEditorsAspNetModule();
             this.treeListEditorsModuleBase1 = new DevExpress.ExpressApp.TreeListEditors.TreeListEditorsModuleBase();
+            this.chartModule1 = new DevExpress.ExpressApp.Chart.ChartModule();
+            this.chartAspNetModule1 = new DevExpress.ExpressApp.Chart.Web.ChartAspNetModule();
+            this.pivotGridModule1 = new DevExpress.ExpressApp.PivotGrid.PivotGridModule();
+            this.pivotGridAspNetModule1 = new DevExpress.ExpressApp.PivotGrid.Web.PivotGridAspNetModule();
+            this.pivotChartAspNetModule1 = new DevExpress.ExpressApp.PivotChart.Web.PivotChartAspNetModule();
+            this.pivotChartModuleBase1 = new DevExpress.ExpressApp.PivotChart.PivotChartModuleBase();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // stateMachineModule
@@ -145,6 +157,10 @@ namespace Tralus.Shell.Web
             // 
             this.reportsAspNetModuleV21.DesignAndPreviewDisplayMode = DevExpress.ExpressApp.ReportsV2.Web.DesignAndPreviewDisplayModes.DetailView;
             // 
+            // pivotChartModuleBase1
+            // 
+            this.pivotChartModuleBase1.ShowAdditionalNavigation = true;
+            // 
             // ShellAspNetApplication
             // 
             this.ApplicationName = "Tralus.Shell";
@@ -161,6 +177,12 @@ namespace Tralus.Shell.Web
             this.Modules.Add(this.reportsAspNetModuleV21);
             this.Modules.Add(this.treeListEditorsModuleBase1);
             this.Modules.Add(this.treeListEditorsAspNetModule1);
+            this.Modules.Add(this.chartModule1);
+            this.Modules.Add(this.chartAspNetModule1);
+            this.Modules.Add(this.pivotGridModule1);
+            this.Modules.Add(this.pivotGridAspNetModule1);
+            this.Modules.Add(this.pivotChartModuleBase1);
+            this.Modules.Add(this.pivotChartAspNetModule1);
             this.DatabaseVersionMismatch += new System.EventHandler<DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs>(this.ShellAspNetApplication_DatabaseVersionMismatch);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 

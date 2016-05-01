@@ -44,6 +44,7 @@ namespace  Tralus.Framework.Data {
                });
 
 	        modelBuilder.Entity<ReportDataV2>();
+	        modelBuilder.Entity<Analysis>();
 	    }
 	}
 }
