@@ -7,25 +7,25 @@ namespace Selonia.Accounting.Migration.Migrations
     {
         public override void Up()
         {
-            CreateTable(
-                "dbo.ReportDataV2",
-                c => new
-                    {
-                        ID = c.Int(nullable: false, identity: true),
-                        DataTypeName = c.String(),
-                        IsInplaceReport = c.Boolean(nullable: false),
-                        PredefinedReportTypeName = c.String(),
-                        Content = c.Binary(),
-                        DisplayName = c.String(),
-                        ParametersObjectTypeName = c.String(),
-                    })
-                .PrimaryKey(t => t.ID);
+            //CreateTable(
+            //    "dbo.ReportDataV2",
+            //    c => new
+            //        {
+            //            ID = c.Int(nullable: false, identity: true),
+            //            DataTypeName = c.String(),
+            //            IsInplaceReport = c.Boolean(nullable: false),
+            //            PredefinedReportTypeName = c.String(),
+            //            Content = c.Binary(),
+            //            DisplayName = c.String(),
+            //            ParametersObjectTypeName = c.String(),
+            //        })
+            //    .PrimaryKey(t => t.ID);
             
         }
         
         public override void Down()
         {
-            DropTable("dbo.ReportDataV2");
+            //DropTable("dbo.ReportDataV2");
         }
     }
 }

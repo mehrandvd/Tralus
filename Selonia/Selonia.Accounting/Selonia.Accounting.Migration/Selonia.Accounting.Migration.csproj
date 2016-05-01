@@ -82,6 +82,10 @@
     <Compile Include="Migrations\201605011903335_IgnoreFramework.Designer.cs">
       <DependentUpon>201605011903335_IgnoreFramework.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605012023545_CompleteVoucherProperties.cs" />
+    <Compile Include="Migrations\201605012023545_CompleteVoucherProperties.Designer.cs">
+      <DependentUpon>201605012023545_CompleteVoucherProperties.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -111,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605011903335_IgnoreFramework.resx">
       <DependentUpon>201605011903335_IgnoreFramework.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605012023545_CompleteVoucherProperties.resx">
+      <DependentUpon>201605012023545_CompleteVoucherProperties.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

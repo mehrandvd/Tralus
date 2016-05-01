@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <DetailView Id="AccGeneral_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="AccGeneral">
+              <LayoutGroup Id="Autob6812054-546d-4975-be8a-a2e5b44d7b89">
+                <LayoutItem Id="Name" ViewItem="Name" />
+                <LayoutItem Id="Code" ViewItem="Code" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="AccLedger_DetailView">
+      <Layout Id="Layout">
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="AccLedger">
+              <LayoutGroup Id="Auto399e02ca-da05-4f05-956b-9a353aad51b6">
+                <LayoutItem Id="Name" ViewItem="Name" />
+                <LayoutItem Id="Code" ViewItem="Code" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+  </Views>
+</Application>

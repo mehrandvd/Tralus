@@ -15,8 +15,14 @@ namespace Selonia.Accounting.BusinessModel.Entities
         }
 
         public virtual DateTime? VoucherDate { get; set; }
-        public virtual string VoucherNo { get; set; }
 
+        public virtual string TempNo { get; set; }
+
+        public virtual string FixNo { get; set; }
+
+        public virtual string Description { get; set; }
+
+        public virtual VoucherType VoucherType { get; set; }
 
         private long? _creditSum;
         public virtual long? CreditSum
