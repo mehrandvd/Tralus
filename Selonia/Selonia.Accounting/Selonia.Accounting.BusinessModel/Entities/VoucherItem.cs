@@ -11,17 +11,24 @@ namespace Selonia.Accounting.BusinessModel.Entities
             VoucherItemSegments = new List<VoucherItemSegment>();
         }
         public virtual int RowNo { get; set; }
+
         public virtual long Debit { get; set; }
+
         public virtual long Credit { get; set; }
+
         public virtual AccLedger Ledger { get; set; }
+
         public virtual string Description { get; set; }
 
         [NotMapped]
         public virtual Segment Segment1 { get; set; }
+
         [NotMapped]
         public virtual Segment Segment2 { get; set; }
+
         [NotMapped]
         public virtual Segment Segment3 { get; set; }
+
         [NotMapped]
         public virtual Segment Segment4 { get; set; }
 

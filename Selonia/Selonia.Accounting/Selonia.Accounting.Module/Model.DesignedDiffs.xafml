@@ -19,6 +19,7 @@
               <Item Id="@0b35b4f9-0c71-4dd5-b092-9371f6b31173" Index="2" ViewId="AccLedger_ListView" ChildItemsDisplayStyle="List" IsNewNode="True" />
               <Item Id="@7acad235-aab8-4d3d-9a99-3963114e3dab" ViewId="SegmentGroup_ListView" ChildItemsDisplayStyle="List" IsNewNode="True" />
               <Item Id="@d9cb1ada-a747-4a0a-870a-b5eec8082071" ViewId="Segment_ListView" ChildItemsDisplayStyle="List" IsNewNode="True" />
+              <Item Id="Voucher Type" ViewId="VoucherType_ListView" Caption="Voucher Type" ChildItemsDisplayStyle="List" ImageName="Action_WindowList" IsNewNode="True" />
             </Items>
           </Item>
           <Item Id="@2bf46917-56c1-495f-8553-a6fb1e4e7533" Caption="Operations" ChildItemsDisplayStyle="List" IsNewNode="True">
@@ -45,9 +46,6 @@
                 <LayoutItem Id="Code" ViewItem="Code" Index="0" RelativeSize="50" IsNewNode="True" />
                 <LayoutItem Id="Name" ViewItem="Name" Index="1" RelativeSize="50" IsNewNode="True" />
               </LayoutGroup>
-              <LayoutItem Id="Code" Index="1" RelativeSize="21.818181818181817" Removed="True" />
-              <LayoutItem Id="Description" Index="2" RelativeSize="34.883720930232556" />
-              <LayoutItem Id="Name" Index="2" RelativeSize="21.818181818181817" Removed="True" />
             </LayoutGroup>
           </LayoutGroup>
           <LayoutGroup Id="Ledgers_Group" Direction="Vertical" RelativeSize="89.72520908004779">
@@ -59,40 +57,21 @@
     <ListView Id="AccGeneral_Ledgers_ListView" IsGroupPanelVisible="False">
       <Columns>
         <ColumnInfo Id="General" Width="91" SortOrder="None" GroupIndex="-1" Index="-1" />
-        <ColumnInfo Id="Code" Index="0" Width="86" />
-        <ColumnInfo Id="Name" Index="1" Width="121" />
-        <ColumnInfo Id="Description" Width="339" />
       </Columns>
     </ListView>
     <ListView Id="AccGeneral_ListView">
       <Columns>
-        <ColumnInfo Id="Code" Index="0" />
-        <ColumnInfo Id="Name" Index="1" Width="200" />
-        <ColumnInfo Id="Description" Width="366" />
         <ColumnInfo Id="Group" SortOrder="Ascending" GroupIndex="0" />
       </Columns>
     </ListView>
     <ListView Id="AccGeneral_LookupListView">
       <Columns>
-        <ColumnInfo Id="Code" PropertyName="Code" Index="0" IsNewNode="True" />
-        <ColumnInfo Id="Name" Index="1" />
         <ColumnInfo Id="Group" PropertyName="Group" SortOrder="Ascending" GroupIndex="0" IsNewNode="True" />
       </Columns>
     </ListView>
     <DetailView Id="AccGroup_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
-          <LayoutGroup Id="SimpleEditors" RelativeSize="7.4074074074074074">
-            <LayoutGroup Id="AccGroup" Caption="AccGroup" RelativeSize="100">
-              <LayoutGroup Id="Autodd004ecb-acb4-4b3a-bc73-f268754391c8" ShowCaption="False" Caption="" Direction="Horizontal" Index="0" RelativeSize="51.612903225806448" IsNewNode="True">
-                <LayoutItem Id="Code" ViewItem="Code" Index="0" RelativeSize="50" IsNewNode="True" />
-                <LayoutItem Id="Name" ViewItem="Name" Index="1" RelativeSize="50" IsNewNode="True" />
-              </LayoutGroup>
-              <LayoutItem Id="Description" Index="1" RelativeSize="48.387096774193552" />
-              <LayoutItem Id="Code" Removed="True" />
-              <LayoutItem Id="Name" Removed="True" />
-            </LayoutGroup>
-          </LayoutGroup>
           <LayoutGroup Id="Generals_Group" Direction="Vertical" RelativeSize="92.5925925925926">
             <LayoutItem Id="Generals" RelativeSize="100" />
           </LayoutGroup>
@@ -102,16 +81,6 @@
     <ListView Id="AccGroup_Generals_ListView">
       <Columns>
         <ColumnInfo Id="Group" Index="-1" />
-        <ColumnInfo Id="Code" Index="0" Width="89" />
-        <ColumnInfo Id="Name" Index="1" Width="239" />
-        <ColumnInfo Id="Description" Width="311" />
-      </Columns>
-    </ListView>
-    <ListView Id="AccGroup_ListView">
-      <Columns>
-        <ColumnInfo Id="Code" Index="0" />
-        <ColumnInfo Id="Name" Index="1" Width="286" />
-        <ColumnInfo Id="Description" Width="314" />
       </Columns>
     </ListView>
     <DetailView Id="AccLedger_DetailView">
@@ -124,9 +93,6 @@
                 <LayoutItem Id="Code" ViewItem="Code" Index="0" RelativeSize="50" IsNewNode="True" />
                 <LayoutItem Id="Name" ViewItem="Name" Index="1" RelativeSize="50" IsNewNode="True" />
               </LayoutGroup>
-              <LayoutItem Id="Code" Index="1" RelativeSize="2.8673835125448028" Removed="True" />
-              <LayoutItem Id="Description" Index="2" RelativeSize="93.3094384707288" />
-              <LayoutItem Id="Name" Index="2" RelativeSize="2.8673835125448028" Removed="True" />
             </LayoutGroup>
           </LayoutGroup>
         </LayoutGroup>
@@ -134,16 +100,11 @@
     </DetailView>
     <ListView Id="AccLedger_ListView">
       <Columns>
-        <ColumnInfo Id="Code" Index="0" Width="88" />
-        <ColumnInfo Id="Name" Index="1" Width="232" />
-        <ColumnInfo Id="Description" Width="338" />
         <ColumnInfo Id="General" SortOrder="Ascending" GroupIndex="0" />
       </Columns>
     </ListView>
     <ListView Id="AccLedger_LookupListView" AutoExpandAllGroups="True" ShowAutoFilterRow="True">
       <Columns>
-        <ColumnInfo Id="Code" PropertyName="Code" Index="0" IsNewNode="True" />
-        <ColumnInfo Id="Name" Index="1" />
         <ColumnInfo Id="General" PropertyName="General" SortOrder="Ascending" GroupIndex="0" IsNewNode="True" />
       </Columns>
     </ListView>
@@ -208,23 +169,47 @@
       </Items>
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
-          <LayoutGroup Id="SimpleEditors" RelativeSize="4.5400238948626042">
-            <LayoutGroup Id="Voucher" Direction="Horizontal" RelativeSize="100" Caption="Voucher">
-              <LayoutItem Id="VoucherNo" ViewItem="VoucherNo" Index="0" RelativeSize="50" IsNewNode="True" Removed="True" />
-              <LayoutItem Id="VoucherDate" Index="1" RelativeSize="50" />
+          <LayoutGroup Id="SimpleEditors" RelativeSize="18.007202881152462">
+            <LayoutGroup Id="Voucher" Direction="Vertical" RelativeSize="100" Caption="Voucher">
+              <LayoutGroup Id="Voucher_col1" RelativeSize="100" Caption="Voucher_col1">
+                <LayoutGroup Id="Auto4bd9184f-8d1c-4a4f-b70b-e71a2882d83e" ShowCaption="False" Caption="" Direction="Horizontal" Index="0" RelativeSize="28.571428571428573" IsNewNode="True">
+                  <LayoutItem Id="TempNo" ViewItem="TempNo" Index="0" RelativeSize="50.924608819345664" IsNewNode="True" />
+                  <LayoutItem Id="FixNo" ViewItem="FixNo" Index="1" RelativeSize="49.075391180654336" IsNewNode="True" />
+                </LayoutGroup>
+                <LayoutGroup Id="Autocf0825c4-56dc-42b6-9505-31f8017d52dc" ShowCaption="False" Caption="" Index="1" RelativeSize="42.857142857142854" IsNewNode="True">
+                  <LayoutGroup Id="Autod531514a-6d25-4155-8629-01e0113f4e09" ShowCaption="False" Caption="" Direction="Horizontal" Index="0" RelativeSize="50" IsNewNode="True">
+                    <LayoutItem Id="VoucherType" ViewItem="VoucherType" Index="0" RelativeSize="50.924608819345664" IsNewNode="True" />
+                    <LayoutItem Id="VoucherDate" ViewItem="VoucherDate" Index="1" RelativeSize="49.075391180654336" IsNewNode="True" />
+                  </LayoutGroup>
+                  <LayoutGroup Id="Auto72fabb70-1cdf-48dc-afc2-5a295118a599" ShowCaption="False" Caption="" Direction="Horizontal" Index="1" RelativeSize="50" IsNewNode="True">
+                    <LayoutItem Id="CreditSum" ViewItem="CreditSum" Index="0" RelativeSize="50.924608819345664" IsNewNode="True" />
+                    <LayoutItem Id="DebitSum" ViewItem="DebitSum" Index="1" RelativeSize="49.075391180654336" IsNewNode="True" />
+                  </LayoutGroup>
+                </LayoutGroup>
+                <LayoutItem Id="FixNo" RelativeSize="15" Index="1" Removed="True" />
+                <LayoutItem Id="Description" RelativeSize="28.571428571428573" Index="2" />
+                <LayoutItem Id="TempNo" RelativeSize="21.428571428571427" Removed="True" />
+                <LayoutItem Id="VoucherDate" RelativeSize="28.571428571428573" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Voucher_col2" Index="1" RelativeSize="61.16642958748222" Caption="Voucher_col2" Direction="Horizontal" Removed="True">
+                <LayoutItem Id="CreditSum" RelativeSize="28.571428571428573" Index="0" Removed="True" />
+                <LayoutItem Id="DebitSum" RelativeSize="100" Index="0" Removed="True" />
+                <LayoutItem Id="VoucherType" RelativeSize="36.363636363636367" Removed="True" />
+              </LayoutGroup>
             </LayoutGroup>
           </LayoutGroup>
-          <LayoutGroup Id="VoucherItems_Group" Direction="Vertical" RelativeSize="95.4599761051374" Index="1">
-            <LayoutItem Id="VoucherItems" RelativeSize="100" />
+          <LayoutGroup Id="VoucherItems_Group" Direction="Vertical" RelativeSize="81.992797118847534" Index="1">
+            <LayoutItem Id="VoucherItems" RelativeSize="100" ShowCaption="False" />
           </LayoutGroup>
         </LayoutGroup>
       </Layout>
     </DetailView>
     <ListView Id="Voucher_ListView">
       <Columns>
-        <ColumnInfo Id="VoucherNo" Index="0" Width="109" />
         <ColumnInfo Id="VoucherDate" Width="154" Index="1" />
       </Columns>
+      <ChartSettings Settings="﻿&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#xD;&#xA;&lt;ChartXmlSerializer version=&quot;15.2.5.0&quot;&gt;&#xD;&#xA;  &lt;Chart AppearanceNameSerializable=&quot;Default&quot; SelectionMode=&quot;None&quot; SeriesSelectionMode=&quot;Series&quot;&gt;&#xD;&#xA;    &lt;DataContainer DataMember=&quot;&quot; BoundSeriesSorting=&quot;None&quot; RefreshDataOnRepaint=&quot;true&quot;&gt;&#xD;&#xA;      &lt;SeriesSerializable&gt;&#xD;&#xA;        &lt;Item1 Name=&quot;Series 1&quot; ValueDataMembersSerializable=&quot;CreditSum&quot;&gt;&#xD;&#xA;          &lt;View TypeNameSerializable=&quot;LineSeriesView&quot; /&gt;&#xD;&#xA;        &lt;/Item1&gt;&#xD;&#xA;      &lt;/SeriesSerializable&gt;&#xD;&#xA;      &lt;SeriesTemplate /&gt;&#xD;&#xA;    &lt;/DataContainer&gt;&#xD;&#xA;    &lt;Diagram TypeNameSerializable=&quot;XYDiagram&quot;&gt;&#xD;&#xA;      &lt;AxisX VisibleInPanesSerializable=&quot;-1&quot; /&gt;&#xD;&#xA;      &lt;AxisY VisibleInPanesSerializable=&quot;-1&quot; /&gt;&#xD;&#xA;    &lt;/Diagram&gt;&#xD;&#xA;  &lt;/Chart&gt;&#xD;&#xA;&lt;/ChartXmlSerializer&gt;" />
+      <PivotSettings ShowChart="True" ShowColumnGrandTotals="True" ShowColumnTotals="True" ShowRowGrandTotals="True" ShowRowTotals="True" />
     </ListView>
     <ListView Id="Voucher_VoucherItems_ListView" AllowEdit="True" IsFooterVisible="True" GroupSummary="Sum">
       <Columns>
