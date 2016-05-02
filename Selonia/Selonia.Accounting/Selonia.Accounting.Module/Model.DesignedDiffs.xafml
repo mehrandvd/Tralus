@@ -5,7 +5,11 @@
     <Class Name="Selonia.Accounting.BusinessModel.Entities.AccGroup" IsVisibleInReports="True" />
     <Class Name="Selonia.Accounting.BusinessModel.Entities.AccLedger" IsVisibleInReports="True" />
     <Class Name="Selonia.Accounting.BusinessModel.Entities.Segment" IsVisibleInReports="True" />
-    <Class Name="Selonia.Accounting.BusinessModel.Entities.Voucher" IsVisibleInReports="True" />
+    <Class Name="Selonia.Accounting.BusinessModel.Entities.Voucher" IsVisibleInReports="True">
+      <OwnMembers>
+        <Member Name="VoucherState.Value" IsCustom="True" IsCalculated="False" Caption="Voucher State" IsNewNode="True" />
+      </OwnMembers>
+    </Class>
     <Class Name="Selonia.Accounting.BusinessModel.Entities.VoucherItem" IsVisibleInReports="True" />
   </BOModel>
   <NavigationItems>
@@ -172,18 +176,19 @@
           <LayoutGroup Id="SimpleEditors" RelativeSize="18.007202881152462">
             <LayoutGroup Id="Voucher" Direction="Vertical" RelativeSize="100" Caption="Voucher">
               <LayoutGroup Id="Voucher_col1" RelativeSize="100" Caption="Voucher_col1">
-                <LayoutGroup Id="Auto4bd9184f-8d1c-4a4f-b70b-e71a2882d83e" ShowCaption="False" Caption="" Direction="Horizontal" Index="0" RelativeSize="28.571428571428573" IsNewNode="True">
-                  <LayoutItem Id="TempNo" ViewItem="TempNo" Index="0" RelativeSize="50.924608819345664" IsNewNode="True" />
-                  <LayoutItem Id="FixNo" ViewItem="FixNo" Index="1" RelativeSize="49.075391180654336" IsNewNode="True" />
+                <LayoutGroup Id="Autofd990299-eb42-468f-aa93-624b11762da0" ShowCaption="False" Caption="" Direction="Horizontal" Index="0" RelativeSize="28.571428571428573" IsNewNode="True">
+                  <LayoutItem Id="TempNo" ViewItem="TempNo" Index="0" RelativeSize="26.487747957992998" IsNewNode="True" />
+                  <LayoutItem Id="FixNo" ViewItem="FixNo" Index="1" RelativeSize="23.453908984830804" IsNewNode="True" />
+                  <LayoutItem Id="VoucherDate" ViewItem="VoucherDate" Index="2" RelativeSize="50.058343057176195" IsNewNode="True" />
                 </LayoutGroup>
-                <LayoutGroup Id="Autocf0825c4-56dc-42b6-9505-31f8017d52dc" ShowCaption="False" Caption="" Index="1" RelativeSize="42.857142857142854" IsNewNode="True">
-                  <LayoutGroup Id="Autod531514a-6d25-4155-8629-01e0113f4e09" ShowCaption="False" Caption="" Direction="Horizontal" Index="0" RelativeSize="50" IsNewNode="True">
-                    <LayoutItem Id="VoucherType" ViewItem="VoucherType" Index="0" RelativeSize="50.924608819345664" IsNewNode="True" />
-                    <LayoutItem Id="VoucherDate" ViewItem="VoucherDate" Index="1" RelativeSize="49.075391180654336" IsNewNode="True" />
+                <LayoutGroup Id="Auto4219efa6-dd68-4671-98b5-222fb2260012" ShowCaption="False" Caption="" Direction="Horizontal" Index="1" RelativeSize="42.857142857142854" IsNewNode="True">
+                  <LayoutGroup Id="Autoecfb146a-a6a7-4681-be2a-df8fa52de964" ShowCaption="False" Caption="" Index="0" RelativeSize="49.941656942823805" IsNewNode="True">
+                    <LayoutItem Id="VoucherType" ViewItem="VoucherType" Index="0" RelativeSize="50" IsNewNode="True" />
+                    <LayoutItem Id="CreditSum" ViewItem="CreditSum" Index="1" RelativeSize="50" IsNewNode="True" />
                   </LayoutGroup>
-                  <LayoutGroup Id="Auto72fabb70-1cdf-48dc-afc2-5a295118a599" ShowCaption="False" Caption="" Direction="Horizontal" Index="1" RelativeSize="50" IsNewNode="True">
-                    <LayoutItem Id="CreditSum" ViewItem="CreditSum" Index="0" RelativeSize="50.924608819345664" IsNewNode="True" />
-                    <LayoutItem Id="DebitSum" ViewItem="DebitSum" Index="1" RelativeSize="49.075391180654336" IsNewNode="True" />
+                  <LayoutGroup Id="Autod06d2f81-4d67-4807-9a5f-f7fd701632f6" ShowCaption="False" Caption="" Index="1" RelativeSize="50.058343057176195" IsNewNode="True">
+                    <LayoutItem Id="VoucherState" ViewItem="VoucherState" Index="0" RelativeSize="50" IsNewNode="True" />
+                    <LayoutItem Id="DebitSum" ViewItem="DebitSum" Index="1" RelativeSize="50" IsNewNode="True" />
                   </LayoutGroup>
                 </LayoutGroup>
                 <LayoutItem Id="FixNo" RelativeSize="15" Index="1" Removed="True" />
@@ -206,12 +211,20 @@
     </DetailView>
     <ListView Id="Voucher_ListView">
       <Columns>
-        <ColumnInfo Id="VoucherDate" Width="154" Index="1" />
+        <ColumnInfo Id="VoucherState" Width="99" Index="-1" />
+        <ColumnInfo Id="VoucherStateValue" PropertyName="VoucherState.Value" Index="0" Width="25" Caption="S" IsNewNode="True" />
+        <ColumnInfo Id="TempNo" Index="1" SortIndex="0" SortOrder="Ascending" />
+        <ColumnInfo Id="FixNo" Index="2" />
+        <ColumnInfo Id="VoucherDate" Width="120" Index="3" />
+        <ColumnInfo Id="CreditSum" Index="4" Width="101" />
+        <ColumnInfo Id="DebitSum" Index="5" Width="104" />
+        <ColumnInfo Id="VoucherType" Width="100" Index="6" />
+        <ColumnInfo Id="Description" Width="209" Index="7" />
       </Columns>
       <ChartSettings Settings="﻿&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#xD;&#xA;&lt;ChartXmlSerializer version=&quot;15.2.5.0&quot;&gt;&#xD;&#xA;  &lt;Chart AppearanceNameSerializable=&quot;Default&quot; SelectionMode=&quot;None&quot; SeriesSelectionMode=&quot;Series&quot;&gt;&#xD;&#xA;    &lt;DataContainer DataMember=&quot;&quot; BoundSeriesSorting=&quot;None&quot; RefreshDataOnRepaint=&quot;true&quot;&gt;&#xD;&#xA;      &lt;SeriesSerializable&gt;&#xD;&#xA;        &lt;Item1 Name=&quot;Series 1&quot; ValueDataMembersSerializable=&quot;CreditSum&quot;&gt;&#xD;&#xA;          &lt;View TypeNameSerializable=&quot;LineSeriesView&quot; /&gt;&#xD;&#xA;        &lt;/Item1&gt;&#xD;&#xA;      &lt;/SeriesSerializable&gt;&#xD;&#xA;      &lt;SeriesTemplate /&gt;&#xD;&#xA;    &lt;/DataContainer&gt;&#xD;&#xA;    &lt;Diagram TypeNameSerializable=&quot;XYDiagram&quot;&gt;&#xD;&#xA;      &lt;AxisX VisibleInPanesSerializable=&quot;-1&quot; /&gt;&#xD;&#xA;      &lt;AxisY VisibleInPanesSerializable=&quot;-1&quot; /&gt;&#xD;&#xA;    &lt;/Diagram&gt;&#xD;&#xA;  &lt;/Chart&gt;&#xD;&#xA;&lt;/ChartXmlSerializer&gt;" />
       <PivotSettings ShowChart="True" ShowColumnGrandTotals="True" ShowColumnTotals="True" ShowRowGrandTotals="True" ShowRowTotals="True" />
     </ListView>
-    <ListView Id="Voucher_VoucherItems_ListView" AllowEdit="True" IsFooterVisible="True" GroupSummary="Sum">
+    <ListView Id="Voucher_VoucherItems_ListView" AllowEdit="True" IsFooterVisible="True" GroupSummary="Sum" AllowLink="False" AllowUnlink="False" MasterDetailMode="ListViewOnly" NewItemRowPosition="Bottom">
       <Columns>
         <ColumnInfo Id="RowNo">
           <Summary>

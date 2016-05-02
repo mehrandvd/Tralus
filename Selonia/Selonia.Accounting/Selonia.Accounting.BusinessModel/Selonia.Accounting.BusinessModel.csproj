@@ -64,6 +64,7 @@
     <Compile Include="Entities\Voucher.cs" />
     <Compile Include="Entities\VoucherItem.cs" />
     <Compile Include="Entities\VoucherItemSegment.cs" />
+    <Compile Include="Entities\VoucherState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Entities\VoucherType.cs" />
   </ItemGroup>

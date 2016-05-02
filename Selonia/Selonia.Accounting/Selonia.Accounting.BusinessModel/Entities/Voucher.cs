@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DevExpress.ExpressApp.DC;
 using Tralus.Framework.BusinessModel.Entities;
 
 namespace Selonia.Accounting.BusinessModel.Entities
@@ -24,6 +25,8 @@ namespace Selonia.Accounting.BusinessModel.Entities
 
         public virtual VoucherType VoucherType { get; set; }
 
+        public virtual VoucherState VoucherState { get; set; }
+
         private long? _creditSum;
         public virtual long? CreditSum
         {
@@ -38,6 +41,7 @@ namespace Selonia.Accounting.BusinessModel.Entities
             set { _debitSum = value; }
         }
 
+        [Aggregated]
         public virtual ICollection<VoucherItem> VoucherItems { get; set; }
     }
 }
