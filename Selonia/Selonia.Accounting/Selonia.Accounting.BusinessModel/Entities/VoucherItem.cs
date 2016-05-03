@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
 using Tralus.Framework.BusinessModel.Entities;
 
 namespace Selonia.Accounting.BusinessModel.Entities
@@ -8,12 +9,13 @@ namespace Selonia.Accounting.BusinessModel.Entities
     {
         private long _debit;
         private long _credit;
+        private Voucher _voucher;
 
         public VoucherItem()
         {
             VoucherItemSegments = new List<VoucherItemSegment>();
         }
-        public virtual int RowNo { get; set; }
+        public virtual int RowNo { get; private set; }
 
         public virtual long Debit
         {
@@ -55,8 +57,25 @@ namespace Selonia.Accounting.BusinessModel.Entities
         [NotMapped]
         public virtual Segment Segment4 { get; set; }
 
-        public virtual Voucher Voucher { get; set; }
+        public virtual Voucher Voucher
+        {
+            get { return _voucher; }
+            set
+            {
+                _voucher = value;
+                SetRowNo();
+            }
+        }
 
         public virtual ICollection<VoucherItemSegment> VoucherItemSegments { get; set; }
+
+        private void SetRowNo()
+        {
+            if (State == ObjectState.New && RowNo == 0)
+            {
+                RowNo = (Voucher?.VoucherItems.Any() ?? false)
+                ? (int) Voucher?.VoucherItems.Max(o => o.RowNo) + 1 : 1;
+            }
+        }
     }
 }
