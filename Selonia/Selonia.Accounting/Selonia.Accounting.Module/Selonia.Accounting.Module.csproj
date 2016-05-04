@@ -130,6 +130,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessObjects\AccountingDbContext.cs" />
+    <Compile Include="Controllers\CustomizeDeleteVoucherItemViewController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\CustomizeDeleteVoucherItemViewController.Designer.cs">
+      <DependentUpon>CustomizeDeleteVoucherItemViewController.cs</DependentUpon>
+    </Compile>
     <Compile Include="DatabaseUpdate\Updater.cs" />
     <Compile Include="Module.cs">
       <SubType>Component</SubType>
@@ -140,6 +146,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Controllers\CustomizeDeleteVoucherItemViewController.resx">
+      <DependentUpon>CustomizeDeleteVoucherItemViewController.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
     <EmbeddedResource Include="Module.resx">
       <SubType>Designer</SubType>
