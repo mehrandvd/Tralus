@@ -69,8 +69,14 @@ namespace Selonia.Accounting.BusinessModel.Entities
 
         public virtual ICollection<VoucherItemSegment> VoucherItemSegments { get; set; }
 
-        private void SetRowNo()
+        public void SetRowNo(int? rowNo = null)
         {
+            if (rowNo.HasValue)
+            {
+                RowNo = rowNo.Value;
+                return;
+            }
+
             if (State == ObjectState.New && RowNo == 0)
             {
                 RowNo = (Voucher?.VoucherItems.Any() ?? false)
