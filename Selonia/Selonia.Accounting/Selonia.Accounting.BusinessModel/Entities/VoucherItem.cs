@@ -77,7 +77,7 @@ namespace Selonia.Accounting.BusinessModel.Entities
                 return;
             }
 
-            if (State == ObjectState.New && RowNo == 0)
+            if (IsNew() && RowNo == 0)
             {
                 RowNo = (Voucher?.VoucherItems.Any() ?? false)
                 ? (int) Voucher?.VoucherItems.Max(o => o.RowNo) + 1 : 1;
