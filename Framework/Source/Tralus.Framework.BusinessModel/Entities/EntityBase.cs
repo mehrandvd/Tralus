@@ -41,6 +41,7 @@ namespace Tralus.Framework.BusinessModel.Entities
         private void ApplyInitializationRules()
         {
             Id = Guid.NewGuid();
+            State = ObjectState.New;
             OnInitialize();
         }
 
@@ -53,6 +54,7 @@ namespace Tralus.Framework.BusinessModel.Entities
         /// </summary>
         private void ApplyRetrieveRules()
         {
+            State = ObjectState.Unchanged;
             OnRetrieve();
         }
 
@@ -65,6 +67,7 @@ namespace Tralus.Framework.BusinessModel.Entities
         /// </summary>
         private void ApplySaveRules()
         {
+            State = ObjectState.Unchanged;
             OnSave();
         }
 
@@ -101,6 +104,15 @@ namespace Tralus.Framework.BusinessModel.Entities
                 return Application.CreateObjectSpace(type);
 
             return null;
+        }
+
+        [NotMapped]
+        [Browsable(false)]
+        public ObjectState State { get; set; }
+
+        public bool IsNew()
+        {
+            return State == ObjectState.New;
         }
     
     }
