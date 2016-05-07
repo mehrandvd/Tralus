@@ -68,6 +68,10 @@
     <Compile Include="Migrations\201605012002113_AnalysisAdded.Designer.cs">
       <DependentUpon>201605012002113_AnalysisAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605072053342_WorkflowAdded.cs" />
+    <Compile Include="Migrations\201605072053342_WorkflowAdded.Designer.cs">
+      <DependentUpon>201605072053342_WorkflowAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="TralusDbMigrationConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -102,6 +106,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605012002113_AnalysisAdded.resx">
       <DependentUpon>201605012002113_AnalysisAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605072053342_WorkflowAdded.resx">
+      <DependentUpon>201605072053342_WorkflowAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
