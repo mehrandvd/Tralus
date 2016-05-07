@@ -16,6 +16,7 @@ using DevExpress.ExpressApp.ReportsV2;
 using DevExpress.ExpressApp.TreeListEditors;
 using DevExpress.ExpressApp.Validation;
 using DevExpress.ExpressApp.ViewVariantsModule;
+using DevExpress.ExpressApp.Workflow;
 using Tralus.Framework.BusinessModel.Entities;
 using Tralus.Framework.Module.Interface;
 using Tralus.Framework.Utility.ReflectionHelpers;
@@ -45,6 +46,7 @@ namespace Tralus.Framework.Module
             this.RequiredModuleTypes.Add(typeof(ChartModule));
             this.RequiredModuleTypes.Add(typeof(PivotGridModule));
             this.RequiredModuleTypes.Add(typeof(PivotChartModuleBase));
+            this.RequiredModuleTypes.Add(typeof(WorkflowModule));
         }
     }
 }

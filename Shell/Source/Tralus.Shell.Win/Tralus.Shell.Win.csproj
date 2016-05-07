@@ -139,6 +139,14 @@
       <SpecificVersion>False</SpecificVersion>
       <Private>True</Private>
     </Reference>
+    <Reference Include="DevExpress.ExpressApp.Workflow.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\DevExpress 15.2\Components\Bin\Framework\DevExpress.ExpressApp.Workflow.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Workflow.Win.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\DevExpress 15.2\Components\Bin\Framework\DevExpress.ExpressApp.Workflow.Win.v15.2.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.ExpressApp.Xpo.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
@@ -185,6 +193,14 @@
     <Reference Include="DevExpress.Persistent.Base.v15.2">
       <SpecificVersion>False</SpecificVersion>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Workflow.Activities.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\DevExpress 15.2\Components\Bin\Framework\DevExpress.Workflow.Activities.v15.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Workflow.Activities.v15.2.Design, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\DevExpress 15.2\Components\Bin\Framework\DevExpress.Workflow.Activities.v15.2.Design.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Xpo.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>

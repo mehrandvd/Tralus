@@ -1,7 +1,10 @@
 using System;
 using System.Data.Common;
 using System.Data.Entity;
+using DevExpress.ExpressApp.Workflow.EF;
+using DevExpress.ExpressApp.Workflow.Versioning;
 using DevExpress.Persistent.BaseImpl.EF;
+using DevExpress.Workflow.EF;
 using Role = Tralus.Framework.BusinessModel.Entities.Role;
 using User = Tralus.Framework.BusinessModel.Entities.User;
 
@@ -45,6 +48,15 @@ namespace  Tralus.Framework.Data {
 
 	        modelBuilder.Entity<ReportDataV2>();
 	        modelBuilder.Entity<Analysis>();
+
+            modelBuilder.Entity<EFWorkflowDefinition>();
+            modelBuilder.Entity<EFStartWorkflowRequest>();
+            modelBuilder.Entity<EFRunningWorkflowInstanceInfo>();
+            modelBuilder.Entity<EFWorkflowInstanceControlCommandRequest>();
+            modelBuilder.Entity<EFInstanceKey>();
+            modelBuilder.Entity<EFTrackingRecord>();
+            modelBuilder.Entity<EFWorkflowInstance>();
+            modelBuilder.Entity<EFUserActivityVersion>();
 	    }
-	}
+    }
 }

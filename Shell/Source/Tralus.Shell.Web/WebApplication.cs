@@ -36,12 +36,17 @@ namespace Tralus.Shell.Web
         private DevExpress.ExpressApp.PivotGrid.Web.PivotGridAspNetModule pivotGridAspNetModule1;
         private DevExpress.ExpressApp.PivotChart.Web.PivotChartAspNetModule pivotChartAspNetModule1;
         private DevExpress.ExpressApp.PivotChart.PivotChartModuleBase pivotChartModuleBase1;
+        private DevExpress.ExpressApp.Workflow.WorkflowModule workflowModule1;
+        private Module.ShellModule shellModule1;
         private DevExpress.ExpressApp.StateMachine.StateMachineModule stateMachineModule;
 
         public ShellAspNetApplication()
         {
             InitializeComponent();
             stateMachineModule.StateMachineStorageType = typeof(StateMachine);
+
+           
+
             //try
             //{
             //    AppDomain.CurrentDomain.AssemblyResolve += (sender, args) =>
@@ -135,6 +140,8 @@ namespace Tralus.Shell.Web
             this.pivotGridAspNetModule1 = new DevExpress.ExpressApp.PivotGrid.Web.PivotGridAspNetModule();
             this.pivotChartAspNetModule1 = new DevExpress.ExpressApp.PivotChart.Web.PivotChartAspNetModule();
             this.pivotChartModuleBase1 = new DevExpress.ExpressApp.PivotChart.PivotChartModuleBase();
+            this.workflowModule1 = new DevExpress.ExpressApp.Workflow.WorkflowModule();
+            this.shellModule1 = new Tralus.Shell.Module.ShellModule();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // stateMachineModule
@@ -160,6 +167,16 @@ namespace Tralus.Shell.Web
             // pivotChartModuleBase1
             // 
             this.pivotChartModuleBase1.ShowAdditionalNavigation = true;
+            //
+            // workflowModule1
+            //
+            this.workflowModule1.RunningWorkflowInstanceInfoType = typeof(DevExpress.ExpressApp.Workflow.EF.EFRunningWorkflowInstanceInfo);
+            this.workflowModule1.StartWorkflowRequestType = typeof(DevExpress.ExpressApp.Workflow.EF.EFStartWorkflowRequest);
+            this.workflowModule1.UserActivityVersionType = typeof(DevExpress.ExpressApp.Workflow.Versioning.EFUserActivityVersion);
+            this.workflowModule1.WorkflowControlCommandRequestType = typeof(DevExpress.ExpressApp.Workflow.EF.EFWorkflowInstanceControlCommandRequest);
+            this.workflowModule1.WorkflowDefinitionType = typeof(DevExpress.ExpressApp.Workflow.EF.EFWorkflowDefinition);
+            this.workflowModule1.WorkflowInstanceKeyType = typeof(DevExpress.Workflow.EF.EFInstanceKey);
+            this.workflowModule1.WorkflowInstanceType = typeof(DevExpress.Workflow.EF.EFWorkflowInstance);
             // 
             // ShellAspNetApplication
             // 
@@ -183,6 +200,7 @@ namespace Tralus.Shell.Web
             this.Modules.Add(this.pivotGridAspNetModule1);
             this.Modules.Add(this.pivotChartModuleBase1);
             this.Modules.Add(this.pivotChartAspNetModule1);
+            this.Modules.Add(this.workflowModule1);
             this.DatabaseVersionMismatch += new System.EventHandler<DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs>(this.ShellAspNetApplication_DatabaseVersionMismatch);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 

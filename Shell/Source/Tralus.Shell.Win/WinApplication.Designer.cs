@@ -53,6 +53,8 @@ namespace Tralus.Shell.Win {
             this.pivotChartWindowsFormsModule1 = new DevExpress.ExpressApp.PivotChart.Win.PivotChartWindowsFormsModule();
             this.shellModule8 = new Tralus.Shell.Module.ShellModule();
             this.pivotChartModuleBase1 = new DevExpress.ExpressApp.PivotChart.PivotChartModuleBase();
+            this.workflowModule1 = new DevExpress.ExpressApp.Workflow.WorkflowModule();
+            this.workflowWindowsFormsModule1 = new DevExpress.ExpressApp.Workflow.Win.WorkflowWindowsFormsModule();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // validationModule1
@@ -74,6 +76,16 @@ namespace Tralus.Shell.Win {
             // pivotChartModuleBase1
             // 
             this.pivotChartModuleBase1.ShowAdditionalNavigation = true;
+            //
+            // workflowModule
+            //
+            this.workflowModule1.RunningWorkflowInstanceInfoType = typeof(DevExpress.ExpressApp.Workflow.EF.EFRunningWorkflowInstanceInfo);
+            this.workflowModule1.StartWorkflowRequestType = typeof(DevExpress.ExpressApp.Workflow.EF.EFStartWorkflowRequest);
+            this.workflowModule1.UserActivityVersionType = typeof(DevExpress.ExpressApp.Workflow.Versioning.EFUserActivityVersion);
+            this.workflowModule1.WorkflowControlCommandRequestType = typeof(DevExpress.ExpressApp.Workflow.EF.EFWorkflowInstanceControlCommandRequest);
+            this.workflowModule1.WorkflowDefinitionType = typeof(DevExpress.ExpressApp.Workflow.EF.EFWorkflowDefinition);
+            this.workflowModule1.WorkflowInstanceKeyType = typeof(DevExpress.Workflow.EF.EFInstanceKey);
+            this.workflowModule1.WorkflowInstanceType = typeof(DevExpress.Workflow.EF.EFWorkflowInstance);
             // 
             // ShellWindowsFormsApplication
             // 
@@ -98,6 +110,8 @@ namespace Tralus.Shell.Win {
             this.Modules.Add(this.chartWindowsFormsModule1);
             this.Modules.Add(this.pivotChartModuleBase1);
             this.Modules.Add(this.pivotChartWindowsFormsModule1);
+            this.Modules.Add(this.workflowModule1);
+            this.Modules.Add(this.workflowWindowsFormsModule1);
             this.UseOldTemplates = false;
             this.DatabaseVersionMismatch += new System.EventHandler<DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs>(this.ShellWindowsFormsApplication_DatabaseVersionMismatch);
             this.CustomizeLanguagesList += new System.EventHandler<DevExpress.ExpressApp.CustomizeLanguagesListEventArgs>(this.ShellWindowsFormsApplication_CustomizeLanguagesList);
@@ -135,5 +149,7 @@ namespace Tralus.Shell.Win {
         private DevExpress.ExpressApp.PivotChart.Win.PivotChartWindowsFormsModule pivotChartWindowsFormsModule1;
         private Module.ShellModule shellModule8;
         private DevExpress.ExpressApp.PivotChart.PivotChartModuleBase pivotChartModuleBase1;
+        private DevExpress.ExpressApp.Workflow.WorkflowModule workflowModule1;
+        private DevExpress.ExpressApp.Workflow.Win.WorkflowWindowsFormsModule workflowWindowsFormsModule1;
     }
 }
