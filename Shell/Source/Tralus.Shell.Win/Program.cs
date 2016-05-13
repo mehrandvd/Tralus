@@ -1,5 +1,6 @@
 using System;
 using System.Configuration;
+using System.Data.Entity;
 using System.Windows.Forms;
 
 using DevExpress.ExpressApp;
@@ -8,6 +9,7 @@ using DevExpress.ExpressApp.Win;
 using DevExpress.Persistent.Base;
 using Tralus.Framework.BusinessModel.Entities;
 using Tralus.Framework.Module.Security;
+using Tralus.Shell.Module.BusinessObjects;
 using Tralus.Shell.Module.Security;
 
 namespace Tralus.Shell.Win {
@@ -20,6 +22,8 @@ namespace Tralus.Shell.Win {
 #if EASYTEST
             DevExpress.ExpressApp.Win.EasyTest.EasyTestRemotingRegistration.Register();
 #endif
+            Database.SetInitializer<ShellDbContext>(null);
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             EditModelPermission.AlwaysGranted = System.Diagnostics.Debugger.IsAttached;
