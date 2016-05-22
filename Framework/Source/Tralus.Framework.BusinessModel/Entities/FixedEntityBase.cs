@@ -9,21 +9,17 @@ namespace Tralus.Framework.BusinessModel.Entities
 {
     public abstract class FixedEntityBase : EntityBase
     {
-        public string ProgrammingKey { get; private set; }
-        
+        //public string ProgrammingKey { get; private set; }
+        public string Value { get; set; }
         public string Name { get; set; }
 
-        public FixedEntityBase(string fixedName)
+        protected FixedEntityBase(Enum value)
         {
             ((IXafEntityObject)this).OnCreated();
-            ProgrammingKey = fixedName;
+            Value = value?.ToString()??"";
         }
 
-        public virtual int PredefinedValuesApplyingOrder
-        {
-            get { return 1000; }
-            
-        }
+        public virtual int PredefinedValuesApplyingOrder => 1000;
 
         public abstract void PopulateDbContext(DbContext dbContext);
     }

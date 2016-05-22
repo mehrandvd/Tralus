@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
@@ -10,16 +11,32 @@ namespace Tralus.Framework.BusinessModel.Entities
     public abstract class FixedEntityBase<TEntity> : FixedEntityBase
         where TEntity : FixedEntityBase<TEntity>, new()
     {
-        public FixedEntityBase(string fixedName)
-            : base(fixedName)
+        protected FixedEntityBase() : this(null)
+        {
+            
+        }
+
+        protected FixedEntityBase(Enum value)
+            : base(value)
         {
         }
 
         public static TEntity GetFixedEntity([CallerMemberName] string callerName = null)
         {
-            // ToDo: Exception Management should be applied on this.
-            var entity = AllDictionary[callerName];
-            return entity;
+            if (callerName == null)
+            {
+                throw new ArgumentNullException(nameof(callerName), "GetFixedEntity must be called within a property.");
+            }
+
+            try
+            {
+                var entity = AllDictionary[callerName];
+                return entity;
+            }
+            catch (Exception exception)
+            {
+                throw new Exception($"Can not find fixed entity: {callerName} on type: {typeof(TEntity)}", exception);
+            }
         }
 
         private static Dictionary<string, TEntity> _allDictionary;
@@ -30,7 +47,7 @@ namespace Tralus.Framework.BusinessModel.Entities
             {
                 LazyInitializer.EnsureInitialized(ref _allDictionary, () =>
                 {
-                    return All.ToDictionary(item => item.ProgrammingKey);
+                    return All.ToDictionary(item => item.Value.ToString());
                 });
 
                 return _allDictionary;
@@ -52,7 +69,9 @@ namespace Tralus.Framework.BusinessModel.Entities
                         return list.Cast<TEntity>().ToList();
                     }
 
-                    return new TEntity().PredefinedValues().ToList();
+                    var newEntity = (TEntity) Activator.CreateInstance(typeof(TEntity), null);
+
+                    return newEntity.PredefinedValues().ToList();
                 });
 
                 return _all;
