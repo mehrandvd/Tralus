@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.ServiceProcess;
 using System.Text;
+using Tralus.Shell.Module.BusinessObjects;
 
 namespace Tralus.Shell.WorkflowService
 {
@@ -13,12 +15,22 @@ namespace Tralus.Shell.WorkflowService
         /// </summary>
         static void Main()
         {
-            ServiceBase[] ServicesToRun;
-            ServicesToRun = new ServiceBase[]
+            Database.SetInitializer<ShellDbContext>(null);
+            if (Environment.UserInteractive)
+            { 
+                new WorkflowServiceWorkflowServer().Test(null);
+            }
+            else
             {
-                new WorkflowServiceWorkflowServer()
-            };
-            ServiceBase.Run(ServicesToRun);
+                ServiceBase[] ServicesToRun;
+                ServicesToRun = new ServiceBase[]
+                {
+                    new WorkflowServiceWorkflowServer()
+                };
+                ServiceBase.Run(ServicesToRun);
+            }
+
+
         }
     }
 }
