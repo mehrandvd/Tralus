@@ -22,7 +22,7 @@ namespace Tralus.Framework.Migration
 
             var instances =
                 from type in types
-                let instance = (FixedEntityBase)Activator.CreateInstance(type, "")
+                let instance = (FixedEntityBase)Activator.CreateInstance(type, (Enum)null)
                 orderby instance.PredefinedValuesApplyingOrder
                 select instance;
 

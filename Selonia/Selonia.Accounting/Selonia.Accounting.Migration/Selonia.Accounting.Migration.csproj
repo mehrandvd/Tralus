@@ -90,6 +90,10 @@
     <Compile Include="Migrations\201605021834095_VoucherStateAdded.Designer.cs">
       <DependentUpon>201605021834095_VoucherStateAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605221816012_RenameProgKeyToValue.cs" />
+    <Compile Include="Migrations\201605221816012_RenameProgKeyToValue.Designer.cs">
+      <DependentUpon>201605221816012_RenameProgKeyToValue.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -125,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605021834095_VoucherStateAdded.resx">
       <DependentUpon>201605021834095_VoucherStateAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605221816012_RenameProgKeyToValue.resx">
+      <DependentUpon>201605221816012_RenameProgKeyToValue.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

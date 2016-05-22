@@ -12,14 +12,12 @@ namespace Selonia.Accounting.BusinessModel.Entities
 {
     public class VoucherState : FixedEntityBase<VoucherState>
     {
-        public Values Value { get; set; }
-
-        public VoucherState() : base("")
+        public VoucherState()
         {
-
+            
         }
 
-        public VoucherState(string fixedName) : base(fixedName)
+        public VoucherState(Enum value) : base(value)
         {
         }
 
@@ -27,28 +25,24 @@ namespace Selonia.Accounting.BusinessModel.Entities
         {
             return new List<VoucherState>
             {
-                new VoucherState(nameof(Values.Draft))
+                new VoucherState((Values.Draft))
                 {
                     Id = new Guid("D1AAD34F-5A77-497A-8171-C04AD2153AA1"),
-                    Value = Values.Draft,
                     Name = "یادداشت",
                 },
-                new VoucherState(nameof(Values.Registered))
+                new VoucherState((Values.Registered))
                 {
                     Id = new Guid("0FBF0778-0072-4EB4-8312-91A681EAD01D"),
-                    Value = Values.Registered,
                     Name = "ثبت شده",
                 },
-                new VoucherState(nameof(Values.Accepted))
+                new VoucherState((Values.Accepted))
                 {
                     Id = new Guid("9FC156A2-311A-4C72-8636-F39296E67082"),
-                    Value = Values.Registered,
                     Name = "تایید شده",
                 },
-                new VoucherState(nameof(Values.Fixed))
+                new VoucherState((Values.Fixed))
                 {
                     Id = new Guid("CC7F3F88-6C98-466D-8203-663728C92F8A"),
-                    Value = Values.Fixed,
                     Name = "قطعی شده",
                 },
 
