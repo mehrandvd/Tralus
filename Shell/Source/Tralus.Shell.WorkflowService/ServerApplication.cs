@@ -5,14 +5,15 @@ using System.Linq;
 using System.Text;
 using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.EF;
-using DevExpress.ExpressApp.Xpo;
 using Tralus.Framework.BusinessModel.Entities;
 using Tralus.Framework.BusinessModel.Entities.StateMachines;
 using Tralus.Shell.Module.BusinessObjects;
 using Tralus.Shell.Module.Utility;
 
-namespace Tralus.Shell.WorkflowService {
-    public class ServerApplication : XafApplication {
+namespace Tralus.Shell.WorkflowService
+{
+    public class ServerApplication : XafApplication
+    {
         public ServerApplication()
         {
             IEnumerable<Type> loadedModuleTypes;
@@ -32,14 +33,15 @@ namespace Tralus.Shell.WorkflowService {
                 //}
 
             }
-            catch
+            catch (Exception exception)
             {
             }
         }
 
         private readonly IEnumerable<Type> _loadedContextTypes;
 
-        protected override void CreateDefaultObjectSpaceProvider(CreateCustomObjectSpaceProviderEventArgs args) {
+        protected override void CreateDefaultObjectSpaceProvider(CreateCustomObjectSpaceProviderEventArgs args)
+        {
             //args.ObjectSpaceProvider = new XPObjectSpaceProvider(args.ConnectionString, args.Connection);
             //foreach (var dbContext in _loadedContextTypes)
             //{
@@ -57,10 +59,18 @@ namespace Tralus.Shell.WorkflowService {
             args.ObjectSpaceProvider = objectSpaceProvider;
 
         }
-        protected override DevExpress.ExpressApp.Layout.LayoutManager CreateLayoutManagerCore(bool simple) {
+
+        protected override void CheckCompatibilityCore()
+        {
+            
+        }
+
+        protected override DevExpress.ExpressApp.Layout.LayoutManager CreateLayoutManagerCore(bool simple)
+        {
             throw new NotImplementedException();
         }
-        public void Logon() {
+        public void Logon()
+        {
             base.Logon(null);
         }
     }
