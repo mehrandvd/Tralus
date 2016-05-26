@@ -100,15 +100,12 @@ namespace Tralus.Framework.BusinessModel.Entities
 
         public static IObjectSpace CreateObjectSpace(Type type)
         {
-            if (Application != null)
-                return Application.CreateObjectSpace(type);
-
-            return null;
+            return Application?.CreateObjectSpace(type);
         }
 
         [NotMapped]
         [Browsable(false)]
-        public ObjectState State { get; set; }
+        private ObjectState State { get; set; }
 
         public bool IsNew()
         {

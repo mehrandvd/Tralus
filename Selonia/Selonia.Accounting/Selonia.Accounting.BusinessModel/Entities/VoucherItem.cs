@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using Tralus.Framework.BusinessModel.Entities;
 
 namespace Selonia.Accounting.BusinessModel.Entities
 {
-    public class VoucherItem : EntityBase
+    public class VoucherItem : EntityBase, IOrderedEntity
     {
         private long _debit;
         private long _credit;
@@ -57,31 +58,38 @@ namespace Selonia.Accounting.BusinessModel.Entities
         [NotMapped]
         public virtual Segment Segment4 { get; set; }
 
-        public virtual Voucher Voucher
-        {
-            get { return _voucher; }
-            set
-            {
-                _voucher = value;
-                SetRowNo();
-            }
+        public virtual Voucher Voucher { get; set;
+            //get { return _voucher; }
+            //set
+            //{
+            //    _voucher = value;
+            //    SetRowNo();
+            //}
         }
 
         public virtual ICollection<VoucherItemSegment> VoucherItemSegments { get; set; }
 
-        public void SetRowNo(int? rowNo = null)
-        {
-            if (rowNo.HasValue)
-            {
-                RowNo = rowNo.Value;
-                return;
-            }
+        //public void SetRowNo(int? rowNo = null)
+        //{
+        //    if (rowNo.HasValue)
+        //    {
+        //        RowNo = rowNo.Value;
+        //        return;
+        //    }
 
-            if (IsNew() && RowNo == 0)
-            {
-                RowNo = (Voucher?.VoucherItems.Any() ?? false)
-                ? (int) Voucher?.VoucherItems.Max(o => o.RowNo) + 1 : 1;
-            }
+        //    if (IsNew() && RowNo == 0)
+        //    {
+        //        RowNo = (Voucher?.VoucherItems.Any() ?? false)
+        //        ? (int) Voucher?.VoucherItems.Max(o => o.RowNo) + 1 : 1;
+        //    }
+        //}
+
+        public void SetRowNo(int rowNo)
+        {
+            RowNo = rowNo;
         }
+
+        public int RowNoProperty => RowNo;
+        public IEnumerable RefList => Voucher?.VoucherItems;
     }
 }
