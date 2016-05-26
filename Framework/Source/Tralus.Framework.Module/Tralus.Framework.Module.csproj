@@ -150,6 +150,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controllers\IMultipleExecution.cs" />
+    <Compile Include="Controllers\OrderedEntityViewController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\OrderedEntityViewController.Designer.cs">
+      <DependentUpon>OrderedEntityViewController.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\RunSystemEnvironmentTestViewController.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -185,6 +191,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Controllers\OrderedEntityViewController.resx">
+      <DependentUpon>OrderedEntityViewController.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
     <EmbeddedResource Include="Module.resx">
       <SubType>Designer</SubType>
