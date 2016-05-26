@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -10,7 +11,6 @@ namespace Selonia.Accounting.BusinessModel.Entities
     {
         private long _debit;
         private long _credit;
-        private Voucher _voucher;
 
         public VoucherItem()
         {
@@ -58,31 +58,25 @@ namespace Selonia.Accounting.BusinessModel.Entities
         [NotMapped]
         public virtual Segment Segment4 { get; set; }
 
-        public virtual Voucher Voucher { get; set;
-            //get { return _voucher; }
-            //set
-            //{
-            //    _voucher = value;
-            //    SetRowNo();
-            //}
-        }
+        public virtual Voucher Voucher { get; set; }
 
         public virtual ICollection<VoucherItemSegment> VoucherItemSegments { get; set; }
 
-        //public void SetRowNo(int? rowNo = null)
-        //{
-        //    if (rowNo.HasValue)
-        //    {
-        //        RowNo = rowNo.Value;
-        //        return;
-        //    }
+        [Obsolete("A controller in framework does this job.")]
+        public void SetRowNo(int? rowNo = null)
+        {
+            if (rowNo.HasValue)
+            {
+                RowNo = rowNo.Value;
+                return;
+            }
 
-        //    if (IsNew() && RowNo == 0)
-        //    {
-        //        RowNo = (Voucher?.VoucherItems.Any() ?? false)
-        //        ? (int) Voucher?.VoucherItems.Max(o => o.RowNo) + 1 : 1;
-        //    }
-        //}
+            if (IsNew() && RowNo == 0)
+            {
+                RowNo = (Voucher?.VoucherItems.Any() ?? false)
+                ? (int)Voucher?.VoucherItems.Max(o => o.RowNo) + 1 : 1;
+            }
+        }
 
         public void SetRowNo(int rowNo)
         {
