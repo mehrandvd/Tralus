@@ -70,6 +70,7 @@
     <Compile Include="Entities\DummyObject.cs" />
     <Compile Include="Entities\EntityBase.cs" />
     <Compile Include="Entities\EntityOperationPermission.cs" />
+    <Compile Include="Entities\EntityScript.cs" />
     <Compile Include="Entities\FixedEntityBase.cs" />
     <Compile Include="Entities\FixedEntityBaseT.cs" />
     <Compile Include="Entities\IHierarchyEntity.cs" />
