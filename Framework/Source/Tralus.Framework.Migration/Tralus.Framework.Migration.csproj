@@ -76,6 +76,10 @@
     <Compile Include="Migrations\201605272030453_EntityScriptAdded.Designer.cs">
       <DependentUpon>201605272030453_EntityScriptAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605302201575_EntitySequenceAdded.cs" />
+    <Compile Include="Migrations\201605302201575_EntitySequenceAdded.Designer.cs">
+      <DependentUpon>201605302201575_EntitySequenceAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="TralusDbMigrationConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -116,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605272030453_EntityScriptAdded.resx">
       <DependentUpon>201605272030453_EntityScriptAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605302201575_EntitySequenceAdded.resx">
+      <DependentUpon>201605302201575_EntitySequenceAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

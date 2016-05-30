@@ -64,13 +64,4 @@ namespace Tralus.Framework.Module.Utility
             var result = CSharpScript.RunAsync(script.Script, options, host).Result;
         }
     }
-
-    public class ScriptHost<T>
-    {
-        public ScriptHost(object entity)
-        {
-            Entity = (T) entity;
-        }
-        public T Entity { get; set; }
-    }
 }
