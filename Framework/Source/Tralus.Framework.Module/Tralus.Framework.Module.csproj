@@ -243,7 +243,10 @@
     <Compile Include="TralusModule.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Utility\EntityScriptUtil.cs" />
+    <Compile Include="Utility\EntityScript\EntityScriptUtil.cs" />
+    <Compile Include="Utility\EntityScript\ScriptHost.cs" />
+    <Compile Include="Utility\EntityScript\SequenceHost.cs" />
+    <Compile Include="Utility\EntitySequenceUtil.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Controllers\OrderedEntityViewController.resx">

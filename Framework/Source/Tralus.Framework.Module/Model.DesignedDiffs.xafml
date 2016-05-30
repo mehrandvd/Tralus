@@ -13,6 +13,7 @@
             <Items IsNewNode="True">
               <Item Id="State Machine" ViewId="StateMachine_ListView" ChildItemsDisplayStyle="List" IsNewNode="True" />
               <Item Id="Entity Script" ViewId="EntityScript_ListView" ChildItemsDisplayStyle="List" IsNewNode="True" />
+              <Item Id="Entity Sequence" ViewId="EntitySequence_ListView" ChildItemsDisplayStyle="List" IsNewNode="True" />
             </Items>
           </Item>
           <Item Id="Security" ChildItemsDisplayStyle="List" IsNewNode="True">
