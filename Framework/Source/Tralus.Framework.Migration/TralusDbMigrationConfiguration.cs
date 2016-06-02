@@ -18,11 +18,11 @@ namespace Tralus.Framework.Migration
 
             var types =
                 AssemblyResolver.GetCurrentModuleTypes(GetType())
-                    .Where(t => t.IsSubclassOf(typeof(FixedEntityBase)) && !t.IsAbstract);
+                    .Where(t => t.IsSubclassOf(typeof(IPredefinedValues)) && !t.IsAbstract);
 
             var instances =
                 from type in types
-                let instance = (FixedEntityBase)Activator.CreateInstance(type, (Enum)null)
+                let instance = (IPredefinedValues)Activator.CreateInstance(type, (Enum)null)
                 orderby instance.PredefinedValuesApplyingOrder
                 select instance;
 

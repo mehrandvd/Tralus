@@ -1,13 +1,25 @@
+using DevExpress.ExpressApp;
+using Tralus.Framework.BusinessModel.Entities;
+
 namespace Tralus.Framework.Module.Utility
 {
-    public class ScriptHost<T>
+    public class ScriptHostBase
     {
-        public ScriptHost(object entity)
-        {
-            Entity = (T) entity;
-        }
-        public T Entity { get; set; }
+        
+    }
 
-        public SequenceHost Sequence = new SequenceHost();
+    public class ScriptHost<T> : ScriptHostBase
+    {
+        public ScriptHost(object entity, IObjectSpace objectSpace)
+        {
+            This = (T) entity;
+            Sequence = new SequenceHost(This as EntityBase);
+            Database = new DatabaseHost(objectSpace);
+        }
+        public T This { get; set; }
+
+        public SequenceHost Sequence;
+
+        public DatabaseHost Database;
     }
 }

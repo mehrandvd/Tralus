@@ -198,6 +198,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controllers\Base\IMultipleExecution.cs" />
+    <Compile Include="Controllers\EntityScriptViewController.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controllers\EntityScriptViewController.Designer.cs">
+      <DependentUpon>EntityScriptViewController.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\OrderedEntityViewController.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -243,8 +249,10 @@
     <Compile Include="TralusModule.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Utility\EntityScript\DatabaseHost.cs" />
     <Compile Include="Utility\EntityScript\EntityScriptUtil.cs" />
     <Compile Include="Utility\EntityScript\ScriptHost.cs" />
+    <Compile Include="Utility\EntityScript\ScriptRunner.cs" />
     <Compile Include="Utility\EntityScript\SequenceHost.cs" />
     <Compile Include="Utility\EntitySequenceUtil.cs" />
   </ItemGroup>

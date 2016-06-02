@@ -59,13 +59,13 @@ namespace Tralus.Framework.Module.Controllers
 
             foreach (var entity in entities)
             {
-                var scripts = EntityScriptUtil.CachedScripts?[targetType];
+                var scripts = EntityScriptUtil.GetScriptsFor(targetType);
 
                 if (scripts != null)
                 {
                     foreach (var entityScript in scripts)
                     {
-                        EntityScriptUtil.Run(entityScript, entity);
+                        EntityScriptUtil.Run(entityScript, entity, ObjectSpace);
                     }
                 }
             }

@@ -80,6 +80,18 @@
     <Compile Include="Migrations\201605302201575_EntitySequenceAdded.Designer.cs">
       <DependentUpon>201605302201575_EntitySequenceAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605311332315_RenameToUsedFor.cs" />
+    <Compile Include="Migrations\201605311332315_RenameToUsedFor.Designer.cs">
+      <DependentUpon>201605311332315_RenameToUsedFor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606021328186_EntityNumberingAdded.cs" />
+    <Compile Include="Migrations\201606021328186_EntityNumberingAdded.Designer.cs">
+      <DependentUpon>201606021328186_EntityNumberingAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606021342400_RenameEntityScriptToRuleScript.cs" />
+    <Compile Include="Migrations\201606021342400_RenameEntityScriptToRuleScript.Designer.cs">
+      <DependentUpon>201606021342400_RenameEntityScriptToRuleScript.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="TralusDbMigrationConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -123,6 +135,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605302201575_EntitySequenceAdded.resx">
       <DependentUpon>201605302201575_EntitySequenceAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605311332315_RenameToUsedFor.resx">
+      <DependentUpon>201605311332315_RenameToUsedFor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606021328186_EntityNumberingAdded.resx">
+      <DependentUpon>201606021328186_EntityNumberingAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606021342400_RenameEntityScriptToRuleScript.resx">
+      <DependentUpon>201606021342400_RenameEntityScriptToRuleScript.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
