@@ -18,17 +18,17 @@ namespace Tralus.Framework.Migration
 
             var types =
                 AssemblyResolver.GetCurrentModuleTypes(GetType())
-                    .Where(t => t.IsSubclassOf(typeof(IPredefinedValues)) && !t.IsAbstract);
+                    .Where(t => t.IsSubclassOf(typeof(IPredefinedData)) && !t.IsAbstract);
 
             var instances =
                 from type in types
-                let instance = (IPredefinedValues)Activator.CreateInstance(type, (Enum)null)
-                orderby instance.PredefinedValuesApplyingOrder
+                let instance = (IPredefinedData)Activator.CreateInstance(type, (Enum)null)
+                orderby instance.PredefinedDataApplyingOrder
                 select instance;
 
             foreach (var instance in instances)
             {
-                instance.PopulateDbContext(context);
+                instance.PredefineData(context);
             }
 
             context.SaveChanges();
