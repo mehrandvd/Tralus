@@ -80,7 +80,7 @@
     <Compile Include="Entities\FixedEntityBaseT.cs" />
     <Compile Include="Entities\IHierarchyEntity.cs" />
     <Compile Include="Entities\IOrderedEntity.cs" />
-    <Compile Include="Entities\IPredefinedValues.cs" />
+    <Compile Include="Entities\IPredefinedData.cs" />
     <Compile Include="Entities\Role.cs" />
     <Compile Include="Entities\SecuritySystemInstancePermissionsObject.cs" />
     <Compile Include="Entities\SecuritySystemMemberPermissionsObject.cs" />

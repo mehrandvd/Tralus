@@ -7,7 +7,7 @@ using DevExpress.ExpressApp;
 
 namespace Tralus.Framework.BusinessModel.Entities
 {
-    public abstract class FixedEntityBase : EntityBase, IPredefinedValues
+    public abstract class FixedEntityBase : EntityBase, IPredefinedData
     {
         //public string ProgrammingKey { get; private set; }
         public string Value { get; set; }
@@ -19,8 +19,8 @@ namespace Tralus.Framework.BusinessModel.Entities
             Value = value?.ToString()??"";
         }
 
-        public virtual int PredefinedValuesApplyingOrder => 1000;
+        public virtual int PredefinedDataApplyingOrder => 1000;
 
-        public abstract void PopulateDbContext(DbContext dbContext);
+        public abstract void PredefineData(DbContext dbContext);
     }
 }

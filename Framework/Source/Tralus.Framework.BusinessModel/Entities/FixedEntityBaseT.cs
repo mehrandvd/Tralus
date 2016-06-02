@@ -80,7 +80,7 @@ namespace Tralus.Framework.BusinessModel.Entities
 
         public abstract List<TEntity> PredefinedValues();
 
-        public override void PopulateDbContext(DbContext dbContext)
+        public override void PredefineData(DbContext dbContext)
         {
             var predefinedValues = PredefinedValues().ToArray();
             dbContext.Set<TEntity>()
