@@ -21,7 +21,7 @@ namespace Tralus.Framework.BusinessModel.Entities
         public virtual DateTime CreationDateTime { get; set; }
         public virtual  long SeqValue { get; set; }
 
-        public virtual string RefInfo { get; set; }
+        public virtual string UsedFor { get; set; }
 
         public virtual string Param1 { get; set; }
         public virtual string Param2 { get; set; }

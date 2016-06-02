@@ -15,13 +15,57 @@ namespace Tralus.Framework.Module.Utility
         public static ConcurrentDictionary<string, EntitySequence> Cache = new ConcurrentDictionary<string, EntitySequence>();
 
         public static long GetNext(
+           string sequenceName,
+           EntityBase forEntity,
+           EntityBase restartBy1 = null,
+           EntityBase restartBy2 = null,
+           EntityBase restartBy3 = null,
+           EntityBase restartBy4 = null,
+           EntityBase restartBy5 = null
+           )
+        {
+            var usedFor = forEntity.Id.ToString();
+            return GetNext(
+                sequenceName,
+                restartBy1?.Id.ToString(),
+                restartBy2?.Id.ToString(),
+                restartBy3?.Id.ToString(),
+                restartBy4?.Id.ToString(),
+                restartBy5?.Id.ToString(),
+                usedFor
+                );
+        }
+
+        public static long GetNext(
             string sequenceName,
-            string refInfo = null,
+            EntityBase forEntity,
+            string restartBy1 = null,
+            string restartBy2 = null,
+            string restartBy3 = null,
+            string restartBy4 = null,
+            string restartBy5 = null
+            )
+        {
+            var usedFor = forEntity.Id.ToString();
+            return GetNext(
+                sequenceName,
+                restartBy1,
+                restartBy2,
+                restartBy3,
+                restartBy4,
+                restartBy5,
+                usedFor
+                );
+        }
+
+        public static long GetNext(
+            string sequenceName,
             string param1 = null,
             string param2 = null,
             string param3 = null,
             string param4 = null,
-            string param5 = null
+            string param5 = null,
+            string usedFor = null
             )
         {
             using (var db = new FrameworkDbContext())
@@ -34,7 +78,7 @@ namespace Tralus.Framework.Module.Utility
                     //{
                     //    var temp = db.Set<EntitySequence>().Create();
                     //    temp.Name = seqName;
-                    //    temp.Description = $"Automatically created for: {refInfo}";
+                    //    temp.Description = $"Automatically created for: {usedFor}";
                     //    db.SaveChanges();
                     //}
                     return s;
@@ -61,7 +105,12 @@ namespace Tralus.Framework.Module.Utility
                     SeqValue = maxValue + 1,
                     EntitySequenceId = seq.Id,
                     CreationDateTime = DateTime.Now,
-                    RefInfo = refInfo
+                    Param1 = param1,
+                    Param2 = param2,
+                    Param3 = param3,
+                    Param4 = param4,
+                    Param5 = param5,
+                    UsedFor = usedFor
                 };
 
 

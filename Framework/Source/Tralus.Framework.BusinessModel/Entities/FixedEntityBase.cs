@@ -7,7 +7,7 @@ using DevExpress.ExpressApp;
 
 namespace Tralus.Framework.BusinessModel.Entities
 {
-    public abstract class FixedEntityBase : EntityBase
+    public abstract class FixedEntityBase : EntityBase, IPredefinedValues
     {
         //public string ProgrammingKey { get; private set; }
         public string Value { get; set; }

@@ -67,9 +67,12 @@
   <ItemGroup>
     <Compile Include="Entities\Base\EntityState.cs" />
     <Compile Include="Entities\CandidateUser.cs" />
+    <Compile Include="Entities\DbContextExtensions.cs" />
     <Compile Include="Entities\DummyObject.cs" />
     <Compile Include="Entities\EntityBase.cs" />
+    <Compile Include="Entities\EntityNumbering.cs" />
     <Compile Include="Entities\EntityOperationPermission.cs" />
+    <Compile Include="Entities\EntityRuleScript.cs" />
     <Compile Include="Entities\EntityScript.cs" />
     <Compile Include="Entities\EntitySequence.cs" />
     <Compile Include="Entities\EntitySequenceItem.cs" />
@@ -77,6 +80,7 @@
     <Compile Include="Entities\FixedEntityBaseT.cs" />
     <Compile Include="Entities\IHierarchyEntity.cs" />
     <Compile Include="Entities\IOrderedEntity.cs" />
+    <Compile Include="Entities\IPredefinedValues.cs" />
     <Compile Include="Entities\Role.cs" />
     <Compile Include="Entities\SecuritySystemInstancePermissionsObject.cs" />
     <Compile Include="Entities\SecuritySystemMemberPermissionsObject.cs" />

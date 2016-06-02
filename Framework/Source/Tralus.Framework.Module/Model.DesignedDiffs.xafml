@@ -12,7 +12,8 @@
           <Item Id="@0576a976-b382-4d11-b7ef-d95b4ad5e009" Caption="Process Customization" ChildItemsDisplayStyle="List" IsNewNode="True">
             <Items IsNewNode="True">
               <Item Id="State Machine" ViewId="StateMachine_ListView" ChildItemsDisplayStyle="List" IsNewNode="True" />
-              <Item Id="Entity Script" ViewId="EntityScript_ListView" ChildItemsDisplayStyle="List" IsNewNode="True" />
+              <Item Id="Entity Script" ViewId="EntityRuleScript_ListView" ChildItemsDisplayStyle="List" IsNewNode="True" />
+              <Item Id="Entity Numbering" ViewId="EntityNumbering_ListView" ChildItemsDisplayStyle="List" IsNewNode="True" />
               <Item Id="Entity Sequence" ViewId="EntitySequence_ListView" ChildItemsDisplayStyle="List" IsNewNode="True" />
             </Items>
           </Item>
