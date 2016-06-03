@@ -16,19 +16,19 @@ namespace Tralus.Shell.WorkflowService
         static void Main()
         {
             Database.SetInitializer<ShellDbContext>(null);
-            if (Environment.UserInteractive)
-            { 
-                new WorkflowServiceWorkflowServer().Test(null);
-            }
-            else
-            {
+            //if (Environment.UserInteractive)
+            //{ 
+            //    new WorkflowServiceWorkflowServer().Test(null);
+            //}
+            //else
+            //{
                 ServiceBase[] ServicesToRun;
                 ServicesToRun = new ServiceBase[]
                 {
                     new WorkflowServiceWorkflowServer()
                 };
                 ServiceBase.Run(ServicesToRun);
-            }
+            //}
 
 
         }
