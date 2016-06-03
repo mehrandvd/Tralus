@@ -55,72 +55,72 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.ExpressApp.Chart.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.ExpressApp.Chart.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\DevExpress 15.2\Components\Bin\Framework\DevExpress.ExpressApp.Chart.v15.2.dll</HintPath>
+      
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.Chart.Web.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.ExpressApp.Chart.Web.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\DevExpress 15.2\Components\Bin\Framework\DevExpress.ExpressApp.Chart.Web.v15.2.dll</HintPath>
+      
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.ConditionalAppearance.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.ExpressApp.EF.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="DevExpress.ExpressApp.PivotChart.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\DevExpress 15.2\Components\Bin\Framework\DevExpress.ExpressApp.PivotChart.v15.2.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.ExpressApp.PivotChart.Web.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\DevExpress 15.2\Components\Bin\Framework\DevExpress.ExpressApp.PivotChart.Web.v15.2.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.ExpressApp.PivotGrid.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\DevExpress 15.2\Components\Bin\Framework\DevExpress.ExpressApp.PivotGrid.v15.2.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.ExpressApp.PivotGrid.Web.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\DevExpress 15.2\Components\Bin\Framework\DevExpress.ExpressApp.PivotGrid.Web.v15.2.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.ExpressApp.ReportsV2.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\DevExpress 15.2\Components\Bin\Framework\DevExpress.ExpressApp.ReportsV2.v15.2.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.ExpressApp.ReportsV2.Web.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\DevExpress 15.2\Components\Bin\Framework\DevExpress.ExpressApp.ReportsV2.Web.v15.2.dll</HintPath>
-    </Reference>
-    <Reference Include="DevExpress.ExpressApp.Security.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.ExpressApp.ConditionalAppearance.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.EF.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.StateMachine.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.ExpressApp.PivotChart.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\DevExpress 15.2\Components\Bin\Framework\DevExpress.ExpressApp.StateMachine.v15.2.dll</HintPath>
+      
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.TreeListEditors.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.ExpressApp.PivotChart.Web.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\DevExpress 15.2\Components\Bin\Framework\DevExpress.ExpressApp.TreeListEditors.v15.2.dll</HintPath>
+      
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.TreeListEditors.Web.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.ExpressApp.PivotGrid.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\DevExpress 15.2\Components\Bin\Framework\DevExpress.ExpressApp.TreeListEditors.Web.v15.2.dll</HintPath>
+      
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.Validation.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.ExpressApp.PivotGrid.Web.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.ReportsV2.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.ReportsV2.Web.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Security.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.ViewVariantsModule.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.ExpressApp.StateMachine.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.TreeListEditors.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.TreeListEditors.Web.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Validation.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.ExpressApp.Workflow.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.ExpressApp.ViewVariantsModule.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\DevExpress 15.2\Components\Bin\Framework\DevExpress.ExpressApp.Workflow.v15.2.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.Persistent.BaseImpl.EF.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Workflow.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      
+    </Reference>
+    <Reference Include="DevExpress.Persistent.BaseImpl.EF.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v15.2.Core">
       <SpecificVersion>False</SpecificVersion>
       <Private>True</Private>
@@ -173,11 +173,11 @@
       <SpecificVersion>False</SpecificVersion>
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.Workflow.Activities.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.Workflow.Activities.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\DevExpress 15.2\Components\Bin\Framework\DevExpress.Workflow.Activities.v15.2.dll</HintPath>
+      
     </Reference>
-    <Reference Include="DevExpress.Xpo.v15.2, Version=15.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+    <Reference Include="DevExpress.Xpo.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <Private>True</Private>
     </Reference>
