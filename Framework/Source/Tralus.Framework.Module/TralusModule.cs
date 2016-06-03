@@ -17,6 +17,7 @@ using DevExpress.ExpressApp.TreeListEditors;
 using DevExpress.ExpressApp.Validation;
 using DevExpress.ExpressApp.ViewVariantsModule;
 using DevExpress.ExpressApp.Workflow;
+using DevExpress.Persistent.BaseImpl.EF;
 using Tralus.Framework.BusinessModel.Entities;
 using Tralus.Framework.Module.Interface;
 using Tralus.Framework.Utility.ReflectionHelpers;
@@ -48,5 +49,26 @@ namespace Tralus.Framework.Module
             this.RequiredModuleTypes.Add(typeof(PivotChartModuleBase));
             this.RequiredModuleTypes.Add(typeof(WorkflowModule));
         }
+
+        //private void Application_CreateCustomModelDifferenceStore(Object sender, CreateCustomModelDifferenceStoreEventArgs e)
+        //{
+        //    e.Store = new ModelDifferenceDbStore((XafApplication)sender, typeof(ModelDifference), true, "Win");
+        //    e.Handled = true;
+        //}
+        //private void Application_CreateCustomUserModelDifferenceStore(Object sender, CreateCustomModelDifferenceStoreEventArgs e)
+        //{
+        //    e.Store = new ModelDifferenceDbStore((XafApplication)sender, typeof(ModelDifference), false, "Win");
+        //    e.Handled = true;
+        //}
+
+        //public override void Setup(XafApplication application)
+        //{
+        //    base.Setup(application);
+        //    // Manage various aspects of the application UI and behavior at the module level.
+
+        //    application.CreateCustomModelDifferenceStore += Application_CreateCustomModelDifferenceStore;
+        //    application.CreateCustomUserModelDifferenceStore += Application_CreateCustomUserModelDifferenceStore;
+
+        //}
     }
 }

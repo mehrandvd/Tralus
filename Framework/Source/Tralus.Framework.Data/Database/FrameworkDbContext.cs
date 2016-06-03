@@ -57,6 +57,8 @@ namespace  Tralus.Framework.Data {
             modelBuilder.Entity<EFTrackingRecord>();
             modelBuilder.Entity<EFWorkflowInstance>();
             modelBuilder.Entity<EFUserActivityVersion>();
+            modelBuilder.Entity<ModelDifference>();
+            modelBuilder.Entity<ModelDifferenceAspect>();
 	    }
     }
 }

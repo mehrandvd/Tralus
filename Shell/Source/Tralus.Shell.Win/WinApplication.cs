@@ -8,12 +8,13 @@ using System.Collections.Generic;
 using DevExpress.ExpressApp.Updating;
 using DevExpress.ExpressApp.EF;
 using System.Data.Common;
-using Tralus.Framework.BusinessModel.Entities;
+using DevExpress.Persistent.BaseImpl.EF;
 using Tralus.Framework.BusinessModel.Entities.StateMachines;
 using Tralus.Framework.Data;
 using Tralus.Framework.Utility.ReflectionHelpers;
 using Tralus.Shell.Module.BusinessObjects;
 using Tralus.Shell.Module.Utility;
+using User = Tralus.Framework.BusinessModel.Entities.User;
 
 namespace Tralus.Shell.Win
 {

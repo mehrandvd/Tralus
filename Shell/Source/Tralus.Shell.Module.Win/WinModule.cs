@@ -12,6 +12,7 @@ using DevExpress.ExpressApp.Updating;
 using DevExpress.ExpressApp.Model.Core;
 using DevExpress.ExpressApp.Model.DomainLogics;
 using DevExpress.ExpressApp.Model.NodeGenerators;
+using DevExpress.Persistent.BaseImpl.EF;
 
 namespace Tralus.Shell.Module.Win {
     [ToolboxItemFilter("Xaf.Platform.Win")]
@@ -23,9 +24,26 @@ namespace Tralus.Shell.Module.Win {
         public override IEnumerable<ModuleUpdater> GetModuleUpdaters(IObjectSpace objectSpace, Version versionFromDB) {
             return ModuleUpdater.EmptyModuleUpdaters;
         }
-        public override void Setup(XafApplication application) {
+        public override void Setup(XafApplication application)
+        {
             base.Setup(application);
             // Manage various aspects of the application UI and behavior at the module level.
+
+            application.CreateCustomModelDifferenceStore += Application_CreateCustomModelDifferenceStore;
+            application.CreateCustomUserModelDifferenceStore += Application_CreateCustomUserModelDifferenceStore;
+
+
+        }
+
+        private void Application_CreateCustomModelDifferenceStore(Object sender, CreateCustomModelDifferenceStoreEventArgs e)
+        {
+            e.Store = new ModelDifferenceDbStore((XafApplication)sender, typeof(ModelDifference), true, "Win");
+            e.Handled = true;
+        }
+        private void Application_CreateCustomUserModelDifferenceStore(Object sender, CreateCustomModelDifferenceStoreEventArgs e)
+        {
+            e.Store = new ModelDifferenceDbStore((XafApplication)sender, typeof(ModelDifference), false, "Win");
+            e.Handled = true;
         }
     }
 }
