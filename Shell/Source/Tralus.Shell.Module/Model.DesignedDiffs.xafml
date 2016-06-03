@@ -1,7 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application Title="Mahan" Logo="MahanLogo-WithoutName" PreferredLanguage="fa-IR">
+  <NavigationItems>
+    <Items>
+      <Item Id="Admin" ChildItemsDisplayStyle="List" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="@7a8a462f-7ea7-4828-9aa7-444ab85960b4" ChildItemsDisplayStyle="List" ViewId="ModelDifference_ListView" ImageName="Action_ModelDifferences_Export" IsNewNode="True" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
   <SchemaModules>
-    <SchemaModule Name="SystemModule" Version="15.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="15.2.5.0" IsNewNode="True" />
   </SchemaModules>
   <Views>
     <DetailView Id="Role_DetailView">

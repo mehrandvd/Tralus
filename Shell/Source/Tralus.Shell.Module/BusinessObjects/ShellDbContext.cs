@@ -60,6 +60,9 @@ namespace Tralus.Shell.Module.BusinessObjects {
             modelBuilder.Entity<EFTrackingRecord>();
             modelBuilder.Entity<EFWorkflowInstance>();
             modelBuilder.Entity<EFUserActivityVersion>();
+            modelBuilder.Entity<ModelDifference>();
+            modelBuilder.Entity<ModelDifferenceAspect>();
+
 
             //base.OnModelCreating(modelBuilder);
             var assemblies = AppDomain.CurrentDomain.GetAssemblies()

@@ -38,6 +38,8 @@ namespace Tralus.Shell.Module {
             this.AdditionalExportedTypes.Add(typeof(Role));
             this.AdditionalExportedTypes.Add(typeof(ReportDataV2));
             this.AdditionalExportedTypes.Add(typeof(Analysis));
+            this.AdditionalExportedTypes.Add(typeof(ModelDifference));
+            this.AdditionalExportedTypes.Add(typeof(ModelDifferenceAspect));
 
             RequiredModuleTypes.Add(typeof(ReportsModuleV2));
         }
@@ -45,9 +47,7 @@ namespace Tralus.Shell.Module {
             ModuleUpdater updater = new DatabaseUpdate.Updater(objectSpace, versionFromDB);
             return new ModuleUpdater[] { updater };
         }
-        public override void Setup(XafApplication application) {
-            base.Setup(application);
-            // Manage various aspects of the application UI and behavior at the module level.
-        }
+        
+
     }
 }
