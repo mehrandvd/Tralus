@@ -67,7 +67,6 @@
   <ItemGroup>
     <Compile Include="Entities\Base\EntityState.cs" />
     <Compile Include="Entities\CandidateUser.cs" />
-    <Compile Include="Entities\DbContextExtensions.cs" />
     <Compile Include="Entities\DummyObject.cs" />
     <Compile Include="Entities\EntityBase.cs" />
     <Compile Include="Entities\EntityNumbering.cs" />
