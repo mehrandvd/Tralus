@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Windows.Forms;
 
 using DevExpress.ExpressApp;
+using DevExpress.ExpressApp.Model.Core;
 using DevExpress.ExpressApp.Security;
 using DevExpress.ExpressApp.Win;
 using DevExpress.Persistent.Base;
@@ -23,7 +24,7 @@ namespace Tralus.Shell.Win {
             DevExpress.ExpressApp.Win.EasyTest.EasyTestRemotingRegistration.Register();
 #endif
             Database.SetInitializer<ShellDbContext>(null);
-
+            //ModelMemberReadOnlyCalculator.AllowPersistentCustomProperties = true;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             EditModelPermission.AlwaysGranted = System.Diagnostics.Debugger.IsAttached;
