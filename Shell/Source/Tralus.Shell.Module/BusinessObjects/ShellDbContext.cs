@@ -52,16 +52,16 @@ namespace Tralus.Shell.Module.BusinessObjects {
             modelBuilder.Entity<ReportDataV2>();
             modelBuilder.Entity<Analysis>();
 
-            modelBuilder.Entity<EFWorkflowDefinition>();
-            modelBuilder.Entity<EFStartWorkflowRequest>();
-            modelBuilder.Entity<EFRunningWorkflowInstanceInfo>();
-            modelBuilder.Entity<EFWorkflowInstanceControlCommandRequest>();
-            modelBuilder.Entity<EFInstanceKey>();
-            modelBuilder.Entity<EFTrackingRecord>();
-            modelBuilder.Entity<EFWorkflowInstance>();
-            modelBuilder.Entity<EFUserActivityVersion>();
-            modelBuilder.Entity<ModelDifference>();
-            modelBuilder.Entity<ModelDifferenceAspect>();
+            //modelBuilder.Entity<EFWorkflowDefinition>();
+            //modelBuilder.Entity<EFStartWorkflowRequest>();
+            //modelBuilder.Entity<EFRunningWorkflowInstanceInfo>();
+            //modelBuilder.Entity<EFWorkflowInstanceControlCommandRequest>();
+            //modelBuilder.Entity<EFInstanceKey>();
+            //modelBuilder.Entity<EFTrackingRecord>();
+            //modelBuilder.Entity<EFWorkflowInstance>();
+            //modelBuilder.Entity<EFUserActivityVersion>();
+            //modelBuilder.Entity<ModelDifference>();
+            //modelBuilder.Entity<ModelDifferenceAspect>();
 
 
             //base.OnModelCreating(modelBuilder);
@@ -77,5 +77,19 @@ namespace Tralus.Shell.Module.BusinessObjects {
                 modelBuilder.RegisterEntityType(entity);
             }
         }
+
+        public virtual DbSet<ReportDataV2> ReportDataV2 { get; set; }
+        public virtual DbSet<Analysis> Analysis { get; set; }
+        public virtual DbSet<EFWorkflowDefinition> EFWorkflowDefinition { get; set; }
+        public virtual DbSet<EFStartWorkflowRequest> EFStartWorkflowRequest { get; set; }
+        public virtual DbSet<EFRunningWorkflowInstanceInfo> EFRunningWorkflowInstanceInfo { get; set; }
+        public virtual DbSet<EFWorkflowInstanceControlCommandRequest> EFWorkflowInstanceControlCommandRequest { get; set; }
+        public virtual DbSet<EFInstanceKey> EFInstanceKey { get; set; }
+        public virtual DbSet<EFTrackingRecord> EFTrackingRecord { get; set; }
+        public virtual DbSet<EFWorkflowInstance> EFWorkflowInstance { get; set; }
+        public virtual DbSet<EFUserActivityVersion> EFUserActivityVersion { get; set; }
+        public virtual DbSet<ModelDifference> ModelDifference { get; set; }
+        public virtual DbSet<ModelDifferenceAspect> ModelDifferenceAspect { get; set; }
+        public virtual DbSet<User> User { get; set; }
     }
 }
