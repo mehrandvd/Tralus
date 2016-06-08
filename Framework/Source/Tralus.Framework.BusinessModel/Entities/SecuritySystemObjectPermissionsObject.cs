@@ -16,7 +16,7 @@ using SecurityOperations = DevExpress.ExpressApp.Security.SecurityOperations;
 
 namespace Tralus.Framework.BusinessModel.Entities
 {
-    [Table("SecuritySystemObjectPermissionsObject", Schema = "System")]
+    [Table("Tralus.SecuritySystemObjectPermissionsObject")]
     [System.ComponentModel.DisplayName("Object Operation Permissions")]
     [ImageName("BO_Security_Permission_Object")]
     [DefaultListViewOptions(true, NewItemRowPosition.Top)]

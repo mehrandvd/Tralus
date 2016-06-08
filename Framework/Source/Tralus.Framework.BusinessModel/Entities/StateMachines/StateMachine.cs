@@ -53,7 +53,7 @@ namespace Tralus.Framework.BusinessModel.Entities.StateMachines
     [DisplayName("StateMachine")]
     [ImageName("BO_StateMachine")]
     [RuleCriteria("StateMachine.StartState", DefaultContexts.Save, "(Active = false) or ((StartState is not null) and (Active = true))", SkipNullOrEmptyValues = false)]
-    [Table("StateMachine", Schema = "System")]
+    [Table("Tralus.StateMachine")]
     public class StateMachine : EntityBase, IStateMachine, IStateMachineUISettings, IObjectSpaceLink
     {
         private IObjectSpace objectSpace;

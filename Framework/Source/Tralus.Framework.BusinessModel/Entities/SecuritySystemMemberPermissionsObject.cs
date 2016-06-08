@@ -14,7 +14,7 @@ using DevExpress.Persistent.Base;
 
 namespace Tralus.Framework.BusinessModel.Entities
 {
-    [Table("SecuritySystemMemberPermissionsObject", Schema = "System")]
+    [Table("Tralus.SecuritySystemMemberPermissionsObject")]
     [DisplayName("Member Operation Permissions")]
     [ImageName("BO_Security_Permission_Member")]
     [DefaultListViewOptions(true, NewItemRowPosition.Top)]

@@ -96,6 +96,10 @@
     <Compile Include="Migrations\201606021721586_ModelDiffAdded.Designer.cs">
       <DependentUpon>201606021721586_ModelDiffAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606082236292_RenameSchemaSystemToTralus.cs" />
+    <Compile Include="Migrations\201606082236292_RenameSchemaSystemToTralus.Designer.cs">
+      <DependentUpon>201606082236292_RenameSchemaSystemToTralus.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="TralusDbMigrationConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -151,6 +155,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606021721586_ModelDiffAdded.resx">
       <DependentUpon>201606021721586_ModelDiffAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606082236292_RenameSchemaSystemToTralus.resx">
+      <DependentUpon>201606082236292_RenameSchemaSystemToTralus.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

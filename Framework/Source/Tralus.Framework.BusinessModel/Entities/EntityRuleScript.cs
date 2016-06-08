@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Tralus.Framework.BusinessModel.Entities
 {
-    [Table("EntityRuleScript", Schema = "System")]
+    [Table("Tralus.EntityRuleScript")]
     public class EntityRuleScript : EntityScript
     {
 

@@ -7,6 +7,7 @@ using Tralus.Framework.BusinessModel.Entities;
 
 namespace Selonia.Accounting.BusinessModel.Entities
 {
+    [Table("Accounting.VoucherItem")]
     public class VoucherItem : EntityBase, IOrderedEntity
     {
         private long _debit;

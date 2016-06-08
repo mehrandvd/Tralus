@@ -16,7 +16,7 @@ using DevExpress.Persistent.Validation;
 
 namespace Tralus.Framework.BusinessModel.Entities
 {
-    [Table("User", Schema = "System")]
+    [Table("Tralus.User")]
     public class User : EntityBase, ISecurityUser, IAuthenticationActiveDirectoryUser, IAuthenticationStandardUser, IOperationPermissionProvider, ISecurityUserWithRoles, INotifyPropertyChanged, ICanInitialize
     {
         private Boolean changePasswordOnFirstLogon;
