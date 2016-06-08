@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Data.Common;
 using System.Data.Entity;
 using System.Linq;
@@ -29,28 +30,31 @@ namespace Tralus.Shell.Module.BusinessObjects {
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<User>()
-             .HasMany<Role>(u => u.Roles)
-             .WithMany(r => r.Users)
-             .Map((m) =>
-             {
-                 m.ToTable("UserRoles", "System")
-                     .MapLeftKey("UserId")
-                     .MapRightKey("RoleId");
-             });
+            base.OnModelCreating(modelBuilder);
+            //modelBuilder.HasDefaultSchema("Tralus");
 
-            modelBuilder.Entity<Role>()
-               .HasMany<Role>(r => r.ChildRoles)
-               .WithMany(r => r.ParentRoles)
-               .Map((m) =>
-               {
-                   m.ToTable("RoleRoles", "System")
-                       .MapLeftKey("ParentRoleId")
-                       .MapRightKey("ChildRoleId");
-               });
+            //modelBuilder.Entity<User>()
+            // .HasMany<Role>(u => u.Roles)
+            // .WithMany(r => r.Users)
+            // .Map((m) =>
+            // {
+            //     m.ToTable("UserRoles", "System")
+            //         .MapLeftKey("UserId")
+            //         .MapRightKey("RoleId");
+            // });
 
-            modelBuilder.Entity<ReportDataV2>();
-            modelBuilder.Entity<Analysis>();
+            //modelBuilder.Entity<Role>()
+            //   .HasMany<Role>(r => r.ChildRoles)
+            //   .WithMany(r => r.ParentRoles)
+            //   .Map((m) =>
+            //   {
+            //       m.ToTable("RoleRoles", "System")
+            //           .MapLeftKey("ParentRoleId")
+            //           .MapRightKey("ChildRoleId");
+            //   });
+
+            //modelBuilder.Entity<ReportDataV2>();
+            //modelBuilder.Entity<Analysis>();
 
             //modelBuilder.Entity<EFWorkflowDefinition>();
             //modelBuilder.Entity<EFStartWorkflowRequest>();
@@ -78,18 +82,30 @@ namespace Tralus.Shell.Module.BusinessObjects {
             }
         }
 
-        public virtual DbSet<ReportDataV2> ReportDataV2 { get; set; }
-        public virtual DbSet<Analysis> Analysis { get; set; }
-        public virtual DbSet<EFWorkflowDefinition> EFWorkflowDefinition { get; set; }
-        public virtual DbSet<EFStartWorkflowRequest> EFStartWorkflowRequest { get; set; }
-        public virtual DbSet<EFRunningWorkflowInstanceInfo> EFRunningWorkflowInstanceInfo { get; set; }
-        public virtual DbSet<EFWorkflowInstanceControlCommandRequest> EFWorkflowInstanceControlCommandRequest { get; set; }
-        public virtual DbSet<EFInstanceKey> EFInstanceKey { get; set; }
-        public virtual DbSet<EFTrackingRecord> EFTrackingRecord { get; set; }
-        public virtual DbSet<EFWorkflowInstance> EFWorkflowInstance { get; set; }
-        public virtual DbSet<EFUserActivityVersion> EFUserActivityVersion { get; set; }
-        public virtual DbSet<ModelDifference> ModelDifference { get; set; }
-        public virtual DbSet<ModelDifferenceAspect> ModelDifferenceAspect { get; set; }
-        public virtual DbSet<User> User { get; set; }
+        protected override IEnumerable<Type> GetEntityTypes()
+        {
+            var assemblies = AppDomain.CurrentDomain.GetAssemblies()
+                .Where(ass => ass.FullName.Contains("BusinessModel"));
+
+            var entityTypes =
+               assemblies.SelectMany(ass => ass.GetTypes())
+                   .Where(e => e.IsSubclassOf(typeof(EntityBase)) && !e.IsAbstract)
+                   .ToList();
+
+            return entityTypes;
+        }
+        //public virtual DbSet<ReportDataV2> ReportDataV2 { get; set; }
+        //public virtual DbSet<Analysis> Analysis { get; set; }
+        //public virtual DbSet<EFWorkflowDefinition> EFWorkflowDefinition { get; set; }
+        //public virtual DbSet<EFStartWorkflowRequest> EFStartWorkflowRequest { get; set; }
+        //public virtual DbSet<EFRunningWorkflowInstanceInfo> EFRunningWorkflowInstanceInfo { get; set; }
+        //public virtual DbSet<EFWorkflowInstanceControlCommandRequest> EFWorkflowInstanceControlCommandRequest { get; set; }
+        //public virtual DbSet<EFInstanceKey> EFInstanceKey { get; set; }
+        //public virtual DbSet<EFTrackingRecord> EFTrackingRecord { get; set; }
+        //public virtual DbSet<EFWorkflowInstance> EFWorkflowInstance { get; set; }
+        //public virtual DbSet<EFUserActivityVersion> EFUserActivityVersion { get; set; }
+        //public virtual DbSet<ModelDifference> ModelDifference { get; set; }
+        //public virtual DbSet<ModelDifferenceAspect> ModelDifferenceAspect { get; set; }
+        //public virtual DbSet<User> User { get; set; }
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Tralus.Framework.BusinessModel.Entities
 {
-    [Table("SystemEnvironmentTest", Schema = "System")]
+    [Table("Tralus.SystemEnvironmentTest")]
     public class SystemEnvironmentTest : EntityBase
     {
         protected override void OnInitialize()

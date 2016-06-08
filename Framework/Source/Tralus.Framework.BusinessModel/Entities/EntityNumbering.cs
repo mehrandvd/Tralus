@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Tralus.Framework.BusinessModel.Entities
 {
-    [Table("EntityNumbering", Schema = "System")]
+    [Table("Tralus.EntityNumbering")]
     public class EntityNumbering : EntityScript
     {
         public string PropertyName { get; set; }

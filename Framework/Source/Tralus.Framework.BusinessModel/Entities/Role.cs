@@ -13,7 +13,7 @@ using DevExpress.ExpressApp.Utils;
 
 namespace Tralus.Framework.BusinessModel.Entities
 {
-    [Table("Role", Schema = "System")]
+    [Table("Tralus.Role")]
     [DefaultProperty("Name")]
     public class Role : EntityBase, ISecurityRole, IOperationPermissionProvider, ISecuritySystemRole
     {

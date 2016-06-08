@@ -48,7 +48,7 @@ namespace Tralus.Framework.BusinessModel.Entities.StateMachines
     [DefaultProperty("Caption")]
     [DisplayName("StateMachine Transition")]
     [ImageName("BO_Transition")]
-    [Table("StateMachineTransition", Schema = "System")]
+    [Table("Tralus.StateMachineTransition")]
     public class StateMachineTransition : EntityBase, ITransition, ITransitionUISettings, IMasterObjectInitializer
     {
         private String caption;

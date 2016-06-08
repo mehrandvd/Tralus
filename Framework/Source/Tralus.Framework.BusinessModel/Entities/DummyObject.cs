@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Tralus.Framework.BusinessModel.Entities
 {
-    [Table("DummyObject", Schema = "System")]
+    [Table("Tralus.DummyObject")]
     public class DummyObject : EntityBase
     {
         public byte[] DummyData { get; set; }

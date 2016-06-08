@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Common;
 using System.Data.Entity;
 using System.Linq;
@@ -74,14 +75,22 @@ namespace Tralus.Framework.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            var entityTypes =
-                AssemblyResolver.GetCurrentModuleTypes(GetType())
-                    .Where(e => e.IsSubclassOf(typeof(EntityBase)) && !e.IsAbstract);
+            modelBuilder.HasDefaultSchema("Tralus");
+
+            var entityTypes = GetEntityTypes();
 
             foreach (var entity in entityTypes)
             {
                 modelBuilder.RegisterEntityType(entity);
             }
+        }
+
+        protected virtual IEnumerable<Type> GetEntityTypes()
+        {
+            var entityTypes =
+                AssemblyResolver.GetCurrentModuleTypes(GetType())
+                    .Where(e => e.IsSubclassOf(typeof (EntityBase)) && !e.IsAbstract);
+            return entityTypes;
         }
 
         public DbSet<StateMachine> StateMachines { get; set; }

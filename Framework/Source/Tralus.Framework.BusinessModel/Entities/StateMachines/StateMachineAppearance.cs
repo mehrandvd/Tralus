@@ -52,7 +52,7 @@ namespace Tralus.Framework.BusinessModel.Entities.StateMachines
     [DisplayName("StateMachine Appearance")]
     [ImageName("BO_Appearance")]
     [Appearance("StateMachineAppearance.AppearanceForAction", TargetItems = "BackColor; FontColor; FontStyle", Enabled = false, Criteria = "AppearanceItemType='Action'")]
-    [Table("StateMachineAppearance", Schema = "System")]
+    [Table("Tralus.StateMachineAppearance")]
     public class StateMachineAppearance : EntityBase, IAppearanceRuleProperties
     {
         public StateMachineAppearance()

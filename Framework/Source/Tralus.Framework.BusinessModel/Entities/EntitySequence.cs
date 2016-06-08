@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tralus.Framework.BusinessModel.Entities
 {
-    [Table("EntitySequence", Schema = "System")]
+    [Table("Tralus.EntitySequence")]
     public class EntitySequence : EntityBase
     {
         public EntitySequence()

@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Tralus.Framework.BusinessModel.Entities
 {
-    [Table("EntitySequenceItem", Schema = "System")]
+    [Table("Tralus.EntitySequenceItem")]
     public class EntitySequenceItem : EntityBase
     {
         public EntitySequenceItem():base()

@@ -56,7 +56,7 @@ namespace Tralus.Framework.BusinessModel.Entities.StateMachines
     [DisplayName("StateMachine State")]
     [ImageName("BO_State")]
     [RuleIsReferenced("StateIsReferenced", DefaultContexts.Delete, typeof(StateMachineTransition), "TargetState", InvertResult = true, MessageTemplateMustBeReferenced = "If you want to delete this State, you must be sure it is not referenced in any Transition as TargetState.", FoundObjectMessageFormat = "{0:SourceState.Caption}")]
-    [Table("StateMachineState", Schema = "System")]
+    [Table("Tralus.StateMachineState")]
 
     public class StateMachineState : EntityBase, IState, IStateAppearancesProvider, IObjectSpaceLink, INotifyPropertyChanging, INotifyPropertyChanged, IMasterObjectInitializer
     {

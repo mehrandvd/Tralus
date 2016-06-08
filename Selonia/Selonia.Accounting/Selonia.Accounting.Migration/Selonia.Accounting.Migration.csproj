@@ -94,6 +94,10 @@
     <Compile Include="Migrations\201605221816012_RenameProgKeyToValue.Designer.cs">
       <DependentUpon>201605221816012_RenameProgKeyToValue.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606082316167_RenameSchemas.cs" />
+    <Compile Include="Migrations\201606082316167_RenameSchemas.Designer.cs">
+      <DependentUpon>201606082316167_RenameSchemas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -132,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605221816012_RenameProgKeyToValue.resx">
       <DependentUpon>201605221816012_RenameProgKeyToValue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606082316167_RenameSchemas.resx">
+      <DependentUpon>201606082316167_RenameSchemas.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -18,7 +18,7 @@ using SecurityOperations = DevExpress.ExpressApp.Security.SecurityOperations;
 
 namespace Tralus.Framework.BusinessModel.Entities
 {
-    [Table("TypePermissionObject", Schema = "System")]
+    [Table("Tralus.TypePermissionObject")]
     public class TypePermissionObject : EntityBase, ITypePermissionOperations, ICheckedListBoxItemsProvider
     {
         private Type targetType;

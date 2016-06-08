@@ -16,7 +16,7 @@ using DevExpress.Persistent.Validation;
 
 namespace Tralus.Framework.BusinessModel.Entities
 {
-    [Table("CandidateUser", Schema = "System")]
+    [Table("Tralus.CandidateUser")]
     [DefaultProperty("Username")]
     public class CandidateUser : EntityBase
     {

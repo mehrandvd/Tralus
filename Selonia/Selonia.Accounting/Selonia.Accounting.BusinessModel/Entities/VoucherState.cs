@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,7 @@ using Tralus.Framework.BusinessModel.Entities;
 
 namespace Selonia.Accounting.BusinessModel.Entities
 {
+    [Table("Accounting.VoucherState")]
     public class VoucherState : FixedEntityBase<VoucherState>
     {
         public VoucherState()
