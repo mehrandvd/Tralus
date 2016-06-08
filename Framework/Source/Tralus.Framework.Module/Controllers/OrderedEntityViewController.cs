@@ -41,10 +41,10 @@ namespace Tralus.Framework.Module.Controllers
 
             _newObjectController = Frame.GetController<NewObjectViewController>();
 
-            var objectSpace = ObjectSpace as EFObjectSpace;
-            if (objectSpace != null)
+            //var objectSpace = ObjectSpace as EFObjectSpace;
+            if (ObjectSpace != null)
             {
-                objectSpace.ObjectChanged += ObjectSpaceOnObjectChanged;
+                ObjectSpace.ObjectChanged += ObjectSpaceOnObjectChanged;
             }
         }
 
