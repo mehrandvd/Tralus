@@ -30,11 +30,14 @@ namespace Tralus.Shell.Module.Controllers
             base.OnActivated();
             // Perform various tasks depending on the target Window.
 
-            var connection = ((EFObjectSpace)ObjectSpace).Connection;
+            var connection = (ObjectSpace as EFObjectSpace)?.Connection;
+            if (connection == null)
+                return;
+
             var dataBase = ((System.Data.SqlClient.SqlConnection)((System.Data.Entity.Core.EntityClient.EntityConnection)connection).StoreConnection).Database;
             var dataSource = ((System.Data.SqlClient.SqlConnection)((System.Data.Entity.Core.EntityClient.EntityConnection)connection).StoreConnection).DataSource;
             
-            AboutInfo.Instance.AboutInfoString = string.Format("[{0}]",  dataBase);
+            AboutInfo.Instance.AboutInfoString = $"[{dataBase}]";
 
         }
         protected override void OnDeactivated()
