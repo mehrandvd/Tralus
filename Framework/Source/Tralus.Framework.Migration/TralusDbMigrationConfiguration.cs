@@ -18,7 +18,7 @@ namespace Tralus.Framework.Migration
 
             var types =
                 AssemblyResolver.GetCurrentModuleTypes(GetType())
-                    .Where(t => t.IsSubclassOf(typeof(IPredefinedData)) && !t.IsAbstract);
+                    .Where(t => (typeof(IPredefinedData)).IsAssignableFrom(t) && !t.IsAbstract);
 
             var instances =
                 from type in types
