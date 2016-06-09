@@ -75,7 +75,7 @@ namespace Tralus.Framework.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.HasDefaultSchema("Tralus");
+            //modelBuilder.HasDefaultSchema("Tralus");
 
             var entityTypes = GetEntityTypes();
 

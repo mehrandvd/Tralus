@@ -46,20 +46,21 @@ namespace  Tralus.Framework.Data {
                        .MapRightKey("ChildRoleId");
                });
 
-            //modelBuilder.Entity<ReportDataV2>();
-            //modelBuilder.Entity<Analysis>();
+	        modelBuilder.Entity<ReportDataV2>().ToTable("ReportDataV2", "Tralus");
+	        modelBuilder.Entity<Analysis>().ToTable("Analysis", "Tralus");
+	        modelBuilder.Entity<EFWorkflowDefinition>().ToTable("EFWorkflowDefinition", "Tralus");
+	        modelBuilder.Entity<EFStartWorkflowRequest>().ToTable("EFStartWorkflowRequest", "Tralus");
+	        modelBuilder.Entity<EFRunningWorkflowInstanceInfo>().ToTable("EFRunningWorkflowInstanceInfo", "Tralus");
+	        modelBuilder.Entity<EFWorkflowInstanceControlCommandRequest>().ToTable("EFWorkflowInstanceControlCommandRequest", "Tralus");
+	        modelBuilder.Entity<EFInstanceKey>().ToTable("EFInstanceKey", "Tralus");
+	        modelBuilder.Entity<EFTrackingRecord>().ToTable("EFTrackingRecord", "Tralus");
+	        modelBuilder.Entity<EFWorkflowInstance>().ToTable("EFWorkflowInstance", "Tralus");
+	        modelBuilder.Entity<EFUserActivityVersion>().ToTable("EFUserActivityVersion", "Tralus");
+	        modelBuilder.Entity<ModelDifference>().ToTable("ModelDifference", "Tralus");
+	        modelBuilder.Entity<ModelDifferenceAspect>().ToTable("ModelDifferenceAspect", "Tralus");
 
-            //   modelBuilder.Entity<EFWorkflowDefinition>();
-            //   modelBuilder.Entity<EFStartWorkflowRequest>();
-            //   modelBuilder.Entity<EFRunningWorkflowInstanceInfo>();
-            //   modelBuilder.Entity<EFWorkflowInstanceControlCommandRequest>();
-            //   modelBuilder.Entity<EFInstanceKey>();
-            //   modelBuilder.Entity<EFTrackingRecord>();
-            //   modelBuilder.Entity<EFWorkflowInstance>();
-            //   modelBuilder.Entity<EFUserActivityVersion>();
-            //   modelBuilder.Entity<ModelDifference>();
-            //   modelBuilder.Entity<ModelDifferenceAspect>();
-        }
+	        
+	    }
 
         public virtual DbSet<ReportDataV2> ReportDataV2 { get; set; }
         public virtual DbSet<Analysis> Analysis { get; set; }
