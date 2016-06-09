@@ -38,6 +38,7 @@ namespace Tralus.Shell.Web
         private DevExpress.ExpressApp.PivotChart.PivotChartModuleBase pivotChartModuleBase1;
         private DevExpress.ExpressApp.Workflow.WorkflowModule workflowModule1;
         private Module.ShellModule shellModule1;
+        private DevExpress.ExpressApp.Maps.Web.MapsAspNetModule mapsAspNetModule1;
         private DevExpress.ExpressApp.StateMachine.StateMachineModule stateMachineModule;
 
         public ShellAspNetApplication()
@@ -142,6 +143,7 @@ namespace Tralus.Shell.Web
             this.pivotChartModuleBase1 = new DevExpress.ExpressApp.PivotChart.PivotChartModuleBase();
             this.workflowModule1 = new DevExpress.ExpressApp.Workflow.WorkflowModule();
             this.shellModule1 = new Tralus.Shell.Module.ShellModule();
+            this.mapsAspNetModule1 = new DevExpress.ExpressApp.Maps.Web.MapsAspNetModule();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // stateMachineModule
@@ -167,9 +169,9 @@ namespace Tralus.Shell.Web
             // pivotChartModuleBase1
             // 
             this.pivotChartModuleBase1.ShowAdditionalNavigation = true;
-            //
+            // 
             // workflowModule1
-            //
+            // 
             this.workflowModule1.RunningWorkflowInstanceInfoType = typeof(DevExpress.ExpressApp.Workflow.EF.EFRunningWorkflowInstanceInfo);
             this.workflowModule1.StartWorkflowRequestType = typeof(DevExpress.ExpressApp.Workflow.EF.EFStartWorkflowRequest);
             this.workflowModule1.UserActivityVersionType = typeof(DevExpress.ExpressApp.Workflow.Versioning.EFUserActivityVersion);
@@ -201,6 +203,7 @@ namespace Tralus.Shell.Web
             this.Modules.Add(this.pivotChartModuleBase1);
             this.Modules.Add(this.pivotChartAspNetModule1);
             this.Modules.Add(this.workflowModule1);
+            this.Modules.Add(this.mapsAspNetModule1);
             this.DatabaseVersionMismatch += new System.EventHandler<DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs>(this.ShellAspNetApplication_DatabaseVersionMismatch);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
