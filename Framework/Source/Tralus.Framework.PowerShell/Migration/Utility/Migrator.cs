@@ -27,7 +27,7 @@ namespace Tralus.Framework.PowerShell.Migration
 
             List<ApplyingMigration> pendingMigrations;
             List<ApplyingMigration> localMigrations;
-            
+
             ResolveMigrations(migrators, out pendingMigrations, out localMigrations);
 
             var migrationChunks = new List<List<ApplyingMigration>>();
@@ -85,7 +85,8 @@ namespace Tralus.Framework.PowerShell.Migration
             return new List<MigrationBundle>();
         }
 
-        private static void ResolveMigrations(IEnumerable<DbMigrator> migrators, out List<ApplyingMigration> pendingMigrations, out List<ApplyingMigration> localMigrations)
+        private static void ResolveMigrations(IEnumerable<DbMigrator> migrators,
+            out List<ApplyingMigration> pendingMigrations, out List<ApplyingMigration> localMigrations)
         {
             pendingMigrations = new List<ApplyingMigration>();
             localMigrations = new List<ApplyingMigration>();
@@ -115,15 +116,13 @@ namespace Tralus.Framework.PowerShell.Migration
             var migrationConfigurations = new List<DbMigrationsConfiguration>();
             foreach (var assembly in MigrationAssemblies)
             {
-                var assemblyTypes = assembly.GetTypes().ToList();
-
-                var configurationTypes =
-                    assemblyTypes
-                    .Where(t => t.IsSubclassOf(typeof (DbMigrationsConfiguration)) && !t.IsAbstract)
-                    .ToList();
+                var configurationTypes = GetMigrationConfigurationTypes(assembly);
 
                 if (!configurationTypes.Any())
-                    LogWarning(string.Format("No DbMigrationConfiguration for '{0}'. Make shure the 'Configuraiton' class is public in the assembly", assembly));
+                    LogWarning(
+                        string.Format(
+                            "No DbMigrationConfiguration for '{0}'. Make shure the 'Configuraiton' class is public in the assembly",
+                            assembly));
 
                 migrationConfigurations.AddRange(
                     configurationTypes.Select(c =>
@@ -139,6 +138,17 @@ namespace Tralus.Framework.PowerShell.Migration
             return migrationConfigurations;
         }
 
+        private static List<Type> GetMigrationConfigurationTypes(Assembly assembly)
+        {
+            var assemblyTypes = assembly.GetTypes().ToList();
+
+            var configurationTypes =
+                assemblyTypes
+                    .Where(t => t.IsSubclassOf(typeof (DbMigrationsConfiguration)) && !t.IsAbstract)
+                    .ToList();
+            return configurationTypes;
+        }
+
         public List<MigrationBundle> GetMigrationPlan()
         {
             return GetMigrationBundles();
@@ -146,5 +156,17 @@ namespace Tralus.Framework.PowerShell.Migration
 
         public Action<string> LogDetail { get; set; }
         public Action<string> LogWarning { get; set; }
+
+        public List<Type> GetMigrationConfigurationTypes()
+        {
+            var result = new List<Type>();
+            foreach (var assembly in MigrationAssemblies)
+            {
+                var configurationTypes = GetMigrationConfigurationTypes(assembly);
+                result.AddRange(configurationTypes);
+            }
+
+            return result;
+        }
     }
 }

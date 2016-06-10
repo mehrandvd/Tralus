@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migration\Cmdlets\PublishTralusPredefinedDataCmdlet.cs" />
     <Compile Include="Migration\Cmdlets\RunTralusMigrationSeedCmdlet.cs" />
     <Compile Include="Migration\Cmdlets\TralusConfiguration.cs" />
     <Compile Include="Migration\Cmdlets\GetTralusMigrationConnectionStringsCmdlet.cs" />
@@ -78,9 +79,17 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Tralus.Framework.BusinessModel\Tralus.Framework.BusinessModel.csproj">
+      <Project>{195C7C0A-1491-43DA-BD99-74E800344CEF}</Project>
+      <Name>Tralus.Framework.BusinessModel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Tralus.Framework.Data\Tralus.Framework.Data.csproj">
       <Project>{3519BE62-F236-4004-90F9-27A4287236A1}</Project>
       <Name>Tralus.Framework.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tralus.Framework.Utility\Tralus.Framework.Utility.csproj">
+      <Project>{A4D64BAD-1EB2-4437-B464-FEA9130FAEFF}</Project>
+      <Name>Tralus.Framework.Utility</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
