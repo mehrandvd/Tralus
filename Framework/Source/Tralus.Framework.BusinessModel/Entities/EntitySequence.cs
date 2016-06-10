@@ -9,11 +9,6 @@ namespace Tralus.Framework.BusinessModel.Entities
     [Table("Tralus.EntitySequence")]
     public class EntitySequence : EntityBase
     {
-        public EntitySequence()
-        {
-            SequenceItems = new List<EntitySequenceItem>();
-        }
-
         public virtual string Name { get; set; }
         public virtual string Description { get; set; }
 

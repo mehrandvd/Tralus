@@ -25,7 +25,8 @@ namespace Selonia.Accounting.BusinessModel.Entities
             set { }
         }
 
-        public override IBindingList Children => new BindingList<AccGeneral>(Generals.ToList());
-        
+        public override IBindingList Children
+            => new BindingList<AccGeneral>((Generals ?? new List<AccGeneral>()).ToList());
+
     }
 }

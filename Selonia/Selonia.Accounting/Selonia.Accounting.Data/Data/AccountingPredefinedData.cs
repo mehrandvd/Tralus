@@ -13,6 +13,33 @@ namespace Selonia.Accounting.Data.Data
     {
         public void PredefineData(DbContext dbContext)
         {
+            dbContext.Set<EntitySequence>()
+                .AddRangeIfNotExists(
+                    new List<EntitySequence>
+                    {
+                        new EntitySequence()
+                        {
+                            Id = new Guid("FBB7A863-EE91-4D68-A7A6-DB2595D284EB"),
+                            Name = "AccGroup",
+                            Description = "Used to auto number AccGroup.Code"
+                        },
+                        new EntitySequence()
+                        {
+                            Id = new Guid("DDDBB604-4D53-479B-A203-ADD2354EC0CF"),
+                            Name = "AccGeneral",
+                            Description = "Used to auto number AccGroup.Code"
+                        },
+                        new EntitySequence()
+                        {
+                            Id = new Guid("4AA230C7-C2CB-4163-9E8D-85BF8A2DC61B"),
+                            Name = "AccLedger",
+                            Description = "Used to auto number AccGroup.Code"
+                        }
+                    }
+                );
+
+            dbContext.SaveChanges();
+
             dbContext.Set<EntityNumbering>()
                 .AddRangeIfNotExists(
                 new List<EntityNumbering>()

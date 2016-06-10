@@ -30,7 +30,11 @@ namespace Tralus.Framework.PowerShell.Migration
                 var dbmig = (DbMigrationsConfiguration)Activator.CreateInstance(migrationConfigurationType);
                 var context = (DbContext)Activator.CreateInstance(dbmig.ContextType, ConnectionString);
                 var types =
-                    AssemblyResolver.GetCurrentModuleTypes(migrationConfigurationType)
+                    AssemblyResolver
+                        .GetCurrentModuleTypes(
+                            migrationConfigurationType,
+                            new[]
+                            {TralusAssemblyType.BusinessModel, TralusAssemblyType.Data, TralusAssemblyType.Migration})
                         .Where(t => (typeof (IPredefinedData)).IsAssignableFrom(t) && !t.IsAbstract)
                         .ToList();
 
@@ -38,7 +42,7 @@ namespace Tralus.Framework.PowerShell.Migration
 
                 var instances =
                     from type in types
-                    let instance = (IPredefinedData)Activator.CreateInstance(type, (Enum)null)
+                    let instance = (IPredefinedData)Activator.CreateInstance(type)
                     orderby instance.PredefinedDataApplyingOrder
                     select instance;
 
