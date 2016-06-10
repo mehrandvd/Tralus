@@ -14,7 +14,7 @@
   </BOModel>
   <NavigationItems>
     <Items>
-      <Item Id="@7423e3b9-dc05-4606-b948-6fe66bc44285" Caption="Accounting" ChildItemsDisplayStyle="List" IsNewNode="True">
+      <Item Id="@7423e3b9-dc05-4606-b948-6fe66bc44285" Caption="Accounting" ChildItemsDisplayStyle="List" ImageName="BO_Sale_Item" IsNewNode="True">
         <Items IsNewNode="True">
           <Item Id="@1740d4c5-f746-4281-a637-4e7324c1a21f" Caption="Basic Info" ChildItemsDisplayStyle="List" IsNewNode="True">
             <Items IsNewNode="True">
@@ -37,7 +37,7 @@
     </Items>
   </NavigationItems>
   <SchemaModules>
-    <SchemaModule Name="SystemModule" Version="15.2.5.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="15.2.9.0" IsNewNode="True" />
   </SchemaModules>
   <Views>
     <DetailView Id="AccGeneral_DetailView">
