@@ -16,7 +16,7 @@ namespace Tralus.Framework.BusinessModel.Entities
         /// The key of this entity.
         /// </summary>
         [Browsable(false)]
-        public Guid Id { get; set; }
+        public virtual Guid Id { get; set; }
 
         public EntityBase()
         {
