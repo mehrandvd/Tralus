@@ -9,7 +9,7 @@ namespace Selonia.Accounting.BusinessModel.Entities
     [Table("Accounting.AccGeneral")]
     public class AccGeneral : AccStructure
     {
-        public AccGroup Group { get; set; }
+        public virtual AccGroup Group { get; set; }
 
         public virtual ICollection<AccLedger> Ledgers { get; set; }
 
@@ -19,6 +19,7 @@ namespace Selonia.Accounting.BusinessModel.Entities
             set { Group = (AccGroup) value; }
         }
 
-        public override IBindingList Children => new BindingList<AccLedger>(Ledgers.ToList());
+        public override IBindingList Children => new BindingList<AccLedger>((Ledgers ?? new List<AccLedger>()).ToList())
+            ;
     }
 }

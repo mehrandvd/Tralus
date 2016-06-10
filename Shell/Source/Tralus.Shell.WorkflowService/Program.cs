@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.ServiceProcess;
 using System.Text;
+using DevExpress.Persistent.Base;
 using Tralus.Shell.Module.BusinessObjects;
 
 namespace Tralus.Shell.WorkflowService
@@ -15,6 +16,7 @@ namespace Tralus.Shell.WorkflowService
         /// </summary>
         static void Main()
         {
+            Tracing.LogName = "LogWorkflowService";
             Database.SetInitializer<ShellDbContext>(null);
             //if (Environment.UserInteractive)
             //{ 

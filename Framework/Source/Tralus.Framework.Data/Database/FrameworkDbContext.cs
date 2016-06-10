@@ -5,6 +5,7 @@ using DevExpress.ExpressApp.Workflow.EF;
 using DevExpress.ExpressApp.Workflow.Versioning;
 using DevExpress.Persistent.BaseImpl.EF;
 using DevExpress.Workflow.EF;
+using Tralus.Framework.BusinessModel.Entities;
 using Role = Tralus.Framework.BusinessModel.Entities.Role;
 using User = Tralus.Framework.BusinessModel.Entities.User;
 
@@ -45,6 +46,9 @@ namespace  Tralus.Framework.Data {
                        .MapLeftKey("ParentRoleId")
                        .MapRightKey("ChildRoleId");
                });
+
+	        modelBuilder.Entity<EntityNumbering>();
+	        modelBuilder.Entity<EntitySequence>();
 
 	        modelBuilder.Entity<ReportDataV2>().ToTable("ReportDataV2", "Tralus");
 	        modelBuilder.Entity<Analysis>().ToTable("Analysis", "Tralus");

@@ -17,12 +17,16 @@ namespace Tralus.Framework.Migration
             base.Seed(context);
 
             var types =
-                AssemblyResolver.GetCurrentModuleTypes(GetType())
-                    .Where(t => (typeof(IPredefinedData)).IsAssignableFrom(t) && !t.IsAbstract);
+                AssemblyResolver
+                    .GetCurrentModuleTypes(
+                        GetType(),
+                        new[]
+                        {TralusAssemblyType.BusinessModel, TralusAssemblyType.Data, TralusAssemblyType.Migration})
+                    .Where(t => (typeof (IPredefinedData)).IsAssignableFrom(t) && !t.IsAbstract);
 
             var instances =
                 from type in types
-                let instance = (IPredefinedData)Activator.CreateInstance(type, (Enum)null)
+                let instance = (IPredefinedData)Activator.CreateInstance(type)
                 orderby instance.PredefinedDataApplyingOrder
                 select instance;
 
