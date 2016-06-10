@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +14,7 @@ using Tralus.Framework.BusinessModel.Entities;
 namespace Selonia.Accounting.BusinessModel.Entities
 {
     [Table("Accounting.VoucherState")]
-    public class VoucherState : FixedEntityBase<VoucherState>
+    public class VoucherState : FixedEntityBase
     {
         public VoucherState()
         {
@@ -23,9 +25,9 @@ namespace Selonia.Accounting.BusinessModel.Entities
         {
         }
 
-        public override List<VoucherState> PredefinedValues()
+        public override void PredefineData(DbContext dbContext)
         {
-            return new List<VoucherState>
+            var list = new []
             {
                 new VoucherState((Values.Draft))
                 {
@@ -49,6 +51,8 @@ namespace Selonia.Accounting.BusinessModel.Entities
                 },
 
             };
+
+            dbContext.Set<VoucherState>().AddOrUpdate(list);
         }
 
         public enum Values

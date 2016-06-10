@@ -16,11 +16,6 @@ namespace Selonia.Accounting.BusinessModel.Entities
     [Table("Accounting.AccGroup")]
     public class AccGroup : AccStructure
     {
-        public AccGroup()
-        {
-            Generals = new Collection<AccGeneral>();
-        }
-
         public virtual ICollection<AccGeneral> Generals { get; set; }
         
 

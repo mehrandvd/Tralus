@@ -12,11 +12,6 @@ namespace Selonia.Accounting.BusinessModel.Entities
     [Table("Accounting.Voucher")]
     public class Voucher : EntityBase
     {
-        public Voucher()
-        {
-            VoucherItems = new List<VoucherItem>();
-        }
-
         public virtual DateTime? VoucherDate { get; set; }
 
         public virtual string TempNo { get; set; }

@@ -33,6 +33,7 @@ namespace Tralus.Framework.Module
                     .Where(e => e.IsSubclassOf(typeof (EntityBase)) && !e.IsAbstract);
 
             AdditionalExportedTypes.Add(typeof(EntityBase));
+            AdditionalExportedTypes.Add(typeof(FixedEntityBase));
 
             foreach (var entity in entityTypes)
             {

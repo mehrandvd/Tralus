@@ -13,10 +13,6 @@ namespace Selonia.Accounting.BusinessModel.Entities
         private long _debit;
         private long _credit;
 
-        public VoucherItem()
-        {
-            VoucherItemSegments = new List<VoucherItemSegment>();
-        }
         public virtual int RowNo { get; private set; }
 
         public virtual long Debit
