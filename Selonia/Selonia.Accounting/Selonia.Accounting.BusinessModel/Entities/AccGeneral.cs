@@ -9,11 +9,6 @@ namespace Selonia.Accounting.BusinessModel.Entities
     [Table("Accounting.AccGeneral")]
     public class AccGeneral : AccStructure
     {
-        public AccGeneral()
-        {
-            Ledgers = new List<AccLedger>();
-        }
-
         public AccGroup Group { get; set; }
 
         public virtual ICollection<AccLedger> Ledgers { get; set; }

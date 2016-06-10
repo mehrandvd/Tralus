@@ -14,9 +14,9 @@ namespace Selonia.Accounting.BusinessModel.Entities
 {
     public abstract class AccStructure : EntityBase, IHierarchyEntity
     {
-        public string Code { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
+        public virtual string Code { get; set; }
+        public virtual string Name { get; set; }
+        public virtual string Description { get; set; }
 
         public abstract IHierarchyEntity Parent { get; set; }
 
