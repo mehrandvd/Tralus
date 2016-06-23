@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using DevExpress.ExpressApp.Updating;
 using DevExpress.ExpressApp.EF;
 using System.Data.Common;
+using System.Data.Entity;
 using DevExpress.Persistent.BaseImpl.EF;
 using Tralus.Framework.BusinessModel.Entities.StateMachines;
 using Tralus.Framework.Data;
@@ -58,6 +59,7 @@ namespace Tralus.Shell.Win
             //            new EFObjectSpaceProvider(dbContext, TypesInfo, null, args.ConnectionString));
             //}
 
+            Database.SetInitializer<ShellDbContext>(null);
             Type dbContext = typeof(ShellDbContext);
             var objectSpaceProvider = args.Connection != null ?
                         new EFObjectSpaceProvider(dbContext, TypesInfo, null, (DbConnection)args.Connection) :
@@ -78,33 +80,38 @@ namespace Tralus.Shell.Win
 
         protected override void CheckCompatibilityCore()
         {
-            
+
         }
 
-        private void ShellWindowsFormsApplication_DatabaseVersionMismatch(object sender, DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs e)
+        //private void ShellWindowsFormsApplication_DatabaseVersionMismatch(object sender, DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs e)
+        //{
+        //    e.Handled = true;
+        //    //#if EASYTEST
+        //    //            e.Updater.Update();
+        //    //            e.Handled = true;
+        //    //#else
+        //    //            if (System.Diagnostics.Debugger.IsAttached)
+        //    //            {
+        //    //                e.Updater.Update();
+        //    //                e.Handled = true;
+        //    //            }
+        //    //            else
+        //    //            {
+        //    //                throw new InvalidOperationException(
+        //    //                    "The application cannot connect to the specified database, because the latter doesn't exist or its version is older than that of the application.\r\n" +
+        //    //                    "This error occurred  because the automatic database update was disabled when the application was started without debugging.\r\n" +
+        //    //                    "To avoid this error, you should either start the application under Visual Studio in debug mode, or modify the " +
+        //    //                    "source code of the 'DatabaseVersionMismatch' event handler to enable automatic database update, " +
+        //    //                    "or manually create a database using the 'DBUpdater' tool.\r\n" +
+        //    //                    "Anyway, refer to the 'Update Application and Database Versions' help topic at http://help.devexpress.com/#Xaf/CustomDocument2795 " +
+        //    //                    "for more detailed information. If this doesn't help, please contact our Support Team at http://www.devexpress.com/Support/Center/");
+        //    //            }
+        //    //#endif
+        //}
+
+        private void ShellWindowsFormsApplication_CustomCheckCompatibility(object sender, CustomCheckCompatibilityEventArgs e)
         {
             e.Handled = true;
-            //#if EASYTEST
-            //            e.Updater.Update();
-            //            e.Handled = true;
-            //#else
-            //            if (System.Diagnostics.Debugger.IsAttached)
-            //            {
-            //                e.Updater.Update();
-            //                e.Handled = true;
-            //            }
-            //            else
-            //            {
-            //                throw new InvalidOperationException(
-            //                    "The application cannot connect to the specified database, because the latter doesn't exist or its version is older than that of the application.\r\n" +
-            //                    "This error occurred  because the automatic database update was disabled when the application was started without debugging.\r\n" +
-            //                    "To avoid this error, you should either start the application under Visual Studio in debug mode, or modify the " +
-            //                    "source code of the 'DatabaseVersionMismatch' event handler to enable automatic database update, " +
-            //                    "or manually create a database using the 'DBUpdater' tool.\r\n" +
-            //                    "Anyway, refer to the 'Update Application and Database Versions' help topic at http://help.devexpress.com/#Xaf/CustomDocument2795 " +
-            //                    "for more detailed information. If this doesn't help, please contact our Support Team at http://www.devexpress.com/Support/Center/");
-            //            }
-            //#endif
         }
 
         //    public void ApplyRightToLeft(System.Windows.Forms.Form form)

@@ -90,36 +90,40 @@ namespace Tralus.Shell.Web
             }
         }
 
-        private void ShellAspNetApplication_DatabaseVersionMismatch(object sender, DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs e)
+        protected override void CheckCompatibilityCore()
         {
-#if EASYTEST
-            e.Updater.Update();
-            e.Handled = true;
-#else
-            if (System.Diagnostics.Debugger.IsAttached)
-            {
-                e.Updater.Update();
-                e.Handled = true;
-            }
-            else
-            {
-                string message = "The application cannot connect to the specified database, because the latter doesn't exist or its version is older than that of the application.\r\n" +
-                    "This error occurred  because the automatic database update was disabled when the application was started without debugging.\r\n" +
-                    "To avoid this error, you should either start the application under Visual Studio in debug mode, or modify the " +
-                    "source code of the 'DatabaseVersionMismatch' event handler to enable automatic database update, " +
-                    "or manually create a database using the 'DBUpdater' tool.\r\n" +
-                    "Anyway, refer to the following help topics for more detailed information:\r\n" +
-                    "'Update Application and Database Versions' at http://help.devexpress.com/#Xaf/CustomDocument2795\r\n" +
-                    "'Database Security References' at http://help.devexpress.com/#Xaf/CustomDocument3237\r\n" +
-                    "If this doesn't help, please contact our Support Team at http://www.devexpress.com/Support/Center/";
 
-                if (e.CompatibilityError != null && e.CompatibilityError.Exception != null)
-                {
-                    message += "\r\n\r\nInner exception: " + e.CompatibilityError.Exception.Message;
-                }
-                throw new InvalidOperationException(message);
-            }
-#endif
+        }
+
+        //private void ShellWindowsFormsApplication_DatabaseVersionMismatch(object sender, DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs e)
+        //{
+        //    e.Handled = true;
+        //    //#if EASYTEST
+        //    //            e.Updater.Update();
+        //    //            e.Handled = true;
+        //    //#else
+        //    //            if (System.Diagnostics.Debugger.IsAttached)
+        //    //            {
+        //    //                e.Updater.Update();
+        //    //                e.Handled = true;
+        //    //            }
+        //    //            else
+        //    //            {
+        //    //                throw new InvalidOperationException(
+        //    //                    "The application cannot connect to the specified database, because the latter doesn't exist or its version is older than that of the application.\r\n" +
+        //    //                    "This error occurred  because the automatic database update was disabled when the application was started without debugging.\r\n" +
+        //    //                    "To avoid this error, you should either start the application under Visual Studio in debug mode, or modify the " +
+        //    //                    "source code of the 'DatabaseVersionMismatch' event handler to enable automatic database update, " +
+        //    //                    "or manually create a database using the 'DBUpdater' tool.\r\n" +
+        //    //                    "Anyway, refer to the 'Update Application and Database Versions' help topic at http://help.devexpress.com/#Xaf/CustomDocument2795 " +
+        //    //                    "for more detailed information. If this doesn't help, please contact our Support Team at http://www.devexpress.com/Support/Center/");
+        //    //            }
+        //    //#endif
+        //}
+
+        private void ShellWindowsFormsApplication_CustomCheckCompatibility(object sender, CustomCheckCompatibilityEventArgs e)
+        {
+            e.Handled = true;
         }
         private void InitializeComponent()
         {
@@ -204,7 +208,7 @@ namespace Tralus.Shell.Web
             this.Modules.Add(this.pivotChartAspNetModule1);
             this.Modules.Add(this.workflowModule1);
             this.Modules.Add(this.mapsAspNetModule1);
-            this.DatabaseVersionMismatch += new System.EventHandler<DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs>(this.ShellAspNetApplication_DatabaseVersionMismatch);
+            this.CustomCheckCompatibility += new System.EventHandler<DevExpress.ExpressApp.CustomCheckCompatibilityEventArgs>(this.ShellWindowsFormsApplication_CustomCheckCompatibility);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
