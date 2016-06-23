@@ -5,8 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Reflection;
 using DevExpress.ExpressApp.EF.Updating;
-using DevExpress.ExpressApp.Workflow.EF;
-using DevExpress.ExpressApp.Workflow.Versioning;
+using DevExpress.ExpressApp.Workflow.EF;using DevExpress.ExpressApp.Workflow.Versioning;
 using DevExpress.Persistent.BaseImpl.EF;
 using DevExpress.Workflow.EF;
 using Tralus.Framework.BusinessModel.Entities;
@@ -18,6 +17,11 @@ using User = Tralus.Framework.BusinessModel.Entities.User;
 namespace Tralus.Shell.Module.BusinessObjects {
     public class ShellDbContext : FrameworkDbContext
     {
+        static ShellDbContext()
+        {
+            Database.SetInitializer<ShellDbContext>(null);    
+        }
+
         public ShellDbContext(String connectionString)
             : base(connectionString)
         {
@@ -26,7 +30,6 @@ namespace Tralus.Shell.Module.BusinessObjects {
             : base(connection)
         {
         }
-        public DbSet<ModuleInfo> ModulesInfo { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

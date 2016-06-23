@@ -27,8 +27,6 @@ namespace Tralus.Shell.Win {
         private void InitializeComponent() {
             this.module1 = new DevExpress.ExpressApp.SystemModule.SystemModule();
             this.module2 = new DevExpress.ExpressApp.Win.SystemModule.SystemWindowsFormsModule();
-            this.module3 = new Tralus.Shell.Module.ShellModule();
-            this.module4 = new Tralus.Shell.Module.Win.ShellWindowsFormsModule();
             this.securityModule1 = new DevExpress.ExpressApp.Security.SecurityModule();
             this.businessClassLibraryCustomizationModule1 = new DevExpress.ExpressApp.Objects.BusinessClassLibraryCustomizationModule();
             this.conditionalAppearanceModule1 = new DevExpress.ExpressApp.ConditionalAppearance.ConditionalAppearanceModule();
@@ -47,6 +45,8 @@ namespace Tralus.Shell.Win {
             this.pivotChartModuleBase1 = new DevExpress.ExpressApp.PivotChart.PivotChartModuleBase();
             this.workflowModule1 = new DevExpress.ExpressApp.Workflow.WorkflowModule();
             this.workflowWindowsFormsModule1 = new DevExpress.ExpressApp.Workflow.Win.WorkflowWindowsFormsModule();
+            this.module3 = new Tralus.Shell.Module.ShellModule();
+            this.module4 = new Tralus.Shell.Module.Win.ShellWindowsFormsModule();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // validationModule1
@@ -68,9 +68,9 @@ namespace Tralus.Shell.Win {
             // pivotChartModuleBase1
             // 
             this.pivotChartModuleBase1.ShowAdditionalNavigation = true;
-            //
-            // workflowModule
-            //
+            // 
+            // workflowModule1
+            // 
             this.workflowModule1.RunningWorkflowInstanceInfoType = typeof(DevExpress.ExpressApp.Workflow.EF.EFRunningWorkflowInstanceInfo);
             this.workflowModule1.StartWorkflowRequestType = typeof(DevExpress.ExpressApp.Workflow.EF.EFStartWorkflowRequest);
             this.workflowModule1.UserActivityVersionType = typeof(DevExpress.ExpressApp.Workflow.Versioning.EFUserActivityVersion);
@@ -105,7 +105,7 @@ namespace Tralus.Shell.Win {
             this.Modules.Add(this.workflowModule1);
             this.Modules.Add(this.workflowWindowsFormsModule1);
             this.UseOldTemplates = false;
-            this.DatabaseVersionMismatch += new System.EventHandler<DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs>(this.ShellWindowsFormsApplication_DatabaseVersionMismatch);
+            this.CustomCheckCompatibility += new System.EventHandler<DevExpress.ExpressApp.CustomCheckCompatibilityEventArgs>(this.ShellWindowsFormsApplication_CustomCheckCompatibility);
             this.CustomizeLanguagesList += new System.EventHandler<DevExpress.ExpressApp.CustomizeLanguagesListEventArgs>(this.ShellWindowsFormsApplication_CustomizeLanguagesList);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
