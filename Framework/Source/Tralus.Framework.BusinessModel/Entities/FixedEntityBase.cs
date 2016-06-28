@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data.Entity;
@@ -31,6 +32,13 @@ namespace Tralus.Framework.BusinessModel.Entities
         }
 
         public virtual int PredefinedDataApplyingOrder => 1000;
+
+        protected abstract IList GetFixedItems();
+
+        public IEnumerable<T> All<T>()
+        {
+            return GetFixedItems().Cast<T>().ToArray();
+        }
 
         public abstract void PredefineData(DbContext dbContext);
 
