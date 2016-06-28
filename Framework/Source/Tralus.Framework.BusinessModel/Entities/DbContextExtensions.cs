@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 
 namespace Tralus.Framework.BusinessModel.Entities
@@ -20,6 +21,11 @@ namespace Tralus.Framework.BusinessModel.Entities
             {
                 AddIfNotExists(dbSet, entity);
             }
+        }
+
+        public static void AddOrUpdate<T>(this DbContext context, IEnumerable<T> list) where T : EntityBase
+        {
+            context.Set<T>().AddOrUpdate(list.ToArray());
         }
     }
 }

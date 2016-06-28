@@ -93,6 +93,19 @@ namespace Tralus.Framework.Data
             return entityTypes;
         }
 
+        public override int SaveChanges()
+        {
+            var entries = ChangeTracker.Entries<FixedEntityBase>()
+                .Where(e => e.State == EntityState.Added);
+
+            foreach (var entry in entries)
+            {
+                entry.State = EntityState.Modified;
+            }
+
+            return base.SaveChanges();
+        }
+
         public DbSet<StateMachine> StateMachines { get; set; }
         public DbSet<StateMachineState> StateMachineStates { get; set; }
         public DbSet<StateMachineTransition> StateMachineTransitions { get; set; }
