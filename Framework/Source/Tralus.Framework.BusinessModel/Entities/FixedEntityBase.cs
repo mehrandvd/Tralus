@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data.Entity;
@@ -35,9 +36,12 @@ namespace Tralus.Framework.BusinessModel.Entities
 
         protected abstract IList GetFixedItems();
 
+        private static readonly ConcurrentDictionary<Type, IList> Cache = new ConcurrentDictionary<Type, IList>();
+
         public IEnumerable<T> All<T>()
         {
-            return GetFixedItems().Cast<T>().ToArray();
+            var list = Cache.GetOrAdd(typeof(T), t => GetFixedItems());
+            return list.Cast<T>().ToArray();
         }
 
         public abstract void PredefineData(DbContext dbContext);
