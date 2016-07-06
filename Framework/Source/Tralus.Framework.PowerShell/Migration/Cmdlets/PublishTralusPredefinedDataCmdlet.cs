@@ -28,7 +28,9 @@ namespace Tralus.Framework.PowerShell.Migration
             foreach (var migrationConfigurationType in migrationConfigurationTypes)
             {
                 var dbmig = (DbMigrationsConfiguration)Activator.CreateInstance(migrationConfigurationType);
-                var context = (DbContext)Activator.CreateInstance(dbmig.ContextType, ConnectionString);
+                var context = (DbContextBase)Activator.CreateInstance(dbmig.ContextType, ConnectionString);
+                context.AllowAddFixedEntity = true;
+
                 var types =
                     AssemblyResolver
                         .GetCurrentModuleTypes(

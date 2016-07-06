@@ -30,6 +30,11 @@ namespace Tralus.Framework.Data
             : base(connection, contextOwnsConnection)
         {
         }
+
+        /// <summary>
+        /// Allows to this context to add new fixed entities, otherwise on SaveChanges all states will turn to modified.
+        /// </summary>
+        public virtual bool AllowAddFixedEntity { get; set; } = false;
     }
 
     public abstract class DbContextBase<TDbContext> : DbContextBase where TDbContext : DbContext
@@ -95,12 +100,15 @@ namespace Tralus.Framework.Data
 
         public override int SaveChanges()
         {
-            var entries = ChangeTracker.Entries<FixedEntityBase>()
-                .Where(e => e.State == EntityState.Added);
-
-            foreach (var entry in entries)
+            if (!AllowAddFixedEntity)
             {
-                entry.State = EntityState.Modified;
+                var entries = ChangeTracker.Entries<FixedEntityBase>()
+                    .Where(e => e.State == EntityState.Added);
+
+                foreach (var entry in entries)
+                {
+                    entry.State = EntityState.Modified;
+                }
             }
 
             return base.SaveChanges();
