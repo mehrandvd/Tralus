@@ -24,9 +24,20 @@ namespace Tralus.Shell.Web
         public static IEnumerable<Type> LoadedModuleTypes;
         public static IEnumerable<Type> LoadedContextTypes;
 
+        public static bool? _isRightToLeft = null;
+        public static bool IsRightToLeft()
+        {
+            if (!_isRightToLeft.HasValue)
+            {
+                var layoutDirection = ConfigurationManager.AppSettings["LayoutDirection"];
+                _isRightToLeft = layoutDirection?.ToLower() == "rtl";
+            }
+            return _isRightToLeft.Value;
+        }
+
         static Global()
         {
-            
+           
 
             try
             {

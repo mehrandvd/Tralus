@@ -5,6 +5,7 @@ using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.DC;
 using DevExpress.ExpressApp.Win;
 using System.Collections.Generic;
+using System.Configuration;
 using DevExpress.ExpressApp.Updating;
 using DevExpress.ExpressApp.EF;
 using System.Data.Common;
@@ -27,25 +28,33 @@ namespace Tralus.Shell.Win
             IEnumerable<Type> loadedModuleTypes;
             InitializeComponent();
 
-            stateMachineModule1.StateMachineStorageType = typeof (StateMachine);
+            stateMachineModule1.StateMachineStorageType = typeof(StateMachine);
             try
             {
 
-                securityModule1.UserType = typeof (User);
+                securityModule1.UserType = typeof(User);
 
                 ReflectionHelper.GetImportedModules(out loadedModuleTypes, out _loadedContextTypes);
 
                 foreach (var loadedModuleType in loadedModuleTypes)
                 {
-                    var loadedModule = (ModuleBase) Activator.CreateInstance(loadedModuleType);
-                    Modules.Insert(0,loadedModule);
+                    var loadedModule = (ModuleBase)Activator.CreateInstance(loadedModuleType);
+                    Modules.Insert(0, loadedModule);
                 }
 
             }
             catch
             {
             }
+
+            var layoutDirection = ConfigurationManager.AppSettings["LayoutDirection"];
+            if (layoutDirection.ToLower() == "rtl")
+            {
+                IsRightToLeft = true;
+            }
         }
+
+        public bool IsRightToLeft { get; set; }
 
         private readonly IEnumerable<Type> _loadedContextTypes;
 
@@ -114,24 +123,27 @@ namespace Tralus.Shell.Win
             e.Handled = true;
         }
 
-        //    public void ApplyRightToLeft(System.Windows.Forms.Form form)
-        //    {
-        //        if (form != null)
-        //        {
-        //            form.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-        //            form.RightToLeftLayout = true;
-        //        }
-        //    }
-        //    protected override void OnCustomizeTemplate(DevExpress.ExpressApp.Templates.IFrameTemplate frameTemplate, string templateContextName)
-        //    {
-        //        base.OnCustomizeTemplate(frameTemplate, templateContextName);
-        //        ApplyRightToLeft(frameTemplate as System.Windows.Forms.Form);
-        //    }
-        //    protected override System.Windows.Forms.Form CreateModelEditorForm()
-        //    {
-        //        System.Windows.Forms.Form form = base.CreateModelEditorForm();
-        //        ApplyRightToLeft(form);
-        //        return form;
-        //    }
+        public void ApplyRightToLeft(System.Windows.Forms.Form form)
+        {
+            if (IsRightToLeft)
+            {
+                if (form != null)
+                {
+                    form.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+                    form.RightToLeftLayout = true;
+                }
+            }
+        }
+        protected override void OnCustomizeTemplate(DevExpress.ExpressApp.Templates.IFrameTemplate frameTemplate, string templateContextName)
+        {
+            base.OnCustomizeTemplate(frameTemplate, templateContextName);
+            ApplyRightToLeft(frameTemplate as System.Windows.Forms.Form);
+        }
+        protected override System.Windows.Forms.Form CreateModelEditorForm()
+        {
+            System.Windows.Forms.Form form = base.CreateModelEditorForm();
+            ApplyRightToLeft(form);
+            return form;
+        }
     }
 }
