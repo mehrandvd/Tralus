@@ -10,7 +10,10 @@ using System.Web;
 using DevExpress.ExpressApp;
 using DevExpress.Persistent.Base;
 using DevExpress.ExpressApp.Security;
+using DevExpress.ExpressApp.Security.Adapters;
+using DevExpress.ExpressApp.Security.EF.Adapters;
 using DevExpress.ExpressApp.Web;
+using DevExpress.Persistent.Base.Security;
 using DevExpress.Web;
 using Tralus.Framework.BusinessModel.Entities;
 using Tralus.Shell.Module.Security;
@@ -37,44 +40,45 @@ namespace Tralus.Shell.Web
 
         static Global()
         {
-           
 
-            try
+
+            //try
+            //{
+            AppDomain.CurrentDomain.AssemblyResolve += (sender, args) =>
             {
-                AppDomain.CurrentDomain.AssemblyResolve += (sender, args) =>
+                var location = Path.Combine(AppDomain.CurrentDomain.RelativeSearchPath,
+                    args.Name.Split(',')[0] + ".dll");
+                if (File.Exists(location))
                 {
-                    var location = Path.Combine(AppDomain.CurrentDomain.RelativeSearchPath,
-                        args.Name.Split(',')[0] + ".dll");
-                    if (File.Exists(location))
-                    {
-                        var assembly = Assembly.LoadFrom(location);
-                        return assembly;
-                    }
-                    return null;
-                };
+                    var assembly = Assembly.LoadFrom(location);
+                    return assembly;
+                }
+                return null;
+            };
 
-                ReflectionHelper.GetImportedModules(out LoadedModuleTypes, out LoadedContextTypes);
-                //foreach (var loadedModuleType in LoadedModuleTypes)
-                //{
-                //    var loadedModule = (ModuleBase)Activator.CreateInstance(loadedModuleType);
-                //    Modules.Insert(0, loadedModule);
-                //}
-            }
-            catch (Exception exception)
-            {
-                Trace.WriteLine($"Unable to load modules: {exception}");
-            }
+            ReflectionHelper.GetImportedModules(out LoadedModuleTypes, out LoadedContextTypes);
+            //foreach (var loadedModuleType in LoadedModuleTypes)
+            //{
+            //    var loadedModule = (ModuleBase)Activator.CreateInstance(loadedModuleType);
+            //    Modules.Insert(0, loadedModule);
+            //}
+            //}
+            //catch (Exception exception)
+            //{
+            //    Trace.WriteLine($"Unable to load modules: {exception}");
+            //}
         }
 
         public Global()
         {
             InitializeComponent();
 
-           
+
 
         }
         protected void Application_Start(Object sender, EventArgs e)
         {
+            IsGrantedAdapter.Enable(new EFCachedRequestSecurityAdapterProvider());
             ASPxWebControl.CallbackError += new EventHandler(Application_Error);
 #if EASYTEST
             DevExpress.ExpressApp.Web.TestScripts.TestScriptsManager.EasyTestEnabled = true;
@@ -120,7 +124,7 @@ namespace Tralus.Shell.Web
                 throw new Exception("No AuthenticationMode specified at configuration. In app.config or web.config, there should be a 'AuthenticationMode' key in appSettings.");
             }
 
-            TralusAuthenticationBase authentication;
+            AuthenticationBase authentication;
 
             switch (authenticationModeString)
             {
@@ -132,12 +136,16 @@ namespace Tralus.Shell.Web
                     authentication = new AdfsAuthentication() { CreateUserAutomatically = createUserAutomatically };
                     break;
 
+                case "Tralus":
+                    authentication = new AuthenticationStandard<User, AuthenticationStandardLogonParameters>();
+                    break;
+
                 case "None":
                     authentication = (TralusAuthenticationBase)null;
                     break;
 
                 default:
-                    throw new Exception(string.Format("AuthenticationMode is not supported: '{0}'", authenticationModeString));
+                    throw new Exception($"AuthenticationMode is not supported: '{authenticationModeString}'");
             }
 
             if (authentication != null)

@@ -88,6 +88,9 @@
     <Reference Include="DevExpress.ExpressApp.ReportsV2.Web.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
+    <Reference Include="DevExpress.ExpressApp.Security.EF.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="DevExpress.ExpressApp.Security.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <Private>True</Private>
@@ -228,6 +231,9 @@
     </Reference>
     <Reference Include="System.XML">
       <Private>False</Private>
+    </Reference>
+    <Reference Include="Tralus.Framework.Module.Web">
+      <HintPath>..\..\..\..\..\..\TralusLocal\web\bin\Tralus.Framework.Module.Web.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
