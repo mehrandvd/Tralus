@@ -70,7 +70,7 @@ namespace Tralus.Shell.Win {
             if (!string.IsNullOrWhiteSpace(createUserAutomaticallyString))
                 createUserAutomatically = createUserAutomaticallyString.ToLower() == "true";
 
-            TralusAuthenticationBase authentication;
+            AuthenticationBase authentication;
 
             switch (authenticationModeString)
             {
@@ -78,8 +78,12 @@ namespace Tralus.Shell.Win {
                     authentication = new ActiveDirectoryAuthentication() { CreateUserAutomatically = createUserAutomatically };
                     break;
 
+                case "Tralus":
+                    authentication = new AuthenticationStandard<User, AuthenticationStandardLogonParameters>();
+                    break;
+
                 default:
-                    throw new Exception(string.Format("AuthenticationMode is not supported: '{0}'", authenticationModeString));
+                    throw new Exception($"AuthenticationMode is not supported: '{authenticationModeString}'");
             }
 
             // ToDo: Select authentication method from config file.
