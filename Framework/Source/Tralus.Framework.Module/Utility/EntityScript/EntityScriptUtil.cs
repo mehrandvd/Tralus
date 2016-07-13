@@ -25,6 +25,7 @@ namespace Tralus.Framework.Module.Utility
                     {
                         var esGroups =
                             from es in db.Set<EntityRuleScript>().ToList()
+                            where es.TargetType != null
                             group es by es.TargetType
                             into esGroup
                             select esGroup;
@@ -41,13 +42,14 @@ namespace Tralus.Framework.Module.Utility
                {
                    using (var db = new FrameworkDbContext())
                    {
-                       var esGroups =
-                           from es in db.Set<EntityNumbering>().ToList()
-                           group es by es.TargetType
-                           into esGroup
-                           select esGroup;
+                       var enGroups =
+                           from en in db.Set<EntityNumbering>().ToList()
+                           where en.TargetType != null
+                           group en by en.TargetType
+                           into enGroup
+                           select enGroup;
 
-                       var dictionary = esGroups.ToDictionary(esg => esg.Key, esg => esg.ToList());
+                       var dictionary = enGroups.ToDictionary(eng => eng.Key, eng => eng.ToList());
                        var cach = new ConcurrentDictionary<Type, List<EntityNumbering>>(dictionary);
                        return cach;
                    }
