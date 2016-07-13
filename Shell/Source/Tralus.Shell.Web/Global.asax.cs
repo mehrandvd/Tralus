@@ -120,7 +120,7 @@ namespace Tralus.Shell.Web
                 throw new Exception("No AuthenticationMode specified at configuration. In app.config or web.config, there should be a 'AuthenticationMode' key in appSettings.");
             }
 
-            TralusAuthenticationBase authentication;
+            AuthenticationBase authentication;
 
             switch (authenticationModeString)
             {
@@ -132,12 +132,16 @@ namespace Tralus.Shell.Web
                     authentication = new AdfsAuthentication() { CreateUserAutomatically = createUserAutomatically };
                     break;
 
+                case "Tralus":
+                    authentication = new AuthenticationStandard<User, AuthenticationStandardLogonParameters>();
+                    break;
+
                 case "None":
                     authentication = (TralusAuthenticationBase)null;
                     break;
 
                 default:
-                    throw new Exception(string.Format("AuthenticationMode is not supported: '{0}'", authenticationModeString));
+                    throw new Exception($"AuthenticationMode is not supported: '{authenticationModeString}'");
             }
 
             if (authentication != null)
