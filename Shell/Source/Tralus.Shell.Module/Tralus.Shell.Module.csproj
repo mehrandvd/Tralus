@@ -59,7 +59,6 @@
   <ItemGroup>
     <Reference Include="DevExpress.ExpressApp.Chart.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      
     </Reference>
     <Reference Include="DevExpress.ExpressApp.ConditionalAppearance.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
       <Private>True</Private>
@@ -70,15 +69,12 @@
     </Reference>
     <Reference Include="DevExpress.ExpressApp.PivotChart.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      
     </Reference>
     <Reference Include="DevExpress.ExpressApp.PivotGrid.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      
     </Reference>
     <Reference Include="DevExpress.ExpressApp.ReportsV2.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      
     </Reference>
     <Reference Include="DevExpress.ExpressApp.Security.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -88,7 +84,6 @@
     </Reference>
     <Reference Include="DevExpress.ExpressApp.TreeListEditors.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      
     </Reference>
     <Reference Include="DevExpress.ExpressApp.Validation.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
       <Private>True</Private>
@@ -99,7 +94,6 @@
     </Reference>
     <Reference Include="DevExpress.Persistent.BaseImpl.EF.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      
     </Reference>
     <Reference Include="DevExpress.Printing.v15.2.Core">
       <SpecificVersion>False</SpecificVersion>
@@ -223,6 +217,10 @@
     <None Include="FunctionalTests\config.xml" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="UnusableNodes.xml">
+      <DependentUpon>Model.DesignedDiffs.xafml</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="Welcome.html" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

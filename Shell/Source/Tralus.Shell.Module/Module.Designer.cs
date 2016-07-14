@@ -23,10 +23,7 @@ namespace Tralus.Shell.Module {
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
-			// 
-			// ShellModule
-			// 
-			this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.SystemModule.SystemModule));
+
 		}
 
 		#endregion
