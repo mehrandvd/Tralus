@@ -5,35 +5,8 @@
       <Action Id="Tralus.Framework.Module.Controllers.RunSystemEnvironmentTestViewController" Caption="Run Test" ImageName="Action_Debug_Step" />
     </Actions>
   </ActionDesign>
-  <NavigationItems>
-    <Items>
-      <Item Id="Admin Panel" Caption="Administration" ChildItemsDisplayStyle="List" IsNewNode="True">
-        <Items IsNewNode="True">
-          <Item Id="@0576a976-b382-4d11-b7ef-d95b4ad5e009" Caption="Process Customization" ChildItemsDisplayStyle="List" IsNewNode="True">
-            <Items IsNewNode="True">
-              <Item Id="State Machine" ViewId="StateMachine_ListView" ChildItemsDisplayStyle="List" IsNewNode="True" />
-              <Item Id="Entity Script" ViewId="EntityRuleScript_ListView" ChildItemsDisplayStyle="List" IsNewNode="True" />
-              <Item Id="Entity Numbering" ViewId="EntityNumbering_ListView" ChildItemsDisplayStyle="List" IsNewNode="True" />
-              <Item Id="Entity Sequence" ViewId="EntitySequence_ListView" ChildItemsDisplayStyle="List" IsNewNode="True" />
-            </Items>
-          </Item>
-          <Item Id="Security" ChildItemsDisplayStyle="List" IsNewNode="True">
-            <Items IsNewNode="True">
-              <Item Id="Role" ViewId="Role_ListView" ImageName="BO_Role" ChildItemsDisplayStyle="List" IsNewNode="True" />
-              <Item Id="User" ViewId="User_ListView" ImageName="BO_User" ChildItemsDisplayStyle="List" IsNewNode="True" />
-            </Items>
-          </Item>
-        </Items>
-      </Item>
-      <Item Id="Diagnostics" ChildItemsDisplayStyle="List" Caption="System Diagnostics" IsNewNode="True">
-        <Items IsNewNode="True">
-          <Item Id="Environemtn Test" ChildItemsDisplayStyle="List" ViewId="SystemEnvironmentTest_ListView" Caption="Environment Test" IsNewNode="True" />
-        </Items>
-      </Item>
-    </Items>
-  </NavigationItems>
   <SchemaModules>
-    <SchemaModule Name="SystemModule" Version="15.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="15.2.9.0" IsNewNode="True" />
   </SchemaModules>
   <Views>
     <ListView Id="Role_TypePermissions_ListView">
