@@ -1,4 +1,6 @@
-﻿namespace Tralus.Framework.Module.Win.Controls.BaseControl
+﻿using System.Windows.Forms;
+
+namespace Tralus.Framework.Module.Win.Controls.BaseControl
 {
     partial class PersianDateControl
     {
@@ -29,27 +31,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.fProperties = new DevExpress.XtraEditors.Repository.RepositoryItem();
             this.dateTimeSelector = new Atf.UI.DateTimeSelector();
+            ((System.ComponentModel.ISupportInitialize)(this.fProperties)).BeginInit();
             this.SuspendLayout();
+            // 
+            // fProperties
+            // 
+            this.fProperties.Name = "fProperties";
             // 
             // dateTimeSelector
             // 
-            this.dateTimeSelector.Location = new System.Drawing.Point(0, 0);
+            this.dateTimeSelector.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dateTimeSelector.Margin = new System.Windows.Forms.Padding(0);
             this.dateTimeSelector.Name = "dateTimeSelector";
-            this.dateTimeSelector.Size = new System.Drawing.Size(100, 21);
-            this.dateTimeSelector.TabIndex = 0;
+            this.dateTimeSelector.Size = new System.Drawing.Size(80, 22);
             this.dateTimeSelector.UsePersianFormat = true;
             this.dateTimeSelector.ValueChanged += new System.EventHandler(this.dateTimeSelector_ValueChanged);
+            this.dateTimeSelector.RightToLeft = RightToLeft.No;
             // 
             // PersianDateControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dateTimeSelector);
-            this.Margin = new System.Windows.Forms.Padding(0);
-            this.Name = "PersianDateControl";
-            this.Size = new System.Drawing.Size(100, 21);
+            this.ClientSize = new System.Drawing.Size(80, 22);
+            this.MinimumSize = new System.Drawing.Size(80, 22);
+            ((System.ComponentModel.ISupportInitialize)(this.fProperties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -58,5 +64,6 @@
         #endregion
 
         private Atf.UI.DateTimeSelector dateTimeSelector;
+        private DevExpress.XtraEditors.Repository.RepositoryItem fProperties;
     }
 }
