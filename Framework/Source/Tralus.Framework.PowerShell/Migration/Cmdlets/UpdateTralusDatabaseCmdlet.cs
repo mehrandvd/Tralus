@@ -24,14 +24,14 @@ namespace Tralus.Framework.PowerShell.Migration
 
             foreach (var migrationBundle in migrationBundles)
             {
-                WriteObject(string.Format("\n{0}. Migrating ({1}):", bundleNumber++, migrationBundle));
+                WriteObject($"\n{bundleNumber++}. Migrating ({migrationBundle}):");
                 
                 foreach (var applyingMigration in migrationBundle.MigrationNames)
                 {
-                    WriteObject(string.Format("\t-[{0}]", applyingMigration));
+                    WriteObject($"\t-[{applyingMigration}]");
                 }
 
-                if (ShouldProcess("Database", string.Format("Applying migration up to: [{0}]", migrationBundle.TargetMigrationName)))
+                if (ShouldProcess("Database", $"Applying migration up to: [{migrationBundle.TargetMigrationName}]"))
                 {
                     var dbMigrator = migrationBundle.GetNewMigrator();
                     dbMigrator.Update(migrationBundle.TargetMigrationName);
