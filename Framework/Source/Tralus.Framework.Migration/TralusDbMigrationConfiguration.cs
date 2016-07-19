@@ -5,6 +5,7 @@ using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Security.Cryptography;
 using Tralus.Framework.BusinessModel.Entities;
+using Tralus.Framework.Data;
 using Tralus.Framework.Utility.ReflectionHelpers;
 
 namespace Tralus.Framework.Migration
@@ -14,6 +15,10 @@ namespace Tralus.Framework.Migration
     {
         protected override void Seed(TDbContext context)
         {
+            var tralusContext = context as DbContextBase;
+            if (tralusContext != null)
+                tralusContext.AllowAddFixedEntity = true;
+
             base.Seed(context);
 
             var types =

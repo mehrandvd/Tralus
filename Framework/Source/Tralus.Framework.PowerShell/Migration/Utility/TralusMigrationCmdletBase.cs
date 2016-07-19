@@ -30,7 +30,7 @@ namespace Tralus.Framework.PowerShell.Migration
             if (!string.IsNullOrWhiteSpace(ConnectionString))
             {
                 migrator.TargetDatabase = new DbConnectionInfo(ConnectionString, "System.Data.SqlClient");
-                WriteVerbose(string.Format("Using database: {0}", ConnectionString));
+                WriteVerbose($"Using database: {ConnectionString}");
             }
             else if (!string.IsNullOrWhiteSpace(ConnectionName))
             {
@@ -39,12 +39,12 @@ namespace Tralus.Framework.PowerShell.Migration
 
                 if (connectionString != null)
                 {
-                    WriteVerbose(string.Format("Using database: [{0}]: {1}", connectionString.Name, connectionString.ConnectionString));
+                    WriteVerbose($"Using database: [{connectionString.Name}]: {connectionString.ConnectionString}");
                     migrator.TargetDatabase = new DbConnectionInfo(connectionString.ConnectionString, connectionString.ProviderName);
                 }
                 else
                 {
-                    WriteWarning(string.Format("Connection string not found: {0}", ConnectionName));
+                    WriteWarning($"Connection string not found: {ConnectionName}");
                 }
             }
 
@@ -62,7 +62,7 @@ namespace Tralus.Framework.PowerShell.Migration
 
                 catch (Exception exception)
                 {
-                    WriteWarning(string.Format("Unable to load assembly: {0}", migrationAssembly));
+                    WriteWarning($"Unable to load assembly: {migrationAssembly}");
                     WriteWarning(exception.ToString());
                 }
             }
