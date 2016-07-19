@@ -2,15 +2,44 @@
 <Application Title="Mahan" Logo="MahanLogo-WithoutName" PreferredLanguage="fa-IR">
   <NavigationItems>
     <Items>
-      <Item Id="Admin" ChildItemsDisplayStyle="List" IsNewNode="True">
+      <Item Id="@8d2906e1-0ee4-427c-abc7-32eb9c63eb6a" Caption="Tralus Administration" ChildItemsDisplayStyle="List" ImageName="Action_OrganizeDashboard" IsNewNode="True">
         <Items IsNewNode="True">
-          <Item Id="@7a8a462f-7ea7-4828-9aa7-444ab85960b4" ChildItemsDisplayStyle="List" ViewId="ModelDifference_ListView" ImageName="Action_ModelDifferences_Export" IsNewNode="True" />
+          <Item Id="@88575610-d9ad-4219-a840-c169467a9beb" Caption="Diagnistics" IsNewNode="True">
+            <Items IsNewNode="True">
+              <Item Id="@6a1c3c14-e6dc-4c20-8e66-8001a72a20c5" Caption="Environment Test" ImageName="Action_Debug_Step" ViewId="SystemEnvironmentTest_ListView" IsNewNode="True" />
+            </Items>
+          </Item>
+          <Item Id="@a692e49f-dab8-4014-bc00-9710c65894f0" ImageName="BO_Security_Permission" Caption="Security" IsNewNode="True">
+            <Items IsNewNode="True">
+              <Item Id="@1b3dcd1c-40de-4dcb-91bb-b3c12f4c34eb" ImageName="BO_User" Caption="User" ViewId="User_ListView" IsNewNode="True" />
+              <Item Id="@fc560376-ec40-4d34-887d-4cc9c7b3792d" ImageName="BO_Role" Caption="Role" ViewId="Role_ListView" IsNewNode="True" />
+            </Items>
+          </Item>
+          <Item Id="@ca886721-d927-48c5-aaf4-de76fba7a5e8" Caption="Customization" ChildItemsDisplayStyle="List" ImageName="Action_CreateDashboard" IsNewNode="True">
+            <Items IsNewNode="True">
+              <Item Id="@a69bb2c3-a0e0-4912-ac18-6f444dc374cd" Caption="Entity Customization" ImageName="Action_Inline_Edit" Index="10" ViewId="" IsNewNode="True">
+                <Items IsNewNode="True">
+                  <Item Id="@eda05840-6df7-4ffa-a136-99862f01b737" Caption="Numbering Rule" Index="10" ImageName="BO_Security_Permission_Member" ViewId="EntityNumbering_ListView" IsNewNode="True" />
+                  <Item Id="@e33f34f7-c8bb-480e-8ce3-0bc4b9866e2c" Caption="Sequence" Index="20" ViewId="EntitySequence_ListView" ImageName="Sequence" IsNewNode="True" />
+                  <Item Id="@45c10867-1e72-4128-a532-606e58bba7af" Caption="Entity Rule" ImageName="ModelEditor_ModelMerge" Index="30" ViewId="EntityRuleScript_ListView" IsNewNode="True" />
+                </Items>
+              </Item>
+              <Item Id="@d9da3684-1252-4bdb-835d-3ddd61c100b1" Caption="Process Customization" Index="20" ImageName="Action_StateMachine" IsNewNode="True">
+                <Items IsNewNode="True">
+                  <Item Id="@9ca46168-ad82-4ae3-b9d2-b31e3a9c3973" Caption="Workflow" ImageName="Action_StateMachine" Index="30" ViewId="EFWorkflowDefinition_ListView" IsNewNode="True" />
+                  <Item Id="@374a669d-14ee-4964-bfa8-d1bc33f2dbfa" Caption="State Machine" ImageName="Action_Change_State" Index="40" ViewId="StateMachine_ListView" IsNewNode="True" />
+                </Items>
+              </Item>
+              <Item Id="@884684b7-de31-4f9c-aaee-57a0dbe3b213" Caption="Model Customization" ImageName="Action_ModelDifferences_Export" ViewId="ModelDifference_ListView" ChildItemsDisplayStyle="List" Index="30" IsNewNode="True" />
+            </Items>
+          </Item>
         </Items>
       </Item>
+      <Item Id="Reports" ImageName="BO_Report" />
     </Items>
   </NavigationItems>
   <SchemaModules>
-    <SchemaModule Name="SystemModule" Version="15.2.5.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="15.2.9.0" IsNewNode="True" />
   </SchemaModules>
   <Views>
     <DetailView Id="Role_DetailView">

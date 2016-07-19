@@ -3,13 +3,14 @@
   <NavigationItems>
     <Items>
       <Item Id="Default" Visible="False" />
+      <Item Id="Workflow" Visible="False" />
     </Items>
   </NavigationItems>
   <Options Skin="Visual Studio 2013 Blue" UIType="TabbedMDI" FormStyle="Ribbon">
     <RibbonOptions RibbonControlStyle="Office2013" />
   </Options>
   <SchemaModules>
-    <SchemaModule Name="SystemModule" Version="15.2.3.0" IsNewNode="True" />
-    <SchemaModule Name="SystemWindowsFormsModule" Version="15.2.3.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="15.2.9.0" IsNewNode="True" />
+    <SchemaModule Name="SystemWindowsFormsModule" Version="15.2.9.0" IsNewNode="True" />
   </SchemaModules>
 </Application>

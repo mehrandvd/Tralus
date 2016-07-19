@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application>
-  <NavigationItems>
-    <Items>
+  <NavigationItems Id="NavigationItems">
+    <Items Id="Items">
       <Item Id="Default" Visible="False" />
       <Item Id="Workflow" Visible="False" />
     </Items>

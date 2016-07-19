@@ -29,8 +29,7 @@ namespace Tralus.Framework.Module
         protected TralusModule()
         {
             var entityTypes =
-                AssemblyResolver.GetCurrentModuleTypes(GetType())
-                    .Where(e => e.IsSubclassOf(typeof (EntityBase)) && !e.IsAbstract);
+                GetModuleExportedTypes();
 
             AdditionalExportedTypes.Add(typeof(EntityBase));
             AdditionalExportedTypes.Add(typeof(FixedEntityBase));
@@ -49,6 +48,12 @@ namespace Tralus.Framework.Module
             this.RequiredModuleTypes.Add(typeof(PivotGridModule));
             this.RequiredModuleTypes.Add(typeof(PivotChartModuleBase));
             this.RequiredModuleTypes.Add(typeof(WorkflowModule));
+        }
+
+        protected virtual IEnumerable<Type> GetModuleExportedTypes()
+        {
+            return AssemblyResolver.GetCurrentModuleTypes(GetType())
+                .Where(e => e.IsSubclassOf(typeof(EntityBase)) && !e.IsAbstract);
         }
 
         //private void Application_CreateCustomModelDifferenceStore(Object sender, CreateCustomModelDifferenceStoreEventArgs e)

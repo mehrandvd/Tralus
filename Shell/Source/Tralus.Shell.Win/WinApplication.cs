@@ -48,7 +48,7 @@ namespace Tralus.Shell.Win
             }
 
             var layoutDirection = ConfigurationManager.AppSettings["LayoutDirection"];
-            if (layoutDirection.ToLower() == "rtl")
+            if (layoutDirection?.ToLower() == "rtl")
             {
                 IsRightToLeft = true;
             }
