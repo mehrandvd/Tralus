@@ -15,7 +15,8 @@ using Tralus.Framework.Module.Win.Controls.BaseControl;
 
 namespace Tralus.Framework.Module.Win.Editors
 {
-    [PropertyEditor(typeof(DateTime),  true)]
+    [PropertyEditor(typeof(DateTime?), true)]
+    [PropertyEditor(typeof(DateTime), true)]
     public class PersianDateEditor : WinPropertyEditor, IInplaceEditSupport
     {
         private PersianDateControl control;
