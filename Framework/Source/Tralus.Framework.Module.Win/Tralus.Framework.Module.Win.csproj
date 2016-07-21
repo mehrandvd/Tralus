@@ -248,21 +248,6 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="Tralus.Framework.BusinessModel, Version=1.0.0.126, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\TralusLocal\win\Tralus.Framework.BusinessModel.dll</HintPath>
-    </Reference>
-    <Reference Include="Tralus.Framework.Data, Version=1.0.0.126, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\TralusLocal\win\Tralus.Framework.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="Tralus.Framework.Module, Version=1.0.0.126, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="Tralus.Framework.Utility, Version=1.0.0.126, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\TralusLocal\win\Tralus.Framework.Utility.dll</HintPath>
-    </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
@@ -342,6 +327,14 @@
       <Project>{195c7c0a-1491-43da-bd99-74e800344cef}</Project>
       <Name>Tralus.Framework.BusinessModel</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Tralus.Framework.BusinessModel\Tralus.Framework.BusinessModel.csproj">
+      <Project>{195c7c0a-1491-43da-bd99-74e800344cef}</Project>
+      <Name>Tralus.Framework.BusinessModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tralus.Framework.Data\Tralus.Framework.Data.csproj">
+      <Project>{3519be62-f236-4004-90f9-27a4287236a1}</Project>
+      <Name>Tralus.Framework.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Tralus.Framework.Data\Tralus.Framework.Data.csproj">
       <Project>{3519be62-f236-4004-90f9-27a4287236a1}</Project>
       <Name>Tralus.Framework.Data</Name>
@@ -349,6 +342,14 @@
     <ProjectReference Include="..\Tralus.Framework.Module\Tralus.Framework.Module.csproj">
       <Project>{5f15837d-d1e5-44dc-92f0-4f2ebe9c3f8d}</Project>
       <Name>Tralus.Framework.Module</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tralus.Framework.Module\Tralus.Framework.Module.csproj">
+      <Project>{5f15837d-d1e5-44dc-92f0-4f2ebe9c3f8d}</Project>
+      <Name>Tralus.Framework.Module</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tralus.Framework.Utility\Tralus.Framework.Utility.csproj">
+      <Project>{a4d64bad-1eb2-4437-b464-fea9130faeff}</Project>
+      <Name>Tralus.Framework.Utility</Name>
     </ProjectReference>
     <ProjectReference Include="..\Tralus.Framework.Utility\Tralus.Framework.Utility.csproj">
       <Project>{a4d64bad-1eb2-4437-b464-fea9130faeff}</Project>
