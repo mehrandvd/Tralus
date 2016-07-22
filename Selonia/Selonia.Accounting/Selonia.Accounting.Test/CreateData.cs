@@ -35,7 +35,7 @@ namespace Selonia.Accounting.Test
                 {
                     Id = Guid.NewGuid(),
                     Code = i.ToString(),
-                    Name = $"Voucher Type {i}"
+                    Name = $"نوع سند {i}"
                 });
             }
             InsertToDb(voucherTypes);
@@ -46,7 +46,7 @@ namespace Selonia.Accounting.Test
                 {
                     Id = Guid.NewGuid(),
                     Code = i.ToString(),
-                    Name = $"Acc Group {i}"
+                    Name = $"گروه حساب {i}"
                 });
             }
             InsertToDb(accGroups);
@@ -58,7 +58,7 @@ namespace Selonia.Accounting.Test
                 {
                     Id = Guid.NewGuid(),
                     Code = i.ToString(),
-                    Name = $"Acc General {i}",
+                    Name = $"حساب کل {i}",
                     Group = Pick(accGroups)
                 });
             }
@@ -70,7 +70,7 @@ namespace Selonia.Accounting.Test
                 {
                     Id = Guid.NewGuid(),
                     Code = i.ToString(),
-                    Name = $"Acc Ledger {i}",
+                    Name = $"معین {i}",
                     General = Pick(accGenerals)
                 });
             }
@@ -83,14 +83,17 @@ namespace Selonia.Accounting.Test
                     Id = Guid.NewGuid(),
                     FixNo = i.ToString(),
                     TempNo = i.ToString(),
-                    Description = $"Voucher {i}",
-                    VoucherState = null,
+                    Description = $"سند حسابداری {i}",
+                    VoucherState =
+                        Pick(VoucherState.Values.Accepted, VoucherState.Values.Draft, VoucherState.Values.Fixed, VoucherState.Values.Registered),
                     VoucherDate = RandomDay(),
                     VoucherType = Pick(voucherTypes)
                 };
                 vouchers.Add(voucher);
 
                 voucher.VoucherItems = new List<VoucherItem>();
+
+                var row = 1;
 
                 for (var j = 1; j <= 8; j++)
                 {
@@ -100,21 +103,23 @@ namespace Selonia.Accounting.Test
                     {
                         Id = Guid.NewGuid(),
                         Voucher = voucher,
-                        Description = $"Voucher {i}, Voucher Item {j} - Left",
+                        Description = $"سند {i}, آرتیکل {j} - شرح بستانکار",
                         Credit = amount,
                         Debit = 0,
-                        Ledger = Pick(accLedgers)
+                        Ledger = Pick(accLedgers),
                     };
+                    left.SetRowNo(row++);
 
                     var right = new VoucherItem()
                     {
                         Id = Guid.NewGuid(),
                         Voucher = voucher,
-                        Description = $"Voucher {i}, Voucher Item {j} - Right",
+                        Description = $"سند {i}, آرتیکل {j} - شرح بدهکار",
                         Credit = 0,
                         Debit = amount,
                         Ledger = Pick(accLedgers)
                     };
+                    right.SetRowNo(row++);
 
                     voucher.VoucherItems.Add(left);
                     voucher.VoucherItems.Add(right);
