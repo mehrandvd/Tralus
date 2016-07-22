@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using Tralus.Framework.BusinessModel.Entities;
 
-namespace Selonia.Accounting.BusinessModel.Entities
+namespace Selonia.Accounting.BusinessModel
 {
     [Table("Accounting.VoucherType")]
     public class VoucherType : EntityBase

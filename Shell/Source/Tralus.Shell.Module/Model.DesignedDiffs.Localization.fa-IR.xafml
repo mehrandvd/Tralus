@@ -88,7 +88,12 @@
               <Item Id="@6a1c3c14-e6dc-4c20-8e66-8001a72a20c5" Caption="تست محیط عملیاتی" />
             </Items>
           </Item>
-          <Item Id="@a692e49f-dab8-4014-bc00-9710c65894f0" Caption="امنیت" />
+          <Item Id="@a692e49f-dab8-4014-bc00-9710c65894f0" Caption="امنیت">
+            <Items>
+              <Item Id="@1b3dcd1c-40de-4dcb-91bb-b3c12f4c34eb" Caption="کاربر" />
+              <Item Id="@fc560376-ec40-4d34-887d-4cc9c7b3792d" Caption="نقش" />
+            </Items>
+          </Item>
           <Item Id="@ca886721-d927-48c5-aaf4-de76fba7a5e8" Caption="شخصی‌سازی">
             <Items>
               <Item Id="@a69bb2c3-a0e0-4912-ac18-6f444dc374cd" Caption="شخصی‌سازی موجودیت‌">

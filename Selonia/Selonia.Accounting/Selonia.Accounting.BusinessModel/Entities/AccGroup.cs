@@ -11,7 +11,7 @@ using DevExpress.ExpressApp.Utils;
 using DevExpress.Persistent.Base.General;
 using Tralus.Framework.BusinessModel.Entities;
 
-namespace Selonia.Accounting.BusinessModel.Entities
+namespace Selonia.Accounting.BusinessModel
 {
     [Table("Accounting.AccGroup")]
     public class AccGroup : AccStructure

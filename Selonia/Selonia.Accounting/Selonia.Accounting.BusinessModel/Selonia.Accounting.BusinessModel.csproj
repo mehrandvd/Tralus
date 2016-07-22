@@ -60,6 +60,7 @@
     <Compile Include="Entities\AccGroup.cs" />
     <Compile Include="Entities\AccLedger.cs" />
     <Compile Include="Entities\AccStructure.cs" />
+    <Compile Include="Entities\LedgerSegmentSetting.cs" />
     <Compile Include="Entities\Segment.cs" />
     <Compile Include="Entities\SegmentGroup.cs" />
     <Compile Include="Entities\Voucher.cs" />
