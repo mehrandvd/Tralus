@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <ListView Id="AccLedger_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="SegmentSettingName1" Index="3" />
+        <ColumnInfo Id="SegmentSettingName2" Index="4" />
+        <ColumnInfo Id="SegmentSettingName3" Index="5" />
+        <ColumnInfo Id="SegmentSettingName4" Index="6" />
+      </Columns>
+    </ListView>
+  </Views>
+</Application>

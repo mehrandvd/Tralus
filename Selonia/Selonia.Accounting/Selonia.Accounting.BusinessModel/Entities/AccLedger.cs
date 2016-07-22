@@ -26,7 +26,12 @@ namespace Selonia.Accounting.BusinessModel
         /// </summary>
         public virtual ICollection<LedgerSegmentSetting> SegmentSettings { get; set; }
 
-        private LedgerSegmentSetting GetSegmentSetting([CallerMemberName] string callerName = null)
+        public LedgerSegmentSetting GetSegmentSetting(int level)
+        {
+            return SegmentSettings.FirstOrDefault(s => s.Level == level);
+        }
+
+        private LedgerSegmentSetting GetSegmentSettingName([CallerMemberName] string callerName = null)
         {
             if (callerName == null)
                 return null;
@@ -35,15 +40,15 @@ namespace Selonia.Accounting.BusinessModel
             int index;
             if (int.TryParse(callerIndex, out index))
             {
-                return SegmentSettings.FirstOrDefault(s => s.Level == index);
+                return GetSegmentSetting(index);
             }
 
             return null;
         }
 
-        public virtual string SegmentSettingName1 => GetSegmentSetting()?.SegmentGroup?.Name;
-        public virtual string SegmentSettingName2 => GetSegmentSetting()?.SegmentGroup?.Name;
-        public virtual string SegmentSettingName3 => GetSegmentSetting()?.SegmentGroup?.Name;
-        public virtual string SegmentSettingName4 => GetSegmentSetting()?.SegmentGroup?.Name;
+        public virtual string SegmentSettingName1 => GetSegmentSettingName()?.SegmentGroup?.Name;
+        public virtual string SegmentSettingName2 => GetSegmentSettingName()?.SegmentGroup?.Name;
+        public virtual string SegmentSettingName3 => GetSegmentSettingName()?.SegmentGroup?.Name;
+        public virtual string SegmentSettingName4 => GetSegmentSettingName()?.SegmentGroup?.Name;
     }
 }
