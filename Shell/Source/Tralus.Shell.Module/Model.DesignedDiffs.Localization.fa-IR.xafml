@@ -83,7 +83,11 @@
     <Items>
       <Item Id="@8d2906e1-0ee4-427c-abc7-32eb9c63eb6a" Caption="مدیریت زیرساخت ترالوس">
         <Items>
-          <Item Id="@88575610-d9ad-4219-a840-c169467a9beb" Caption="عیب یابی" />
+          <Item Id="@88575610-d9ad-4219-a840-c169467a9beb" Caption="عیب یابی">
+            <Items>
+              <Item Id="@6a1c3c14-e6dc-4c20-8e66-8001a72a20c5" Caption="تست محیط عملیاتی" />
+            </Items>
+          </Item>
           <Item Id="@a692e49f-dab8-4014-bc00-9710c65894f0" Caption="امنیت" />
           <Item Id="@ca886721-d927-48c5-aaf4-de76fba7a5e8" Caption="شخصی‌سازی">
             <Items>
