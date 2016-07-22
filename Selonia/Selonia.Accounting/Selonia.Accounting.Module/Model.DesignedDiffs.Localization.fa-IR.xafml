@@ -96,10 +96,12 @@
               <Item Id="@0b35b4f9-0c71-4dd5-b092-9371f6b31173" Caption="معین" />
               <Item Id="@7acad235-aab8-4d3d-9a99-3963114e3dab" Caption="گروه تفصیلی" />
               <Item Id="@d9cb1ada-a747-4a0a-870a-b5eec8082071" Caption="تفصیلی" />
+              <Item Id="Voucher Type" Caption="نوع سند" />
             </Items>
           </Item>
           <Item Id="@2bf46917-56c1-495f-8553-a6fb1e4e7533" Caption="عملیات">
             <Items>
+              <Item Id="@b8374842-9b89-4d8c-9ad3-668af4f3ff0e" Caption="آرتیکل‌ها" />
               <Item Id="@e4cca92a-fe03-4991-a019-967ec89e2108" Caption="لیست اسناد" />
             </Items>
           </Item>
