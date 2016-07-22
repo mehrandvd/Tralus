@@ -8,5 +8,6 @@ namespace Selonia.Accounting.BusinessModel
     {
         public virtual VoucherItem VoucherItem { get; set; }
         public virtual Segment Segment { get; set; }
+        public virtual int Level { get; set; }
     }
 }
