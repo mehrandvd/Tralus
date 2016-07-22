@@ -31,9 +31,9 @@ namespace Tralus.Framework.Module
             var entityTypes =
                 GetModuleExportedTypes();
 
-            AdditionalExportedTypes.Add(typeof(EntityScript));
-            AdditionalExportedTypes.Add(typeof(EntityBase));
-            AdditionalExportedTypes.Add(typeof(FixedEntityBase));
+            //AdditionalExportedTypes.Add(typeof(EntityScript));
+            //AdditionalExportedTypes.Add(typeof(EntityBase));
+            //AdditionalExportedTypes.Add(typeof(FixedEntityBase));
 
             foreach (var entity in entityTypes)
             {
@@ -54,7 +54,7 @@ namespace Tralus.Framework.Module
         protected virtual IEnumerable<Type> GetModuleExportedTypes()
         {
             return AssemblyResolver.GetCurrentModuleTypes(GetType())
-                .Where(e => e.IsSubclassOf(typeof(EntityBase)) && !e.IsAbstract);
+                .Where(e => e.IsSubclassOf(typeof(EntityBase)));
         }
 
         //private void Application_CreateCustomModelDifferenceStore(Object sender, CreateCustomModelDifferenceStoreEventArgs e)

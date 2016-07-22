@@ -62,7 +62,7 @@ namespace Tralus.Shell.Module
         protected override IEnumerable<Type> GetModuleExportedTypes()
         {
             return typeof(EntityBase).Assembly.GetTypes()
-                .Where(e => e.IsSubclassOf(typeof(EntityBase)) && !e.IsAbstract);
+                .Where(e => e.IsSubclassOf(typeof(EntityBase)));
         }
     }
 }

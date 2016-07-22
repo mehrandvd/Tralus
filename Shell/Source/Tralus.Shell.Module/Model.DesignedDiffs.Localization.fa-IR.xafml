@@ -49,6 +49,12 @@
         <Member Name="UsedFor" Caption="استفاده شده برای" />
       </OwnMembers>
     </Class>
+    <Class Name="Tralus.Framework.BusinessModel.Entities.FixedEntityBase" Caption="موجودیت ثابت">
+      <OwnMembers>
+        <Member Name="Name" Caption="نام" />
+        <Member Name="Value" Caption="مقدار" />
+      </OwnMembers>
+    </Class>
     <Class Name="Tralus.Framework.BusinessModel.Entities.Role" Caption="نقش">
       <OwnMembers>
         <Member Name="CanEditModel" Caption="اجازه ویرایش مدل" />
