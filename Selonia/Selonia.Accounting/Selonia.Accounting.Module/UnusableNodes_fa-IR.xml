@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel Id="BOModel">
+    <Class Name="Selonia.Accounting.BusinessModel.AccLedger">
+      <OwnMembers Id="OwnMembers">
+        <Member Name="SegmentSettingName1" Caption="تفصیلی سطح ۱" />
+        <Member Name="SegmentSettingName2" Caption="تفصیلی سطح ۲" />
+        <Member Name="SegmentSettingName3" Caption="تفصیلی سطح ۳" />
+        <Member Name="SegmentSettingName4" Caption="تفصیلی سطح ۴" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+</Application>
