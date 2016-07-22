@@ -106,6 +106,10 @@
     <Compile Include="Migrations\201606231117586_Remainings.Designer.cs">
       <DependentUpon>201606231117586_Remainings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201607221657314_AddSegmentSetting.cs" />
+    <Compile Include="Migrations\201607221657314_AddSegmentSetting.Designer.cs">
+      <DependentUpon>201607221657314_AddSegmentSetting.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -153,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606231117586_Remainings.resx">
       <DependentUpon>201606231117586_Remainings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607221657314_AddSegmentSetting.resx">
+      <DependentUpon>201607221657314_AddSegmentSetting.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

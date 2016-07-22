@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application Title="Selonia.Accounting" Logo="ExpressAppLogo" PreferredLanguage="fa-IR">
   <BOModel>
-    <Class Name="Selonia.Accounting.BusinessModel.Entities.AccGeneral" IsVisibleInReports="True" />
-    <Class Name="Selonia.Accounting.BusinessModel.Entities.AccGroup" IsVisibleInReports="True" />
-    <Class Name="Selonia.Accounting.BusinessModel.Entities.AccLedger" IsVisibleInReports="True" />
-    <Class Name="Selonia.Accounting.BusinessModel.Entities.Segment" IsVisibleInReports="True" />
-    <Class Name="Selonia.Accounting.BusinessModel.Entities.Voucher" IsVisibleInReports="True">
+    <Class Name="Selonia.Accounting.BusinessModel.AccGeneral" IsVisibleInReports="True" />
+    <Class Name="Selonia.Accounting.BusinessModel.AccGroup" IsVisibleInReports="True" />
+    <Class Name="Selonia.Accounting.BusinessModel.AccLedger" IsVisibleInReports="True" />
+    <Class Name="Selonia.Accounting.BusinessModel.Segment" IsVisibleInReports="True" />
+    <Class Name="Selonia.Accounting.BusinessModel.Voucher" IsVisibleInReports="True">
       <OwnMembers>
         <Member Name="VoucherState.Value" IsCustom="True" IsCalculated="False" Caption="Voucher State" IsNewNode="True" />
       </OwnMembers>
     </Class>
-    <Class Name="Selonia.Accounting.BusinessModel.Entities.VoucherItem" IsVisibleInReports="True" />
+    <Class Name="Selonia.Accounting.BusinessModel.VoucherItem" IsVisibleInReports="True" />
   </BOModel>
   <NavigationItems>
     <Items>
@@ -58,6 +58,8 @@
     <ListView Id="AccGeneral_Ledgers_ListView" IsGroupPanelVisible="False">
       <Columns>
         <ColumnInfo Id="General" Width="91" SortOrder="None" GroupIndex="-1" Index="-1" />
+        <ColumnInfo Id="Code" Index="0" />
+        <ColumnInfo Id="Name" Index="1" />
       </Columns>
     </ListView>
     <ListView Id="AccGeneral_ListView">
@@ -83,26 +85,71 @@
     <DetailView Id="AccLedger_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
-          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
-            <LayoutGroup Id="AccLedger" RelativeSize="100">
-              <LayoutItem Id="General" Index="0" RelativeSize="3.8231780167264038" />
-              <LayoutGroup Id="Auto399e02ca-da05-4f05-956b-9a353aad51b6" ShowCaption="False" Caption="" Direction="Horizontal" Index="1" RelativeSize="2.8673835125448028" IsNewNode="True">
-                <LayoutItem Id="Code" ViewItem="Code" Index="0" RelativeSize="50" IsNewNode="True" />
-                <LayoutItem Id="Name" ViewItem="Name" Index="1" RelativeSize="50" IsNewNode="True" />
+          <LayoutGroup Id="SimpleEditors" RelativeSize="11.428571428571429">
+            <LayoutGroup Id="Autod0e7619b-c88f-435e-8183-f8d18192f632" ShowCaption="False" Caption="" Direction="Horizontal" Index="0" RelativeSize="34.782608695652172" IsNewNode="True">
+              <LayoutItem Id="Code" ViewItem="Code" Index="0" RelativeSize="49.940688018979834" IsNewNode="True" />
+              <LayoutItem Id="Name" ViewItem="Name" Index="1" RelativeSize="50.059311981020166" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutItem Id="General" ViewItem="General" Index="1" RelativeSize="26.086956521739129" IsNewNode="True" />
+            <LayoutGroup Id="AccLedger" RelativeSize="84.345479082321191" Index="2" Direction="Horizontal" Removed="True">
+              <LayoutGroup Id="AccLedger_col2" RelativeSize="69.597069597069591" Direction="Horizontal" Index="0" Removed="True">
+                <LayoutItem Id="SegmentSettingName4" RelativeSize="100" Index="0" Removed="True" />
+                <LayoutItem Id="SegmentSettingName3" RelativeSize="50" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="AccLedger_col1" RelativeSize="47.985347985347985" Caption="General" Direction="Horizontal" Removed="True">
+                <LayoutItem Id="SegmentSettingName2" Index="1" RelativeSize="50" Removed="True" />
+                <LayoutItem Id="General" RelativeSize="100" Removed="True" />
+                <LayoutItem Id="SegmentSettingName1" Removed="True" />
               </LayoutGroup>
             </LayoutGroup>
+            <LayoutGroup Id="AccStructure" RelativeSize="39.130434782608695" Index="2" Caption="AccStructure">
+              <LayoutItem Id="Description" RelativeSize="100" Index="0" />
+              <LayoutItem Id="Name" RelativeSize="91.17647058823529" Index="0" Removed="True" />
+              <LayoutItem Id="Parent" RelativeSize="50" Index="1" Removed="True" />
+              <LayoutItem Id="Code" RelativeSize="24.509803921568629" Removed="True" />
+            </LayoutGroup>
           </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="88.571428571428569">
+            <LayoutGroup Id="SegmentSettings" RelativeSize="100">
+              <LayoutItem Id="SegmentSettings" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="Children" RelativeSize="100" Removed="True">
+              <LayoutItem Id="Children" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
         </LayoutGroup>
       </Layout>
     </DetailView>
     <ListView Id="AccLedger_ListView">
       <Columns>
+        <ColumnInfo Id="Code" Index="0" Width="90" />
         <ColumnInfo Id="General" SortOrder="Ascending" GroupIndex="0" />
+        <ColumnInfo Id="Name" Index="2" Width="240" />
+        <ColumnInfo Id="SegmentSettingName1" Index="3" />
+        <ColumnInfo Id="SegmentSettingName2" Index="4" />
+        <ColumnInfo Id="SegmentSettingName3" Index="5" />
+        <ColumnInfo Id="SegmentSettingName4" Index="6" />
       </Columns>
     </ListView>
     <ListView Id="AccLedger_LookupListView" AutoExpandAllGroups="True" ShowAutoFilterRow="True">
       <Columns>
         <ColumnInfo Id="General" PropertyName="General" SortOrder="Ascending" GroupIndex="0" IsNewNode="True" />
+      </Columns>
+    </ListView>
+    <ListView Id="AccLedger_SegmentSettings_ListView" AllowEdit="True">
+      <Columns>
+        <ColumnInfo Id="Level" Index="0" Width="53" />
+        <ColumnInfo Id="SegmentGroup" Index="1" Width="112" />
+        <ColumnInfo Id="IsMandatory" Width="106" />
+        <ColumnInfo Id="Description" Width="291" />
+      </Columns>
+    </ListView>
+    <ListView Id="LedgerSegmentSetting_ListView">
+      <Columns>
+        <ColumnInfo Id="Level" Index="0" />
+        <ColumnInfo Id="SegmentGroup" Index="1" Width="135" />
+        <ColumnInfo Id="IsMandatory" Width="80" />
+        <ColumnInfo Id="Description" Width="263" />
       </Columns>
     </ListView>
     <DetailView Id="Segment_DetailView">

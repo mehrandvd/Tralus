@@ -12,7 +12,7 @@ using DevExpress.ExpressApp.DC;
 using DevExpress.Persistent.Base;
 using Tralus.Framework.BusinessModel.Entities;
 
-namespace Selonia.Accounting.BusinessModel.Entities
+namespace Selonia.Accounting.BusinessModel
 {
     [Table("Accounting.VoucherState")]
     public class VoucherState : FixedEntityBase

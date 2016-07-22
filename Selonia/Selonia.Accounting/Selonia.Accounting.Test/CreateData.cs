@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using NUnit.Framework;
-using Selonia.Accounting.BusinessModel.Entities;
+using Selonia.Accounting.BusinessModel;
 using Selonia.Accounting.Data.Database;
 using Selonia.Accounting.Migration.Migrations;
 
@@ -26,8 +26,45 @@ namespace Selonia.Accounting.Test
             var accGenerals = new List<AccGeneral>();
             var accLedgers = new List<AccLedger>();
             var vouchers = new List<Voucher>();
+            var segmentGroups = new List<SegmentGroup>();
+            var segments = new List<Segment>();
 
 
+            segmentGroups.AddRange(new []
+            {
+                new SegmentGroup()
+                {
+                    Id = Guid.NewGuid(),
+                    Code = "10",
+                    Name = "اشخاص حقیقی و حقوقی"
+                },
+                new SegmentGroup()
+                {
+                    Id = Guid.NewGuid(),
+                    Code = "11",
+                    Name = "پروژه‌ها"
+                },
+                new SegmentGroup()
+                {
+                    Id = Guid.NewGuid(),
+                    Code = "12",
+                    Name = "حساب‌ها"
+                },
+            });
+            InsertToDb(segmentGroups);
+
+            for (var i = 1; i <= 800; i++)
+            {
+                var segmentGroup = Pick(segmentGroups);
+                segments.Add(new Segment()
+                {
+                    Id = Guid.NewGuid(),
+                    Code = i.ToString(),
+                    SegmentGroup = segmentGroup,
+                    Name = $"{segmentGroup.Name} {i}"
+                });
+            }
+            InsertToDb(segments);
 
             for (var i = 1; i <= 15; i++)
             {
@@ -66,12 +103,24 @@ namespace Selonia.Accounting.Test
 
             for (var i = 1; i <= 200; i++)
             {
+                var settings = new List<LedgerSegmentSetting>
+                {
+                    new LedgerSegmentSetting()
+                    {
+                        Id = Guid.NewGuid(),
+                        SegmentGroup = Pick(segmentGroups),
+                        Level = Pick(1, 2),
+                        IsMandatory = false,
+                    }
+                };
+
                 accLedgers.Add(new AccLedger()
                 {
                     Id = Guid.NewGuid(),
                     Code = i.ToString(),
                     Name = $"معین {i}",
-                    General = Pick(accGenerals)
+                    General = Pick(accGenerals),
+                    SegmentSettings = settings
                 });
             }
             InsertToDb(accLedgers);

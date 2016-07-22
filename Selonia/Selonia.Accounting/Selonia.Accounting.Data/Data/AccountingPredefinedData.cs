@@ -4,7 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Selonia.Accounting.BusinessModel.Entities;
+using Selonia.Accounting.BusinessModel;
 using Tralus.Framework.BusinessModel.Entities;
 
 namespace Selonia.Accounting.Data.Data
