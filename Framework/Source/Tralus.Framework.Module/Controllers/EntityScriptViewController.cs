@@ -55,29 +55,29 @@ namespace Tralus.Framework.Module.Controllers
 
         private void ObjectSpace_ObjectEndEdit(object sender, ObjectManipulatingEventArgs e)
         {
-            EntityScriptUtil.RunScriptsFor(e.Object, WhenToRun.OnEndEdit, ObjectSpace);
+            EntityScriptUtil.RunScriptsFor(e.Object, WhenToRun.OnEndEdit, sender as IObjectSpace);
         }
 
         private void ObjectSpace_ObjectChanged(object sender, ObjectChangedEventArgs e)
         {
-            EntityScriptUtil.RunScriptsFor(e.Object, WhenToRun.OnChanged, ObjectSpace);
+            EntityScriptUtil.RunScriptsFor(e.Object, WhenToRun.OnChanged, sender as IObjectSpace);
         }
 
         private void ObjectSpace_ObjectSaved(object sender, ObjectManipulatingEventArgs e)
         {
-            EntityScriptUtil.RunScriptsFor(e.Object, WhenToRun.OnSaved, ObjectSpace);
+            EntityScriptUtil.RunScriptsFor(e.Object, WhenToRun.OnSaved, sender as IObjectSpace);
         }
 
         private void ObjectSpace_ObjectSaving(object sender, ObjectManipulatingEventArgs e)
         {
-            EntityScriptUtil.RunScriptsFor(e.Object, WhenToRun.OnSaving, ObjectSpace);
+            EntityScriptUtil.RunScriptsFor(e.Object, WhenToRun.OnSaving, sender as IObjectSpace);
         }
 
         private void ObjectSpaceOnObjectDeleting(object sender, ObjectsManipulatingEventArgs e)
         {
             foreach (var obj in e.Objects)
             {
-                EntityScriptUtil.RunScriptsFor(obj, WhenToRun.OnDeleting, ObjectSpace);
+                EntityScriptUtil.RunScriptsFor(obj, WhenToRun.OnDeleting, sender as IObjectSpace);
             }
         }
 
@@ -85,7 +85,7 @@ namespace Tralus.Framework.Module.Controllers
         {
             foreach (var obj in e.Objects)
             {
-                EntityScriptUtil.RunScriptsFor(obj, WhenToRun.OnDeleted, ObjectSpace);
+                EntityScriptUtil.RunScriptsFor(obj, WhenToRun.OnDeleted, sender as IObjectSpace);
             }
         }
 
