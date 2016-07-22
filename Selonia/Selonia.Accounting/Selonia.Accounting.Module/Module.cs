@@ -14,6 +14,7 @@ using DevExpress.ExpressApp.Model.Core;
 using DevExpress.ExpressApp.Model.DomainLogics;
 using DevExpress.ExpressApp.Model.NodeGenerators;
 using System.Data.Entity;
+using Selonia.Accounting.BusinessModel.Entities;
 using Selonia.Accounting.Module.BusinessObjects;
 using Tralus.Framework.Module;
 

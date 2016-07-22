@@ -1,14 +1,89 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application ProtectedContentText="اطلاعات حفاظت شده">
   <BOModel>
-    <Class Name="Selonia.Accounting.BusinessModel.Entities.AccGeneral" Caption="حساب کل" />
-    <Class Name="Selonia.Accounting.BusinessModel.Entities.AccGroup" Caption="گروه" />
-    <Class Name="Selonia.Accounting.BusinessModel.Entities.AccLedger" Caption="معین" />
-    <Class Name="Selonia.Accounting.BusinessModel.Entities.Segment" Caption="تفصیلی" />
-    <Class Name="Selonia.Accounting.BusinessModel.Entities.SegmentGroup" Caption="گروه تفصیلی" />
-    <Class Name="Selonia.Accounting.BusinessModel.Entities.Voucher" Caption="سند حسابداری" />
-    <Class Name="Selonia.Accounting.BusinessModel.Entities.VoucherItem" Caption="آرتیکل" />
-    <Class Name="Selonia.Accounting.BusinessModel.Entities.VoucherItemSegment" Caption="تفصیلی آرتیکل" />
+    <Class Name="Selonia.Accounting.BusinessModel.Entities.AccGeneral" Caption="حساب کل">
+      <OwnMembers>
+        <Member Name="Group" Caption="گروه" />
+        <Member Name="Ledgers" Caption="معین‌ها" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Selonia.Accounting.BusinessModel.Entities.AccGroup" Caption="گروه">
+      <OwnMembers>
+        <Member Name="Generals" Caption="دفاتر کل" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Selonia.Accounting.BusinessModel.Entities.AccLedger" Caption="معین">
+      <OwnMembers>
+        <Member Name="General" Caption="دفتر کل" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Selonia.Accounting.BusinessModel.Entities.AccStructure" Caption="ساختار حساب">
+      <OwnMembers>
+        <Member Name="Children" Caption="فرزندان" />
+        <Member Name="Code" Caption="کد" />
+        <Member Name="Description" Caption="شرح" />
+        <Member Name="Name" Caption="نام" />
+        <Member Name="Parent" Caption="پدر" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Selonia.Accounting.BusinessModel.Entities.Segment" Caption="تفصیلی">
+      <OwnMembers>
+        <Member Name="Code" Caption="کد" />
+        <Member Name="Description" Caption="شرح" />
+        <Member Name="Name" Caption="نام" />
+        <Member Name="SegmentGroup" Caption="گروه تفصیلی" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Selonia.Accounting.BusinessModel.Entities.SegmentGroup" Caption="گروه تفصیلی">
+      <OwnMembers>
+        <Member Name="Code" Caption="کد" />
+        <Member Name="Description" Caption="شرح" />
+        <Member Name="Name" Caption="نام" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Selonia.Accounting.BusinessModel.Entities.Voucher" Caption="سند حسابداری">
+      <OwnMembers>
+        <Member Name="CreditSum" Caption="بستانکار" />
+        <Member Name="DebitSum" Caption="بدهکار" />
+        <Member Name="Description" Caption="شرح" />
+        <Member Name="FixNo" Caption="شماره ثابت" />
+        <Member Name="TempNo" Caption="شماره موقت" />
+        <Member Name="VoucherDate" Caption="تاریخ سند" />
+        <Member Name="VoucherItems" Caption="اقلام سند" />
+        <Member Name="VoucherState" Caption="وضعیت" />
+        <Member Name="VoucherState.Value" Caption="مقدار وضعیت" />
+        <Member Name="VoucherType" Caption="نوع سند" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Selonia.Accounting.BusinessModel.Entities.VoucherItem" Caption="آرتیکل">
+      <OwnMembers>
+        <Member Name="Credit" Caption="بستانکار" />
+        <Member Name="Debit" Caption="بدهکار" />
+        <Member Name="Description" Caption="شرح" />
+        <Member Name="Ledger" Caption="معین" />
+        <Member Name="RowNo" Caption="سطر" />
+        <Member Name="RowNoProperty" Caption="سطر" />
+        <Member Name="Segment1" Caption="تفصیلی ۱" />
+        <Member Name="Segment2" Caption="تفصیلی ۲" />
+        <Member Name="Segment3" Caption="تفصیلی ۳" />
+        <Member Name="Segment4" Caption="تفصیلی ۴" />
+        <Member Name="Voucher" Caption="سند حسابداری" />
+        <Member Name="VoucherItemSegments" Caption="اقلام تفصیلی" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Selonia.Accounting.BusinessModel.Entities.VoucherItemSegment" Caption="تفصیلی آرتیکل">
+      <OwnMembers>
+        <Member Name="Segment" Caption="تفصیلی" />
+        <Member Name="VoucherItem" Caption="آرتیکل" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Selonia.Accounting.BusinessModel.Entities.VoucherState" Caption="وضعیت سند" />
+    <Class Name="Selonia.Accounting.BusinessModel.Entities.VoucherType" Caption="نوع سند">
+      <OwnMembers>
+        <Member Name="Code" Caption="کد" />
+        <Member Name="Name" Caption="نام" />
+      </OwnMembers>
+    </Class>
   </BOModel>
   <NavigationItems>
     <Items>

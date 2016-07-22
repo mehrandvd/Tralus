@@ -52,9 +52,6 @@
               </LayoutGroup>
             </LayoutGroup>
           </LayoutGroup>
-          <LayoutGroup Id="Ledgers_Group" Direction="Vertical" RelativeSize="89.72520908004779">
-            <LayoutItem Id="Ledgers" RelativeSize="100" />
-          </LayoutGroup>
         </LayoutGroup>
       </Layout>
     </DetailView>
@@ -75,11 +72,7 @@
     </ListView>
     <DetailView Id="AccGroup_DetailView">
       <Layout>
-        <LayoutGroup Id="Main" RelativeSize="100">
-          <LayoutGroup Id="Generals_Group" Direction="Vertical" RelativeSize="92.5925925925926">
-            <LayoutItem Id="Generals" RelativeSize="100" />
-          </LayoutGroup>
-        </LayoutGroup>
+        <LayoutGroup Id="Main" RelativeSize="100" />
       </Layout>
     </DetailView>
     <ListView Id="AccGroup_Generals_ListView">
