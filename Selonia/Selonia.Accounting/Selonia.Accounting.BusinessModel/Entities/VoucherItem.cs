@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using Tralus.Framework.BusinessModel.Entities;
 
 namespace Selonia.Accounting.BusinessModel
@@ -44,20 +45,79 @@ namespace Selonia.Accounting.BusinessModel
         public virtual string Description { get; set; }
 
         [NotMapped]
-        public virtual Segment Segment1 { get; set; }
+        public virtual Segment Segment1
+        {
+            get { return GetSegment(); }
+            set { SetSegment(value); }
+        }
 
         [NotMapped]
-        public virtual Segment Segment2 { get; set; }
+        public virtual Segment Segment2
+        {
+            get { return GetSegment(); }
+            set { SetSegment(value); }
+        }
 
         [NotMapped]
-        public virtual Segment Segment3 { get; set; }
+        public virtual Segment Segment3
+        {
+            get { return GetSegment(); }
+            set { SetSegment(value); }
+        }
 
         [NotMapped]
-        public virtual Segment Segment4 { get; set; }
+        public virtual Segment Segment4
+        {
+            get { return GetSegment(); }
+            set { SetSegment(value); }
+        }
 
         public virtual Voucher Voucher { get; set; }
 
         public virtual ICollection<VoucherItemSegment> VoucherItemSegments { get; set; }
+
+        private Segment GetSegment([CallerMemberName] string callerName = null)
+        {
+            if (callerName == null)
+                return null;
+
+            var callerIndex = callerName.Replace("Segment", "");
+            int index;
+            if (int.TryParse(callerIndex, out index))
+            {
+                var voucherItemSegment = VoucherItemSegments.FirstOrDefault(vis => vis.Level == index);
+                return voucherItemSegment?.Segment;
+            }
+
+            return null;
+        }
+
+        private void SetSegment(Segment newValue, [CallerMemberName] string callerName = null)
+        {
+            if (callerName == null)
+                return;
+
+            var callerIndex = callerName.Replace("Segment", "");
+            int index;
+            if (int.TryParse(callerIndex, out index))
+            {
+                var voucherItemSegment = VoucherItemSegments.FirstOrDefault(vis => vis.Level == index);
+
+                if (voucherItemSegment != null)
+                {
+                    voucherItemSegment.Segment = newValue;
+                }
+                else
+                {
+                    VoucherItemSegments.Add(new VoucherItemSegment()
+                    {
+                        Id = Guid.NewGuid(),
+                        Level = index,
+                        Segment = newValue
+                    });
+                }
+            }
+        }
 
         [Obsolete("A controller in framework does this job.")]
         public void SetRowNo(int? rowNo = null)
