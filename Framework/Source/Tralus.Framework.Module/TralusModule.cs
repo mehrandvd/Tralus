@@ -31,6 +31,7 @@ namespace Tralus.Framework.Module
             var entityTypes =
                 GetModuleExportedTypes();
 
+            AdditionalExportedTypes.Add(typeof(EntityScript));
             AdditionalExportedTypes.Add(typeof(EntityBase));
             AdditionalExportedTypes.Add(typeof(FixedEntityBase));
 

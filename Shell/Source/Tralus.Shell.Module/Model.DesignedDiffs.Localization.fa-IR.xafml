@@ -1,2 +1,109 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Application />
+<Application>
+  <BOModel>
+    <Class Name="Tralus.Framework.BusinessModel.Entities.CandidateUser" Caption="کاربر کاندید">
+      <OwnMembers>
+        <Member Name="Description" Caption="توضیحات" />
+        <Member Name="Username" Caption="نام کاربری" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Tralus.Framework.BusinessModel.Entities.DummyObject" Caption="شی فرضی" />
+    <Class Name="Tralus.Framework.BusinessModel.Entities.EntityBase" Caption="موجودیت پایه">
+      <OwnMembers>
+        <Member Name="Id" Caption="شناسه" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Tralus.Framework.BusinessModel.Entities.EntityNumbering" Caption="مقدار دهی خودکار">
+      <OwnMembers>
+        <Member Name="PropertyName" Caption="نام فیلد" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Tralus.Framework.BusinessModel.Entities.EntityRuleScript" Caption="قانون اسکریپتی موجودیت" />
+    <Class Name="Tralus.Framework.BusinessModel.Entities.EntityScript" Caption="اسکریپت موجودیت">
+      <OwnMembers>
+        <Member Name="Script" Caption="اسکریپت" />
+        <Member Name="TargetType" Caption="تایپ مقصد" />
+        <Member Name="TargetTypeFullName" Caption="نام کامل تایپ" />
+        <Member Name="Title" Caption="عنوان" />
+        <Member Name="WhenToRun" Caption="زمان اجرا" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Tralus.Framework.BusinessModel.Entities.EntitySequence" Caption="شماره‌گذاری متوالی">
+      <OwnMembers>
+        <Member Name="Description" Caption="توضیحات" />
+        <Member Name="Name" Caption="نام" />
+        <Member Name="SequenceItems" Caption="شماره‌های مصرف شده" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Tralus.Framework.BusinessModel.Entities.EntitySequenceItem" Caption="شماره مصرف شده">
+      <OwnMembers>
+        <Member Name="CreationDateTime" Caption="زمان ایجاد" />
+        <Member Name="EntitySequence" Caption="شماره‌گذاری متوالی" />
+        <Member Name="EntitySequenceId" Caption="شناسه شماره‌گذاری متوالی" />
+        <Member Name="Param1" Caption="پارامتر ۱" />
+        <Member Name="Param2" Caption="پارامتر ۲" />
+        <Member Name="Param3" Caption="پارامتر ۳" />
+        <Member Name="Param4" Caption="پارامتر 4" />
+        <Member Name="Param5" Caption="پارامتر ۵" />
+        <Member Name="SeqValue" Caption="مقدار مصرف شده" />
+        <Member Name="UsedFor" Caption="استفاده شده برای" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Tralus.Framework.BusinessModel.Entities.Role" Caption="نقش">
+      <OwnMembers>
+        <Member Name="CanEditModel" Caption="اجازه ویرایش مدل" />
+        <Member Name="ChildRoles" Caption="نقش‌های فرزند" />
+        <Member Name="Name" Caption="نام" />
+        <Member Name="ParentRoles" Caption="نقش‌های پدر" />
+        <Member Name="TypePermissions" Caption="دسترسی‌های نوع" />
+        <Member Name="Users" Caption="کاربران" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Tralus.Framework.BusinessModel.Entities.SecuritySystemInstancePermissionsObject" Caption="دسترسی سطح یک شی" />
+    <Class Name="Tralus.Framework.BusinessModel.Entities.SecuritySystemMemberPermissionsObject" Caption="دسترسی سطح فیلد" />
+    <Class Name="Tralus.Framework.BusinessModel.Entities.SecuritySystemObjectPermissionsObject" Caption="دسترسی سطح شی" />
+    <Class Name="Tralus.Framework.BusinessModel.Entities.SystemEnvironmentTest" Caption="تست محیط اجرایی" />
+    <Class Name="Tralus.Framework.BusinessModel.Entities.TypePermissionObject" Caption="دسترسی سطح نوع" />
+    <Class Name="Tralus.Framework.BusinessModel.Entities.User" Caption="کاربر">
+      <OwnMembers>
+        <Member Name="ChangePasswordOnFirstLogon" Caption="تغییر رمز هنگام اولین ورود" />
+        <Member Name="IsActive" Caption="فعال" />
+        <Member Name="Roles" Caption="نقش‌ها" />
+        <Member Name="UserName" Caption="نام کاربری" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <NavigationItems>
+    <Items>
+      <Item Id="@8d2906e1-0ee4-427c-abc7-32eb9c63eb6a" Caption="مدیریت زیرساخت ترالوس">
+        <Items>
+          <Item Id="@88575610-d9ad-4219-a840-c169467a9beb" Caption="عیب یابی" />
+          <Item Id="@a692e49f-dab8-4014-bc00-9710c65894f0" Caption="امنیت" />
+          <Item Id="@ca886721-d927-48c5-aaf4-de76fba7a5e8" Caption="شخصی‌سازی">
+            <Items>
+              <Item Id="@a69bb2c3-a0e0-4912-ac18-6f444dc374cd" Caption="شخصی‌سازی موجودیت‌">
+                <Items>
+                  <Item Id="@eda05840-6df7-4ffa-a136-99862f01b737" Caption="مقداردهی خودکار" />
+                  <Item Id="@e33f34f7-c8bb-480e-8ce3-0bc4b9866e2c" Caption="شماره‌گذاری متوالی" />
+                  <Item Id="@45c10867-1e72-4128-a532-606e58bba7af" Caption="قانون موجودیت" />
+                </Items>
+              </Item>
+              <Item Id="@d9da3684-1252-4bdb-835d-3ddd61c100b1" Caption="شخصی‌سازی فرایند">
+                <Items>
+                  <Item Id="@9ca46168-ad82-4ae3-b9d2-b31e3a9c3973" Caption="ورک فلو" />
+                  <Item Id="@374a669d-14ee-4964-bfa8-d1bc33f2dbfa" Caption="مدیریت وضعیت" />
+                </Items>
+              </Item>
+              <Item Id="@884684b7-de31-4f9c-aaee-57a0dbe3b213" Caption="شخصی‌سازی مدل" />
+            </Items>
+          </Item>
+        </Items>
+      </Item>
+      <Item Id="Reports" Caption="گزارش‌ها">
+        <Items>
+          <Item Id="Analysis_ListView" Caption="تحلیل" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+</Application>
