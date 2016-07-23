@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application Title="Mahan" Logo="MahanLogo-WithoutName" PreferredLanguage="fa-IR">
-  <NavigationItems>
+  <NavigationItems GenerateRelatedViewVariantsGroup="True" GenerateRelatedReportsGroup="True" GenerateRelatedAnalysisGroup="True">
     <Items>
       <Item Id="@8d2906e1-0ee4-427c-abc7-32eb9c63eb6a" Caption="Tralus Administration" ChildItemsDisplayStyle="List" ImageName="Action_OrganizeDashboard" IsNewNode="True">
         <Items IsNewNode="True">
