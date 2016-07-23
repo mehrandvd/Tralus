@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <ActionDesign>
+    <Actions>
+      <Action Id="Activate" Caption="فعال‌سازی" />
+      <Action Id="BindAnalysisData" Caption="اتصال به اطلاعات تحلیلی" />
+      <Action Id="Cancel" Caption="انصراف" />
+      <Action Id="CancelWorkflowInstance" Caption="انصراف" ConfirmationMessage="شما در حال انصراف عملیات هستید. آیا مطمئنید؟" />
+      <Action Id="ChangeVariant" Caption="نحوه نمایش" />
+      <Action Id="CopyModelDifference" Caption="کپی مدل" />
+      <Action Id="CopyPredefinedReport" Caption="کپی گزارش از پیش تعریف شده" />
+      <Action Id="CreateDashboard" Caption="ساخت داشبورد" />
+      <Action Id="Deactivate" Caption="غیر فعال‌سازی" />
+      <Action Id="Delete" Caption="حذف" ConfirmationMessage="شما در حال حذف رکورد(های) انتخاب شده هستید. آیا مطمئنید؟" />
+      <Action Id="Delete Item" Caption="حذف قلم" ConfirmationMessage="شما در حال حذف رکورد(های) انتخاب شده هستید. آیا مطمئنید؟" />
+      <Action Id="DeleteDashboard" Caption="حذف داشبورد" />
+      <Action Id="Diagnostic Info" Caption="اطلاعات دیاگ" />
+      <Action Id="Diagnostic Info.Actions Info" Caption="اطلاعات دیاگ.عملیات" />
+      <Action Id="Diagnostic Info.Rules Info" Caption="اطلاعات دیاگ.قوانین" />
+      <Action Id="Diagnostic Info.View Info" Caption="اطلاعات دیاگ.نحوه نمایش" />
+      <Action Id="DialogCancel" Caption="انصراف" />
+      <Action Id="DialogClose" Caption="بستن" />
+      <Action Id="DialogOK" Caption="تایید" />
+      <Action Id="ExportModelDifferences" Caption="اکسپورت مدل" />
+      <Action Id="FullTextSearch" Caption="جستجوی متن" />
+      <Action Id="HideItemsFromDashboard" Caption="پنهان کردن از داشبورد" />
+      <Action Id="ImportSharedModelDifference" Caption="وارد کردن مدل‌های اشتراکی" />
+      <Action Id="Link" Caption="ایجاد ارتباط" />
+      <Action Id="ListViewShowObject" Caption="باز کردن" />
+      <Action Id="Logoff" Caption="خروج" />
+      <Action Id="Logon" Caption="ورود" />
+      <Action Id="NavigateBack" Caption="قبلی" />
+      <Action Id="NavigateForward" Caption="بعدی" />
+      <Action Id="New" Caption="جدید" />
+      <Action Id="NextObject" Caption="موجودیت بعدی" />
+      <Action Id="OrganizeDashboard" Caption="مدیریت داشبورد" />
+      <Action Id="PreviewReportV2" Caption="پیش‌نمایش" />
+      <Action Id="PreviousObject" Caption="موجودیت قبلی" />
+      <Action Id="Refresh" Caption="بازآوری" />
+      <Action Id="ReportViewerDialogControllerV2_Close" Caption="بستن" />
+      <Action Id="ResetModelDifferences" Caption="ریست کردن تنظیمات مدل" />
+      <Action Id="ResetViewSettings" Caption="ریست کردن تنظیمات نمایش" />
+      <Action Id="ResumeWorkflowInstance" Caption="شروع مجدد گردش کار" />
+      <Action Id="Save" Caption="ذخیره" />
+      <Action Id="SaveAndClose" Caption="ذخیره و بستن" />
+      <Action Id="SaveAndNew" Caption="ذخیره و جدید" />
+      <Action Id="SetFilter" Caption="فیلتر" />
+      <Action Id="ShowAllContexts" Caption="اعتبارسنجی" />
+      <Action Id="ShowInReportV2" Caption="نمایش در گزارش" />
+      <Action Id="ShowItemsOnDashboard" Caption="نمایش در داشبورد" />
+      <Action Id="ShowNavigationItem" Caption="راهبری" />
+      <Action Id="ShowWorkflowInstances" Caption="نمایش گردش‌کارهای اجرا شده" />
+      <Action Id="SuspendWorkflowInstance" Caption="تعلیق" />
+      <Action Id="TerminateWorkflowInstance" Caption="قطع کردن" />
+      <Action Id="UnbindAnalysisData" Caption="قطع کردن ارتباط اطلاعات" />
+      <Action Id="Unlink" Caption="حذف ارتباط" ConfirmationMessage="شما در حال حذف ارتباط رکورد(های) انتخاب شده هستید. آیا مطمئنید؟" />
+    </Actions>
+    <DisableReasons>
+      <Reason Id="ByContext_RequireMultipleObjects" Caption="حداقل یک موجودیت باید انتخاب شود" />
+      <Reason Id="ByContext_RequireSingleObject" Caption="فقط یک موجودیت باید انتخاب شود" />
+      <Reason Id="Security" Caption="عدم دسترسی" />
+    </DisableReasons>
+  </ActionDesign>
+  <BOModel>
+    <Class Name="DevExpress.ExpressApp.Workflow.EF.EFRunningWorkflowInstanceInfo" Caption="اطلاعات گردش‌کار در حال اجرا" />
+    <Class Name="DevExpress.ExpressApp.Workflow.EF.EFStartWorkflowRequest" Caption="درخواست شروع گردش‌کار" />
+    <Class Name="DevExpress.ExpressApp.Workflow.EF.EFWorkflowDefinition" Caption="تعریف گردش کار" />
+    <Class Name="Tralus.Framework.BusinessModel.Entities.CandidateUser" Caption="کاربر کاندید">
+      <OwnMembers>
+        <Member Name="Description" Caption="توضیحات" />
+        <Member Name="Username" Caption="نام کاربری" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Tralus.Framework.BusinessModel.Entities.DummyObject" Caption="شی فرضی" />
+    <Class Name="Tralus.Framework.BusinessModel.Entities.EntityBase" Caption="موجودیت پایه">
+      <OwnMembers>
+        <Member Name="Id" Caption="شناسه" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Tralus.Framework.BusinessModel.Entities.EntityNumbering" Caption="مقدار دهی خودکار">
+      <OwnMembers>
+        <Member Name="PropertyName" Caption="نام فیلد" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Tralus.Framework.BusinessModel.Entities.EntityRuleScript" Caption="قانون اسکریپتی موجودیت" />
+    <Class Name="Tralus.Framework.BusinessModel.Entities.EntityScript" Caption="اسکریپت موجودیت">
+      <OwnMembers>
+        <Member Name="Script" Caption="اسکریپت" />
+        <Member Name="TargetType" Caption="تایپ مقصد" />
+        <Member Name="TargetTypeFullName" Caption="نام کامل تایپ" />
+        <Member Name="Title" Caption="عنوان" />
+        <Member Name="WhenToRun" Caption="زمان اجرا" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Tralus.Framework.BusinessModel.Entities.EntitySequence" Caption="شماره‌گذاری متوالی">
+      <OwnMembers>
+        <Member Name="Description" Caption="توضیحات" />
+        <Member Name="Name" Caption="نام" />
+        <Member Name="SequenceItems" Caption="شماره‌های مصرف شده" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Tralus.Framework.BusinessModel.Entities.EntitySequenceItem" Caption="شماره مصرف شده">
+      <OwnMembers>
+        <Member Name="CreationDateTime" Caption="زمان ایجاد" />
+        <Member Name="EntitySequence" Caption="شماره‌گذاری متوالی" />
+        <Member Name="EntitySequenceId" Caption="شناسه شماره‌گذاری متوالی" />
+        <Member Name="Param1" Caption="پارامتر ۱" />
+        <Member Name="Param2" Caption="پارامتر ۲" />
+        <Member Name="Param3" Caption="پارامتر ۳" />
+        <Member Name="Param4" Caption="پارامتر 4" />
+        <Member Name="Param5" Caption="پارامتر ۵" />
+        <Member Name="SeqValue" Caption="مقدار مصرف شده" />
+        <Member Name="UsedFor" Caption="استفاده شده برای" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Tralus.Framework.BusinessModel.Entities.FixedEntityBase" Caption="موجودیت ثابت">
+      <OwnMembers>
+        <Member Name="Name" Caption="نام" />
+        <Member Name="Value" Caption="مقدار" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Tralus.Framework.BusinessModel.Entities.Role" Caption="نقش">
+      <OwnMembers>
+        <Member Name="CanEditModel" Caption="اجازه ویرایش مدل" />
+        <Member Name="ChildRoles" Caption="نقش‌های فرزند" />
+        <Member Name="Name" Caption="نام" />
+        <Member Name="ParentRoles" Caption="نقش‌های پدر" />
+        <Member Name="TypePermissions" Caption="دسترسی‌های نوع" />
+        <Member Name="Users" Caption="کاربران" />
+      </OwnMembers>
+    </Class>
+    <Class Name="Tralus.Framework.BusinessModel.Entities.SecuritySystemInstancePermissionsObject" Caption="دسترسی سطح یک شی" />
+    <Class Name="Tralus.Framework.BusinessModel.Entities.SecuritySystemMemberPermissionsObject" Caption="دسترسی سطح فیلد" />
+    <Class Name="Tralus.Framework.BusinessModel.Entities.SecuritySystemObjectPermissionsObject" Caption="دسترسی سطح شی" />
+    <Class Name="Tralus.Framework.BusinessModel.Entities.SystemEnvironmentTest" Caption="تست محیط اجرایی" />
+    <Class Name="Tralus.Framework.BusinessModel.Entities.TypePermissionObject" Caption="دسترسی سطح نوع" />
+    <Class Name="Tralus.Framework.BusinessModel.Entities.User" Caption="کاربر">
+      <OwnMembers>
+        <Member Name="ChangePasswordOnFirstLogon" Caption="تغییر رمز هنگام اولین ورود" />
+        <Member Name="IsActive" Caption="فعال" />
+        <Member Name="Roles" Caption="نقش‌ها" />
+        <Member Name="UserName" Caption="نام کاربری" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+  <Localization>
+    <LocalizationGroup Name="Captions">
+      <LocalizationItem Name="DashboardView" Value="نمایش داشبورد" />
+      <LocalizationItem Name="DetailView" Value="نمایش جزئیات" />
+      <LocalizationItem Name="EditCriteria" Value="ویرایش شرط" />
+      <LocalizationItem Name="ListView" Value="نمایش لیست" />
+      <LocalizationItem Name="View" Value="نمایش" />
+    </LocalizationGroup>
+    <LocalizationGroup Name="ChartModule">
+      <LocalizationItem Name="ClearSettings" Value="پاک کردن تنظیمات" />
+      <LocalizationItem Name="InvokeWizard" Value="اجرای ویزارد" />
+    </LocalizationGroup>
+    <LocalizationGroup Name="DialogButtons">
+      <LocalizationItem Name="Add" Value="اضافه کردن" />
+      <LocalizationItem Name="Apply" Value="اعمال" />
+      <LocalizationItem Name="Back" Value="قبلی" />
+      <LocalizationItem Name="Cancel" Value="انصراف" />
+      <LocalizationItem Name="Clear" Value="پاک‌کردن" />
+      <LocalizationItem Name="Close" Value="بستن" />
+      <LocalizationItem Name="Find" Value="پیدا کردن" />
+      <LocalizationItem Name="Ignore" Value="چشم‌پوشی" />
+      <LocalizationItem Name="Next" Value="بعدی" />
+      <LocalizationItem Name="No" Value="خیر" />
+      <LocalizationItem Name="OK" Value="تایید" />
+      <LocalizationItem Name="Remove" Value="حذف" />
+      <LocalizationItem Name="Retry" Value="تلاش مجدد" />
+      <LocalizationItem Name="Yes" Value="بله" />
+    </LocalizationGroup>
+    <LocalizationGroup Name="Messages">
+      <LocalizationItem Name="User" Value="کاربر: {0}" />
+    </LocalizationGroup>
+    <LocalizationGroup Name="Texts">
+      <LocalizationItem Name="CaptionForFalse" Value="نادرست" />
+      <LocalizationItem Name="CaptionForTrue" Value="درست" />
+      <LocalizationItem Name="Error" Value="خطا" />
+      <LocalizationItem Name="NullValueText" Value="(خالی)" />
+      <LocalizationItem Name="Warning" Value="اخطار" />
+    </LocalizationGroup>
+  </Localization>
+  <NavigationItems RelatedAnalysisGroupCaption="تحلیل" RelatedViewVariantsGroupCaption="نحوه نمایش" RelatedReportsGroupCaption="گزارش">
+    <Items>
+      <Item Id="@8d2906e1-0ee4-427c-abc7-32eb9c63eb6a" Caption="مدیریت زیرساخت ترالوس">
+        <Items>
+          <Item Id="@88575610-d9ad-4219-a840-c169467a9beb" Caption="عیب یابی">
+            <Items>
+              <Item Id="@6a1c3c14-e6dc-4c20-8e66-8001a72a20c5" Caption="تست محیط عملیاتی" />
+            </Items>
+          </Item>
+          <Item Id="@a692e49f-dab8-4014-bc00-9710c65894f0" Caption="امنیت">
+            <Items>
+              <Item Id="@1b3dcd1c-40de-4dcb-91bb-b3c12f4c34eb" Caption="کاربر" />
+              <Item Id="@fc560376-ec40-4d34-887d-4cc9c7b3792d" Caption="نقش" />
+            </Items>
+          </Item>
+          <Item Id="@ca886721-d927-48c5-aaf4-de76fba7a5e8" Caption="شخصی‌سازی">
+            <Items>
+              <Item Id="@a69bb2c3-a0e0-4912-ac18-6f444dc374cd" Caption="شخصی‌سازی موجودیت‌">
+                <Items>
+                  <Item Id="@eda05840-6df7-4ffa-a136-99862f01b737" Caption="مقداردهی خودکار" />
+                  <Item Id="@e33f34f7-c8bb-480e-8ce3-0bc4b9866e2c" Caption="شماره‌گذاری متوالی" />
+                  <Item Id="@45c10867-1e72-4128-a532-606e58bba7af" Caption="قانون موجودیت" />
+                </Items>
+              </Item>
+              <Item Id="@d9da3684-1252-4bdb-835d-3ddd61c100b1" Caption="شخصی‌سازی فرایند">
+                <Items>
+                  <Item Id="@9ca46168-ad82-4ae3-b9d2-b31e3a9c3973" Caption="ورک فلو" />
+                  <Item Id="@374a669d-14ee-4964-bfa8-d1bc33f2dbfa" Caption="مدیریت وضعیت" />
+                </Items>
+              </Item>
+              <Item Id="@884684b7-de31-4f9c-aaee-57a0dbe3b213" Caption="شخصی‌سازی مدل" />
+            </Items>
+          </Item>
+        </Items>
+      </Item>
+      <Item Id="Reports" Caption="گزارش‌ها">
+        <Items>
+          <Item Id="Analysis_ListView" Caption="تحلیل" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <Validation>
+    <Contexts>
+      <ValidationContext Id="Delete" Caption="حذف" />
+      <ValidationContext Id="Save" Caption="ذخیره" />
+    </Contexts>
+  </Validation>
+</Application>
