@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using DevExpress.ExpressApp.DC;
 using Tralus.Framework.BusinessModel.Entities;
 
-namespace Selonia.Accounting.BusinessModel.Entities
+namespace Selonia.Accounting.BusinessModel
 {
     [Table("Accounting.Voucher")]
     public class Voucher : EntityBase

@@ -3,9 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using DevExpress.Data.Filtering;
+using DevExpress.Persistent.Base;
 using Tralus.Framework.BusinessModel.Entities;
 
-namespace Selonia.Accounting.BusinessModel.Entities
+namespace Selonia.Accounting.BusinessModel
 {
     [Table("Accounting.VoucherItem")]
     public class VoucherItem : EntityBase, IOrderedEntity
@@ -43,21 +46,128 @@ namespace Selonia.Accounting.BusinessModel.Entities
 
         public virtual string Description { get; set; }
 
+        [DataSourceCriteriaProperty("SegmentCriteria1")]
         [NotMapped]
-        public virtual Segment Segment1 { get; set; }
+        public virtual Segment Segment1
+        {
+            get { return GetSegment(); }
+            set { SetSegment(value); }
+        }
+
+        [DataSourceCriteriaProperty("SegmentCriteria2")]
+        [NotMapped]
+        public virtual Segment Segment2
+        {
+            get { return GetSegment(); }
+            set { SetSegment(value); }
+        }
+
+        [DataSourceCriteriaProperty("SegmentCriteria3")]
+        [NotMapped]
+        public virtual Segment Segment3
+        {
+            get { return GetSegment(); }
+            set { SetSegment(value); }
+        }
+
+        [DataSourceCriteriaProperty("SegmentCriteria4")]
+        [NotMapped]
+        public virtual Segment Segment4
+        {
+            get { return GetSegment(); }
+            set { SetSegment(value); }
+        }
 
         [NotMapped]
-        public virtual Segment Segment2 { get; set; }
+        public virtual CriteriaOperator SegmentCriteria1 => GetCriteriaOperator();
+        public virtual CriteriaOperator SegmentCriteria2 => GetCriteriaOperator();
+        public virtual CriteriaOperator SegmentCriteria3 => GetCriteriaOperator();
+        public virtual CriteriaOperator SegmentCriteria4 => GetCriteriaOperator();
+        //{
+        //    get
+        //    {
+        //        var ledgerSegmentSetting = Ledger.GetSegmentSetting(1);
+        //        if (ledgerSegmentSetting != null)
+        //        {
+        //            return CriteriaOperator.Parse($"[SegmentGroup.Id] = '{ledgerSegmentSetting.SegmentGroup.Id}'");
+        //        }
+        //        else
+        //        {
+        //            return CriteriaOperator.Parse($"[SegmentGroup.Name] = ''");
+        //        }
+        //    }
+        //}
 
-        [NotMapped]
-        public virtual Segment Segment3 { get; set; }
+        private CriteriaOperator GetCriteriaOperator([CallerMemberName] string callerName = null)
+        {
+            if (callerName == null)
+                return null;
 
-        [NotMapped]
-        public virtual Segment Segment4 { get; set; }
+            var callerIndex = callerName.Replace("SegmentCriteria", "");
+            int index;
+
+            if (int.TryParse(callerIndex, out index))
+            {
+                var ledgerSegmentSetting = Ledger.GetSegmentSetting(index);
+                if (ledgerSegmentSetting != null)
+                {
+                    return CriteriaOperator.Parse($"[SegmentGroup.Id] = '{ledgerSegmentSetting.SegmentGroup.Id}'");
+                }
+                else
+                {
+                    return CriteriaOperator.Parse($"[SegmentGroup.Name] = ''");
+                }
+            }
+
+            return null;
+        }
 
         public virtual Voucher Voucher { get; set; }
 
         public virtual ICollection<VoucherItemSegment> VoucherItemSegments { get; set; }
+
+        private Segment GetSegment([CallerMemberName] string callerName = null)
+        {
+            if (callerName == null)
+                return null;
+
+            var callerIndex = callerName.Replace("Segment", "");
+            int index;
+            if (int.TryParse(callerIndex, out index))
+            {
+                var voucherItemSegment = VoucherItemSegments.FirstOrDefault(vis => vis.Level == index);
+                return voucherItemSegment?.Segment;
+            }
+
+            return null;
+        }
+
+        private void SetSegment(Segment newValue, [CallerMemberName] string callerName = null)
+        {
+            if (callerName == null)
+                return;
+
+            var callerIndex = callerName.Replace("Segment", "");
+            int index;
+            if (int.TryParse(callerIndex, out index))
+            {
+                var voucherItemSegment = VoucherItemSegments.FirstOrDefault(vis => vis.Level == index);
+
+                if (voucherItemSegment != null)
+                {
+                    voucherItemSegment.Segment = newValue;
+                }
+                else
+                {
+                    VoucherItemSegments.Add(new VoucherItemSegment()
+                    {
+                        Id = Guid.NewGuid(),
+                        Level = index,
+                        Segment = newValue
+                    });
+                }
+            }
+        }
 
         [Obsolete("A controller in framework does this job.")]
         public void SetRowNo(int? rowNo = null)
