@@ -15,10 +15,8 @@ namespace Tralus.Framework.Module.Win
     {
         protected TralusWinModule()
         {
-
             if (!(this is FrameworkWindowsFormsModule))
             {
-                this.RequiredModuleTypes.Add(typeof(TralusModule));
                 this.RequiredModuleTypes.Add(typeof(FrameworkWindowsFormsModule));
             }
         }
