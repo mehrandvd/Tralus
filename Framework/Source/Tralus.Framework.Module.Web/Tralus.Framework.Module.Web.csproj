@@ -153,6 +153,7 @@
     <Compile Include="Controllers\SwitchToEditModeModificationsController.Designer.cs">
       <DependentUpon>SwitchToEditModeModificationsController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Editors\PersianDateEditor.cs" />
     <Compile Include="Editors\TralusDateEditor.cs" />
     <Compile Include="Editors\TralusDateTimeEditor.cs" />
     <Compile Include="Editors\TralusTimeEditor.cs" />
@@ -169,7 +170,6 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="WebModule.resx">
       <DependentUpon>WebModule.cs</DependentUpon>
     </EmbeddedResource>
