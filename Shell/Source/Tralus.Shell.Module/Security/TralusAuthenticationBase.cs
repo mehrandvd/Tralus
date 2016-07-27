@@ -19,7 +19,7 @@ namespace Tralus.Shell.Module.Security
                 {
                     user = objectSpace.CreateObject<User>();
                     user.UserName = userName;
-                    var adminRole = objectSpace.FindObject<Role>(new BinaryOperator("Name", "Administrators"));
+                    var adminRole = objectSpace.FindObject<Role>(new BinaryOperator("Name", "Tralus.TralusAdmin"));
                     user.Roles.Add(adminRole);
                     bool strictSecurityStrategyBehavior = SecurityModule.StrictSecurityStrategyBehavior;
                     SecurityModule.StrictSecurityStrategyBehavior = false;

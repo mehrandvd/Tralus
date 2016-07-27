@@ -75,6 +75,7 @@
     <Compile Include="Database\Conventions\SchemaFromNameSpaceConvention.cs" />
     <Compile Include="Database\DbContextBase.cs" />
     <Compile Include="Database\FrameworkDbContext.cs" />
+    <Compile Include="Data\FrameworkPredefinedData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
