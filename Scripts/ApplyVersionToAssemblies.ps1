@@ -71,7 +71,7 @@ $NewVersion = $VersionData[0]
 Write-Verbose "Version: $NewVersion"
 
 # Apply the version to the assembly property files
-$files = gci $Env:BUILD_SOURCESDIRECTORY -recurse -include "*Properties*","My Project" | 
+$files = gci $Env:BUILD_SOURCESDIRECTORY -recurse -include "*Properties*" | 
     ?{ $_.PSIsContainer } | 
     foreach { gci -Path $_.FullName -Recurse -include AssemblyInfo.* }
 if($files)
