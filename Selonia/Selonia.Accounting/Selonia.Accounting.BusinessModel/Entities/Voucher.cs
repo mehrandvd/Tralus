@@ -14,6 +14,8 @@ namespace Selonia.Accounting.BusinessModel
     {
         public virtual DateTime? VoucherDate { get; set; }
 
+        public virtual FiscalYear FiscalYear { get; set; }
+
         public virtual string TempNo { get; set; }
 
         public virtual string FixNo { get; set; }

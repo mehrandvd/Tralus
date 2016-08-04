@@ -27,6 +27,15 @@
         <Member Name="Parent" Caption="پدر" />
       </OwnMembers>
     </Class>
+    <Class Name="Selonia.Accounting.BusinessModel.FiscalYear" Caption="سال مالی">
+      <OwnMembers>
+        <Member Name="Description" Caption="شرح" />
+        <Member Name="EndDate" Caption="پایان سال" />
+        <Member Name="IsDefault" Caption="سال پیش‌فرض" />
+        <Member Name="Name" Caption="نام" />
+        <Member Name="StartDate" Caption="شروع سال" />
+      </OwnMembers>
+    </Class>
     <Class Name="Selonia.Accounting.BusinessModel.LedgerSegmentSetting" Caption="تنظیمات تفصیلی سند">
       <OwnMembers>
         <Member Name="Description" Caption="شرح" />
@@ -55,6 +64,7 @@
         <Member Name="CreditSum" Caption="بستانکار" />
         <Member Name="DebitSum" Caption="بدهکار" />
         <Member Name="Description" Caption="شرح" />
+        <Member Name="FiscalYear" Caption="سال مالی" />
         <Member Name="FixNo" Caption="شماره ثابت" />
         <Member Name="TempNo" Caption="شماره موقت" />
         <Member Name="VoucherDate" Caption="تاریخ سند" />
@@ -82,6 +92,7 @@
     </Class>
     <Class Name="Selonia.Accounting.BusinessModel.VoucherItemSegment" Caption="آرتیکل تفصیلی">
       <OwnMembers>
+        <Member Name="Level" Caption="سطح" />
         <Member Name="Segment" Caption="تفصیلی" />
         <Member Name="VoucherItem" Caption="آرتیکل" />
       </OwnMembers>
@@ -126,6 +137,23 @@
             <LayoutGroup Id="AccLedger">
               <LayoutGroup Id="AccLedger_col2" Caption="AccLedger_col2" />
               <LayoutGroup Id="AccLedger_col1" Caption="AccLedger_col1" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Voucher_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main">
+          <LayoutGroup Id="SimpleEditors">
+            <LayoutGroup Id="Voucher">
+              <LayoutGroup Id="Voucher_col1">
+                <LayoutGroup Id="Autofd990299-eb42-468f-aa93-624b11762da0" Caption="Autofd990299-eb42-468f-aa93-624b11762da0(5)" />
+                <LayoutGroup Id="Auto4219efa6-dd68-4671-98b5-222fb2260012" Caption="Auto4219efa6-dd68-4671-98b5-222fb2260012(9)">
+                  <LayoutGroup Id="Autoecfb146a-a6a7-4681-be2a-df8fa52de964" Caption="Autoecfb146a-a6a7-4681-be2a-df8fa52de964(10)" />
+                  <LayoutGroup Id="Autod06d2f81-4d67-4807-9a5f-f7fd701632f6" Caption="Autod06d2f81-4d67-4807-9a5f-f7fd701632f6(13)" />
+                </LayoutGroup>
+              </LayoutGroup>
             </LayoutGroup>
           </LayoutGroup>
         </LayoutGroup>

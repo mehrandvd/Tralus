@@ -16,6 +16,12 @@ namespace Selonia.Accounting.BusinessModel
         private long _debit;
         private long _credit;
 
+        protected override void OnInitialize()
+        {
+            base.OnInitialize();
+            VoucherItemSegments = new List<VoucherItemSegment>();
+        }
+
         public virtual int RowNo { get; private set; }
 
         public virtual long Debit
@@ -151,6 +157,10 @@ namespace Selonia.Accounting.BusinessModel
             int index;
             if (int.TryParse(callerIndex, out index))
             {
+                if (VoucherItemSegments == null)
+                {
+                    VoucherItemSegments = new List<VoucherItemSegment>();
+                }
                 var voucherItemSegment = VoucherItemSegments.FirstOrDefault(vis => vis.Level == index);
 
                 if (voucherItemSegment != null)
