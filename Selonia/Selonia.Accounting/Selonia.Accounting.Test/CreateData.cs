@@ -22,6 +22,22 @@ namespace Selonia.Accounting.Test
 
             db = new AccountingDbContext();
 
+            db.Database.ExecuteSqlCommand(
+                @"
+                    DELETE FROM [Accounting].FiscalYear
+                    DELETE FROM [Accounting].LedgerSegmentSetting
+                    DELETE FROM [Accounting].VoucherItemSegment
+                    DELETE FROM [Accounting].[VoucherItem]
+                    DELETE FROM [Accounting].[Voucher]
+                    DELETE FROM [Accounting].AccLedger
+                    DELETE FROM [Accounting].AccGeneral
+                    DELETE FROM [Accounting].AccGroup
+                    DELETE FROM [Accounting].VoucherType
+                    DELETE FROM [Accounting].Segment
+                    DELETE FROM [Accounting].SegmentGroup
+               ");
+
+            var fiscalYears = new List<FiscalYear>();
             var voucherTypes = new List<VoucherType>();
             var accGroups = new List<AccGroup>();
             var accGenerals = new List<AccGeneral>();
@@ -30,6 +46,24 @@ namespace Selonia.Accounting.Test
             var segmentGroups = new List<SegmentGroup>();
             var segments = new List<Segment>();
 
+            fiscalYears.AddRange(
+                new List<FiscalYear>
+                {
+                    new FiscalYear()
+                    {
+                        Id = Guid.NewGuid(),
+                        Name = "1394",
+                        StartDate = new DateTime(2015,3,20),
+                        EndDate= new DateTime(2016,3,19),
+                    },
+                    new FiscalYear()
+                    {
+                        Id = Guid.NewGuid(),
+                        Name = "1395",
+                        StartDate = new DateTime(2016,3,20),
+                        EndDate= new DateTime(2017,3,19),
+                    }
+                });
 
             segmentGroups.AddRange(new []
             {
@@ -136,6 +170,8 @@ namespace Selonia.Accounting.Test
 
             for (var i = 1; i <= 400; i++)
             {
+                var voucherDate = RandomDay();
+                var fiscalYear = fiscalYears.First(f => f.StartDate <= voucherDate && voucherDate <= f.EndDate);
                 var voucher = new Voucher()
                 {
                     Id = Guid.NewGuid(),
@@ -144,8 +180,9 @@ namespace Selonia.Accounting.Test
                     Description = $"سند حسابداری {i}",
                     VoucherState =
                         Pick(VoucherState.Values.Accepted, VoucherState.Values.Draft, VoucherState.Values.Fixed, VoucherState.Values.Registered),
-                    VoucherDate = RandomDay(),
-                    VoucherType = Pick(voucherTypes)
+                    VoucherDate = voucherDate,
+                    VoucherType = Pick(voucherTypes),
+                    FiscalYear = fiscalYear
                 };
                 vouchers.Add(voucher);
 
