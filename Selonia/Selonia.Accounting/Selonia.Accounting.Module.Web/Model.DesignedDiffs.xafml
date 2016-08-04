@@ -1,4 +1,23 @@
-﻿<?xml version="1.0"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Application>
   <Options CollectionsEditMode="Edit" />
+  <SchemaModules>
+    <SchemaModule Name="SystemAspNetModule" Version="15.2.9.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="15.2.9.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <ListView Id="Voucher_ListView">
+      <Columns>
+        <ColumnInfo Id="Description" Index="-1" Width="73" />
+        <ColumnInfo Id="FiscalYear" Index="-1" />
+        <ColumnInfo Id="VoucherStateValue" Index="-1" />
+        <ColumnInfo Id="TempNo" Index="0" Width="73" />
+        <ColumnInfo Id="FixNo" Index="1" Width="50" />
+        <ColumnInfo Id="VoucherDate" Index="2" Width="85" />
+        <ColumnInfo Id="CreditSum" Index="3" Width="72" />
+        <ColumnInfo Id="DebitSum" Index="4" Width="68" />
+        <ColumnInfo Id="VoucherType" Index="5" Width="86" />
+      </Columns>
+    </ListView>
+  </Views>
 </Application>
