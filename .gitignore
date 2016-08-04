@@ -194,3 +194,6 @@ FakesAssemblies/
 
 # Visual Studio 6 workspace options file
 *.opt
+/Framework/Source/Tralus.Framework.Module.Web/Editors
+/Framework/Source/Tralus.Framework.Data/Data
+/Framework/Source/Tralus.Framework.Module

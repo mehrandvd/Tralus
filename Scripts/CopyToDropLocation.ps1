@@ -18,7 +18,14 @@ param(
 
     [Parameter(Mandatory = $true)]
     [string[]]
-    $includeFileTypes
+    $includeFileTypes,
+
+	[string[]]
+    $excludeFileTypes,
+
+	[string[]]
+    $excludeFileNames
+
 )
 
 #$includeFileTypes = "*.exe","*.dll","*.exe.config","*.config","*.xml"
@@ -29,12 +36,12 @@ $binFolders = $("*bin*")
 
 $applicationfiles = Get-ChildItem  $sourceLocation -recurse  -Include $binFolders | 
             ForEach-Object { Get-ChildItem -Path $_.FullName -Recurse -include $buildConfiguration } |
-            ForEach-Object { Get-ChildItem -Path $_.FullName -Recurse -include $includeFileNames } |
-            ForEach-Object { Get-ChildItem -Path $_.FullName -Recurse -include $includeFileTypes } 
+            ForEach-Object { Get-ChildItem -Path $_.FullName -Recurse -include $includeFileNames -Exclude $excludeFileNames} |
+            ForEach-Object { Get-ChildItem -Path $_.FullName -Recurse -include $includeFileTypes -Exclude $excludeFileTypes} 
 
 $pdbfiles = Get-ChildItem  $sourceLocation -recurse  -Include $binFolders | 
             ForEach-Object { Get-ChildItem -Path $_.FullName -Recurse -include $buildConfiguration } |
-            ForEach-Object { Get-ChildItem -Path $_.FullName -Recurse -include $includeFileNames } |
+            ForEach-Object { Get-ChildItem -Path $_.FullName -Recurse -include $includeFileNames -Exclude $excludeFileNames} |
             ForEach-Object { Get-ChildItem -Path $_.FullName -Recurse -include "*.pdb" }
 
 

@@ -23,10 +23,15 @@ namespace Tralus.Framework.Module {
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
-			// 
-			// FrameworkModule
-			// 
-			this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.SystemModule.SystemModule));
+            // 
+            // FrameworkModule
+            // 
+            this.ResourcesExportedToModel.Add(typeof(DevExpress.ExpressApp.Localization.PreviewControlLocalizer));
+            this.ResourcesExportedToModel.Add(typeof(DevExpress.ExpressApp.PivotGrid.PivotGridListEditorLocalizer));
+            this.ResourcesExportedToModel.Add(typeof(DevExpress.ExpressApp.PivotChart.PivotGridLocalizer));
+            this.ResourcesExportedToModel.Add(typeof(DevExpress.ExpressApp.PivotChart.ChartLocalizer));
+            this.ResourcesExportedToModel.Add(typeof(DevExpress.ExpressApp.PivotChart.AnalysisControlLocalizer));
+
 		}
 
 		#endregion

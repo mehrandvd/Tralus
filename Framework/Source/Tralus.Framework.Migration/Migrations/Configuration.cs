@@ -36,13 +36,13 @@ namespace Tralus.Framework.Migration.Migrations
             //    CanEditModel = true,
             //};
 
-            //context.Set<Role>().AddOrUpdate(new Role(true)
-            //{
-            //    Id = new Guid("F011D97A-CDA4-46F4-BE33-B48C4CAB9A3E"),
-            //    Name = "Administrators",
-            //    IsAdministrative = true,
-            //    CanEditModel = true,
-            //});
+            context.Set<Role>().AddOrUpdate(new Role(true)
+            {
+                Id = new Guid("F011D97A-CDA4-46F4-BE33-B48C4CAB9A3E"),
+                Name = "Administrators",
+                IsAdministrative = true,
+                CanEditModel = true,
+            });
         }
     }
 }
