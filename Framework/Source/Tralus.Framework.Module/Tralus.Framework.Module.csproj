@@ -204,9 +204,7 @@
     <Compile Include="Controllers\OrderedEntityViewController.Designer.cs">
       <DependentUpon>OrderedEntityViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\RunEntityScriptViewController.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Controllers\RunEntityScriptViewController.cs" />
     <Compile Include="Controllers\RunEntityScriptViewController.Designer.cs">
       <DependentUpon>RunEntityScriptViewController.cs</DependentUpon>
     </Compile>
