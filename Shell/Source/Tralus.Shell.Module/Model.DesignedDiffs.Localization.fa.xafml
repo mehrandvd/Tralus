@@ -62,6 +62,7 @@
     </DisableReasons>
   </ActionDesign>
   <BOModel>
+    <Class Name="DevExpress.ExpressApp.Editors.CriteriaProvider" Caption="ادیتور شرط" />
     <Class Name="DevExpress.ExpressApp.Workflow.EF.EFRunningWorkflowInstanceInfo" Caption="اطلاعات گردش‌کار در حال اجرا" />
     <Class Name="DevExpress.ExpressApp.Workflow.EF.EFStartWorkflowRequest" Caption="درخواست شروع گردش‌کار" />
     <Class Name="DevExpress.ExpressApp.Workflow.EF.EFWorkflowDefinition" Caption="تعریف گردش کار" />
@@ -173,6 +174,18 @@
     </LocalizationGroup>
     <LocalizationGroup Name="Messages">
       <LocalizationItem Name="User" Value="کاربر: {0}" />
+    </LocalizationGroup>
+    <LocalizationGroup Name="PivotGridModule">
+      <LocalizationItem Name="ChartDataVertical" Value="اطلاعات عمودی چارت" />
+      <LocalizationItem Name="ChartOptions" Value="تنظیمات چارت" />
+      <LocalizationItem Name="ClearSettings" Value="پاک کردن تنظیمات" />
+      <LocalizationItem Name="HideChart" Value="پنهان کردن چارت" />
+      <LocalizationItem Name="InvokeWizard" Value="ویزارد" />
+      <LocalizationItem Name="ShowChart" Value="نمایش چارت" />
+      <LocalizationItem Name="ShowColumnGrandTotals" Value="نمایش جمع کلی ستون‌ها" />
+      <LocalizationItem Name="ShowColumnTotals" Value="نمایش جمع ستون‌ها" />
+      <LocalizationItem Name="ShowRowGrandTotals" Value="نمایش جمع کلی سطرها" />
+      <LocalizationItem Name="ShowRowTotals" Value="نمایش جمع سطر‌ها" />
     </LocalizationGroup>
     <LocalizationGroup Name="Texts">
       <LocalizationItem Name="CaptionForFalse" Value="نادرست" />
