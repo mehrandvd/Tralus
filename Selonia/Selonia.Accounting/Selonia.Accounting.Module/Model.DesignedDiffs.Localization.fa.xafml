@@ -80,7 +80,7 @@
         <Member Name="VoucherItemSegments" Caption="اقلام تفصیلی" />
       </OwnMembers>
     </Class>
-    <Class Name="Selonia.Accounting.BusinessModel.VoucherItemSegment" Caption="تفصیلی آرتیکل">
+    <Class Name="Selonia.Accounting.BusinessModel.VoucherItemSegment" Caption="آرتیکل تفصیلی">
       <OwnMembers>
         <Member Name="Segment" Caption="تفصیلی" />
         <Member Name="VoucherItem" Caption="آرتیکل" />
