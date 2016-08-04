@@ -4,6 +4,7 @@
     <Class Name="Selonia.Accounting.BusinessModel.AccGeneral" IsVisibleInReports="True" />
     <Class Name="Selonia.Accounting.BusinessModel.AccGroup" IsVisibleInReports="True" />
     <Class Name="Selonia.Accounting.BusinessModel.AccLedger" IsVisibleInReports="True" />
+    <Class Name="Selonia.Accounting.BusinessModel.FiscalYear" ImageName="BO_Appointment" />
     <Class Name="Selonia.Accounting.BusinessModel.Segment" IsVisibleInReports="True" />
     <Class Name="Selonia.Accounting.BusinessModel.Voucher" IsVisibleInReports="True">
       <OwnMembers>
@@ -23,6 +24,7 @@
               <Item Id="@2b030d94-e3ae-41fc-b9ae-50eef5afad0d" Index="1" ViewId="AccGeneral_ListView" ChildItemsDisplayStyle="List" IsNewNode="True" />
               <Item Id="@0b35b4f9-0c71-4dd5-b092-9371f6b31173" Index="2" ViewId="AccLedger_ListView" ChildItemsDisplayStyle="List" IsNewNode="True" />
               <Item Id="@7acad235-aab8-4d3d-9a99-3963114e3dab" ViewId="SegmentGroup_ListView" ChildItemsDisplayStyle="List" IsNewNode="True" />
+              <Item Id="@a70de798-5f51-456e-806d-44de8de2f569" ViewId="FiscalYear_ListView" IsNewNode="True" />
               <Item Id="@d9cb1ada-a747-4a0a-870a-b5eec8082071" ViewId="Segment_ListView" ChildItemsDisplayStyle="List" IsNewNode="True" />
               <Item Id="Voucher Type" ViewId="VoucherType_ListView" Caption="Voucher Type" ChildItemsDisplayStyle="List" ImageName="Action_WindowList" IsNewNode="True" />
             </Items>
@@ -141,6 +143,38 @@
         <ColumnInfo Id="Description" Width="291" />
       </Columns>
     </ListView>
+    <DetailView Id="FiscalYear_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="FiscalYear" RelativeSize="11.764705882352942">
+              <LayoutGroup Id="FiscalYear_col1" RelativeSize="50">
+                <LayoutItem Id="Name" RelativeSize="50" />
+                <LayoutItem Id="StartDate" RelativeSize="50" Index="1" />
+                <LayoutItem Id="Description" RelativeSize="92.920353982300881" Index="2" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="FiscalYear_col2" RelativeSize="50">
+                <LayoutItem Id="IsDefault" Index="0" RelativeSize="50" />
+                <LayoutItem Id="EndDate" Index="1" RelativeSize="50" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutItem Id="Description" ViewItem="Description" Index="1" RelativeSize="88.235294117647058" IsNewNode="True" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="FiscalYear_ListView">
+      <Columns>
+        <ColumnInfo Id="Name" Width="121" SortIndex="-1" SortOrder="None" />
+        <ColumnInfo Id="StartDate" Index="1" Width="84" SortIndex="0" SortOrder="Ascending" />
+        <ColumnInfo Id="EndDate" Index="2" Width="82" />
+        <ColumnInfo Id="IsDefault" Index="3" />
+        <ColumnInfo Id="Description" Index="4" Width="208" />
+      </Columns>
+      <Sorting>
+        <SortProperty Id="StartDate" PropertyName="StartDate" IsNewNode="True" />
+      </Sorting>
+    </ListView>
     <ListView Id="LedgerSegmentSetting_ListView">
       <Columns>
         <ColumnInfo Id="Level" Index="0" />
@@ -211,26 +245,28 @@
       </Items>
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
-          <LayoutGroup Id="SimpleEditors" RelativeSize="18.007202881152462">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="20.048019207683073">
             <LayoutGroup Id="Voucher" Direction="Vertical" RelativeSize="100" Caption="Voucher">
               <LayoutGroup Id="Voucher_col1" RelativeSize="100" Caption="Voucher_col1">
-                <LayoutGroup Id="Autofd990299-eb42-468f-aa93-624b11762da0" ShowCaption="False" Caption="" Direction="Horizontal" Index="0" RelativeSize="28.571428571428573" IsNewNode="True">
-                  <LayoutItem Id="TempNo" ViewItem="TempNo" Index="0" RelativeSize="26.487747957992998" IsNewNode="True" />
-                  <LayoutItem Id="FixNo" ViewItem="FixNo" Index="1" RelativeSize="23.453908984830804" IsNewNode="True" />
-                  <LayoutItem Id="VoucherDate" ViewItem="VoucherDate" Index="2" RelativeSize="50.058343057176195" IsNewNode="True" />
+                <LayoutGroup Id="Autofd990299-eb42-468f-aa93-624b11762da0" ShowCaption="False" Caption="" Direction="Horizontal" Index="0" RelativeSize="27.559055118110237" IsNewNode="True">
+                  <LayoutItem Id="TempNo" ViewItem="TempNo" Index="0" RelativeSize="26.357466063348415" IsNewNode="True" />
+                  <LayoutItem Id="FixNo" ViewItem="FixNo" Index="1" RelativeSize="23.303167420814479" IsNewNode="True" />
+                  <LayoutItem Id="FiscalYear" ViewItem="FiscalYear" Index="2" RelativeSize="25.1131221719457" IsNewNode="True" />
+                  <LayoutItem Id="VoucherDate" ViewItem="VoucherDate" Index="3" RelativeSize="25.226244343891402" IsNewNode="True" />
                 </LayoutGroup>
-                <LayoutGroup Id="Auto4219efa6-dd68-4671-98b5-222fb2260012" ShowCaption="False" Caption="" Direction="Horizontal" Index="1" RelativeSize="42.857142857142854" IsNewNode="True">
-                  <LayoutGroup Id="Autoecfb146a-a6a7-4681-be2a-df8fa52de964" ShowCaption="False" Caption="" Index="0" RelativeSize="49.941656942823805" IsNewNode="True">
+                <LayoutGroup Id="Auto4219efa6-dd68-4671-98b5-222fb2260012" ShowCaption="False" Caption="" Direction="Horizontal" Index="1" RelativeSize="47.244094488188978" IsNewNode="True">
+                  <LayoutGroup Id="Autoecfb146a-a6a7-4681-be2a-df8fa52de964" ShowCaption="False" Caption="" Index="0" RelativeSize="49.886877828054295" IsNewNode="True">
                     <LayoutItem Id="VoucherType" ViewItem="VoucherType" Index="0" RelativeSize="50" IsNewNode="True" />
                     <LayoutItem Id="CreditSum" ViewItem="CreditSum" Index="1" RelativeSize="50" IsNewNode="True" />
                   </LayoutGroup>
-                  <LayoutGroup Id="Autod06d2f81-4d67-4807-9a5f-f7fd701632f6" ShowCaption="False" Caption="" Index="1" RelativeSize="50.058343057176195" IsNewNode="True">
+                  <LayoutGroup Id="Autod06d2f81-4d67-4807-9a5f-f7fd701632f6" ShowCaption="False" Caption="" Index="1" RelativeSize="50.113122171945705" IsNewNode="True">
                     <LayoutItem Id="VoucherState" ViewItem="VoucherState" Index="0" RelativeSize="50" IsNewNode="True" />
                     <LayoutItem Id="DebitSum" ViewItem="DebitSum" Index="1" RelativeSize="50" IsNewNode="True" />
                   </LayoutGroup>
                 </LayoutGroup>
                 <LayoutItem Id="FixNo" RelativeSize="15" Index="1" Removed="True" />
-                <LayoutItem Id="Description" RelativeSize="28.571428571428573" Index="2" />
+                <LayoutItem Id="Description" RelativeSize="25.196850393700789" Index="2" />
+                <LayoutItem Id="FiscalYear" Removed="True" />
                 <LayoutItem Id="TempNo" RelativeSize="21.428571428571427" Removed="True" />
                 <LayoutItem Id="VoucherDate" RelativeSize="28.571428571428573" Removed="True" />
               </LayoutGroup>
@@ -241,7 +277,7 @@
               </LayoutGroup>
             </LayoutGroup>
           </LayoutGroup>
-          <LayoutGroup Id="VoucherItems_Group" Direction="Vertical" RelativeSize="81.992797118847534" Index="1">
+          <LayoutGroup Id="VoucherItems_Group" Direction="Vertical" RelativeSize="79.951980792316931" Index="1">
             <LayoutItem Id="VoucherItems" RelativeSize="100" ShowCaption="False" />
           </LayoutGroup>
         </LayoutGroup>

@@ -114,6 +114,10 @@
     <Compile Include="Migrations\201607222042397_AddLevelToVoucherItemSegment.Designer.cs">
       <DependentUpon>201607222042397_AddLevelToVoucherItemSegment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201608041056409_AddFiscalYear.cs" />
+    <Compile Include="Migrations\201608041056409_AddFiscalYear.Designer.cs">
+      <DependentUpon>201608041056409_AddFiscalYear.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -167,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201607222042397_AddLevelToVoucherItemSegment.resx">
       <DependentUpon>201607222042397_AddLevelToVoucherItemSegment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608041056409_AddFiscalYear.resx">
+      <DependentUpon>201608041056409_AddFiscalYear.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

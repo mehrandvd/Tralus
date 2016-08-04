@@ -9,6 +9,6 @@ namespace Selonia.Accounting.BusinessModel
         public string Code { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public SegmentGroup SegmentGroup { get; set; }
+        public virtual SegmentGroup SegmentGroup { get; set; }
     }
 }

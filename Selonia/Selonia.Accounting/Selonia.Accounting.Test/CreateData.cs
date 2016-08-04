@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Linq;
 using NUnit.Framework;
 using Selonia.Accounting.BusinessModel;
 using Selonia.Accounting.Data.Database;
@@ -103,13 +104,21 @@ namespace Selonia.Accounting.Test
 
             for (var i = 1; i <= 200; i++)
             {
+                var leftPick = Pick(1, 2);
                 var settings = new List<LedgerSegmentSetting>
                 {
                     new LedgerSegmentSetting()
                     {
                         Id = Guid.NewGuid(),
-                        SegmentGroup = Pick(segmentGroups),
-                        Level = Pick(1, 2),
+                        SegmentGroup = Pick(segmentGroups[0]),
+                        Level = leftPick,
+                        IsMandatory = false,
+                    },
+                    new LedgerSegmentSetting()
+                    {
+                        Id = Guid.NewGuid(),
+                        SegmentGroup = Pick(segmentGroups[1]),
+                        Level = 3 - leftPick,
                         IsMandatory = false,
                     }
                 };
@@ -159,6 +168,8 @@ namespace Selonia.Accounting.Test
                     };
                     left.SetRowNo(row++);
 
+                    PickSegments(left, segments);
+
                     var right = new VoucherItem()
                     {
                         Id = Guid.NewGuid(),
@@ -169,6 +180,7 @@ namespace Selonia.Accounting.Test
                         Ledger = Pick(accLedgers)
                     };
                     right.SetRowNo(row++);
+                    PickSegments(right, segments);
 
                     voucher.VoucherItems.Add(left);
                     voucher.VoucherItems.Add(right);
@@ -180,6 +192,16 @@ namespace Selonia.Accounting.Test
 
             db.Dispose();
         }
+
+        private void PickSegments(VoucherItem voucherItem, List<Segment> segments)
+        {
+            var segmentGrouop1 = voucherItem.Ledger.GetSegmentSetting(1).SegmentGroup;
+            voucherItem.Segment1 = Pick(segments.Where(s => s.SegmentGroup == segmentGrouop1).ToArray());
+
+            var segmentGrouop2 = voucherItem.Ledger.GetSegmentSetting(2).SegmentGroup;
+            voucherItem.Segment2 = Pick(segments.Where(s => s.SegmentGroup == segmentGrouop2).ToArray());
+        }
+
         AccountingDbContext db;
         public void InsertToDb<T>(List<T> data) where T : class
         {

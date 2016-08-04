@@ -12,6 +12,8 @@ namespace Selonia.Accounting.BusinessModel
     {
         public virtual AccGeneral General { get; set; }
 
+        public virtual FiscalYear FiscalYear { get; set; }
+
         public override IHierarchyEntity Parent
         {
             get { return General; }
@@ -20,10 +22,6 @@ namespace Selonia.Accounting.BusinessModel
 
         public override IBindingList Children => new BindingList<AccLedger>();
 
-        /// <summary>
-        /// توضیح بیزنسی این پروپرتی
-        /// اینکه دلیل وجود این پروپرتی چیست و چه مواقعی از آن استفاده می‌شود
-        /// </summary>
         public virtual ICollection<LedgerSegmentSetting> SegmentSettings { get; set; }
 
         public LedgerSegmentSetting GetSegmentSetting(int level)
