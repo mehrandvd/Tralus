@@ -11,6 +11,7 @@
       </OwnMembers>
     </Class>
     <Class Name="Selonia.Accounting.BusinessModel.VoucherItem" IsVisibleInReports="True" />
+    <Class Name="Selonia.Accounting.BusinessModel.VoucherItemSegment" IsVisibleInReports="True" />
   </BOModel>
   <NavigationItems>
     <Items>
