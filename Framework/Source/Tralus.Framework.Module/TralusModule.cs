@@ -26,6 +26,12 @@ namespace Tralus.Framework.Module
 {
     public class TralusModule : ModuleBase
     {
+        static TralusModule()
+        {
+            DevExpress.Data.Linq.CriteriaToEFExpressionConverter.SqlFunctionsType = typeof(System.Data.Entity.SqlServer.SqlFunctions);
+            DevExpress.Data.Linq.CriteriaToEFExpressionConverter.EntityFunctionsType = typeof(System.Data.Entity.DbFunctions);
+        }
+
         protected TralusModule()
         {
             var entityTypes =
