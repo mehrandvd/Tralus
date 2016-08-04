@@ -12,11 +12,12 @@ using DevExpress.ExpressApp.Updating;
 using DevExpress.ExpressApp.Model.Core;
 using DevExpress.ExpressApp.Model.DomainLogics;
 using DevExpress.ExpressApp.Model.NodeGenerators;
+using Tralus.Framework.Module.Web;
 
 namespace Selonia.Accounting.Module.Web {
     [ToolboxItemFilter("Xaf.Platform.Web")]
     // For more typical usage scenarios, be sure to check out https://documentation.devexpress.com/eXpressAppFramework/clsDevExpressExpressAppModuleBasetopic.aspx.
-    public sealed partial class AccountingAspNetModule : ModuleBase {
+    public sealed partial class AccountingAspNetModule : TralusWebModule {
         public AccountingAspNetModule() {
             InitializeComponent();
         }
