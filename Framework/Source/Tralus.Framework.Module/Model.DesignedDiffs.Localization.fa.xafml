@@ -2,6 +2,8 @@
 <Application>
   <ActionDesign>
     <Actions>
+      <Action Id="c520aaa6-5a87-4dcf-8502-9956a2c819d8" Caption="بردن به بالا" />
+      <Action Id="f2f15138-c1fb-46e4-8516-a603bbd3ca9a" Caption="بردن به پایین" />
       <Action Id="Tralus.Framework.Module.Controllers.RunSystemEnvironmentTestViewController" Caption="اجرای تست" />
     </Actions>
   </ActionDesign>
