@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application Title="Mahan" Logo="MahanLogo-WithoutName" PreferredLanguage="fa-IR">
-  <NavigationItems GenerateRelatedViewVariantsGroup="True" GenerateRelatedReportsGroup="True" GenerateRelatedAnalysisGroup="True">
+  <NavigationItems GenerateRelatedViewVariantsGroup="True" GenerateRelatedReportsGroup="True" GenerateRelatedAnalysisGroup="True" StartupNavigationItem="">
     <Items>
       <Item Id="@8d2906e1-0ee4-427c-abc7-32eb9c63eb6a" Caption="Tralus Administration" ChildItemsDisplayStyle="List" ImageName="Action_OrganizeDashboard" IsNewNode="True">
         <Items IsNewNode="True">
@@ -81,25 +81,25 @@
     <DetailView Id="Role_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
-          <LayoutGroup Id="SimpleEditors" RelativeSize="5.0666666666666664">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="4.5618247298919572">
             <LayoutGroup Id="Role" RelativeSize="100" Caption="Role">
               <LayoutItem Id="Name" SizeConstraintsType="Default" RelativeSize="100" />
               <LayoutItem Id="CanEditModel" SizeConstraintsType="Default" Index="1" RelativeSize="48.387096774193552" Removed="True" />
               <LayoutItem Id="IsAdministrative" Removed="True" />
             </LayoutGroup>
           </LayoutGroup>
-          <TabbedGroup Id="Tabs" RelativeSize="94.933333333333337">
-            <LayoutGroup Id="Users" RelativeSize="100">
-              <LayoutItem Id="Users" SizeConstraintsType="Default" RelativeSize="100" />
-            </LayoutGroup>
-            <LayoutGroup Id="TypePermissions" RelativeSize="100">
+          <TabbedGroup Id="Tabs" RelativeSize="95.438175270108047">
+            <LayoutGroup Id="TypePermissions" RelativeSize="100" Index="0">
               <LayoutItem Id="TypePermissions" SizeConstraintsType="Default" RelativeSize="100" />
             </LayoutGroup>
-            <LayoutGroup Id="ChildRoles" RelativeSize="100">
+            <LayoutGroup Id="ChildRoles" RelativeSize="100" Index="1">
               <LayoutItem Id="ChildRoles" SizeConstraintsType="Default" RelativeSize="100" />
             </LayoutGroup>
-            <LayoutGroup Id="ParentRoles" RelativeSize="100">
+            <LayoutGroup Id="ParentRoles" RelativeSize="100" Index="2">
               <LayoutItem Id="ParentRoles" SizeConstraintsType="Default" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="Users" RelativeSize="100" Index="3">
+              <LayoutItem Id="Users" SizeConstraintsType="Default" RelativeSize="100" />
             </LayoutGroup>
           </TabbedGroup>
         </LayoutGroup>
@@ -200,6 +200,51 @@
         <ColumnInfo Id="AverageTime1000K" Index="8" Caption="1000K (Avg)" />
         <ColumnInfo Id="LoadAllTime" Index="9" />
         <ColumnInfo Id="LoadAllCount" Index="10" />
+      </Columns>
+    </ListView>
+    <DetailView Id="TypePermissionObject_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="23.466666666666665">
+            <LayoutGroup Id="TypePermissionObject" RelativeSize="100">
+              <LayoutGroup Id="TypePermissionObject_col1" RelativeSize="50">
+                <LayoutItem Id="Permissions" RelativeSize="23.529411764705884" />
+                <LayoutItem Id="AllowRead" RelativeSize="17.647058823529413" />
+                <LayoutItem Id="AllowWrite" RelativeSize="17.647058823529413" />
+                <LayoutItem Id="AllowCreate" RelativeSize="17.647058823529413" />
+                <LayoutItem Id="AllowDelete" RelativeSize="23.529411764705884" />
+              </LayoutGroup>
+              <LayoutGroup Id="TypePermissionObject_col2" RelativeSize="50">
+                <LayoutItem Id="AllowNavigate" RelativeSize="23.529411764705884" />
+                <LayoutItem Id="Role" RelativeSize="17.647058823529413" />
+                <LayoutItem Id="TargetType" RelativeSize="17.647058823529413" />
+                <LayoutItem Id="Object" RelativeSize="41.1764705882353" />
+              </LayoutGroup>
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="76.533333333333331">
+            <LayoutGroup Id="ObjectPermissions" Index="0" RelativeSize="100">
+              <LayoutItem Id="ObjectPermissions" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="MemberPermissions" Index="1" RelativeSize="100">
+              <LayoutItem Id="MemberPermissions" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="InstancePermissions" RelativeSize="100">
+              <LayoutItem Id="InstancePermissions" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="TypePermissionObject_ObjectPermissions_ListView">
+      <Columns>
+        <ColumnInfo Id="Criteria" Index="0" Width="211" />
+        <ColumnInfo Id="EffectiveRead" Index="1" />
+        <ColumnInfo Id="EffectiveWrite" Index="2" />
+        <ColumnInfo Id="EffectiveDelete" Index="3" />
+        <ColumnInfo Id="EffectiveNavigate" Index="4" />
+        <ColumnInfo Id="InheritedFrom" Index="5" Width="167" />
+        <ColumnInfo Id="Permissions" Index="6" />
       </Columns>
     </ListView>
   </Views>
