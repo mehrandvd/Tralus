@@ -65,7 +65,8 @@ namespace Tralus.Shell.Module.Utility
                 var modulesSpecific = moduleCustomAssembly.GetTypes().Where(
                     t => t.IsSubclassOf(typeof(TralusModule)) && !t.FullName.Contains("TralusWinModule") && !t.FullName.Contains("TralusWebModule"));
 
-                tempImprtedModule.AddRange(modules.Concat(modulesSpecific));
+                tempImprtedModule.AddRange(modules);
+                tempImprtedModule.AddRange(modulesSpecific);
             //}
 
             tempDbContext.AddRange(dataAssembly.GetTypes().Where(
