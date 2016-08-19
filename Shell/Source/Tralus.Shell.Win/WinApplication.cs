@@ -10,6 +10,7 @@ using DevExpress.ExpressApp.Updating;
 using DevExpress.ExpressApp.EF;
 using System.Data.Common;
 using System.Data.Entity;
+using System.Diagnostics;
 using DevExpress.Persistent.BaseImpl.EF;
 using Tralus.Framework.BusinessModel.Entities.StateMachines;
 using Tralus.Framework.Data;
@@ -31,7 +32,6 @@ namespace Tralus.Shell.Win
             stateMachineModule1.StateMachineStorageType = typeof(StateMachine);
             try
             {
-
                 securityModule1.UserType = typeof(User);
 
                 ReflectionHelper.GetImportedModules(out loadedModuleTypes, out _loadedContextTypes);
@@ -39,12 +39,12 @@ namespace Tralus.Shell.Win
                 foreach (var loadedModuleType in loadedModuleTypes)
                 {
                     var loadedModule = (ModuleBase)Activator.CreateInstance(loadedModuleType);
-                    Modules.Insert(0, loadedModule);
+                    Modules.Add(loadedModule);
                 }
-
             }
-            catch
+            catch (Exception exception)
             {
+                Trace.WriteLine($"Unable to load modules: {exception}");
             }
 
             var layoutDirection = ConfigurationManager.AppSettings["LayoutDirection"];

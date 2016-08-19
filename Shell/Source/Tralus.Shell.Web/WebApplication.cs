@@ -66,7 +66,7 @@ namespace Tralus.Shell.Web
             foreach (var loadedModuleType in Global.LoadedModuleTypes)
             {
                 var loadedModule = (ModuleBase)Activator.CreateInstance(loadedModuleType);
-                Modules.Insert(0, loadedModule);
+                Modules.Add(loadedModule);
             }
             //}
             //catch
