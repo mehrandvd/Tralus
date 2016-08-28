@@ -63,7 +63,7 @@ namespace Tralus.Framework.BusinessModel.Entities
 
         public static bool operator ==(FixedEntityBase fixedEntity, Enum enumValue)
         {
-            if (fixedEntity == null)
+            if (Object.Equals(fixedEntity ,null))
             {
                 if (enumValue == null)
                     return true;
