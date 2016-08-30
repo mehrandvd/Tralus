@@ -1,4 +1,4 @@
-﻿[CmdletBinding()]
+[CmdletBinding()]
 param(
 [Parameter(Mandatory = $true)]
     [string]
@@ -43,51 +43,24 @@ if(-not (Test-Path $dropLocationPath)) {
     New-Item -Path $dropLocationPath -ItemType Directory | Out-Null
 }
 
-$selectedFile | copy-Custom  -destination $dropLocationPath -lastFolderInclude $buildConfiguration -Verbose
+$selectedFile | ForEach-Object{
+                            $newDestination = $dropLocationPath
 
-
-function copy-Custom
-{
-     param(  
-                [Parameter(
-                    Position=0, 
-                    Mandatory=$true, 
-                    ValueFromPipeline=$true,
-                    ValueFromPipelineByPropertyName=$true)
-                ]
-                [System.IO.FileInfo[]]
-                $files,
-    
-                [Parameter(Mandatory = $true)]
-                [String]
-                $destination,
-    
-                [Parameter(Mandatory = $true)]
-                [String]
-                $lastFolderInclude
-          )
-
-            process {
-                        foreach($file in $files){
-                            $newDestination = $destination
-
-                            $filePath = $file.DirectoryName
-                            $indexOflastFolder = $filePath.IndexOf($lastFolderInclude)
-
-                            if($filePath.Length -gt $indexOflastFolder+$buildConfiguration.Length+1){
-                            Out-Host -InputObject $indexOflastFolder 
-                            
-                                $directory = $filePath.Substring($indexOflastFolder+$buildConfiguration.Length+1)
-                                Out-Host -InputObject log
-                                Out-Host -InputObject $directory
-                                $newDestination = Join-Path $destination $directory
-                                Out-Host -InputObject $newDestination
-                                if(-not (Test-Path $newDestination)) {
-                                    New-Item -Path $newDestination -ItemType Directory  | Out-Null
-                                       }
-                            }
-
-                            Copy-Item $file -Destination $newDestination
+                            $filePath = $_.DirectoryName
+                            $indexOflastFolder = $filePath.ToLower().IndexOf($buildConfiguration.ToLower())
+							Out-Host -InputObject $indexOflastFolder
+							Out-Host -InputObject $filePath
+							Out-Host -InputObject $buildConfiguration
+							if($indexOflastFolder -gt 0){
+								if($filePath.Length -gt $indexOflastFolder+$buildConfiguration.Length+1){
+							
+									$directory = $filePath.Substring($indexOflastFolder+$buildConfiguration.Length+1)
+									$newDestination = Join-Path $dropLocationPath $directory
+									if(-not (Test-Path $newDestination)) {
+										New-Item -Path $newDestination -ItemType Directory  | Out-Null
+										   }
+								}
+							}
+                            Copy-Item $_ -Destination $newDestination
                       }
-            }
-}
+            
