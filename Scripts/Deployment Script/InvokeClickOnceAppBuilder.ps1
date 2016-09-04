@@ -1,5 +1,4 @@
-﻿function Invoke-DeployClickOnceApp {
-    [CmdletBinding(SupportsShouldProcess = $true)]
+    [CmdletBinding()]
     Param (
         [Parameter(mandatory = $true)]
         [string]
@@ -21,7 +20,7 @@
         [string]
         $Version #= "1.0.0.40"
     )
-    Process {
+    
         ### New Application ###
         $Mage = "C:\Program Files (x86)\Microsoft SDKs\Windows\v8.1A\bin\NETFX 4.5.1 Tools\mage.exe"
         $Version = Split-Path $SourcePath -Leaf
@@ -124,7 +123,4 @@
         if ($PSCmdlet.ShouldProcess($deploymentFilePath, "Running Mage.exe to sign Deployment file")) {
             . $mage $mageSignDeploymentArgs | Out-Null
         }
-    }
-}
-
-Invoke-DeployClickOnceApp -Verbose
+    
