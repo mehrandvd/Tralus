@@ -18,7 +18,15 @@
 
         [Parameter(mandatory = $true)]
         [string]
-        $Version #= "1.0.0.40"
+        $Version, #= "1.0.0.40"
+
+		[Parameter(mandatory = $true)]
+        [string]
+        $certificateFilePath,
+
+		[Parameter(mandatory = $true)]
+        [string]
+        $certificatePassword
     )
     
         ### New Application ###
@@ -31,8 +39,6 @@
         $manifestFilePath = Join-Path $destinationPath "$ApplicationName.manifest"
         $deploymentFilePath = Join-Path $destinationPath "$ApplicationName.application"
 
-        $certificateFilePath = "E:\TralusBuilds\TralusApps.pfx"
-        $certificatePassword = "P@ssw0rd"
         $providerUrl = "$DeploymentUrl/$(Split-Path $deploymentFilePath -Leaf)"
         
         if (-not (Test-Path $destinationPath)) {
@@ -53,7 +59,7 @@
             "-Version", $Version 
             "-FromDirectory", $destinationPath 
             "-UseManifestForTrust", $true
-            "-Publisher", "Mahan"
+            "-Publisher", "MelkRadar"
         )
         if ($PSCmdlet.ShouldProcess($manifestFilePath, "Running Mage.exe to create Manifest file")) {
             . $Mage $mageNewAppArgs | Out-Null
