@@ -43,12 +43,12 @@
         
         if (-not (Test-Path $destinationPath)) {
             if ($PSCmdlet.ShouldProcess($destinationPath, "Create Destination Path")) {
-                New-Item -ItemType Directory -Path $destinationPath | Out-Null
+                New-Item -ItemType Directory -Path $destinationPath | Write-Host
             }
         }
         
         if ($PSCmdlet.ShouldProcess($SourcePath, "Copy application content to destination")) {
-            Copy-Item -Path (Join-Path $SourcePath "*") -Destination $destinationPath -Recurse -Force | Out-Null
+            Copy-Item -Path (Join-Path $SourcePath "*") -Destination $destinationPath -Recurse -Force | Write-Host
         }
 
         $mageNewAppArgs = @(
@@ -62,7 +62,7 @@
             "-Publisher", "MelkRadar"
         )
         if ($PSCmdlet.ShouldProcess($manifestFilePath, "Running Mage.exe to create Manifest file")) {
-            . $Mage $mageNewAppArgs | Out-Null
+            . $Mage $mageNewAppArgs | Write-Host
         }
 
         if ($PSCmdlet.ShouldProcess("Append .deploy extenstion to all files")) {
@@ -75,7 +75,7 @@
             "-Password", $certificatePassword
         )
         if ($PSCmdlet.ShouldProcess($manifestFilePath, "Running Mage.exe to sign Manifest file")) {
-            . $mage $mageSignAppArgs | Out-Null
+            . $mage $mageSignAppArgs | Write-Host
         }
 
         ### New Deployment ###
@@ -93,7 +93,7 @@
             "-Publisher", "Mahan"
         )
         if ($PSCmdlet.ShouldProcess($deploymentFilePath, "Running Mage.exe to create Deployment file")) {
-            . $mage $mageNewDeploymentArgs | Out-Null
+            . $mage $mageNewDeploymentArgs | Write-Host
             Write-Verbose "Deployment file created for $providerUrl"
         }
 
@@ -102,7 +102,7 @@
             "-MinVersion", $version
         )
         if ($PSCmdlet.ShouldProcess($Version, "Update minimum version")) {
-            . $mage $mageMinimumVersion | Out-Null
+            . $mage $mageMinimumVersion | Write-Host
         }
         
         if ($PSCmdlet.ShouldProcess($deploymentFilePath, "Set custom settings")) {
@@ -110,11 +110,11 @@
             
             $content.assembly.deployment.SetAttribute("mapFileExtensions", "true")
             
-            $content.assembly.deployment.subscription.update.AppendChild($content.CreateElement("beforeApplicationStartup")) | Out-Null
+            $content.assembly.deployment.subscription.update.AppendChild($content.CreateElement("beforeApplicationStartup")) | Write-Host
             
             $expirationElement = $content.assembly.deployment.subscription.update.GetElementsByTagName("expiration")[0]
             
-            $content.assembly.deployment.subscription.update.RemoveChild($expirationElement) | Out-Null
+            $content.assembly.deployment.subscription.update.RemoveChild($expirationElement) | Write-Host
             
             $content.assembly.deployment.subscription.update.InnerXml = "<beforeApplicationStartup />"
 
@@ -127,6 +127,6 @@
             "-Password", $certificatePassword
         )
         if ($PSCmdlet.ShouldProcess($deploymentFilePath, "Running Mage.exe to sign Deployment file")) {
-            . $mage $mageSignDeploymentArgs | Out-Null
+            . $mage $mageSignDeploymentArgs | Write-Host
         }
     
