@@ -38,7 +38,7 @@
         $manifestFilePath = Join-Path $destinationPath "$ApplicationName.manifest"
         $deploymentFilePath = Join-Path $destinationPath "$ApplicationName.application"
 
-        $providerUrl = "$DeploymentUrl/$Version"
+        $providerUrl = "$DeploymentUrl/$Version/$ApplicationName.application"
         
         if (-not (Test-Path $destinationPath)) {
             if ($PSCmdlet.ShouldProcess($destinationPath, "Create Destination Path")) {
