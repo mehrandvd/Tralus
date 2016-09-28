@@ -12,7 +12,7 @@ Param
 
 $service = Get-Service $ServiceName -ErrorAction SilentlyContinue
 
-if ($service)
+if ($servicem -and $service.CanStop)
 {
     $service.Stop()
 }
