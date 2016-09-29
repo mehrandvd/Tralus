@@ -2,7 +2,11 @@
     Param (
         [Parameter(mandatory = $true)]
         [string]
-        $ApplicationName, # = "Journey",
+        $ApplicationName, # = "Journey-Dev",
+
+        [Parameter(mandatory = $true)]
+        [string]
+        $ManifestName, # = "Journey",
         
         [Parameter(mandatory = $true)]
         [string]
@@ -35,10 +39,10 @@
         $deploymentPath = Join-Path $DeploymentRootPath $ApplicationName
         $destinationPath = Join-Path $deploymentPath $Version
         
-        $manifestFilePath = Join-Path $destinationPath "$ApplicationName.manifest"
-        $deploymentFilePath = Join-Path $destinationPath "$ApplicationName.application"
+        $manifestFilePath = Join-Path $destinationPath "$ManifestName.manifest"
+        $deploymentFilePath = Join-Path $destinationPath "$ManifestName.application"
 
-        $providerUrl = "$DeploymentUrl/$Version/$ApplicationName.application"
+        $providerUrl = "$DeploymentUrl/$Version/$ManifestName.application"
         
         if (-not (Test-Path $destinationPath)) {
             if ($PSCmdlet.ShouldProcess($destinationPath, "Create Destination Path")) {
