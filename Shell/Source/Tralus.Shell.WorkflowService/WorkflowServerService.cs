@@ -73,7 +73,9 @@ namespace Tralus.Shell.WorkflowService
 
                 //WorkflowCreationKnownTypesProvider.AddKnownType(typeof(DevExpress.Xpo.Helpers.IdList));
 
-                server = new WorkflowServer("http://localhost:46232", objectSpaceProvider, objectSpaceProvider);
+                string port = ConfigurationManager.AppSettings.Get("Port");
+
+                server = new WorkflowServer($"http://localhost:{port}", objectSpaceProvider, objectSpaceProvider);
                 server.StartWorkflowListenerService.DelayPeriod = TimeSpan.FromSeconds(15);
                 server.StartWorkflowByRequestService.DelayPeriod = TimeSpan.FromSeconds(15);
                 server.RefreshWorkflowDefinitionsService.DelayPeriod = TimeSpan.FromMinutes(15);

@@ -188,8 +188,6 @@
       <LocalizationItem Name="ShowRowTotals" Value="نمایش جمع سطر‌ها" />
     </LocalizationGroup>
     <LocalizationGroup Name="Texts">
-      <LocalizationItem Name="CaptionForFalse" Value="نادرست" />
-      <LocalizationItem Name="CaptionForTrue" Value="درست" />
       <LocalizationItem Name="Error" Value="خطا" />
       <LocalizationItem Name="NullValueText" Value="(خالی)" />
       <LocalizationItem Name="Warning" Value="اخطار" />
