@@ -42,6 +42,10 @@ namespace Tralus.Framework.Data.Data
                     users,
                 });
 
+            Func<Role, Role> reloadRole = (role) =>
+            {
+                return dbContext.Set<Role>().First(r => r.Id == role.Id);
+            };
 
             // Users
             dbContext.Set<User>()
@@ -52,21 +56,21 @@ namespace Tralus.Framework.Data.Data
                         Id = new Guid("23F81C69-2FFB-4199-8B3F-1B24A02886AE"),
                         UserName = "tralusadmin",
                         IsActive = true,
-                        Roles = new List<Role>() { tralusAdmins }
+                        Roles = new List<Role>() { reloadRole(tralusAdmins) }
                     },
                     new User()
                     {
                         Id = new Guid("9F87FC95-0E44-4BF0-9705-A3521C4A3D65"),
                         UserName = "admin",
                         IsActive = true,
-                        Roles = new List<Role>() { admins }
+                        Roles = new List<Role>() { reloadRole(admins) }
                     },
                      new User()
                     {
                         Id = new Guid("B10FAFD8-FA97-4D96-9756-8029B42FCA11"),
                         UserName = "user",
                         IsActive = true,
-                        Roles = new List<Role>() { users }
+                        Roles = new List<Role>() { reloadRole(users) }
                     }
                 });
 
