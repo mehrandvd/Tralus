@@ -47,6 +47,8 @@ namespace Tralus.Framework.Data.Data
                 return dbContext.Set<Role>().First(r => r.Id == role.Id);
             };
 
+            dbContext.SaveChanges();
+
             // Users
             dbContext.Set<User>()
                 .AddRangeIfNotExists(new List<User>
