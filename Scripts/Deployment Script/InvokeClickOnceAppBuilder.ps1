@@ -40,7 +40,11 @@
         $destinationPath = Join-Path $deploymentPath $Version
         
         $manifestFilePath = Join-Path $destinationPath "$ManifestName.manifest"
+        $appCodeBase = Join-Path ( Join-Path $ApplicationName $Version) "$ManifestName.manifest"
+
         $deploymentFilePath = Join-Path $destinationPath "$ManifestName.application"
+
+        
 
         $providerUrl = "$DeploymentUrl/$ManifestName.application"
         
@@ -88,6 +92,7 @@
             "-Processor", "msil"
             "-Install", $true
             "-AppManifest", $manifestFilePath
+            "-AppCodeBase", $appCodeBase
             "-ToFile", $deploymentFilePath
             "-Name", $ApplicationName
             "-UseManifestForTrust", $true
