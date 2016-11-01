@@ -40,7 +40,7 @@ namespace Tralus.Framework.Migration.Migrations
             {
                 Id = new Guid("F011D97A-CDA4-46F4-BE33-B48C4CAB9A3E"),
                 Name = "Administrators",
-                IsAdministrative = true,
+                IsAdministrative = false,
                 CanEditModel = true,
             });
         }
