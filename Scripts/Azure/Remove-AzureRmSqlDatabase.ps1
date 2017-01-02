@@ -18,4 +18,4 @@ Write-Host $ResourceGroupName
 Write-Host $ServerName
 Write-Host $DatabaseName
 
-Remove-AzureRmSqlDatabase -ResourceGroupName $ResourceGroupName  -ServerName $ServerName  -DatabaseName $DatabaseName -Confirm -Force
+Remove-AzureRmSqlDatabase -ResourceGroupName $ResourceGroupName  -ServerName $ServerName  -DatabaseName $DatabaseName -Force
