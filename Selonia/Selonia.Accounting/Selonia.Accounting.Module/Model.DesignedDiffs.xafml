@@ -6,11 +6,7 @@
     <Class Name="Selonia.Accounting.BusinessModel.AccLedger" IsVisibleInReports="True" />
     <Class Name="Selonia.Accounting.BusinessModel.FiscalYear" ImageName="BO_Appointment" />
     <Class Name="Selonia.Accounting.BusinessModel.Segment" IsVisibleInReports="True" />
-    <Class Name="Selonia.Accounting.BusinessModel.Voucher" IsVisibleInReports="True">
-      <OwnMembers>
-        <Member Name="VoucherState.Value" IsCustom="True" IsCalculated="False" Caption="Voucher State" IsNewNode="True" />
-      </OwnMembers>
-    </Class>
+    <Class Name="Selonia.Accounting.BusinessModel.Voucher" IsVisibleInReports="True" />
     <Class Name="Selonia.Accounting.BusinessModel.VoucherItem" IsVisibleInReports="True" />
     <Class Name="Selonia.Accounting.BusinessModel.VoucherItemSegment" IsVisibleInReports="True" />
   </BOModel>

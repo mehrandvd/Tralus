@@ -152,7 +152,7 @@ namespace Tralus.Shell.Web
             // 
             // stateMachineModule
             // 
-            this.stateMachineModule.StateMachineStorageType = typeof(DevExpress.ExpressApp.StateMachine.Xpo.XpoStateMachine);
+            this.stateMachineModule.StateMachineStorageType = typeof(Tralus.Framework.BusinessModel.Entities.StateMachines.StateMachine);
             // 
             // validationModule1
             // 

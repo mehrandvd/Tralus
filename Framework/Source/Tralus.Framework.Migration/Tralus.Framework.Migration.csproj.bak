@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{931426AB-71D2-495B-B6CC-1E9E4ECC5C06}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tralus.Framework.Migration</RootNamespace>
+    <AssemblyName>Tralus.Framework.Migration</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.ExpressApp.Security.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Migrations\201509291318026_InitForDevDb.cs" />
+    <Compile Include="Migrations\201509291318026_InitForDevDb.Designer.cs">
+      <DependentUpon>201509291318026_InitForDevDb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201510221651057_SystemEnvTestAdded.cs" />
+    <Compile Include="Migrations\201510221651057_SystemEnvTestAdded.Designer.cs">
+      <DependentUpon>201510221651057_SystemEnvTestAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201604170412495_ReportAdded.cs" />
+    <Compile Include="Migrations\201604170412495_ReportAdded.Designer.cs">
+      <DependentUpon>201604170412495_ReportAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605012002113_AnalysisAdded.cs" />
+    <Compile Include="Migrations\201605012002113_AnalysisAdded.Designer.cs">
+      <DependentUpon>201605012002113_AnalysisAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605072053342_WorkflowAdded.cs" />
+    <Compile Include="Migrations\201605072053342_WorkflowAdded.Designer.cs">
+      <DependentUpon>201605072053342_WorkflowAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605272030453_EntityScriptAdded.cs" />
+    <Compile Include="Migrations\201605272030453_EntityScriptAdded.Designer.cs">
+      <DependentUpon>201605272030453_EntityScriptAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605302201575_EntitySequenceAdded.cs" />
+    <Compile Include="Migrations\201605302201575_EntitySequenceAdded.Designer.cs">
+      <DependentUpon>201605302201575_EntitySequenceAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201605311332315_RenameToUsedFor.cs" />
+    <Compile Include="Migrations\201605311332315_RenameToUsedFor.Designer.cs">
+      <DependentUpon>201605311332315_RenameToUsedFor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606021328186_EntityNumberingAdded.cs" />
+    <Compile Include="Migrations\201606021328186_EntityNumberingAdded.Designer.cs">
+      <DependentUpon>201606021328186_EntityNumberingAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606021342400_RenameEntityScriptToRuleScript.cs" />
+    <Compile Include="Migrations\201606021342400_RenameEntityScriptToRuleScript.Designer.cs">
+      <DependentUpon>201606021342400_RenameEntityScriptToRuleScript.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606021721586_ModelDiffAdded.cs" />
+    <Compile Include="Migrations\201606021721586_ModelDiffAdded.Designer.cs">
+      <DependentUpon>201606021721586_ModelDiffAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606082236292_RenameSchemaSystemToTralus.cs" />
+    <Compile Include="Migrations\201606082236292_RenameSchemaSystemToTralus.Designer.cs">
+      <DependentUpon>201606082236292_RenameSchemaSystemToTralus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606091822421_RemoveDefaultSchema.cs" />
+    <Compile Include="Migrations\201606091822421_RemoveDefaultSchema.Designer.cs">
+      <DependentUpon>201606091822421_RemoveDefaultSchema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606231115533_ModuleInfoAdded.cs" />
+    <Compile Include="Migrations\201606231115533_ModuleInfoAdded.Designer.cs">
+      <DependentUpon>201606231115533_ModuleInfoAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="TralusDbMigrationConfiguration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tralus.Framework.BusinessModel\Tralus.Framework.BusinessModel.csproj">
+      <Project>{195c7c0a-1491-43da-bd99-74e800344cef}</Project>
+      <Name>Tralus.Framework.BusinessModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tralus.Framework.Data\Tralus.Framework.Data.csproj">
+      <Project>{3519be62-f236-4004-90f9-27a4287236a1}</Project>
+      <Name>Tralus.Framework.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tralus.Framework.Utility\Tralus.Framework.Utility.csproj">
+      <Project>{a4d64bad-1eb2-4437-b464-fea9130faeff}</Project>
+      <Name>Tralus.Framework.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201509291318026_InitForDevDb.resx">
+      <DependentUpon>201509291318026_InitForDevDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510221651057_SystemEnvTestAdded.resx">
+      <DependentUpon>201510221651057_SystemEnvTestAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604170412495_ReportAdded.resx">
+      <DependentUpon>201604170412495_ReportAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605012002113_AnalysisAdded.resx">
+      <DependentUpon>201605012002113_AnalysisAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605072053342_WorkflowAdded.resx">
+      <DependentUpon>201605072053342_WorkflowAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605272030453_EntityScriptAdded.resx">
+      <DependentUpon>201605272030453_EntityScriptAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605302201575_EntitySequenceAdded.resx">
+      <DependentUpon>201605302201575_EntitySequenceAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605311332315_RenameToUsedFor.resx">
+      <DependentUpon>201605311332315_RenameToUsedFor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606021328186_EntityNumberingAdded.resx">
+      <DependentUpon>201606021328186_EntityNumberingAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606021342400_RenameEntityScriptToRuleScript.resx">
+      <DependentUpon>201606021342400_RenameEntityScriptToRuleScript.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606021721586_ModelDiffAdded.resx">
+      <DependentUpon>201606021721586_ModelDiffAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606082236292_RenameSchemaSystemToTralus.resx">
+      <DependentUpon>201606082236292_RenameSchemaSystemToTralus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606091822421_RemoveDefaultSchema.resx">
+      <DependentUpon>201606091822421_RemoveDefaultSchema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606231115533_ModuleInfoAdded.resx">
+      <DependentUpon>201606231115533_ModuleInfoAdded.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>powershell -noprofile -command "&amp; {Copy-Item '$(TargetPath)' (Join-Path $HOME 'TralusLocal\win') -Force -Recurse}"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
