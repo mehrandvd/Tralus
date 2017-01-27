@@ -197,3 +197,7 @@ FakesAssemblies/
 /Framework/Source/Tralus.Framework.Module.Web/Editors
 /Framework/Source/Tralus.Framework.Data/Data
 /Framework/Source/Tralus.Framework.Module
+/Shell/Source/Tralus.Shell.Module/Properties/licenses.licx
+/Selonia/Selonia.Accounting/Selonia.Accounting.Module.Win/Properties/licenses.licx
+/Selonia/Selonia.Accounting/Selonia.Accounting.Module.Web/Properties/licenses.licx
+/Selonia/Selonia.Accounting/Selonia.Accounting.Module/Properties/licenses.licx
