@@ -112,6 +112,10 @@
     <Compile Include="Migrations\201701271327489_AddDashboardData.Designer.cs">
       <DependentUpon>201701271327489_AddDashboardData.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702091956230_KpiModuleAdded.cs" />
+    <Compile Include="Migrations\201702091956230_KpiModuleAdded.Designer.cs">
+      <DependentUpon>201702091956230_KpiModuleAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="TralusDbMigrationConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -179,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701271327489_AddDashboardData.resx">
       <DependentUpon>201701271327489_AddDashboardData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702091956230_KpiModuleAdded.resx">
+      <DependentUpon>201702091956230_KpiModuleAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

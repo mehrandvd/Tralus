@@ -42,6 +42,7 @@ namespace Tralus.Shell.Web
         private DevExpress.ExpressApp.ViewVariantsModule.ViewVariantsModule viewVariantsModule1;
         private DevExpress.ExpressApp.Dashboards.DashboardsModule dashboardsModule1;
         private DevExpress.ExpressApp.Dashboards.Web.DashboardsAspNetModule dashboardsAspNetModule1;
+        private DevExpress.ExpressApp.Kpi.KpiModule kpiModule1;
         private DevExpress.ExpressApp.StateMachine.StateMachineModule stateMachineModule;
 
         public ShellAspNetApplication()
@@ -154,6 +155,7 @@ namespace Tralus.Shell.Web
             this.viewVariantsModule1 = new DevExpress.ExpressApp.ViewVariantsModule.ViewVariantsModule();
             this.dashboardsModule1 = new DevExpress.ExpressApp.Dashboards.DashboardsModule();
             this.dashboardsAspNetModule1 = new DevExpress.ExpressApp.Dashboards.Web.DashboardsAspNetModule();
+            this.kpiModule1 = new DevExpress.ExpressApp.Kpi.KpiModule();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // stateMachineModule
@@ -211,6 +213,7 @@ namespace Tralus.Shell.Web
             this.Modules.Add(this.pivotChartModuleBase1);
             this.Modules.Add(this.workflowModule1);
             this.Modules.Add(this.dashboardsModule1);
+            this.Modules.Add(this.kpiModule1);
             this.Modules.Add(this.module3);
             this.Modules.Add(this.module4);
             this.Modules.Add(this.securityModule);
