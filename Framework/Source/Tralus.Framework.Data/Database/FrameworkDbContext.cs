@@ -82,6 +82,7 @@ namespace  Tralus.Framework.Data {
         public virtual DbSet<ModelDifferenceAspect> ModelDifferenceAspect { get; set; }
         public virtual DbSet<User> User { get; set; }
         public DbSet<ModuleInfo> ModulesInfo { get; set; }
+        public DbSet<DashboardData> DashboardData { get; set; }
 
     }
 }

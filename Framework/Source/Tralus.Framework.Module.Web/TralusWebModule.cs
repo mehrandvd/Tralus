@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DevExpress.ExpressApp;
+using DevExpress.ExpressApp.Dashboards.Web;
 using DevExpress.ExpressApp.Maps.Web;
 
 namespace Tralus.Framework.Module.Web
@@ -13,6 +14,7 @@ namespace Tralus.Framework.Module.Web
         public TralusWebModule():base()
         {
             RequiredModuleTypes.Add(typeof(MapsAspNetModule));
+            RequiredModuleTypes.Add(typeof(DashboardsAspNetModule));
         }
     }
 }

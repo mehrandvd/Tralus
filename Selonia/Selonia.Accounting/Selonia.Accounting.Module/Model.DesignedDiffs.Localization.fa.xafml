@@ -70,7 +70,6 @@
         <Member Name="VoucherDate" Caption="تاریخ سند" />
         <Member Name="VoucherItems" Caption="اقلام سند" />
         <Member Name="VoucherState" Caption="وضعیت" />
-        <Member Name="VoucherState.Value" Caption="مقدار وضعیت" />
         <Member Name="VoucherType" Caption="نوع سند" />
       </OwnMembers>
     </Class>
