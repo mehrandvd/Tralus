@@ -48,6 +48,8 @@ namespace Tralus.Shell.Win {
             this.module3 = new Tralus.Shell.Module.ShellModule();
             this.module4 = new Tralus.Shell.Module.Win.ShellWindowsFormsModule();
             this.viewVariantsModule1 = new DevExpress.ExpressApp.ViewVariantsModule.ViewVariantsModule();
+            this.dashboardsModule1 = new DevExpress.ExpressApp.Dashboards.DashboardsModule();
+            this.dashboardsWindowsFormsModule1 = new DevExpress.ExpressApp.Dashboards.Win.DashboardsWindowsFormsModule();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // validationModule1
@@ -68,6 +70,7 @@ namespace Tralus.Shell.Win {
             // 
             // pivotChartModuleBase1
             // 
+            this.pivotChartModuleBase1.DataAccessMode = DevExpress.ExpressApp.CollectionSourceDataAccessMode.Client;
             this.pivotChartModuleBase1.ShowAdditionalNavigation = true;
             // 
             // workflowModule1
@@ -79,6 +82,10 @@ namespace Tralus.Shell.Win {
             this.workflowModule1.WorkflowDefinitionType = typeof(DevExpress.ExpressApp.Workflow.EF.EFWorkflowDefinition);
             this.workflowModule1.WorkflowInstanceKeyType = typeof(DevExpress.Workflow.EF.EFInstanceKey);
             this.workflowModule1.WorkflowInstanceType = typeof(DevExpress.Workflow.EF.EFWorkflowInstance);
+            // 
+            // dashboardsModule1
+            // 
+            this.dashboardsModule1.DashboardDataType = typeof(DevExpress.Persistent.BaseImpl.EF.DashboardData);
             // 
             // ShellWindowsFormsApplication
             // 
@@ -94,6 +101,7 @@ namespace Tralus.Shell.Win {
             this.Modules.Add(this.pivotGridModule1);
             this.Modules.Add(this.pivotChartModuleBase1);
             this.Modules.Add(this.workflowModule1);
+            this.Modules.Add(this.dashboardsModule1);
             this.Modules.Add(this.module3);
             this.Modules.Add(this.module4);
             this.Modules.Add(this.securityModule1);
@@ -106,6 +114,7 @@ namespace Tralus.Shell.Win {
             this.Modules.Add(this.chartWindowsFormsModule1);
             this.Modules.Add(this.pivotChartWindowsFormsModule1);
             this.Modules.Add(this.workflowWindowsFormsModule1);
+            this.Modules.Add(this.dashboardsWindowsFormsModule1);
             this.UseOldTemplates = false;
             this.CustomCheckCompatibility += new System.EventHandler<DevExpress.ExpressApp.CustomCheckCompatibilityEventArgs>(this.ShellWindowsFormsApplication_CustomCheckCompatibility);
             this.CustomizeLanguagesList += new System.EventHandler<DevExpress.ExpressApp.CustomizeLanguagesListEventArgs>(this.ShellWindowsFormsApplication_CustomizeLanguagesList);
@@ -138,5 +147,7 @@ namespace Tralus.Shell.Win {
         private DevExpress.ExpressApp.Workflow.WorkflowModule workflowModule1;
         private DevExpress.ExpressApp.Workflow.Win.WorkflowWindowsFormsModule workflowWindowsFormsModule1;
         private DevExpress.ExpressApp.ViewVariantsModule.ViewVariantsModule viewVariantsModule1;
+        private DevExpress.ExpressApp.Dashboards.DashboardsModule dashboardsModule1;
+        private DevExpress.ExpressApp.Dashboards.Win.DashboardsWindowsFormsModule dashboardsWindowsFormsModule1;
     }
 }

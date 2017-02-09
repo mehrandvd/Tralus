@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <BOModel Id="BOModel">
+    <Class Name="Selonia.Accounting.BusinessModel.Voucher">
+      <OwnMembers Id="OwnMembers">
+        <Member Name="VoucherState.Value" Caption="مقدار وضعیت" />
+      </OwnMembers>
+    </Class>
+  </BOModel>
+</Application>

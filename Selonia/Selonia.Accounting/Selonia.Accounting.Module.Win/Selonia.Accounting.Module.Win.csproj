@@ -59,6 +59,14 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.ExpressApp.Dashboards.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\DevExpress 16.2\Components\Bin\Framework\DevExpress.ExpressApp.Dashboards.v16.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.ExpressApp.Dashboards.Win.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\DevExpress 16.2\Components\Bin\Framework\DevExpress.ExpressApp.Dashboards.Win.v16.2.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.ExpressApp.EF.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>

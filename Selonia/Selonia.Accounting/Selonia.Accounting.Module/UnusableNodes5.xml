@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Views Id="Views">
+    <ListView Id="Voucher_ListView">
+      <Columns Id="Columns">
+        <ColumnInfo Id="VoucherStateValue" PropertyName="VoucherState.Value" Index="0" Width="25" Caption="S" />
+      </Columns>
+    </ListView>
+  </Views>
+</Application>

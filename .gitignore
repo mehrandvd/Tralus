@@ -201,3 +201,4 @@ FakesAssemblies/
 /Selonia/Selonia.Accounting/Selonia.Accounting.Module.Win/Properties/licenses.licx
 /Selonia/Selonia.Accounting/Selonia.Accounting.Module.Web/Properties/licenses.licx
 /Selonia/Selonia.Accounting/Selonia.Accounting.Module/Properties/licenses.licx
+*.licx

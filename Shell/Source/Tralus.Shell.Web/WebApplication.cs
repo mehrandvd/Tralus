@@ -39,6 +39,9 @@ namespace Tralus.Shell.Web
         private DevExpress.ExpressApp.Workflow.WorkflowModule workflowModule1;
         private Module.ShellModule shellModule1;
         private DevExpress.ExpressApp.Maps.Web.MapsAspNetModule mapsAspNetModule1;
+        private DevExpress.ExpressApp.ViewVariantsModule.ViewVariantsModule viewVariantsModule1;
+        private DevExpress.ExpressApp.Dashboards.DashboardsModule dashboardsModule1;
+        private DevExpress.ExpressApp.Dashboards.Web.DashboardsAspNetModule dashboardsAspNetModule1;
         private DevExpress.ExpressApp.StateMachine.StateMachineModule stateMachineModule;
 
         public ShellAspNetApplication()
@@ -148,6 +151,9 @@ namespace Tralus.Shell.Web
             this.workflowModule1 = new DevExpress.ExpressApp.Workflow.WorkflowModule();
             this.shellModule1 = new Tralus.Shell.Module.ShellModule();
             this.mapsAspNetModule1 = new DevExpress.ExpressApp.Maps.Web.MapsAspNetModule();
+            this.viewVariantsModule1 = new DevExpress.ExpressApp.ViewVariantsModule.ViewVariantsModule();
+            this.dashboardsModule1 = new DevExpress.ExpressApp.Dashboards.DashboardsModule();
+            this.dashboardsAspNetModule1 = new DevExpress.ExpressApp.Dashboards.Web.DashboardsAspNetModule();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // stateMachineModule
@@ -172,6 +178,7 @@ namespace Tralus.Shell.Web
             // 
             // pivotChartModuleBase1
             // 
+            this.pivotChartModuleBase1.DataAccessMode = DevExpress.ExpressApp.CollectionSourceDataAccessMode.Client;
             this.pivotChartModuleBase1.ShowAdditionalNavigation = true;
             // 
             // workflowModule1
@@ -184,6 +191,10 @@ namespace Tralus.Shell.Web
             this.workflowModule1.WorkflowInstanceKeyType = typeof(DevExpress.Workflow.EF.EFInstanceKey);
             this.workflowModule1.WorkflowInstanceType = typeof(DevExpress.Workflow.EF.EFWorkflowInstance);
             // 
+            // dashboardsModule1
+            // 
+            this.dashboardsModule1.DashboardDataType = typeof(DevExpress.Persistent.BaseImpl.EF.DashboardData);
+            // 
             // ShellAspNetApplication
             // 
             this.ApplicationName = "Tralus.Shell";
@@ -191,23 +202,26 @@ namespace Tralus.Shell.Web
             this.Modules.Add(this.module1);
             this.Modules.Add(this.module2);
             this.Modules.Add(this.reportsModuleV21);
+            this.Modules.Add(this.conditionalAppearanceModule1);
+            this.Modules.Add(this.validationModule1);
+            this.Modules.Add(this.viewVariantsModule1);
+            this.Modules.Add(this.treeListEditorsModuleBase1);
+            this.Modules.Add(this.chartModule1);
+            this.Modules.Add(this.pivotGridModule1);
+            this.Modules.Add(this.pivotChartModuleBase1);
+            this.Modules.Add(this.workflowModule1);
+            this.Modules.Add(this.dashboardsModule1);
             this.Modules.Add(this.module3);
             this.Modules.Add(this.module4);
             this.Modules.Add(this.securityModule);
-            this.Modules.Add(this.validationModule1);
-            this.Modules.Add(this.conditionalAppearanceModule1);
             this.Modules.Add(this.stateMachineModule);
             this.Modules.Add(this.reportsAspNetModuleV21);
-            this.Modules.Add(this.treeListEditorsModuleBase1);
             this.Modules.Add(this.treeListEditorsAspNetModule1);
-            this.Modules.Add(this.chartModule1);
             this.Modules.Add(this.chartAspNetModule1);
-            this.Modules.Add(this.pivotGridModule1);
             this.Modules.Add(this.pivotGridAspNetModule1);
-            this.Modules.Add(this.pivotChartModuleBase1);
             this.Modules.Add(this.pivotChartAspNetModule1);
-            this.Modules.Add(this.workflowModule1);
             this.Modules.Add(this.mapsAspNetModule1);
+            this.Modules.Add(this.dashboardsAspNetModule1);
             this.CustomCheckCompatibility += new System.EventHandler<DevExpress.ExpressApp.CustomCheckCompatibilityEventArgs>(this.ShellWindowsFormsApplication_CustomCheckCompatibility);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 

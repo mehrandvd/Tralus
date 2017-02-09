@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application Title="Selonia.Accounting" Logo="ExpressAppLogo" PreferredLanguage="fa-IR">
   <BOModel>
-    <Class Name="Selonia.Accounting.BusinessModel.AccGeneral" IsVisibleInReports="True" />
-    <Class Name="Selonia.Accounting.BusinessModel.AccGroup" IsVisibleInReports="True" />
-    <Class Name="Selonia.Accounting.BusinessModel.AccLedger" IsVisibleInReports="True" />
-    <Class Name="Selonia.Accounting.BusinessModel.FiscalYear" ImageName="BO_Appointment" />
-    <Class Name="Selonia.Accounting.BusinessModel.Segment" IsVisibleInReports="True" />
-    <Class Name="Selonia.Accounting.BusinessModel.Voucher" IsVisibleInReports="True" />
-    <Class Name="Selonia.Accounting.BusinessModel.VoucherItem" IsVisibleInReports="True" />
-    <Class Name="Selonia.Accounting.BusinessModel.VoucherItemSegment" IsVisibleInReports="True" />
+    <Class Name="Selonia.Accounting.BusinessModel.AccGeneral" IsVisibleInReports="True" IsVisibleInDashboards="True" />
+    <Class Name="Selonia.Accounting.BusinessModel.AccGroup" IsVisibleInReports="True" IsVisibleInDashboards="True" />
+    <Class Name="Selonia.Accounting.BusinessModel.AccLedger" IsVisibleInReports="True" IsVisibleInDashboards="True" />
+    <Class Name="Selonia.Accounting.BusinessModel.FiscalYear" ImageName="BO_Appointment" IsVisibleInDashboards="True" IsVisibleInReports="True" />
+    <Class Name="Selonia.Accounting.BusinessModel.Segment" IsVisibleInReports="True" IsVisibleInDashboards="True" />
+    <Class Name="Selonia.Accounting.BusinessModel.Voucher" IsVisibleInReports="True" IsVisibleInDashboards="True" />
+    <Class Name="Selonia.Accounting.BusinessModel.VoucherItem" IsVisibleInReports="True" IsVisibleInDashboards="True" />
+    <Class Name="Selonia.Accounting.BusinessModel.VoucherItemSegment" IsVisibleInReports="True" IsVisibleInDashboards="True" />
   </BOModel>
   <NavigationItems>
     <Items>
@@ -36,7 +36,7 @@
     </Items>
   </NavigationItems>
   <SchemaModules>
-    <SchemaModule Name="SystemModule" Version="15.2.9.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="16.2.4.0" IsNewNode="True" />
   </SchemaModules>
   <Views>
     <DetailView Id="AccGeneral_DetailView">
@@ -282,7 +282,6 @@
     <ListView Id="Voucher_ListView">
       <Columns>
         <ColumnInfo Id="VoucherState" Width="99" Index="-1" />
-        <ColumnInfo Id="VoucherStateValue" PropertyName="VoucherState.Value" Index="0" Width="25" Caption="S" IsNewNode="True" />
         <ColumnInfo Id="TempNo" Index="1" SortIndex="0" SortOrder="Ascending" />
         <ColumnInfo Id="FixNo" Index="2" />
         <ColumnInfo Id="VoucherDate" Width="120" Index="3" />
