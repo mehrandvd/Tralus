@@ -5,6 +5,7 @@ using DevExpress.ExpressApp.EF.Updating;
 using DevExpress.ExpressApp.Workflow.EF;
 using DevExpress.ExpressApp.Workflow.Versioning;
 using DevExpress.Persistent.BaseImpl.EF;
+using DevExpress.Persistent.BaseImpl.EF.Kpi;
 using DevExpress.Workflow.EF;
 using Tralus.Framework.BusinessModel.Entities;
 using Role = Tralus.Framework.BusinessModel.Entities.Role;
@@ -83,6 +84,10 @@ namespace  Tralus.Framework.Data {
         public virtual DbSet<User> User { get; set; }
         public DbSet<ModuleInfo> ModulesInfo { get; set; }
         public DbSet<DashboardData> DashboardData { get; set; }
+        public DbSet<KpiDefinition> KpiDefinition { get; set; }
+        public DbSet<KpiInstance> KpiInstance { get; set; }
+        public DbSet<KpiHistoryItem> KpiHistoryItem { get; set; }
+        public DbSet<KpiScorecard> KpiScorecard { get; set; }
 
     }
 }

@@ -10,6 +10,7 @@ using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.Chart;
 using DevExpress.ExpressApp.ConditionalAppearance;
 using DevExpress.ExpressApp.Dashboards;
+using DevExpress.ExpressApp.Kpi;
 using DevExpress.ExpressApp.Model;
 using DevExpress.ExpressApp.PivotChart;
 using DevExpress.ExpressApp.PivotGrid;
@@ -19,6 +20,7 @@ using DevExpress.ExpressApp.Validation;
 using DevExpress.ExpressApp.ViewVariantsModule;
 using DevExpress.ExpressApp.Workflow;
 using DevExpress.Persistent.BaseImpl.EF;
+using DevExpress.Persistent.BaseImpl.EF.Kpi;
 using Tralus.Framework.BusinessModel.Entities;
 using Tralus.Framework.Module.Interface;
 using Tralus.Framework.Utility.ReflectionHelpers;
@@ -57,6 +59,17 @@ namespace Tralus.Framework.Module
             this.RequiredModuleTypes.Add(typeof(PivotChartModuleBase));
             this.RequiredModuleTypes.Add(typeof(WorkflowModule));
             this.RequiredModuleTypes.Add(typeof(DashboardsModule));
+            this.RequiredModuleTypes.Add(typeof(KpiModule));
+
+
+
+            DevExpress.ExpressApp.Kpi.KpiModule.UsedExportedTypes = DevExpress.Persistent.Base.UsedExportedTypes.Custom;
+
+            AdditionalExportedTypes.Add(typeof(BaseKpiObject));
+            AdditionalExportedTypes.Add(typeof(KpiDefinition));
+            AdditionalExportedTypes.Add(typeof(KpiHistoryItem));
+            AdditionalExportedTypes.Add(typeof(KpiInstance));
+            AdditionalExportedTypes.Add(typeof(KpiScorecard));
         }
 
         protected virtual IEnumerable<Type> GetModuleExportedTypes()

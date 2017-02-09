@@ -51,6 +51,7 @@ namespace Tralus.Shell.Module
             this.AdditionalExportedTypes.Add(typeof(ModelDifferenceAspect));
 
             RequiredModuleTypes.Add(typeof(ReportsModuleV2));
+
         }
 
         public override IEnumerable<ModuleUpdater> GetModuleUpdaters(IObjectSpace objectSpace, Version versionFromDB)
