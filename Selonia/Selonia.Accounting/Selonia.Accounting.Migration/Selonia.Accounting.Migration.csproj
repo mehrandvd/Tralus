@@ -118,6 +118,10 @@
     <Compile Include="Migrations\201608041056409_AddFiscalYear.Designer.cs">
       <DependentUpon>201608041056409_AddFiscalYear.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702092037432_FrameworkMergeDashboadKpiAcc.cs" />
+    <Compile Include="Migrations\201702092037432_FrameworkMergeDashboadKpiAcc.Designer.cs">
+      <DependentUpon>201702092037432_FrameworkMergeDashboadKpiAcc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -174,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201608041056409_AddFiscalYear.resx">
       <DependentUpon>201608041056409_AddFiscalYear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702092037432_FrameworkMergeDashboadKpiAcc.resx">
+      <DependentUpon>201702092037432_FrameworkMergeDashboadKpiAcc.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
