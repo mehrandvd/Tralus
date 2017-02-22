@@ -1,4 +1,6 @@
-﻿function Bootstrap {
+Import-Module WebAdministration
+
+function Bootstrap {
     [CmdletBinding()]
     Param(
         [parameter(mandatory=$true)]
@@ -130,7 +132,7 @@ function Enable-IIS {
             "IIS-RequestFiltering",
             "IIS-Performance",
             "IIS-WebServerManagementTools",
-            "IIS-WindowsAuthentication",
+           # "IIS-WindowsAuthentication",
             "IIS-StaticContent",
             "IIS-DefaultDocument",
             "IIS-DirectoryBrowsing",
@@ -145,13 +147,19 @@ function Enable-IIS {
         
         $osBuildNumber = Get-CimInstance -ClassName win32_operatingsystem | select -ExpandProperty BuildNumber
 
-        if ($osBuildNumber -eq 9600) {
-            Write-Verbose "Enabling IIS for Windows 8 family"
-            Enable-WindowsOptionalFeature -FeatureName $features -All -Online
-        } else  {
-            Write-Verbose "Enabling IIS for Windows 7 family"
-            $featureList = ($features | Select-Object @{n='Feature'; e={"`"/FeatureName:$_`""}}).Feature -join " "
-            &"dism" "/online" "/enable-feature" $featureList
+        if($osBuildNumber.StartsWith("10")){
+                Write-Verbose "Enabling IIS for Windows 10 family"
+                Enable-WindowsOptionalFeature -FeatureName $features -All -Online
+        }
+        else {
+            if ($osBuildNumber -eq 9600) {
+                Write-Verbose "Enabling IIS for Windows 8 family"
+                Enable-WindowsOptionalFeature -FeatureName $features -All -Online
+            } else  {
+                Write-Verbose "Enabling IIS for Windows 7 family"
+                $featureList = ($features | Select-Object @{n='Feature'; e={"`"/FeatureName:$_`""}}).Feature -join " "
+                &"dism" "/online" "/enable-feature" $featureList
+            }
         }
     }
 }
