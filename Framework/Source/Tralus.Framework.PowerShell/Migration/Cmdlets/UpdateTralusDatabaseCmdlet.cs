@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Management.Automation;
 
 namespace Tralus.Framework.PowerShell.Migration
@@ -33,8 +34,16 @@ namespace Tralus.Framework.PowerShell.Migration
 
                 if (ShouldProcess("Database", $"Applying migration up to: [{migrationBundle.TargetMigrationName}]"))
                 {
-                    var dbMigrator = migrationBundle.GetNewMigrator();
-                    dbMigrator.Update(migrationBundle.TargetMigrationName);
+                    try
+                    {
+                        var dbMigrator = migrationBundle.GetNewMigrator();
+                        dbMigrator.Update(migrationBundle.TargetMigrationName);
+                    }
+                    catch (Exception exception)
+                    {
+                        WriteObject(exception.ToString());
+                        throw;
+                    }
 
                     WriteObject("\tDone.\n");
                 }
