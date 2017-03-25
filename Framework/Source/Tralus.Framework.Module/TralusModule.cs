@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Activities;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -76,6 +77,12 @@ namespace Tralus.Framework.Module
         {
             return AssemblyResolver.GetCurrentModuleTypes(GetType())
                 .Where(e => e.IsSubclassOf(typeof(EntityBase)));
+        }
+
+        public virtual IEnumerable<Type> GetWorkflowActivityTypes()
+        {
+            return AssemblyResolver.GetCurrentModuleTypes(GetType(), new[] {TralusAssemblyType.Module})
+                .Where(e => e.IsSubclassOf(typeof(Activity)));
         }
 
         //private void Application_CreateCustomModelDifferenceStore(Object sender, CreateCustomModelDifferenceStoreEventArgs e)

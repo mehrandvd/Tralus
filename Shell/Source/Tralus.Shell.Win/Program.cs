@@ -1,14 +1,19 @@
 using System;
 using System.Configuration;
 using System.Data.Entity;
+using System.Linq;
 using System.Windows.Forms;
 
 using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.Model.Core;
 using DevExpress.ExpressApp.Security;
+using DevExpress.ExpressApp.Utils;
 using DevExpress.ExpressApp.Win;
+using DevExpress.ExpressApp.Workflow;
+using DevExpress.ExpressApp.Workflow.Win;
 using DevExpress.Persistent.Base;
 using Tralus.Framework.BusinessModel.Entities;
+using Tralus.Framework.Module;
 using Tralus.Framework.Module.Security;
 using Tralus.Shell.Module.BusinessObjects;
 using Tralus.Shell.Module.Security;
@@ -29,9 +34,35 @@ namespace Tralus.Shell.Win {
             Application.SetCompatibleTextRenderingDefault(false);
             EditModelPermission.AlwaysGranted = System.Diagnostics.Debugger.IsAttached;
             ShellWindowsFormsApplication winApplication = new ShellWindowsFormsApplication();
+
+            winApplication.Modules.FindModule<WorkflowWindowsFormsModule>().QueryAvailableActivities +=
+                delegate (object sender, ActivitiesInformationEventArgs e)
+                {
+                    foreach (var tralusModule in winApplication.Modules.OfType<TralusModule>())
+                    {
+                        var activityTypes = tralusModule.GetWorkflowActivityTypes();
+
+                        // ToDo: I should read category and name from attributes.
+                        foreach (var activityType in activityTypes)
+                        {
+                            if (e.ActivitiesInformation.All(ai => ai.ActivityType != activityType))
+                            {
+                                e.ActivitiesInformation.Add(new ActivityInformation(activityType,
+                                    "Tralus Activities",
+                                    activityType.Name
+                                    //,ImageLoader.Instance.GetImageInfo("CreateTask").Image
+                                ));
+                            }
+                        }
+
+
+                    }
+                };
+
             // Refer to the http://documentation.devexpress.com/#Xaf/CustomDocument2680 help article for more details on how to provide a custom splash form.
             //winApplication.SplashScreen = new DevExpress.ExpressApp.Win.Utils.DXSplashScreen("YourSplashImage.png");
-            if(ConfigurationManager.ConnectionStrings["Default"] != null) {
+
+            if (ConfigurationManager.ConnectionStrings["Default"] != null) {
                 winApplication.ConnectionString = ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
             }
 #if EASYTEST
@@ -50,6 +81,9 @@ namespace Tralus.Shell.Win {
             catch(Exception e) {
                 winApplication.HandleException(e);
             }
+
+            
+
         }
 
         private static void ConfigSecurity(XafApplication application)
