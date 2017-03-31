@@ -187,6 +187,7 @@
     <Compile Include="Security\TralusSecurityStrategy.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Utility\DashboardUtil.cs" />
     <Compile Include="Utility\ReflectionHelper.cs" />
   </ItemGroup>
   <ItemGroup>
