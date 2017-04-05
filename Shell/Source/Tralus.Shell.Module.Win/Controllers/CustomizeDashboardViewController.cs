@@ -106,7 +106,7 @@ namespace Tralus.Shell.Module.Win.Controllers
                 // SqlServer
             {
                 var sqlConnectionParameters = new MsSqlConnectionParameters();
-                sqlConnectionParameters.ServerName = parser.GetPartByName("Data Source");
+                sqlConnectionParameters.ServerName = !string.IsNullOrWhiteSpace(parser.GetPartByName("Data Source")) ? parser.GetPartByName("Data Source") : parser.GetPartByName("Server");
                 sqlConnectionParameters.DatabaseName = parser.GetPartByName("Initial Catalog");
                 sqlConnectionParameters.AuthorizationType =
                     parser.GetPartByName("Integrated Security").ToLower() == "true"
@@ -114,7 +114,7 @@ namespace Tralus.Shell.Module.Win.Controllers
                         : MsSqlAuthorizationType.SqlServer;
 
                 sqlConnectionParameters.UserName = parser.GetPartByName("User ID");
-                sqlConnectionParameters.Password = "Password";
+                sqlConnectionParameters.Password = parser.GetPartByName("Password");
 
                 e.ConnectionParameters = sqlConnectionParameters;
             }
