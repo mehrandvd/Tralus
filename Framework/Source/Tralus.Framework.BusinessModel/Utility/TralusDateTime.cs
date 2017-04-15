@@ -420,13 +420,14 @@ namespace Tralus.Framework.BusinessModel.Utility
 
         private string GetDateTimeInAltCalendar(DateTime dateTime)
         {
-            return string.Format("{0:0000}/{1:00}/{2:00} {3:00}:{4:00}:{5:00}",
+            return string.Format("{0:0000}/{1:00}/{2:00} - {3:00}:{4:00}:{5:00}",
                 AltCalendar.GetYear(dateTime),
                 AltCalendar.GetMonth(dateTime),
                 AltCalendar.GetDayOfMonth(dateTime),
                 AltCalendar.GetHour(dateTime),
                 AltCalendar.GetMinute(dateTime),
                 AltCalendar.GetSecond(dateTime));
+
         }
 
         /// <summary>

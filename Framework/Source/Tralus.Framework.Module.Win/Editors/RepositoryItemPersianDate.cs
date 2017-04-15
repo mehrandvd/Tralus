@@ -85,10 +85,12 @@ namespace Tralus.Framework.Module.Win.Editors
 
         private static string GetDateInAltCalendar(DateTime dateTime)
         {
-            return string.Format("{0:0000}/{1:00}/{2:00}",
+            return string.Format("{0:0000}/{1:00}/{2:00}- {3:00}:{4:00}",
                 PersianCalendar.GetYear(dateTime),
                 PersianCalendar.GetMonth(dateTime),
-                PersianCalendar.GetDayOfMonth(dateTime));
+                PersianCalendar.GetDayOfMonth(dateTime),
+                PersianCalendar.GetHour(dateTime),
+                PersianCalendar.GetMinute(dateTime));
         }
         
         protected override PropertyDescriptorCollection FilterProperties(PropertyDescriptorCollection collection)
