@@ -157,10 +157,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\SwitchToEditModeModificationsController.cs">
+    <Compile Include="Images\Controllers\SwitchToEditModeModificationsController.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controllers\SwitchToEditModeModificationsController.Designer.cs">
+    <Compile Include="Images\Controllers\SwitchToEditModeModificationsController.Designer.cs">
       <DependentUpon>SwitchToEditModeModificationsController.cs</DependentUpon>
     </Compile>
     <Compile Include="Editors\PersianDateEditor.cs" />
@@ -200,7 +200,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Controllers\ReadMe.txt" />
+    <None Include="Images\Controllers\ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Editors\ReadMe.txt" />
