@@ -111,7 +111,7 @@ namespace Tralus.Framework.Module.Web.Editors
             int year = 0;
             int month = 0;
             int day = 0;
-
+            
             DateTime? datetime = null;
             
             if (!string.IsNullOrWhiteSpace(persianDate?.ToString()))
@@ -121,11 +121,13 @@ namespace Tralus.Framework.Module.Web.Editors
                 year = int.Parse(splitedPersianDate[0]);
                 month = int.Parse(splitedPersianDate[1]);
                 day = int.Parse(splitedPersianDate[2]);
+               
             }
 
             if (year != 0 && month != 0 && day != 0)
             {
                 datetime = PersianCalendar.ToDateTime(year, month, day, 0, 0, 0, 0);
+               
             }
 
             return datetime;
@@ -134,10 +136,12 @@ namespace Tralus.Framework.Module.Web.Editors
 
         private string GetDateInPersianCalendar(DateTime dateTime)
         {
-            return string.Format("{0:0000}/{1:00}/{2:00}",
+            return string.Format("{0:0000}/{1:00}/{2:00}- {3:00}:{4:00}",
                 PersianCalendar.GetYear(dateTime),
                 PersianCalendar.GetMonth(dateTime),
-                PersianCalendar.GetDayOfMonth(dateTime));
+                PersianCalendar.GetDayOfMonth(dateTime),
+                PersianCalendar.GetHour(dateTime),
+                PersianCalendar.GetMinute(dateTime));
         }
     }
 }
