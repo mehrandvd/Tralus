@@ -18,7 +18,7 @@ using Tralus.Framework.Module.Win.Controls.BaseControl;
 namespace Tralus.Framework.Module.Win.Editors
 {
     [UserRepositoryItem("RegisterPersianDateEditor")]
-    public class RepositoryItemPersianDate : RepositoryItem
+    public class RepositoryItemPersianDateTime : RepositoryItem
     {
         private Controls.BaseControl.PersianDateControl persianDateControl;
         private static RepositoryItemTextEdit repositoryItemTextEdit = new RepositoryItemTextEdit();
@@ -26,7 +26,7 @@ namespace Tralus.Framework.Module.Win.Editors
         public const string CustomEditName = "PersianDateEditor";
         private static object dateTimeChanged = new object();
 
-        static RepositoryItemPersianDate()
+        static RepositoryItemPersianDateTime()
         {
             RegisterPersianDateEditor();
             repositoryItemTextEdit.CustomDisplayText += RepositoryItemTextEdit_CustomDisplayText;
@@ -35,7 +35,7 @@ namespace Tralus.Framework.Module.Win.Editors
         public static void RegisterPersianDateEditor()
         {
             EditorRegistrationInfo.Default.Editors.Add(new EditorClassInfo(CustomEditName,
-               typeof(TextEdit), typeof(RepositoryItemPersianDate),
+               typeof(TextEdit), typeof(RepositoryItemPersianDateTime),
                typeof(DevExpress.XtraEditors.ViewInfo.BaseEditViewInfo), new DevExpress.XtraEditors.Drawing.BaseEditPainter(), true, null, typeof(BaseEditAccessible)));
         }
 
@@ -85,10 +85,12 @@ namespace Tralus.Framework.Module.Win.Editors
 
         private static string GetDateInAltCalendar(DateTime dateTime)
         {
-            return string.Format("{0:0000}/{1:00}/{2:00}",
+            return string.Format("{0:0000}/{1:00}/{2:00}-{3:00}:{4:00}",
                 PersianCalendar.GetYear(dateTime),
                 PersianCalendar.GetMonth(dateTime),
-                PersianCalendar.GetDayOfMonth(dateTime));
+                PersianCalendar.GetDayOfMonth(dateTime),
+                PersianCalendar.GetHour(dateTime),
+                PersianCalendar.GetMinute(dateTime));
         }
         
         protected override PropertyDescriptorCollection FilterProperties(PropertyDescriptorCollection collection)
@@ -103,12 +105,12 @@ namespace Tralus.Framework.Module.Win.Editors
 
         public override void Assign(RepositoryItem item)
         {
-            var repositoryItemPersianDate = item as RepositoryItemPersianDate;
+            var repositoryItemPersianDate = item as RepositoryItemPersianDateTime;
             this.BeginUpdate();
             base.Assign(item);
             this.EndUpdate();
 
-            this.Events.AddHandler(RepositoryItemPersianDate.dateTimeChanged, repositoryItemPersianDate.Events[RepositoryItemPersianDate.dateTimeChanged]);
+            this.Events.AddHandler(RepositoryItemPersianDateTime.dateTimeChanged, repositoryItemPersianDate.Events[RepositoryItemPersianDateTime.dateTimeChanged]);
         }
 
 
@@ -117,11 +119,11 @@ namespace Tralus.Framework.Module.Win.Editors
         {
             add
             {
-                this.Events.AddHandler(RepositoryItemPersianDate.dateTimeChanged, (Delegate)value);
+                this.Events.AddHandler(RepositoryItemPersianDateTime.dateTimeChanged, (Delegate)value);
             }
             remove
             {
-                this.Events.RemoveHandler(RepositoryItemPersianDate.dateTimeChanged, (Delegate)value);
+                this.Events.RemoveHandler(RepositoryItemPersianDateTime.dateTimeChanged, (Delegate)value);
             }
         }
 
@@ -134,7 +136,7 @@ namespace Tralus.Framework.Module.Win.Editors
 
         protected internal virtual void RaiseDateTimeChanged(EventArgs e)
         {
-            EventHandler eventHandler = (EventHandler)this.Events[RepositoryItemPersianDate.dateTimeChanged];
+            EventHandler eventHandler = (EventHandler)this.Events[RepositoryItemPersianDateTime.dateTimeChanged];
             if (eventHandler == null)
                 return;
             eventHandler(this.GetEventSender(), e);

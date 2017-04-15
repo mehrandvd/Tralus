@@ -10,8 +10,7 @@ namespace Tralus.Framework.Module.Web.Editors
 {
     [PropertyEditor(typeof(DateTime), true)]
     [PropertyEditor(typeof(DateTime?), true)]
-    public class PersianDateEditor : WebPropertyEditor
-    {
+    public class PersianDateEditor : WebPropertyEditor{
         private DevExpress.Web.ASPxTextBox datePickerPersian;
         private static readonly System.Globalization.Calendar PersianCalendar = new PersianCalendar();
 
@@ -55,7 +54,6 @@ namespace Tralus.Framework.Module.Web.Editors
 
             return datePickerPersian;
         }
-
         private void DatePickerPersian_ValueChanged(object sender, EventArgs e)
         {
             SelectedDate = ConvertePersianDateToDateTime();
@@ -85,12 +83,11 @@ namespace Tralus.Framework.Module.Web.Editors
             if (SelectedDate != null)
             {
                 datePickerPersian.Value = GetDateInPersianCalendar(SelectedDate.Value);
-            }
-        }
+            }}
 
         protected override void ReadViewModeValueCore()
         {
-            ((Label)InplaceViewModeEditor).Text = SelectedDate?.ToShortTimeString();
+            ((Label)InplaceViewModeEditor).Text = SelectedDate?.ToShortDateString();
         }
 
         public override void BreakLinksToControl(bool unwireEventsOnly)
@@ -136,12 +133,10 @@ namespace Tralus.Framework.Module.Web.Editors
 
         private string GetDateInPersianCalendar(DateTime dateTime)
         {
-            return string.Format("{0:0000}/{1:00}/{2:00}- {3:00}:{4:00}",
+            return string.Format("{0:0000}/{1:00}/{2:00}",
                 PersianCalendar.GetYear(dateTime),
                 PersianCalendar.GetMonth(dateTime),
-                PersianCalendar.GetDayOfMonth(dateTime),
-                PersianCalendar.GetHour(dateTime),
-                PersianCalendar.GetMinute(dateTime));
+                PersianCalendar.GetDayOfMonth(dateTime));
         }
     }
 }
