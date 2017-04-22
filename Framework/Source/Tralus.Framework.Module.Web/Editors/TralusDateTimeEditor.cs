@@ -244,21 +244,26 @@ namespace Tralus.Framework.Module.Web.Editors
 
         private string GetDateInCalendar(System.Globalization.Calendar calendar, DateTime dateTime)
         {
-            return string.Format("{0:0000}/{1:00}/{2:00}",
+            return string.Format("{0:0000}/{1:00}/{2:00}- {3:00}:{4:00}",
                 calendar.GetYear(dateTime),
                 calendar.GetMonth(dateTime),
-                calendar.GetDayOfMonth(dateTime));
+                calendar.GetDayOfMonth(dateTime),
+                calendar.GetHour(dateTime),
+                calendar.GetMinute(dateTime));
         }
 
         private void SetPersianDate(DateTime? dateTime)
         {
+     
             if (dateTime.HasValue)
             {
-                //var p = new PersianCalendar();
-                //datePickerPersian.Value = string.Format("{0:0000}/{1:00}/{2:00}",
-                //    p.GetYear(dateTime.Value),
-                //    p.GetMonth(dateTime.Value),
-                //    p.GetDayOfMonth(dateTime.Value));
+                var p = new PersianCalendar();
+                datePickerPersian.Value = string.Format("{0:0000}/{1:00}/{2:00}- {3:00}:{4:00}",
+                    p.GetYear(dateTime.Value),
+                    p.GetMonth(dateTime.Value),
+                    p.GetDayOfMonth(dateTime.Value),
+                    p.GetHour(dateTime.Value),
+                    p.GetMinute(dateTime.Value));
             }
             else
             {
@@ -270,7 +275,7 @@ namespace Tralus.Framework.Module.Web.Editors
         {
             if (dateTime.HasValue)
             {
-                //datePickerGregorian.Value = dateTime.Value.ToString("yyyy/MM/dd");
+                datePickerGregorian.Value = dateTime.Value.ToString("yyyy/MM/dd");
             }
             else
             {
@@ -282,7 +287,7 @@ namespace Tralus.Framework.Module.Web.Editors
         {
             if (dateTime.HasValue)
             {
-                //clockPicker.Value = dateTime.Value.ToString("HH:mm");
+                clockPicker.Value = dateTime.Value.ToString("HH:mm");
             }
             else
             {
