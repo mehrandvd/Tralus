@@ -294,6 +294,9 @@
       <DependentUpon>TralusTimeControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Editors\PersianDateEditor.cs" />
+    <Compile Include="Editors\RepositoryItemPersianDateTime.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Editors\RepositoryItemPersianDate.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -324,10 +327,14 @@
     <EmbeddedResource Include="Controls\TralusDateTimeControl.resx">
       <DependentUpon>TralusDateTimeControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Editors\RepositoryItemPersianDateTime.resx">
+      <DependentUpon>RepositoryItemPersianDateTime.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Editors\RepositoryItemPersianDate.resx">
       <DependentUpon>RepositoryItemPersianDate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="WinModule.resx">
       <DependentUpon>WinModule.cs</DependentUpon>
     </EmbeddedResource>
