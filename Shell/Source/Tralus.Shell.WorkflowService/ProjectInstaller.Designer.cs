@@ -1,4 +1,6 @@
-﻿namespace Tralus.Shell.WorkflowService
+﻿using System.Configuration;
+
+namespace Tralus.Shell.WorkflowService
 {
     partial class ProjectInstaller
     {
@@ -38,10 +40,7 @@
             this.serviceProcessInstaller.Username = null;
             // 
             // serviceInstaller
-            // 
-            this.serviceInstaller.Description = "eXpressApp Framework Workflow Server";
-            this.serviceInstaller.DisplayName = "Tralus.Shell.WorkflowServiceWorkflowServer";
-            this.serviceInstaller.ServiceName = "Tralus.Shell.WorkflowServiceWorkflowServer";
+            //
             this.serviceInstaller.StartType = System.ServiceProcess.ServiceStartMode.Automatic;
             // 
             // ProjectInstaller
