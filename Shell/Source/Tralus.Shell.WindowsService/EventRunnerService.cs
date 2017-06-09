@@ -35,9 +35,8 @@ namespace Tralus.Shell.WindowsService
                 {
                     try
                     {
-                        var timer = new Timer();
+                        var timer = new Timer {Interval = worker.Interval};
 
-                        timer.Interval = worker.Interval;
                         timer.Elapsed += timer_Elapsed;
                         
                         _timers.Add(timer, worker);
@@ -45,7 +44,7 @@ namespace Tralus.Shell.WindowsService
                     }
                     catch (Exception exception)
                     {
-                        EventLogger.Log(string.Format("Unable to enable worker: {0}\n{1}", worker, exception));
+                        EventLogger.Log($"Unable to enable worker: {worker}\n{exception}");
                     }
                 }
             }
@@ -72,6 +71,7 @@ namespace Tralus.Shell.WindowsService
             }
             finally
             {
+                timer.Interval = worker.Interval;
                 timer.Enabled = true;
             }
 
