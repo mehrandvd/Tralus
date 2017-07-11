@@ -62,7 +62,14 @@ namespace Selonia.Accounting.Test
                         Name = "1395",
                         StartDate = new DateTime(2016,3,20),
                         EndDate= new DateTime(2017,3,19),
-                    }
+                    },
+                    new FiscalYear()
+                    {
+                    Id = Guid.NewGuid(),
+                    Name = "1396",
+                    StartDate = new DateTime(2017,3,20),
+                    EndDate= new DateTime(2018,3,19),
+                }
                 });
 
             segmentGroups.AddRange(new []

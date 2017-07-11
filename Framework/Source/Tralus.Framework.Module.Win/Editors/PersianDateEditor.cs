@@ -44,7 +44,7 @@ namespace Tralus.Framework.Module.Win.Editors
 
         public RepositoryItem CreateRepositoryItem()
         {
-            return new RepositoryItemPersianDateTime();
+            return new RepositoryItemPersianDateTime(Model.EditMask);
         }
 
         protected override void Dispose(bool disposing)
