@@ -25,12 +25,20 @@ namespace Tralus.Framework.Module.Win.Editors
         public static readonly Calendar PersianCalendar = new PersianCalendar();
         public const string CustomEditName = "PersianDateEditor";
         private static object dateTimeChanged = new object();
-
+        public static string Mask = "d";
         static RepositoryItemPersianDateTime()
         {
             RegisterPersianDateEditor();
             repositoryItemTextEdit.CustomDisplayText += RepositoryItemTextEdit_CustomDisplayText;
         }
+
+        public RepositoryItemPersianDateTime(string modelEditMask)
+        {
+            Mask = modelEditMask;
+            RegisterPersianDateEditor();
+            repositoryItemTextEdit.CustomDisplayText += RepositoryItemTextEdit_CustomDisplayText;
+        }
+
 
         public static void RegisterPersianDateEditor()
         {
@@ -85,12 +93,23 @@ namespace Tralus.Framework.Module.Win.Editors
 
         private static string GetDateInAltCalendar(DateTime dateTime)
         {
-            return string.Format("{0:0000}/{1:00}/{2:00}-{3:00}:{4:00}",
-                PersianCalendar.GetYear(dateTime),
-                PersianCalendar.GetMonth(dateTime),
-                PersianCalendar.GetDayOfMonth(dateTime),
-                PersianCalendar.GetHour(dateTime),
-                PersianCalendar.GetMinute(dateTime));
+            if (Mask == "d")
+            {
+                return string.Format("{0:0000}/{1:00}/{2:00}",
+                    PersianCalendar.GetYear(dateTime),
+                    PersianCalendar.GetMonth(dateTime),
+                    PersianCalendar.GetDayOfMonth(dateTime));
+                
+            }
+            else
+            {
+                return string.Format("{0:0000}/{1:00}/{2:00}-{3:00}:{4:00}",
+                    PersianCalendar.GetYear(dateTime),
+                    PersianCalendar.GetMonth(dateTime),
+                    PersianCalendar.GetDayOfMonth(dateTime),
+                    PersianCalendar.GetHour(dateTime),
+                    PersianCalendar.GetMinute(dateTime));
+            }
         }
         
         protected override PropertyDescriptorCollection FilterProperties(PropertyDescriptorCollection collection)
