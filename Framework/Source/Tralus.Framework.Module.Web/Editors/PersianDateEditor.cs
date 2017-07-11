@@ -18,12 +18,13 @@ namespace Tralus.Framework.Module.Web.Editors
         private DevExpress.Web.ASPxTextBox datePickerGregorian;
         private DevExpress.Web.ASPxComboBox comboBoxTimeZone;
         private DevExpress.Web.ASPxComboBox comboBoxCalendar;
+        public string mask = "d";
         private static readonly System.Globalization.Calendar PersianCalendar = new PersianCalendar();
 
         public PersianDateEditor(Type objectType, IModelMemberViewItem model)
             : base(objectType, model)
         {
-
+            mask = model.EditMask;
         }
 
         public DateTime? SelectedDate
@@ -195,8 +196,18 @@ namespace Tralus.Framework.Module.Web.Editors
 
         protected override void ReadViewModeValueCore()
         {
-            if(SelectedDate!=null)
-                ((Label)InplaceViewModeEditor).Text = GetDateInPersianCalendar(SelectedDate.Value);
+            if (SelectedDate != null)
+            {
+             
+                if (EditMask == "d")
+                {
+                    ((Label)InplaceViewModeEditor).Text = GetDateInPersianCalendar(SelectedDate.Value);
+                }
+                else
+                {
+                    ((Label)InplaceViewModeEditor).Text = GetDateTimeInPersianCalendar(SelectedDate.Value);
+                }
+            }
             //((Label)InplaceViewModeEditor).Text = SelectedDate?.ToLongDateString();
         }
 
@@ -245,11 +256,18 @@ namespace Tralus.Framework.Module.Web.Editors
 
         private string GetDateInPersianCalendar(DateTime dateTime)
         {
+            return string.Format("{0:0000}/{1:00}/{2:00}",
+                PersianCalendar.GetYear(dateTime),
+                PersianCalendar.GetMonth(dateTime),
+                PersianCalendar.GetDayOfMonth(dateTime));
+        }
+        private string GetDateTimeInPersianCalendar(DateTime dateTime)
+        {
             return string.Format("{0:0000}/{1:00}/{2:00}-{3:00}:{4:00}",
                 PersianCalendar.GetYear(dateTime),
                 PersianCalendar.GetMonth(dateTime),
                 PersianCalendar.GetDayOfMonth(dateTime),
-                 PersianCalendar.GetHour(dateTime),PersianCalendar.GetMinute(dateTime));
+                PersianCalendar.GetHour(dateTime), PersianCalendar.GetMinute(dateTime));
         }
     }
 }
