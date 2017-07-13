@@ -6,10 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DevExpress.Accessibility;
+using DevExpress.ExpressApp.Model;
 using DevExpress.Utils;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraEditors.Drawing;
+using DevExpress.XtraEditors.Filtering.Templates;
 using DevExpress.XtraEditors.Registrator;
 using DevExpress.XtraEditors.Repository;
 using DevExpress.XtraEditors.ViewInfo;
@@ -25,16 +27,31 @@ namespace Tralus.Framework.Module.Win.Editors
         public static readonly Calendar PersianCalendar = new PersianCalendar();
         public const string CustomEditName = "PersianDateEditor";
         private static object dateTimeChanged = new object();
-        public static string Mask = "d";
+        public static List<IModelMemberViewItem> CurrentModels=new List<IModelMemberViewItem>();
+        public static List<DateTime> DatesList=new List<DateTime>();
+        public static List<string> MaskList = new List<string>();
+        public static int NumbersofDates = 0;
+        public static int Counter = 0;
+        public static string LastParentView = "";
         static RepositoryItemPersianDateTime()
         {
             RegisterPersianDateEditor();
             repositoryItemTextEdit.CustomDisplayText += RepositoryItemTextEdit_CustomDisplayText;
         }
 
-        public RepositoryItemPersianDateTime(string modelEditMask)
+
+
+        public RepositoryItemPersianDateTime(IModelMemberViewItem model)
         {
-            Mask = modelEditMask;
+            if (LastParentView != model.ParentView.Caption)
+            {
+                DatesList.Clear();
+                MaskList.Clear();
+                CurrentModels.Clear();
+                LastParentView = model.ParentView.Caption;
+            }
+            IModelMemberViewItem imodel = model;
+            CurrentModels.Add(imodel);
             RegisterPersianDateEditor();
             repositoryItemTextEdit.CustomDisplayText += RepositoryItemTextEdit_CustomDisplayText;
         }
@@ -67,6 +84,23 @@ namespace Tralus.Framework.Module.Win.Editors
 
         private static void RepositoryItemTextEdit_CustomDisplayText(object sender, CustomDisplayTextEventArgs e)
         {
+            
+            int number = 0;
+            for (int i = 0; i < DatesList.Count; i++)
+            {
+                if (DatesList[i] == (DateTime) e.Value)
+                {
+                    number = number + 1;
+                }
+            }
+            if (DatesList.Count == 0 || number == 0)
+            {
+                DatesList.Add((DateTime)e.Value);
+                MaskList.Add(CurrentModels[NumbersofDates].EditMask);
+                NumbersofDates = NumbersofDates + 1;
+                Counter = Counter + 1;
+            }
+
             e.DisplayText = GetPersianDate(e.Value);
         }
 
@@ -93,13 +127,21 @@ namespace Tralus.Framework.Module.Win.Editors
 
         private static string GetDateInAltCalendar(DateTime dateTime)
         {
-            if (Mask == "d")
+            string maskValue = "d";
+            for (int i = 0; i < DatesList.Count; i++)
+            {
+
+                if (DatesList[i] == dateTime)
+                {
+                    maskValue = MaskList[i];
+                }
+            }
+            if (maskValue == "d")
             {
                 return string.Format("{0:0000}/{1:00}/{2:00}",
                     PersianCalendar.GetYear(dateTime),
                     PersianCalendar.GetMonth(dateTime),
                     PersianCalendar.GetDayOfMonth(dateTime));
-                
             }
             else
             {
@@ -111,7 +153,8 @@ namespace Tralus.Framework.Module.Win.Editors
                     PersianCalendar.GetMinute(dateTime));
             }
         }
-        
+
+
         protected override PropertyDescriptorCollection FilterProperties(PropertyDescriptorCollection collection)
         {
             return base.FilterProperties(collection);
