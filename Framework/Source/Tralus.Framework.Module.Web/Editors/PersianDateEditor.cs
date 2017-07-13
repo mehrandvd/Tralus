@@ -18,13 +18,26 @@ namespace Tralus.Framework.Module.Web.Editors
         private DevExpress.Web.ASPxTextBox datePickerGregorian;
         private DevExpress.Web.ASPxComboBox comboBoxTimeZone;
         private DevExpress.Web.ASPxComboBox comboBoxCalendar;
-        public string mask = "d";
+        public static List<string> CurrentModels = new List<string>();
+        public static List<DateTime> DatesList = new List<DateTime>();
+        public static List<string> MaskList = new List<string>();
+        public static int NumbersofDates = 0;
+        public static Type LastType=null;
         private static readonly System.Globalization.Calendar PersianCalendar = new PersianCalendar();
 
         public PersianDateEditor(Type objectType, IModelMemberViewItem model)
             : base(objectType, model)
         {
-            mask = model.EditMask;
+            if (LastType == null || LastType == objectType)
+            {
+                CurrentModels.Add(model.EditMask);
+            }
+            else
+            {
+                CurrentModels.Clear();
+                CurrentModels.Add(model.EditMask);
+            }
+            LastType = objectType;
         }
 
         public DateTime? SelectedDate
@@ -75,6 +88,20 @@ namespace Tralus.Framework.Module.Web.Editors
         {
             try
             {
+                int number = 0;
+                for (int i = 0; i < DatesList.Count; i++)
+                {
+                    if (DatesList[i] == (DateTime)e.Value)
+                    {
+                        number = number + 1;
+                    }
+                }
+                if (DatesList.Count == 0 || number == 0)
+                {
+                    DatesList.Add((DateTime)e.Value);
+                    MaskList.Add(CurrentModels[NumbersofDates]);
+                    NumbersofDates = NumbersofDates + 1;
+                }
                 ConvertePersianDateToDateTime();
             }
             catch (Exception ex)
@@ -198,8 +225,17 @@ namespace Tralus.Framework.Module.Web.Editors
         {
             if (SelectedDate != null)
             {
-             
-                if (EditMask == "d")
+                string maskValue = "d";
+                for (int i = 0; i < DatesList.Count; i++)
+                {
+
+                    if (DatesList[i] == SelectedDate)
+                    {
+                        maskValue = MaskList[i];
+                    }
+                }
+               
+                if (maskValue == "d")
                 {
                     ((Label)InplaceViewModeEditor).Text = GetDateInPersianCalendar(SelectedDate.Value);
                 }

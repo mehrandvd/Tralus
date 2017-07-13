@@ -22,6 +22,7 @@ namespace Tralus.Framework.Module.Win.Editors
         private PersianDateControl control;
         public PersianDateEditor(Type objectType, IModelMemberViewItem model) : base(objectType, model)
         {
+            RepositoryItemPersianDate.RegisterPersianDateEditor();
         }
 
         static PersianDateEditor()
@@ -44,7 +45,7 @@ namespace Tralus.Framework.Module.Win.Editors
 
         public RepositoryItem CreateRepositoryItem()
         {
-            return new RepositoryItemPersianDateTime(Model.EditMask);
+            return new RepositoryItemPersianDateTime(Model);
         }
 
         protected override void Dispose(bool disposing)
@@ -61,7 +62,7 @@ namespace Tralus.Framework.Module.Win.Editors
         {
             base.OnControlCreating();
         }
-     
+    
            
     }
 }
