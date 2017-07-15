@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DevExpress.Accessibility;
-using DevExpress.Utils;
 using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Controls;
 using DevExpress.XtraEditors.Drawing;
@@ -44,16 +39,12 @@ namespace Tralus.Framework.Module.Win.Editors
         public override BaseEdit CreateEditor()
         {
             var dateControl = new PersianDateControl();
-            
             return dateControl;
         }
         
         public override BaseEditViewInfo CreateViewInfo()
         {
             var persianDateEditViewInfo = new TextEditViewInfo(repositoryItemTextEdit);
-
-            
-
             return persianDateEditViewInfo;
         }
 
@@ -91,23 +82,12 @@ namespace Tralus.Framework.Module.Win.Editors
                 PersianCalendar.GetDayOfMonth(dateTime));
         }
         
-        protected override PropertyDescriptorCollection FilterProperties(PropertyDescriptorCollection collection)
-        {
-            return base.FilterProperties(collection);
-        }
-
-        public override string ToString()
-        {
-            return base.ToString();
-        }
-
         public override void Assign(RepositoryItem item)
         {
             var repositoryItemPersianDate = item as RepositoryItemPersianDate;
             this.BeginUpdate();
             base.Assign(item);
             this.EndUpdate();
-
             this.Events.AddHandler(RepositoryItemPersianDate.dateTimeChanged, repositoryItemPersianDate.Events[RepositoryItemPersianDate.dateTimeChanged]);
         }
 
@@ -119,6 +99,7 @@ namespace Tralus.Framework.Module.Win.Editors
             {
                 this.Events.AddHandler(RepositoryItemPersianDate.dateTimeChanged, (Delegate)value);
             }
+
             remove
             {
                 this.Events.RemoveHandler(RepositoryItemPersianDate.dateTimeChanged, (Delegate)value);
@@ -135,9 +116,13 @@ namespace Tralus.Framework.Module.Win.Editors
         protected internal virtual void RaiseDateTimeChanged(EventArgs e)
         {
             EventHandler eventHandler = (EventHandler)this.Events[RepositoryItemPersianDate.dateTimeChanged];
-            if (eventHandler == null)
-                return;
-            eventHandler(this.GetEventSender(), e);
+            eventHandler?.Invoke(this.GetEventSender(), e);
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            repositoryItemTextEdit.CustomDisplayText -= RepositoryItemTextEdit_CustomDisplayText;
+            base.Dispose(disposing);
         }
     }
 }

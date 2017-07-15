@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -15,19 +15,18 @@ using Tralus.Framework.Module.Win.Controls.BaseControl;
 
 namespace Tralus.Framework.Module.Win.Editors
 {
-    [PropertyEditor(typeof(DateTime?), true)]
-    [PropertyEditor(typeof(DateTime), true)]
-    public class PersianDateEditor : WinPropertyEditor, IInplaceEditSupport
+    [PropertyEditor(typeof(DateTime?), false)]
+    [PropertyEditor(typeof(DateTime), false)]
+    public class PersianDateTimeEditor : WinPropertyEditor, IInplaceEditSupport
     {
         private PersianDateControl control;
-        public PersianDateEditor(Type objectType, IModelMemberViewItem model) : base(objectType, model)
+        public PersianDateTimeEditor(Type objectType, IModelMemberViewItem model) : base(objectType, model)
         {
-            
         }
 
-        static PersianDateEditor()
+        static PersianDateTimeEditor()
         {
-            RepositoryItemPersianDate.RegisterPersianDateEditor();
+            RepositoryItemPersianDateTime.RegisterPersianDateEditor();
         }
 
         protected override object CreateControlCore()
@@ -45,16 +44,17 @@ namespace Tralus.Framework.Module.Win.Editors
 
         public RepositoryItem CreateRepositoryItem()
         {
-            return new RepositoryItemPersianDate();
+            return new RepositoryItemPersianDateTime();
         }
 
         protected override void Dispose(bool disposing)
         {
-            if (control != null)
+            if (this.control != null)
             {
-                control.ValueChanged -= control_ValueChanged;
-                control = null;
+                this.control.ValueChanged -= control_ValueChanged;
+                this.control = null;
             }
+
             base.Dispose(disposing);
         }
         
