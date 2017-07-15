@@ -293,6 +293,7 @@
     <Compile Include="Controls\TralusTimeControl.Designer.cs">
       <DependentUpon>TralusTimeControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Editors\PersianDateTimeEditor.cs" />
     <Compile Include="Editors\PersianDateEditor.cs" />
     <Compile Include="Editors\RepositoryItemPersianDateTime.cs">
       <SubType>Component</SubType>

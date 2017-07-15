@@ -34,7 +34,7 @@ namespace Tralus.Framework.Module.Web.Editors
         {
             get
             {
-                if (comboBoxCalendar != null && comboBoxCalendar.SelectedItem != null)
+                if (comboBoxCalendar?.SelectedItem != null)
                 {
                     return Calendars[comboBoxCalendar.SelectedItem.Text];
                 }

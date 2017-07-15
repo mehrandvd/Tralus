@@ -157,6 +157,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Editors\PersianDateTimeEditor.cs" />
     <Compile Include="Images\Controllers\SwitchToEditModeModificationsController.cs">
       <SubType>Component</SubType>
     </Compile>
