@@ -8,7 +8,7 @@ using System.Globalization;
 
 namespace Tralus.Framework.Module.Web.Editors
 {
-    [PropertyEditor(typeof(DateTime?), true)]
+    [PropertyEditor(typeof(DateTime), true)]
     [PropertyEditor(typeof(DateTime?), true)]
     public class PersianDateEditor : WebPropertyEditor
     {
