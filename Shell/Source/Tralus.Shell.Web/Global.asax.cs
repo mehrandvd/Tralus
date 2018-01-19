@@ -37,8 +37,11 @@ namespace Tralus.Shell.Web
 
         static Global()
         {
-           
+            LoadMOdules();
+        }
 
+        private static void LoadMOdules()
+        {
             try
             {
                 AppDomain.CurrentDomain.AssemblyResolve += (sender, args) =>
@@ -69,9 +72,6 @@ namespace Tralus.Shell.Web
         public Global()
         {
             InitializeComponent();
-
-           
-
         }
         protected void Application_Start(Object sender, EventArgs e)
         {

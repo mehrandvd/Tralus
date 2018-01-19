@@ -34,8 +34,7 @@ namespace Tralus.Framework.Data
         /// <summary>
         /// Allows to this context to add new fixed entities, otherwise on SaveChanges all states will turn to modified.
         /// </summary>
-        public virtual bool AllowAddFixedEntity { get; set; } = false;
-    }
+        public virtual bool AllowAddFixedEntity { get; set; } = false;}
 
     public abstract class DbContextBase<TDbContext> : DbContextBase where TDbContext : DbContext
     {
