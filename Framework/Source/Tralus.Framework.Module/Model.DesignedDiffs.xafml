@@ -5,7 +5,23 @@
       <Action Id="Tralus.Framework.Module.Controllers.RunSystemEnvironmentTestViewController" Caption="Run Test" ImageName="Action_Debug_Step" />
     </Actions>
   </ActionDesign>
+  <NavigationItems>
+    <Items>
+      <Item Id="KPI">
+        <Items>
+          <Item Id="KpiDefinition_ListView" ClassName="Tralus.Framework.BusinessModel.Entities.Role" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
   <SchemaModules>
-    <SchemaModule Name="SystemModule" Version="15.2.9.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="16.2.4.0" IsNewNode="True" />
   </SchemaModules>
+  <Views>
+    <ListView Id="Role_ListView">
+      <Filters>
+        <Filter Id="@fc448d91-479a-4659-9e96-01cf74c275e8" IsNewNode="True" />
+      </Filters>
+    </ListView>
+  </Views>
 </Application>

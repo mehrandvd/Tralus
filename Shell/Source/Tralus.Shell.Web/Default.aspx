@@ -1,9 +1,9 @@
 <%@ Page Language="C#" AutoEventWireup="true" Inherits="Default" EnableViewState="false"
     ValidateRequest="false" CodeBehind="Default.aspx.cs" %>
 
-<%@ Register Assembly="DevExpress.ExpressApp.Web.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+<%@ Register Assembly="DevExpress.ExpressApp.Web.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
     Namespace="DevExpress.ExpressApp.Web.Templates" TagPrefix="cc3" %>
-<%@ Register Assembly="DevExpress.ExpressApp.Web.v16.2, Version=16.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+<%@ Register Assembly="DevExpress.ExpressApp.Web.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
     Namespace="DevExpress.ExpressApp.Web.Controls" TagPrefix="cc4" %>
 <%@ Import Namespace="Tralus.Shell.Web" %>
 <!DOCTYPE html>

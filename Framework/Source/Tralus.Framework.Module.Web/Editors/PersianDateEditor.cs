@@ -27,6 +27,7 @@ namespace Tralus.Framework.Module.Web.Editors
             {
                 return (DateTime?)PropertyValue;
             }
+
             set
             {
                 PropertyValue = value;
@@ -40,7 +41,6 @@ namespace Tralus.Framework.Module.Web.Editors
 
         protected override WebControl CreateEditModeControlCore()
         {
-
             var datePickePersianrId = $"DatePickerPersian{PropertyName}";
             var persianGotFocusGuid = System.Guid.NewGuid().ToString();
             datePickerPersian = RenderHelper.CreateASPxTextBox();
@@ -77,12 +77,11 @@ namespace Tralus.Framework.Module.Web.Editors
                 e.ErrorText = ex.Message;
                 e.IsValid = false;
             }
-
         }
 
         protected override void ReadEditModeValueCore()
         {
-            if (SelectedDate != null)
+            if (SelectedDate.HasValue)
             {
                 datePickerPersian.Value = GetDateInPersianCalendar(SelectedDate.Value);
             }
@@ -90,12 +89,14 @@ namespace Tralus.Framework.Module.Web.Editors
 
         protected override void ReadViewModeValueCore()
         {
-            ((Label)InplaceViewModeEditor).Text = GetDateInPersianCalendar(SelectedDate.Value);// SelectedDate?.ToShortDateString();
+            if (SelectedDate.HasValue)
+            {
+                ((Label)InplaceViewModeEditor).Text = GetDateInPersianCalendar(SelectedDate.Value);
+            }
         }
 
         public override void BreakLinksToControl(bool unwireEventsOnly)
         {
-
             if (datePickerPersian != null)
             {
                 datePickerPersian.Validation -= TralusDateTimeControlPersian_Validation;

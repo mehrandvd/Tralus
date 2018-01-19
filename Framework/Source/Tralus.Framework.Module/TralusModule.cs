@@ -28,6 +28,11 @@ using Tralus.Framework.Utility.ReflectionHelpers;
 
 namespace Tralus.Framework.Module
 {
+    using DevExpress.ExpressApp.SystemModule;
+
+    using Tralus.Framework.Module.CriteriaCustomFunction;
+    using Tralus.Framework.Module.DynamicNavigation;
+
     public class TralusModule : ModuleBase
     {
         static TralusModule()
@@ -38,8 +43,7 @@ namespace Tralus.Framework.Module
 
         protected TralusModule()
         {
-            var entityTypes =
-                GetModuleExportedTypes();
+            var entityTypes = GetModuleExportedTypes();
 
             //AdditionalExportedTypes.Add(typeof(EntityScript));
             //AdditionalExportedTypes.Add(typeof(EntityBase));
@@ -71,6 +75,8 @@ namespace Tralus.Framework.Module
             AdditionalExportedTypes.Add(typeof(KpiHistoryItem));
             AdditionalExportedTypes.Add(typeof(KpiInstance));
             AdditionalExportedTypes.Add(typeof(KpiScorecard));
+
+            GetParentObjectByName.Register();
         }
 
         protected virtual IEnumerable<Type> GetModuleExportedTypes()
@@ -105,5 +111,19 @@ namespace Tralus.Framework.Module
         //    application.CreateCustomUserModelDifferenceStore += Application_CreateCustomUserModelDifferenceStore;
 
         //}
+
+        public override void ExtendModelInterfaces(ModelInterfaceExtenders extenders)
+        {
+            base.ExtendModelInterfaces(extenders);
+            extenders.Add<IModelPropertyEditor, ITralusDateTimeDefaultCalendarAndTimeZone>();
+            extenders.Add<IModelNavigationItem, IDynamicNavigationItem>();
+        }
+
+        protected override IEnumerable<Type> GetRegularTypes()
+        {
+            var baseRegularTypes = base.GetRegularTypes().ToList();
+            baseRegularTypes.Add(typeof(ModelDynamicNavigationItemLogic));
+            return baseRegularTypes;
+        }
     }
 }
