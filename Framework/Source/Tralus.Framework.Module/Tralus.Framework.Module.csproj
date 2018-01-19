@@ -265,8 +265,6 @@
     <Compile Include="Controllers\Base\TralusViewControllerBase.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="DynamicNavigation\ModelDynamicNavigationItemLogic.cs" />
-    <Compile Include="Interface\IDynamicNavigationItem.cs" />
     <Compile Include="Interface\ITralusDateTimeDefaultCalendarAndTimeZone.cs" />
     <Compile Include="Module.cs">
       <SubType>Component</SubType>
@@ -359,6 +357,7 @@
   <ItemGroup>
     <Folder Include="CriteriaCustomFunction\" />
     <Folder Include="Database\" />
+    <Folder Include="DynamicNavigation\" />
     <Folder Include="Workflow\" />
   </ItemGroup>
   <ItemGroup>
