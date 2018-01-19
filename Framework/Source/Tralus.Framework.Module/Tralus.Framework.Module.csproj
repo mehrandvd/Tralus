@@ -58,7 +58,6 @@
     </Reference>
     <Reference Include="DevExpress.ExpressApp.Dashboards.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      
     </Reference>
     <Reference Include="DevExpress.ExpressApp.EF.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -66,7 +65,6 @@
     </Reference>
     <Reference Include="DevExpress.ExpressApp.Kpi.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      
     </Reference>
     <Reference Include="DevExpress.ExpressApp.PivotChart.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -236,12 +234,6 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controllers\Base\IMultipleExecution.cs" />
-    <Compile Include="Controllers\DynamicNavigationController.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controllers\DynamicNavigationController.Designer.cs">
-      <DependentUpon>DynamicNavigationController.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controllers\EntityScriptViewController.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -273,7 +265,6 @@
     <Compile Include="Controllers\Base\TralusViewControllerBase.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CriteriaCustomFunction\GetParentObjectByName.cs" />
     <Compile Include="DynamicNavigation\ModelDynamicNavigationItemLogic.cs" />
     <Compile Include="Interface\IDynamicNavigationItem.cs" />
     <Compile Include="Interface\ITralusDateTimeDefaultCalendarAndTimeZone.cs" />
@@ -366,6 +357,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="CriteriaCustomFunction\" />
     <Folder Include="Database\" />
     <Folder Include="Workflow\" />
   </ItemGroup>
