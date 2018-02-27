@@ -30,11 +30,14 @@
 
 	[Parameter(mandatory = $true)]
         [string]
-        $certificatePassword
+        $certificatePassword,
+	
+	[Parameter(mandatory = $true)]
+        [string]
+        $Mage
     )
     
         ### New Application ###
-        $Mage = "D:\Program Files (x86)\Microsoft SDKs\Windows\v8.1A\bin\NETFX 4.5.1 Tools\mage.exe"
         
         $deploymentPath = Join-Path $DeploymentRootPath $ApplicationName
         $destinationPath = Join-Path $deploymentPath $Version
