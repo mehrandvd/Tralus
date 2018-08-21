@@ -75,11 +75,9 @@
     <Reference Include="DevExpress.ExpressApp.ConditionalAppearance.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.ExpressApp.Dashboards.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      
     </Reference>
     <Reference Include="DevExpress.ExpressApp.Dashboards.Win.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      
     </Reference>
     <Reference Include="DevExpress.ExpressApp.EF.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -272,6 +270,12 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\BaseControls\PersianDateTimeOffsetControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\BaseControls\PersianDateTimeOffsetControl.Designer.cs">
+      <DependentUpon>PersianDateTimeOffsetControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\BaseControls\PersianDateControl.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -302,8 +306,12 @@
     <Compile Include="Controls\TralusTimeControl.Designer.cs">
       <DependentUpon>TralusTimeControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Editors\PersianDateTimeOffsetEditor.cs" />
     <Compile Include="Editors\PersianDateTimeEditor.cs" />
     <Compile Include="Editors\PersianDateEditor.cs" />
+    <Compile Include="Editors\RepositoryItemPersianDateTimeOffset.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Editors\RepositoryItemPersianDateTime.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -325,6 +333,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Controls\BaseControls\PersianDateTimeOffsetControl.resx">
+      <DependentUpon>PersianDateTimeOffsetControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\BaseControls\PersianDateControl.resx">
       <DependentUpon>PersianDateControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -337,6 +348,9 @@
     <EmbeddedResource Include="Controls\TralusDateTimeControl.resx">
       <DependentUpon>TralusDateTimeControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Editors\RepositoryItemPersianDateTimeOffset.resx">
+      <DependentUpon>RepositoryItemPersianDateTimeOffset.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Editors\RepositoryItemPersianDateTime.resx">
       <DependentUpon>RepositoryItemPersianDateTime.cs</DependentUpon>
     </EmbeddedResource>
@@ -344,6 +358,7 @@
       <DependentUpon>RepositoryItemPersianDate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Model.DesignedDiffs.xafml" />
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="WinModule.resx">
       <DependentUpon>WinModule.cs</DependentUpon>
     </EmbeddedResource>
